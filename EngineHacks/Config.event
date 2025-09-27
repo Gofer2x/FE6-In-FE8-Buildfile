@@ -8,13 +8,13 @@
 // =========================
 
 // If commented, the test map will not be installed.
-#define USE_TEST_MAP
+//#define USE_TEST_MAP
 
 // The amount of attack speed needed to double an opponent.
 #define AS_DOUBLING_THRESHOLD 4
 
 // If true, dropped items will retain their durability.
-#define DROPPED_ITEM_DURABILITY True
+#define DROPPED_ITEM_DURABILITY False
 
 // ===================================
 // = HACK INSTALLATION CONFIGURATION =
@@ -31,7 +31,7 @@
 
 // If uncommented, the statscreen will have a moving background similar to FE6 and FE7.
 // Customization of graphical assets is possible in Necessary/ModularStatScreen/Background/Graphics/Graphics.event.
-// #define SCROLLING_STATSCREEN_BACKGROUND
+#define SCROLLING_STATSCREEN_BACKGROUND
 
 //If uncommented, will enable Battle Stats with Animations Off.
 #define BATTLE_STATS
@@ -184,7 +184,7 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 // If uncommented, the fourth page of the stat screen will include personal information on the character.
 // This information can be edited in the "Personal Data Editor.csv" file.
 // This will automatically enable Narrow Font.
-#define ENABLE_PERSONAL_INFO
+// #define ENABLE_PERSONAL_INFO
 
 // If uncommented, the third page of the stat screen will only show weapon ranks that the unit has a rank in.
 #define ONLY_SHOW_USED_RANKS
