@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_VillageRawData:
+#incbin "Village.dmp"
+
+ALIGN 4
+PAL_VillageRawData:
+#incbin "Village_pal.dmp"
+
+ALIGN 4
+CONFIG_VillageRawData:
+#incext compress "Village.mapchip_config"
+
+EventPointerTable(OBJ_Village, OBJ_VillageRawData)
+EventPointerTable(PAL_Village, PAL_VillageRawData)
+EventPointerTable(CONFIG_Village, CONFIG_VillageRawData)

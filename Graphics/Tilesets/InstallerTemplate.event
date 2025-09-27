@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_XYZRawData:
+#incbin "XYZ.dmp"
+
+ALIGN 4
+PAL_XYZRawData:
+#incbin "XYZ_pal.dmp"
+
+ALIGN 4
+CONFIG_XYZRawData:
+#incext compress "XYZ.mapchip_config"
+
+EventPointerTable(OBJ_XYZ, OBJ_XYZRawData)
+EventPointerTable(PAL_XYZ, PAL_XYZRawData)
+EventPointerTable(CONFIG_XYZ, CONFIG_XYZRawData)

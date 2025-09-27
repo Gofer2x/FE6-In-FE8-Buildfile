@@ -1,0 +1,67 @@
+
+TILEANIM2_LavaColors0:
+BYTE  $16 $00 $9D $00 $7F $01 $1F $0A;
+
+TILEANIM2_LavaColors1:
+BYTE  $18 $00 $BE $00 $BF $05 $5F $1E;
+
+TILEANIM2_LavaColors2:
+BYTE  $19 $00 $DF $00 $DF $05 $7F $22;
+
+TILEANIM2_LavaColors3:
+BYTE  $3A $00 $1F $01 $FF $0D $9F $2A;
+
+TILEANIM2_LavaColors4:
+BYTE  $3B $00 $5F $01 $FF $11 $BF $2E;
+
+TILEANIM2_LavaColors5:
+BYTE  $3D $00 $7F $01 $5F $16 $DF $32;
+
+TILEANIM2_LavaColors6:
+BYTE  $3E $00 $7F $01 $9E $1A $FF $36;
+
+TILEANIM2_LavaColors7:
+BYTE  $5F $00 $DF $01 $BF $26 $1F $37;
+
+TILEANIM2_LavaColors8:
+BYTE  $9F $00 $5F $06 $1F $37 $7F $3B;
+
+TILEANIM2_LavaColors9:
+BYTE  $5F $00 $5F $06 $FF $2E $5F $3B;
+
+TILEANIM2_LavaColors10:
+BYTE  $3E $00 $7F $01 $9E $1A $FF $36;
+
+TILEANIM2_LavaColors11:
+BYTE  $3D $00 $7F $01 $5F $16 $DF $32;
+
+TILEANIM2_LavaColors12:
+BYTE  $3B $00 $5F $01 $FF $11 $BF $2E;
+
+TILEANIM2_LavaColors13:
+BYTE  $3A $00 $1F $01 $FF $0D $9F $2A;
+
+TILEANIM2_LavaColors14:
+BYTE  $18 $00 $DF $00 $DF $05 $7F $22;
+
+ALIGN 4
+TILEANIM2_LavaRawData:
+paletteAnimation(TILEANIM2_LavaColors0, 19, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors1, 18, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors2, 17, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors3, 16, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors4, 16, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors5, 16, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors6, 17, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors7, 18, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors8, 19, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors9, 18, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors10, 17, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors11, 16, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors12, 16, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors13, 17, 4, 60, 0)
+paletteAnimation(TILEANIM2_LavaColors14, 18, 4, 60, 0)
+WORD 0x0
+WORD 0x0
+
+EventPointerTable(TILEANIM2_Lava,TILEANIM2_LavaRawData)

@@ -1,0 +1,24 @@
+ALIGN 4
+OBJ_PlainsRawData:
+#incbin "Plains.dmp"
+
+
+ALIGN 4
+PAL_PlainsRawData:
+#incbin "Plains_pal.dmp"
+ALIGN 4
+PAL_PlainsVillageRawData:
+#incbin "PlainsVillage_pal.dmp"
+
+ALIGN 4
+CONFIG_PlainsRawData:
+#incext compress "Plains.mapchip_config"
+ALIGN 4
+CONFIG_PlainsVillageRawData:
+#incext compress "PlainsVillage.mapchip_config"
+
+EventPointerTable(OBJ_Plains, OBJ_PlainsRawData)
+EventPointerTable(PAL_Plains, PAL_PlainsRawData)
+EventPointerTable(PAL_PlainsVillage, PAL_PlainsVillageRawData)
+EventPointerTable(CONFIG_Plains, CONFIG_PlainsRawData)
+EventPointerTable(CONFIG_PlainsVillage, CONFIG_PlainsVillageRawData)

@@ -1,1 +1,6 @@
 #include "SkillSysDefinitions.event"
+
+#include "PListIDs.event"
+
+#include "Generated/ChapterIDs.event"
+#include "TEMP/SoundIDs.event"

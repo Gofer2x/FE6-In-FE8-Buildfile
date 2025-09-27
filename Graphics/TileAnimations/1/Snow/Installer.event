@@ -1,0 +1,70 @@
+ALIGN 4
+TILEANIM1_SnowFrame0:
+#incbin "Snow.mapanime1_000.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame1:
+#incbin "Snow.mapanime1_001.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame2:
+#incbin "Snow.mapanime1_002.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame3:
+#incbin "Snow.mapanime1_003.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame4:
+#incbin "Snow.mapanime1_004.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame5:
+#incbin "Snow.mapanime1_005.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame6:
+#incbin "Snow.mapanime1_006.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame7:
+#incbin "Snow.mapanime1_007.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame8:
+#incbin "Snow.mapanime1_008.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame9:
+#incbin "Snow.mapanime1_009.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame10:
+#incbin "Snow.mapanime1_010.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame11:
+#incbin "Snow.mapanime1_011.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame12:
+#incbin "Snow.mapanime1_012.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame13:
+#incbin "Snow.mapanime1_013.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame14:
+#incbin "Snow.mapanime1_014.dmp"
+ALIGN 4
+TILEANIM1_SnowFrame15:
+#incbin "Snow.mapanime1_015.dmp"
+
+ALIGN 4
+TILEANIM1_SnowRawData:
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame0)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame1)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame2)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame3)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame4)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame5)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame6)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame7)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame8)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame9)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame10)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame11)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame12)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame13)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame14)
+tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame15)
+WORD 0 0
+
+EventPointerTable(TILEANIM1_Snow,TILEANIM1_SnowRawData)

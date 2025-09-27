@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_FrontierRawData:
+#incbin "Frontier.dmp"
+
+ALIGN 4
+PAL_FrontierRawData:
+#incbin "Frontier_pal.dmp"
+
+ALIGN 4
+CONFIG_FrontierRawData:
+#incext compress "Frontier.mapchip_config"
+
+EventPointerTable(OBJ_Frontier, OBJ_FrontierRawData)
+EventPointerTable(PAL_Frontier, PAL_FrontierRawData)
+EventPointerTable(CONFIG_Frontier, CONFIG_FrontierRawData)

@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_FortRawData:
+#incbin "Fort.dmp"
+
+ALIGN 4
+PAL_FortRawData:
+#incbin "Fort_pal.dmp"
+
+ALIGN 4
+CONFIG_FortRawData:
+#incext compress "Fort.mapchip_config"
+
+EventPointerTable(OBJ_Fort, OBJ_FortRawData)
+EventPointerTable(PAL_Fort, PAL_FortRawData)
+EventPointerTable(CONFIG_Fort, CONFIG_FortRawData)

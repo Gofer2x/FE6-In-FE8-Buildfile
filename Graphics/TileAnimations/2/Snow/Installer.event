@@ -1,0 +1,39 @@
+
+TILEANIM2_SnowColors0:
+BYTE  $D9 $73 $D9 $73 $D9 $73 $D9 $73;
+
+TILEANIM2_SnowColors1:
+BYTE  $D9 $73 $D9 $73 $D9 $73 $D9 $73;
+
+TILEANIM2_SnowColors2:
+BYTE  $D9 $73 $FD $7F $D9 $73 $D9 $73;
+
+TILEANIM2_SnowColors3:
+BYTE  $D9 $73 $FD $7F $FF $7F $D9 $73;
+
+TILEANIM2_SnowColors4:
+BYTE  $D9 $73 $D9 $73 $FD $7F $FF $7F;
+
+TILEANIM2_SnowColors5:
+BYTE  $D9 $73 $D9 $73 $D9 $73 $FD $7F;
+
+TILEANIM2_SnowColors6:
+BYTE  $D9 $73 $D9 $73 $D9 $73 $FB $7B;
+
+TILEANIM2_SnowColors7:
+BYTE  $D9 $73 $D9 $73 $D9 $73 $DA $77;
+
+ALIGN 4
+TILEANIM2_SnowRawData:
+paletteAnimation(TILEANIM2_SnowColors0, 61, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors1, 61, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors2, 3, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors3, 4, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors4, 5, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors5, 4, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors6, 3, 4, 60, 0)
+paletteAnimation(TILEANIM2_SnowColors7, 2, 4, 60, 0)
+WORD 0x0
+WORD 0x0
+
+EventPointerTable(TILEANIM2_Snow,TILEANIM2_SnowRawData)

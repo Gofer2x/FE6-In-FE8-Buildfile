@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_FieldsBridgeRawData:
+#incbin "FieldsBridge.dmp"
+
+ALIGN 4
+PAL_FieldsBridgeRawData:
+#incbin "FieldsBridge_pal.dmp"
+
+ALIGN 4
+CONFIG_FieldsBridgeRawData:
+#incext compress "FieldsBridge.mapchip_config"
+
+EventPointerTable(OBJ_FieldsBridge, OBJ_FieldsBridgeRawData)
+EventPointerTable(PAL_FieldsBridge, PAL_FieldsBridgeRawData)
+EventPointerTable(CONFIG_FieldsBridge, CONFIG_FieldsBridgeRawData)

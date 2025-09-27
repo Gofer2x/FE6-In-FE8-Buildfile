@@ -1,0 +1,19 @@
+ALIGN 4
+OBJ_TempleRawData:
+#incbin "Temple.dmp"
+
+ALIGN 4
+PAL_TempleDragonRawData:
+#incbin "TempleDragon_pal.dmp"
+ALIGN 4
+PAL_TempleLightRawData:
+#incbin "TempleLight_pal.dmp"
+
+ALIGN 4
+CONFIG_TempleRawData:
+#incext compress "Temple.mapchip_config"
+
+EventPointerTable(OBJ_Temple, OBJ_TempleRawData)
+EventPointerTable(PAL_TempleDragon, PAL_TempleDragonRawData)
+EventPointerTable(PAL_TempleLight, PAL_TempleLightRawData)
+EventPointerTable(CONFIG_Temple, CONFIG_TempleRawData)

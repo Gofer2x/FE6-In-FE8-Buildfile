@@ -1,0 +1,147 @@
+//only replacing the battle bgs that are different in fe8
+
+#define BattleBGTable $75A794
+
+#define BattleBGTableReplace(index,image,tsa,pal) "PUSH ; ORG BattleBGTable+((index-1)*12) ; POIN image ; POIN tsa ; POIN pal ; POP"
+#define BattleBGTableReplacePalOnly(index,pal) "PUSH ; ORG BattleBGTable+((index-1)*12)+8 ; POIN pal ; POP"
+
+//To change:
+//1 replace
+//2 replace
+//6 pal only
+//A replace
+//B pal only
+//E replace
+//F replace
+//11 use 0x1 data and unique pal
+//1A replace
+
+
+
+ALIGN 4
+BattleBG_1Data:
+#incbin "FE6/1.png.dmp"
+
+ALIGN 4
+BattleBG_1TSA:
+#incbin "FE6/1.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_1Pal:
+#incbin "FE6/1.png.pal.dmp"
+BattleBGTableReplace(0x1,BattleBG_1Data,BattleBG_1TSA,BattleBG_1Pal)
+
+
+
+ALIGN 4
+BattleBG_2Data:
+#incbin "FE6/2.png.dmp"
+
+ALIGN 4
+BattleBG_2TSA:
+#incbin "FE6/2.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_2Pal:
+#incbin "FE6/2.png.pal.dmp"
+BattleBGTableReplace(0x2,BattleBG_2Data,BattleBG_2TSA,BattleBG_2Pal)
+
+
+
+//ALIGN 4
+//BattleBG_6Data:
+//#incbin "FE6/6.png.dmp"
+
+//ALIGN 4
+//BattleBG_6TSA:
+//#incbin "FE6/6.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_6Pal:
+#incbin "FE6/6.png.pal.dmp"
+//BattleBGTableReplace(0x6,BattleBG_6Data,BattleBG_6TSA,BattleBG_6Pal)
+BattleBGTableReplacePalOnly(0x6,BattleBG_6Pal)
+
+
+
+ALIGN 4
+BattleBG_AData:
+#incbin "FE6/A.png.dmp"
+ALIGN 4
+BattleBG_ATSA:
+#incbin "FE6/A.png.tsa.dmp"
+ALIGN 4
+BattleBG_APal:
+#incbin "FE6/A.png.pal.dmp"
+BattleBGTableReplace(0xA,BattleBG_AData,BattleBG_ATSA,BattleBG_APal)
+
+
+
+//ALIGN 4
+//BattleBG_BData:
+//#incbin "FE6/B.png.dmp"
+
+//ALIGN 4
+//BattleBG_BTSA:
+//#incbin "FE6/B.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_BPal:
+#incbin "FE6/B.png.pal.dmp"
+
+//BattleBGTableReplace(0xB,BattleBG_BData,BattleBG_BTSA,BattleBG_BPal)
+BattleBGTableReplacePalOnly(0xB,BattleBG_BPal)
+
+
+
+ALIGN 4
+BattleBG_EData:
+#incbin "FE6/E.png.dmp"
+
+ALIGN 4
+BattleBG_ETSA:
+#incbin "FE6/E.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_EPal:
+#incbin "FE6/E.png.pal.dmp"
+BattleBGTableReplace(0xE,BattleBG_EData,BattleBG_ETSA,BattleBG_EPal)
+
+
+
+ALIGN 4
+BattleBG_FData:
+#incbin "FE6/F.png.dmp"
+
+ALIGN 4
+BattleBG_FTSA:
+#incbin "FE6/F.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_FPal:
+#incbin "FE6/F.png.pal.dmp"
+BattleBGTableReplace(0xF,BattleBG_FData,BattleBG_FTSA,BattleBG_FPal)
+
+
+
+ALIGN 4
+BattleBG_11Pal:
+#incbin "FE6/11.png.pal.dmp"
+BattleBGTableReplace(0x11,BattleBG_1Data,BattleBG_1TSA,BattleBG_11Pal)
+
+
+
+
+ALIGN 4
+BattleBG_1AData:
+#incbin "FE6/1A.png.dmp"
+
+ALIGN 4
+BattleBG_1ATSA:
+#incbin "FE6/1A.png.tsa.dmp"
+
+ALIGN 4
+BattleBG_1APal:
+#incbin "FE6/1A.png.pal.dmp"
+
+BattleBGTableReplace(0x1A,BattleBG_1AData,BattleBG_1ATSA,BattleBG_1APal)

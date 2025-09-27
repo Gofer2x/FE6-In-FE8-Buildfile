@@ -1,0 +1,19 @@
+ALIGN 4
+OBJ_FieldsRawData:
+#incbin "Fields.dmp"
+
+ALIGN 4
+PAL_FieldsRawData:
+#incbin "Fields_pal.dmp"
+ALIGN 4
+PAL_FieldsNightRawData:
+#incbin "FieldsNight_pal.dmp"
+
+ALIGN 4
+CONFIG_FieldsRawData:
+#incext compress "Fields.mapchip_config"
+
+EventPointerTable(OBJ_Fields, OBJ_FieldsRawData)
+EventPointerTable(PAL_Fields, PAL_FieldsRawData)
+EventPointerTable(PAL_FieldsNight, PAL_FieldsNightRawData)
+EventPointerTable(CONFIG_Fields, CONFIG_FieldsRawData)

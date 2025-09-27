@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_StrongholdRawData:
+#incbin "Stronghold.dmp"
+
+ALIGN 4
+PAL_StrongholdRawData:
+#incbin "Stronghold_pal.dmp"
+
+ALIGN 4
+CONFIG_StrongholdRawData:
+#incext compress "Stronghold.mapchip_config"
+
+EventPointerTable(OBJ_Stronghold, OBJ_StrongholdRawData)
+EventPointerTable(PAL_Stronghold, PAL_StrongholdRawData)
+EventPointerTable(CONFIG_Stronghold, CONFIG_StrongholdRawData)

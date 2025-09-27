@@ -1,0 +1,30 @@
+ALIGN 4
+OBJ_CastleRawData:
+#incbin "Castle.dmp"
+
+ALIGN 4
+PAL_CastlePurpleRawData:
+#incbin "CastlePurple_pal.dmp"
+
+ALIGN 4
+PAL_CastleLightBlueRawData:
+#incbin "CastleLightBlue_pal.dmp"
+
+ALIGN 4
+PAL_CastleBlueRawData:
+#incbin "CastleBlue_pal.dmp"
+
+ALIGN 4
+PAL_CastlePurpurRawData:
+#incbin "CastlePurpur_pal.dmp"
+
+ALIGN 4
+CONFIG_CastleRawData:
+#incext compress "Castle.mapchip_config"
+
+EventPointerTable(OBJ_Castle, OBJ_CastleRawData)
+EventPointerTable(PAL_CastlePurple, PAL_CastlePurpleRawData)
+EventPointerTable(PAL_CastleLightBlue, PAL_CastleLightBlueRawData)
+EventPointerTable(PAL_CastleBlue, PAL_CastleBlueRawData)
+EventPointerTable(PAL_CastlePurpur, PAL_CastlePurpurRawData)
+EventPointerTable(CONFIG_Castle, CONFIG_CastleRawData)

@@ -1,0 +1,39 @@
+ALIGN 4
+TILEANIM1_WaterInsideFrame0:
+#incbin "WaterInside.mapanime1_000.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame1:
+#incbin "WaterInside.mapanime1_001.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame2:
+#incbin "WaterInside.mapanime1_002.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame3:
+#incbin "WaterInside.mapanime1_003.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame4:
+#incbin "WaterInside.mapanime1_004.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame5:
+#incbin "WaterInside.mapanime1_005.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame6:
+#incbin "WaterInside.mapanime1_006.dmp"
+ALIGN 4
+TILEANIM1_WaterInsideFrame7:
+#incbin "WaterInside.mapanime1_007.dmp"
+
+
+ALIGN 4
+TILEANIM1_WaterInsideRawData:
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame0)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame1)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame2)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame3)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame4)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame5)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame6)
+tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame7)
+WORD 0 0
+
+EventPointerTable(TILEANIM1_WaterInside,TILEANIM1_WaterInsideRawData)

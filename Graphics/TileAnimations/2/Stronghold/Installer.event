@@ -1,0 +1,63 @@
+
+TILEANIM2_StrongholdColors0:
+BYTE  $FF $7F $BD $1B $3F $22;
+
+TILEANIM2_StrongholdColors1:
+BYTE  $FF $73 $9E $33 $1F $22;
+
+TILEANIM2_StrongholdColors2:
+BYTE  $FF $67 $7F $4B $FF $21;
+
+TILEANIM2_StrongholdColors3:
+BYTE  $FF $57 $3F $43 $DF $21;
+
+TILEANIM2_StrongholdColors4:
+BYTE  $FF $43 $DF $36 $9F $1D;
+
+TILEANIM2_StrongholdColors5:
+BYTE  $BF $43 $BF $36 $BE $1D;
+
+TILEANIM2_StrongholdColors6:
+BYTE  $5F $43 $9F $36 $BC $1D;
+
+TILEANIM2_StrongholdColors7:
+BYTE  $BF $43 $BF $36 $BE $1D;
+
+TILEANIM2_StrongholdColors8:
+BYTE  $FF $43 $DF $36 $9F $1D;
+
+TILEANIM2_StrongholdColors9:
+BYTE  $FF $4B $FF $3A $DF $21;
+
+TILEANIM2_StrongholdColors10:
+BYTE  $DF $63 $5F $47 $FF $21;
+
+TILEANIM2_StrongholdColors11:
+BYTE  $FF $73 $9E $33 $1F $22;
+
+TILEANIM2_StrongholdColors12:
+BYTE  $FF $7F $BD $1B $3F $22;
+
+TILEANIM2_StrongholdColors13:
+BYTE  $FF $73 $9E $33 $1F $22;
+
+ALIGN 4
+TILEANIM2_StrongholdRawData:
+paletteAnimation(TILEANIM2_StrongholdColors0, 5, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors1, 6, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors2, 6, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors3, 8, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors4, 6, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors5, 6, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors6, 7, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors7, 9, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors8, 7, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors9, 8, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors10, 8, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors11, 8, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors12, 4, 3, 49, 0)
+paletteAnimation(TILEANIM2_StrongholdColors13, 7, 3, 49, 0)
+WORD 0x0
+WORD 0x0
+
+EventPointerTable(TILEANIM2_Stronghold,TILEANIM2_StrongholdRawData)

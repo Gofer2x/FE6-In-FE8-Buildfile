@@ -1,0 +1,70 @@
+ALIGN 4
+TILEANIM1_WaterFrame0:
+#incbin "Water.mapanime1_000.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame1:
+#incbin "Water.mapanime1_001.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame2:
+#incbin "Water.mapanime1_002.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame3:
+#incbin "Water.mapanime1_003.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame4:
+#incbin "Water.mapanime1_004.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame5:
+#incbin "Water.mapanime1_005.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame6:
+#incbin "Water.mapanime1_006.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame7:
+#incbin "Water.mapanime1_007.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame8:
+#incbin "Water.mapanime1_008.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame9:
+#incbin "Water.mapanime1_009.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame10:
+#incbin "Water.mapanime1_010.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame11:
+#incbin "Water.mapanime1_011.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame12:
+#incbin "Water.mapanime1_012.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame13:
+#incbin "Water.mapanime1_013.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame14:
+#incbin "Water.mapanime1_014.dmp"
+ALIGN 4
+TILEANIM1_WaterFrame15:
+#incbin "Water.mapanime1_015.dmp"
+
+ALIGN 4
+TILEANIM1_WaterRawData:
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame0)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame1)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame2)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame3)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame4)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame5)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame6)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame7)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame8)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame9)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame10)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame11)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame12)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame13)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame14)
+tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame15)
+WORD 0 0
+
+EventPointerTable(TILEANIM1_Water,TILEANIM1_WaterRawData)

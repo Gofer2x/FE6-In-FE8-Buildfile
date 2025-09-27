@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_SnowRawData:
+#incbin "Snow.dmp"
+
+ALIGN 4
+PAL_SnowRawData:
+#incbin "Snow_pal.dmp"
+
+ALIGN 4
+CONFIG_SnowRawData:
+#incext compress "Snow.mapchip_config"
+
+EventPointerTable(OBJ_Snow, OBJ_SnowRawData)
+EventPointerTable(PAL_Snow, PAL_SnowRawData)
+EventPointerTable(CONFIG_Snow, CONFIG_SnowRawData)

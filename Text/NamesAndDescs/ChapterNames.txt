@@ -1,0 +1,134 @@
+## IntroName
+Set-Up[X]
+
+## Ch1Name
+Breath of Destiny[X]
+
+## Ch2Name
+Princess of Bern[X]
+
+## Ch3Name
+Latecomer's Sorrow[X]
+
+## Ch4Name
+Crumbling League[X]
+
+## Ch5Name
+Fire Emblem[X]
+
+## Ch6Name
+Ensnared[X]
+
+## Ch7Name
+The Ostian Revolt[X]
+
+## Ch8Name
+Reunion[X]
+
+## Ch8xName
+The Blazing Blade[X]
+
+## Ch9Name
+The Misty Isles[X]
+
+## Ch10AName
+Western Resistance[X]
+
+## Ch11AName
+The Hero of the West[X]
+
+## Ch10BName
+Amidst a Struggle[X]
+
+## Ch11BName
+Flight Toward Freedom[X]
+
+## Ch12Name
+The True Enemy[X]
+
+## Ch12xName
+The Thunder Axe[X]
+
+## Ch13Name
+Rescue Mission[X]
+
+## Ch14Name
+Arcadia[X]
+
+## Ch14xName
+The Infernal Truth[X]
+
+## Ch15Name
+The Dragon Child[X]
+
+## Ch16Name
+Storming the Capital[X]
+
+## Ch16xName
+The Glorious Ascension[X]
+
+## Ch17AName
+Ocean's Parting[X]
+
+## Ch18AName
+The Frozen River[X]
+
+## Ch19AName
+Bitter Cold[X]
+
+## Ch20AName
+Ilia's Salvation[X]
+
+## Ch20AxName
+The Freezing Lance[X]
+
+## Ch17BName
+The Bishop's Teachings[X]
+
+## Ch18BName
+The Laws of Sacae[X]
+
+## Ch19BName
+Battle in Bulgar[X]
+
+## Ch20BName
+The Silver Wolf[X]
+
+## Ch20BxName
+The Bow of Swift Wind[X]
+
+## Ch21Name
+The Binding Blade[X]
+
+## Ch21xName
+The Elder Revelation[X]
+
+## Ch22Name
+Unattained Dream[X]
+
+## Ch23Name
+The Ghosts of Bern[X]
+
+## Ch24Name
+Legends and Lies[X]
+
+## FinalName
+Beyond Darkness[X]
+
+## TutorialChapterName
+Tutorial[X]
+
+## Trial_ValleyOfDeathName
+Valley of Death[X]
+
+## Trial_RainyIslandName
+Rainy Island[X]
+
+## Trial_SnowyDefensiveName
+Snowy Defensive[X]
+
+## Trial_PiratesChallengeName
+Pirate's Challenge[X]
+
+## Trial_RoysTrial
+Roy's Trial[X]

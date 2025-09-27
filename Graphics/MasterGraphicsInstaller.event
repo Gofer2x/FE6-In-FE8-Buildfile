@@ -1,0 +1,15 @@
+TilesetsStart:
+MESSAGE Inserting Tilesets at CurrentOffset
+#include "Tilesets/TilesetsInstaller.event"
+MESSAGE "Tilesets Size is {CurrentOffset-TilesetsStart:N1} Bytes"
+
+TileAnimationsStart:
+MESSAGE Inserting Tile Animations at CurrentOffset
+#include "TileAnimations/TileAnimationsInstaller.event"
+MESSAGE "Tile Animations Size is {CurrentOffset-TileAnimationsStart:N1} Bytes"
+
+BattleBGsStart:
+MESSAGE Inserting Battle BGs at CurrentOffset
+#include "BattleBGs/BattleBGsInstaller.event"
+#include "BattleBGs/EditTerrainBGsFloorsTable.event"
+MESSAGE "Battle BGs Size is {CurrentOffset-BattleBGsStart:N1} Bytes"

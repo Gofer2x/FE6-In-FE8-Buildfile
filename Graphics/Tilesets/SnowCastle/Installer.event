@@ -1,0 +1,20 @@
+ALIGN 4
+OBJ_SnowCastleRawData:
+#incbin "SnowCastle.dmp"
+
+ALIGN 4
+PAL_SnowCastleRawData:
+#incbin "SnowCastle_pal.dmp"
+
+ALIGN 4
+PAL_SnowCastleGaidenRawData:
+#incbin "SnowCastleGaiden_pal.dmp"
+
+ALIGN 4
+CONFIG_SnowCastleRawData:
+#incext compress "SnowCastle.mapchip_config"
+
+EventPointerTable(OBJ_SnowCastle, OBJ_SnowCastleRawData)
+EventPointerTable(PAL_SnowCastle, PAL_SnowCastleRawData)
+EventPointerTable(PAL_SnowCastleGaiden, PAL_SnowCastleGaidenRawData)
+EventPointerTable(CONFIG_SnowCastle, CONFIG_SnowCastleRawData)

@@ -1,0 +1,15 @@
+ALIGN 4
+OBJ_PlainsCastleRawData:
+#incbin "PlainsCastle.dmp"
+
+ALIGN 4
+PAL_PlainsCastleRawData:
+#incbin "PlainsCastle_pal.dmp"
+
+ALIGN 4
+CONFIG_PlainsCastleRawData:
+#incext compress "PlainsCastle.mapchip_config"
+
+EventPointerTable(OBJ_PlainsCastle, OBJ_PlainsCastleRawData)
+EventPointerTable(PAL_PlainsCastle, PAL_PlainsCastleRawData)
+EventPointerTable(CONFIG_PlainsCastle, CONFIG_PlainsCastleRawData)

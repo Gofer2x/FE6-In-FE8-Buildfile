@@ -1,0 +1,17 @@
+#ifndef tilesetAnimation
+    #define tilesetAnimation(speed, size, pointer)    "BYTE speed 0; SHORT size; POIN pointer"
+#endif
+
+#ifndef paletteAnimation
+    #define paletteAnimation(pointer, speed, size, number, zero)    "POIN pointer; BYTE speed; BYTE size; BYTE number; BYTE zero"
+#endif
+
+
+#include "1/Water/Installer.event"
+#include "1/WaterInside/Installer.event"
+#include "1/Snow/Installer.event"
+
+#include "2/Lava/Installer.event"
+#include "2/Snow/Installer.event"
+#include "2/Stronghold/Installer.event"
+#include "2/Final/Installer.event"

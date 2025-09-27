@@ -184,6 +184,110 @@
 //status staves will give 
 #define ItemStatus(StatusID,Duration) "StatusID | (Duration << 4)"
 
+//Chapter Numbers
+#define ChNumber0 0x0
+#define ChNumber0x 0x1
+#define ChNumber1 0x2
+#define ChNumber1x 0x3
+#define ChNumber2 0x4
+#define ChNumber2x 0x5
+#define ChNumber3 0x6
+#define ChNumber3x 0x7
+#define ChNumber4 0x8
+#define ChNumber4x 0x9
+#define ChNumber5 0xA
+#define ChNumber5x 0xB
+#define ChNumber6 0xC
+#define ChNumber6x 0xD
+#define ChNumber7 0xE
+#define ChNumber7x 0xF
+#define ChNumber8 0x10
+#define ChNumber8x 0x11
+#define ChNumber9 0x12
+#define ChNumber9x 0x13
+#define ChNumber10 0x14
+#define ChNumber10x 0x15
+#define ChNumber11 0x16
+#define ChNumber11x 0x17
+#define ChNumber12 0x18
+#define ChNumber12x 0x19
+#define ChNumber13 0x1A
+#define ChNumber13x 0x1B
+#define ChNumber14 0x1C
+#define ChNumber14x 0x1D
+#define ChNumber15 0x1E
+#define ChNumber15x 0x1F
+#define ChNumber16 0x20
+#define ChNumber16x 0x21
+#define ChNumber17 0x22
+#define ChNumber17x 0x23
+#define ChNumber18 0x24
+#define ChNumber18x 0x25
+#define ChNumber19 0x26
+#define ChNumber19x 0x27
+#define ChNumber20 0x28
+#define ChNumber20x 0x29
+#define ChNumber21 0x2A
+#define ChNumber21x 0x2B
+#define ChNumber22 0x2C
+#define ChNumber22x 0x2D
+#define ChNumber23 0x2E
+#define ChNumber23x 0x2F
+#define ChNumber24 0x30
+#define ChNumber24x 0x31
+#define ChNumber25 0x32
+#define ChNumber25x 0x33
+#define ChNumber26 0x34
+#define ChNumber26x 0x35
+#define ChNumber27 0x36
+#define ChNumber27x 0x37
+#define ChNumber28 0x38
+#define ChNumber28x 0x39
+#define ChNumber29 0x3A
+#define ChNumber29x 0x3B
+#define ChNumber30 0x3C
+#define ChNumber30x 0x3D
+#define ChNumber31 0x3E
+#define ChNumber31x 0x3F
+#define ChNumber32 0x40
+#define ChNumber32x 0x41
+#define ChNumber33 0x42
+#define ChNumber33x 0x43
+#define ChNumber34 0x44
+#define ChNumber34x 0x45
+#define ChNumber35 0x46
+#define ChNumber35x 0x47
+#define ChNumber36 0x48
+#define ChNumber36x 0x49
+#define ChNumber37 0x4A
+#define ChNumber37x 0x4B
+#define ChNumber38 0x4C
+#define ChNumber38x 0x4D
+#define ChNumber39 0x4E
+#define ChNumber39x 0x4F
+#define ChNumber40 0x50
+#define ChNumber40x 0x51
+#define ChNumber41 0x52
+#define ChNumber41x 0x53
+#define ChNumber42 0x54
+#define ChNumber42x 0x55
+#define ChNumber43 0x56
+#define ChNumber43x 0x57
+#define ChNumber44 0x58
+#define ChNumber44x 0x59
+#define ChNumber45 0x5A
+#define ChNumber45x 0x5B
+#define ChNumber46 0x5C
+#define ChNumber46x 0x5D
+#define ChNumber47 0x5E
+#define ChNumber47x 0x5F
+
+//Chapter Goals
+#define WindowGoalGate 0x19F
+#define WindowGoalThrone 0x1A1
+#define StatusGoalGate 0x19F
+#define StatusGoalThrone 0x1A1
+
 #endif
 
 #include "ExternalTables.event"

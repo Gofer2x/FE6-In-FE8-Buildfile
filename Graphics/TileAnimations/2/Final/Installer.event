@@ -1,0 +1,31 @@
+
+TILEANIM2_FinalColors0:
+BYTE  $34 $3F $05 $43 $C3 $4E $4D $66;
+
+TILEANIM2_FinalColors1:
+BYTE  $73 $3F $44 $43 $02 $4F $8C $66;
+
+TILEANIM2_FinalColors2:
+BYTE  $95 $4B $66 $4F $24 $5F $AE $72;
+
+TILEANIM2_FinalColors3:
+BYTE  $B7 $4F $88 $53 $46 $67 $D0 $76;
+
+TILEANIM2_FinalColors4:
+BYTE  $95 $4B $66 $4F $24 $5F $AE $72;
+
+TILEANIM2_FinalColors5:
+BYTE  $73 $3F $44 $43 $02 $4F $8C $66;
+
+ALIGN 4
+TILEANIM2_FinalRawData:
+paletteAnimation(TILEANIM2_FinalColors0, 20, 4, 65, 0)
+paletteAnimation(TILEANIM2_FinalColors1, 10, 4, 65, 0)
+paletteAnimation(TILEANIM2_FinalColors2, 12, 4, 65, 0)
+paletteAnimation(TILEANIM2_FinalColors3, 20, 4, 65, 0)
+paletteAnimation(TILEANIM2_FinalColors4, 10, 4, 65, 0)
+paletteAnimation(TILEANIM2_FinalColors5, 12, 4, 65, 0)
+WORD 0x0
+WORD 0x0
+
+EventPointerTable(TILEANIM2_Final,TILEANIM2_FinalRawData)
