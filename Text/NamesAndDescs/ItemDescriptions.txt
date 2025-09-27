@@ -1,0 +1,67 @@
+## BindingBladeDescription
+Increases Def and Res by 5 pts.[X]
+
+## DurandalDescription
+Increases strength by 5 pts.[X]
+
+## ArmadsDescription
+Increases strength by 5 pts.[X]
+
+## ForblazeDescription
+Increases luck by 5 pts.[X]
+
+## AureolaDescription
+Boosts resistance by 5 pts.[X]
+
+## MulagirDescription
+Increases speed by 5 pts.[X]
+
+## MaltetDescription
+Increases strength by 5 pts.[X]
+
+## SaintsStaffDescription
+Fully restores all allies.[X]
+
+## ApocalypseDescription
+Boosts magic by 5 pts.[X]
+
+## EckesachsDescription
+Usable only by the king of Bern.[X]
+
+## AlsSwordDescription
+Wielded by Al.[X]
+
+## GantsLanceDescription
+Wielded by Gant.[X]
+
+## TinasStaffDescription
+Wielded by Tina.[X]
+
+## TinasStaffUseScreen
+Restores many HP.[X]
+
+## SaintsStaffUseScreen
+Restores all allies[N]
+completely.[X]
+
+## DelphiShieldDescription
+An amulet of the god Delphi.[N]
+Protects fliers from arrows.[X]
+
+## FirestoneDescription
+Transforms manaketes[N]
+into fire dragons.[X]
+
+## FirestoneUseScreen
+Manakete only.[X]
+
+## DivinestoneDescription
+Transforms Fae into[N]
+a divine dragon.[X]
+
+## DivinestoneUseScreen
+Fae only.[X]
+
+## DarkBreathDescription
+A devastating wave[N]
+of darkness.[X]

@@ -1,0 +1,27 @@
+#define PlusFivePOWBoost 0x8AEF48 //Sieglinde
+#define PlusFiveSKLBoost 0x8AEED0 //Glepinir
+#define PlusFiveSPDBoost 0x8AEEC4 //Excalibur
+#define PlusFiveDEFBoost 0x8AEF54 //Ivaldi
+#define PlusFiveRESBoost 0x8AEF78 //Audhulma
+#define PlusFiveLUCKBoost 0x8AEF9C //Nidhogg
+
+#define PlusSevenHPBoost 0x8AEEDC //Statboosters
+#define PlusTwoPOWBoost 0x8AEEE8
+#define PlusTwoSKLBoost 0x8AEEF4
+#define PlusTwoSPDBoost 0x8AEF00
+#define PlusTwoLUCKBoost 0x8AEF0C
+#define PlusTwoDEFBoost 0x8AEF18
+#define PlusTwoRESBoost 0x8AEF24
+#define PlusTwoMOVEBoost 0x8AEF30
+#define PlusTwoCONBoost 0x8AEF3C
+
+
+#define PlusFiveDEFBoost2 0x8AEF60 //Vidofnir
+#define PlusFivePOWBoost2 0x8AEF84 //Siegmund
+#define PlusFiveSPDBoost2 0x8AEF90 //Garm
+
+#define WretchedAirBoost 0x8AEF6C //+10 POW, +10 SKL, +20 DEF, +10 RES
+#define NightmareBoost 0x8AEFA8 //+5 DEF, +5 RES
+#define DemonLightBoost 0x8AEFB4//+10 POW, +10 SKL, +10 DEF, +15 RES, +10 LUCK
+#define RavagerBoost 0x8AEFC0//+15 POW, +15 SKL, +15 DEF, +10 RES
+#define DragonstoneBoost 0x8AEFCC//+12 POW, +12SKL, +15DEF, +20RES

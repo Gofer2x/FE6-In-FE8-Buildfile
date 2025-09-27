@@ -1,6 +1,13 @@
 #include "SkillSysDefinitions.event"
 
+#include "Vanilla/VanillaItemNameIDs.event"
+#include "Vanilla/VanillaItemDescriptionIDs.event"
+#include "Vanilla/VanillaItemIcons.event"
+//#include "Vanilla/VanillaEffectivenessTables.event"
+#include "Vanilla/VanillaStatBoosts.event"
+
 #include "PListIDs.event"
 
 #include "Generated/ChapterIDs.event"
+#include "Generated/ItemIDs.event"
 #include "TEMP/SoundIDs.event"

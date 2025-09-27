@@ -1,0 +1,671 @@
+#define IronSword_ItemIcon 0x0
+#define IronSword_ItemIconData 0x5926f4
+
+#define SlimSword_ItemIcon 0x1
+#define SlimSword_ItemIconData 0x592774
+
+#define SteelSword_ItemIcon 0x2
+#define SteelSword_ItemIconData 0x5927f4
+
+#define SilverSword_ItemIcon 0x3
+#define SilverSword_ItemIconData 0x592874
+
+#define IronBlade_ItemIcon 0x4
+#define IronBlade_ItemIconData 0x5928f4
+
+#define SteelBlade_ItemIcon 0x5
+#define SteelBlade_ItemIconData 0x592974
+
+#define SilverBlade_ItemIcon 0x6
+#define SilverBlade_ItemIconData 0x5929f4
+
+#define PoisonSword_ItemIcon 0x7
+#define PoisonSword_ItemIconData 0x592a74
+
+#define Rapier_ItemIcon 0x8
+#define Rapier_ItemIconData 0x592af4
+
+#define ManiKatti_ItemIcon 0x9
+#define ManiKatti_ItemIconData 0x592b74
+
+#define BraveSword_ItemIcon 0xA
+#define BraveSword_ItemIconData 0x592bf4
+
+#define WoDao_ItemIcon 0xB
+#define WoDao_ItemIconData 0x592c74
+
+#define KillingEdge_ItemIcon 0xC
+#define KillingEdge_ItemIconData 0x592cf4
+
+#define Armorslayer_ItemIcon 0xD
+#define Armorslayer_ItemIconData 0x592d74
+
+#define Wyrmslayer_ItemIcon 0xE
+#define Wyrmslayer_ItemIconData 0x592df4
+
+#define LightBrand_ItemIcon 0xF
+#define LightBrand_ItemIconData 0x592e74
+
+#define Runesword_ItemIcon 0x10
+#define Runesword_ItemIconData 0x592ef4
+
+#define Lancereaver_ItemIcon 0x11
+#define Lancereaver_ItemIconData 0x592f74
+
+#define Zanbato_ItemIcon 0x12
+#define Zanbato_ItemIconData 0x592ff4
+
+#define IronLance_ItemIcon 0x13
+#define IronLance_ItemIconData 0x593074
+
+#define SlimLance_ItemIcon 0x14
+#define SlimLance_ItemIconData 0x5930f4
+
+#define SteelLance_ItemIcon 0x15
+#define SteelLance_ItemIconData 0x593174
+
+#define SilverLance_ItemIcon 0x16
+#define SilverLance_ItemIconData 0x5931f4
+
+#define ToxinLance_ItemIcon 0x17
+#define ToxinLance_ItemIconData 0x593274
+
+#define BraveLance_ItemIcon 0x18
+#define BraveLance_ItemIconData 0x5932f4
+
+#define KillerLance_ItemIcon 0x19
+#define KillerLance_ItemIconData 0x593374
+
+#define Horseslayer_ItemIcon 0x1A
+#define Horseslayer_ItemIconData 0x5933f4
+
+#define Javelin_ItemIcon 0x1B
+#define Javelin_ItemIconData 0x593474
+
+#define Spear_ItemIcon 0x1C
+#define Spear_ItemIconData 0x5934f4
+
+#define Axereaver_ItemIcon 0x1D
+#define Axereaver_ItemIconData 0x593574
+
+#define IronAxe_ItemIcon 0x1E
+#define IronAxe_ItemIconData 0x5935f4
+
+#define SteelAxe_ItemIcon 0x1F
+#define SteelAxe_ItemIconData 0x593674
+
+#define SilverAxe_ItemIcon 0x20
+#define SilverAxe_ItemIconData 0x5936f4
+
+#define PoisonAxe_ItemIcon 0x21
+#define PoisonAxe_ItemIconData 0x593774
+
+#define BraveAxe_ItemIcon 0x22
+#define BraveAxe_ItemIconData 0x5937f4
+
+#define KillerAxe_ItemIcon 0x23
+#define KillerAxe_ItemIconData 0x593874
+
+#define Halberd_ItemIcon 0x24
+#define Halberd_ItemIconData 0x5938f4
+
+#define Hammer_ItemIcon 0x25
+#define Hammer_ItemIconData 0x593974
+
+#define DevilAxe_ItemIcon 0x26
+#define DevilAxe_ItemIconData 0x5939f4
+
+#define HandAxe_ItemIcon 0x27
+#define HandAxe_ItemIconData 0x593a74
+
+#define Tomahawk_ItemIcon 0x28
+#define Tomahawk_ItemIconData 0x593af4
+
+#define Swordreaver_ItemIcon 0x29
+#define Swordreaver_ItemIconData 0x593b74
+
+#define Swordslayer_ItemIcon 0x2A
+#define Swordslayer_ItemIconData 0x593bf4
+
+#define IronBow_ItemIcon 0x2B
+#define IronBow_ItemIconData 0x593c74
+
+#define SteelBow_ItemIcon 0x2C
+#define SteelBow_ItemIconData 0x593cf4
+
+#define SilverBow_ItemIcon 0x2D
+#define SilverBow_ItemIconData 0x593d74
+
+#define PoisonBow_ItemIcon 0x2E
+#define PoisonBow_ItemIconData 0x593df4
+
+#define KillerBow_ItemIcon 0x2F
+#define KillerBow_ItemIconData 0x593e74
+
+#define BraveBow_ItemIcon 0x30
+#define BraveBow_ItemIconData 0x593ef4
+
+#define ShortBow_ItemIcon 0x31
+#define ShortBow_ItemIconData 0x593f74
+
+#define Longbow_ItemIcon 0x32
+#define Longbow_ItemIconData 0x593ff4
+
+#define Ballista_ItemIcon 0x33
+#define Ballista_ItemIconData 0x594074
+
+#define IronBallista_ItemIcon 0x34
+#define IronBallista_ItemIconData 0x5940f4
+
+#define KillerBallista_ItemIcon 0x35
+#define KillerBallista_ItemIconData 0x594174
+
+#define Fire_ItemIcon 0x36
+#define Fire_ItemIconData 0x5941f4
+
+#define Thunder_ItemIcon 0x37
+#define Thunder_ItemIconData 0x594274
+
+#define Elfire_ItemIcon 0x38
+#define Elfire_ItemIconData 0x5942f4
+
+#define Bolting_ItemIcon 0x39
+#define Bolting_ItemIconData 0x594374
+
+#define Fimbulvetr_ItemIcon 0x3A
+#define Fimbulvetr_ItemIconData 0x5943f4
+
+#define Forblaze_ItemIcon 0x3B
+#define Forblaze_ItemIconData 0x594474
+
+#define Excalibur_ItemIcon 0x3C
+#define Excalibur_ItemIconData 0x5944f4
+
+#define Lightning_ItemIcon 0x3D
+#define Lightning_ItemIconData 0x594574
+
+#define Shine_ItemIcon 0x3E
+#define Shine_ItemIconData 0x5945f4
+
+#define Divine_ItemIcon 0x3F
+#define Divine_ItemIconData 0x594674
+
+#define Purge_ItemIcon 0x40
+#define Purge_ItemIconData 0x5946f4
+
+#define Aura_ItemIcon 0x41
+#define Aura_ItemIconData 0x594774
+
+#define Luce_ItemIcon 0x42
+#define Luce_ItemIconData 0x5947f4
+
+#define Flux_ItemIcon 0x43
+#define Flux_ItemIconData 0x594874
+
+#define Luna_ItemIcon 0x44
+#define Luna_ItemIconData 0x5948f4
+
+#define Nosferatu_ItemIcon 0x45
+#define Nosferatu_ItemIconData 0x594974
+
+#define Eclipse_ItemIcon 0x46
+#define Eclipse_ItemIconData 0x5949f4
+
+#define Fenrir_ItemIcon 0x47
+#define Fenrir_ItemIconData 0x594a74
+
+#define UnusedDarkTome_ItemIcon 0x48
+#define UnusedDarkTome_ItemIconData 0x594af4
+
+#define Heal_ItemIcon 0x49
+#define Heal_ItemIconData 0x594b74
+
+#define Mend_ItemIcon 0x4A
+#define Mend_ItemIconData 0x594bf4
+
+#define Recover_ItemIcon 0x4B
+#define Recover_ItemIconData 0x594c74
+
+#define Physic_ItemIcon 0x4C
+#define Physic_ItemIconData 0x594cf4
+
+#define Fortify_ItemIcon 0x4D
+#define Fortify_ItemIconData 0x594d74
+
+#define Restore_ItemIcon 0x4E
+#define Restore_ItemIconData 0x594df4
+
+#define Silence_ItemIcon 0x4F
+#define Silence_ItemIconData 0x594e74
+
+#define Sleep_ItemIcon 0x50
+#define Sleep_ItemIconData 0x594ef4
+
+#define Berserk_ItemIcon 0x51
+#define Berserk_ItemIconData 0x594f74
+
+#define Warp_ItemIcon 0x52
+#define Warp_ItemIconData 0x594ff4
+
+#define Rescue_ItemIcon 0x53
+#define Rescue_ItemIconData 0x595074
+
+#define TorchStaff_ItemIcon 0x54
+#define TorchStaff_ItemIconData 0x5950f4
+
+#define Hammerne_ItemIcon 0x55
+#define Hammerne_ItemIconData 0x595174
+
+#define Unlock_ItemIcon 0x56
+#define Unlock_ItemIconData 0x5951f4
+
+#define Barrier_ItemIcon 0x57
+#define Barrier_ItemIconData 0x595274
+
+#define DragonAxe_ItemIcon 0x58
+#define DragonAxe_ItemIconData 0x5952f4
+
+#define AngelicRobe_ItemIcon 0x59
+#define AngelicRobe_ItemIconData 0x595374
+
+#define EnergyRing_ItemIcon 0x5A
+#define EnergyRing_ItemIconData 0x5953f4
+
+#define SecretBook_ItemIcon 0x5B
+#define SecretBook_ItemIconData 0x595474
+
+#define Speedwings_ItemIcon 0x5C
+#define Speedwings_ItemIconData 0x5954f4
+
+#define GoddessIcon_ItemIcon 0x5D
+#define GoddessIcon_ItemIconData 0x595574
+
+#define Dragonshield_ItemIcon 0x5E
+#define Dragonshield_ItemIconData 0x5955f4
+
+#define Talisman_ItemIcon 0x5F
+#define Talisman_ItemIconData 0x595674
+
+#define Swiftsoles_ItemIcon 0x60
+#define Swiftsoles_ItemIconData 0x5956f4
+
+#define BodyRing_ItemIcon 0x61
+#define BodyRing_ItemIconData 0x595774
+
+#define HeroCrest_ItemIcon 0x62
+#define HeroCrest_ItemIconData 0x5957f4
+
+#define KnightCrest_ItemIcon 0x63
+#define KnightCrest_ItemIconData 0x595874
+
+#define OrionsBolt_ItemIcon 0x64
+#define OrionsBolt_ItemIconData 0x5958f4
+
+#define ElysianWhip_ItemIcon 0x65
+#define ElysianWhip_ItemIconData 0x595974
+
+#define GuidingRing_ItemIcon 0x66
+#define GuidingRing_ItemIconData 0x5959f4
+
+#define ChestKey_ItemIcon 0x67
+#define ChestKey_ItemIconData 0x595a74
+
+#define DoorKey_ItemIcon 0x68
+#define DoorKey_ItemIconData 0x595af4
+
+#define Lockpick_ItemIcon 0x69
+#define Lockpick_ItemIconData 0x595b74
+
+#define Vulnerary_ItemIcon 0x6A
+#define Vulnerary_ItemIconData 0x595bf4
+
+#define Elixir_ItemIcon 0x6B
+#define Elixir_ItemIconData 0x595c74
+
+#define PureWater_ItemIcon 0x6C
+#define PureWater_ItemIconData 0x595cf4
+
+#define Antitoxin_ItemIcon 0x6D
+#define Antitoxin_ItemIconData 0x595d74
+
+#define Torch_ItemIcon 0x6E
+#define Torch_ItemIconData 0x595df4
+
+#define DelphiShield_ItemIcon 0x6F
+#define DelphiShield_ItemIconData 0x595e74
+
+#define SwordRank_ItemIcon 0x70
+#define SwordRank_ItemIconData 0x595ef4
+
+#define LanceRank_ItemIcon 0x71
+#define LanceRank_ItemIconData 0x595f74
+
+#define AxeRank_ItemIcon 0x72
+#define AxeRank_ItemIconData 0x595ff4
+
+#define BowRank_ItemIcon 0x73
+#define BowRank_ItemIconData 0x596074
+
+#define StaffRank_ItemIcon 0x74
+#define StaffRank_ItemIconData 0x5960f4
+
+#define AnimaRank_ItemIcon 0x75
+#define AnimaRank_ItemIconData 0x596174
+
+#define LightRank_ItemIcon 0x76
+#define LightRank_ItemIconData 0x5961f4
+
+#define DarkRank_ItemIcon 0x77
+#define DarkRank_ItemIconData 0x596274
+
+#define Eckesachs_ItemIcon 0x78
+#define Eckesachs_ItemIconData 0x5962f4
+
+#define WretchedAir_ItemIcon 0x79
+#define WretchedAir_ItemIconData 0x596374
+
+#define FireAffinity_ItemIcon 0x7A
+#define FireAffinity_ItemIconData 0x5963f4
+
+#define ThunderAffinity_ItemIcon 0x7B
+#define ThunderAffinity_ItemIconData 0x596474
+
+#define WindAffinity_ItemIcon 0x7C
+#define WindAffinity_ItemIconData 0x5964f4
+
+#define IceAffinity_ItemIcon 0x7D
+#define IceAffinity_ItemIconData 0x596574
+
+#define DarkAffinity_ItemIcon 0x7E
+#define DarkAffinity_ItemIconData 0x5965f4
+
+#define LightAffinity_ItemIcon 0x7F
+#define LightAffinity_ItemIconData 0x596674
+
+#define AnimaAffinity_ItemIcon 0x80
+#define AnimaAffinity_ItemIconData 0x5966f4
+
+#define HorseIcon_ItemIcon 0x81
+#define HorseIcon_ItemIconData 0x596774
+
+#define PegasusIcon_ItemIcon 0x82
+#define PegasusIcon_ItemIconData 0x5967f4
+
+#define WyvernIcon_ItemIcon 0x83
+#define WyvernIcon_ItemIconData 0x596874
+
+#define MemberCard_ItemIcon 0x84
+#define MemberCard_ItemIconData 0x5968f4
+
+#define SilverCard_ItemIcon 0x85
+#define SilverCard_ItemIconData 0x596974
+
+#define WhiteGem_ItemIcon 0x86
+#define WhiteGem_ItemIconData 0x5969f4
+
+#define BlueGem_ItemIcon 0x87
+#define BlueGem_ItemIconData 0x596a74
+
+#define RedGem_ItemIcon 0x88
+#define RedGem_ItemIconData 0x596af4
+
+#define Sack_ItemIcon 0x89
+#define Sack_ItemIconData 0x596b74
+
+#define Spear2_ItemIcon 0x8A
+#define Spear2_ItemIconData 0x596bf4
+
+#define BridgeKey_ItemIcon 0x8B
+#define BridgeKey_ItemIconData 0x596c74
+
+#define Mine_ItemIcon 0x8C
+#define Mine_ItemIconData 0x596cf4
+
+#define LightRune_ItemIcon 0x8D
+#define LightRune_ItemIconData 0x596d74
+
+#define IronRune_ItemIcon 0x8E
+#define IronRune_ItemIconData 0x596df4
+
+#define FilasMight_ItemIcon 0x8F
+#define FilasMight_ItemIconData 0x596e74
+
+#define NinisGrace_ItemIcon 0x90
+#define NinisGrace_ItemIconData 0x596ef4
+
+#define ThorsIre_ItemIcon 0x91
+#define ThorsIre_ItemIconData 0x596f74
+
+#define SetsLitany_ItemIcon 0x92
+#define SetsLitany_ItemIconData 0x596ff4
+
+#define Shadowkiller_ItemIcon 0x93
+#define Shadowkiller_ItemIconData 0x597074
+
+#define BrightLance_ItemIcon 0x94
+#define BrightLance_ItemIconData 0x5970f4
+
+#define Fiendcleaver_ItemIcon 0x95
+#define Fiendcleaver_ItemIconData 0x597174
+
+#define BeaconBow_ItemIcon 0x96
+#define BeaconBow_ItemIconData 0x5971f4
+
+#define Durandal_ItemIcon 0x97
+#define Durandal_ItemIconData 0x597274
+
+#define Armads_ItemIcon 0x98
+#define Armads_ItemIconData 0x5972f4
+
+#define Aureola_ItemIcon 0x99
+#define Aureola_ItemIconData 0x597374
+
+#define EarthSeal_ItemIcon 0x9A
+#define EarthSeal_ItemIconData 0x5973f4
+
+#define AfasDrops_ItemIcon 0x9B
+#define AfasDrops_ItemIconData 0x597474
+
+#define HeavenSeal_ItemIcon 0x9C
+#define HeavenSeal_ItemIconData 0x5974f4
+
+#define Scroll_ItemIcon 0x9D
+#define Scroll_ItemIconData 0x597574
+
+#define FellContract_ItemIcon 0x9E
+#define FellContract_ItemIconData 0x5975f4
+
+#define SolKatti_ItemIcon 0x9F
+#define SolKatti_ItemIconData 0x597674
+
+#define WolfBeil_ItemIcon 0xA0
+#define WolfBeil_ItemIconData 0x5976f4
+
+#define Ereshgikal_ItemIcon 0xA1
+#define Ereshgikal_ItemIconData 0x597774
+
+#define Firestone_ItemIcon 0xA2
+#define Firestone_ItemIconData 0x5977f4
+
+#define RegalBlade_ItemIcon 0xA3
+#define RegalBlade_ItemIconData 0x597874
+
+#define RexHasta_ItemIcon 0xA4
+#define RexHasta_ItemIconData 0x5978f4
+
+#define Basilikos_ItemIcon 0xA5
+#define Basilikos_ItemIconData 0x597974
+
+#define Rienfleche_ItemIcon 0xA6
+#define Rienfleche_ItemIconData 0x5979f4
+
+#define HeavySpear_ItemIcon 0xA7
+#define HeavySpear_ItemIconData 0x597a74
+
+#define ShortSpear_ItemIcon 0xA8
+#define ShortSpear_ItemIconData 0x597af4
+
+#define OceanSeal_ItemIcon 0xA9
+#define OceanSeal_ItemIconData 0x597b74
+
+#define WindSword_ItemIcon 0xAA
+#define WindSword_ItemIconData 0x597bf4
+
+#define GreenNote_ItemIcon 0xAB
+#define GreenNote_ItemIconData 0x597c74
+
+#define RedNote_ItemIcon 0xAC
+#define RedNote_ItemIconData 0x597cf4
+
+#define Placeholder1_ItemIcon 0xAD
+#define Placeholder1_ItemIconData 0x597d74
+
+#define Placeholder2_ItemIcon 0xAE
+#define Placeholder2_ItemIconData 0x597df4
+
+#define Placeholder3_ItemIcon 0xAF
+#define Placeholder3_ItemIconData 0x597e74
+
+#define Sieglinde_ItemIcon 0xB0
+#define Sieglinde_ItemIconData 0x597ef4
+
+#define Audhulma_ItemIcon 0xB1
+#define Audhulma_ItemIconData 0x597f74
+
+#define Shamshir_ItemIcon 0xB2
+#define Shamshir_ItemIconData 0x597ff4
+
+#define Reginleif_ItemIcon 0xB3
+#define Reginleif_ItemIconData 0x598074
+
+#define Siegmund_ItemIcon 0xB4
+#define Siegmund_ItemIconData 0x5980f4
+
+#define Vidofnir_ItemIcon 0xB5
+#define Vidofnir_ItemIconData 0x598174
+
+#define Dragonspear_ItemIcon 0xB6
+#define Dragonspear_ItemIconData 0x5981f4
+
+#define Garm_ItemIcon 0xB7
+#define Garm_ItemIconData 0x598274
+
+#define BattleAxe_ItemIcon 0xB8
+#define BattleAxe_ItemIconData 0x5982f4
+
+#define Hatchet_ItemIcon 0xB9
+#define Hatchet_ItemIconData 0x598374
+
+#define Nidhogg_ItemIcon 0xBA
+#define Nidhogg_ItemIconData 0x5983f4
+
+#define Ivaldi_ItemIcon 0xBB
+#define Ivaldi_ItemIconData 0x598474
+
+#define Gleipnir_ItemIcon 0xBC
+#define Gleipnir_ItemIconData 0x5984f4
+
+#define Naglfar_ItemIcon 0xBD
+#define Naglfar_ItemIconData 0x598574
+
+#define EvilEye_ItemIcon 0xBE
+#define EvilEye_ItemIconData 0x5985f4
+
+#define CrimsonEye_ItemIcon 0xBF
+#define CrimsonEye_ItemIconData 0x598674
+
+#define Stone_ItemIcon 0xC0
+#define Stone_ItemIconData 0x5986f4
+
+#define DemonSurge_ItemIcon 0xC1
+#define DemonSurge_ItemIconData 0x598774
+
+#define Shadowshot_ItemIcon 0xC2
+#define Shadowshot_ItemIconData 0x5987f4
+
+#define Latona_ItemIcon 0xC3
+#define Latona_ItemIconData 0x598874
+
+#define Dragonstone_ItemIcon 0xC4
+#define Dragonstone_ItemIconData 0x5988f4
+
+#define DemonLight_ItemIcon 0xC5
+#define DemonLight_ItemIconData 0x598974
+
+#define Ravager_ItemIcon 0xC6
+#define Ravager_ItemIconData 0x5989f4
+
+#define Nightmare_ItemIcon 0xC7
+#define Nightmare_ItemIconData 0x598a74
+
+#define BlackGem_ItemIcon 0xC8
+#define BlackGem_ItemIconData 0x598af4
+
+#define GoldGem_ItemIcon 0xC9
+#define GoldGem_ItemIconData 0x598b74
+
+#define Placeholder4_ItemIcon 0xCA
+#define Placeholder4_ItemIconData 0x598bf4
+
+#define Placeholder5_ItemIcon 0xCB
+#define Placeholder5_ItemIconData 0x598c74
+
+#define Placeholder6_ItemIcon 0xCC
+#define Placeholder6_ItemIconData 0x598cf4
+
+#define Placeholder7_ItemIcon 0xCD
+#define Placeholder7_ItemIconData 0x598d74
+
+#define Placeholder8_ItemIcon 0xCE
+#define Placeholder8_ItemIconData 0x598df4
+
+#define Placeholder9_ItemIcon 0xCF
+#define Placeholder9_ItemIconData 0x598e74
+
+#define SharpClaw_ItemIcon 0xD0
+#define SharpClaw_ItemIconData 0x598ef4
+
+#define RottenClaw_ItemIcon 0xD1
+#define RottenClaw_ItemIconData 0x598f74
+
+#define FetidClaw_ItemIcon 0xD2
+#define FetidClaw_ItemIconData 0x598ff4
+
+#define PoisonClaw_ItemIcon 0xD3
+#define PoisonClaw_ItemIconData 0x599074
+
+#define LethalTalon_ItemIcon 0xD4
+#define LethalTalon_ItemIconData 0x5990f4
+
+#define FieryFang_ItemIcon 0xD5
+#define FieryFang_ItemIconData 0x599174
+
+#define Hellfang_ItemIcon 0xD6
+#define Hellfang_ItemIconData 0x5991f4
+
+#define SolarBrace_ItemIcon 0xD7
+#define SolarBrace_ItemIconData 0x599274
+
+#define LunarBrace_ItemIcon 0xD8
+#define LunarBrace_ItemIconData 0x5992f4
+
+#define MasterSeal_ItemIcon 0xD9
+#define MasterSeal_ItemIconData 0x599374
+
+#define FiliShield_ItemIcon 0xDA
+#define FiliShield_ItemIconData 0x5993f4
+
+#define HoplonGuard_ItemIcon 0xDB
+#define HoplonGuard_ItemIconData 0x599474
+
+#define MetisTome_ItemIcon 0xDC
+#define MetisTome_ItemIconData 0x5994f4
+
+#define JunaFruit_ItemIcon 0xDD
+#define JunaFruit_ItemIconData 0x599574
+
+#define Placeholder10_ItemIcon 0xDE
+#define Placeholder10_ItemIconData 0x5995f4
+
+#define Placeholder11_ItemIcon 0xDF
+#define Placeholder11_ItemIconData 0x599674

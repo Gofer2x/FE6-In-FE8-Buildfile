@@ -1,0 +1,10 @@
+#define LordWeaponEffectiveness 0x8ADEC2
+#define ArmorEffectiveness 0x8ADEBB
+#define DragonEffectiveness 0x8ADF13
+#define HorseEffectiveness 0x8ADEE0
+#define SwordEffectiveness 0x8ADED7
+#define FlierEffectiveness 0x8ADF2A
+#define SacredWeaponEffectiveness 0x8ADF39
+#define MonsterEffectiveness 0x8ADF39
+#define FlierAndMonster1 0x8ADEF1
+#define FlierAndMonster2 0x8ADEF1

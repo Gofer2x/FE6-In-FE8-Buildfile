@@ -2,4 +2,8 @@
 
 #include "NamesAndDescs/ChapterNames.txt"
 
+#include "NamesAndDescs/ItemNames.txt"
+#include "NamesAndDescs/ItemDescriptions.txt"
+
+
 #include "Misc/GoalIdunn.txt"
