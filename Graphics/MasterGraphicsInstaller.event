@@ -23,3 +23,8 @@ CSAAndSpellAnimsStart:
 MESSAGE Inserting CSA and Spell Animations at CurrentOffset
 #include "SpellAnimations/CSAAndSpellAnimInstaller.event"
 MESSAGE "CSA and Spell Animations Size is {CurrentOffset-CSAAndSpellAnimsStart:N1} Bytes"
+
+BattleScreenStart:
+MESSAGE Inserting Battle Screen Graphics at CurrentOffset
+#include "BattleScreen/BattleScreenInstaller.event"
+MESSAGE "Battle Screen Size is {CurrentOffset-BattleScreenStart:N1} Bytes"
