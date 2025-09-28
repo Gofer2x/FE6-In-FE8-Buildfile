@@ -1,0 +1,35 @@
+#include "CSA_System_FE8/MasterSpellAnimationInstaller.event"
+
+#define SpellAnim_BindingBlade 0x12
+
+#define SpellAnim_Forblaze 0x4B
+#define SpellAnim_Aureola 0x4C
+#define SpellAnim_Apocalypse 0x4D
+#define SpellAnim_Eckesachs 0x4E
+
+SpellAnimsSizeStart:
+
+//[Fire] Forblaze - FE8  FE6 Version {SHYUTERz}
+//NOTE: SE had their indexes increased by 3 (so $12A -> $12D, $12B -> $12E, $12C -> $12F)
+{
+#include "[Fire]_Forblaze_-_FE8__FE6_Version_{SHYUTERz}/Spell.event"
+}
+
+//[Light] Aureola {SHYUTERz}
+//NOTE: SE had their indexes decreased by 3 (so $12D -> $12A, $12E -> $12B, $12F -> $12C)
+{
+#include "[Light]_Aureola_{SHYUTERz}/Spell.event"
+}
+
+//[Dark] Apocalypse - FE8 {SHYUTERz}  1
+{
+#include "[Dark]_Apocalypse_-_FE8_{SHYUTERz}__1/Spell.event"
+}
+
+//[Other] Eckesachs Wave {SHYUTERz, IS}
+{
+#include "[Other]_Eckesachs_Wave_{SHYUTERz,_IS}/Spell.event"
+}
+
+SpellAnimsSizeEnd:
+MESSAGE "Spell Anims Size is {SpellAnimsSizeEnd-SpellAnimsSizeStart:N1} Bytes"

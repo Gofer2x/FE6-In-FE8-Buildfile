@@ -18,3 +18,8 @@ ItemIconsStart:
 MESSAGE Inserting Item Icons at CurrentOffset
 #include "ItemIcons/ItemIconInstaller.event"
 MESSAGE "Item Icons Size is {CurrentOffset-ItemIconsStart:N1} Bytes"
+
+CSAAndSpellAnimsStart:
+MESSAGE Inserting CSA and Spell Animations at CurrentOffset
+#include "SpellAnimations/CSAAndSpellAnimInstaller.event"
+MESSAGE "CSA and Spell Animations Size is {CurrentOffset-CSAAndSpellAnimsStart:N1} Bytes"
