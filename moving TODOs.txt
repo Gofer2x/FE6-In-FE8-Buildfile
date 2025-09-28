@@ -1,0 +1,2 @@
+get teh spell associations list in order
+once classes moved update effectiveness groups and items that use them for them (binding blade and divinestone)

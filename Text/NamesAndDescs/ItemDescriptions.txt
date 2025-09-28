@@ -65,3 +65,6 @@ Fae only.[X]
 ## DarkBreathDescription
 A devastating wave[N]
 of darkness.[X]
+
+## FlierEffectiveDescription
+Effective against fliers.[X]

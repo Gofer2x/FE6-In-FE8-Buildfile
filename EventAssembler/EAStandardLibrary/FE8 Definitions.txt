@@ -231,6 +231,7 @@
 #define Pupil_2 0x7F
 
 //Items
+/*
 #define IronSword 0x01
 #define SlimSword 0x02
 #define SteelSword 0x03
@@ -454,6 +455,7 @@
 #define _200G 0xB9
 #define BlackGem 0xBA
 #define GoldGem 0xBB
+*/
 
 //Chapter IDs
 #define Prologue 0x00
