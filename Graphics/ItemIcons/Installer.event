@@ -1,0 +1,33 @@
+//First free icon past vanilla is 222 / 0xDE 
+
+//Do I need to install the "Extended to item icon 0xFE patch"?
+
+#define ItemIconEntry(ItemIconID) "ORG NewItemIconsTable + (ItemIconID*128)"
+
+ALIGN 4
+NewItemIconsTable:
+#incbin "NewItemIconsTable.dmp"
+
+PUSH
+ORG $36B4
+POIN NewItemIconsTable
+ORG $3788
+POIN NewItemIconsTable
+POP
+
+//MESSAGE New Item Icons Table at NewItemIconsTable
+
+#define Aircalibur_ItemIcon 222 
+#define AlsSword_ItemIcon 223 
+#define Apocalypse_ItemIcon 224 
+#define BindingBlade_ItemIcon 225 
+#define Divinestone_ItemIcon 226 
+#define GantsLance_ItemIcon 227 
+#define Maltet_ItemIcon 228 
+#define Mulagir_ItemIcon 229 
+#define SaintsStaff_ItemIcon 230 
+#define TinasStaff_ItemIcon 231 
+
+
+
+#include "GeneratedInstaller.event"

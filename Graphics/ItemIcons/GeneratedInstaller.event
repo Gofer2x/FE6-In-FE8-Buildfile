@@ -1,0 +1,58 @@
+//Generated - do not edit!
+//Copy paste the /* */ section into your definitions if desired.
+ 
+ 
+ 
+/* 
+//First free icon past vanilla is 222 / 0xDE 
+ 
+#define Aircalibur_ItemIcon 222 
+#define AlsSword_ItemIcon 223 
+#define Apocalypse_ItemIcon 224 
+#define BindingBlade_ItemIcon 225 
+#define Divinestone_ItemIcon 226 
+#define GantsLance_ItemIcon 227 
+#define Maltet_ItemIcon 228 
+#define Mulagir_ItemIcon 229 
+#define SaintsStaff_ItemIcon 230 
+#define TinasStaff_ItemIcon 231 
+*/ 
+ 
+ 
+ 
+ 
+//Image Data 
+ 
+PUSH 
+ 
+ItemIconEntry(Aircalibur_ItemIcon) 
+#incbin "dmp/Aircalibur.dmp" 
+ 
+ItemIconEntry(AlsSword_ItemIcon) 
+#incbin "dmp/AlsSword.dmp" 
+ 
+ItemIconEntry(Apocalypse_ItemIcon) 
+#incbin "dmp/Apocalypse.dmp" 
+ 
+ItemIconEntry(BindingBlade_ItemIcon) 
+#incbin "dmp/BindingBlade.dmp" 
+ 
+ItemIconEntry(Divinestone_ItemIcon) 
+#incbin "dmp/Divinestone.dmp" 
+ 
+ItemIconEntry(GantsLance_ItemIcon) 
+#incbin "dmp/GantsLance.dmp" 
+ 
+ItemIconEntry(Maltet_ItemIcon) 
+#incbin "dmp/Maltet.dmp" 
+ 
+ItemIconEntry(Mulagir_ItemIcon) 
+#incbin "dmp/Mulagir.dmp" 
+ 
+ItemIconEntry(SaintsStaff_ItemIcon) 
+#incbin "dmp/SaintsStaff.dmp" 
+ 
+ItemIconEntry(TinasStaff_ItemIcon) 
+#incbin "dmp/TinasStaff.dmp" 
+ 
+POP 

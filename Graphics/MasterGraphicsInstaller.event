@@ -13,3 +13,8 @@ MESSAGE Inserting Battle BGs at CurrentOffset
 #include "BattleBGs/BattleBGsInstaller.event"
 #include "BattleBGs/EditTerrainBGsFloorsTable.event"
 MESSAGE "Battle BGs Size is {CurrentOffset-BattleBGsStart:N1} Bytes"
+
+ItemIconsStart:
+MESSAGE Inserting Item Icons at CurrentOffset
+#include "ItemIcons/Installer.event"
+MESSAGE "Item Icons Size is {CurrentOffset-ItemIconsStart:N1} Bytes"
