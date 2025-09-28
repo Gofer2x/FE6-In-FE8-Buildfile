@@ -288,6 +288,88 @@
 #define StatusGoalGate 0x19F
 #define StatusGoalThrone 0x1A1
 
+//MagicBattleAnim
+#define SpellAnim_HandAxe 0x1
+#define SpellAnim_Arrow 0x2
+#define SpellAnim_Javelin 0x3
+#define SpellAnim_DancePlay1 0xE
+#define SpellAnim_DancePlay2 0xF
+#define SpellAnim_Ballista 0x10 //Glitchy Arrow
+#define SpellAnim_Nothing 0x11 //Glitched Eckesachs
+#define SpellAnim_BindingBladeFire 0x12 //Glitched?
+#define SpellAnim_Flametongue 0x13
+#define SpellAnim_FaeDivinestone 0x14 //BGM-SFX Kill
+#define SpellAnim_IdunnDarkStone 0x15
+#define SpellAnim_Fire 0x16
+#define SpellAnim_Elfire 0x17
+#define SpellAnim_Thunder 0x19
+#define SpellAnim_Bolting 0x1A
+#define SpellAnim_Fimbulvetr 0x1B
+#define SpellAnim_Aircalibur 0x1C //BGM Kill
+#define SpellAnim_Flux 0x1D
+#define SpellAnim_Nosferatu 0x1E
+#define SpellAnim_Lightning 0x1F
+#define SpellAnim_Purge 0x20
+#define SpellAnim_Stall21 0x21
+#define SpellAnim_Divine 0x22
+#define SpellAnim_Eclipse 0x24
+#define SpellAnim_Fenrir 0x25
+#define SpellAnim_Heal 0x26
+#define SpellAnim_Mend 0x27
+#define SpellAnim_Recover 0x28
+#define SpellAnim_Physic 0x29
+#define SpellAnim_Fortify 0x2A //Stalls
+#define SpellAnim_Latona 0x2B //Stalls
+#define SpellAnim_Restore 0x2C
+#define SpellAnim_Silence 0x2D
+#define SpellAnim_Sleep 0x2E
+#define SpellAnim_Hammerne 0x2F //Unused
+#define SpellAnim_Berserk 0x30
+#define SpellAnim_Barrier 0x31
+#define SpellAnim_NothingRestart 0x32 //Used by staves?
+#define SpellAnim_Shine 0x33
+#define SpellAnim_Luna 0x34
+#define SpellAnim_Excalibur 0x35
+#define SpellAnim_Aura 0x37
+#define SpellAnim_FilasMight 0x3A
+#define SpellAnim_ThorsIre 0x3B
+#define SpellAnim_NinisGrace 0x3C
+#define SpellAnim_SetsLitany 0x3D
+#define SpellAnim_Stone 0x3E
+#define SpellAnim_Ivaldi 0x3F
+#define SpellAnim_DemonLight 0x40
+#define SpellAnim_Gleipnir 0x41
+#define SpellAnim_CrimsonEye 0x42
+#define SpellAnim_EvilEye 0x43
+#define SpellAnim_Shadowshot 0x44
+#define SpellAnim_DemonSurge 0x45
+#define SpellAnim_Naglfar 0x46
+#define SpellAnim_WretchedBreath 0x47
+#define SpellAnim_MapAnimOnly 0xFFFE
+#define SpellAnim_None 0xFFFF
+
+//MapOrBattleMapAnim
+#define MapOnly 0x1
+#define MapAndBattle 0x2
+
+//ShowHP
+#define DontShowHP 0x0
+#define DoShowHP 0x1
+
+//MapSpriteDir
+#define DontTurn 0x0
+#define TurnDown 0x1
+#define TurnLeft 0x2
+
+//Color
+#define White 0x0
+#define Black 0x1
+#define Red 0x2
+#define Green 0x3
+#define Blue 0x4
+#define Yellow 0x5
+#define Black2 0x6
+
 #endif
 
 #include "ExternalTables.event"
