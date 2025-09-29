@@ -458,6 +458,7 @@
 */
 
 //Chapter IDs
+/*
 #define Prologue 0x00
 #define Ch1 0x01
 #define Ch2 0x02
@@ -546,3 +547,4 @@
 #define Anotherpath 0x4C
 #define Gradoshrine_Present 0x4D
 #define Ch5town_Past 0x4E
+*/

@@ -1,0 +1,61 @@
+#define ConvoBackgroundTable $95DD1C
+#define SetConvoBackground(Index, ImagePointer, TSAPointer, PalettePointer) "PUSH; ORG ConvoBackgroundTable + (Index * 0xC); POIN ImagePointer TSAPointer PalettePointer; POP"
+
+#include "NewBackgroundsData.event"
+
+//TSA Length: 0x4C0
+//Let's reuse the old table.
+
+PUSH
+ORG ConvoBackgroundTable
+FILL 0x36 * 12
+POP
+
+
+#define BG_Outside 0x0
+#define BG_OutsideDark 0x1
+#define BG_House 0x2
+#define BG_Village 0x3
+#define BG_Castle1 0x4
+#define BG_Castle2 0x5
+#define BG_Castle3 0x6
+#define BG_Dungeon 0x7
+#define BG_Arena 0x8
+#define BG_Cave 0x9
+#define BG_LavaFort 0xA
+#define BG_Temple1 0xB
+#define BG_Temple1Bright 0xC
+#define BG_SnowOutside 0xD
+#define BG_SnowVillage 0xE
+#define BG_Temple2White 0xF
+#define BG_Temple2Purple 0x10
+#define BG_Temple2Yellow 0x11
+#define BG_TBC 0x12
+#define BG_GameOver 0x13
+#define BG_Black 0x35
+
+
+
+
+
+SetConvoBackground(BG_Outside, BG_OutsideData, BG_OutsideTSA, BG_OutsidePal)
+SetConvoBackground(BG_OutsideDark, BG_OutsideData, BG_OutsideTSA, BG_OutsideDarkPal)
+SetConvoBackground(BG_House, BG_HouseData, BG_HouseTSA, BG_HousePal)
+SetConvoBackground(BG_Village, BG_VillageData, BG_VillageTSA, BG_VillagePal)
+SetConvoBackground(BG_Castle1, BG_Castle1Data, BG_Castle1TSA, BG_Castle1Pal)
+SetConvoBackground(BG_Castle2, BG_Castle2Data, BG_Castle2TSA, BG_Castle2Pal)
+SetConvoBackground(BG_Castle3, BG_Castle3Data, BG_Castle3TSA, BG_Castle3Pal)
+SetConvoBackground(BG_Dungeon, BG_DungeonData, BG_DungeonTSA, BG_DungeonPal)
+SetConvoBackground(BG_Arena, BG_ArenaData, BG_ArenaTSA, BG_ArenaPal)
+SetConvoBackground(BG_Cave, BG_CaveData, BG_CaveTSA, BG_CavePal)
+SetConvoBackground(BG_LavaFort, BG_LavaFortData, BG_LavaFortTSA, BG_LavaFortPal)
+SetConvoBackground(BG_Temple1, BG_Temple1Data, BG_Temple1TSA, BG_Temple1Pal)
+SetConvoBackground(BG_Temple1Bright, BG_Temple1Data, BG_Temple1TSA, BG_Temple1BrightPal)
+SetConvoBackground(BG_SnowOutside, BG_SnowOutsideData, BG_SnowOutsideTSA, BG_SnowOutsidePal)
+SetConvoBackground(BG_SnowVillage, BG_SnowVillageData, BG_SnowVillageTSA, BG_SnowVillagePal)
+SetConvoBackground(BG_Temple2White, BG_Temple2Data, BG_Temple2TSA, BG_Temple2WhitePal)
+SetConvoBackground(BG_Temple2Purple, BG_Temple2Data, BG_Temple2TSA, BG_Temple2PurplePal)
+SetConvoBackground(BG_Temple2Yellow, BG_Temple2Data, BG_Temple2TSA, BG_Temple2YellowPal)
+SetConvoBackground(BG_TBC, BG_TBCData, BG_TBCTSA, BG_TBCPal)
+SetConvoBackground(BG_GameOver, BG_GameOverData, BG_GameOverTSA, BG_GameOverPal)
+SetConvoBackground(BG_Black, BG_BlackData, BG_BlackTSA, BG_BlackPal)

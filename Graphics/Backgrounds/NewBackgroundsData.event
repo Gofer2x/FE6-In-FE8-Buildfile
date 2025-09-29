@@ -1,0 +1,236 @@
+//BG_Outside, BG_OutsideDark
+ALIGN 4
+BG_OutsideData:
+#incbin "dmp/Outside.dmp"
+
+ALIGN 4
+BG_OutsideTSA:
+#incbin "dmp/OutsideTSA.dmp"
+
+ALIGN 4
+BG_OutsidePal:
+#incbin "dmp/Outside_pal.dmp"
+
+ALIGN 4
+BG_OutsideDarkPal:
+#incbin "dmp/OutsideDark_pal.dmp"
+
+//BG_House
+ALIGN 4
+BG_HouseData:
+#incbin "dmp/House.dmp"
+
+ALIGN 4
+BG_HouseTSA:
+#incbin "dmp/HouseTSA.dmp"
+
+ALIGN 4
+BG_HousePal:
+#incbin "dmp/House_pal.dmp"
+
+//BG_Village
+ALIGN 4
+BG_VillageData:
+#incbin "dmp/Village.dmp"
+
+ALIGN 4
+BG_VillageTSA:
+#incbin "dmp/VillageTSA.dmp"
+
+ALIGN 4
+BG_VillagePal:
+#incbin "dmp/Village_pal.dmp"
+
+//BG_Castle1
+ALIGN 4
+BG_Castle1Data:
+#incbin "dmp/Castle1.dmp"
+
+ALIGN 4
+BG_Castle1TSA:
+#incbin "dmp/Castle1TSA.dmp"
+
+ALIGN 4
+BG_Castle1Pal:
+#incbin "dmp/Castle1_pal.dmp"
+
+//BG_Castle2
+ALIGN 4
+BG_Castle2Data:
+#incbin "dmp/Castle2.dmp"
+
+ALIGN 4
+BG_Castle2TSA:
+#incbin "dmp/Castle2TSA.dmp"
+
+ALIGN 4
+BG_Castle2Pal:
+#incbin "dmp/Castle2_pal.dmp"
+
+//BG_Castle3
+ALIGN 4
+BG_Castle3Data:
+#incbin "dmp/Castle3.dmp"
+
+ALIGN 4
+BG_Castle3TSA:
+#incbin "dmp/Castle3TSA.dmp"
+
+ALIGN 4
+BG_Castle3Pal:
+#incbin "dmp/Castle3_pal.dmp"
+
+//BG_Dungeon
+ALIGN 4
+BG_DungeonData:
+#incbin "dmp/Dungeon.dmp"
+
+ALIGN 4
+BG_DungeonTSA:
+#incbin "dmp/DungeonTSA.dmp"
+
+ALIGN 4
+BG_DungeonPal:
+#incbin "dmp/Dungeon_pal.dmp"
+
+//BG_Arena
+ALIGN 4
+BG_ArenaData:
+#incbin "dmp/Arena.dmp"
+
+ALIGN 4
+BG_ArenaTSA:
+#incbin "dmp/ArenaTSA.dmp"
+
+ALIGN 4
+BG_ArenaPal:
+#incbin "dmp/Arena_pal.dmp"
+
+//BG_Cave
+ALIGN 4
+BG_CaveData:
+#incbin "dmp/Cave.dmp"
+
+ALIGN 4
+BG_CaveTSA:
+#incbin "dmp/CaveTSA.dmp"
+
+ALIGN 4
+BG_CavePal:
+#incbin "dmp/Cave_pal.dmp"
+
+//BG_LavaFort
+ALIGN 4
+BG_LavaFortData:
+#incbin "dmp/LavaFort.dmp"
+
+ALIGN 4
+BG_LavaFortTSA:
+#incbin "dmp/LavaFortTSA.dmp"
+
+ALIGN 4
+BG_LavaFortPal:
+#incbin "dmp/LavaFort_pal.dmp"
+
+//BG_Temple1, BG_Temple1Bright
+ALIGN 4
+BG_Temple1Data:
+#incbin "dmp/Temple1.dmp"
+
+ALIGN 4
+BG_Temple1TSA:
+#incbin "dmp/Temple1TSA.dmp"
+
+ALIGN 4
+BG_Temple1Pal:
+#incbin "dmp/Temple1_pal.dmp"
+
+ALIGN 4
+BG_Temple1BrightPal:
+#incbin "dmp/Temple1Bright_pal.dmp"
+
+//BG_SnowOutside
+ALIGN 4
+BG_SnowOutsideData:
+#incbin "dmp/SnowOutside.dmp"
+
+ALIGN 4
+BG_SnowOutsideTSA:
+#incbin "dmp/SnowOutsideTSA.dmp"
+
+ALIGN 4
+BG_SnowOutsidePal:
+#incbin "dmp/SnowOutside_pal.dmp"
+
+//BG_SnowVillage
+ALIGN 4
+BG_SnowVillageData:
+#incbin "dmp/SnowVillage.dmp"
+
+ALIGN 4
+BG_SnowVillageTSA:
+#incbin "dmp/SnowVillageTSA.dmp"
+
+ALIGN 4
+BG_SnowVillagePal:
+#incbin "dmp/SnowVillage_pal.dmp"
+
+//BG_Temple2White, BG_Temple2Purple, BG_Temple2Yellow
+ALIGN 4
+BG_Temple2Data:
+#incbin "dmp/Temple2.dmp"
+
+ALIGN 4
+BG_Temple2TSA:
+#incbin "dmp/Temple2TSA.dmp"
+
+ALIGN 4
+BG_Temple2WhitePal:
+#incbin "dmp/Temple2White_pal.dmp"
+
+ALIGN 4
+BG_Temple2PurplePal:
+#incbin "dmp/Temple2Purple_pal.dmp"
+
+ALIGN 4
+BG_Temple2YellowPal:
+#incbin "dmp/Temple2Yellow_pal.dmp"
+
+//BG_TBC
+ALIGN 4
+BG_TBCData:
+#incbin "dmp/TBC.dmp"
+
+ALIGN 4
+BG_TBCTSA:
+#incbin "dmp/TBCTSA.dmp"
+
+ALIGN 4
+BG_TBCPal:
+#incbin "dmp/TBC_pal.dmp"
+
+//BG_GameOver
+ALIGN 4
+BG_GameOverData:
+#incbin "dmp/GameOver.dmp"
+
+ALIGN 4
+BG_GameOverTSA:
+#incbin "dmp/GameOverTSA.dmp"
+
+ALIGN 4
+BG_GameOverPal:
+#incbin "dmp/GameOver_pal.dmp"
+
+//BG_Black
+ALIGN 4
+BG_BlackData:
+#incbin "dmp/Black.dmp"
+
+ALIGN 4
+BG_BlackTSA:
+#incbin "dmp/BlackTSA.dmp"
+
+ALIGN 4
+BG_BlackPal:
+#incbin "dmp/Black_pal.dmp"

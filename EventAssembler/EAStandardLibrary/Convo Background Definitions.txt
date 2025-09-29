@@ -119,7 +119,7 @@
 #endif
 
 #ifdef _FE8_
-
+/*
 #define HouseBG 0x00
 #define Salehs_House 0x01
 #define Village 0x02
@@ -174,5 +174,6 @@
 #define Temple_Gate 0x33
 #define Temple_Ruins_Inside 0x34
 #define Black 0x35
+*/
 
 #endif

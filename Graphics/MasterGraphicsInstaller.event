@@ -16,13 +16,18 @@ MESSAGE "Battle BGs Size is {CurrentOffset-BattleBGsStart:N1} Bytes"
 
 ItemIconsStart:
 MESSAGE Inserting Item Icons at CurrentOffset
-#include "ItemIcons/ItemIconInstaller.event"
+#include "ItemIcons/ItemIconsInstaller.event"
 MESSAGE "Item Icons Size is {CurrentOffset-ItemIconsStart:N1} Bytes"
 
 CSAAndSpellAnimsStart:
 MESSAGE Inserting CSA and Spell Animations at CurrentOffset
-#include "SpellAnimations/CSAAndSpellAnimInstaller.event"
+#include "SpellAnimations/CSAAndSpellAnimsInstaller.event"
 MESSAGE "CSA and Spell Animations Size is {CurrentOffset-CSAAndSpellAnimsStart:N1} Bytes"
+
+BackgroundsStart:
+MESSAGE Inserting Backgrounds at CurrentOffset
+#include "Backgrounds/BackgroundsInstaller.event"
+MESSAGE "Backgrounds Size is {CurrentOffset-BackgroundsStart:N1} Bytes"
 
 BattleScreenStart:
 MESSAGE Inserting Battle Screen Graphics at CurrentOffset
