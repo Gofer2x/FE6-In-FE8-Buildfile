@@ -1,70 +1,70 @@
-## BindingBladeDescription
+## BindingBlade_Description
 Increases Def and Res by 5 pts.[X]
 
-## DurandalDescription
+## Durandal_Description
 Increases strength by 5 pts.[X]
 
-## ArmadsDescription
+## Armads_Description
 Increases strength by 5 pts.[X]
 
-## ForblazeDescription
+## Forblaze_Description
 Increases luck by 5 pts.[X]
 
-## AureolaDescription
+## Aureola_Description
 Boosts resistance by 5 pts.[X]
 
-## MulagirDescription
+## Mulagir_Description
 Increases speed by 5 pts.[X]
 
-## MaltetDescription
+## Maltet_Description
 Increases strength by 5 pts.[X]
 
-## SaintsStaffDescription
+## SaintsStaff_Description
 Fully restores all allies.[X]
 
-## ApocalypseDescription
+## Apocalypse_Description
 Boosts magic by 5 pts.[X]
 
-## EckesachsDescription
+## Eckesachs_Description
 Usable only by the king of Bern.[X]
 
-## AlsSwordDescription
+## AlsSword_Description
 Wielded by Al.[X]
 
-## GantsLanceDescription
+## GantsLance_Description
 Wielded by Gant.[X]
 
-## TinasStaffDescription
+## TinasStaff_Description
 Wielded by Tina.[X]
 
-## TinasStaffUseScreen
-Restores many HP.[X]
-
-## SaintsStaffUseScreen
-Restores all allies[N]
-completely.[X]
-
-## DelphiShieldDescription
+## DelphiShield_Description
 An amulet of the god Delphi.[N]
 Protects fliers from arrows.[X]
 
-## FirestoneDescription
+## Firestone_Description
 Transforms manaketes[N]
 into fire dragons.[X]
 
-## FirestoneUseScreen
-Manakete only.[X]
-
-## DivinestoneDescription
+## Divinestone_Description
 Transforms Fae into[N]
 a divine dragon.[X]
 
-## DivinestoneUseScreen
-Fae only.[X]
-
-## DarkBreathDescription
+## DarkBreath_Description
 A devastating wave[N]
 of darkness.[X]
 
-## FlierEffectiveDescription
+## FlierEffective_Description
 Effective against fliers.[X]
+
+## Firestone_UseScreen
+Manakete only.[X]
+
+## Divinestone_UseScreen
+Fae only.[X]
+
+## TinasStaff_UseScreen
+Restores many HP.[X]
+
+## SaintsStaff_UseScreen
+Restores all allies[N]
+completely.[X]

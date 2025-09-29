@@ -103,6 +103,7 @@
 #define Snag 0xFF
 
 //Classes
+/*
 #define EphraimLord 0x01
 #define EirikaLord 0x02
 #define EphraimMasterLord 0x03
@@ -229,6 +230,7 @@
 #define ElderBael_2 0x7D
 #define Journeyman_2 0x7E
 #define Pupil_2 0x7F
+*/
 
 //Items
 /*

@@ -1,5 +1,7 @@
 #include "SkillSysDefinitions.event"
 
+#include "Vanilla/VanillaClassNameIDs.event"
+#include "Vanilla/VanillaClassDescriptionIDs.event"
 #include "Vanilla/VanillaItemNameIDs.event"
 #include "Vanilla/VanillaItemDescriptionIDs.event"
 #include "Vanilla/VanillaItemIcons.event"
@@ -10,4 +12,5 @@
 
 #include "Generated/ChapterIDs.event"
 #include "Generated/ItemIDs.event"
+#include "Generated/ClassIDs.event"
 #include "TEMP/SoundIDs.event"
