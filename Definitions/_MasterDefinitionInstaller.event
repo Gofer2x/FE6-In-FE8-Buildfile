@@ -6,7 +6,8 @@
 #include "Vanilla/VanillaItemDescriptionIDs.event"
 #include "Vanilla/VanillaItemIcons.event"
 //#include "Vanilla/VanillaEffectivenessTables.event"
-#include "Vanilla/VanillaStatBoosts.event"
+#include "Vanilla/VanillaStatBoostPointers.event"
+#include "Vanilla/_Aliases.event"
 
 #include "PListIDs.event"
 

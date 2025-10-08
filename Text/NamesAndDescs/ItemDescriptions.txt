@@ -65,6 +65,10 @@ Fae only.[X]
 ## TinasStaff_UseScreen
 Restores many HP.[X]
 
+## DelphiShield_UseScreen
+Protects airborne[N]
+units from bows.[X]
+
 ## SaintsStaff_UseScreen
 Restores all allies[N]
 completely.[X]

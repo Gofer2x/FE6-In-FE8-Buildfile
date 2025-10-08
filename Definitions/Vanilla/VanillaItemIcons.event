@@ -409,8 +409,8 @@
 #define RedGem_ItemIcon 0x88
 #define RedGem_ItemIconData 0x596af4
 
-#define Sack_ItemIcon 0x89
-#define Sack_ItemIconData 0x596b74
+#define ItemGold_ItemIcon 0x89
+#define ItemGold_ItemIconData 0x596b74
 
 #define Spear2_ItemIcon 0x8A
 #define Spear2_ItemIconData 0x596bf4
@@ -430,8 +430,8 @@
 #define FilasMight_ItemIcon 0x8F
 #define FilasMight_ItemIconData 0x596e74
 
-#define NinisGrace_ItemIcon 0x90
-#define NinisGrace_ItemIconData 0x596ef4
+#define NinissGrace_ItemIcon 0x90
+#define NinissGrace_ItemIconData 0x596ef4
 
 #define ThorsIre_ItemIcon 0x91
 #define ThorsIre_ItemIconData 0x596f74
@@ -658,8 +658,8 @@
 #define HoplonGuard_ItemIcon 0xDB
 #define HoplonGuard_ItemIconData 0x599474
 
-#define MetisTome_ItemIcon 0xDC
-#define MetisTome_ItemIconData 0x5994f4
+#define MetissTome_ItemIcon 0xDC
+#define MetissTome_ItemIconData 0x5994f4
 
 #define JunaFruit_ItemIcon 0xDD
 #define JunaFruit_ItemIconData 0x599574

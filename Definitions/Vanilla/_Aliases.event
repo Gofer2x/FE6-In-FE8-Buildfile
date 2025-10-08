@@ -1,0 +1,14 @@
+#define Dummy_Description 0x4AB //Mani Katti
+#define Blank_Description 0x404 //Iron Sword
+#define PoisonWep_Description 0x40B //Poison Sword
+#define BraveWep_Description 0x40D //Brave Sword
+#define KillerWep_Description 0x40E //Shamshir
+#define ArmorEffective_Description 0x410 //Armorslayer
+#define DragonEffective_Description 0x411 //Wyrmslayer
+#define HorseEffective_Description 0x415 //Zanbato
+#define RangedWep_Description 0x421 //Javelin
+#define MonsterEffective_Description 0x454 //Shadowkiller
+
+#define DarkBreath_ItemIcon WretchedAir_ItemIcon
+#define Boots_Description Swiftsoles_Description
+#define Boots_UseScreen Swiftsoles_UseScreen

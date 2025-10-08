@@ -49,6 +49,9 @@ Iron Rune[X]
 ## Boots_Name
 Boots[X]
 
+## Aircalibur_Name
+Aircalibur[X]
+
 ## Firestone_Name
 Firestone[X]
 

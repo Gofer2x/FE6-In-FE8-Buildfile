@@ -1,7 +1,7 @@
-#define PlusFivePOWBoost 0x8AEF48 //Sieglinde
+#define PlusFivePOWBoost1 0x8AEF48 //Sieglinde
 #define PlusFiveSKLBoost 0x8AEED0 //Glepinir
-#define PlusFiveSPDBoost 0x8AEEC4 //Excalibur
-#define PlusFiveDEFBoost 0x8AEF54 //Ivaldi
+#define PlusFiveSPDBoost1 0x8AEEC4 //Excalibur
+#define PlusFiveDEFBoost1 0x8AEF54 //Ivaldi
 #define PlusFiveRESBoost 0x8AEF78 //Audhulma
 #define PlusFiveLUCKBoost 0x8AEF9C //Nidhogg
 

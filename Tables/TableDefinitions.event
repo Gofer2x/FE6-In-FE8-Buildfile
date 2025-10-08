@@ -19,6 +19,20 @@
   //#define PersonalMusicTable 0x758a60
 //#endif
 
+//Item Types
+#define ItemSword 0x0
+#define ItemLance 0x1
+#define ItemAxe 0x2
+#define ItemBow 0x3
+#define ItemStaff 0x4
+#define ItemAnima 0x5
+#define ItemLight 0x6
+#define ItemDark 0x7
+#define ItemItem 0x9
+#define ItemMonster 0xB
+#define ItemRing 0xC
+#define ItemDragonstone 0x11
+#define ItemDancerRing 0x12
 
 //Weapon Ranks
 #define NoRank 0

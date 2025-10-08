@@ -108,7 +108,7 @@
 #define PureWater_Name 0x3e7
 #define Antitoxin_Name 0x3e8
 #define TorchStaff_Name 0x3e9
-#define FilliShield_Name 0x3ea
+#define FiliShield_Name 0x3ea
 #define MemberCard_Name 0x3eb
 #define SilverCard_Name 0x3ec
 #define WhiteGem_Name 0x3ef
@@ -166,7 +166,7 @@
 #define EvilEye_Name 0x3be
 #define CrimsonEye_Name 0x3bf
 #define Stone_Name 0x3bd
-#define Aircalibur_Name 0x3ac
+#define Alacalibur_Name 0x3ac
 #define JunaFruit_Name 0x402
 #define Item150G_Name 0x3fe
 #define Item200G_Name 0x3ff
