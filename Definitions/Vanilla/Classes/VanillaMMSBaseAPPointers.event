@@ -1,0 +1,29 @@
+#define AP_1_1 0x1C3D7C
+#define AP_1_2 0x1CA124
+#define AP_1_3 0x1CB2E0
+#define AP_1_4 0x1D1D48
+#define AP_1_5 0x1D2714
+#define AP_1_6 0x1D8668
+#define AP_1_7 0x1D9B58
+#define AP_1_8 0x1DA694
+#define AP_1_9 0x1FD028
+#define AP_1_A 0x1FA2B4
+//#define //AP_1_B 0x Hawkeye Berserker
+#define AP_2_1 0x1C52B4
+#define AP_2_2 0x1C8A80
+#define AP_2_3 0x1F49B8
+#define AP_2_4 0x1CBD94
+#define AP_2_5 0x1CE4FC
+#define AP_2_6 0x1D403C
+#define AP_2_7 0x1D4EEC
+#define AP_2_8 0x1FBE5C
+#define AP_2_9 0x1E173C
+#define AP_2_A 0x1D7CC8
+//#define //AP_3_1 0x Hector Great Lord
+#define AP_4_1 0x1D5E58
+//#define //AP_5_1 0x Ninian Dancer
+#define AP_6_1 0x1ED1C8
+#define AP_7_1 0x1E8840
+#define AP_8_1 0x1EEC84
+//#define //AP_9_1 0x FE6 Fire Dragon
+//#define //AP_10_1 0x FE6 Divine Dragon

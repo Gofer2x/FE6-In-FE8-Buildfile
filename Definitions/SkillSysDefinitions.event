@@ -24,6 +24,9 @@
 #define LunarBrace MoonBracelet
 #define SolarBrace SunBracelet
 
+#define Latona_UseEffect 0x37
+#define SkillScroll_UseEffect 0x38
+
 // Attribute for defining items with passive stat bonuses
 #define PASSIVE_ITEM_BOOSTS_ATTR 0x00800000
 

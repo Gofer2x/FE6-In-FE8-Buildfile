@@ -1,13 +1,25 @@
 #include "SkillSysDefinitions.event"
 
-#include "Vanilla/VanillaClassNameIDs.event"
-#include "Vanilla/VanillaClassDescriptionIDs.event"
-#include "Vanilla/VanillaItemNameIDs.event"
-#include "Vanilla/VanillaItemDescriptionIDs.event"
-#include "Vanilla/VanillaItemIcons.event"
-//#include "Vanilla/VanillaEffectivenessTables.event"
-#include "Vanilla/VanillaStatBoostPointers.event"
 #include "Vanilla/_Aliases.event"
+
+#include "Vanilla/Items/VanillaItemNameIDs.event"
+#include "Vanilla/Items/VanillaItemDescriptionIDs.event"
+#include "Vanilla/Items/VanillaRepeatingItemDescriptionIDs.event"
+#include "Vanilla/Items/VanillaItemIconIDs.event"
+//#include "Vanilla/Items/VanillaEffectivenessTablePointers.event"
+#include "Vanilla/Items/VanillaStatBoostPointers.event"
+#include "Vanilla/Items/VanillaItemUseEffectIDs.event"
+
+#include "Vanilla/Classes/VanillaClassNameIDs.event"
+#include "Vanilla/Classes/VanillaClassDescriptionIDs.event"
+#include "Vanilla/Classes/VanillaSMSIDs.event"
+#include "Vanilla/Classes/VanillaSMSData.event"
+#include "Vanilla/Classes/VanillaMovementCostPointers.event"
+#include "Vanilla/Classes/VanillaMMSDataPointers.event"
+#include "Vanilla/Classes/VanillaMMSClassAPPointers.event"
+#include "Vanilla/Classes/VanillaMMSBaseAPPointers.event"
+#include "Vanilla/Classes/VanillaAnimationIDs.event"
+#include "Vanilla/Classes/VanillaClassAnimationTablePointers.event"
 
 #include "PListIDs.event"
 

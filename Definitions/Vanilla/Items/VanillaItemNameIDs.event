@@ -7,7 +7,6 @@
 #define SilverBlade_Name 0x35a
 #define PoisonSword_Name 0x35b
 #define Rapier_Name 0x35c
-#define ManiKattiDUMMY_Name 0x403
 #define BraveSword_Name 0x35d
 #define Shamshir_Name 0x35e
 #define KillingEdge_Name 0x35f
@@ -81,7 +80,7 @@
 #define Berserk_Name 0x3ca
 #define Warp_Name 0x3cb
 #define Rescue_Name 0x3cc
-#define Torch_Name 0x3cd
+#define TorchStaff_Name 0x3cd
 #define Hammerne_Name 0x3ce
 #define Unlock_Name 0x3cf
 #define Barrier_Name 0x3d0
@@ -107,7 +106,7 @@
 #define Elixir_Name 0x3e6
 #define PureWater_Name 0x3e7
 #define Antitoxin_Name 0x3e8
-#define TorchStaff_Name 0x3e9
+#define Torch_Name 0x3e9
 #define FiliShield_Name 0x3ea
 #define MemberCard_Name 0x3eb
 #define SilverCard_Name 0x3ec

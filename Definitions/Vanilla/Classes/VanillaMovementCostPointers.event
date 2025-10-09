@@ -1,0 +1,65 @@
+#define WaterwalkingInfantryMovementCost 0x80B808 //Lord(s), Hero, Swordmaster, Sniper
+#define PromotedCavalryMovementCost 0x80BAD3 //Great Lord(s), Paladin, Mage Knight, Great Knight, Valkyrie
+#define CavalryMovementCost 0x80BA92 //Cavalier, Troubadour
+#define ArmorMovementCost 0x80B88A //Knight, General
+#define ThiefMovementCost 0x80B9CF //Thief, Assassin, Rogue
+#define MageMovementCost 0x80BA10 //Mage, Sage, Bishop, Shaman, Druid, Summoner, Pupil, Monk, Priest, Cleric, Necromancer, Gorgon, Pupil
+#define FlierMovementCost 0x80BB96 //Manakete1+2+F, WyvRider+Lord+Kn, PegKn, Falckn, Phantom, Mog, ArcMog, Garg, Deathg, DracZomb
+#define AxesMovementCost 0x80B8CB //Journeyman1+2+3, Fighter, Warrior, Cyclops
+#define BasicInfantryMovementCost 0x80B849 //Merc, Arc, Recruit1+2+3, Bard, Danc, Sold, Reven, Entom, Bonew, BonewBow, Wight, WightBow
+#define BrigandBaelMovementCost 0x80B94D //Brigand, Bael, ElderBael1+2
+#define PirateFleetMovementCost 0x80B98E //Pirate, Fleet
+#define BerserkerMovementCost 0x80B90C //Berserker
+#define CivilianMovementCost 0x80BA51 //Civilians, Peer, Queen, Prince, QueenNoHat, FallenNils, Tent, Pontifex, DeadPeer
+#define DoogTarvosMovementCost 0x80BB14 //MautheDoog, Tarvos
+#define DemonKingMovementCost 0x80BBD7 //DemonKing
+#define RangerGwyllgiMaelduinMovementCost 0x80BB55 //Ranger, Gwyllgi, Maelduin
+
+#define RainWaterwalkingInfantryMovementCost 0x80BC59 //Lord(s), Hero, Swordmaster, Sniper
+#define RainPromotedCavalryMovementCost 0x80BF24 //Great Lord(s), Paladin, Mage Knight, Great Knight, Valkyrie
+#define RainCavalryMovementCost 0x80BEE3 //Cavalier, Troubadour
+#define RainArmorMovementCost 0x80BCDB //Knight, General
+#define RainThiefMovementCost 0x80BE20 //Thief, Assassin, Rogue
+#define RainMageMovementCost 0x80BE61 //Mage, Sage, Bishop, Shaman, Druid, Summoner, Pupil, Monk, Priest, Cleric, Necromancer, Gorgon, Pupil
+#define RainFlierMovementCost 0x80BFE7 //Manakete1+2+F, WyvRider+Lord+Kn, PegKn, Falckn, Phantom, Mog, ArcMog, Garg, Deathg, DracZomb
+#define RainAxesMovementCost 0x80BD1C //Journeyman1+2+3, Fighter, Warrior, Cyclops
+#define RainBasicInfantryMovementCost 0x80BC9A //Merc, Arc, Recruit1+2+3, Bard, Danc, Sold, Reven, Entom, Bonew, BonewBow, Wight, WightBow
+#define RainBrigandBaelMovementCost 0x80BD9E //Brigand, Bael, ElderBael1+2
+#define RainPirateFleetMovementCost 0x80BDDF //Pirate, Fleet
+#define RainBerserkerMovementCost 0x80BD5D //Berserker
+#define RainCivilianMovementCost 0x80BEA2 //Civilians, Peer, Queen, Prince, QueenNoHat, FallenNils, Tent, Pontifex, DeadPeer
+#define RainDoogTarvosMovementCost 0x80BF65 //MautheDoog, Tarvos
+//#define RainDemonKingMovementCost 0x //Same as normal (lol)
+#define RainRangerGwyllgiMaelduinMovementCost 0x80BFA6 //Ranger, Gwyllgi, Maelduin
+
+#define SnowWaterwalkingInfantryMovementCost 0x80C069 //Lord(s), Hero, Swordmaster, Sniper
+#define SnowPromotedCavalryMovementCost 0x80C334 //Great Lord(s), Paladin, Mage Knight, Great Knight, Valkyrie
+#define SnowCavalryMovementCost 0x80C2F3 //Cavalier, Troubadour
+#define SnowArmorMovementCost 0x80C0EB //Knight, General
+#define SnowThiefMovementCost 0x80C230 //Thief, Assassin, Rogue
+#define SnowMageMovementCost 0x80C271 //Mage, Sage, Bishop, Shaman, Druid, Summoner, Pupil, Monk, Priest, Cleric, Necromancer, Gorgon, Pupil
+#define SnowFlierMovementCost 0x80C3F7 //Manakete1+2+F, WyvRider+Lord+Kn, PegKn, Falckn, Phantom, Mog, ArcMog, Garg, Deathg, DracZomb
+#define SnowAxesMovementCost 0x80C12C //Journeyman1+2+3, Fighter, Warrior, Cyclops
+#define SnowBasicInfantryMovementCost 0x80C0AA //Merc, Arc, Recruit1+2+3, Bard, Danc, Sold, Reven, Entom, Bonew, BonewBow, Wight, WightBow
+#define SnowBrigandBaelMovementCost 0x80C1AE //Brigand, Bael, ElderBael1+2
+#define SnowPirateFleetMovementCost 0x80C1EF //Pirate, Fleet
+#define SnowBerserkerMovementCost 0x80C16D //Berserker
+#define SnowCivilianMovementCost 0x80C2B2 //Civilians, Peer, Queen, Prince, QueenNoHat, FallenNils, Tent, Pontifex, DeadPeer
+#define SnowDoogTarvosMovementCost 0x80C375 //MautheDoog, Tarvos
+//#define SnowDemonKingMovementCost 0x //Same as normal (lol)
+#define SnowRangerGwyllgiMaelduinMovementCost 0x80C3B6 //Ranger, Gwyllgi, Maelduin
+
+#define TerrainAvoNormal 0x80C479
+#define TerrainAvoFlier 0x80C53C
+
+#define TerrainDefNormal 0x80C4BA
+#define TerrainDefFlier 0x80C57D
+
+#define TerrainResNormal 0x80C4FB
+#define TerrainResFlier 0x80C5BE
+
+#define TerrainHealingAll 0x80C744
+#define TerrainRecoveryBadStatusAll 0x80C785
+#define TerrainDisplayInfoAll 0x80B90C
+
+#define BallistaMovCost 0x80BC18

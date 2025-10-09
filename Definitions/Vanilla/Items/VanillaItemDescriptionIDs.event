@@ -1,3 +1,5 @@
+#define Dummy_Description 0x4ab
+
 //#define IronSword_Description 0x404
 //#define SlimSword_Description 0x405
 //#define SteelSword_Description 0x406
@@ -80,7 +82,7 @@
 #define Berserk_Description 0x479
 #define Warp_Description 0x47a
 #define Rescue_Description 0x47b
-#define Torch_Description 0x47c
+#define TorchStaff_Description 0x47c
 #define Hammerne_Description 0x47d
 #define Unlock_Description 0x47e
 #define Barrier_Description 0x47f
@@ -106,7 +108,7 @@
 #define Elixir_Description 0x495
 #define PureWater_Description 0x496
 #define Antitoxin_Description 0x497
-#define TorchStaff_Description 0x498
+#define Torch_Description 0x498
 #define FiliShield_Description 0x499
 #define MemberCard_Description 0x49a
 #define SilverCard_Description 0x49b
@@ -164,8 +166,6 @@
 #define BlackGem_Description 0x49d
 #define GoldGem_Description 0x49c
 
-
-
 #define Heal_UseScreen 0x4af
 #define Mend_UseScreen 0x4b0
 #define Recover_UseScreen 0x4b1
@@ -219,19 +219,8 @@
 #define OceanSeal_UseScreen 0x4e0
 #define LunarBrace_UseScreen 0x4e1
 #define SolarBrace_UseScreen 0x4e2
-//#define Item1G_UseScreen 0x4e3
-//#define Item5G_UseScreen 0x4e4
-//#define Item10G_UseScreen 0x4e5
-//#define Item50G_UseScreen 0x4e6
-//#define Item100G_UseScreen 0x4e7
-//#define Item3000G_UseScreen 0x4e8
-//#define Item5000G_UseScreen 0x4e9
-//#define Vulnerary2_UseScreen 0x4d2
-//#define VulneraryGreenNote_UseScreen 0x4d2
-//#define VulneraryRedNote_UseScreen 0x4d2
+#define ItemGold_UseScreen 0x4da
 #define Dance_UseScreen 0x4bf
 #define StoneShard_UseScreen 0x4ae
 #define Dragonstone_UseScreen 0x4ad
 #define JunaFruit_UseScreen 0x4e3
-//#define Item_150G_UseScreen 0x4da
-//#define Item_200G_UseScreen 0x4da

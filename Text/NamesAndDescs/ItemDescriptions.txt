@@ -37,6 +37,9 @@ Wielded by Gant.[X]
 ## TinasStaff_Description
 Wielded by Tina.[X]
 
+## EclipseNew_Description
+Reduces enemy HP to 1.[X]
+
 ## DelphiShield_Description
 An amulet of the god Delphi.[N]
 Protects fliers from arrows.[X]

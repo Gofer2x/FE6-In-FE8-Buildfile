@@ -1,0 +1,212 @@
+#define EphraimLord_SMS_Data 0x1B7828 //Pattern 2, Size 1
+#define EphraimLord_SMS_Size MapSprite16x32
+#define EirikaLord_SMS_Data 0x1B79D4 //Pattern 0, Size 0
+#define EirikaLord_SMS_Size MapSprite16x16
+#define EphraimGreatLord_SMS_Data 0x1B7AD8 //Pattern 2, Size 1
+#define EphraimGreatLord_SMS_Size MapSprite16x32
+#define EirikaGreatLord_SMS_Data 0x1B7CD4 //Pattern 2, Size 1
+#define EirikaGreatLord_SMS_Size MapSprite16x32
+#define Cavalier_SMS_Data 0x1B7ECC //Pattern 2, Size 1
+#define Cavalier_SMS_Size MapSprite16x32
+#define Paladin_SMS_Data 0x1B8088 //Pattern 2, Size 1
+#define Paladin_SMS_Size MapSprite16x32
+#define Knight_SMS_Data 0x1B8258 //Pattern 2, Size 0
+#define Knight_SMS_Size MapSprite16x16
+#define General_SMS_Data 0x1B8364 //Pattern 0, Size 1
+#define General_SMS_Size MapSprite16x32
+#define Thief_SMS_Data 0x1B8504 //Pattern 2, Size 0
+#define Thief_SMS_Size MapSprite16x16
+#define Mercenary_SMS_Data 0x1B8678 //Pattern 2, Size 0
+#define Mercenary_SMS_Size MapSprite16x16
+#define MercenaryF_SMS_Data 0x1B87B0 //Pattern 2, Size 2
+#define MercenaryF_SMS_Size MapSprite32x32
+#define Hero_SMS_Data 0x1B8940 //Pattern 2, Size 0
+#define Hero_SMS_Size MapSprite16x16
+#define HeroF_SMS_Data 0x1B8AA0 //Pattern 2, Size 0
+#define HeroF_SMS_Size MapSprite16x16
+#define Myrmidon_SMS_Data 0x1B8BDC //Pattern 2, Size 0
+#define Myrmidon_SMS_Size MapSprite16x16
+#define MyrmidonF_SMS_Data 0x1B8CF0 //Pattern 2, Size 0
+#define MyrmidonF_SMS_Size MapSprite16x16
+#define Swordmaster_SMS_Data 0x1B8E00 //Pattern 2, Size 0
+#define Swordmaster_SMS_Size MapSprite16x16
+#define SwordmasterF_SMS_Data 0x1B8EE8 //Pattern 2, Size 0
+#define SwordmasterF_SMS_Size MapSprite16x16
+#define Assassin_SMS_Data 0x1B8FC4 //Pattern 2, Size 0
+#define Assassin_SMS_Size MapSprite16x16
+#define AssassinF_SMS_Data 0x1B9100 //Pattern 2, Size 0
+#define AssassinF_SMS_Size MapSprite16x16
+#define Archer_SMS_Data 0x1B9234 //Pattern 2, Size 1, or Size 0 i guess lol
+#define Archer_SMS_Size MapSprite16x16
+#define ArcherF_SMS_Data 0x1B934C //Pattern 2, Size 1, or Size 0 i guess lol
+#define ArcherF_SMS_Size MapSprite16x16
+#define Sniper_SMS_Data 0x1B9460 //Pattern 2, Size 0
+#define Sniper_SMS_Size MapSprite16x16
+#define SniperF_SMS_Data 0x1B95A4 //Pattern 2, Size 0
+#define SniperF_SMS_Size MapSprite16x16
+#define Ranger_SMS_Data 0x1B96C8 //Pattern 2, Size 1
+#define Ranger_SMS_Size MapSprite16x32
+#define WyvernRider_SMS_Data 0x1B9894 //Pattern 2, Size 1
+#define WyvernRider_SMS_Size MapSprite16x32
+#define WyvernRiderF_SMS_Data 0x1B9A88 //Pattern 2, Size 1
+#define WyvernRiderF_SMS_Size MapSprite16x32
+#define WyvernLord_SMS_Data 0x1B9C7C //Pattern 2, Size 1
+#define WyvernLord_SMS_Size MapSprite16x32
+#define WyvernLordF_SMS_Data 0x1B9E70 //Pattern 2, Size 1
+#define WyvernLordF_SMS_Size MapSprite16x32
+#define WyvernKnight_SMS_Data 0x1BA068 //Pattern 3, Size 1
+#define WyvernKnight_SMS_Size MapSprite16x32
+#define Mage_SMS_Data 0x1BA274 //Pattern 2, Size 0
+#define Mage_SMS_Size MapSprite16x16
+#define MageF_SMS_Data 0x1BA3AC //Pattern 2, Size 0
+#define MageF_SMS_Size MapSprite16x16
+#define Sage_SMS_Data 0x1BA4EC //Pattern 2, Size 0
+#define Sage_SMS_Size MapSprite16x16
+#define SageF_SMS_Data 0x1BA648 //Pattern 2, Size 0
+#define SageF_SMS_Size MapSprite16x16
+#define MageKnight_SMS_Data 0x1BA7A8 //Pattern 2, Size 1
+#define MageKnight_SMS_Size MapSprite16x32
+#define MageKnightF_SMS_Data 0x1BA95C //Pattern 2, Size 1
+#define MageKnightF_SMS_Size MapSprite16x32
+#define Bishop_SMS_Data 0x1BAB20 //Pattern 2, Size 0
+#define Bishop_SMS_Size MapSprite16x16
+#define BishopF_SMS_Data 0x1BAC74 //Pattern 2, Size 0
+#define BishopF_SMS_Size MapSprite16x16
+#define Shaman_SMS_Data 0x1BADCC //Pattern 2, Size 0
+#define Shaman_SMS_Size MapSprite16x16
+#define Druid_SMS_Data 0x1BAF24 //Pattern 2, Size 0
+#define Druid_SMS_Size MapSprite16x16
+#define Summoner_SMS_Data 0x1BB098 //Pattern 2, Size 1
+#define Summoner_SMS_Size MapSprite16x32
+#define Rogue_SMS_Data 0x1BB1B8 //Pattern 2, Size 0
+#define Rogue_SMS_Size MapSprite16x16
+#define GorgonEgg_SMS_Data 0x1BB2DC // Pattern 3, Size 0
+#define GorgonEgg_SMS_Size MapSprite16x16
+#define GreatKnight_SMS_Data 0x1BB3B0 // Pattern 2, Size 1
+#define GreatKnight_SMS_Size MapSprite16x32
+#define Recruit_SMS_Data 0x1BB580 // Pattern 2, Size 1
+#define Recruit_SMS_Size MapSprite16x32
+#define Journeyman_SMS_Data 0x1BB6B4 // Pattern 2, Size 1
+#define Journeyman_SMS_Size MapSprite16x32
+#define Pupil_SMS_Data 0x1BB7F0 // Pattern 2, Size 0
+#define Pupil_SMS_Size MapSprite16x16
+#define Manakete2_SMS_Data 0x1BB910 // Pattern 3, Size 2
+#define Manakete2_SMS_Size MapSprite32x32
+#define ManaketeF__SMS_Data 0x1BBBB8 // Pattern 2, Size 1
+#define ManaketeF__SMS_Size MapSprite16x32
+#define Fighter_SMS_Data 0x1BBCD0 //Pattern 2, Size 1
+#define Fighter_SMS_Size MapSprite16x32
+#define Warrior_SMS_Data 0x1BBDFC //Pattern 2, Size 1
+#define Warrior_SMS_Size MapSprite16x32
+#define Brigand_SMS_Data 0x1BBF7C //Pattern 2, Size 1
+#define Brigand_SMS_Size MapSprite16x32
+#define Pirate_SMS_Data 0x1BC0F0 //Pattern 2, Size 0
+#define Pirate_SMS_Size MapSprite16x16
+#define Berserker_SMS_Data 0x1BC26C //Pattern 2, Size 1
+#define Berserker_SMS_Size MapSprite16x32
+#define Monk_SMS_Data 0x1BC44C //Pattern 2, Size 0
+#define Monk_SMS_Size MapSprite16x16
+#define Priest_SMS_Data 0x1BC568 //Pattern 2, Size 0
+#define Priest_SMS_Size MapSprite16x16
+#define Bard_SMS_Data 0x1BC674 //Pattern 2, Size 0
+#define Bard_SMS_Size MapSprite16x16
+#define PegasusKnight_SMS_Data 0x1BC774 //Pattern 2, Size 1
+#define PegasusKnight_SMS_Size MapSprite16x32
+#define Falcoknight_SMS_Data 0x1BC918 //Pattern 2, Size 1
+#define Falcoknight_SMS_Size MapSprite16x32
+#define Cleric_SMS_Data 0x1BCAC4 //Pattern 2, Size 0
+#define Cleric_SMS_Size MapSprite16x16
+#define Troubadour_SMS_Data 0x1BCBE8 //Pattern 2, Size 1
+#define Troubadour_SMS_Size MapSprite16x32
+#define Valkyrie_SMS_Data 0x1BCDA4 //Pattern 2, Size 1
+#define Valkyrie_SMS_Size MapSprite16x32
+#define Dancer_SMS_Data 0x1BCF54 // Pattern 2, Size 0
+#define Dancer_SMS_Size MapSprite16x16
+#define Soldier_SMS_Data 0x1BD08C //Pattern 2, Size 0
+#define Soldier_SMS_Size MapSprite16x16
+#define Necromancer_SMS_Data 0x1BD1E0 // Pattern 3, Size 0
+#define Necromancer_SMS_Size MapSprite16x16
+#define Fleet_SMS_Data 0x1BD2DC // Pattern 3, Size 2
+#define Fleet_SMS_Size MapSprite32x32
+#define Phantom_SMS_Data 0x1BD444 // Pattern 2, Size 2
+#define Phantom_SMS_Size MapSprite32x32
+#define Revenant_SMS_Data 0x1BD5D0 // Pattern 3, Size 1
+#define Revenant_SMS_Size MapSprite16x32
+#define Entombed_SMS_Data 0x1BD6FC // Pattern 3, Size 1
+#define Entombed_SMS_Size MapSprite16x32
+#define Bonewalker_SMS_Data 0x1BD864 // Pattern 3, Size 0
+#define Bonewalker_SMS_Size MapSprite16x16
+#define BonewalkerBow_SMS_Data 0x1BD98C // Pattern 3, Size 1
+#define BonewalkerBow_SMS_Size MapSprite16x32
+#define Wight_SMS_Data 0x1BDAD0 // Pattern 3, Size 0
+#define Wight_SMS_Size MapSprite16x16
+#define WightBow_SMS_Data 0x1BDC10 // Pattern 3, Size 0
+#define WightBow_SMS_Size MapSprite16x16
+#define Bael_SMS_Data 0x1BDD54 // Pattern 3, Size 2
+#define Bael_SMS_Size MapSprite32x32
+#define ElderBael_SMS_Data 0x1BDEE4 // Pattern 3, Size 1
+#define ElderBael_SMS_Size MapSprite16x32
+#define Cyclops_SMS_Data 0x1BE048 // Pattern 3, Size 1
+#define Cyclops_SMS_Size MapSprite16x32
+#define MautheDoog_SMS_Data 0x1BE1D8 // Pattern 3, Size 1
+#define MautheDoog_SMS_Size MapSprite16x32
+#define Gwyllgi_SMS_Data 0x1BE2EC // Pattern 3, Size 2
+#define Gwyllgi_SMS_Size MapSprite32x32
+#define Tarvos_SMS_Data 0x1BE504 // Pattern 3, Size 1
+#define Tarvos_SMS_Size MapSprite16x32
+#define Maelduin_SMS_Data 0x1BE714 // Pattern 3, Size 2
+#define Maelduin_SMS_Size MapSprite32x32
+#define Mogall_SMS_Data 0x1BE988 // Pattern 3, Size 1
+#define Mogall_SMS_Size MapSprite16x32
+#define ArchMogall_SMS_Data 0x1BEB04 // Pattern 0, Size 1
+#define ArchMogall_SMS_Size MapSprite16x32
+#define Gorgon_SMS_Data 0x1BEC84 // Pattern 3, Size 1
+#define Gorgon_SMS_Size MapSprite16x32
+#define GorgonEgg2_SMS_Data 0x1BEDD0 // Pattern 3, Size 0
+#define GorgonEgg2_SMS_Size MapSprite16x16
+#define Gargoyle_SMS_Data 0x1BEE74 // Pattern 2, Size 2
+#define Gargoyle_SMS_Size MapSprite32x32
+#define Deathgoyle_SMS_Data 0x1BF06C // Pattern 3, Size 2
+#define Deathgoyle_SMS_Size MapSprite32x32
+#define DracoZombie_SMS_Data 0x1BF29C // Pattern 3, Size 1
+#define DracoZombie_SMS_Size MapSprite16x32
+#define DemonKing_SMS_Data 0x1BF418 // Pattern 3, Size 2
+#define DemonKing_SMS_Size MapSprite32x32
+#define MannedBallista_SMS_Data 0x1BF690 //Pattern 2, Size 1
+#define MannedBallista_SMS_Size MapSprite16x32
+#define MannedIronBallista_SMS_Data 0x1BF824 //Pattern 2, Size 1
+#define MannedIronBallista_SMS_Size MapSprite16x32
+#define MannedKillerBallista_SMS_Data 0x1BF9B8 //Pattern 2, Size 1
+#define MannedKillerBallista_SMS_Size MapSprite16x32
+#define UnmannedBallista_SMS_Data 0x1BFB4C //Pattern 2, Size 1
+#define UnmannedBallista_SMS_Size MapSprite16x32
+#define UnmannedIronBallista_SMS_Data 0x1BFCC0 //Pattern 2, Size 1
+#define UnmannedIronBallista_SMS_Size MapSprite16x32
+#define UnmannedKillerBallista_SMS_Data 0x1BFE34 //Pattern 2, Size 1
+#define UnmannedKillerBallista_SMS_Size MapSprite16x32
+#define Child_SMS_Data 0x1BFFA8 //Pattern 2, Size 0
+#define Child_SMS_Size MapSprite16x16
+#define ChildF_SMS_Data 0x1C0078 //Pattern 2, Size 0
+#define ChildF_SMS_Size MapSprite16x16
+#define Civilian_SMS_Data 0x1C014C //Pattern 2, Size 0
+#define Civilian_SMS_Size MapSprite16x16
+#define CivilianF_SMS_Data 0x1C022C //Pattern 2, Size 0
+#define CivilianF_SMS_Size MapSprite16x16
+#define Peer_SMS_Data 0x1C0310 // Pattern 2, Size 0
+#define Peer_SMS_Size MapSprite16x16
+#define Queen_SMS_Data 0x1C03EC // Pattern 2, Size 1
+#define Queen_SMS_Size MapSprite16x32
+#define Prince_SMS_Data 0x1C0500 // Pattern 2, Size 0
+#define Prince_SMS_Size MapSprite16x16
+#define QueenNoHat_SMS_Data 0x1C05D8 // Pattern 2, Size 0
+#define QueenNoHat_SMS_Size MapSprite16x16
+#define LightRune_SMS_Data 0x1C068C // Pattern 0, Size 0
+#define LightRune_SMS_Size MapSprite16x16
+#define FallenNils_SMS_Data 0x1C07BC // Pattern 2, Size 0
+#define FallenNils_SMS_Size MapSprite16x16
+#define Tent_SMS_Data 0x1C0840 // Pattern 2, Size 1
+#define Tent_SMS_Size MapSprite16x32
+#define Pontifex_SMS_Data 0x1C0934 // Pattern 2, Size 1
+#define Pontifex_SMS_Size MapSprite16x32
+#define DeadPeer_SMS_Data 0x1C0A70 // Pattern 0, Size 0
+#define DeadPeer_SMS_Size MapSprite16x16

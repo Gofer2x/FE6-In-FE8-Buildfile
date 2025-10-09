@@ -1,0 +1,79 @@
+//BLANK
+#define IronSword_Description 0x404
+#define SlimSword_Description 0x405
+#define SteelSword_Description 0x406
+#define SilverSword_Description 0x407
+#define IronBlade_Description 0x408
+#define SteelBlade_Description 0x409
+#define SilverBlade_Description 0x40a
+#define IronLance_Description 0x419
+#define SlimLance_Description 0x41a
+#define SteelLance_Description 0x41b
+#define SilverLance_Description 0x41c
+#define IronAxe_Description 0x42a
+#define SteelAxe_Description 0x42b
+#define SilverAxe_Description 0x42c
+#define IronBow_Description 0x43b
+#define SteelBow_Description 0x43c
+#define SilverBow_Description 0x43d
+#define Fire_Description 0x458
+#define Thunder_Description 0x459
+#define Elfire_Description 0x45a
+#define Fimbulvetr_Description 0x45d
+#define Lightning_Description 0x45f
+#define Shine_Description 0x460
+#define Divine_Description 0x461
+#define Aura_Description 0x463
+#define Flux_Description 0x465
+#define Fenrir_Description 0x469
+#define Alacalibur_Description 0x45b
+#define EvilEye_Description 0x46d
+#define CrimsonEye_Description 0x46e
+
+//RANGED
+#define Javelin_Description 0x421
+#define Spear_Description 0x422
+#define HandAxe_Description 0x433
+#define Tomahawk_Description 0x434
+#define ShortSpear_Description 0x429
+
+//POISON
+#define PoisonSword_Description 0x40b
+#define ToxinLance_Description 0x41d
+#define PoisonAxe_Description 0x42d
+#define PoisonBow_Description 0x43e
+
+//KILLER
+#define Shamshir_Description 0x40e
+#define KillingEdge_Description 0x40f
+#define KillerLance_Description 0x41f
+#define KillerAxe_Description 0x42f
+#define KillerBow_Description 0x43f
+#define KillerBallista_Description 0x445
+
+//BRAVE
+#define BraveSword_Description 0x40d
+#define BraveLance_Description 0x41e
+#define BraveAxe_Description 0x42e
+#define BraveBow_Description 0x440
+
+//HORSE EFFECTIVE
+#define Zanbato_Description 0x415
+#define Horseslayer_Description 0x420
+#define Halberd_Description 0x430
+
+//ARMOR EFFECTIVE
+#define Armorslayer_Description 0x410
+#define Hammer_Description 0x431
+#define HeavySpear_Description 0x428
+
+//DRAGON EFFECTIVE
+#define Wyrmslayer_Description 0x411
+#define DragonAxe_Description 0x437
+#define Dragonspear_Description 0x427
+
+//MONSTER EFFECTIVE
+#define Shadowkiller_Description 0x454
+#define BrightLance_Description 0x455
+#define Fiendcleaver_Description 0x456
+#define BeaconBow_Description 0x457
