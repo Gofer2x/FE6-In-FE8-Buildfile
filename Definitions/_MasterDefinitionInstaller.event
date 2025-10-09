@@ -2,6 +2,8 @@
 
 #include "Vanilla/_Aliases.event"
 
+#include "Vanilla/VanillaMugIDs.event"
+
 #include "Vanilla/Items/VanillaItemNameIDs.event"
 #include "Vanilla/Items/VanillaItemDescriptionIDs.event"
 #include "Vanilla/Items/VanillaRepeatingItemDescriptionIDs.event"
