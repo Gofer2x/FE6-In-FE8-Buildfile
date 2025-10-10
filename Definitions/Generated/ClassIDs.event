@@ -87,7 +87,7 @@
 #define WightBow 0x57
 #define Bael 0x58
 #define ElderBael 0x59
-#define Cyclops 0x5A
+#define Cyclops1 0x5A
 #define MautheDoog 0x5B
 #define Gwyllgi 0x5C
 #define Tarvos 0x5D
@@ -117,7 +117,7 @@
 #define Prince 0x75
 #define QueenNoHat 0x76
 #define LightRune 0x77
-#define FallenPrince 0x78
+#define FallenNils 0x78
 #define Tent 0x79
 #define Pontifex 0x7A
 #define DeadPeer 0x7B
