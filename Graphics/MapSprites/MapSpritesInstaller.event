@@ -1,0 +1,5 @@
+#include "SMSMMSDefs.event"
+#include "NewSMSData.event"
+#include "NewMMSData.event"
+#include "NewSMSTable.event"
+#include "NewMMSTable.event"

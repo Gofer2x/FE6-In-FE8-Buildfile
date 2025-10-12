@@ -33,3 +33,8 @@ BattleScreenStart:
 MESSAGE Inserting Battle Screen Graphics at CurrentOffset
 #include "BattleScreen/BattleScreenInstaller.event"
 MESSAGE "Battle Screen Size is {CurrentOffset-BattleScreenStart:N1} Bytes"
+
+MapSpritesStart:
+MESSAGE Inserting Map Sprites at CurrentOffset
+#include "MapSprites/MapSpritesInstaller.event"
+MESSAGE "Map Sprites Size is {CurrentOffset-MapSpritesStart:N1} Bytes"

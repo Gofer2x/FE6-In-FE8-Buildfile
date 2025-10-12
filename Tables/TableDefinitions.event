@@ -385,5 +385,3 @@
 #define Black2 0x6
 
 #endif
-
-#include "ExternalTables.event"

@@ -1,0 +1,37 @@
+#define SetMMS(index, graphics, another_ptr) "PUSH ; ORG NewMovingMapSpriteTable + (index-1)*8; POIN graphics another_ptr ; POP"
+
+ALIGN 4
+NewMovingMapSpriteTable:
+#incbin "VanillaPlusExpandedMMSTable.dmp"
+
+PUSH
+
+ORG $79584
+POIN NewMovingMapSpriteTable
+ORG $79598
+POIN NewMovingMapSpriteTable
+ORG $BAC2C
+POIN NewMovingMapSpriteTable
+ORG $BAC40
+POIN NewMovingMapSpriteTable
+
+POP
+
+SetMMS(ThiefF, ThiefF_MMS_Data, ThiefF_MMS_AP)
+SetMMS(RogueF, RogueF_MMS_Data, RogueF_MMS_AP)
+SetMMS(Nomad, Nomad_MMS_Data, Nomad_MMS_AP)
+SetMMS(NomadF, NomadF_MMS_Data, NomadF_MMS_AP)
+SetMMS(NomadTrooper, NomadTrooper_MMS_Data, NomadTrooper_MMS_AP)
+SetMMS(NomadTrooperF, NomadTrooperF_MMS_Data, NomadTrooperF_MMS_AP)
+SetMMS(Transporter, Transporter_MMS_Data, Transporter_MMS_AP)
+SetMMS(FaeManakete, FaeManakete_MMS_Data, FaeManakete_MMS_AP)
+SetMMS(DivineDragon, DivineDragon_MMS_Data, DivineDragon_MMS_AP)
+SetMMS(FireManakete, FireManakete_MMS_Data, FireManakete_MMS_AP)
+SetMMS(FireDragon, FireDragon_MMS_Data, FireDragon_MMS_AP)
+SetMMS(King, King_MMS_Data, King_MMS_AP)
+SetMMS(DemonDragon, DemonDragon_MMS_Data, DemonDragon_MMS_AP)
+
+//Update vanilla with new
+SetSMS(Dancer_SMS, Dancer_MMS_Data, Dancer_MMS_AP)
+SetSMS(ShamanF_SMS, ShamanF_MMS_Data, ShamanF_MMS_AP)
+SetSMS(DruidF_SMS, DruidF_MMS_Data, DruidF_MMS_AP)

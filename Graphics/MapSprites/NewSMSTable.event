@@ -1,0 +1,52 @@
+#define SetSMS(index, size, graphics) "PUSH ; ORG NewStandingMapSpriteTable + (index)*8 + 2; BYTE size 0; POIN graphics ; POP"
+
+ALIGN 4
+NewStandingMapSpriteTable:
+#incbin "VanillaPlusExpandedSMSTable.dmp"
+
+PUSH
+ORG $26730
+POIN NewStandingMapSpriteTable
+ORG $267B0
+POIN NewStandingMapSpriteTable
+ORG $26838
+POIN NewStandingMapSpriteTable
+ORG $26C88
+POIN NewStandingMapSpriteTable
+ORG $272D0
+POIN NewStandingMapSpriteTable
+ORG $27BB0
+POIN NewStandingMapSpriteTable
+ORG $27C9C
+POIN NewStandingMapSpriteTable
+ORG $27D48
+POIN NewStandingMapSpriteTable
+ORG $27E0C
+POIN NewStandingMapSpriteTable
+ORG $27E9C
+POIN NewStandingMapSpriteTable
+ORG $27F74
+POIN NewStandingMapSpriteTable
+ORG $28064
+POIN NewStandingMapSpriteTable
+
+POP
+
+SetSMS(ThiefF_SMS, ThiefF_SMS_Size, ThiefF_SMS_Data)
+SetSMS(RogueF_SMS, RogueF_SMS_Size, RogueF_SMS_Data)
+SetSMS(Nomad_SMS, Nomad_SMS_Size, Nomad_SMS_Data)
+SetSMS(NomadF_SMS, NomadF_SMS_Size, NomadF_SMS_Data)
+SetSMS(NomadTrooper_SMS, NomadTrooper_SMS_Size, NomadTrooper_SMS_Data)
+SetSMS(NomadTrooperF_SMS, NomadTrooperF_SMS_Size, NomadTrooperF_SMS_Data)
+SetSMS(Transporter_SMS, Transporter_SMS_Size, Transporter_SMS_Data)
+SetSMS(FaeManakete_SMS, FaeManakete_SMS_Size, FaeManakete_SMS_Data)
+SetSMS(DivineDragon_SMS, DivineDragon_SMS_Size, DivineDragon_SMS_Data)
+SetSMS(FireManakete_SMS, FireManakete_SMS_Size, FireManakete_SMS_Data)
+SetSMS(FireDragon_SMS, FireDragon_SMS_Size, FireDragon_SMS_Data)
+SetSMS(King_SMS, King_SMS_Size, King_SMS_Data)
+SetSMS(DemonDragon_SMS, DemonDragon_SMS_Size, DemonDragon_SMS_Data)
+
+//Update vanilla with new
+SetSMS(Dancer_SMS, Dancer_SMS_Size, Dancer_SMS_Data)
+SetSMS(ShamanF_SMS, ShamanF_SMS_Size, ShamanF_SMS_Data)
+SetSMS(DruidF_SMS, DruidF_SMS_Size, DruidF_SMS_Data)

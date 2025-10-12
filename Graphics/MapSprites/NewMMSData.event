@@ -1,0 +1,87 @@
+ALIGN 4
+AP_9_1:
+#incbin "AP_9_1.dmp"
+
+ALIGN 4
+AP_10_1:
+#incbin "AP_10_1.dmp"
+
+ALIGN 4
+RoyLord_MMS_Data:
+#incbin "dmp/RoyLord_MMS.dmp"
+
+ALIGN 4
+RoyGreatLord_MMS_Data:
+#incbin "dmp/RoyGreatLord_MMS.dmp"
+
+ALIGN 4
+ThiefF_MMS_Data:
+#incbin "dmp/ThiefF_MMS.dmp"
+
+ALIGN 4
+RogueF_MMS_Data:
+#incbin "dmp/RogueF_MMS.dmp"
+
+ALIGN 4
+Nomad_MMS_Data:
+#incbin "dmp/Nomad_MMS.dmp"
+
+ALIGN 4
+NomadF_MMS_Data:
+#incbin "dmp/NomadF_MMS.dmp"
+
+ALIGN 4
+NomadTrooper_MMS_Data:
+#incbin "dmp/NomadTrooper_MMS.dmp"
+
+ALIGN 4
+NomadTrooperF_MMS_Data:
+#incbin "dmp/NomadTrooperF_MMS.dmp"
+
+ALIGN 4
+ShamanF_MMS_Data:
+#incbin "dmp/ShamanF_MMS.dmp"
+
+ALIGN 4
+DruidF_MMS_Data:
+#incbin "dmp/DruidF_MMS.dmp"
+
+ALIGN 4
+Dancer_MMS_Data:
+#incbin "dmp/Dancer_MMS.dmp"
+
+ALIGN 4
+Transporter_MMS_Data:
+#incbin "dmp/Transporter_MMS.dmp"
+
+ALIGN 4
+FaeManakete_MMS_Data:
+#incbin "dmp/FaeManakete_MMS.dmp"
+
+ALIGN 4
+FireManakete_MMS_Data:
+#incbin "dmp/FireManakete_MMS.dmp"
+
+ALIGN 4
+FireDragon_MMS_Data:
+#incbin "dmp/FireDragon_MMS.dmp"
+
+ALIGN 4
+DivineDragon_MMS_Data:
+#incbin "dmp/DivineDragon_MMS.dmp"
+
+ALIGN 4
+King_MMS_Data:
+#incbin "dmp/King_MMS.dmp"
+
+ALIGN 4
+DemonDragon_MMS_Data:
+#incbin "dmp/DemonDragon_MMS.dmp"
+
+ALIGN 4
+MannedIronBallista_MMS_Data:
+#incbin "dmp/MannedIronBallista_MMS.dmp"
+
+ALIGN 4
+UnmannedIronBallista_MMS_Data:
+#incbin "dmp/UnmannedIronBallista_MMS.dmp"

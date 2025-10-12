@@ -1,0 +1,8 @@
+#undef Dancer_SMS_Data
+#undef Dancer_SMS_Size
+#undef MannedIronBallista_SMS_Data
+#undef MannedIronBallista_SMS_Size
+#undef UnmannedIronBallista_SMS_Data
+#undef UnmannedIronBallista_SMS_Size
+#undef Dancer_MMS_Data
+#undef Dancer_MMS_AP

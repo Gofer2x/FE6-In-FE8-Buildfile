@@ -4,6 +4,7 @@
 
 #include "NamesAndDescs/ItemNames.txt"
 #include "NamesAndDescs/ItemDescriptions.txt"
-
+#include "NamesAndDescs/ClassNames.txt"
+#include "NamesAndDescs/ClassDescriptions.txt"
 
 #include "Misc/GoalIdunn.txt"

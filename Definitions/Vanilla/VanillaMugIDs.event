@@ -130,7 +130,7 @@
 #define Troubadour_ClassCard 0x82
 #define Valkyrie_ClassCard 0x83
 #define Nomad_ClassCard 0x84
-#define NomadicTrooper_ClassCard 0x85
+#define NomadTrooper_ClassCard 0x85
 #define PegasusKnight_ClassCard 0x86
 #define Falcoknight_ClassCard 0x87
 #define WyvernRider_ClassCard 0x88

@@ -1,0 +1,210 @@
+//Practically same as normal mounted except for 2 cost Forest.
+ALIGN 4
+NomadMovementCost:
+BYTE 255 //255
+BYTE 1 //Plain
+BYTE 1 //Road
+BYTE 1 //Village
+BYTE 255 //Village (Closed)
+BYTE 1 //House
+BYTE 1 //Armory
+BYTE 1 //Vendor
+BYTE 1 //Arena
+BYTE 1 //C.Room
+BYTE 2 //Fort
+BYTE 1 //Gate (Castle)
+BYTE 2 //Forest
+BYTE 255 //Thicket
+BYTE 1 //Sand
+BYTE 3 //Desert
+BYTE 255 //River
+BYTE 255 //Mountain
+BYTE 255 //Peak
+BYTE 1 //Bridge
+BYTE 255 //Bridge (Draw)
+BYTE 255 //Sea
+BYTE 255 //Lake
+BYTE 1 //Floor
+BYTE 1 //Floor (Heal)
+BYTE 255 //Fence
+BYTE 255 //Wall
+BYTE 255 //Wall (Damaged)
+BYTE 2 //Rubble
+BYTE 3 //Pillar
+BYTE 255 //Door
+BYTE 2 //Throne
+BYTE 1 //Chest (Empty)
+BYTE 1 //Chest
+BYTE 255 //Roof
+BYTE 1 //Gate
+BYTE 1 //Church
+BYTE 2 //Ruins
+BYTE 255 //Cliff
+BYTE 2 //Ballista
+BYTE 2 //Long Ballista
+BYTE 2 //Killer Ballista
+BYTE 1 //Flat
+BYTE 1 //Wreck
+BYTE 255 //Blank
+BYTE 1 //Stairs
+BYTE 255 //(Flyable)
+BYTE 1 //Glacier
+BYTE 1 //Arena
+BYTE 255 //Valley
+BYTE 255 //Fence
+BYTE 255 //Snag
+BYTE 1 //Bridge (Log)
+BYTE 255 //Sky
+BYTE 255 //Deeps
+BYTE 1 //Ruins (Remains)
+BYTE 1 //Inn
+BYTE 255 //Barrel
+BYTE 255 //Bone
+BYTE 255 //Dark
+BYTE 255 //Water
+BYTE 255 //Gunnels
+BYTE 1 //Deck
+BYTE 255 //Brace
+BYTE 255 //Mast
+
+//Plain +1 (2)
+//Forest +1 (3)
+//Desert -1 (2) (don't ask, following the vanilla scheme)
+//Ruins +2
+//Flat +1 (2)
+//Wreck +3 (4)
+ALIGN 4
+RainNomadMovementCost:
+BYTE 255 //255
+BYTE 2 //Plain
+BYTE 1 //Road
+BYTE 1 //Village
+BYTE 255 //Village (Closed)
+BYTE 1 //House
+BYTE 1 //Armory
+BYTE 1 //Vendor
+BYTE 1 //Arena
+BYTE 1 //C.Room
+BYTE 2 //Fort
+BYTE 1 //Gate (Castle)
+BYTE 3 //Forest
+BYTE 255 //Thicket
+BYTE 1 //Sand
+BYTE 2 //Desert
+BYTE 255 //River
+BYTE 255 //Mountain
+BYTE 255 //Peak
+BYTE 1 //Bridge
+BYTE 255 //Bridge (Draw)
+BYTE 255 //Sea
+BYTE 255 //Lake
+BYTE 1 //Floor
+BYTE 1 //Floor (Heal)
+BYTE 255 //Fence
+BYTE 255 //Wall
+BYTE 255 //Wall (Damaged)
+BYTE 2 //Rubble
+BYTE 3 //Pillar
+BYTE 255 //Door
+BYTE 2 //Throne
+BYTE 1 //Chest (Empty)
+BYTE 1 //Chest
+BYTE 255 //Roof
+BYTE 1 //Gate
+BYTE 1 //Church
+BYTE 4 //Ruins
+BYTE 255 //Cliff
+BYTE 2 //Ballista
+BYTE 2 //Long Ballista
+BYTE 2 //Killer Ballista
+BYTE 2 //Flat
+BYTE 4 //Wreck
+BYTE 255 //Blank
+BYTE 1 //Stairs
+BYTE 255 //(Flyable)
+BYTE 1 //Glacier
+BYTE 1 //Arena
+BYTE 255 //Valley
+BYTE 255 //Fence
+BYTE 255 //Snag
+BYTE 1 //Bridge (Log)
+BYTE 255 //Sky
+BYTE 255 //Deeps
+BYTE 1 //Ruins (Remains)
+BYTE 1 //Inn
+BYTE 255 //Barrel
+BYTE 255 //Bone
+BYTE 255 //Dark
+BYTE 255 //Water
+BYTE 255 //Gunnels
+BYTE 1 //Deck
+BYTE 255 //Brace
+BYTE 255 //Mast
+
+ALIGN 4
+SnowNomadMovementCost:
+BYTE 255 //255
+BYTE 2 //Plain
+BYTE 1 //Road
+BYTE 1 //Village
+BYTE 255 //Village (Closed)
+BYTE 1 //House
+BYTE 1 //Armory
+BYTE 1 //Vendor
+BYTE 1 //Arena
+BYTE 1 //C.Room
+BYTE 2 //Fort
+BYTE 1 //Gate (Castle)
+BYTE 3 //Forest
+BYTE 255 //Thicket
+BYTE 1 //Sand
+BYTE 2 //Desert
+BYTE 255 //River
+BYTE 255 //Mountain
+BYTE 255 //Peak
+BYTE 1 //Bridge
+BYTE 255 //Bridge (Draw)
+BYTE 255 //Sea
+BYTE 255 //Lake
+BYTE 1 //Floor
+BYTE 1 //Floor (Heal)
+BYTE 255 //Fence
+BYTE 255 //Wall
+BYTE 255 //Wall (Damaged)
+BYTE 2 //Rubble
+BYTE 3 //Pillar
+BYTE 255 //Door
+BYTE 2 //Throne
+BYTE 1 //Chest (Empty)
+BYTE 1 //Chest
+BYTE 255 //Roof
+BYTE 1 //Gate
+BYTE 1 //Church
+BYTE 4 //Ruins
+BYTE 255 //Cliff
+BYTE 2 //Ballista
+BYTE 2 //Long Ballista
+BYTE 2 //Killer Ballista
+BYTE 2 //Flat
+BYTE 4 //Wreck
+BYTE 255 //Blank
+BYTE 1 //Stairs
+BYTE 255 //(Flyable)
+BYTE 1 //Glacier
+BYTE 1 //Arena
+BYTE 255 //Valley
+BYTE 255 //Fence
+BYTE 255 //Snag
+BYTE 1 //Bridge (Log)
+BYTE 255 //Sky
+BYTE 255 //Deeps
+BYTE 1 //Ruins (Remains)
+BYTE 1 //Inn
+BYTE 255 //Barrel
+BYTE 255 //Bone
+BYTE 255 //Dark
+BYTE 255 //Water
+BYTE 255 //Gunnels
+BYTE 1 //Deck
+BYTE 255 //Brace
+BYTE 255 //Mast

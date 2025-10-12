@@ -1,0 +1,15 @@
+#define ThiefF_Anims 0x0
+#define RogueF_Anims 0x0
+#define Nomad_Anims 0x0
+#define NomadF_Anims 0x0
+#define NomadTrooper_Anims 0x0
+#define NomadTrooperF_Anims 0x0
+#define FaeManakete_Anims 0x0
+#define DivineDragon_Anims 0x0
+#define FireManakete_Anims 0x0
+#define FireDragon_Anims 0x0
+#define King_Anims 0x0
+#define DemonDragon_Anims 0x0
+
+#define Nomad_ClassCard 0x0
+#define NomadTrooper_ClassCard 0x0

@@ -1,0 +1,195 @@
+## RoyLord_Description
+A noble attached to a ruling[N]
+house. Has great potential.[X]
+
+## RoyGreatLord_Description
+An honorific bestowed upon[N]
+true champions.[X]
+
+## Mercenary_Description
+Professional soldiers with a[N]
+balanced set of skills.[X]
+
+## Hero_Description
+An honorific bestowed upon[N]
+famed mercenary masters.[X]
+
+## Myrmidon_Description
+Swordfighters with superior[N]
+skill. Swift at killing strokes.[X]
+
+## Swordmaster_Description
+An honorific bestowed upon[N]
+true masters of swordplay.[X]
+
+## Fighter_Description
+Axe-wielding soldiers whose[N]
+attack offers little defense.[X]
+
+## Warrior_Description
+An honorific bestowed upon[N]
+strong, battle-worn fighters.[X]
+
+## Brigand_Description
+Mighty mountaineers who[N]
+prefer axes in combat.[X]
+
+## Pirate_Description
+Bold pirates who use axes in[N]
+battle. Quite adept at sea.[X]
+
+## Berserker_Description
+An honorific bestowed upon[N]
+fighters of incredible fury.[X]
+
+## Soldier_Description
+An average soldier who has[N]
+no special abilities.[X]
+
+## Knight_Description
+Heavily armored knights with[N]
+stout defense, but low speed.[X]
+
+## General_Description
+An honorific bestowed upon[N]
+seasoned knights.[X]
+
+## Archer_Description
+Soldiers who attack from a[N]
+distance with their bows.[X]
+
+## Sniper_Description
+An honorific bestowed upon[N]
+peerless veteran archers.[X]
+
+## Thief_Description
+Jacks of all trades who can[N]
+pick locks and learn secrets.[X]
+
+## Rogue_Description
+An honorific bestowed upon[N]
+the most skilled thieves.[X]
+
+## Assassin_Description
+An honorific bestowed upon[N]
+the most lethal swordfighters.[X]
+
+## Cavalier_Description
+Mounted knights with[N]
+superior movement.[X]
+
+## Paladin_Description
+An honorific bestowed upon[N]
+the most skilled mounted knights.[X]
+
+## GreatKnight_Description
+An honorific bestowed upon[N]
+the strongest mounted knights.[X]
+
+## Nomad_Description
+Sacaen plainsmen with good[N]
+movement. Armed with bows.[X]
+
+## NomadTrooper_Description
+An honorific bestowed upon[N]
+nomads of great skill.[X]
+
+## PriestAndCleric_Description
+Acolytes who aid their[N]
+allies with sacred staves.[X]
+
+## Monk_Description
+Ascetics who wield light[N]
+magic, but can't use staves.[X]
+
+## Bishop_Description
+An honorific bestowed upon[N]
+devout priests and clerics.[X]
+
+## Troubadour_Description
+Staff-wielding maidens who[N]
+travel by horseback.[X]
+
+## Valkyrie_Description
+An honorific bestowed upon[N]
+truly talented troubadours.[X]
+
+## Mage_Description
+Students of Anima magic whose spells[N]
+penetrate even the toughest armor.[X]
+
+## Sage_Description
+An honorific bestowed upon[N]
+staff-wielding mages.[X]
+
+## MageKnight_Description
+An honorific bestowed upon[N]
+mages skilled on horseback.[X]
+
+## Shaman_Description
+Students of dark magic.[N]
+Powerful, but very slow.[X]
+
+## Druid_Description
+An honorific bestowed upon[N]
+true masters of dark arts.[X]
+
+## Summoner_Description
+An honoric bestowed upon[N]
+the masters of dark conjuration.[X]
+
+## PegasusKnight_Description
+Knights who've earned the[N]
+right to fly winged steeds.[X]
+
+## Falcoknight_Description
+An honorific bestowed upon[N]
+the swiftest pegasus knights.[X]
+
+## WyvernRider_Description
+Wyvern riders, weak only[N]
+against magic and bows.[X]
+
+## WyvernLord_Description
+An honorific bestowed upon[N]
+skilled wyvern riders.[X]
+
+## WyvernKnight_Description
+An honorific bestowed upon[N]
+deadly wyvern riders.[X]
+
+## Bard_Description
+Musicians whose melodies[N]
+aid allies. Unable to attack.[X]
+
+## Dancer_Description
+Dancers whose arts aid[N]
+allies. Unable to attack.[X]
+
+## Transporter_Description
+A conveyor of goods and[N]
+items. Lacks combat skills.[X]
+
+## Manakete_Description
+"Unhumans" who have an[N]
+eerie air about them.[X]
+
+## DivineDragon_Description
+If you can read this,[N]
+something went wrong.[X]
+
+## FireDragon_Description
+If you can read this,[N]
+something went wrong.[X]
+
+## King_Description
+The mighty king of Bern.[N]
+Gifted all-around.[X]
+
+## DemonDragon_Description
+A powerful dragon who rips enemies[N]
+apart with her breath and claws.[X]
+
+## Civilian_Description
+An innocent peasant with[N]
+no combat skills at all.[X]

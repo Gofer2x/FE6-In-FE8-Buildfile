@@ -14,6 +14,7 @@
 	#include "Graphics/MasterGraphicsInstaller.event"
 
     //CSV tables
+	#include "Tables/ExternalTableInstaller.event"
     #include "Tables/TableInstaller.event"
     MESSAGE Used table space ends at currentOffset
 

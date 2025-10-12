@@ -1,0 +1,79 @@
+ALIGN 4
+RoyLord_SMS_Data:
+#incbin "dmp/RoyLord_SMS.dmp"
+
+ALIGN 4
+RoyGreatLord_SMS_Data:
+#incbin "dmp/RoyGreatLord_SMS.dmp"
+
+ALIGN 4
+ThiefF_SMS_Data:
+#incbin "dmp/ThiefF_SMS.dmp"
+
+ALIGN 4
+RogueF_SMS_Data:
+#incbin "dmp/RogueF_SMS.dmp"
+
+ALIGN 4
+Nomad_SMS_Data:
+#incbin "dmp/Nomad_SMS.dmp"
+
+ALIGN 4
+NomadF_SMS_Data:
+#incbin "dmp/NomadF_SMS.dmp"
+
+ALIGN 4
+NomadTrooper_SMS_Data:
+#incbin "dmp/NomadTrooper_SMS.dmp"
+
+ALIGN 4
+NomadTrooperF_SMS_Data:
+#incbin "dmp/NomadTrooperF_SMS.dmp"
+
+ALIGN 4
+ShamanF_SMS_Data:
+#incbin "dmp/ShamanF_SMS.dmp"
+
+ALIGN 4
+DruidF_SMS_Data:
+#incbin "dmp/DruidF_SMS.dmp"
+
+ALIGN 4
+Dancer_SMS_Data:
+#incbin "dmp/Dancer_SMS.dmp"
+
+ALIGN 4
+Transporter_SMS_Data:
+#incbin "dmp/Transporter_SMS.dmp"
+
+ALIGN 4
+FaeManakete_SMS_Data:
+#incbin "dmp/FaeManakete_SMS.dmp"
+
+ALIGN 4
+FireManakete_SMS_Data:
+#incbin "dmp/FireManakete_SMS.dmp"
+
+ALIGN 4
+FireDragon_SMS_Data:
+#incbin "dmp/FireDragon_SMS.dmp"
+
+ALIGN 4
+DivineDragon_SMS_Data:
+#incbin "dmp/DivineDragon_SMS.dmp"
+
+ALIGN 4
+King_SMS_Data:
+#incbin "dmp/King_SMS.dmp"
+
+ALIGN 4
+DemonDragon_SMS_Data:
+#incbin "dmp/DemonDragon_SMS.dmp"
+
+ALIGN 4
+MannedIronBallista_SMS_Data:
+#incbin "dmp/MannedIronBallista_SMS.dmp"
+
+ALIGN 4
+UnmannedIronBallista_SMS_Data:
+#incbin "dmp/UnmannedIronBallista_SMS.dmp"

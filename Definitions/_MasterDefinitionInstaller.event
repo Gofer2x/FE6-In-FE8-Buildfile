@@ -29,3 +29,6 @@
 #include "Generated/ItemIDs.event"
 #include "Generated/ClassIDs.event"
 #include "TEMP/SoundIDs.event"
+
+#include "_VanillaUndefs.event"
+#include "TEMP/TempDummyDefs.event"

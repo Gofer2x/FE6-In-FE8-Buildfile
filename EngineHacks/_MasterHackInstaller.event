@@ -233,3 +233,6 @@ POP
   // Save/Suspend Expansion
     #include "Necessary/ExpandedModularSave/ExModularSave.event"
 
+// ********************
+//Non Skillsys patches below
+#include "_MyHacks/SMSPatch.event"

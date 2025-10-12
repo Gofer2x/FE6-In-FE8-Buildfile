@@ -1,0 +1,2 @@
+#include "ExternalTables/SkillSysTableStuff.event"
+#include "ExternalTables/NewTerrainMovementCostTables.event"
