@@ -1,0 +1,9 @@
+#include "BattleAnimationIDs.event"
+
+#include "NewAnimationTableInstaller.event"
+
+#include "AnimationDefinitions.event"
+
+#include "NewAnimationData.event"
+
+#include "NewClassAnimationTables.event"

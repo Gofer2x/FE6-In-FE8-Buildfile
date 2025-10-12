@@ -1,3 +1,4 @@
+//Vanilla SMS to be overwritten
 #undef Dancer_SMS_Data
 #undef Dancer_SMS_Size
 #undef MannedIronBallista_SMS_Data
@@ -6,3 +7,13 @@
 #undef UnmannedIronBallista_SMS_Size
 #undef Dancer_MMS_Data
 #undef Dancer_MMS_AP
+
+//Vanilla animation tables to be overwritten
+#undef HeroF_Anims
+#undef General_Anims
+#undef GeneralF_Anims
+#undef Paladin_Anims
+#undef PaladinF_Anims
+#undef Bishop_Anims
+#undef BishopF_Anims
+#undef Dancer_Anims

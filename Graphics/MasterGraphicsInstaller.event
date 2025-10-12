@@ -38,3 +38,8 @@ MapSpritesStart:
 MESSAGE Inserting Map Sprites at CurrentOffset
 #include "MapSprites/MapSpritesInstaller.event"
 MESSAGE "Map Sprites Size is {CurrentOffset-MapSpritesStart:N1} Bytes"
+
+AnimationsStart:
+MESSAGE Inserting Animations at CurrentOffset
+#include "Animations/_AnimationsInstaller.event"
+MESSAGE "Animations Size is {CurrentOffset-AnimationsStart:N1} Bytes"

@@ -1,0 +1,70 @@
+#######################################################
+#C9 fifd_mg1 Manakete Item
+#
+#When importing to FEditorAdv delete # and after each line.
+#######################################################
+/// - Mode 1               #Melee Animation
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+~~~
+/// - Mode 3               #Melee Critical Animation
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+~~~
+/// - Mode 5               #Ranged Animation 
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+~~~
+/// - Mode 6               #Ranged Critical Animation
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+~~~
+/// - Mode 7               #Dodge Melee Attack
+C02                               #Start of dodge
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C06                               #Begin opponent's turn after hit.next code 0D.
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 8               #Dodge Ranged Attack
+C02                               #Start of dodge
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C06                               #Begin opponent's turn after hit.next code 0D.
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - Mode 9               #Equiped with Melee Weapon
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C01                               #NOP
+~~~
+/// - Mode 10               #Standing motions
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C01                               #NOP
+~~~
+/// - Mode 11               #Equiped with Ranged weapon
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C01                               #NOP
+~~~
+/// - Mode 12               #Attack Missed Animation
+C02                               #Start of dodge
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0E                               #Start of dodging frames (should go after standing frame and before dodging animation)
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+1 p- Revert_000.png
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C06                               #Begin opponent's turn after hit.next code 0D.
+C51                               #Show brief white flash animation. Do NOT USE because conflict skill animation. alternative is C39.
+C0D                               #End of dodge animation. preceeded by 0x06
+~~~
+/// - End of animation

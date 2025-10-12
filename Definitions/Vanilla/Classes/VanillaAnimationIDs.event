@@ -143,7 +143,7 @@
 #define AssassinF_UnarmedAnim 0x8E 
 #define Rogue_SwordAnim 0x8F 
 #define Rogue_UnarmedAnim 0x90 
-#define Dancer_Anim 0x91 
+#define Dancer_RefreshAnim 0x91 
 #define Journeyman_AxeAnim 0x92 
 #define Journeyman_HandAxeAnim 0x93 
 #define Journeyman_UnarmedAnim 0x94 

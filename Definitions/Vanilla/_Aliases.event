@@ -2,3 +2,5 @@
 #define Boots_Description Swiftsoles_Description
 #define Boots_UseScreen Swiftsoles_UseScreen
 #define FireManakete_ClassCard Manakete1_ClassCard
+
+#define Hatchet FE8_Hatchet

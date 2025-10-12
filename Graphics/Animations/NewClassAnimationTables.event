@@ -1,0 +1,151 @@
+//New
+ALIGN 4
+RoyLord_Anims:
+SwordAnim(RoyLord_SwordAnim)
+SpecialAnim(RoyLord_BindingBladeAnim, BindingBlade)
+UnarmedAnim(RoyLord_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+ThiefF_Anims:
+SwordAnim(ThiefF_SwordAnim)
+UnarmedAnim(ThiefF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+RogueF_Anims:
+SwordAnim(RogueF_SwordAnim)
+UnarmedAnim(RogueF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+Nomad_Anims:
+BowAnim(Nomad_BowAnim)
+UnarmedAnim(Nomad_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+NomadF_Anims:
+BowAnim(NomadF_BowAnim)
+UnarmedAnim(NomadF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+NomadTrooper_Anims:
+BowAnim(NomadTrooper_BowAnim)
+SwordAnim(NomadTrooper_SwordAnim)
+UnarmedAnim(NomadTrooper_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+NomadTrooperF_Anims:
+BowAnim(NomadTrooperF_BowAnim)
+SwordAnim(NomadTrooperF_SwordAnim)
+UnarmedAnim(NomadTrooperF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+Bard_Anims:
+UnarmedAnim(Bard_RefreshAnim)
+EndAnim
+
+ALIGN 4
+FaeManakete_Anims:
+UnarmedAnim(FaeManakete_UnarmedAnim)
+SpecialAnim(FaeManakete_UnarmedAnim,Divinestone)
+EndAnim
+
+ALIGN 4
+FireManakete_Anims:
+UnarmedAnim(FireManakete_UnarmedAnim)
+SpecialAnim(FireManakete_UnarmedAnim,Firestone)
+EndAnim
+
+ALIGN 4
+DivineDragon_Anims:
+UnarmedAnim(FaeManakete_UnarmedAnim)
+SpecialAnim(FaeManakete_UnarmedAnim,Divinestone)
+EndAnim
+
+ALIGN 4
+FireDragon_Anims:
+UnarmedAnim(FireManakete_UnarmedAnim)
+SpecialAnim(FireManakete_UnarmedAnim,Firestone)
+EndAnim
+
+ALIGN 4
+King_Anims:
+SwordAnim(King_SwordAnim)
+UnarmedAnim(King_SwordAnim) //yeah, it's like that in fe6 lol
+EndAnim
+
+ALIGN 4
+DemonDragon_Anims:
+UnarmedAnim(DemonDragon_UnarmedAnim)
+SpecialAnim(DemonDragon_UnarmedAnim,DarkBreath)
+EndAnim
+
+
+
+
+//Vanilla Overwrites
+ALIGN 4
+HeroF_Anims:
+SwordAnim(HeroF_SwordAnim)
+AxeAnim(HeroF_AxeAnim)
+HandAxeAnim(HeroF_HandAxeAnim)
+UnarmedAnim(HeroF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+General_Anims:
+LanceAnim(General_LanceAnim)
+AxeAnim(General_AxeAnim)
+HandAxeAnim(General_HandAxeAnim)
+UnarmedAnim(General_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+GeneralF_Anims:
+LanceAnim(GeneralF_LanceAnim)
+AxeAnim(GeneralF_AxeAnim)
+HandAxeAnim(GeneralF_HandAxeAnim)
+UnarmedAnim(GeneralF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+Paladin_Anims:
+SwordAnim(Paladin_SwordAnim)
+LanceAnim(Paladin_LanceAnim)
+AxeAnim(Paladin_AxeAnim)
+HandAxeAnim(Paladin_HandAxeAnim)
+UnarmedAnim(Paladin_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+PaladinF_Anims:
+SwordAnim(PaladinF_SwordAnim)
+LanceAnim(PaladinF_LanceAnim)
+AxeAnim(PaladinF_AxeAnim)
+HandAxeAnim(PaladinF_HandAxeAnim)
+UnarmedAnim(PaladinF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+Bishop_Anims:
+MagicAnim(Bishop_MagicAnim)
+StaffAnim(Bishop_StaffAnim)
+UnarmedAnim(Bishop_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+BishopF_Anims:
+MagicAnim(BishopF_MagicAnim)
+StaffAnim(BishopF_StaffAnim)
+UnarmedAnim(BishopF_UnarmedAnim)
+EndAnim
+
+ALIGN 4
+Dancer_Anims:
+UnarmedAnim(Dancer_RefreshAnim)
+EndAnim

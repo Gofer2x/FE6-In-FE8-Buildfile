@@ -1,0 +1,48 @@
+//Bishop_MagicAnim, BishopF_MagicAnim
+
+
+
+
+
+
+#define RoyLord_SwordAnim 0xCA
+#define RoyLord_BindingBladeAnim 0xCB
+#define RoyLord_UnarmedAnim 0xCC
+#define HeroF_SwordAnim 0xCD
+#define HeroF_AxeAnim 0xCE
+#define HeroF_HandAxeAnim 0xCF
+#define HeroF_UnarmedAnim 0xD0
+#define Paladin_AxeAnim 0xD1
+#define Paladin_HandAxeAnim 0xD2
+#define PaladinF_AxeAnim 0xD3
+#define PaladinF_HandAxeAnim 0xD4
+#define ThiefF_SwordAnim 0xD5
+#define ThiefF_UnarmedAnim 0xD6
+#define RogueF_SwordAnim 0xD7
+#define RogueF_UnarmedAnim 0xD8
+#define Nomad_BowAnim 0xD9
+#define Nomad_UnarmedAnim 0xDA
+#define NomadF_BowAnim 0xDB
+#define NomadF_UnarmedAnim 0xDC
+#define NomadTrooper_BowAnim 0xDD
+#define NomadTrooper_SwordAnim 0xDE
+#define NomadTrooper_UnarmedAnim 0xDF
+#define NomadTrooperF_BowAnim 0xE0
+#define NomadTrooperF_SwordAnim 0xE1
+#define NomadTrooperF_UnarmedAnim 0xE2
+#define Bishop_StaffAnim 0xE3
+#define BishopF_StaffAnim 0xE4
+#define Bard_RefreshAnim 0xE5
+#define FireManakete_TransformAnim 0xE6
+#define FireManakete_DragonstoneAnim 0xE7
+#define FireManakete_RevertAnim 0xE8
+#define FireManakete_UnarmedAnim 0xE9
+#define FaeManakete_TransformAnim 0xEA
+#define FaeManakete_DragonstoneAnim 0xEB
+#define FaeManakete_RevertAnim 0xEC
+#define FaeManakete_UnarmedAnim 0xED
+#define King_SwordAnim 0xEE
+#define DemonDragon_TransformAnim 0xEF
+#define DemonDragon_DragonstoneAnim 0xF0
+#define DemonDragon_RevertAnim 0xF1
+#define DemonDragon_UnarmedAnim 0xF2

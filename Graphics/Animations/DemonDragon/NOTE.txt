@@ -1,0 +1,2 @@
+The Transform and Revert animations are taken from "8. Dragonstone (Claw+Transform)" on the repo, but they had hyphens in their names which caused issues. To avoid manually editing them out in each file I just imported then exported them in FEBuilder with different names.
+The Unarmed animation is just a blank one I made.

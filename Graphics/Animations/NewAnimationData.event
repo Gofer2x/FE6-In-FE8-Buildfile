@@ -1,0 +1,108 @@
+//New
+  {
+  #include "RoyLord\1.Sword\SwordInstaller.event"
+  }
+  {
+  #include "RoyLord\1.Sword(BindingBlade)\SwordInstaller.event"
+  #include "RoyLord\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "HeroF\1.Sword\SwordInstaller.event"
+  #include "HeroF\3.Axe\AxeInstaller.event"
+  #include "HeroF\4.HandAxe\HandAxeInstaller.event"
+  #include "HeroF\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "Paladin\3.Axe\AxeInstaller.event"
+  #include "Paladin\4.HandAxe\HandAxeInstaller.event"
+  }
+  {
+  #include "PaladinF\3.Axe\AxeInstaller.event"
+  #include "PaladinF\4.HandAxe\HandAxeInstaller.event"
+  }
+  {
+  #include "ThiefF\1.Sword\SwordInstaller.event"
+  #include "ThiefF\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "RogueF\1.Sword\SwordInstaller.event"
+  #include "RogueF\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "Nomad\5.Bow\BowInstaller.event"
+  #include "Nomad\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "NomadF\5.Bow\BowInstaller.event"
+  #include "NomadF\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "NomadTrooper\5.Bow\BowInstaller.event"
+  #include "NomadTrooper\1.Sword\SwordInstaller.event"
+  #include "NomadTrooper\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "NomadTrooperF\5.Bow(Vanilla+Fix)\BowInstaller.event"
+  #include "NomadTrooperF\1.Sword\SwordInstaller.event"
+  #include "NomadTrooperF\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "Bard\8.Refresh(FE6)(BirdSfx)\RefreshInstaller.event"
+  }
+  {
+  #include "FireManakete\8.Dragonstone(FE8)\TransformInstaller.event"
+  #include "FireManakete\8.Dragonstone(FE8)\DragonstoneInstaller.event"
+  #include "FireManakete\8.Dragonstone(FE8)\RevertInstaller.event"
+  #include "FireManakete\8.Unarmed(Vanilla)\UnarmedInstaller.event"
+  }
+  {
+  #include "FaeManakete\TransformReduced\TransformInstaller.event"
+  #include "FaeManakete\8.Dragonstone\DragonstoneInstaller.event"
+  #include "FaeManakete\RevertReduced\RevertInstaller.event"
+  #include "FaeManakete\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "King\Sword\SwordInstaller.event"
+  }
+  {
+  #include "DemonDragon\Transform\TransformInstaller.event"
+  #include "DemonDragon\8.Dragonstone(Claw+Transform)\DragonstoneInstaller.event"
+  #include "DemonDragon\Revert\RevertInstaller.event"
+  #include "DemonDragon\Unarmed\UnarmedInstaller.event"
+  }
+  
+//Vanilla Overwrites
+  {
+  #include "Mercenary\1.Sword\SwordInstaller.event"
+  #include "Mercenary\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "Thief\1.Sword\SwordInstaller.event"
+  #include "Thief\8.Unarmed\UnarmedInstaller.event"
+  }
+  {
+  #include "MageF\6.Magic(Fixed)\MagicInstaller.event"
+  }
+  {
+  #include "Dancer\8.Refresh(Heart FE8)\RefreshInstaller.event" //Not sure which one to use
+  }
+  {
+  #include "Sage\6.Magic(Fixed)\MagicInstaller.event"
+  #include "Sage\7.Staff\StaffInstaller.event"
+  }
+  {
+  #include "SageF\6.Magic(FE8)\MagicInstaller.event"
+  #include "SageF\7.Staff\StaffInstaller.event"
+  }
+
+//Mixed
+  {
+  #include "Bishop\6.Magic\MagicInstaller.event" //Vanilla Overwrite
+  #include "Bishop\7.Staff\StaffInstaller.event" //New
+  #include "Bishop\8.Unarmed\UnarmedInstaller.event" //Vanilla Overwrite
+  }
+  {
+  #include "BishopF\6.Magic(FE6)\MagicInstaller.event" //Vanilla Overwrite
+  #include "BishopF\7.Staff(FE6)\StaffInstaller.event"  //New
+  #include "BishopF\8.Unarmed(FE6)\UnarmedInstaller.event" //Vanilla Overwrite
+  }
