@@ -5,3 +5,5 @@ once classes moved update effectiveness groups and items that use them for them 
 since triangle attacks now use something else remove their hardcoding?
 
 since i'm actually using vanilla data now, do PLIST stuffs to save on tileset space
+
+set up bard anims for the class and fix bungled dancer sms (and mms?)
