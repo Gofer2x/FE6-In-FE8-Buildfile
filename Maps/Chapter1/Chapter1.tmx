@@ -12,7 +12,7 @@
    <property name="MapChangesID" value="MAPCHANGES_Ch1"/>
    <property name="MapID" value="MAP_Ch1"/>
    <property name="ObjectType" value="OBJ_Fields"/>
-   <property name="PaletteID" value="PAL_Fields"/>
+   <property name="PaletteID" value="PAL_FieldsDay"/>
    <property name="TileConfig" value="CONFIG_Fields"/>
   </properties>
   <data>

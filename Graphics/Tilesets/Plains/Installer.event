@@ -2,10 +2,9 @@ ALIGN 4
 OBJ_PlainsData:
 #incbin "Plains.dmp"
 
-
 ALIGN 4
-PAL_PlainsData:
-#incbin "Plains_pal.dmp"
+PAL_PlainsSacaeData:
+#incbin "PlainsSacae_pal.dmp"
 ALIGN 4
 PAL_PlainsVillageData:
 #incbin "PlainsVillage_pal.dmp"
@@ -18,7 +17,7 @@ CONFIG_PlainsVillageData:
 #incext compress "PlainsVillage.mapchip_config"
 
 EventPointerTable(OBJ_Plains, OBJ_PlainsData)
-EventPointerTable(PAL_Plains, PAL_PlainsData)
+EventPointerTable(PAL_PlainsSacae, PAL_PlainsSacaeData)
 EventPointerTable(PAL_PlainsVillage, PAL_PlainsVillageData)
 EventPointerTable(CONFIG_Plains, CONFIG_PlainsData)
 EventPointerTable(CONFIG_PlainsVillage, CONFIG_PlainsVillageData)

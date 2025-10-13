@@ -12,7 +12,7 @@
    <property name="MapChangesID" value="MAPCHANGES_Ch20Bx"/>
    <property name="MapID" value="MAP_Ch20Bx"/>
    <property name="ObjectType" value="OBJ_Plains"/>
-   <property name="PaletteID" value="PAL_Plains"/>
+   <property name="PaletteID" value="PAL_PlainsSacae"/>
    <property name="TileConfig" value="CONFIG_Plains"/>
   </properties>
   <data>

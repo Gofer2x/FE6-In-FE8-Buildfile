@@ -3,8 +3,8 @@ OBJ_FieldsData:
 #incbin "Fields.dmp"
 
 ALIGN 4
-PAL_FieldsData:
-#incbin "Fields_pal.dmp"
+PAL_FieldsDayData:
+#incbin "FieldsDay_pal.dmp"
 ALIGN 4
 PAL_FieldsNightData:
 #incbin "FieldsNight_pal.dmp"
@@ -14,6 +14,6 @@ CONFIG_FieldsData:
 #incext compress "Fields.mapchip_config"
 
 EventPointerTable(OBJ_Fields, OBJ_FieldsData)
-EventPointerTable(PAL_Fields, PAL_FieldsData)
+EventPointerTable(PAL_FieldsDay, PAL_FieldsDayData)
 EventPointerTable(PAL_FieldsNight, PAL_FieldsNightData)
 EventPointerTable(CONFIG_Fields, CONFIG_FieldsData)

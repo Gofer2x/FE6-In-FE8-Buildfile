@@ -165,7 +165,7 @@
 #define CONFIG_Mountainous 0xA5
 #define CONFIG_Stronghold 0xA6
 #define CONFIG_Temple 0xA7
-#define PAL_Fields 0xA8
+#define PAL_FieldsDay 0xA8
 #define PAL_FieldsNight 0xA9
 #define PAL_FieldsBridge 0xAA
 #define PAL_Village 0xAB
@@ -183,7 +183,7 @@
 #define PAL_Snow 0xB7
 #define PAL_SnowCastle 0xB8
 #define PAL_SnowCastleGaiden 0xB9
-#define PAL_Plains 0xBA
+#define PAL_PlainsSacae 0xBA
 #define PAL_PlainsVillage 0xBB
 #define PAL_PlainsCastle 0xBC
 #define PAL_Mountainous 0xBD
