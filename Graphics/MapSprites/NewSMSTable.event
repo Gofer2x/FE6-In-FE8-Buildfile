@@ -32,6 +32,7 @@ POIN NewStandingMapSpriteTable
 
 POP
 
+//New classes, new SMS
 SetSMS(ThiefF_SMS, ThiefF_SMS_Size, ThiefF_SMS_Data)
 SetSMS(RogueF_SMS, RogueF_SMS_Size, RogueF_SMS_Data)
 SetSMS(Nomad_SMS, Nomad_SMS_Size, Nomad_SMS_Data)
@@ -46,7 +47,9 @@ SetSMS(FireDragon_SMS, FireDragon_SMS_Size, FireDragon_SMS_Data)
 SetSMS(King_SMS, King_SMS_Size, King_SMS_Data)
 SetSMS(DemonDragon_SMS, DemonDragon_SMS_Size, DemonDragon_SMS_Data)
 
-//Update vanilla with new
+//Update vanilla classes with new SMS
 SetSMS(Dancer_SMS, Dancer_SMS_Size, Dancer_SMS_Data)
+
+//Vanilla classes, new SMS with new IDs
 SetSMS(ShamanF_SMS, ShamanF_SMS_Size, ShamanF_SMS_Data)
 SetSMS(DruidF_SMS, DruidF_SMS_Size, DruidF_SMS_Data)

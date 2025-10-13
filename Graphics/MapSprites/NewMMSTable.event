@@ -17,6 +17,7 @@ POIN NewMovingMapSpriteTable
 
 POP
 
+//New classes, new MMS
 SetMMS(ThiefF, ThiefF_MMS_Data, ThiefF_MMS_AP)
 SetMMS(RogueF, RogueF_MMS_Data, RogueF_MMS_AP)
 SetMMS(Nomad, Nomad_MMS_Data, Nomad_MMS_AP)
@@ -31,7 +32,9 @@ SetMMS(FireDragon, FireDragon_MMS_Data, FireDragon_MMS_AP)
 SetMMS(King, King_MMS_Data, King_MMS_AP)
 SetMMS(DemonDragon, DemonDragon_MMS_Data, DemonDragon_MMS_AP)
 
-//Update vanilla with new
-SetSMS(Dancer_SMS, Dancer_MMS_Data, Dancer_MMS_AP)
-SetSMS(ShamanF_SMS, ShamanF_MMS_Data, ShamanF_MMS_AP)
-SetSMS(DruidF_SMS, DruidF_MMS_Data, DruidF_MMS_AP)
+//Update vanilla classes with new MMS
+SetMMS(Dancer, Dancer_MMS_Data, Dancer_MMS_AP)
+
+//Vanilla classes, new MMS
+SetMMS(ShamanF, ShamanF_MMS_Data, ShamanF_MMS_AP)
+SetMMS(DruidF, DruidF_MMS_Data, DruidF_MMS_AP)
