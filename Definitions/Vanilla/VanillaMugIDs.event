@@ -65,8 +65,8 @@
 #define VigardeAlive_Mug 0x41
 #define Valter_Mug 0x42
 #define Caellach_Mug 0x43
-#define Orson_Mug 0x44
-#define OrsonPale_Mug 0x45
+#define OrsonPale_Mug 0x44
+#define Orson_Mug 0x45
 #define Lyon_Mug 0x46
 #define LyonClosedEyes_Mug 0x47
 #define Riev_Mug 0x48
