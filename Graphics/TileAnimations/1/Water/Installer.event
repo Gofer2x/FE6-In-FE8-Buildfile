@@ -48,7 +48,7 @@ TILEANIM1_WaterFrame15:
 #incbin "Water.mapanime1_015.dmp"
 
 ALIGN 4
-TILEANIM1_WaterRawData:
+TILEANIM1_WaterData:
 tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame0)
 tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame1)
 tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame2)
@@ -67,4 +67,4 @@ tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame14)
 tilesetAnimation(28,0x1000,TILEANIM1_WaterFrame15)
 WORD 0 0
 
-EventPointerTable(TILEANIM1_Water,TILEANIM1_WaterRawData)
+EventPointerTable(TILEANIM1_Water,TILEANIM1_WaterData)

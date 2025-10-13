@@ -1,15 +1,15 @@
 ALIGN 4
-OBJ_MountainousRawData:
+OBJ_MountainousData:
 #incbin "Mountainous.dmp"
 
 ALIGN 4
-PAL_MountainousRawData:
+PAL_MountainousData:
 #incbin "Mountainous_pal.dmp"
 
 ALIGN 4
-CONFIG_MountainousRawData:
+CONFIG_MountainousData:
 #incext compress "Mountainous.mapchip_config"
 
-EventPointerTable(OBJ_Mountainous, OBJ_MountainousRawData)
-EventPointerTable(PAL_Mountainous, PAL_MountainousRawData)
-EventPointerTable(CONFIG_Mountainous, CONFIG_MountainousRawData)
+EventPointerTable(OBJ_Mountainous, OBJ_MountainousData)
+EventPointerTable(PAL_Mountainous, PAL_MountainousData)
+EventPointerTable(CONFIG_Mountainous, CONFIG_MountainousData)

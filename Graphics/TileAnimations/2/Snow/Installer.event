@@ -24,7 +24,7 @@ TILEANIM2_SnowColors7:
 BYTE  $D9 $73 $D9 $73 $D9 $73 $DA $77;
 
 ALIGN 4
-TILEANIM2_SnowRawData:
+TILEANIM2_SnowData:
 paletteAnimation(TILEANIM2_SnowColors0, 61, 4, 60, 0)
 paletteAnimation(TILEANIM2_SnowColors1, 61, 4, 60, 0)
 paletteAnimation(TILEANIM2_SnowColors2, 3, 4, 60, 0)
@@ -36,4 +36,4 @@ paletteAnimation(TILEANIM2_SnowColors7, 2, 4, 60, 0)
 WORD 0x0
 WORD 0x0
 
-EventPointerTable(TILEANIM2_Snow,TILEANIM2_SnowRawData)
+EventPointerTable(TILEANIM2_Snow,TILEANIM2_SnowData)

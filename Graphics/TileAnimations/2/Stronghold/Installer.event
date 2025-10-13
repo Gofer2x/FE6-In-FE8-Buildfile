@@ -42,7 +42,7 @@ TILEANIM2_StrongholdColors13:
 BYTE  $FF $73 $9E $33 $1F $22;
 
 ALIGN 4
-TILEANIM2_StrongholdRawData:
+TILEANIM2_StrongholdData:
 paletteAnimation(TILEANIM2_StrongholdColors0, 5, 3, 49, 0)
 paletteAnimation(TILEANIM2_StrongholdColors1, 6, 3, 49, 0)
 paletteAnimation(TILEANIM2_StrongholdColors2, 6, 3, 49, 0)
@@ -60,4 +60,4 @@ paletteAnimation(TILEANIM2_StrongholdColors13, 7, 3, 49, 0)
 WORD 0x0
 WORD 0x0
 
-EventPointerTable(TILEANIM2_Stronghold,TILEANIM2_StrongholdRawData)
+EventPointerTable(TILEANIM2_Stronghold,TILEANIM2_StrongholdData)

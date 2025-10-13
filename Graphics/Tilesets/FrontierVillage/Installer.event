@@ -1,15 +1,15 @@
 ALIGN 4
-OBJ_FrontierVillageRawData:
+OBJ_FrontierVillageData:
 #incbin "FrontierVillage.dmp"
 
 ALIGN 4
-PAL_FrontierVillageRawData:
+PAL_FrontierVillageData:
 #incbin "FrontierVillage_pal.dmp"
 
 ALIGN 4
-CONFIG_FrontierVillageRawData:
+CONFIG_FrontierVillageData:
 #incext compress "FrontierVillage.mapchip_config"
 
-EventPointerTable(OBJ_FrontierVillage, OBJ_FrontierVillageRawData)
-EventPointerTable(PAL_FrontierVillage, PAL_FrontierVillageRawData)
-EventPointerTable(CONFIG_FrontierVillage, CONFIG_FrontierVillageRawData)
+EventPointerTable(OBJ_FrontierVillage, OBJ_FrontierVillageData)
+EventPointerTable(PAL_FrontierVillage, PAL_FrontierVillageData)
+EventPointerTable(CONFIG_FrontierVillage, CONFIG_FrontierVillageData)

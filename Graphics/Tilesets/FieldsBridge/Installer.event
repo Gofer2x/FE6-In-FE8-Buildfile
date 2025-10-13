@@ -1,15 +1,15 @@
 ALIGN 4
-OBJ_FieldsBridgeRawData:
+OBJ_FieldsBridgeData:
 #incbin "FieldsBridge.dmp"
 
 ALIGN 4
-PAL_FieldsBridgeRawData:
+PAL_FieldsBridgeData:
 #incbin "FieldsBridge_pal.dmp"
 
 ALIGN 4
-CONFIG_FieldsBridgeRawData:
+CONFIG_FieldsBridgeData:
 #incext compress "FieldsBridge.mapchip_config"
 
-EventPointerTable(OBJ_FieldsBridge, OBJ_FieldsBridgeRawData)
-EventPointerTable(PAL_FieldsBridge, PAL_FieldsBridgeRawData)
-EventPointerTable(CONFIG_FieldsBridge, CONFIG_FieldsBridgeRawData)
+EventPointerTable(OBJ_FieldsBridge, OBJ_FieldsBridgeData)
+EventPointerTable(PAL_FieldsBridge, PAL_FieldsBridgeData)
+EventPointerTable(CONFIG_FieldsBridge, CONFIG_FieldsBridgeData)

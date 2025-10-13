@@ -1,25 +1,25 @@
 ALIGN 4
-OBJ_DesertAndCaveRawData:
+OBJ_DesertAndCaveData:
 #incbin "DesertAndCave.dmp"
 
 ALIGN 4
-PAL_CaveRawData:
+PAL_CaveData:
 #incbin "Cave_pal.dmp"
 ALIGN 4
-PAL_DesertRawData:
+PAL_DesertData:
 #incbin "Desert_pal.dmp"
 
 ALIGN 4
-CONFIG_CaveRawData:
+CONFIG_CaveData:
 #incext compress "Cave.mapchip_config"
 ALIGN 4
-CONFIG_DesertRawData:
+CONFIG_DesertData:
 #incext compress "Desert.mapchip_config"
 
-EventPointerTable(OBJ_DesertAndCave, OBJ_DesertAndCaveRawData)
+EventPointerTable(OBJ_DesertAndCave, OBJ_DesertAndCaveData)
 
-EventPointerTable(PAL_Cave, PAL_CaveRawData)
-EventPointerTable(CONFIG_Cave, CONFIG_CaveRawData)
+EventPointerTable(PAL_Cave, PAL_CaveData)
+EventPointerTable(CONFIG_Cave, CONFIG_CaveData)
 
-EventPointerTable(PAL_Desert, PAL_DesertRawData)
-EventPointerTable(CONFIG_Desert, CONFIG_DesertRawData)
+EventPointerTable(PAL_Desert, PAL_DesertData)
+EventPointerTable(CONFIG_Desert, CONFIG_DesertData)

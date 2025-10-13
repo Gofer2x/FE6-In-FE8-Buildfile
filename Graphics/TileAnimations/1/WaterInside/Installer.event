@@ -25,7 +25,7 @@ TILEANIM1_WaterInsideFrame7:
 
 
 ALIGN 4
-TILEANIM1_WaterInsideRawData:
+TILEANIM1_WaterInsideData:
 tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame0)
 tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame1)
 tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame2)
@@ -36,4 +36,4 @@ tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame6)
 tilesetAnimation(11,0x800,TILEANIM1_WaterInsideFrame7)
 WORD 0 0
 
-EventPointerTable(TILEANIM1_WaterInside,TILEANIM1_WaterInsideRawData)
+EventPointerTable(TILEANIM1_WaterInside,TILEANIM1_WaterInsideData)

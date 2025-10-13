@@ -18,7 +18,7 @@ TILEANIM2_FinalColors5:
 BYTE  $73 $3F $44 $43 $02 $4F $8C $66;
 
 ALIGN 4
-TILEANIM2_FinalRawData:
+TILEANIM2_FinalData:
 paletteAnimation(TILEANIM2_FinalColors0, 20, 4, 65, 0)
 paletteAnimation(TILEANIM2_FinalColors1, 10, 4, 65, 0)
 paletteAnimation(TILEANIM2_FinalColors2, 12, 4, 65, 0)
@@ -28,4 +28,4 @@ paletteAnimation(TILEANIM2_FinalColors5, 12, 4, 65, 0)
 WORD 0x0
 WORD 0x0
 
-EventPointerTable(TILEANIM2_Final,TILEANIM2_FinalRawData)
+EventPointerTable(TILEANIM2_Final,TILEANIM2_FinalData)

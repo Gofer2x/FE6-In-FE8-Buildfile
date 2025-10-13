@@ -1,20 +1,20 @@
 ALIGN 4
-OBJ_FrontierCastleRawData:
+OBJ_FrontierCastleData:
 #incbin "FrontierCastle.dmp"
 
 ALIGN 4
-PAL_FrontierCastleRawData:
+PAL_FrontierCastleData:
 #incbin "FrontierCastle_pal.dmp"
 
 ALIGN 4
-PAL_FrontierCastleLavaCaveRawData:
+PAL_FrontierCastleLavaCaveData:
 #incbin "FrontierCastleLavaCave_pal.dmp"
 
 ALIGN 4
-CONFIG_FrontierCastleRawData:
+CONFIG_FrontierCastleData:
 #incext compress "FrontierCastle.mapchip_config"
 
-EventPointerTable(OBJ_FrontierCastle, OBJ_FrontierCastleRawData)
-EventPointerTable(PAL_FrontierCastle, PAL_FrontierCastleRawData)
-EventPointerTable(PAL_FrontierCastleLavaCave, PAL_FrontierCastleLavaCaveRawData)
-EventPointerTable(CONFIG_FrontierCastle, CONFIG_FrontierCastleRawData)
+EventPointerTable(OBJ_FrontierCastle, OBJ_FrontierCastleData)
+EventPointerTable(PAL_FrontierCastle, PAL_FrontierCastleData)
+EventPointerTable(PAL_FrontierCastleLavaCave, PAL_FrontierCastleLavaCaveData)
+EventPointerTable(CONFIG_FrontierCastle, CONFIG_FrontierCastleData)

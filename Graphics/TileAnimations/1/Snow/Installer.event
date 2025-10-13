@@ -48,7 +48,7 @@ TILEANIM1_SnowFrame15:
 #incbin "Snow.mapanime1_015.dmp"
 
 ALIGN 4
-TILEANIM1_SnowRawData:
+TILEANIM1_SnowData:
 tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame0)
 tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame1)
 tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame2)
@@ -67,4 +67,4 @@ tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame14)
 tilesetAnimation(28,0x1000,TILEANIM1_SnowFrame15)
 WORD 0 0
 
-EventPointerTable(TILEANIM1_Snow,TILEANIM1_SnowRawData)
+EventPointerTable(TILEANIM1_Snow,TILEANIM1_SnowData)

@@ -45,7 +45,7 @@ TILEANIM2_LavaColors14:
 BYTE  $18 $00 $DF $00 $DF $05 $7F $22;
 
 ALIGN 4
-TILEANIM2_LavaRawData:
+TILEANIM2_LavaData:
 paletteAnimation(TILEANIM2_LavaColors0, 19, 4, 60, 0)
 paletteAnimation(TILEANIM2_LavaColors1, 18, 4, 60, 0)
 paletteAnimation(TILEANIM2_LavaColors2, 17, 4, 60, 0)
@@ -64,4 +64,4 @@ paletteAnimation(TILEANIM2_LavaColors14, 18, 4, 60, 0)
 WORD 0x0
 WORD 0x0
 
-EventPointerTable(TILEANIM2_Lava,TILEANIM2_LavaRawData)
+EventPointerTable(TILEANIM2_Lava,TILEANIM2_LavaData)
