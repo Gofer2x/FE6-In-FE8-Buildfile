@@ -1,0 +1,13 @@
+ALIGN 4
+CountRangeState_ASMC:
+#incbin "CountRangeState.dmp"
+
+#define CountUnitsInRange(unit,class,item,affiliation,startrange,endrange,unitstate) "BYTE $40 $05 $01 $00 ; SHORT unit ; BYTE $00 $00 $40 $05 $02 $00 ; SHORT class ; BYTE $00 $00 $40 $05 $03 $00 ; SHORT item ; BYTE $00 $00 $40 $05 $04 $00 ; SHORT affiliation ; BYTE $00 $00 $40 $05 $05 $00 ; WORD startrange ; BYTE $40 $05 $06 $00 ; WORD endrange ; BYTE $40 $05 $07 $00 ; WORD unitstate ; BYTE $40 $0D $00 $00 ; POIN CountRangeState_ASMC+1"
+
+//[XXXX:UNIT:CheckUnit 00=ANY]
+//[YYYY:CLASS:CheckClass 00=ANY]
+//[ZZZZ:ITEM:CheckItem 00=ANY]
+//[WWWW:WMAPAFFILIATION:FF=ANY]
+//[UU:RAM_UNIT_STATE:UnitState 00=ANY]
+//[PP:MAPXY:StartRange]
+//[RR:MAPXY:EndRange 00=ANY]	{COND}

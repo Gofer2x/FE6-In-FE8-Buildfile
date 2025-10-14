@@ -32,6 +32,13 @@ POIN NewStandingMapSpriteTable
 
 POP
 
+#define RoyLord_SMS 0x0
+#define RoyGreatLord_SMS 0x1
+
+//Our Boy
+SetSMS(RoyLord_SMS, RoyLord_SMS_Data, RoyLord_SMS_Size)
+SetSMS(RoyGreatLord_SMS, RoyGreatLord_SMS_Data, RoyGreatLord_SMS_Size)
+
 //New classes, new SMS
 SetSMS(ThiefF_SMS, ThiefF_SMS_Size, ThiefF_SMS_Data)
 SetSMS(RogueF_SMS, RogueF_SMS_Size, RogueF_SMS_Data)

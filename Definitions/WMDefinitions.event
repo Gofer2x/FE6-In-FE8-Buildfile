@@ -1,0 +1,135 @@
+//World Map stuff.
+
+////Units, Moving units
+
+//Waits for any currently moving sprites to finish moving.
+#define WM_ENUN "WM_WAITFORSPRITES 0x0 0xFFFF 0xFFFF"
+
+//Spawns Lord unit at specified node.
+#define WM_SpawnLord(unit,node) "WM_SPAWNLORD 0x0 0x0 unit node 0x0"
+
+//Makes Lord unit visible.
+#define WM_MakeLordVisible "WM_MAKELORDVISIBLE 0x0"
+
+//Move Lord unit from node to node. Basically the below def but with id locked to 0.
+#define WM_MoveLord(fromNode,toNode,time,delay) "WM_MOVESPRITETO 0x0 0x0 0x2 fromNode toNode time delay"
+
+//Move any registered unit from node to node.
+#define WM_MoveLord(id,fromNode,toNode,time,delay) "WM_MOVESPRITETO 0x0 id 0x2 fromNode toNode time delay"
+
+//Register sprite to be shown.
+#define WM_RegisterSprite(id,class,affiliation,node) "PUTSPRITE id class affiliation node"
+
+//Load registered sprite.
+#define WM_LoadSprite(id,affiliation,X,Y) "WM_PUTSPRITE id affiliation X Y"
+
+//Load sprite and move it immediately.
+#define WM_LoadMovingSprite(class,acceleration,startX,startY,endX,endY,time,flags,delay) "WM_PUTMOVINGSPRITE 0x0 class acceleration startX startY endX endY time flags delay 0x0"
+
+//Move a loaded sprite to a specified node.
+#define WM_MoveSpriteToNode(id,time,delay) "WM_MOVESPRITETO 0x0 0x0 0x0 0x0 id time delay"
+
+//Remove sprite.
+#define WM_RemoveSprite(id) "REMSPRITE id"
+
+//Fades a sprite in.
+#define WM_FadeInSprite(id,speed) "WM_FADEINSPRITE id speed"
+
+//Fades a sprite out.
+#define WM_FadeOutSprite(id,speed) "WM_FADEOUTSPRITE id speed"
+
+
+
+////Node Logic
+
+//Unlocks the next node (set in nodes table).
+#define WM_UnlockNextNode WM_CREATENEXTDESTINATION
+
+//Unlocks a specified node.
+#define WM_UnlockNode(id) "WM_LOADLOCATION2 0x0 id 0x0"
+
+//Removes a specified node.
+#define WM_RemoveNode(id) "WM_REMOVELOCATION 0x0 id 0x0"
+
+
+
+////Road Logic
+
+//Draws a road.
+#define WM_DrawRoad(id) "WM_DRAWPATH 0x0 id 0x0"
+
+//Draws a road quietly (without moving the camera?).
+#define WM_DrawRoadQuiet(id) "WM_DRAWPATH2 0x0 id 0x0"
+
+//Removes a road.
+#define WM_RemoveRoad(id) "WM_REMOVEPATH id"
+
+
+
+//Text Logic
+
+//Decorates the text. The fancy layout or something.
+#define WM_TextDecorate WM_TEXTDECORATE
+
+
+
+////Graphics/FX Logic
+
+//Waits for any currently playing graphics effects to end.
+#define WM_WaitForFx WM_WAITFORFX
+
+//Alias for Fadeout.
+#define WM_Fadeout "WM_FADEOUT 0x0 0x0 0x0"
+
+
+////Camera Logic
+
+//Scrolls camera to X and Y.
+#define WM_ScrollCam(x,y,speed,delay) "WM_MOVECAM 0x0 x y 0x0 speed delay 0x0"
+
+//Sets camera location to X and Y.
+#define WM_SetCam(x,y) "WM_SETCAM x y"
+
+//Wait for end of camera movement.
+#define WM_WaitForCam WM_WAITFORCAM
+
+//Moves the camera to the Lord unit.
+#define WM_CamOnLord WM_CENTERCAMONLORD
+
+
+
+////Other logic
+
+//Alias for disabling skipping.
+#define WM_DisableSkip "EVBIT_MODIFY 1"
+
+//Alias for enabling skipping.
+#define WM_EnableSkip "EVBIT_MODIFY 0"
+
+//Skips the current WM Event.
+#define WM_SkipEvent SKIPWN
+
+
+////Temporary/simple events.
+
+#define WMEVENT_UnlockNextNodeAfterChapter(currentNode,road) \
+WM_DisableSkip ; \
+WM_SpawnLord(Roy,currentNode) ; \
+WM_CamOnLord ; \
+WM_Fadeout ; \
+WM_TextDecorate ; \
+WM_EnableSkip ; \
+STAL 20 ; \
+WM_UnlockNextNode ; \
+WM_WaitForFX ; \
+STAL 40 ; \
+WM_DrawRoad(road) ; \
+STAL 70 ; \
+WM_MakeLordVisible ; \
+ENDA
+
+#define WMEVENT_SimpleNextChapterNodeSelect(currentNode,nextNode) \
+WM_DisableSkip ; \
+WM_MoveLord(currentNode,nextNode,60,10) ; \
+WM_ENUN ; \
+ENDA

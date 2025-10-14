@@ -1,4 +1,8 @@
 #include "SkillSysDefinitions.event"
+#include "EADefinitions.event"
+#include "AIDefinitions.event"
+#include "WMDefinitions.event"
+#include "EventFlagIDs.event"
 
 #include "Vanilla/VanillaMugIDs.event"
 #include "Vanilla/VanillaSoundIDs.event"

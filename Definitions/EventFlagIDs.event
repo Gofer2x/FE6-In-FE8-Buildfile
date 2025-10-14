@@ -1,0 +1,42 @@
+#define BossQuoteFlag 0x1
+#define BossDefeatFlag 0x2
+#define SeizeFlag 0x3
+#define SecondBGMFlag 0x4
+// 0x5
+#define RoutFlag 0x6
+// 0x7 to 0x28 Are temporary flags.
+#define GameOverFlag 0x65
+#define DisableObjectiveWindowFlag 0x66
+// 0x67 to 0x70 Are "Extra unit appearance"?
+// 0x71 to 0x77 Are Eirika and Ephraim route stuff.
+#define RoyCathTalkFlag1 0x78
+#define RoyCathTalkFlag2 0x79
+#define CathRecruitedOrDeadFlag 0x7A
+#define WestIslesBartreRouteFlag 0x7B //OFF means Echidna route, ON means Bartre route.
+#define PercevalRecruitedOrDeadFlag 0x7C //For Ch15.
+#define SacaeRouteFlag 0x7D //OFF means Illia route, ON means Sacae route.
+#define PostChapter22Flag 0x7E //ON if past Chapter 22, used for True Ending Epilogue.
+#define TriangleAttackDialogFlag1 0x7F
+#define TriangleAttackDialogFlag2 0x80
+#define TriangleAttackDialogFlag3 0x81
+// 0x82 is "fought with demon king"
+#define IdunnBindingBladeFlag 0x83 //ON if Idunn beaten with Roy wielding the Binding Blade.
+#define HideBossIconsFlag 0x84
+#define WorldMapInitializedFlag 0x89
+
+
+//Flags for the mess that is the Klein & Thea recruitment.
+#define Ch11A_Ch10B_RoyOrClarineKleinTalkFlag 0x7
+#define Ch11A_Ch10B_ShannaTheaTalkFlag 0x8
+#define Ch11A_Ch10B_NoKleinShannaTheaTalkFlag 0x9
+#define Ch11A_Ch10B_ClarineKleinExtraTalkFlag 0xA
+#define Ch11A_Ch10B_KleinTheaTalkFlag 0xB
+
+//Temporary flags for specific generics (and Douglas) deaths.
+#define Ch11A_Ch10B_GenericArcherKleinDeathFlag 0x20
+#define Ch11A_Ch10B_GenericPegKnightTheaDeathFlag 0x21
+#define Ch11B_GenericCitizenEidynaDeathFlag 0x20
+#define Ch13_Ch15_GenericSoldierPercevalDeathFlag 0x20
+#define Ch20A_GenericCitizenIlliaDeathFlag 0x20
+
+#define Ch16_DouglasDeathFlag 0x20

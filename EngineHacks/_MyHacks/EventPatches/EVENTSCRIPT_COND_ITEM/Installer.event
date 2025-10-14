@@ -1,0 +1,7 @@
+ALIGN 4
+FindItem_ASMC:
+#incbin "item_find.bin"
+
+#define CheckIfItemInPossession(item) "BYTE $40 $0D ; SHORT item ; POIN FindItem_ASMC+1"
+
+//EVENTSCRIPT.en=400DYYYY{$L1:item_find.bin}	[YYYY:ITEM:ITEM]item possession confirmation	{COND}

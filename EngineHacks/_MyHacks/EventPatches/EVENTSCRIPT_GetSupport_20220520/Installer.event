@@ -1,0 +1,5 @@
+ALIGN 4
+ASMC_GetSupport:
+#incbin "ASMC_GetSupport.dmp"
+
+#define GetSupportLevel(unit1,unit2) "BYTE $40 $0D ; BYTE unit1 ; BYTE unit2 ; POIN ASMC_GetSupport+1"

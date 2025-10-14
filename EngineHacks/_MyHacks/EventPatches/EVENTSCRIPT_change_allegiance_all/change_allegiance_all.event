@@ -1,0 +1,1 @@
+ALIGN 4ChangeAllegianceAll_ASMC:#incbin "change_allegiance_all.dmp"#define AllEnemiesToNPC(unitID, classID) "BYTE $40 $0D; BYTE unitID; BYTE classID; POIN ChangeAllegianceAll_ASMC+1"#define AllNPCToEnemy(unitID, classID) "BYTE $41 $0D; BYTE unitID; BYTE classID; POIN ChangeAllegianceAll_ASMC+1"

@@ -1,0 +1,144 @@
+#define AI1_InRange 0x0 
+#define AI1_InRange80 0x1 
+#define AI1_InRange50 0x2
+#define AI1_InPlace 0x3
+#define AI1_InPlace80 0x4
+#define AI1_InPlace50 0x5
+#define AI1_None 0x6
+#define AI1_InRangeLaus 0x7
+#define AI1_Ballista11B 0x8
+#define AI1_Douglas 0x9
+//#define AI1_ 0xA
+//#define AI1_ 0xB
+#define AI1_AttackInHalfRange 0xC
+#define AI1_InRangeOfCommander 0xD
+#define AI1_HealAllies 0xE
+
+
+
+#define AI2_Charge 0x0
+#define AI2_ChargeLaus 0x1
+#define AI2_Douglas 0x2
+#define AI2_DontMove 0x3
+#define AI2_PillageAttack 0x4
+#define AI2_PillageEscape 0x5
+#define AI2_TwoMoves 0x6
+#define AI2_TwoMovesLaus 0x7
+#define AI2_ClarineTalkToRoyAI 0x8
+#define AI2_RandomMovement 0x9
+#define AI2_MoveTowardsRoy 0xA
+//#define AI2_ 0xB
+#define AI2_Escape 0xC
+
+#define AI2_DelayedPillageAttack 0x11
+#define AI2_DelayedCharge 0x12
+
+
+#define RAI_50_100 0x0
+#define RAI_30_80 0x1
+#define RAI_10_50 0x2
+#define RAI_80_100 0x3
+#define RAI_NoRecovery 0x4
+
+#define TAI_Pos 0x0
+#define TAI_HP 0x8
+#define TAI_Reckless 0x10
+#define TAI_Def 0x18
+#define TAI_DmgAcc 0x20
+#define TAI_Arch 0x28
+#define TAI_Weird1 0x30
+#define TAI_Weird2 0x38
+
+
+
+#define AI4_Retreat 0x0
+#define AI4_DontRetreat 0x20
+
+
+
+
+
+//Used for player and cutscene units.
+#define DummyAI [0x6, 0x3, 0x9, 0x20]
+
+
+//These won't be used but might as well keep them
+
+#define BossAI [0x3, 0x3, 0x9, 0x20]
+//AI1_InPlace 0x3
+//AI2_DontMove 0x3
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_DontRetreat 0x20
+// [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+
+#define AggressiveAI [0x0, 0x0, 0x9, 0x0]
+//AI1_InRange 0x0
+//AI2_Charge 0x0
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_InPlace, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define TwoMovesAI [0x0, 0x6, 0x9, 0x0]
+//AI1_InRange 0x0
+//AI2_TwoMoves 0x6
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define InRangeAI [0x0, 0x3, 0x9, 0x0]
+//AI1_InRange 0x0
+//AI2_DontMove 0x3
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define StationaryAI [0x3, 0x3, 0x9, 0x0]
+//AI1_InPlace 0x3
+//AI2_DontMove 0x3
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#undef BrigandAI
+#define BrigandAI [0x0, 0x4, 0x9, 0x0]
+//AI1_InRange 0x0
+//AI2_PillageAttack 0x4
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define ThiefAI [0x6, 0x5, 0x9, 0x0]
+//AI1_None 0x6
+//AI2_PillageEscape 0x5
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_None, AI2_PillageEscape, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define EscapeAI [0x6, 0xC, 0x9, 0x0]
+//AI1_None 0x6
+//AI2_Escape 0xC
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_None, AI2_Escape, RAI_30_80|TAI_HP, AI4_Retreat]
+
+#define DoNothingAI [0x6, 0x3, 0x9, 0x20]
+//AI1_None 0x6
+//AI2_DontMove 0x3
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_DoNotRetreat 0x20
+// [AI1_None, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DoNotRetreat]
+
+#define HealerAI [0xE, 0x3, 0x9, 0x0]
+//AI1_HealAllies 0xE
+//AI2_DontMove 0x3
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DoNotRetreat]
+
+#define ClarineAI [0x6, 0xA, 0x9, 0x0]
+//AI1_None 0x6
+//AI2_MoveTowardsRoy 0xA
+//RAI_30_80 + TAI_HP 0x1 + 0x8 = 0x9
+//AI4_Retreat 0x0
+// [AI1_None, AI2_MoveTowardsRoy, RAI_30_80|TAI_HP, AI4_DoNotRetreat]
+

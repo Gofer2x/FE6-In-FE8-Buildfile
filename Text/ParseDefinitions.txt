@@ -50,6 +50,7 @@
 [.......v] = [FarFarRight]
 
 [CurrentPortrait] = [0xFF][0xFF]
+[LoadCurrentCharacter] = [LoadFace][0xFF][0xFF]
 
 [period] = [0xDE][0x82]
 [dquote] = [0xDE][0x83]

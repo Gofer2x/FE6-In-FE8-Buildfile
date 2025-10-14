@@ -1,0 +1,7 @@
+ALIGN 4
+IsTileChangeTriggered_ASMC:
+#incbin "ASMC_IsTileChangeTriggered.dmp"
+
+#define CheckTileChange(tilechange) "BYTE $40 $0D ; BYTE tilechange ; BYTE $00 ; POIN IsTileChangeTriggered_ASMC+1"
+
+

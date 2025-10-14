@@ -1,0 +1,24 @@
+ALIGN 4
+set_status_param_ASMC:
+#incbin "set_status_param.dmp"
+
+ALIGN 4
+get_status_param_ASMC:
+#incbin "get_status_param.dmp"
+
+#define DecreaseUnitParam(unit,param,value) "BYTE $40 $0D ; BYTE unit ; BYTE param ; POIN get_status_param_ASMC+1 ; BYTE $40 $05 $02 $00 ; BYTE value ; BYTE $00 $00 $00 $21 $06 $C2 $02 $40 $0D ; BYTE unit ; BYTE param ; POIN set_status_param_ASMC+1"
+#define CheckUnitParam(unit,param) "BYTE $40 $0D ; BYTE unit ; BYTE param ; POIN get_status_param_ASMC+1"
+
+#define param_Level 0x8
+#define param_Exp 0x9
+
+#define param_MaxHP 0x12
+#define param_HP 0x13
+#define param_Pow 0x14
+#define param_Skl 0x15
+#define param_Spd 0x16
+#define param_Def 0x17
+#define param_Res 0x18
+#define param_Luck 0x19
+
+

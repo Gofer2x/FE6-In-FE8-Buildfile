@@ -1,0 +1,5 @@
+ALIGN 4
+ChangeEdition_ASMC:
+#incbin "ASMC_ChangeEdition.dmp"
+
+#define ChangeMode(value) "BYTE $40 $0D ; BYTE value ; BYTE $00 ; POIN ChangeEdition_ASMC+1"

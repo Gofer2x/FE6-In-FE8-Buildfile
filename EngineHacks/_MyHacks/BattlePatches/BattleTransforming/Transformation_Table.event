@@ -1,0 +1,42 @@
+Transformation_Table:
+//Fire
+BYTE FireManakete //Class ID
+BYTE Firestone //Item ID
+SHORT FireManakete_TransformAnim //Human to Dragon
+SHORT FireManakete_DragonstoneAnim //Dragon breath
+SHORT FireManakete_RevertAnim //Dragon to Human
+SHORT FireManakete_UnarmedAnim //Human standing
+SHORT SND_ManaketeTransform //Transform Start Sound
+SHORT SND_ManaketeYowl //Transform Finish Sound
+SHORT SND_ManaketeUntransform //Untransform Sound
+//Fae
+BYTE FaeManakete //Class ID
+BYTE Divinestone //Item ID
+SHORT FaeManakete_TransformAnim //Human to Dragon
+SHORT FaeManakete_DragonstoneAnim //Dragon breath
+SHORT FaeManakete_RevertAnim //Dragon to Human
+SHORT FaeManakete_UnarmedAnim //Human standing
+SHORT SND_ManaketeTransform //Transform Start Sound
+SHORT SND_ManaketeYowl //Transform Finish Sound
+SHORT SND_ManaketeUntransform //Untransform Sound
+//
+//Idunn
+BYTE DemonDragon //Class ID
+BYTE DarkBreath //Item ID
+SHORT DemonDragon_TransformAnim //Human to Dragon
+SHORT DemonDragon_DragonstoneAnim //Dragon breath
+SHORT DemonDragon_RevertAnim //Dragon to Human
+SHORT DemonDragon_UnarmedAnim //Human standing
+SHORT 0x0 //Transform Start Sound
+SHORT 0x0 //Transform Finish Sound
+SHORT 0x0 //Untransform Sound
+//End
+BYTE 0x0
+BYTE 0x0
+SHORT 0x0
+SHORT 0x0
+SHORT 0x0
+SHORT 0x0
+SHORT 0x0
+SHORT 0x0
+SHORT 0x0

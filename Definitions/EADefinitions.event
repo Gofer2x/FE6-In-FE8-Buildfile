@@ -1,0 +1,167 @@
+//Move unit at specified coordinate
+//Credit Pikmin1211
+#define MoveByCoords(speed, srcX, srcY, destX, destY) "SVAL sB srcX|(srcY<<16); MOVE speed UnitAtCoordsSlotB [destX, destY]"
+
+#define BranchIfBossDead(label) "CheckFlag(BossDefeatFlag) ; BNE label s0 sC"
+#define BranchIfBossAlive(label) "CheckFlag(BossDefeatFlag) ; BEQ label s0 sC"
+
+#define BranchIfUnitDead(label,unit) "CHECK_ALIVE unit ; BEQ label s0 sC"
+#define BranchIfUnitAlive(label,unit) "CHECK_ALIVE unit ; BNE label s0 sC"
+
+#define BranchIfUnitNotAlly(label,unit) "CHECK_ALLEGIANCE unit ; BNE label s0 sC"
+
+#define BranchIfFlagOFF(label,flag) "CheckFlag(flag) ; BEQ label s0 sC"
+#define BranchIfFlagON(label,flag) "CheckFlag(flag) ; BNE label s0 sC"
+
+#define BranchIfCounterZero(label,counter) "COUNTER_CHECK counter ; BEQ label s0 sC"
+#define BranchIfCounterNotZero(label,counter,value) "COUNTER_CHECK counter ; BNE label s0 sC"
+
+#define BranchIfCounterEqualTo(label,counter,value) "SVAL 1 value; COUNTER_CHECK counter ; BEQ label s1 sC"
+#define BranchIfCounterNotEqualTo(label,counter,value) "SVAL 1 value; COUNTER_CHECK counter ; BNE label s1 sC"
+
+#define BranchIfCounterLargerThan(label,counter,value) "SVAL 1 value ; COUNTER_CHECK counter ; BGT label s1 sC"
+
+#define BranchIfUnitActive(label,unit) "SVAL s1 unit ; CHECK_ACTIVE ; BEQ label s1 sC"
+#define BranchIfUnitNotActive(label,unit) "SVAL s1 unit ; CHECK_ACTIVE ; BNE label s1 sC"
+
+#define BranchIfTileChangeActive(label, tilechange) "CheckTileChange(tilechange) ; BNE label s0 sC"
+#define BranchIfTileChangeNotActive(label, tilechange) "CheckTileChange(tilechange) ; BEQ label s0 sC"
+
+#define BranchIfHard(label) "CHECK_HARD ; BNE label s0 sC"
+#define BranchIfNotHard(label) "CHECK_HARD ; BEQ label s0 sC"
+
+#define BranchIfItemNotInPossession(label,item) "CheckIfItemInPossession(item) ; BEQ label s0 sC"
+
+#define BranchIfUnitNotDeployed(label,unit) "CHECK_DEPLOYED unit ; BEQ label s0 sC"
+
+#define BranchIfChapterIDIs(label,id) "CHECK_CHAPTER_NUMBER ; SVAL 1 id ; BEQ label s1 sC"
+#define BranchIfChapterIDIsNot(label,id) "CHECK_CHAPTER_NUMBER ; SVAL 1 id ; BNE label s1 sC"
+
+#define BranchIfChapterIDLargerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BGT label sC s1"
+#define BranchIfChapterIDSmallerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BLT label sC s1"
+
+#define SetCounter(counter,value) "COUNTER_SET counter value"
+
+#define IncrementCounter(counter) "COUNTER_INC counter"
+#define DecrementCounter(counter) "COUNTER_DEC counter"
+
+#define BranchIfRandomNotZero(label,random) "RANDOMNUMBER random ; BNE label s0 sC"
+
+#define BranchIfResultEqualTo(label,number) "SVAL s1 number ; BEQ label s1 sC"
+#define BranchIfResultIsZero(label) "BEQ label s0 sC"
+#define BranchIfResultSmallerThan(label,number) "SVAL s1 number ; BGE label s1 sC"
+
+#define LoseMoney(amount) "SVAL s3 amount ; TAKEMONEY"
+
+#define BranchIfGoldAtLeast(label,amount) "SVAL s1 amount ; CHECK_MONEY ; BGE label sC s1"
+
+
+
+#define LoadHardReinforcements(unitPtr) "SMOV 0x2 (unitPtr|0x8000000); CALL $9EE29C"
+
+//Yep, this is how these work in FE6 apparently. Hard mode exclusive = don't appear if boss dead. For events that use LoadHardReinforcements, make sure to add BranchIfBossDead.
+#define HardReinforcementEvent(unitPtr) "BranchIfBossDead(9) ; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE29C; LABEL 9 ; EVBIT_T 0x7 ; ENDA"
+
+#define AreaEvent(eventID,EventPointer,corner1x,corner1y,corner2x,corner2y)   "AREA eventID EventPointer [corner1x,corner1y] [corner2x,corner2y]" 
+
+//Friendlier names for "Start following units with camera" and "Stop following units with camera".
+#define CMON "EVBIT_T 0x09"
+#define CMOF "EVBIT_F 0x09"
+
+//Use at start of Range events.
+#define PlayerInRange "SVAL s2 0 ; CALL 0x89EE1B8"
+#define UnitInRange(unit) "SVAL s2 unit ; CALL 0x89EE19C"
+
+#define SetAI(unitid,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI unitid"
+#define SetAI(x,y,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI [x,y]"
+#define SetAI(unitid,ai1,ai2)"SVAL 0x1 ai1|(ai2<<8); CHAI unitid"
+#define SetAI(x,y,ai1,ai2) "SVAL 0x1 ai1|(ai2<<8); CHAI [x,y]"
+
+#define MoveNextTo(speed,unit1,unit2) "BYTE $49 $2F ; SHORT speed ; SHORT unit1 ; SHORT unit2 "
+
+//Door but with event flag.
+#define Door(EventFlag, DoorX, DoorY) "DOOR EventFlag [DoorX, DoorY] 0x12"
+
+//Door but with event flag and event pointer.
+#define DoorWithEvent(EventPointer,doorX,doorY) "DOOR 0 EventPointer [doorX,doorY] 0x12"
+
+//Trigger tile change by coordinate.
+#define TileChangeCoord(x,y) "SCOORD sB [x,y] ; TILECHANGE -1"
+#define ReverseTileChangeCoord(x,y) "SCOORD sB [x,y] ; TILEREVERSE -1"
+
+#define EndEvent "EVBIT_T 0x7 ; ENDA"
+
+#define FlagON(flag) "ENUT flag"
+#define FlagOFF(flag) "ENUF flag"
+
+#define CheckFlag(flag) "CHECK_EVENTID flag"
+
+#define PlayMusic(music) "MUSC music"
+
+#define SwitchMusic(music) "MUSS music"
+#define RestoreMusic "MURE 0x5"
+
+#define QuieterMusic "MUSI;"
+#define UnquieterMusic "MUNO;"
+
+#define FadeOutMusic "MUSCMID 0x7FFF"
+#define PlaySound(sound) "SOUN sound"
+
+#define Fade11s 1
+#define Fade5s 4
+#define Fade2s 12
+#define Fade1s 16
+
+#define ChStartFadeFromBlack "FADU 16"
+
+#define FadeFromBlack "FADU 60"
+#define FadeFromBlack(speed) "FADU speed"
+#define FadeIntoBlack "FADI 60"
+#define FadeIntoBlack(speed) "FADI speed"
+
+#define FadeFromWhite "FAWU 60"
+#define FadeFromWhite(speed) "FAWU speed"
+#define FadeIntoWhite "FAWI 60"
+#define FadeIntoWhite(speed) "FAWI speed"
+
+//16 fastest, 1 slowest.
+#define FlashWhiteAdjustable(speed) "FAWI speed ; FAWU speed"
+
+//Clears Player, Enemy, NPC units from map.
+#define ClearAll "CLEA 0x0; CLEE 0x0; CLEN 0x0"
+
+//Used in Ch8.
+#define GotoPrepScreenNoENDA "CALL $591FD8"
+
+#define TextWindow(text) "TUTORIALTEXTBOXSTART ; SVAL 0xB 0xFFFFFFF ; TEXTSHOW text ; TEXTEND ; REMA"
+
+//Used for clearing background and returning to map after a non-standard (TEXTSTART, TEXTCONT etc.) text display with a background.
+#define RemaFadeClean "REMA ; FadeIntoBlack(Fade1s) ; CLEAN ; FadeFromBlack(Fade1s)"
+
+#define MoveToChapterWithoutWM(chapter) "MNC2 chapter"
+
+//Vanilla function that I just copied the bytes of from FEBuilder, lol. Ugly.
+#define DesertTreasure(item,id) "BYTE $28 $33 $FF $FF $20 $06 $C2 $00 $40 $05 $03 $00 ; BYTE item ; BYTE $00 $00 $00 $40 $0A $00 $00 $1C $E6 $9E $08 $41 $0C ; SHORT id ; BYTE $0C $00 $00 $00 $40 $0A $00 $00 $D4 $E1 $9E $08 $20 $08 ; SHORT id ; BYTE $28 $02 $07 $00 $20 $01 $00 $00"
+
+#define DisableSceneSkipping "EVBIT_MODIFY 3"
+#define DisableSceneDialogueSkipping "EVBIT_MODIFY 4"
+#define DisableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 1"
+
+#define EnableSceneDialogueSkipping "EVBIT_MODIFY 2"
+
+#define EnableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 0"
+
+#define DisplayCharacterEndings "BYTE $40 $0D $00 $00 $95 $6C $0B $08"
+#define DisplayTurnCounts "BYTE $40 $0D $00 $00 $75 $81 $0B $08"
+#define ReturnToTitleScreen "MNTS 1"
+#define StopGameGraphicsLogic "BYTE $40 $0D $00 $00 $85 $01 $03 $08"
+#define RollEndgameCredits "BYTE $40 $0D $00 $00 $79 $48 $0C $08"
+
+#define StopHereIfSkipping "BYTE $20 $02 $02 $00"
+
+#ifdef CONFIG_EnableReviveMerlinus
+	#define ReviveMerlinusIfConfig "CALL EVENT_ReviveMerlinus"
+#endif
+#ifndef CONFIG_EnableReviveMerlinus
+	#define ReviveMerlinusIfConfig 
+#endif

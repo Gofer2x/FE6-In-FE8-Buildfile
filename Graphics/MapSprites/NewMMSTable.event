@@ -17,6 +17,9 @@ POIN NewMovingMapSpriteTable
 
 POP
 
+//Our Boy
+SetMMS(RoyLord, RoyLord_MMS_Data, RoyLord_MMS_AP)
+
 //New classes, new MMS
 SetMMS(ThiefF, ThiefF_MMS_Data, ThiefF_MMS_AP)
 SetMMS(RogueF, RogueF_MMS_Data, RogueF_MMS_AP)

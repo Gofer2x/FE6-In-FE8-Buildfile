@@ -1,5 +1,5 @@
-#define EphraimLord 0x1
-#define EirikaLord 0x2
+#define RoyLord 0x1
+#define RoyGreatLord 0x2
 #define EphraimGreatLord 0x3
 #define EirikaGreatLord 0x4
 #define Cavalier 0x5

@@ -1,0 +1,13 @@
+ALIGN 4
+ChangeAIAll_ASMC:
+#incbin "change_ai_all.dmp"
+
+//only gonna implement the latter two
+
+#define ChangeAIAllEnemy(ai1, ai2, unitID, classID) "BYTE $40 $05 $01 $00; BYTE ai1; BYTE ai2; BYTE $00 $00 $40 $0D; BYTE unitID; BYTE classID; POIN ChangeAIAll_ASMC+1"
+#define ChangeAIAllNPC(ai1, ai2, unitID, classID) "BYTE $40 $05 $01 $00; BYTE ai1; BYTE ai2; BYTE $00 $00 $41 $0D; BYTE unitID; BYTE classID; POIN ChangeAIAll_ASMC+1"
+
+//400DXXYYPPPPPPPP	Change AI ​​of all enemy forces that match the condition to the contents of SVAL1 (LOW)[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
+//410DXXYYPPPPPPPP	Change AI ​​of all ally who match the condition to the contents of SVAL1 (LOW)[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]
+//40050100ZZWW0000400DXXYYPPPPPPPP	Change AI ​​of all enemy forces matching the condition to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
+//40050100ZZWW0000410DXXYYPPPPPPPP	Changed the AI ​​of all ally who match the conditions to the contents of [ZZ:AI1:AI1][WW:AI2:AI2].[XX:UNIT:Unit(00=ANY)][YY:CLASS:class(00=ANY)]	{UNITPERSOLNAL}
