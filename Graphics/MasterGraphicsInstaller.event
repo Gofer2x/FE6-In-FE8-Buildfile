@@ -43,3 +43,13 @@ AnimationsStart:
 MESSAGE Inserting Animations at CurrentOffset
 #include "Animations/_AnimationsInstaller.event"
 MESSAGE "Animations Size is {CurrentOffset-AnimationsStart:N1} Bytes"
+
+GenericMiniMugsStart:
+MESSAGE Inserting Generic Mini Mugs at CurrentOffset
+#include "GenericMinimugs/GenericMinimugsInstaller.event"
+MESSAGE "Generic Mini Mugs Size is {CurrentOffset-GenericMiniMugsStart:N1} Bytes"
+
+MugsStart:
+MESSAGE Inserting Mugs at CurrentOffset
+#include "Mugs/_MugsInstaller.event"
+MESSAGE "Mugs Size is {CurrentOffset-MugsStart:N1} Bytes"

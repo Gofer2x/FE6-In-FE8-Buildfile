@@ -1,0 +1,114 @@
+setCardEntry(Myrmidon_ClassCard, Myrmidon_ClassCardData, Myrmidon_ClassCardPaletteData)
+
+setCardEntry(Swordmaster_ClassCard, Swordmaster_ClassCardData, Swordmaster_ClassCardPaletteData)
+
+setCardEntry(Fighter_ClassCard, Fighter_ClassCardData, Fighter_ClassCardPaletteData)
+
+setCardEntry(Warrior_ClassCard, Warrior_ClassCardData, Warrior_ClassCardPaletteData)
+
+setCardEntry(Knight_ClassCard, Knight_ClassCardData, Knight_ClassCardPaletteData)
+
+setCardEntry(General_ClassCard, General_ClassCardData, General_ClassCardPaletteData)
+
+setCardEntry(Archer_ClassCard, Archer_ClassCardData, Archer_ClassCardPaletteData)
+
+setCardEntry(Sniper_ClassCard, Sniper_ClassCardData, Sniper_ClassCardPaletteData)
+
+setCardEntry(MonkClericPriest_ClassCard, MonkClericPriest_ClassCardData, MonkClericPriest_ClassCardPaletteData)
+
+setCardEntry(Bishop_ClassCard, Bishop_ClassCardData, Bishop_ClassCardPaletteData)
+
+setCardEntry(Mage_ClassCard, Mage_ClassCardData, Mage_ClassCardPaletteData)
+
+setCardEntry(Sage_ClassCard, Sage_ClassCardData, Sage_ClassCardPaletteData)
+
+setCardEntry(Shaman_ClassCard, Shaman_ClassCardData, Shaman_ClassCardPaletteData)
+
+setCardEntry(Druid_ClassCard, Druid_ClassCardData, Druid_ClassCardPaletteData)
+
+setCardEntry(Cavalier_ClassCard, Cavalier_ClassCardData, Cavalier_ClassCardPaletteData)
+
+setCardEntry(Paladin_ClassCard, Paladin_ClassCardData, Paladin_ClassCardPaletteData)
+
+setCardEntry(Troubadour_ClassCard, Troubadour_ClassCardData, Troubadour_ClassCardPaletteData)
+
+setCardEntry(Valkyrie_ClassCard, Valkyrie_ClassCardData, Valkyrie_ClassCardPaletteData)
+
+setCardEntry(Nomad_ClassCard, Nomad_ClassCardData, Nomad_ClassCardPaletteData)
+
+setCardEntry(NomadTrooper_ClassCard, NomadTrooper_ClassCardData, NomadTrooper_ClassCardPaletteData)
+
+setCardEntry(PegasusKnight_ClassCard, PegasusKnight_ClassCardData, PegasusKnight_ClassCardPaletteData)
+
+setCardEntry(Falcoknight_ClassCard, Falcoknight_ClassCardData, Falcoknight_ClassCardPaletteData)
+
+setCardEntry(WyvernRider_ClassCard, WyvernRider_ClassCardData, WyvernRider_ClassCardPaletteData)
+
+setCardEntry(WyvernLord_ClassCard, WyvernLord_ClassCardData, WyvernLord_ClassCardPaletteData)
+
+setCardEntry(Recruit_ClassCard, Recruit_ClassCardData, Recruit_ClassCardPaletteData)
+
+setCardEntry(Brigand_ClassCard, Brigand_ClassCardData, Brigand_ClassCardPaletteData)
+
+setCardEntry(Pirate_ClassCard, Pirate_ClassCardData, Pirate_ClassCardPaletteData)
+
+setCardEntry(Berserker_ClassCard, Berserker_ClassCardData, Berserker_ClassCardPaletteData)
+
+setCardEntry(Thief_ClassCard, Thief_ClassCardData, Thief_ClassCardPaletteData)
+
+setCardEntry(Manakete1_ClassCard, Manakete1_ClassCardData, Manakete1_ClassCardPaletteData)
+
+setCardEntry(Mercenary_ClassCard, Mercenary_ClassCardData, Mercenary_ClassCardPaletteData)
+
+setCardEntry(Hero_ClassCard, Hero_ClassCardData, Hero_ClassCardPaletteData)
+
+setCardEntry(Fleet_ClassCard, Fleet_ClassCardData, Fleet_ClassCardPaletteData)
+
+setCardEntry(WyvernKnight_ClassCard, WyvernKnight_ClassCardData, WyvernKnight_ClassCardPaletteData)
+
+setCardEntry(Rogue_ClassCard, Rogue_ClassCardData, Rogue_ClassCardPaletteData)
+
+setCardEntry(MageKnight_ClassCard, MageKnight_ClassCardData, MageKnight_ClassCardPaletteData)
+
+setCardEntry(GreatKnight_ClassCard, GreatKnight_ClassCardData, GreatKnight_ClassCardPaletteData)
+
+setCardEntry(Ranger_ClassCard, Ranger_ClassCardData, Ranger_ClassCardPaletteData)
+
+setCardEntry(Phantom_ClassCard, Phantom_ClassCardData, Phantom_ClassCardPaletteData)
+
+setCardEntry(Revenant_ClassCard, Revenant_ClassCardData, Revenant_ClassCardPaletteData)
+
+setCardEntry(Entombed_ClassCard, Entombed_ClassCardData, Entombed_ClassCardPaletteData)
+
+setCardEntry(Bonewalker_ClassCard, Bonewalker_ClassCardData, Bonewalker_ClassCardPaletteData)
+
+setCardEntry(Wight_ClassCard, Wight_ClassCardData, Wight_ClassCardPaletteData)
+
+setCardEntry(Bael_ClassCard, Bael_ClassCardData, Bael_ClassCardPaletteData)
+
+setCardEntry(ElderBael_ClassCard, ElderBael_ClassCardData, ElderBael_ClassCardPaletteData)
+
+setCardEntry(Cyclops_ClassCard, Cyclops_ClassCardData, Cyclops_ClassCardPaletteData)
+
+setCardEntry(MautheDoog_ClassCard, MautheDoog_ClassCardData, MautheDoog_ClassCardPaletteData)
+
+setCardEntry(Gwyllgi_ClassCard, Gwyllgi_ClassCardData, Gwyllgi_ClassCardPaletteData)
+
+setCardEntry(Tarvos_ClassCard, Tarvos_ClassCardData, Tarvos_ClassCardPaletteData)
+
+setCardEntry(Maelduin_ClassCard, Maelduin_ClassCardData, Maelduin_ClassCardPaletteData)
+
+setCardEntry(Mogall_ClassCard, Mogall_ClassCardData, Mogall_ClassCardPaletteData)
+
+setCardEntry(ArchMogall_ClassCard, ArchMogall_ClassCardData, ArchMogall_ClassCardPaletteData)
+
+setCardEntry(GorgonEgg_ClassCard, GorgonEgg_ClassCardData, GorgonEgg_ClassCardPaletteData)
+
+setCardEntry(Gargoyle_ClassCard, Gargoyle_ClassCardData, Gargoyle_ClassCardPaletteData)
+
+setCardEntry(Deathgoyle_ClassCard, Deathgoyle_ClassCardData, Deathgoyle_ClassCardPaletteData)
+
+setCardEntry(Manakete2_ClassCard, Manakete2_ClassCardData, Manakete2_ClassCardPaletteData)
+
+setCardEntry(DemonKing_ClassCard, DemonKing_ClassCardData, DemonKing_ClassCardPaletteData)
+

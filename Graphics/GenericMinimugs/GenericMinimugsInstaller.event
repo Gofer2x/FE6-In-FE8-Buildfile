@@ -1,0 +1,75 @@
+#include "Extensions/Hack Installation.txt"
+#include "EAstdlib.event"
+
+PUSH
+ORG 0x5F6C
+BYTE $00 $B5 $FF $21 $08 $40 $C0 $00 $02 $49 $40 $18 $00 $68 $02 $BC $08 $47 $C0 $46
+POIN GenericMinimugTable
+POP
+
+PUSH
+ORG 0x5F9C
+BYTE $00 $B5 $FF $22 $10 $40 $C0 $00 $05 $4A $80 $18 $40 $68 $49 $01 $20 $22 $02 $4B $9E $46 $00 $F8 $01 $BC $00 $47 $B8 $0D $00 $08
+POIN GenericMinimugTable
+POP
+
+#define SetGenericMinimugEntry(id,gfx,pal) "PUSH; ORG (GenericMinimugTable+(8*id)); POIN gfx pal; POP"
+
+ALIGN 4
+SwordGenericMinimugData:
+#incbin "Sword.dmp" 
+
+ALIGN 4
+SwordGenericMinimugPalette:
+#incbin "Sword_pal.dmp" 
+
+ALIGN 4
+BanditGenericMinimugData:
+#incbin "Bandit.dmp"
+
+ALIGN 4
+BernGenericMinimugData:
+#incbin "Bern.dmp"
+
+ALIGN 4
+LyciaGenericMinimugData:
+#incbin "Lycia.dmp"
+
+ALIGN 4
+EtruriaGenericMinimugData:
+#incbin "Etruria.dmp"
+
+ALIGN 4
+IlliaGenericMinimugData:
+#incbin "Illia.dmp"
+
+ALIGN 4
+SacaeGenericMinimugData:
+#incbin "Sacae.dmp"
+
+ALIGN 4
+TrulyGenericMinimugPalette:
+#incbin "NonSwords_pal.dmp"
+
+
+
+ALIGN 4
+GenericMinimugTable:
+FILL 8*16
+
+#define SwordGenericMinimug 0x0
+#define BanditGenericMinimug 0x1
+#define BernGenericMinimug 0x2
+#define LyciaGenericMinimug 0x3
+#define EtruriaGenericMinimug 0x4
+#define IlliaGenericMinimug 0x5
+#define SacaeGenericMinimug 0x6
+
+SetGenericMinimugEntry(SwordGenericMinimug,SwordGenericMinimugData,SwordGenericMinimugPalette)
+SetGenericMinimugEntry(BanditGenericMinimug,BanditGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(BernGenericMinimug,BernGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(LyciaGenericMinimug,LyciaGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(EtruriaGenericMinimug,EtruriaGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(IlliaGenericMinimug,IlliaGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(SacaeGenericMinimug,SacaeGenericMinimugData,TrulyGenericMinimugPalette)
+SetGenericMinimugEntry(0x7,0x0,0x0)

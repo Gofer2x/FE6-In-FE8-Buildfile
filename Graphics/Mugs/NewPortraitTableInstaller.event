@@ -1,0 +1,23 @@
+// setMugEntry(UnitMugID, UnitMugData, MouthX, MouthY, EyeX, EyeY)
+
+#define MaxPortraitEntries 0xFF
+#define PortraitTableEntryLength 28
+
+ALIGN 4
+NewPortraitTable:
+  //#incbin "NewPortraitTable.dmp"
+  //ORG NewPortraitTable + (MaxTextEntries) * 28
+  FILL (MaxPortraitEntries*PortraitTableEntryLength)
+  
+PUSH
+ORG $5524
+POIN NewPortraitTable
+POP
+  
+#define PortraitTable NewPortraitTable
+
+//MESSAGE New Portrait Table at PortraitTable
+
+#define setMugEntryManual(mugEntry, mugData, mugMini, mugPalette, mugFrames, mouthX, mouthY, eyeX, eyeY) "PUSH; ORG PortraitTable+mugEntry*0x1C; POIN mugData; POIN mugMini; POIN mugPalette; POIN mugFrames; WORD 0x00000000; BYTE mouthX mouthY eyeX eyeY; WORD 0x01; POP"
+
+#define setCardEntry(index, data, palette) "PUSH; ORG PortraitTable+index*0x1C; WORD 0 0; POIN palette; WORD 0; POIN data; BYTE 0 0 0 0; WORD 0x01; POP"
