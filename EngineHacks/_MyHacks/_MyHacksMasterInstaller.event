@@ -1,0 +1,4 @@
+#include "BattleTransforming/FE8-BattleTransformEA.txt"
+#include "MultiTransformManims/MultiTransformManims.event"
+
+#include "SMSPatch.event"
