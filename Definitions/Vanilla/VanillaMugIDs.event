@@ -119,7 +119,7 @@
 #define General_ClassCard 0x77
 #define Archer_ClassCard 0x78
 #define Sniper_ClassCard 0x79
-#define MonkClericBishop_ClassCard 0x7A
+#define MonkClericPriest_ClassCard 0x7A
 #define Bishop_ClassCard 0x7B
 #define Mage_ClassCard 0x7C
 #define Sage_ClassCard 0x7D
