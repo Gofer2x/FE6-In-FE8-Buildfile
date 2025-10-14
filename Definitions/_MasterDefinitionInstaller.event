@@ -29,10 +29,11 @@
 
 #include "PListIDs.event"
 
-#include "Generated/ChapterIDs.event"
-#include "Generated/ItemIDs.event"
+#include "Generated/CharacterIDs.event"
 #include "Generated/ClassIDs.event"
+#include "Generated/ItemIDs.event"
 #include "Generated/MugIDs.event"
-#include "TEMP/SoundIDs.event"
+#include "Generated/ChapterIDs.event"
 
+#include "TEMP/SoundIDs.event"
 #include "TEMP/TempDummyDefs.event"

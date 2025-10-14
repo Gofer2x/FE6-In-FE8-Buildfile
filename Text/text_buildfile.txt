@@ -7,6 +7,9 @@
 #include "NamesAndDescs/CharacterNames.txt"
 #include "NamesAndDescs/CharacterDescriptions.txt"
 
+#include "NamesAndDescs/GenericNames.txt"
+#include "NamesAndDescs/GenericDescriptions.txt"
+
 #include "NamesAndDescs/ClassNames.txt"
 #include "NamesAndDescs/ClassDescriptions.txt"
 
