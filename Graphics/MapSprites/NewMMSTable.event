@@ -19,6 +19,7 @@ POP
 
 //Our Boy
 SetMMS(RoyLord, RoyLord_MMS_Data, RoyLord_MMS_AP)
+SetMMS(RoyGreatLord, RoyGreatLord_MMS_Data, RoyGreatLord_MMS_AP)
 
 //New classes, new MMS
 SetMMS(ThiefF, ThiefF_MMS_Data, ThiefF_MMS_AP)
