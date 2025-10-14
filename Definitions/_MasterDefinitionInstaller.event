@@ -24,6 +24,8 @@
 #include "Vanilla/Classes/VanillaClassAnimationTablePointers.event"
 #include "Vanilla/Classes/VanillaClassCardPointers.event"
 
+#include "_VanillaUndefs.event"
+
 #include "PListIDs.event"
 
 #include "Generated/ChapterIDs.event"
@@ -32,5 +34,4 @@
 #include "Generated/MugIDs.event"
 #include "TEMP/SoundIDs.event"
 
-#include "_VanillaUndefs.event"
 #include "TEMP/TempDummyDefs.event"

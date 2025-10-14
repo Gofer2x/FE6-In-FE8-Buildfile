@@ -1,0 +1,539 @@
+## Roy_DeathQuote
+[OpenMidLeft][LoadRoy]
+I'm sorry...[N]
+I let you all down...[AN][X]
+
+## Marcus_DeathQuote
+[OpenMidLeft][LoadMarcus]
+Argh... I've come so far...[N]
+Lord Roy...please...take care...[AN][X]
+
+## Alen_DeathQuote
+[OpenMidLeft][LoadAlen]
+N...no...[N]
+Why...here? Lord Roy...[AN][X]
+
+## Lance_DeathQuote
+[OpenMidLeft][LoadLance]
+Lord Roy...[N]
+I wish you luck...[AN][X]
+
+## Wolt_DeathQuote
+[OpenMidLeft][LoadWolt]
+Why so soon...?[N]
+I'm sorry, Lord Roy...[AN][Clear]
+I can't help you any[N]
+further...[AN][X]
+
+## Bors_DeathQuote
+[OpenMidLeft][LoadBors]
+I'm sorry...[N]
+Lady Lilina...[AN][X]
+
+## Merlinus_DeathQuote
+[OpenMidLeft][LoadMerlinus]
+Oh no![AN][Clear]
+I'm getting out of here before[N]
+I lose all my goods![AN][X]
+
+## Elen_DeathQuote
+[OpenMidLeft][LoadElen]
+Princess Guinivere...[AN][Clear]
+Please...[N]
+Don't give up...[AN][X]
+
+## Dieck_DeathQuote
+[OpenMidLeft][LoadDieck]
+I'm sorry...[N]
+I must take my leave.[AN][X]
+
+## Ward_DeathQuote
+[OpenMidLeft][LoadWard]
+Oh, man... I really messed[N]
+up this time...[AN][X]
+
+## Lot_DeathQuote
+[OpenMidLeft][LoadLot]
+No more...[AN][X]
+
+## Shanna_DeathQuote
+[OpenMidLeft][LoadShanna]
+Juno... Thea...[N]
+Sorry... I won't make it home...[AN][X]
+
+## Chad_DeathQuote
+[OpenMidLeft][LoadChad]
+No![N]
+Why here...?[AN][Clear]
+Lugh... I'm sorry...[AN][X]
+
+## Lugh_DeathQuote
+[OpenMidLeft][LoadLugh]
+I'm so sorry...[N]
+Chad... Ra...igh...[AN][X]
+
+## Clarine_DeathQuote
+[OpenMidLeft][LoadClarine]
+No! Please, help![N]
+Klein, my brother...[AN][X]
+
+## Rutger_DeathQuote
+[OpenMidLeft][LoadRutger]
+...No...more...[AN][X]
+
+## Saul_DeathQuote
+[OpenMidLeft][LoadSaul]
+Such is...my fate...[AN][X]
+
+## Dorothy_DeathQuote
+[OpenMidLeft][LoadDorothy]
+Am...[N]
+Am I finished...?[AN][X]
+
+## Sue_DeathQuote
+[OpenMidLeft][LoadSue]
+Sound of the wind...[N]
+Smell of the grass...[AN][X]
+
+## Zelot_DeathQuote
+[OpenMidLeft][LoadZelot]
+So... It ends like[N]
+this, then...[AN][X]
+
+## Trec_DeathQuote
+[OpenMidLeft][LoadTrec]
+Well...even in darkness,[N]
+there is...[AN][X]
+
+## Noah_DeathQuote
+[OpenMidLeft][LoadNoah]
+Oof... Well,[N]
+I did my best...[AN][X]
+
+## Astolfo_DeathQuote
+[OpenMidLeft][LoadAstolfo]
+Finally, the fun part[N]
+can start...[AN][X]
+
+## Lilina_DeathQuote
+[OpenMidLeft][LoadLilina]
+Roy...please...[N]
+Don't fail...[AN][X]
+
+## Barthe_DeathQuote
+[OpenMidLeft][LoadBarthe]
+Urgh...[N]
+Why now...?[AN][X]
+
+## Ogier_DeathQuote
+[OpenMidLeft][LoadOgier]
+I...can't die yet...[AN][X]
+
+## Gwendolyn_DeathQuote
+[OpenMidLeft][LoadGwendolyn]
+Wait...[N]
+I can't die here...[AN][Clear]
+This can't be happening...[AN][X]
+
+## Fir_DeathQuote
+[OpenMidLeft][LoadFir]
+I still have...[N]
+so far to go...[AN][X]
+
+## Sin_DeathQuote
+[OpenMidLeft][LoadSin]
+Not here...[N]
+I've come so far...[AN][X]
+
+## Geese_DeathQuote
+[OpenMidLeft][LoadGeese]
+Why...now?[N]
+I'm sorry...[AN][X]
+
+## Gonzalez_DeathQuote
+[OpenMidLeft][LoadGonzalez]
+I...hurt...[N]
+Urg...[AN][X]
+
+## Klein_DeathQuote
+[OpenMidLeft][LoadKlein]
+I can't die like this...[N]
+Clarine...[AN][X]
+
+## Thea_DeathQuote
+[OpenMidLeft][LoadThea]
+Juno... Shanna...[N]
+I...I fought until the end...[AN][X]
+
+## Larum_DeathQuote
+[OpenMidLeft][LoadLarum]
+It is my time...[N]
+I'm sorry...Father...[AN][X]
+
+## Elffin_DeathQuote
+[OpenMidLeft][LoadElffin]
+Argh...[N]
+This wound...[AN][Clear]
+I must retreat...[AN][X]
+
+## Echidna_DeathQuote
+[OpenMidLeft][LoadEchidna]
+People of the Isles...[N]
+Never stop fighting![AN][X]
+
+## Bartre_DeathQuote
+[OpenMidLeft][LoadBartre]
+My strength...[N]
+was lacking...[AN][X]
+
+## Raigh_DeathQuote
+[OpenMidLeft][LoadRaigh]
+Hngh! In this world...[N]
+there are only fools...[AN][X]
+
+## Cath_DeathQuote
+[OpenMidLeft][LoadCath]
+Heh heh...[N]
+I goofed...[AN][X]
+
+## Melady_DeathQuote
+[OpenMidLeft][LoadMelady]
+Princess Guinivere...[AN]
+Please...follow your heart...[N]
+Galle...I'm sorry...[AN][X]
+
+## Perceval_DeathQuote
+[OpenMidLeft][LoadPerceval]
+I did my best...[AN][X]
+
+## Cecilia_DeathQuote
+[OpenMidLeft][LoadCecilia]
+Etruria... Be a beacon...[N]
+for the future...[AN][X]
+
+## Sophia_DeathQuote
+[OpenMidLeft][LoadSophia]
+My...future...holds no...[N]
+light...[AN][X]
+
+## Igrene_DeathQuote
+[OpenMidLeft][LoadIgrene]
+I...fought hard...[N]
+at least...[AN][Clear]
+Can I go back to the place[N]
+I love now...?[AN][X]
+
+## Garrett_DeathQuote
+[OpenMidLeft][LoadGarrett]
+It's...all over...[AN][X]
+
+## Fae_DeathQuote
+[OpenMidLeft][LoadFae]
+I'm so...[N]
+scared...[AN][X]
+
+## Hugh_DeathQuote
+[OpenMidLeft][LoadHugh]
+Wait! Me?...[N]
+No...no way...[AN][X]
+
+## Zeiss_DeathQuote
+[OpenMidLeft][LoadZeiss]
+Melady... Sister...[N]
+I...[AN][X]
+
+## Douglas_DeathQuote
+[OpenMidLeft][LoadDouglas]
+Ngh![AN][Clear]
+I...[N]
+I miscalculated...[AN][X]
+
+## Niime_DeathQuote
+[OpenMidLeft][LoadNiime]
+Heh heh. Well, I had[N]
+a decent life...[AN][X]
+
+## Juno_DeathQuote
+[OpenMidLeft][LoadJuno]
+Has spring...[N]
+come to Ilia yet...?[AN][X]
+
+## Dayan_DeathQuote
+[OpenMidLeft][LoadDayan]
+I can...hear the wind in[N]
+the meadow once more...[AN][X]
+
+## Yoder_DeathQuote
+[OpenMidLeft][LoadYoder]
+Please... Roy...[AN][Clear]
+Defeat the dragons...[N]
+Save our world...[AN][X]
+
+## Karel_DeathQuote
+[OpenMidLeft][LoadKarel]
+Gah...[N]
+I... Not yet...[AN][X]
+
+
+
+
+
+## Damas_DeathQuote
+[OpenMidLeft][LoadDamas]
+Wh...what the...?![AN]
+S...so strong...[AN][X]
+
+## Ruud_DeathQuote
+[OpenMidLeft][LoadRuud]
+Oof...[AN]
+Greed can only...bring[N]
+you...an ill fate...[AN][X]
+
+## Slater_DeathQuote
+[OpenMidLeft][LoadSlater]
+General Narcian...[N]
+Please...have mercy...!![AN][X]
+
+## Erik_DeathQuote
+[OpenMidLeft][LoadErik]
+Ha...ha ha... Fools...[N]
+There is no future for...[AN]
+those...who oppose...[N]
+absolute power...[AN][X]
+
+## Dory_DeathQuote
+[OpenMidLeft][LoadDory]
+Gah...![AN]
+No...I don't wanna...[N]
+die...[AN][X]
+
+## Wagner_DeathQuote
+[OpenMidLeft][LoadWagner]
+[ToggleSmile]No... My plan...[N]
+was flawless...[AN][X]
+
+## Debias_DeathQuote
+[OpenMidLeft][LoadDebias]
+General Legance...[N]
+Please be cautious...[AN]
+These people are...[N]
+powerful...[AN][X]
+
+## Legance_DeathQuote
+[OpenMidLeft][LoadLegance]
+How? You will only...[N]
+be crushed by Bern...[AN]
+How can you fight with[N]
+such conviction...?[AN][X]
+
+## Henning_DeathQuote
+[OpenMidLeft][LoadHenning]
+Ah, blast...[AN]
+I knew this would happen...[AN][X]
+
+## Scott_DeathQuote
+[OpenMidLeft][LoadScott]
+Who...[N]
+are you?[AN]
+You're no ordinary army...[AN][X]
+
+## Nord_DeathQuote
+[OpenMidLeft][LoadNord]
+...Death?[AN][Clear]
+I feel...my life...[N]
+draining...away...[AN][X]
+
+## Orlo_DeathQuote
+[OpenMidLeft][LoadOrlo]
+You...heathens...[N]
+...I represent the gods...[AN][X]
+
+## Zinque_DeathQuote
+[OpenMidLeft][LoadZinque]
+This is my land...[N]
+Mine alone...[AN][Clear]
+None...shall...[AN][X]
+
+## Morgan_DeathQuote
+[OpenMidLeft][LoadMorgan]
+The resistance force has[N]
+been eliminated in this area...[AN][Clear]
+Who...are you people...?[AN][X]
+
+## Ein_DeathQuote
+[OpenMidLeft][LoadEin]
+...What...?![AN][X]
+
+## Guerrero_DeathQuote
+[OpenMidLeft][LoadGuerrero]
+Dah...[AN][X]
+
+## Flaer_DeathQuote
+[OpenMidLeft][LoadFlaer]
+I may fall, but Bern[N]
+cannot be stopped...[AN]
+Your defeat is[N]
+inevitable...[AN]
+Be sure of it...[AN][X]
+
+## Randy_DeathQuote
+[OpenMidLeft][LoadRandy]
+You're so strong...[N]
+I'm impressed...[AN]
+It's an honor to die[N]
+by your hand...[AN][X]
+
+## Maggie_DeathQuote
+[OpenMidLeft][LoadMaggie]
+Dear me, Maggie...[N]
+This hurts, doesn't it?[AN][X]
+
+## Rose_DeathQuote
+[OpenMidLeft][LoadRose]
+Oh my, Rose...[N]
+I've never known such pain.[AN][X]
+
+## Oates_DeathQuote
+[OpenMidLeft][LoadOates]
+Where...did you learn...[N]
+to fight...like this...?[AN][X]
+
+## Raith_DeathQuote
+[OpenMidLeft][LoadRaith]
+It's that girl,[N]
+isn't it...?[AN]
+She isn't human...[N]
+Why...do you seek her...?[AN]
+To use her power...?[N]
+Gah...![AN][X]
+
+## Narcian_DeathQuote
+[OpenMidLeft][LoadNarcian]
+No... No...!![AN][Clear]
+I will not be defeated...![N]
+Not by you...miserable...[AN][Clear]
+Gaahh!![AN][X]
+
+## Windham_DeathQuote
+[OpenMidLeft][LoadWindham]
+Hahaha![N]
+Haha...ha...[AN][X]
+
+## Arcardo_DeathQuote
+[OpenMidLeft][LoadArcardo]
+I...am a noble...[N]
+of Etruria...![AN][Clear]
+I cannot...die...in a place[N]
+such as this...[.....] Gah![AN][X]
+
+## Martel_DeathQuote
+[OpenMidLeft][LoadMartel]
+No...[AN]
+I'm too brilliant...[N]
+to die...[AN][X]
+
+## Sigune_DeathQuote
+[OpenMidLeft][LoadSigune]
+...Dear me...[AN]
+I didn't anticipate[N]
+perishing here...[AN]
+But perhaps...[N]
+I was already dead...[AN]
+Perhaps I died...[N]
+a long...time ago...[AN][X]
+
+## Roartz_DeathQuote
+[OpenMidLeft][LoadRoartz]
+W-wait... Serve me![N]
+It is not too late...[AN]
+I shall...absolve you[N]
+of your crimes...[AN][Clear]
+Guh...![AN][X]
+
+## Tick_DeathQuote
+[OpenMidLeft][LoadTick]
+You have bested us...[N]
+You may pass...[AN][Clear]
+But you will know Bern's[N]
+true power soon...[AN][X]
+
+## Monke_DeathQuote
+[OpenMidLeft][LoadMonke]
+Urkh...![N]
+How could you defeat us...?[AN][Clear]
+My trap...was...perfect...[AN][X]
+
+## Kel_DeathQuote
+[OpenMidLeft][LoadKel]
+This is the fate...[N]
+of all swordsmen...[AN][X]
+
+## Murdock_DeathQuote
+[OpenMidLeft][LoadMurdock]
+Hngh...![N]
+You...are strong...[AN][Clear]
+[ToggleSmile]Zephiel... My king...[AN]
+I cannot protect you...[N]
+any further...[AN]
+Forgive me...![AN][X]
+
+## Galle_DeathQuote
+[OpenMidLeft][LoadGalle]
+I fought honorably...[N]
+I accept my death...[AN][Clear]
+Zeiss...[N]
+Melady...[AN][X]
+
+## Peres_DeathQuote
+[OpenMidLeft][LoadPeres]
+Darkness...[AN]
+I am being consumed[N]
+by darkness...[AN][X]
+
+## Zephiel_DeathQuote
+[OpenMidLeft][LoadZephiel]
+...I am defeated...[AN][Clear]
+But remember this...[AN]
+My will shall never die...[AN]
+As long as humans retain[N]
+control, madness will reign...[AN][X]
+
+## Brunnya_DeathQuote
+[OpenMidLeft][LoadBrunnya]
+Your...Majesty...[AN]
+Let me be...by your side[N]
+again...like before...[AN][X]
+
+## Jahn_DeathQuote
+[OpenMidLeft][LoadJahn]
+I fall...[AN]
+Humans are truly[N]
+unpredictable...[AN][X]
+
+## Idunn_DeathQuote
+[OpenMidLeft][LoadIdunnHuman]
+I...[....]I...[....][N]
+Gah...[.....]I...[AN]
+I am alone...[.....][N]
+in the dark...[AN]
+I am alone...[.....]in...[.....][N]
+darkness...[AN][X]
+
+
+
+
+## Roy_DeathQuoteLilina
+[LoadLilina][ToggleSmile]I-I...[N]
+I'm sorry...[AN][X]
+
+## Roy_DeathQuoteGuinivere
+[LoadGuinivere][ToggleSmile]Roy...![N]
+Live on...[AN][X]
+
+## Roy_DeathQuoteMarcus
+[LoadMarcus][ToggleSmile]Lord Roy...[N]
+Forgive me...![AN][X]
+
+## Roy_DeathQuoteMerlinus
+[LoadMerlinus][ToggleSmile]Lord Roy![N]
+Forgive me...![AN][X]

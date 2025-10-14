@@ -1,0 +1,196 @@
+## Clarine_FinalQuote
+[LoadClarine][NormalPrint]This is the end! We've come[N]
+too far to lose now![AN][ClearFace][X]
+
+## Fae_FinalQuote
+[LoadFae][NormalPrint][ToggleSmile]...Do we have to fight...?[.....]
+...Sniff...[AN][ClearFace][X]
+
+## Sin_FinalQuote
+[LoadSin][NormalPrint][ToggleSmile]...We've finally made it.[AN][ClearFace][X]
+
+## Sue_FinalQuote
+[LoadSue][NormalPrint][ToggleSmile]Is this the end?[N]
+Or is it the beginning...?[AN][ClearFace][X]
+
+## Dayan_FinalQuote
+[LoadDayan][NormalPrint][ToggleSmile]This is the demon dragon...?[AN][ClearFace][X]
+
+## Barthe_FinalQuote
+[LoadBarthe][NormalPrint][ToggleSmile]We cannot afford mistakes.[AN][ClearFace][X]
+
+## Bors_FinalQuote
+[LoadBors][NormalPrint][ToggleSmile]I will fight honorably as[N]
+a knight of Ostia![AN][ClearFace][X]
+
+## Gwendolyn_FinalQuote
+[LoadGwendolyn][NormalPrint][ToggleSmile]You can do this...[N]
+Just trust in yourself.[AN][ClearFace][X]
+
+## Douglas_FinalQuote
+[LoadDouglas][NormalPrint][ToggleSmile]This won't be easy.[AN][ClearFace][X]
+
+## Wolt_FinalQuote
+[LoadWolt][NormalPrint][ToggleSmile]No matter what happens,[N]
+I will protect Lord Roy...[AN][ClearFace][X]
+
+## Dorothy_FinalQuote
+[LoadDorothy][NormalPrint][ToggleSmile]Can we win...?[.....]
+Of course we can![AN][ClearFace][X]
+
+## Klein_FinalQuote
+[LoadKlein][NormalPrint][ToggleSmile]The long battle comes to[N]
+an end.[AN][ClearFace][X]
+
+## Saul_FinalQuote
+[LoadSaul][NormalPrint]Fascinating...[N]
+Now, shall we?[AN][ClearFace][X]
+
+## Elen_FinalQuote
+[LoadElen][NormalPrint][ToggleSmile]Saint Elimine...[N]
+Give us strength![AN][ClearFace][X]
+
+## Yoder_FinalQuote
+[LoadYoder][NormalPrint][ToggleSmile]Finally, an end to the battle[N]
+of dragon and man...[AN][ClearFace][X]
+
+## Chad_FinalQuote
+[LoadChad][NormalPrint][ToggleSmile]I have friends I can trust.[N]
+There's no way I can lose now!![AN][ClearFace][X]
+
+## Karel_FinalQuote
+[LoadKarel][NormalPrint][ToggleSmile]Let's see just how[N]
+powerful this dragon is.[AN][ClearFace][X]
+
+## Fir_FinalQuote
+[LoadFir][NormalPrint][ToggleSmile]I will win.[N]
+I will win![AN][ClearFace][X]
+
+## Rutger_FinalQuote
+[LoadRutger][NormalPrint][ToggleSmile]...It begins.[AN][ClearFace][X]
+
+## Dieck_FinalQuote
+[LoadDieck][NormalPrint]Whoa... There's something[N]
+you don't see everyday![AN][ClearFace][X]
+
+## Garrett_FinalQuote
+[LoadGarrett][NormalPrint]A truly powerful enemy![N]
+Haven't met one in years![AN][ClearFace][X]
+
+## Alen_FinalQuote
+[LoadAlen][NormalPrint]I will protect Lord Roy with[N]
+my life![AN][ClearFace][X]
+
+## Lance_FinalQuote
+[LoadLance][NormalPrint][ToggleSmile]Lord Roy, Lord Eliwood...[N]
+Thank you for everything![AN][ClearFace][X]
+
+## Perceval_FinalQuote
+[LoadPerceval][NormalPrint][ToggleSmile]If we take our time...[N]
+we can win.[AN][ClearFace][X]
+
+## Igrene_FinalQuote
+[LoadIgrene][NormalPrint][ToggleSmile]At last...peace shall[N]
+come again...[AN][ClearFace][X]
+
+## Marcus_FinalQuote
+[LoadMarcus][NormalPrint][ToggleSmile]Please be careful,[N]
+Lord Roy.[AN][ClearFace][X]
+
+## Astolfo_FinalQuote
+[LoadAstolfo][NormalPrint][ToggleSmile]This looks dangerous...[N]
+Not that that's anything new.[AN][ClearFace][X]
+
+## Ward_FinalQuote
+[LoadWard][NormalPrint]This is it! The great battle[N]
+I've been waiting for![AN][ClearFace][X]
+
+## Lot_FinalQuote
+[LoadLot][NormalPrint][ToggleSmile]We must be wary...[AN][ClearFace][X]
+
+## Bartre_FinalQuote
+[LoadBartre][NormalPrint][ToggleSmile]Whooooooooooa![N]
+I'm burning up![AN][ClearFace][X]
+
+## Lugh_FinalQuote
+[LoadLugh][NormalPrint][ToggleSmile]...I won't lose.[N]
+I will protect us all![AN][ClearFace][X]
+
+## Lilina_FinalQuote
+[LoadLilina][NormalPrint][ToggleSmile]Father...[N]
+Watch over us.[AN][ClearFace][X]
+
+## Hugh_FinalQuote
+[LoadHugh][NormalPrint][ToggleSmile]Whoa![N]
+We gotta fight that thing?![AN][ClearFace][X]
+
+## Niime_FinalQuote
+[LoadNiime][NormalPrint]This is it! The power I've[N]
+been searching for!![AN][ClearFace][X]
+
+## Raigh_FinalQuote
+[LoadRaigh][NormalPrint][ToggleSmile]This is the demon dragon...![N]
+Such power...! Yes...![AN][ClearFace][X]
+
+## Larum_FinalQuote
+[LoadLarum][NormalPrint][ToggleSmile]It's...huge...[AN]
+[ClearFace][X]
+
+## Juno_FinalQuote
+[LoadJuno][NormalPrint][ToggleSmile]The time has come...[AN][ClearFace][X]
+
+## Thea_FinalQuote
+[LoadThea][NormalPrint][ToggleSmile]I...will not lose![AN][ClearFace][X]
+
+## Shanna_FinalQuote
+[LoadShanna][NormalPrint][ToggleSmile]All right![N]
+Chaaaaarge![AN][ClearFace][X]
+
+## Zeiss_FinalQuote
+[LoadZeiss][NormalPrint][ToggleSmile]I'll focus all my strength[N]
+into this one strike![AN][ClearFace][X]
+
+## Elffin_FinalQuote
+[LoadElffin][NormalPrint][ToggleSmile]Let there be peace in[N]
+your dying heart...[AN][ClearFace][X]
+
+## Cath_FinalQuote
+[LoadCath][NormalPrint]Let's go already.[AN][ClearFace][X]
+
+## Sophia_FinalQuote
+[LoadSophia][NormalPrint][ToggleSmile]I can sense...[N]
+a sad heart...[AN][ClearFace][X]
+
+## Melady_FinalQuote
+[LoadMelady][NormalPrint][ToggleSmile]For everyone back in Bern...[N]
+and for Galle...[AN][ClearFace][X]
+
+## Gonzalez_FinalQuote
+[LoadGonzalez][NormalPrint][ToggleSmile]I not afraid![N]
+This time, I not afraid!![AN][ClearFace][X]
+
+## Noah_FinalQuote
+[LoadNoah][NormalPrint]Yeah, we'll be fine.[AN][ClearFace][X]
+
+## Trec_FinalQuote
+[LoadTrec][NormalPrint][ToggleSmile]Sigh....[N]
+Give me a break...[AN][ClearFace][X]
+
+## Zelot_FinalQuote
+[LoadZelot][NormalPrint][ToggleSmile]Finally, Ilia will[N]
+know peace again...[AN][ClearFace][X]
+
+## Echidna_FinalQuote
+[LoadEchidna][NormalPrint][ToggleSmile]This is the end...[N]
+Finally, the end...[AN][ClearFace][X]
+
+## Cecilia_FinalQuote
+[LoadCecilia][NormalPrint][ToggleSmile]Concentrate, Roy.[AN][ClearFace][X]
+
+## Geese_FinalQuote
+[LoadGeese][NormalPrint][ToggleSmile]I hope this'll[N]
+be the last battle.[AN][ClearFace][X]
+
+## Ogier_FinalQuote
+[LoadOgier][NormalPrint][ToggleSmile]I know I've become strong...[N]
+Now's the time to show it!![AN][ClearFace][X]

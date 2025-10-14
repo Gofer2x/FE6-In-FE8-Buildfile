@@ -1,0 +1,104 @@
+## GenericDesc_BrigandsOfLycia
+Brigands of Lycia.[X]
+
+## GenericDesc_BernSoldiers
+Soldiers from the eastern[N]
+kingdom of Bern.[X]
+
+## GenericDesc_LausSoldiers
+Soldiers in service to the[N]
+Laus territory of Lycia.[X]
+
+## GenericDesc_OutlawsRansack
+Outlaws attempting to ransack[N]
+villages in the chaos of war.[X]
+
+## GenericDesc_OutlawsMountains
+Outlaws from the[N]
+mountains.[X]
+
+## GenericDesc_ThriaTraitors
+Soldiers of Thria who[N]
+betrayed the Lycian League.[X]
+
+## GenericDesc_RebelLegance
+Soldiers serving Legance[N]
+and the rebellion.[X]
+
+## GenericDesc_ThiefHunting
+Thieves hunting for[N]
+treasure to pilfer.[X]
+
+## GenericDesc_BrigandsCh8x
+Brigands under the[N]
+guise of mercenaries.[X]
+
+## GenericDesc_BanditsRoamingWest
+Bandits roaming the[N]
+Western Isles.[X]
+
+## GenericDesc_Armagh
+Soldiers defending[N]
+Castle Armagh.[X]
+
+## GenericDesc_Eburacum
+Soldiers guarding[N]
+Eburacum.[X]
+
+## GenericDesc_SoldiersServingWest
+Soldiers serving the lords[N]
+of the Western Isles.[X]
+
+## GenericDesc_Eidyna
+Soldiers defending[N]
+Castle Eidyna.[X]
+
+## GenericDesc_Resistance
+Citizens who have taken up arms[N]
+to fight for the people.[X]
+
+## GenericDesc_CitizenEidyna
+Citizens who escaped[N]
+from Castle Eidyna.[X]
+
+## GenericDesc_JuteauxCapital
+Soldiers defending the capital[N]
+of the Western Isles.[X]
+
+## GenericDesc_EtruriaSoldiers
+Soldiers from the western[N]
+kingdom of Etruria.[X]
+
+## GenericDesc_BrigandsDesert
+Brigands who ambush[N]
+travelers in the desert.[X]
+
+## GenericDesc_ManaketeWar
+War dragons created[N]
+by the demon dragon.[X]
+
+## GenericDesc_BernMercenaries
+Mercenaries from the eastern[N]
+kingdom of Bern.[X]
+
+## GenericDesc_KnightsOfIllia
+Knights of Ilia.[X]
+
+## GenericDesc_MercKnightsOfIllia
+Mercenary knights[N]
+of Ilia.[X]
+
+## GenericDesc_IlliaCivilians
+Civilians living[N]
+in Ilia.[X]
+
+## GenericDesc_NomadicWarriors
+Nomadic warriors of Sacae.[X]
+
+## GenericDesc_DjuteWarriors
+Warriors of the Djute clan[N]
+who support Bern.[X]
+
+## GenericDesc_OstianHelpers
+Ostian soldiers helping[N]
+with Roy's training.[X]

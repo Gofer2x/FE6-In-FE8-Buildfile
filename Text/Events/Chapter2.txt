@@ -1,0 +1,384 @@
+## Ch2_Start1
+[OpenMidRight][LoadMelady][OpenMidLeft][LoadRuud][OpenMidRight][ToggleSmile]All I want to know is what[N]
+happened to Princess Guinivere![AN]
+[OpenMidLeft]Y-yes, Captain Melady...[AN]
+I'm certain she was in her room this[N]
+morning, but she simply vanished...[AN]
+[OpenMidRight][MoveRight][FastPrint]You told me that already, you buffoon![AN]
+I don't want excuses! Are you so[N]
+incompetent you can't understand that?![AN]
+[OpenMidLeft][MoveFarLeft][NormalPrint]Well... I... Er...[AN]
+[OpenRight][FastPrint]Our forces are mobilizing to[N]
+begin a full-scale war with Lycia.[AN]
+How are we to focus on the battle[N]
+if the princess is missing?![AN]
+Naturally, you will take full[N]
+responsibility for her disappearance.[AN]
+[OpenFarLeft][NormalPrint][ToggleMouthMove]......[AN]
+[OpenRight][CloseSpeechFast][ToggleMouthMove]I never should have let Her Highness[N]
+come to the border to begin with.[AN]
+I will return to Bern and inform[N]
+the king of this matter.[AN]
+I'll try not to cause a panic, but I can't[N]
+promise your life if the princess isn't found.[AN]
+I trust you'll take every measure to[N]
+locate her as soon as possible.[AN]
+[OpenFarLeft][NormalPrint]Yes, Captain![AN][X]
+
+
+
+
+
+## Ch2_Start2
+[OpenMidRight][LoadRuud][OpenMidLeft][LoadSoldier2][OpenMidRight][FastPrint][ToggleSmile]Is Princess Guinivere[N]
+secure?[AN]
+[OpenMidLeft][NormalPrint]Yes, Commander. She's under constant[N]
+surveillance in the cellar.[AN]
+[OpenMidRight][CloseSpeechFast]Good.[N]
+Don't let her escape.[AN]
+[OpenMidLeft]But Commander...[AN]
+Are you sure this[N]
+is a good idea?[AN]
+[OpenMidRight][CloseSpeechFast][ToggleSmile]Of course I'm sure![AN]
+The younger sister of King Zephiel...[AN]
+We're sure to get a hefty sum turning[N]
+her over to one of Bern's enemies.[AN]
+[OpenMidLeft][ToggleSmile][ToggleMouthMove]......[AN][ToggleMouthMove]
+[OpenMidRight]Loyalty to one's king.[N]
+Bah. What a worthless notion.[AN]
+The world is ruled by neither king[N]
+nor queen. It's ruled by gold![AN]
+[OpenMidLeft]Yes, indubitably, Commander.[AN]
+...But there has been a[N]
+snag, shall we say.[AN]
+[OpenMidRight]Hm?[N]
+What do you mean?[AN]
+[OpenMidLeft]I just received a report...[AN]
+It seems that Princess Guinivere's[N]
+lady-in-waiting has escaped...[AN]
+[OpenMidRight]What?! You lout, why didn't[N]
+you say so earlier?[AN][Clear]
+Find her this instant![N]
+Don't let her get away![AN][X]
+
+
+
+
+
+## Ch2_Start3
+[OpenMidLeft][LoadMerlinus][OpenMidRight][LoadRoy][OpenMidLeft][ToggleSmile]Lord Roy,[N]
+this is the location.[AN]
+[OpenMidRight]This is where we're supposed[N]
+to meet the mercenaries?[AN]
+[OpenMidLeft][FastPrint]Yes, though it seems[N]
+they aren't here yet.[AN]
+[Clear]Wait, who's that? Somebody's[N]
+coming this way...[AN][X]
+
+
+
+
+
+## Ch2_Start4
+[OpenMidRight][LoadElen][OpenMidLeft][LoadRoy][ToggleSmile]
+Be careful there![AN]
+[OpenMidRight]Oh, forgive me![N]
+I'm in such a hurry...[AN]
+[OpenMidLeft][ToggleSmile]No need for apologies.[AN]
+Are you hurt?[AN]
+[OpenMidRight][ToggleSmile]No, I'm fine.[N]
+Thank you, good sir.[AN]
+[OpenMidLeft][ToggleSmile]Farewell, then.[AN]
+[OpenMidRight][ToggleSmile]...Are you from Lycia,[N]
+by chance?[AN]
+[OpenMidLeft][ToggleSmile]I am.[AN]
+I am the son of[N]
+Marquess Pherae.[AN]
+[OpenMidRight]Oh, Saint Elimine! Thank you[N]
+for guiding me to this boy![AN]
+[OpenMidLeft][ToggleSmile]Pardon?[AN]
+
+[LoadOverworldFaces]
+
+[OpenMidRight][MoveRight]Please, I need your help[N]
+to rescue my mistress.[AN]
+[OpenMidLeft]What happened?[AN]
+[OpenRight]My name is Elen. I am a[N]
+cleric of Saint Elimine.[AN]
+My mistress and I came from Bern to seek[N]
+an audience with the lords of Lycia.[AN]
+However, Commander Ruud of the[N]
+castle east of here trapped us.[AN]
+We were captured, imprisoned[N]
+by our own countrymen.[AN]
+[OpenFarRight][LoadMerlinus]
+Lord Roy![AN]
+We must avoid unnecessary[N]
+entanglements with Bern![AN]
+[OpenMidLeft]But we can't neglect a noble of Bern who[N]
+wants to speak with the lords of Lycia.[AN]
+...Then again, we can't simply charge[N]
+into enemy territory either...[AN][Clear]
+Wait, who's there?![AN][X]
+
+
+
+
+
+## Ch2_Start5
+[OpenMidLeft][LoadSoldier2]
+[ToggleSmile]There she is![AN]
+Over here, boys![N]
+Get the girl![AN]
+[OpenMidLeft]Our orders say[N]
+dead or alive![AN][X]
+
+
+
+
+
+## Ch2_Start6
+[OpenMidRight][LoadElen][ToggleSmile]Oh dear...[AN][ClearFace]
+[OpenMidLeft][LoadMerlinus][OpenMidRight][LoadRoy]
+Well, Merlinus, they provoked hostilities.[N]
+I don't think we have any choice now.[AN]
+[OpenMidLeft]You wouldn't listen even[N]
+if we did, I'm sure.[AN]
+But no matter. Let me witness all you've[N]
+learned about tactics in Ostia.[AN]
+[OpenMidRight]All right, everyone![N]
+We're going to charge the castle![AN]
+Sister Elen, you should[N]
+find a place to hide...[AN]
+[OpenMidLeft][ClearFace][OpenMidLeft][LoadElen]No, I will[N]
+come with you.[AN]
+I cannot fight, but I can[N]
+heal wounded allies.[AN]
+[OpenMidRight][NormalPrint]But...[AN]
+[OpenMidLeft][CloseSpeechFast]I'm the one that got you[N]
+tangled up in this mess.[AN]
+Please let me do what I can to help.[AN]
+[OpenMidRight]OK, but just stay behind[N]
+us so you aren't hurt.[AN]
+[OpenMidLeft]Certainly. Thank you[N]
+for the concern.[AN][X]
+
+
+
+
+## Ch2_MercsAppear1
+[OpenMidRight][LoadDieck][ToggleSmile]They should be around[N]
+here somewhere...[AN]
+[ToggleSmile]Shanna, [OpenMidLeft][LoadShanna][OpenMidRight]check around and try to[N]
+find the soldiers from Pherae, will you?[AN]
+[OpenMidLeft][NormalPrint]Sure![AN][X]
+
+
+
+
+
+## Ch2_MercsAppear2
+[OpenMidLeft][LoadWard][OpenMidRight][LoadDieck][OpenMidLeft][CloseSpeechFast]So Big Man, who's our[N]
+client this time?[AN]
+[OpenMidRight][FastPrint]House Pherae, one of the[N]
+noble families of Lycia.[AN]
+The marquess's son is going to join the[N]
+other armies of the Lycian League.[AN]
+[OpenMidLeft][ClearFace][OpenMidLeft][LoadLot][ToggleSmile]We're going up[N]
+against Bern then?[AN]
+[OpenMidRight][NormalPrint][ToggleSmile]Looks that way.[AN]
+[OpenMidLeft][ClearFace][OpenMidLeft][LoadWard][FastPrint]Finally, a foe worthy of my axe![N]
+Let's show 'em what we're made of![AN]
+[OpenMidLeft][ClearFace][OpenMidLeft][LoadLot][ToggleSmile]Bern, eh? This won't be easy, I can[N]
+tell you that. We had best tread lightly.[AN][X]
+
+
+
+
+
+## Ch2_MercsAppear3
+[OpenMidLeft][LoadShanna][OpenMidRight][LoadDieck][OpenMidLeft][CloseSpeechFast]I think I've found them![AN]
+[ToggleSmile]But it looks like they're already[N]
+caught up in a skirmish.[AN]
+[OpenMidRight][FastPrint]What? The fighting's[N]
+started already?[AN]
+Let's get a move on then.[N]
+Time to earn our pay![AN][X]
+
+
+
+
+
+## Ch2_RoyDieckTalk
+[OpenMidLeft][LoadDieck][OpenMidRight][LoadRoy][OpenMidLeft][FastPrint]Are you Lord Roy of[N]
+House Pherae?[AN]
+[OpenMidRight][NormalPrint][ToggleSmile]Who is it that's asking?[AN]
+[OpenMidLeft][FastPrint][ToggleSmile]Name's Dieck.[AN]
+You should've heard about me from[N]
+an older man named Merlinus.[AN]
+[OpenMidRight]So you're the leader of[N]
+the mercenary band?[AN]
+[OpenMidLeft][FastPrint]Just a small company, really.[AN]
+Sorry we're late.[AN]
+Didn't think the fighting[N]
+would start so soon.[AN]
+[OpenMidRight][FastPrint][ToggleSmile]Well... There was[N]
+a complication...[AN]
+[OpenMidLeft][CloseSpeechFast][ToggleSmile]Don't take it the wrong way.[N]
+We don't blame you.[AN]
+Actually, quite the contrary.[AN]
+My boys are excited for a chance[N]
+to show off their skills.[AN]
+[OpenMidRight][FastPrint]Brilliant. It sounds like you're just[N]
+the caliber of fighters we need.[AN]
+[OpenMidLeft][NormalPrint]Enough chitchat then.[AN]
+Let's wrap things up.[AN][X]
+
+
+
+
+
+## Ch2_ArmorslayerVillage
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager5]Armored knights have nearly[N]
+impenetrable defenses.[AN]
+But some weapons, like this sword,[N]
+can pierce their armor.[AN]
+I'm sure you can get better use out[N]
+of it than us. Please, take it.[AN][X]
+
+
+
+
+
+## Ch2_FliersHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager10]Pegasi are useful for flying to[N]
+hard-to-reach places.[AN]
+But woe to any rider who finds[N]
+herself against an archer.[AN]
+An arrow can make short work[N]
+of a pegasus![AN][X]
+
+
+
+## Ch2_FortsHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager3]Forts are the key to a good defense.[AN]
+If you're in a fort, you can defend[N]
+and even dodge more easily.[AN]
+On top of that, your wounds[N]
+will heal slowly over time.[AN][X]
+
+
+
+## Ch2_WeaponTriangleHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager6]The weapon triangle...[N]
+Swords, axes, and lances.[AN]
+Remember, swords best axes, axes best[N]
+lances, and lances best swords.[AN]
+Keep this in mind and things[N]
+will be much easier for you.[AN][X]
+
+
+
+
+
+## Ch2_End1
+[OpenMidLeft][LoadMerlinus][OpenRight][LoadRoy]
+[OpenMidLeft][ToggleSmile]Lord Roy![AN]
+There was a woman locked[N]
+in the cellar![AN]
+[OpenRight]That must be Elen's mistress.[N]
+Bring her here.[AN]
+[OpenMidLeft]Yes, milord.[ToggleSmile][AN][OpenMidLeft][ClearFace][OpenMidLeft][LoadGuinivere][X]
+
+
+
+
+
+## Ch2_End2IfElen
+[OpenFarRight][LoadElen]Your Highness![AN]
+[OpenMidLeft]Elen![N]
+I'm so relieved you're well.[AN]
+[ToggleSmile]You put yourself in such danger[N]
+running off like you did...[AN]
+I worried myself sick about you.[AN]
+[OpenFarRight]I am sorry, Your Highness, but I couldn't[N]
+leave you in that dank cellar...[AN]
+[OpenMidLeft][ToggleSmile]Don't worry yourself, Elen.[N]
+It's thanks to you I am safe now.[AN][OpenFarRight][ClearFace][X]
+
+
+## Ch2_End3
+[OpenMidLeft]I am in your debt.[N]
+May I ask your name...?[AN]
+[OpenRight]I am Roy, son of Eliwood,[N]
+Marquess Pherae.[AN]
+[OpenMidLeft]It's a pleasure...[N]
+As for myself...[AN][X]
+
+
+
+
+
+## Ch2_End4IfElen
+[OpenFarRight][LoadElen][ToggleSmile]Your Highness... Are you[N]
+certain you should?[AN]
+[OpenMidLeft][ToggleSmile]Yes, Elen. It is fine.[AN][OpenFarRight][ClearFace][X]
+
+
+
+
+
+## Ch2_End5
+[OpenMidLeft][ToggleSmile]My name is[N]
+Guinivere.[AN]
+[OpenRight]Guinivere?![AN]
+That's the name of the[N]
+princess of Bern![AN]
+[OpenMidLeft]Yes, that is I.[AN]
+[OpenFarRight][LoadMerlinus]What?![AN]
+This was a trap,[N]
+wasn't it?![AN]
+[OpenRight]Merlinus, hold.[AN][SendToBack]
+[OpenFarRight]I beg your pardon,[N]
+Lord Roy, but...[AN]
+[SendToBack]
+[OpenRight]I wish to hear her out.[N]
+Give her a chance, will you?[AN]
+[SendToBack]
+[OpenFarRight]Tsk. As you will...[AN]
+[OpenFarRight][ClearFace][SendToBack]
+[OpenRight]You are truly Princess[N]
+Guinivere from Bern?[AN]
+[OpenMidLeft]Yes, truly. I cannot blame you[N]
+for doubting me, however.[AN]
+[OpenRight]Maybe you are the princess of Bern,[N]
+and maybe you aren't.[AN]
+I can see from your actions and dress[N]
+that you are at least of high status.[AN]
+If you are indeed Princess Guinivere, however,[N]
+there's one thing I don't understand.[AN]
+Elen told me you intended to meet[N]
+the lords of the Lycian League.[AN]
+[OpenMidLeft]Yes, that is correct.[AN]
+[OpenRight]Why, if you are the sister[N]
+of the king of Bern?[AN]
+[OpenMidLeft]I want to find a peaceful[N]
+way to end the war.[AN]
+If I can speak to the Lycian council, I'm[N]
+certain we can come to a solution.[AN]
+[OpenRight]Your brother instigated this war.[N]
+Is it in your power to stop it?[AN]
+[OpenMidLeft]At the very least, I wish to do everything[N]
+I can. No, I MUST do everything I can.[AN]
+[OpenRight][ToggleSmile]...I see.[AN]
+For the time being, come with us to[N]
+meet the Lycian League armies.[AN]
+I want to see what Lord Hector[N]
+thinks of this affair.[AN]
+[OpenMidLeft][ToggleSmile]You will allow me[N]
+to accompany you?[AN]
+[OpenRight][ToggleSmile]Yes. If there is any possibility to[N]
+avoid further bloodshed, we must try.[AN]
+It matters not how small the chance.[AN]
+[OpenMidLeft]Thank you![AN]
+I truly am in your debt...[AN][X]

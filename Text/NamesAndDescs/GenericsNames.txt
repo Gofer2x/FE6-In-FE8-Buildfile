@@ -1,0 +1,71 @@
+## GenericEnemy_Name
+Evil[X]
+
+## GenericBandit_Name
+Bandit[X]
+
+## GenericBern_Name
+Bern[X]
+
+## GenericLaus_Name
+Laus[X]
+
+## GenericPirate_Name
+Pirate[X]
+
+## GenericThria_Name
+Thria[X]
+
+## GenericRebel_Name
+Rebel[X]
+
+## GenericThief_Name
+Thief[X]
+
+## GenericWestIsles_Name
+West Isles[X]
+
+## GenericArmagh_Name
+Armagh[X]
+
+## GenericEburacum_Name
+Eburacum[X]
+
+## GenericSoldiers_Name
+Soldiers[X]
+
+## GenericEidyna_Name
+Eidyna[X]
+
+## GenericJuteaux_Name
+Juteaux[X]
+
+## GenericCitizen_Name
+Citizen[X]
+
+## GenericResistance_Name
+Resistance[X]
+
+## GenericEtruria_Name
+Etruria[X]
+
+## GenericManakete_Name
+Manakete[X]
+
+## GenericIllia_Name
+Illia[X]
+
+## GenericSacae_Name
+Sacae[X]
+
+## GenericDjute_Name
+Djute[X]
+
+## GenericArcherKlein_Name
+Archer[X]
+
+## GenericPegKnightThea_Name
+Peg Kn[X]
+
+## GenericOstia_Name
+Ostia[X]

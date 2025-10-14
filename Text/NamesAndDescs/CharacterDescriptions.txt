@@ -1,0 +1,395 @@
+## Roy_Description
+The next heir to Pherae.[N]
+The protagonist of this story.[X]
+
+## Marcus_Description
+A veteran paladin serving Pherae.[N]
+Roy's instructor in combat.[X]
+
+## Alen_Description
+A knight serving Pherae.[N]
+Passionate and hot-headed.[X]
+
+## Lance_Description
+A knight serving Pherae.[N]
+Calm and cool-headed.[X]
+
+## Wolt_Description
+An archer serving Pherae. Was[N]
+raised like a brother to Roy.[X]
+
+## Bors_Description
+A knight serving Ostia.[N]
+Loyal and dutiful.[X]
+
+## Merlinus_Description
+A servant of Pherae in charge[N]
+of the army's inventory.[X]
+
+## Elen_Description
+A young cleric serving Guinivere.[N]
+Serene and gracious.[X]
+
+## Dieck_Description
+A former arena fighter from Etruria.[N]
+Leads a band of mercenaries.[X]
+
+## Ward_Description
+A former arena fighter from Etruria.[N]
+Leads a band of mercenaries.[X]
+
+## Lot_Description
+A young man fighting alongside[N]
+Dieck. Calculating and cautious.[X]
+
+## Shanna_Description
+A pegasus knight in training. Traveling[N]
+the world to hone her skills.[X]
+
+## Chad_Description
+An orphan from the Lycian[N]
+border to Bern.[X]
+
+## Lugh_Description
+A young mage. Grew up in an[N]
+orphanage destroyed by Bern.[X]
+
+## Clarine_Description
+A self-centered lady of Etruria.[N]
+Commander Klein's younger sister.[X]
+
+## Rutger_Description
+A young man seeking revenge[N]
+on Bern.[X]
+
+## Saul_Description
+A traveling priest of the St. Elimine[N]
+Church. On an important mission.[X]
+
+## Dorothy_Description
+A girl from Etruria in service[N]
+to the St. Elimine Church.[X]
+
+## Sue_Description
+The granddaughter of the[N]
+famed Silver Wolf of Sacae.[X]
+
+## Zelot_Description
+The lord of Edessa. Leads the[N]
+Ilian mercenary knights.[X]
+
+## Trec_Description
+A mercenary knight from Ilia.[N]
+Sleeping is his passion.[X]
+
+## Noah_Description
+A mercenary knight from Ilia.[N]
+Lacks social skills.[X]
+
+## Astolfo_Description
+A spy serving Ostia.[N]
+Surrounded in mystery.[X]
+
+## Lilina_Description
+The daughter of Marquess Ostia.[N]
+Gentle and kind-hearted.[X]
+
+## Barthe_Description
+A knight serving Ostia.[N]
+Humorless and severe.[X]
+
+## Ogier_Description
+A mercenary hired into Ostia's[N]
+service.[X]
+
+## Gwendolyn_Description
+A knight serving Ostia.[N]
+Bors' younger sister.[X]
+
+## Fir_Description
+A girl traveling around Elibe[N]
+to hone her sword skills.[X]
+
+## Sin_Description
+A survivor of a Sacaen clan.[N]
+Loyal to the Silver Wolf.[X]
+
+## Geese_Description
+A pirate from the Western Isles[N]
+seeking vengeance for his crew.[X]
+
+## Gonzalez_Description
+A brigand from the Western Isles.[N]
+Uneducated but compassionate.[X]
+
+## Klein_Description
+An Etrurian commander and noble.[N]
+Clarine's older brother.[X]
+
+## Thea_Description
+The leader of a pegasus knight[N]
+unit from Ilia.[X]
+
+## Larum_Description
+A young dancer helping the resistance[N]
+on the Western Isles.[X]
+
+## Elffin_Description
+A mysterious bard who supports the[N]
+resistance on the Western Isles.[X]
+
+## Echidna_Description
+The leader of the resistance[N]
+on the Western Isles.[X]
+
+## Bartre_Description
+A warrior who cares deeply[N]
+for his daughter.[X]
+
+## Raigh_Description
+A young shaman traveling to perfect[N]
+his dark magic.[X]
+
+## Cath_Description
+A young thief who steals only[N]
+from the rich.[X]
+
+## Melady_Description
+The leader of Guinivere's personal[N]
+guard. Unbendingly loyal.[X]
+
+## Perceval_Description
+The Knight General of Etruria.[N]
+An imposing man of great potential.[X]
+
+## Cecilia_Description
+The Mage General of Etruria.[N]
+Roy's instructor in tactics.[X]
+
+## Sophia_Description
+A shaman from Nabata who can[N]
+predict the future.[X]
+
+## Igrene_Description
+A sniper known as the Guardian[N]
+of Nabata.[X]
+
+## Garrett_Description
+A bandit from the Etrurian[N]
+border.[X]
+
+## Fae_Description
+A young divine dragon[N]
+from Nabata.[X]
+
+## Hugh_Description
+A mage hired by Etruria.[N]
+Desperate for money.[X]
+
+## Zeiss_Description
+A wyvern rider of Bern.[N]
+Melady's brother.[X]
+
+## Douglas_Description
+The Great General of Etruria.[N]
+A respected veteran.[X]
+
+## Niime_Description
+The Mountain Hermit. Has devoted[N]
+her life to research and study.[X]
+
+## Juno_Description
+A retired squad leader of the Ilian[N]
+pegasus knights. Zelot's wife.[X]
+
+## Dayan_Description
+Known as the Silver Wolf.[N]
+Chieftain of the Kutolah clan.[X]
+
+## Yoder_Description
+A bishop of the St. Elimine Church[N]
+who supports Roy's cause.[X]
+
+## Karel_Description
+The famed Sword Saint.[N]
+Known far and wide.[X]
+
+## Narcian_Description
+One of Bern's Wyvern Generals.[N]
+Led the attack on Lycia.[X]
+
+## Galle_Description
+A wyvern rider of Bern. Melady's[N]
+lover and Zeiss's mentor.[X]
+
+## Hector_Description
+Head of the Lycian council[N]
+and the marquess of Ostia.[X]
+
+## Brunnya_Description
+One of Bern's Wyvern Generals.[N]
+Led the attack on Sacae.[X]
+
+## Murdock_Description
+The head of Bern's Wyvern Generals.[N]
+Led the attack on Ilia.[X]
+
+## Eliwood_Description
+The marquess of Pherae.[N]
+Suffering from an illness.[X]
+
+## Zephiel_Description
+The mighty king of Bern.[N]
+A talented and gifted genius.[X]
+
+## Guinivere_Description
+The princess of Bern.[N]
+Noble and self-sacrificing.[X]
+
+## Damas_Description
+The leader of a Pheraen[N]
+group of bandits.[X]
+
+## Ruud_Description
+A knight in control of a castle[N]
+on the Bern-Lycia border.[X]
+
+## Slater_Description
+A lieutenant of Bern put in[N]
+charge of Castle Araphen.[X]
+
+## Erik_Description
+The traitorous marquess[N]
+of Laus.[X]
+
+## Dory_Description
+The leader of a group[N]
+of brigands in Lycia.[X]
+
+## Wagner_Description
+A retainer of Marquess Thria[N]
+who betrayed his lord.[X]
+
+## Debias_Description
+A knight serving Ostia.[N]
+Supports the rebellion.[X]
+
+## Legance_Description
+A commander in the Ostian army.[N]
+Leads the rebellion.[X]
+
+## Henning_Description
+The leader of a group of bandits[N]
+that roams around Ostia.[X]
+
+## Scott_Description
+The leader of one of the brigand[N]
+groups on the Western Isles.[X]
+
+## Nord_Description
+An Etrurian noble in charge[N]
+of Castle Armagh.[X]
+
+## Orlo_Description
+A bishop of the St. Elimine Church.[N]
+Oversees the mine at Eburacum.[X]
+
+## Roberts_Description
+An Etrurian commander in charge[N]
+of forces on the Western Isles.[X]
+
+## Zinque_Description
+An Etrurian commander in charge of a[N]
+small fort on the Western Isles.[X]
+
+## Scollan_Description
+The leader of a group of brigands[N]
+on the Western Isles.[X]
+
+## Morgan_Description
+An Etrurian commander in[N]
+charge of Castle Eidyna.[X]
+
+## Ein_Description
+A mysterious figure sent from Bern[N]
+to assist in the Western Isles.[X]
+
+## Guerrero_Description
+A brigand of the Western Isles[N]
+hired by Bern.[X]
+
+## Flaer_Description
+A wyvern rider of Bern.[N]
+General Narcian's lieutenant.[X]
+
+## Randy_Description
+A mercenary hired by Bern.[N]
+Leads the attack on Nabata.[X]
+
+## Maggie_Description
+A brigand living in the deserts[N]
+of Nabata.[X]
+
+## Rose_Description
+A brigand living in the deserts[N]
+of Nabata.[X]
+
+## Oates_Description
+A lieutenant of Bern who led[N]
+the attack on Arcadia.[X]
+
+## Raith_Description
+A knight of Bern watching over the[N]
+Etrurian border.[X]
+
+## Windham_Description
+A bishop of the St. Elimine Church[N]
+who turned against his order.[X]
+
+## Arcardo_Description
+An Etrurian noble. Led the mining[N]
+operation in the Western Isles.[X]
+
+## Martel_Description
+A bishop heading one of[N]
+Bern's units in Ilia.[X]
+
+## Sigune_Description
+A unit leader of the Ilian[N]
+pegasus knights.[X]
+
+## Roartz_Description
+The former High Chancellor[N]
+of Etruria.[X]
+
+## Tick_Description
+A commander in charge of Bern's[N]
+standing forces in Ilia.[X]
+
+## Monke_Description
+The chieftain of the[N]
+Djute clan of Sacae.[X]
+
+## Kel_Description
+A swordfighter defending Bulgar[N]
+under Brunnya's orders.[X]
+
+## SacaeGaidenBosses_Description
+A survivor of the Djute clan.[N]
+Hungry for vengeance.[X]
+
+## Peres_Description
+A commander of Bern defending the[N]
+inside of the Shrine of Seals.[X]
+
+## Jahn_Description
+The final surviving true dragon[N]
+of the Dragon Sanctuary.[X]
+
+## IdunnHuman_Description
+The Dark Priestess. Seeks to liberate[N]
+the world by Zephiel's command.[X]
+
+## IdunnDragon_Description
+The demon dragon that was feared by[N]
+all mankind during the Scouring.[X]

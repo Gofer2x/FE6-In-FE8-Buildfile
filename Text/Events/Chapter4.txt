@@ -1,0 +1,410 @@
+## Ch4_Start
+[OpenMidLeft][LoadErik][OpenMidRight][LoadNarcian][OpenMidLeft]Ah, welcome,[N]
+General Narcian.[AN]
+[OpenMidRight]Lord Erik.[AN]
+I don't think I've yet praised your[N]
+wisdom in joining Bern.[AN]
+[OpenMidLeft]Thank you. My nation has never been[N]
+anything but a burden to me anyway.[AN]
+[OpenMidRight]You, my friend, are wise[N]
+beyond your years.[AN]
+Now, where is that gift[N]
+you promised me?[AN]
+She does not seem to be here.[AN]
+[OpenMidLeft]Ah, yes![N]
+She is in her quarters.[AN]
+[OpenMidLeft]She is exceedingly naive, you see.[AN]
+When I told her she could meet her brother,[N]
+she cooperated without question.[AN]
+[ToggleSmile]You there![N]
+Bring her here![AN]
+[OpenMidLeft][ClearFace][.....][OpenFarLeft][LoadClarine]What is this hall?[N]
+Klein? Where are you, Brother?[AN]
+[OpenMidRight][ToggleSmile]Welcome, Lady Clarine.[AN]
+[OpenFarLeft][ToggleSmile]Who might you be?[AN]
+[OpenMidRight][ToggleSmile]I am Narcian, one of Bern's[N]
+three Wyvern Generals.[AN]
+My lovely little lass, I think you will enjoy[N]
+my company more than your brother's...[AN]
+[MoveRight][ToggleMouthMove]Hm[.....] hm[.....] hm...[ToggleMouthMove][AN]
+[OpenFarLeft][NormalPrint]Heh...[N]
+Ha ha ha![AN]
+[OpenRight][FastPrint][ToggleSmile]What?[AN]
+Why do you laugh?[AN]
+[OpenFarLeft][CloseSpeechFast][ToggleSmile]You compare yourself to my brother?[AN]
+You think too highly of yourself.[AN]
+Your garb, your hair--even your speech...[AN]
+All a painfully obvious guise to hide[N]
+your true lowborn face.[AN]
+[OpenRight][MoveMidRight][FastPrint][ToggleSmile]Lowborn?! Me?![N]
+You would compare ME to a peasant?![AN]
+[OpenFarLeft][CloseSpeechFast]Oh, heavens no.[AN]
+I would sooner compare you to a[N]
+filthy, disease-ridden mutt![AN]
+[OpenMidRight][MoveRight]Y-you vermin!![AN]
+I'll see you[N]
+suffer![AN]
+[OpenFarLeft][ClearFace][OpenLeft][LoadSoldier2]General Narcian, we just received word that[N]
+Castle Araphen was retaken by the enemy![AN]
+[OpenRight]What?! Impossible![N]
+What of Slater?[AN]
+[OpenLeft]Err...[N]
+His whereabouts are unknown, sir.[AN]
+The enemy is reported to be Roy,[N]
+son of Marquess Pherae.[AN][ClearFace]
+[OpenFarLeft][LoadClarine][NormalPrint][ToggleMouthMove]......[AN]
+[OpenRight][ToggleMouthMove][CloseSpeechFast]Accursed interruptions![AN]
+Lord Erik, lock the girl in a cell.[AN]
+I will give her the pleasure of[N]
+my company when I return![AN]
+You, blockade the highroad[N]
+from Ostia.[AN]
+This Roy might just pass by.[N]
+I want his head![AN]
+[OpenLeft][LoadSoldier2]Yes, sir![AN][X]
+
+
+
+
+
+## Ch4_PiratesAppear
+[OpenMidRight][LoadScollan][NormalPrint]Heh... Foolish nobility. Always[N]
+involved in some petty dispute.[AN]
+'Course, you'll hear no complaints from us.[N]
+Turmoil's how we make a living.[AN]
+Heh heh heh...[AN][X]
+
+
+
+
+
+## Ch4_RutgerClarine1
+[OpenMidRight][LoadClarine][FastPrint][ToggleSmile]They will pay dearly[N]
+for this treatment...[AN]
+[OpenMidLeft][NormalPrint]...Hey.[AN]
+[OpenMidRight]Who's there?![AN]
+[OpenMidLeft][LoadRutger][CloseSpeechFast]I'm a mercenary hired by Lord Erik.[AN]
+He wants to see you.[AN]
+[OpenMidRight][MoveFarRight]I will not.[AN]
+I refuse to meet with[N]
+such churlish people.[AN]
+[OpenMidLeft][MoveLeft][NormalPrint][ToggleMouthMove]......[ToggleMouthMove][AN]
+Just get over here.[AN]
+[OpenFarRight][FastPrint]Let go! You will regret this![N]
+Have you any idea who I am?![AN]
+[OpenLeft][NormalPrint][ToggleMouthMove]......[AN]
+[OpenFarRight][FastPrint][ToggleMouthMove]Let go, I say![AN][X]
+
+
+
+
+
+## Ch4_RutgerClarine2
+[OpenMidRight][LoadClarine][OpenMidLeft][LoadRutger][OpenMidRight][NormalPrint][ToggleSmile]Let go![N]
+Let go, I say![AN]
+[OpenMidLeft][FastPrint]Keep it down.[AN]
+You won't be able to make a clean[N]
+escape making all that noise.[AN]
+[OpenMidRight][NormalPrint]Escape?![.....]
+Then you're...[AN]
+[OpenMidLeft][FastPrint]I prepared a horse for you[N]
+out back under a tree.[AN]
+Take it and go, while[N]
+everyone's distracted.[AN]
+[OpenMidRight][ToggleMouthMove]......[ToggleMouthMove][AN]
+Why are you helping me?[AN]
+[OpenMidLeft][NormalPrint]I despise Bern with[N]
+all my soul.[AN]
+[OpenMidRight]With all your soul?[AN]
+[OpenMidLeft]...Never mind.[N]
+Forget it.[AN]
+[OpenMidRight][FastPrint]
+Saying that only piques[N]
+my curiosity further.[AN]
+[OpenMidLeft][NormalPrint]Time is short.[N]
+Hurry![AN]
+[OpenMidRight][ToggleMouthMove]......[AN][X]
+
+
+
+
+
+## Ch4_RutgerClarine3
+[OpenMidRight][LoadClarine][ToggleSmile]I've never met such a boorish man![N]
+This is a battlefield![AN]
+A proper gentleman would escort[N]
+a lady to her mansion![AN]
+Well, it's hardly of concern now.[AN]
+Sigh, I only came here to see my brother,[N]
+and now look at the mess I'm in...[AN]
+What am I to do now?[AN][X]
+
+
+
+
+
+## Ch4_RutgerWarning
+[OpenMidLeft][LoadErik][OpenMidRight][LoadRutger][OpenMidLeft][ToggleSmile]Ah,[N]
+there you are![AN]
+[OpenMidRight]What do you want?[AN]
+[OpenMidLeft]We need some backup.[AN]
+Take some troops and[N]
+prepare for battle.[AN]
+[OpenMidRight][ToggleMouthMove]......[ToggleMouthMove][AN]
+[OpenMidLeft]Are you deaf?[N]
+Go and fight![AN]
+[OpenMidRight]I heard you.[N]
+I'll leave when I'm ready.[AN][ClearFace]
+[OpenMidLeft]Tsk. Not the amiable sort, is he?[AN]
+If his sword arm is as skilled as the rumors[N]
+say, though, then it's no matter.[AN][X]
+
+
+
+
+
+## Ch4_RutgerAppears
+[LoadRutger][NormalPrint][ToggleMouthMove]......[AN][X]
+
+
+
+
+
+## Ch4_ClarineRecruitsHerself
+[OpenMidLeft][LoadClarine][NormalPrint][ToggleSmile]Pardon me,[N]
+you there![AN]
+[OpenMidRight][LoadRoy]Me?[AN]
+[OpenMidLeft][FastPrint]Do you see anyone else?[AN]
+You are the leader of this[N]
+little group, are you not?[AN]
+[OpenMidRight][NormalPrint]I am.[AN]
+[OpenMidLeft][FastPrint]Most convenient.[AN]
+Very well then. You[N]
+will protect me.[AN]
+[OpenMidRight][NormalPrint]Excuse me?[AN]
+[OpenMidLeft][CloseSpeechFast]Hard of hearing?[AN]
+I said that you will[N]
+protect me from harm.[AN]
+[OpenMidRight][ClearFace][OpenFarRight][LoadMerlinus]Mind your mouth,[N]
+young lady![AN]
+[OpenMidLeft][FastPrint]Away with you, peasant.[N]
+I was not addressing you.[AN]
+[OpenFarRight][MoveMidRight]What?![N]
+Who do you think--[AN]
+[OpenMidRight][ClearFace][OpenRight][LoadRoy][FastPrint]Calm yourself, Merlinus...[AN]
+It looks like she's being pursued[N]
+by the castle's soldiers.[AN]
+That's why she wants us to[N]
+guard her.[AN]
+Right?[AN]
+[OpenMidLeft]Um, yes![AN]
+That is correct...[AN]
+[OpenRight][ClearFace][OpenMidRight][LoadMerlinus]
+Im...impudent child![AN]
+We can't simply accept any[N]
+useless girl into our army![AN]
+[OpenMidLeft][MoveLeft]You may call me[N]
+Lady Clarine, peasant.[AN]
+And I am not useless![AN]
+I can use staves to heal[N]
+wounded allies.[AN]
+[OpenMidRight][ClearFace][OpenRight][LoadRoy][FastPrint]So you'll help us fight?[AN]
+[OpenLeft][CloseSpeechFast]...If that's what it takes![AN]
+I suppose I can't simply demand protection[N]
+without any kind of payment.[AN]
+[OpenRight][ToggleSmile]Thanks, we appreciate it![AN]
+Our enemy is Bern, so we need[N]
+everyone we can get.[AN]
+I'm Roy.[N]
+Pleased to meet you, Lady Clarine.[AN]
+[OpenLeft][FastPrint]The pleasure is all--[AN]
+[MoveMidLeft][ToggleSmile]Ahem! Let's focus on[N]
+the issue at hand.[AN][X]
+
+
+
+
+
+## Ch4_ClarineRecruitsRutger
+[OpenMidRight][LoadClarine][OpenMidLeft][LoadRutger][OpenMidRight][NormalPrint][ToggleSmile]Oh![N]
+It's you...[AN]
+[OpenMidLeft]What?[N]
+You're still here?[AN]
+[OpenMidRight][MoveRight][CloseSpeechFast]"Still here?"[AN]
+You abandoned me in the middle[N]
+of a battlefield![AN]
+How can you have the[N]
+nerve to say that?![AN]
+I could have been killed![AN]
+[OpenMidLeft]I guess you're lucky[N]
+you're still alive then.[AN]
+Did you want something or[N]
+can I go now?[AN]
+[OpenRight]Just a moment![AN]
+I shan't allow you to abandon[N]
+me twice.[AN]
+A gentleman must take[N]
+responsibility for his actions.[AN]
+[OpenMidLeft][NormalPrint]Responsibility? For what? I saved[N]
+you from that twisted sadist.[AN]
+[OpenRight][CloseSpeechFast]If a gentleman rescues a lady, he must[N]
+also escort her to her mansion![AN]
+In what fairy tale does some barf[N]
+of a man abandon his princess?[AN]
+[OpenMidLeft][FastPrint]...What in the world[N]
+are you on about?[AN]
+[OpenRight][CloseSpeechFast]Besides, you said you "despise[N]
+Bern with all your soul."[AN]
+If you ask me, you'd be better off joining[N]
+us. We'll be fighting Bern, you know.[AN]
+[OpenMidLeft][NormalPrint]What? Wait![N]
+Is that true?[AN]
+Is that army you're in really[N]
+going to challenge Bern?[AN]
+[OpenRight][MoveMidRight]Yes... Our leader, Floyd or whatever[N]
+his name is, told me so himself.[AN]
+[OpenMidLeft][NormalPrint][ToggleMouthMove]......[ToggleMouthMove][AN]
+Fine.[AN]
+[OpenMidRight][NormalPrint]Yes?[AN]
+[OpenMidLeft][FastPrint]I'll join your army.[N]
+Satisfied?[AN]
+[OpenMidRight][NormalPrint]Ah...I suppose.[AN]
+[OpenMidLeft][ClearFace][OpenMidRight]Wait![AN]
+My protection is more important[N]
+than fighting Bern! Come back![AN][X]
+
+
+
+
+
+## Ch4_DoorKeyVillage
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager11]
+Without a thief, you can't open[N]
+doors and chests so easily.[AN]
+Only thieves can use lockpicks.[AN]
+But I have something called a door[N]
+key, which will open any door.[AN]
+Anyone can use it.[N]
+You can have it.[AN][X]
+
+
+
+
+
+## Ch4_SteelBladeVillage
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager2][ToggleSmile]We're all on your side.[AN]
+[OpenMidRight]We're not about to abandon the[N]
+land in which we were born.[AN]
+[OpenMidRight]Please take this sword.[AN]
+It was given to us generations ago.[N]
+A gift from the marquess.[AN][X]
+
+
+
+
+
+## Ch4_AngelicRobeVillage
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager2]
+[OpenMidRight][ToggleSmile]I can't believe this war is happening...[AN]
+We'll all suffer under Bern's[N]
+iron-fisted rule.[AN]
+But you just might be able[N]
+to stop them.[AN]
+Here is something that will help[N]
+you fight a little longer.[AN]
+Think carefully before using it.[AN][X]
+
+
+
+
+
+## Ch4_BanditWarningHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager7]Bandits and pirates will[N]
+attack nearby towns.[AN]
+Once they loot a town,[N]
+there's nothing left.[AN]
+Visit the towns quickly and they[N]
+might just share something good![AN][X]
+
+
+
+
+
+## Ch4_LausNomadsHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager9]There are mounted soldiers[N]
+with bows in Laus' army.[AN]
+They're from the nomad clans[N]
+of Sacae.[AN]
+Everyone wants their fighting[N]
+prowess these days...[AN][X]
+
+
+
+
+## Ch4_ReaverHouse
+[OpenMidLeft][LoadCurrentCharacter][OpenMidRight][LoadVillager6]
+[OpenMidRight][ToggleSmile]You know the weapon triangle, but did you[N]
+know it doesn't apply to all weapons?[AN]
+Some weapons completely reverse[N]
+the weapon triangle.[AN]
+For instance, you might find an axe that[N]
+will work well against swords.[AN][X]
+
+
+
+
+
+## Ch4_End
+[OpenMidLeft][LoadMerlinus][OpenMidRight][LoadRoy][OpenMidLeft][ToggleSmile]Lord Roy! The remaining[N]
+soldiers from Laus are retreating.[AN]
+[OpenMidRight]Thank you.[N]
+Tell everyone to get some rest.[AN]
+[OpenMidLeft]Yes, milord.[AN]
+[OpenMidLeft][ClearFace]
+
+[LoadOverworldFaces]
+
+[OpenMidLeft][.....][LoadGuinivere]Roy...[N]
+Are you all right?[AN]
+[OpenMidRight]
+I never would have thought that[N]
+Lord Erik would turn on Lycia.[AN]
+I thought the Lycian League's[N]
+bond was stronger than this.[AN]
+Cowardly Bern![N]
+Underhanded tactics![AN]
+[OpenMidLeft]...I apologize.[AN]
+[OpenMidRight]Oh... I'm sorry.[AN]
+I wasn't even thinking[N]
+about you...[AN]
+[OpenMidLeft]No... You are right.[AN]
+[OpenMidRight]We'll now proceed west towards Ostia.[AN]
+But now we know that even the other[N]
+marquesses can't be trusted.[AN]
+With Lord Hector gone, I fear there[N]
+may be no peaceful end for this war.[AN]
+Princess, do you plan on returning[N]
+to Bern? If you need anything--[AN]
+[OpenMidLeft]No, please allow me to stay,[N]
+if it would not be a burden.[AN]
+[OpenMidRight]You, a burden? Never![N]
+But why do you wish to stay?[AN]
+[OpenMidLeft]My brother is wrong.[AN]
+He is pulling the dragons[N]
+into a human war.[AN]
+If he thinks this is how he can[N]
+free the world, I must stop him.[AN]
+[OpenMidRight]Free the world?[AN]
+[OpenMidLeft]Yes, he has always been obsessed[N]
+with "liberating the world."[AN]
+He said that's the purpose[N]
+of this war.[AN]
+[OpenMidRight]What does that mean?[AN]
+[OpenMidLeft]I do not know...[AN]
+My brother is not so power-hungry that[N]
+he would attempt to conquer the world.[AN]
+I'm sure he believes strongly in[N]
+what he's done to Elibe.[AN]
+Regardless, that doesn't excuse[N]
+the violence he has caused...[AN]
+[OpenMidRight]Princess Guinivere...[AN][X]

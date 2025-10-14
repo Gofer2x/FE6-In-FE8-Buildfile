@@ -7,9 +7,6 @@ Nmd Trooper[X]
 ## Transporter_Name
 Transporter[X]
 
-## Manakete_Name
-Manakete[X]
-
 ## DivineDragon_Name
 Divine Drgn[X]
 

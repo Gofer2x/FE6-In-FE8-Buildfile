@@ -1,0 +1,563 @@
+## Damas_BattleQuote
+[OpenMidLeft][LoadDamas][ToggleSmile]
+You bumbling idiots![AN]
+You can't take down a[N]
+few pathetic knights?![AN][X]
+
+## Ruud_BattleQuote
+[OpenMidLeft][LoadRuud][ToggleSmile]
+Curse it all![AN]
+Just when I thought things had[N]
+finally turned my way...[AN][X]
+
+## Slater_BattleQuote
+[OpenMidLeft][LoadSlater][ToggleSmile]
+I-I can't fail![N]
+If I do...[AN]
+...What awaits me...is a[N]
+fate worse than death...!![AN][X]
+
+## Erik_BattleQuote
+[OpenMidLeft][LoadErik][ToggleSmile]
+You fools are bound down[N]
+by your allegiance![AN]
+Allow me to teach you[N]
+the way of the world![AN][X]
+
+## Dory_BattleQuote
+[OpenMidLeft][LoadDory]
+No one's ever survived[N]
+a blow from my axe![AN]
+Hey, you. Wanna see why?[AN][X]
+
+## Wagner_BattleQuote
+[OpenMidLeft][LoadWagner][ToggleSmile]
+Useless guards![N]
+But very well.[AN]
+Witness my magic...and bow[N]
+down before its power![AN][X]
+
+## Debias_BattleQuote
+[OpenMidLeft][LoadDebias][ToggleSmile]
+You...you beat Bern's[N]
+wyvern riders!?[AN]
+Ergh...[N]
+I'll not let you pass![AN][X]
+
+## Legance_BattleQuote
+[OpenMidLeft][LoadLegance][ToggleSmile]
+Dogs of the Lycian Army...[N]
+Come.[AN]
+I shall cut you down[N]
+where you stand![AN][X]
+
+## Henning_BattleQuote
+[OpenMidLeft][LoadHenning][ToggleSmile]
+Sigh.[AN]
+How did you find[N]
+yourselves in here?[AN]
+I'm afraid I can't[N]
+let you go.[AN][X]
+
+## Scott_BattleQuote
+[OpenMidLeft][LoadScott][ToggleSmile]
+Maybe the fog[N]
+didn't stop you...[AN]
+But you must be in rough[N]
+shape at least![AN]
+I'll finish you off![AN][X]
+
+## Nord_BattleQuote
+[OpenMidLeft][LoadNord]
+You made it all the[N]
+way here.[AN]
+But I shall take your[N]
+pathetic lives...[AN][X]
+
+## Orlo_BattleQuote
+[OpenMidLeft][LoadOrlo][ToggleSmile]
+Opposing me...is the equivalent[N]
+of opposing the gods![AN][Clear]
+I shall rain divine punishment[N]
+upon you![AN][X]
+
+## Zinque_BattleQuote
+[OpenMidLeft][LoadZinque]
+The people are suffering...?[.....][N]
+What concern is that to me?[AN]
+They live to serve me.[N]
+Their wails are meaningless.[AN][X]
+
+## Morgan_BattleQuote
+[OpenMidLeft][LoadMorgan][ToggleSmile]
+What are you doing?![AN]
+Hurry and kill the ones[N]
+who escaped![AN][Clear]
+Wait, you're not one of[N]
+my men... Wh-who are you?![AN][X]
+
+## Ein_BattleQuote
+[OpenMidLeft][LoadEin][ToggleSmile]
+...Burn.[AN][X]
+
+## Guerrero_BattleQuote
+[OpenMidLeft][LoadGuerrero]
+Daaaahhhhhh![AN][Clear]
+Rah![AN][X]
+
+## Flaer_BattleQuote
+[OpenMidLeft][LoadFlaer]
+You've made it...[AN][Clear]
+But I am a knight of Bern![N]
+I will not surrender![AN][X]
+
+## Randy_BattleQuote
+[OpenMidLeft][LoadRandy]
+My sword is unmatchable.[N]
+Choose your death.[AN]
+Will you die by the blade...[N]
+or by its light?[AN][X]
+
+## Oates_BattleQuote
+[OpenMidLeft][LoadOates][ToggleSmile]
+I...wasn't expecting you to[N]
+put up such a fight.[AN][X]
+
+## Raith_BattleQuote
+[OpenMidLeft][LoadRaith][ToggleSmile]
+What is your purpose here?[AN]
+I don't know why you would[N]
+attack us.[AN][X]
+
+## Narcian_BattleQuote
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+I am strong. I am wise.[N]
+I am beautiful.[AN]
+And most importantly,[N]
+I am right! Always![AN][Clear]
+...Me! No one else![AN][X]
+
+## Windham_BattleQuote
+[OpenMidLeft][LoadWindham]
+Perish![N]
+Every last one of you![AN][Clear]
+Everything to ash![AN][X]
+
+## Arcardo_BattleQuote
+[OpenMidLeft][LoadArcardo][ToggleSmile]
+W-why?![AN]
+What have I done to[N]
+deserve such a fate?![AN][X]
+
+## Martel_BattleQuote
+[OpenMidLeft][LoadMartel][ToggleSmile]
+You made it through[N]
+this snow...[AN]
+Curse that useless woman![AN][X]
+
+## Sigune_BattleQuote
+[OpenMidLeft][LoadSigune]
+So...you've made it through[N]
+the blizzard.[AN][Clear]
+Congratulations.[AN]
+Unfortunately, the only prize[N]
+that awaits you is death.[AN][X]
+
+## Roartz_BattleQuote
+[OpenMidLeft][LoadRoartz][ToggleSmile]
+S-someone![N]
+Come to my aid![AN][Clear]
+All is lost if I fall![AN][X]
+
+## Tick_BattleQuote
+[OpenMidLeft][LoadTick][ToggleSmile]
+No...[N]
+This is a nightmare.[AN][Clear]
+How did you get[N]
+through those walls?[AN][X]
+
+## Monke_BattleQuote
+[OpenMidLeft][LoadMonke]
+Yes... That's it![N]
+Closer... Closer...[AN][Clear]
+Right into our trap![AN][X]
+
+## Kel_BattleQuote
+[OpenMidLeft][LoadKel]
+I am Kel.[AN][Clear]
+Behold my blade...as I swing[N]
+it for the last time.[AN][X]
+
+## Murdock_BattleQuote
+[OpenMidLeft][LoadMurdock]
+Hm...[N]
+You have made it far.[AN][Clear]
+I congratulate you.[N]
+But can you defeat me?[AN][X]
+
+## Peres_BattleQuote
+[OpenMidLeft][LoadPeres]
+Darkness from an age[N]
+long forgotten...[AN][Clear]
+I will show you its power.[AN][X]
+
+## Zephiel_BattleQuote
+[OpenMidLeft][LoadZephiel][ToggleSmile]
+You shall not bar my path![AN][X]
+
+## Brunnya_BattleQuote
+[OpenMidLeft][LoadBrunnya][ToggleSmile]
+Bern will never die![AN]
+Even if I fall, Bern will[N]
+rise once more![AN][X]
+
+## Jahn_BattleQuote
+[OpenMidLeft][LoadJahn]
+I have waited a
+millennium...[AN]
+My strength has recovered,[N]
+and it is greater than ever.[AN]
+I can feel it...[AN][X]
+
+
+
+
+
+## DebiasVsBors_BattleQuote
+[OpenMidLeft][LoadDebias][ToggleSmile]
+Bors! You returned![AN][ClearFace]
+
+[OpenMidLeft][LoadBors]
+Causing a rebellion after[N]
+Lord Hector's death?![AN]
+That is inexcusable![AN][X]
+
+
+
+## LeganceVsBors_BattleQuote
+[OpenMidLeft][LoadLegance]
+Bors! I see[N]
+you yet live.[AN][ClearFace]
+
+[OpenMidLeft][LoadBors][ToggleSmile]
+I do.[AN]
+And I see you took over[N]
+Ostia in my absence...[AN][ClearFace]
+
+[OpenMidLeft][LoadLegance][ToggleSmile]
+Do you have any[N]
+grievances with that?[AN]
+Take it back yourself...[N]
+if you can![AN][X]
+
+
+
+## LeganceVsLilina_BattleQuote
+[OpenMidLeft][LoadLegance][ToggleSmile]
+Lady Lilina?[AN]
+I see the assassination[N]
+failed...[AN][ClearFace]
+
+[OpenMidLeft][LoadLilina]
+Legance...[N]
+Why?[AN][ClearFace]
+
+[OpenMidLeft][LoadLegance]
+Times are changing,[N]
+milady.[AN]
+I won't be left in[N]
+the dust.[AN]
+I'm not like Lord Hector.[AN]
+He was too foolish to[N]
+accept the obvious.[AN][ClearFace]
+
+[OpenMidLeft][LoadLilina]
+Hush yourself![AN]
+I will not let you[N]
+insult my father![AN][X]
+
+
+
+## LeganceVsBarthe_BattleQuote
+[OpenMidLeft][LoadBarthe][ToggleSmile]
+Legance, you miscreant![AN]
+Have you no shame for your[N]
+betrayal of Lord Hector?![AN][ClearFace]
+
+[OpenMidLeft][LoadLegance]
+Barthe...[N]
+Shut your ugly mouth.[AN]
+[ToggleSmile]
+Lord Hector was a fool.[N]
+His death was his own doing.[AN]
+I do not intend to fall[N]
+along with him.[AN][ClearFace]
+
+[OpenMidLeft][LoadBarthe][ToggleSmile]
+You'll eat those words![AN][X]
+
+
+
+## LeganceVsGwendolyn_BattleQuote
+[OpenMidLeft][LoadGwendolyn][ToggleSmile]
+Legance![N]
+You shall fall here![AN][ClearFace]
+
+[OpenMidLeft][LoadLegance][ToggleSmile]
+Ah, Bors' sister, correct?[AN]
+You have the courage, but can[N]
+you truly stand against me?[AN][X]
+
+
+
+## OrloVsElen_BattleQuote
+[OpenMidLeft][LoadElen][ToggleSmile]
+Aren't you...a priest?[N]
+The things you've done...[AN][ClearFace]
+
+[OpenMidLeft][LoadOrlo][ToggleSmile]
+What of them?[AN]
+Anything can go unpunished...if[N]
+done in the name of the gods![AN][ClearFace]
+
+[OpenMidLeft][LoadElen][ToggleSmile]
+...There is no
+salvation for you.[AN][ClearFace][X]
+
+
+
+## OrloVsSaul_BattleQuote
+[OpenMidLeft][LoadSaul][ToggleSmile]
+With all the evil you've done,[AN]
+I dare say you've lost the right[N]
+to call yourself a bishop.[AN][ClearFace]
+
+[OpenMidLeft][LoadOrlo][ToggleSmile]
+Evil? I am simply living[N]
+as I like.[AN]
+All deeds are righteous if[N]
+done in the name of the gods.[AN]
+Very convenient,[N]
+don't you think?[AN][ClearFace]
+
+[OpenMidLeft][LoadSaul][ToggleSmile]
+You're a disgrace to the church...[N]
+Punishment awaits you![AN][ClearFace][X]
+
+
+
+## NarcianVsClarine_BattleQuote
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+You...![N]
+You're that girl![AN][ClearFace]
+
+[OpenMidLeft][LoadClarine][ToggleSmile]
+Excuse me?[N]
+Have we met before?[AN][ClearFace]
+
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+What?![N]
+You have forgotten me?![AN]
+That...is inconceivable![AN][X]
+
+
+
+## NarcianVsMelady_BattleQuote
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+You're Melady...[N]
+Hah![AN]
+[ToggleSmile]You betray your home[N]
+and join the enemy.[AN]
+You are a disgrace![AN][ClearFace]
+
+[OpenMidLeft][LoadMelady][ToggleSmile]
+My loyalty has always[N]
+lied with the princess.[AN]
+And so it shall[N]
+remain![AN][ClearFace][X]
+
+
+
+## NarcianVsZeiss_BattleQuote
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+You...[AN][ClearFace]
+
+[OpenMidLeft][LoadZeiss]
+General Narcian...[AN]
+I heard everything[N]
+from Sir Galle![AN]
+Do you...have no sense of[N]
+honor left in you at all?![AN][ClearFace]
+
+[OpenMidLeft][LoadNarcian]
+Galle...! He has always[N]
+been a thorn in my side![AN]
+[ToggleSmile]But no matter...[AN]
+After I wipe you up here,[N]
+no one will know the truth...[AN][X]
+
+
+
+## NarcianVsCecilia_BattleQuote
+[OpenMidLeft][LoadNarcian][ToggleSmile]
+Cecilia...[N]
+[ToggleSmile]Back for more, are you?[AN][ClearFace]
+
+[OpenMidLeft][LoadCecilia][ToggleSmile]
+It was Zephiel to whom I lost.[N]
+Not you.[AN][ClearFace]
+
+[OpenMidLeft][LoadNarcian]
+Fair enough, but now you will[N]
+know my true strength![AN][X]
+
+
+
+## NarcianVsPerceval_BattleQuote
+[OpenMidLeft][LoadNarcian]
+If it isn't General Perceval,[N]
+the back-stabbing traitor![AN][ClearFace]
+
+[OpenMidLeft][LoadPerceval][ToggleSmile]
+Joining you...was the greatest[N]
+mistake of my life.[AN]
+I will make up for it...[N]
+by defeating you![AN][X]
+
+
+
+## ArcardoVsKlein_BattleQuote
+[OpenMidLeft][LoadArcardo][ToggleSmile]
+Klein![N]
+You would betray me?[AN][ClearFace]
+
+OpenMidLeft][LoadKlein]
+You are the one who betrayed[N]
+Etruria, Lord Arcardo![AN][X]
+
+
+
+## ArcardoVsDouglas_BattleQuote
+[OpenMidLeft][LoadArcardo][ToggleSmile]
+D-Douglas![AN]
+You had turned to the enemy...!?[AN][X]
+
+
+
+## SiguneVsShanna_BattleQuote
+[OpenMidLeft][LoadSigune]
+You...[AN]
+You're Juno's youngest sister.[AN][ClearFace]
+
+[OpenMidLeft][LoadShanna]
+[ToggleMouthMove]......[AN][ToggleMouthMove][ClearFace]
+
+[OpenMidLeft][LoadSigune]
+My honor as a knight of[N]
+Ilia is at stake.[AN]
+Don't expect me to[N]
+hold back.[AN][ClearFace]
+
+[OpenMidLeft][LoadShanna]
+[ToggleSmile]I know...[AN][ClearFace][X]
+
+
+
+## SiguneVsThea_BattleQuote
+[OpenMidLeft][LoadSigune]
+Thea?[N]
+What are you doing here?[AN]
+[ToggleSmile]Oh...[N]
+You've joined Etruria.[AN][ClearFace]
+
+[OpenMidLeft][LoadThea]
+Captain Sigune...[AN][ClearFace]
+
+[OpenMidLeft][LoadSigune]
+You know the code of the[N]
+Ilian knights.[AN]
+You will get no mercy[N]
+from me.[AN][X]
+
+
+
+## RoartzVsDouglas_BattleQuote
+[OpenMidLeft][LoadRoartz][ToggleSmile]
+Douglas... Hmph![AN]
+After all that you said, you've[N]
+gone back on your honor![AN][ClearFace]
+
+[OpenMidLeft][LoadDouglas][ToggleSmile]
+Indeed it may appear that way.[N]
+But I fight true.[AN]
+I fight with my heart and I[N]
+have confidence in our cause.[AN][ClearFace]
+
+[OpenMidLeft][LoadRoartz][ToggleSmile]
+Silence![AN]
+Enough of your nonsensical[N]
+rambling. Die here![AN][X]
+
+
+
+## MonkeVsSue_BattleQuote
+[OpenMidLeft][LoadMonke][ToggleSmile]
+You are the granddaughter[N]
+of the Silver Wolf...[AN][ClearFace]
+
+[OpenMidLeft][LoadSue]
+[ToggleMouthMove]......[AN][X]
+
+
+
+## MonkeVsSin_BattleQuote
+[OpenMidLeft][LoadMonke]
+...A survivor of[N]
+the Kutolah?[AN][ClearFace]
+
+[OpenMidLeft][LoadSin][ToggleSmile]
+Monke! Feel the wrath[N]
+of the Kutolah![AN][ClearFace][X]
+
+
+
+## MurdockVsRoy_BattleQuote
+[OpenMidLeft][LoadMurdock]
+At last, the great[N]
+General Roy stands before me![AN]
+I have been waiting to[N]
+match blades with you![AN][X]
+
+
+
+## MurdockVsMelady_BattleQuote
+[OpenMidLeft][LoadMurdock][ToggleSmile]
+Melady...[N]
+I don't want to fight you.[AN]
+But you are here.[N]
+It seems we have no choice.[AN]
+Come![AN][X]
+
+
+
+## MurdockVsZeiss_BattleQuote
+[OpenMidLeft][LoadMurdock][ToggleSmile]
+You were one of Narcian's[N]
+troops.[AN]
+I heard the story from Galle.[AN]
+You have my sympathy,[N]
+but you are my enemy now.[AN]
+Come![N]
+We fight![AN][X]
+
+
+
+## BrunnyaVsMeladyAndZeiss_BattleQuote
+[OpenMidLeft][LoadBrunnya][ToggleSmile]
+You are a knight of Bern.[AN]
+You have chosen to follow[N]
+Princess Guinivere.[AN]
+You have chosen your path[N]
+as I have chosen mine.[AN]
+[ToggleSmile]If you believe in it,[N]
+then fight for it![AN][X]

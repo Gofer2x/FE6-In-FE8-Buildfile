@@ -1,133 +1,133 @@
-## IntroName
+## Intro_Name
 Set-Up[X]
 
-## Ch1Name
+## Ch1_Name
 Breath of Destiny[X]
 
-## Ch2Name
+## Ch2_Name
 Princess of Bern[X]
 
-## Ch3Name
+## Ch3_Name
 Latecomer's Sorrow[X]
 
-## Ch4Name
+## Ch4_Name
 Crumbling League[X]
 
-## Ch5Name
+## Ch5_Name
 Fire Emblem[X]
 
-## Ch6Name
+## Ch6_Name
 Ensnared[X]
 
-## Ch7Name
+## Ch7_Name
 The Ostian Revolt[X]
 
-## Ch8Name
+## Ch8_Name
 Reunion[X]
 
-## Ch8xName
+## Ch8x_Name
 The Blazing Blade[X]
 
-## Ch9Name
+## Ch9_Name
 The Misty Isles[X]
 
-## Ch10AName
+## Ch10A_Name
 Western Resistance[X]
 
-## Ch11AName
+## Ch11A_Name
 The Hero of the West[X]
 
-## Ch10BName
+## Ch10B_Name
 Amidst a Struggle[X]
 
-## Ch11BName
+## Ch11B_Name
 Flight Toward Freedom[X]
 
-## Ch12Name
+## Ch12_Name
 The True Enemy[X]
 
-## Ch12xName
+## Ch12x_Name
 The Thunder Axe[X]
 
-## Ch13Name
+## Ch13_Name
 Rescue Mission[X]
 
-## Ch14Name
+## Ch14_Name
 Arcadia[X]
 
-## Ch14xName
+## Ch14x_Name
 The Infernal Truth[X]
 
-## Ch15Name
+## Ch15_Name
 The Dragon Child[X]
 
-## Ch16Name
+## Ch16_Name
 Storming the Capital[X]
 
-## Ch16xName
+## Ch16x_Name
 The Glorious Ascension[X]
 
-## Ch17AName
+## Ch17A_Name
 Ocean's Parting[X]
 
-## Ch18AName
+## Ch18A_Name
 The Frozen River[X]
 
-## Ch19AName
+## Ch19A_Name
 Bitter Cold[X]
 
-## Ch20AName
+## Ch20A_Name
 Ilia's Salvation[X]
 
-## Ch20AxName
+## Ch20Ax_Name
 The Freezing Lance[X]
 
-## Ch17BName
+## Ch17B_Name
 The Bishop's Teachings[X]
 
-## Ch18BName
+## Ch18B_Name
 The Laws of Sacae[X]
 
-## Ch19BName
+## Ch19B_Name
 Battle in Bulgar[X]
 
-## Ch20BName
+## Ch20B_Name
 The Silver Wolf[X]
 
-## Ch20BxName
+## Ch20Bx_Name
 The Bow of Swift Wind[X]
 
-## Ch21Name
+## Ch21_Name
 The Binding Blade[X]
 
-## Ch21xName
+## Ch21x_Name
 The Elder Revelation[X]
 
-## Ch22Name
+## Ch22_Name
 Unattained Dream[X]
 
-## Ch23Name
+## Ch23_Name
 The Ghosts of Bern[X]
 
-## Ch24Name
+## Ch24_Name
 Legends and Lies[X]
 
-## FinalName
+## Final_Name
 Beyond Darkness[X]
 
-## TutorialChapterName
+## TutorialChapter_Name
 Tutorial[X]
 
-## Trial_ValleyOfDeathName
+## Trial_ValleyOfDeath_Name
 Valley of Death[X]
 
-## Trial_RainyIslandName
+## Trial_RainyIsland_Name
 Rainy Island[X]
 
-## Trial_SnowyDefensiveName
+## Trial_SnowyDefensive_Name
 Snowy Defensive[X]
 
-## Trial_PiratesChallengeName
+## Trial_PiratesChallenge_Name
 Pirate's Challenge[X]
 
 ## Trial_RoysTrial
