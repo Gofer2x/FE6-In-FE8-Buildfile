@@ -1,0 +1,363 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch12_RaighRecruitedFlag 0x7
+#define Ch12_LughRaighExtraTalkFlag 0x8
+#define Ch12_ChadRaighExtraTalkFlag 0x9
+#define Ch12_RoyCathTalkFlag 0xA
+#define Ch12_GaidenGoneFlag 0xB
+
+EventPointerTable(EVENTS_Ch12,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch12,Ch12EscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch12,0x0)
+
+ALIGN 4
+
+Ch12EscapePoints:
+EscapePoint(12,31,MoveDown)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,EinAppearsFlaerLeaves,1)
+TurnEventEnemy(0x0,CathAppears,7)
+TurnEventEnemy(0x0,ReinforcementsWarning,10)
+TurnEventEnemy(0x0,LoadReinforcementsIfBossAlive,12)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcements,17,5)
+TurnEventEnemy(0x0,GaidenGone,20)
+TurnEventEnemy(0x0,LoadHardSouthReinforcements,12)
+TurnEventEnemy(0x0,LoadHardSouthEastReinforcements,15)
+TurnEventEnemy(0x0,LoadHardWyvernReinforcements,15)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch12_RaighRecruitedFlag,LughRecruitsRaigh,Lugh,Raigh)
+CharacterEvent(Ch12_RaighRecruitedFlag,ChadRecruitsRaigh,Chad,Raigh)
+CharacterEventBothWays(Ch12_LughRaighExtraTalkFlag,LughRaighExtraTalk,Lugh,Raigh)
+CharacterEventBothWays(Ch12_ChadRaighExtraTalkFlag,ChadRaighExtraTalk,Chad,Raigh)
+CharacterEvent(Ch12_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+END_MAIN
+
+LocationBasedEvents:
+Seize(9,1)
+Chest(Flux,5,20)
+Chest(Aircalibur,5,23)
+Chest(BlueGem,27,4)
+Chest(ElysianWhip,26,6)
+Chest(BraveBow,27,8)
+Chest(Lancereaver,26,12)
+Door(7,20)
+Door(8,7)
+Door(9,7)
+Door(24,5)
+Door(26,10)
+Door(27,14)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(11,Ally,1) [12,27] 0x0 0x0 0x0 0x0 [LightBrand, SteelSword, Rapier, Vulnerary] DummyAI
+UNIT Alen Cavalier Roy Level(14,Ally,1) [11,26] 0x0 0x0 0x0 0x0 [IronLance, IronLance, IronSword, Javelin] DummyAI
+UNIT Lance Cavalier Roy Level(11,Ally,1) [13,26] 0x0 0x0 0x0 0x0 [Horseslayer, IronLance, IronSword, SteelLance] DummyAI
+UNIT Bors General Roy Level(4,Ally,1) [14,27] 0x0 0x0 0x0 0x0 [KillerLance, SteelAxe, SteelLance, SilverLance] DummyAI
+UNIT Wolt Archer Roy Level(12,Ally,1) [11,28] 0x0 0x0 0x0 0x0 [KillerBow, Longbow, IronBow, Vulnerary] DummyAI
+UNIT Dieck Hero Roy Level(1,Ally,0) [13,28] 0x0 0x0 0x0 0x0 [IronBlade, IronBlade, SteelSword, Armorslayer] DummyAI
+UNIT Larum Dancer Roy Level(1,Ally,1) [10,27] 0x0 0x0 0x0 0x0 [ChestKey5Uses] DummyAI
+UNIT Rutger Myrmidon Roy Level(13,Ally,1) [12,29] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, KillingEdge, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(6,Ally,1) [25,21] 0x0 0x0 0x0 0x0 [Vulnerary, Vulnerary, Barrier, Heal] DummyAI
+UNIT Astolfo Thief Roy Level(10,Ally,1) [27,21] 0x0 0x0 0x0 0x0 [IronSword, Lockpick, ChestKey5Uses, SilverAxe] DummyAI
+UNIT Lugh Sage Roy Level(1,Ally,1) [26,22] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Thunder, Fire] DummyAI
+UNIT Sue NomadF Roy Level(10,Ally,1) [27,22] 0x0 0x0 0x0 0x0 [KillerBow, SteelBow, IronBow, ShortBow] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [26,23] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Arcardo Paladin 0x0 Level(10,Enemy,0) [9,1] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_DontRetreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(12,Enemy,1) [10,21] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(13,Enemy,1) [13,21] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Knight 0x0 Level(13,Enemy,1) [9,16] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(12,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(13,Enemy,1) [8,12] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(12,Enemy,1) [10,10] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(14,Enemy,1) [10,12] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Warrior 0x0 Level(5,Enemy,1) [9,11] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT Raigh Shaman 0x0 Level(12,Enemy,0) [3,11] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(15,Enemy,1) [23,17] 0x0 0x0 0x0 0x0 [KillerAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Knight 0x0 Level(12,Enemy,1) [23,12] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(15,Enemy,1) [23,8] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Priest 0x0 Level(14,Enemy,1) [13,8] 0x0 0x0 0x0 0x0 [Mend] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericJuteauxCh12 Priest 0x0 Level(15,Enemy,1) [20,24] 0x0 0x0 0x0 0x0 [Sleep] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Priest 0x0 Level(15,Enemy,1) [20,22] 0x0 0x0 0x0 0x0 [Physic, Mend] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericJuteauxCh12 Priest 0x0 Level(15,Enemy,1) [10,2] 0x0 0x0 0x0 0x0 [Physic, Sleep] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(11,Enemy,1) [14,18] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(12,Enemy,1) [16,18] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(13,Enemy,1) [10,14] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(13,Enemy,1) [14,14] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(13,Enemy,1) [15,10] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Archer 0x0 Level(13,Enemy,1) [18,10] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericJuteauxCh12 Shaman 0x0 Level(13,Enemy,1) [12,14] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Shaman 0x0 Level(13,Enemy,1) [16,14] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Shaman 0x0 Level(14,Enemy,1) [20,21] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericJuteauxCh12 Shaman 0x0 Level(13,Enemy,1) [4,19] 0x0 0x0 0x0 0x0 [Eclipse] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Sniper 0x0 Level(2,Enemy,1) [21,18] 0x0 0x0 0x0 0x0 [SilverBow, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+JustEin:
+UNIT Ein FireManakete 0x0 Level(8,Enemy,0) [6,6] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT
+
+JustCath:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [18,0] 0x0 0x0 0x1 REDA_18_1 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_Retreat]
+UNIT
+
+SouthEastReinforcements:
+UNIT GenericJuteauxCh12 Warrior 0x0 Level(15,Enemy,1) [31,23] 0x0 0x0 0x1 REDA_30_22 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(15,Enemy,1) [31,23] 0x0 0x0 0x1 REDA_29_22 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(14,Enemy,1) [31,23] 0x0 0x0 0x1 REDA_30_23 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(13,Enemy,1) [31,23] 0x0 0x0 0x1 REDA_28_23 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+SouthReinforcements:
+UNIT GenericJuteauxCh12 Hero 0x0 Level(1,Enemy,1) [12,31] 0x0 0x0 0x1 REDA_12_30 [SilverSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Mercenary 0x0 Level(13,Enemy,1) [12,31] 0x0 0x0 0x1 REDA_11_28 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Mercenary 0x0 Level(16,Enemy,1) [12,31] 0x0 0x0 0x1 REDA_13_28 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Mercenary 0x0 Level(16,Enemy,1) [12,31] 0x0 0x0 0x1 REDA_12_28 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+ThroneRoomFighterReinforcements:
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(12,Enemy,1) [6,6] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericJuteauxCh12 Fighter 0x0 Level(14,Enemy,1) [12,6] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+WyvernReinforcements:
+UNIT GenericBernCh12 WyvernRider 0x0 Level(15,Enemy,1) [26,0] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh12 WyvernRider 0x0 Level(12,Enemy,1) [28,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh12 WyvernRider 0x0 Level(13,Enemy,1) [30,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+CutsceneFlaer:
+UNIT Flaer WyvernLord 0x0 Level(2,Enemy,0) [12,6] 0x0 0x0 0x0 0x0 [Spear] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_TheKingdomOfBern)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+
+FlagON(Ch12_LughRaighExtraTalkFlag)
+FlagON(Ch12_ChadRaighExtraTalkFlag)
+
+LOAD1 0x1 CutsceneFlaer
+ENUN
+CAM1 Flaer
+MOVE 0x0 Flaer [9,2]
+ENUN
+Text(Ch12_Start1)
+MOVE 0x0 Flaer [8,2]
+ENUN
+MOVE 0x0 Arcardo [12,6]
+ENUN
+DISA Arcardo
+MOVE 0x0 Flaer [9,1]
+ENUN
+Text(Ch12_Start2)
+STAL 16
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+
+//There is different text for the start of this chapter depending on if you went Echidna or Bartre route.
+//Branch if Bartre route.
+BranchIfFlagON(2,WestIslesBartreRouteFlag)
+
+//Echidna route case.
+Text(BG_Outside,Ch12_Start3EchidnaRoute)
+GOTO 9
+
+//Bartre route case.
+LABEL 2
+Text(Ch12_Start3BartreRoute)
+
+//Either way, continue here.
+LABEL 9
+GotoPrepScreen
+
+EinAppearsFlaerLeaves:
+SwitchMusic(MUS_DragonSanctuary)
+CAM1 Flaer
+CMOF
+MOVE 0x0 Raigh [9,8]
+ENUN
+LOAD1 0x1 JustEin
+ENUN
+Text(Ch12_EinAppears)
+MOVE 0x0 Ein [8,2]
+ENUN
+MOVE 0x0 Flaer [12,6]
+ENUN
+DISA Flaer
+STAL 16
+MOVE 0x0 Ein [9,1]
+ENUN
+CAM1 Raigh
+Text(Ch12_RaighDragon)
+CMON
+MOVE 0x0 Raigh [3,11]
+ENUN
+STAL 16
+RestoreMusic
+EndEvent
+
+CathAppears:
+//Skip Cath's appearance if she's been recruited (impossible this chapter) or is dead.
+BranchIfFlagON(9,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LoadReinforcements(JustCath)
+Text(Ch12_CathAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Cath by +9
+#endif
+LABEL 9
+EndEvent
+
+ReinforcementsWarning:
+BranchIfBossDead(9)
+SwitchMusic(MUS_DragonSanctuary)
+CAM1 [9,1]
+FlashCursor(9,1,60)
+Text(BG_Castle1,Ch12_ReinforcementsComing)
+RestoreMusic
+LABEL 9
+EndEvent
+
+LoadReinforcementsIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(WyvernReinforcements)
+LoadReinforcements(SouthEastReinforcements)
+LABEL 9
+EndEvent
+
+LoadThroneRoomReinforcements:
+ReinforcementEvent(ThroneRoomFighterReinforcements)
+
+LoadHardSouthReinforcements:
+HardReinforcementEvent(SouthReinforcements)
+
+LoadHardWyvernReinforcements:
+HardReinforcementEvent(WyvernReinforcements)
+
+LoadHardSouthEastReinforcements:
+HardReinforcementEvent(SouthEastReinforcements)
+
+GaidenGone:
+PlayMusic(MUS_WildFrontier)
+STAL 16
+QuieterMusic
+LoadReinforcements(SouthReinforcements)
+Text(Ch12_GaidenGone)
+UnquieterMusic
+FlagON(Ch12_GaidenGoneFlag)
+EndEvent
+
+LughRecruitsRaigh:
+SwitchMusic(MUS_JoinUs)
+Text(Ch12_LughRecruitsRaigh)
+BecomeAlly(Raigh)
+RestoreMusic
+FlagOFF(Ch12_ChadRaighExtraTalkFlag)
+EndEvent
+
+ChadRecruitsRaigh:
+SwitchMusic(MUS_JoinUs)
+Text(Ch12_ChadRecruitsRaigh)
+BecomeAlly(Raigh)
+RestoreMusic
+FlagOFF(Ch12_LughRaighExtraTalkFlag)
+EndEvent
+
+LughRaighExtraTalk:
+QuieterMusic
+Text(Ch12_LughRaighTalk)
+UnquieterMusic
+EndEvent
+
+ChadRaighExtraTalk:
+QuieterMusic
+Text(Ch12_ChadRaighTalk)
+UnquieterMusic
+EndEvent
+
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+Text(BG_Castle2,Ch12_End1)
+//Ch12x on Bartre route requires Elffin to be alive.
+//If we're not on Bartre route, skip the check.
+BranchIfFlagOFF(1,WestIslesBartreRouteFlag)
+
+//We're on Bartre route. Check if Elffin is alive. If he's not, branch to gaiden failure.
+BranchIfUnitDead(8,Elffin)
+
+//Either Echidna route or Bartre route with Elffin alive.
+LABEL 1
+//Check if gaiden gone flag is ON. If yes, branch to gaiden failure.
+BranchIfFlagON(8,Ch12_GaidenGoneFlag)
+
+//Flag is off, gaiden got. Move to Ch12x.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle2,Ch12_EndGaidenGot)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch12x)
+GOTO 9
+
+//Gaiden failure. Move to Ch13.
+LABEL 8
+Text(BG_Castle2,Ch12_Ch12x_EndEtruriaRevolution)
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch13)
+
+LABEL 9
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

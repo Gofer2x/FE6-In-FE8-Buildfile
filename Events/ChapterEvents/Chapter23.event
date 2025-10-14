@@ -1,0 +1,251 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch23_FirKarelTalkFlag 0x7
+#define Ch23_BartreKarelTalkFlag 0x8
+#define Ch23_RoyKarelTalkFlag 0x9
+#define Ch23_KarelVillageDone 0xA
+
+//Ch23_BrunnyaVsMeladyFlag 0x1E
+//Ch23_BrunnyaVsZeissFlag 0x1F
+
+EventPointerTable(EVENTS_Ch23,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch23,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch23,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+//Only run this event if Karel hasn't been recruited turn 1, checked by flag.
+TurnEventEnemy(Ch23_KarelVillageDone,VillageComplains,1)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(Ch23_FirKarelTalkFlag,FirKarelTalk,Fir,Karel)
+CharacterEventBothWays(Ch23_BartreKarelTalkFlag,BartreKarelTalk,Bartre,Karel)
+CharacterEventBothWays(Ch23_RoyKarelTalkFlag,RoyKarelTalk,Roy,Karel)
+END_MAIN
+
+LocationBasedEvents:
+Seize(5,1)
+House(0x0,KarelVillageVisit,22,23)
+Armory(Armory1List,16,26)
+Armory(Armory2List,17,25)
+Vendor(Vendor1List,0,6)
+Vendor(Vendor2List,15,26)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+IronBallista(7,17)
+IronBallista(6,19)
+KillerBallista(13,18)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [16,30] 0x0 0x0 0x0 0x0 [Rapier, IronSword, BindingBlade, Armorslayer] DummyAI
+UNIT Fae FaeManakete Roy Level(10,Ally,1) [15,29] 0x0 0x0 0x0 0x0 [Divinestone] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [15,31] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Gwendolyn KnightF Roy Level(20,Ally,1) [17,29] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, Javelin, SilverLance] DummyAI
+UNIT Elen Cleric Roy Level(20,Ally,1) [17,31] 0x0 0x0 0x0 0x0 [Lightning, Mend, Warp, Rescue] DummyAI
+UNIT Raigh Shaman Roy Level(20,Ally,1) [18,30] 0x0 0x0 0x0 0x0 [Nosferatu, Flux, Fenrir, GuidingRing] DummyAI
+UNIT Echidna HeroF Roy Level(14,Ally,1) [14,30] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, IronBlade, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(12,Ally,1) [13,31] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, SilverAxe] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [19,29] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Thea PegasusKnight Roy Level(20,Ally,1) [19,31] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, IronLance] DummyAI
+UNIT Dorothy ArcherF Roy Level(16,Ally,1) [20,28] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, KillerBow, SteelBow] DummyAI
+UNIT Clarine Troubadour Roy Level(20,Ally,1) [20,30] 0x0 0x0 0x0 0x0 [Silence, Rescue, Heal, Restore] DummyAI
+UNIT Melady WyvernRiderF Roy Level(20,Ally,1) [12,30] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Javelin] DummyAI
+UNIT Ogier Mercenary Roy Level(18,Ally,1) [13,29] 0x0 0x0 0x0 0x0 [BraveSword, SteelAxe, IronSword, SilverSword] DummyAI
+UNIT Sin Nomad Roy Level(20,Ally,1) [21,31] 0x0 0x0 0x0 0x0 [SilverBow, IronSword, Longbow, ShortBow] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [21,29] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustKarel:
+UNIT Karel Swordmaster 0x0 Level(19,Ally,0) [22,23] 0x0 0x0 0x1 REDA_22_24 [WoDao] DummyAI
+UNIT
+
+Enemies:
+UNIT Brunnya SageF 0x0 Level(20,Enemy,0) [5,1] 0x0 0x0 0x0 0x0 [Fimbulvetr, Bolting, GuidingRing] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericManaketeCh23 FireManakete 0x0 Level(12,Enemy,1) [5,4] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh23 FireManakete 0x0 Level(12,Enemy,1) [15,9] 0x0 0x0 0x0 0x0 [Firestone, RedGem] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh23 FireManakete 0x0 Level(12,Enemy,1) [1,15] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh23 FireManakete 0x0 Level(12,Enemy,1) [19,17] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(14,Enemy,1) [10,2] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [11,3] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [13,3] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(14,Enemy,1) [21,10] 0x0 0x0 0x0 0x0 [SilverLance, Spear] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [20,11] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [22,11] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [21,12] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(15,Enemy,1) [8,19] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [8,20] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [9,18] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [9,19] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(14,Enemy,1) [20,1] 0x0 0x0 0x0 0x0 [SilverLance, Spear] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [19,2] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [21,2] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(14,Enemy,1) [0,29] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [1,28] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [1,29] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [1,30] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernLord Brunnya Level(14,Enemy,1) [4,7] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [3,8] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [5,8] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 WyvernRider Brunnya Level(20,Enemy,1) [5,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 Sniper Brunnya Level(12,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Sniper Brunnya Level(10,Enemy,1) [7,17] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Sniper Brunnya Level(10,Enemy,1) [13,18] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Sniper Brunnya Level(12,Enemy,1) [6,2] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_GhostOfBern, AI2_0x14, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Sniper Brunnya Level(12,Enemy,1) [4,2] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_GhostOfBern, AI2_0x13, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Druid Brunnya Level(10,Enemy,1) [4,3] 0x0 0x0 0x0 0x0 [Flux, Physic, Berserk] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_GhostOfBern, AI2_0x15, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Druid Brunnya Level(10,Enemy,1) [5,3] 0x0 0x0 0x0 0x0 [Nosferatu, Physic, BlueGem] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_GhostOfBern, AI2_0x16, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Druid Brunnya Level(10,Enemy,1) [6,3] 0x0 0x0 0x0 0x0 [Flux, Physic, Sleep] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_GhostOfBern, AI2_0x17, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Druid Brunnya Level(10,Enemy,1) [7,2] 0x0 0x0 0x0 0x0 [Flux, Physic, Sleep] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat] //[AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh23 Druid Brunnya Level(10,Enemy,1) [13,8] 0x0 0x0 0x0 0x0 [Nosferatu, Physic] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 Druid Brunnya Level(9,Enemy,1) [0,18] 0x0 0x0 0x0 0x0 [Flux, Mend] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh23 Druid Brunnya Level(9,Enemy,1) [20,18] 0x0 0x0 0x0 0x0 [Flux, Mend] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Melancholic)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlagON(Ch23_FirKarelTalkFlag)
+FlagON(Ch23_BartreKarelTalkFlag)
+FlagON(Ch23_RoyKarelTalkFlag)
+FlashCursor(Brunnya,60)
+Text(BG_Temple1,Ch23_Start1)
+Text(BG_Outside,Ch23_Start2)
+PlayMusic(MUS_ShockingTruth2)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_Outside,Ch23_Start3)
+GotoPrepScreen
+
+VillageComplains:
+CAM1 [22,23]
+FlashCursor(22,23,60)
+QuieterMusic
+Text(BG_Village,Ch23_VillageComplains)
+UnquieterMusic
+EndEvent
+
+
+
+KarelVillageVisit:
+//Branch if the visiting unit is Fir or Bartre.
+BranchIfUnitActive(1,Fir)
+BranchIfUnitActive(3,Bartre)
+
+//Default case. Karel fail, don't trigger tile change.
+Text(BG_Village,Ch23_KarelVillageDefault)
+GOTO 9
+
+//Fir case. Karel success.
+LABEL 1
+SwitchMusic(MUS_JoinUs)
+Text(BG_Village,Ch23_KarelVillageFir)
+FlagOFF(Ch23_BartreKarelTalkFlag)
+FlagOFF(Ch23_RoyKarelTalkFlag)
+GOTO 7
+
+//Bartre case. Karel success.
+LABEL 3
+SwitchMusic(MUS_JoinUs)
+Text(BG_Village,Ch23_KarelVillageBartre)
+FlagOFF(Ch23_FirKarelTalkFlag)
+FlagOFF(Ch23_RoyKarelTalkFlag)
+
+//Load Karel, turn turn 1 event flag on, and manually trigger tile change.
+LABEL 7
+FlagON(Ch23_KarelVillageDone)
+LOAD1 0x1 JustKarel
+ENUN
+TILECHANGE 1
+RestoreMusic
+
+LABEL 9
+EndEvent
+
+
+
+FirKarelTalk:
+QuieterMusic
+Text(Ch23_FirKarelTalk)
+UnquieterMusic
+EndEvent
+
+BartreKarelTalk:
+QuieterMusic
+Text(Ch23_BartreKarelTalk)
+UnquieterMusic
+EndEvent
+
+RoyKarelTalk:
+QuieterMusic
+Text(Ch23_RoyKarelTalk)
+UnquieterMusic
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+Text(BG_Temple1,Ch23_End)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch24)
+ENDA
+
+Armory1List:
+SHLI SlimSword IronSword SteelSword SilverSword IronBlade SteelBlade SilverBlade IronLance SteelLance SilverLance Javelin IronAxe SteelAxe SilverAxe HandAxe IronBow SteelBow SilverBow
+
+Armory2List:
+SHLI KillingEdge LightBrand Armorslayer KillerLance Horseslayer KillerAxe Hammer Halberd KillerBow ShortBow Longbow
+
+Vendor1List:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Nosferatu
+
+Vendor2List:
+SHLI Heal Mend Recover Physic Restore Vulnerary PureWater Elixir
+
+//MESSAGE Events end at offset CURRENTOFFSET

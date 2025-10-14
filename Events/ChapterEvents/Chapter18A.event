@@ -1,0 +1,265 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch18A,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch18A,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch18A,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,RiverFreezes,7)
+TurnEventEnemy(0x0,LoadNorthPegs,10)
+TurnEventEnemy(0x0,LoadNorthPegs,12)
+TurnEventEnemy(0x0,LoadNorthPegs,14)
+TurnEventEnemy(0x0,LoadNorthPegs,16)
+TurnEventEnemy(0x0,LoadEastPegs,9)
+TurnEventEnemy(0x0,LoadEastPegs,11)
+TurnEventEnemy(0x0,LoadEastPegs,13)
+TurnEventEnemy(0x0,LoadEastPegs,15)
+TurnEventEnemy(0x0,LoadBrigand,5,5)
+TurnEventEnemy(0x0,LoadHardNorthPegs,11)
+TurnEventEnemy(0x0,LoadHardNorthPegs,13)
+TurnEventEnemy(0x0,LoadHardNorthPegs,15)
+TurnEventEnemy(0x0,LoadHardNorthPegs,17,4)
+TurnEventEnemy(0x0,LoadHardEastPegs,12)
+TurnEventEnemy(0x0,LoadHardEastPegs,14)
+TurnEventEnemy(0x0,LoadHardEastPegs,16)
+TurnEventEnemy(0x0,LoadHardEastPegs,18,3)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(19,3)
+Village(0x0,GoddessIconVillageVisit,2,4)
+Village(0x0,GuidingRingVillageVisit,20,9)
+Village(0x0,SecretBookVillageVisit,18,24)
+House(0x0,MartelSecretWeaponHouseVisit,3,22)
+House(0x0,FrozenRiversHouseVisit,8,23)
+House(0x0,SwordSaintHouseVisit,4,20)
+House(0x0,OldLadyAkaNiimeHouseVisit,7,17)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+NormalBallista(17,17)
+NormalBallista(5,14)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(19,Ally,1) [2,29] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(14,Ally,1) [2,26] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [1,27] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [3,27] 0x0 0x0 0x0 0x0 [SteelSword, KillerLance, Javelin, Horseslayer] DummyAI
+UNIT Bors Knight Roy Level(16,Ally,1) [5,27] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Klein Sniper Roy Level(5,Ally,1) [0,28] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(6,Ally,1) [2,28] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Bartre Warrior Roy Level(3,Ally,1) [4,28] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, Halberd] DummyAI
+UNIT Fir MyrmidonF Roy Level(18,Ally,1) [6,28] 0x0 0x0 0x0 0x0 [KillingEdge, IronSword, Vulnerary, SteelSword] DummyAI
+UNIT Shanna PegasusKnight Roy Level(20,Ally,1) [1,29] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, Horseslayer, BraveLance] DummyAI
+UNIT Melady WyvernRiderF Roy Level(14,Ally,1) [0,30] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Zeiss WyvernRider Roy Level(7,Ally,1) [3,29] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Cecilia Valkyrie Roy Level(6,Ally,1) [2,30] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Bolting, Heal] DummyAI
+UNIT Larum Dancer Roy Level(3,Ally,1) [4,30] 0x0 0x0 0x0 0x0 [PureWater, ChestKey5Uses, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [5,29] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Martel Bishop 0x0 Level(10,Enemy,0) [19,3] 0x0 0x0 0x0 0x0 [Purge, Divine] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericIlliaCh18A Falcoknight 0x0 Level(6,Enemy,1) [8,4] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [7,5] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [8,5] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [9,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [10,5] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Falcoknight 0x0 Level(6,Enemy,1) [22,13] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [21,11] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [21,12] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [21,13] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(16,Enemy,1) [21,14] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh18A WyvernRider 0x0 Level(17,Enemy,1) [20,27] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh18A WyvernRider 0x0 Level(17,Enemy,1) [20,28] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18A WyvernRider 0x0 Level(16,Enemy,1) [20,29] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18A WyvernRider 0x0 Level(17,Enemy,1) [20,30] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(17,Enemy,1) [4,15] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Weird1, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(16,Enemy,1) [6,15] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(16,Enemy,1) [7,18] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(16,Enemy,1) [4,21] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(17,Enemy,1) [14,10] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(17,Enemy,1) [13,11] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Mercenary 0x0 Level(17,Enemy,1) [14,12] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Priest 0x0 Level(15,Enemy,1) [6,13] 0x0 0x0 0x0 0x0 [Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericIlliaCh18A Priest 0x0 Level(15,Enemy,1) [18,15] 0x0 0x0 0x0 0x0 [Mend, Silence] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericIlliaCh18A Priest 0x0 Level(15,Enemy,1) [15,6] 0x0 0x0 0x0 0x0 [Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericIlliaCh18A Priest 0x0 Level(15,Enemy,1) [16,6] 0x0 0x0 0x0 0x0 [Mend, Berserk] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericIlliaCh18A Archer 0x0 Level(18,Enemy,1) [17,17] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Archer 0x0 Level(18,Enemy,1) [5,14] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Shaman 0x0 Level(18,Enemy,1) [18,6] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Shaman 0x0 Level(18,Enemy,1) [20,6] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Shaman 0x0 Level(18,Enemy,1) [18,16] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh18A Shaman 0x0 Level(18,Enemy,1) [18,18] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+BrigandReinforcements:
+UNIT GenericBanditCh18A Brigand 0x0 Level(18,Enemy,1) [15,0] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh18A Brigand 0x0 Level(18,Enemy,1) [22,15] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+EastPegReinforcements:
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [22,9] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [22,11] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthPegReinforcements:
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [10,0] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh18A PegasusKnight 0x0 Level(17,Enemy,1) [12,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+Text(BG_Castle1,Ch18A_Start1)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+PlayMusic(MUS_PrincessOfDestiny)
+SetBackground(BG_SnowOutside)
+TEXTSTART
+TEXTSHOW Ch18A_Start2
+TEXTEND
+PlayMusic(MUS_ShadowApproaches)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+CAM1 Roy
+GotoPrepScreen
+
+RiverFreezes:
+BranchIfBossDead(9)
+SwitchMusic(MUS_DistantLands)
+CAM1 [19,3]
+FlashCursor(19,3,60)
+Text(BG_Castle1,Ch18A_RiverFreezes1)
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_SnowOutside,Ch18A_RiverFreezes2)
+PlaySound(SND_RiverFreezing)
+TILECHANGE 6
+TILECHANGE 7
+TILECHANGE 8
+TILECHANGE 9
+TILECHANGE 10
+TILECHANGE 11
+TILECHANGE 12
+TILECHANGE 13
+TILECHANGE 14
+TILECHANGE 15
+TILECHANGE 16
+TILECHANGE 17
+TILECHANGE 18
+TILECHANGE 19
+CAM1 [19,28]
+CAM1 [3,28]
+CAM1 [3,3]
+CAM1 [19,3]
+FlashCursor(19,3,60)
+Text(BG_Castle1,Ch18A_RiverFreezes3)
+SwitchMusic(MUS_WhenTheRushComes)
+CAM1 Roy
+Text(BG_SnowOutside,Ch18A_RiverFreezes4)
+RestoreMusic
+
+LABEL 9
+EndEvent
+
+GoddessIconVillageVisit:
+VillageEventItem(Ch18A_GoddessIconVillage,BG_SnowVillage,GoddessIcon)
+
+GuidingRingVillageVisit:
+VillageEventItem(Ch18A_GuidingRingVillage,BG_SnowVillage,GuidingRing)
+
+SecretBookVillageVisit:
+VillageEventItem(Ch18A_SecretBookVillage,BG_SnowVillage,SecretBook)
+
+MartelSecretWeaponHouseVisit:
+HouseEvent(Ch18A_MartelSecretWeaponHouse,BG_House)
+
+FrozenRiversHouseVisit:
+HouseEvent(Ch18A_FrozenRiversHouse,BG_House)
+
+SwordSaintHouseVisit:
+HouseEvent(Ch18A_SwordSaintHouse,BG_House)
+
+OldLadyAkaNiimeHouseVisit:
+HouseEvent(Ch18A_OldLadyAkaNiimeHouse,BG_House)
+
+LoadNorthPegs:
+ReinforcementEvent(NorthPegReinforcements)
+
+LoadEastPegs:
+ReinforcementEvent(EastPegReinforcements)
+
+LoadBrigand:
+ReinforcementEvent(BrigandReinforcements)
+
+LoadHardNorthPegs:
+HardReinforcementEvent(NorthPegReinforcements)
+
+LoadHardEastPegs:
+HardReinforcementEvent(EastPegReinforcements)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch18A_End
+TEXTEND
+PlayMusic(MUS_CogsOfFate)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch19A)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

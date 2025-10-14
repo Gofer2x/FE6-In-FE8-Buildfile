@@ -1,3 +1,5 @@
+THE CHARACTER TABLE IS CAUSING CRASHES!!!!!!! FIX IT NOW YOU
+
 once classes moved update effectiveness groups and items that use them for them (binding blade and divinestone)
 
 since triangle attacks now use something else remove their hardcoding?

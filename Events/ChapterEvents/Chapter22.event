@@ -1,0 +1,345 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+#define Ch22_RoyCathTalkFlag 0x7
+#define Ch22_WestSwitchFlag 0x8
+#define Ch22_EastSwitchFlag 0x9
+#define Ch22_ThroneRoomOpenFlag 0xA
+
+
+
+EventPointerTable(EVENTS_Ch22,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch22,Ch22EscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch22,0x0)
+
+ALIGN 4
+
+Ch22EscapePoints:
+EscapePoint(1,31,MoveDown)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,CathAndAThiefAppear,10)
+TurnEventEnemy(0x0,LoadBishopReinforcements,10)
+TurnEventEnemy(0x0,LoadBishopReinforcements,15)
+TurnEventEnemy(0x0,LoadBishopReinforcements,20)
+TurnEventEnemy(0x0,LoadBishopReinforcements,25)
+TurnEventEnemy(0x0,LoadBishopReinforcements,30)
+TurnEventEnemy(0x0,LoadBishopReinforcements,35)
+TurnEventEnemy(0x0,LoadBishopReinforcements,40)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,9)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,12)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,15)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,18)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,21)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,24)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,27)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,30)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,33)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,36)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,39)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,42)
+TurnEventEnemy(0x0,LoadThroneRoomReinforcementsIfOpen,45)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch22_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+END_MAIN
+
+LocationBasedEvents:
+Seize(15,8)
+Chest(Sleep,1,8)
+Chest(WhiteGem,1,10)
+Chest(Nosferatu,1,12)
+Chest(Wyrmslayer,29,8)
+Chest(Dragonshield,29,11)
+Chest(Swordreaver,29,14)
+END_MAIN
+
+MiscBasedEvents:
+AreaEvent(Ch22_WestSwitchFlag,WestSwitch,1,0,1,0)
+AreaEvent(Ch22_EastSwitchFlag,EastSwitch,30,0,30,0)
+AreaEvent(Ch22_ThroneRoomOpenFlag,ThroneRoomOpens,14,20,16,20)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [28,30] 0x0 0x0 0x0 0x0 [Rapier, IronSword, BindingBlade, Armorslayer] DummyAI
+UNIT Zeiss WyvernRider Roy Level(19,Ally,1) [3,30] 0x0 0x0 0x0 0x0 [Maltet, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [30,30] 0x0 0x0 0x0 0x0 [Mulagir, SilverBow, KillerBow, SteelBow] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [1,30] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(20,Ally,1) [28,29] 0x0 0x0 0x0 0x0 [Apocalypse, Javelin, IronLance, KnightCrest] DummyAI
+UNIT Hugh Mage Roy Level(20,Ally,1) [2,29] 0x0 0x0 0x0 0x0 [Forblaze, Elfire, SaintsStaff, Bolting] DummyAI
+UNIT Echidna HeroF Roy Level(11,Ally,1) [28,31] 0x0 0x0 0x0 0x0 [Armads, IronSword, IronBlade, SteelSword] DummyAI
+UNIT Lot Fighter Roy Level(10,Ally,1) [2,31] 0x0 0x0 0x0 0x0 [SilverAxe, IronAxe, HandAxe, HeroCrest] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [27,29] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Juno PegasusKnight Roy Level(20,Ally,1) [4,29] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, IronLance] DummyAI
+UNIT Klein Sniper Roy Level(14,Ally,1) [30,29] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, KillerBow, SteelBow] DummyAI
+UNIT Cecilia Valkyrie Roy Level(18,Ally,1) [4,31] 0x0 0x0 0x0 0x0 [Elfire, SaintsStaff, Recover, Warp] DummyAI
+UNIT Perceval Paladin Roy Level(20,Ally,1) [27,31] 0x0 0x0 0x0 0x0 [Durandal, IronSword, IronLance, Javelin] DummyAI
+UNIT Dieck Mercenary Roy Level(20,Ally,1) [30,31] 0x0 0x0 0x0 0x0 [BraveSword, IronBlade, HeroCrest, IronSword] DummyAI
+UNIT Thea PegasusKnight Roy Level(20,Ally,1) [27,28] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Aureola] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [29,30] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT GenericBernCh22 Knight Zephiel Level(20,Enemy,1) [18,22] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [20,22] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(12,Enemy,1) [22,22] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(13,Enemy,1) [16,22] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Knight Zephiel Level(20,Enemy,1) [4,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Knight Zephiel Level(20,Enemy,1) [30,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [1,0] 0x0 0x0 0x0 0x0 [BraveSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [30,0] 0x0 0x0 0x0 0x0 [BraveAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericBernCh22 General Zephiel Level(14,Enemy,1) [1,4] 0x0 0x0 0x0 0x0 [SilverLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 General Zephiel Level(14,Enemy,1) [30,4] 0x0 0x0 0x0 0x0 [SilverLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [6,1] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [5,6] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(12,Enemy,1) [5,10] 0x0 0x0 0x0 0x0 [Fenrir, Mend, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [26,4] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [28,10] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(12,Enemy,1) [28,12] 0x0 0x0 0x0 0x0 [Fenrir, Mend, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Mercenary Zephiel Level(20,Enemy,1) [8,12] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(9,Enemy,1) [8,14] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh22 Mercenary Zephiel Level(20,Enemy,1) [8,17] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Mercenary Zephiel Level(20,Enemy,1) [25,12] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(9,Enemy,1) [25,14] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh22 Mercenary Zephiel Level(20,Enemy,1) [25,17] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(11,Enemy,1) [13,2] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(10,Enemy,1) [17,2] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Bishop Zephiel Level(16,Enemy,1) [15,31] 0x0 0x0 0x0 0x0 [Silence, Physic, Mend, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [10,30] 0x0 0x0 0x0 0x0 [DevilAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(10,Enemy,1) [20,30] 0x0 0x0 0x0 0x0 [DevilAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [16,26] 0x0 0x0 0x0 0x0 [Berserk, Physic, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(13,Enemy,1) [13,25] 0x0 0x0 0x0 0x0 [Longbow, SilverBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(13,Enemy,1) [19,25] 0x0 0x0 0x0 0x0 [Longbow, SilverBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT Zephiel King 0x0 Level(20,Enemy,0) [15,8] 0x0 0x0 0x0 0x0 [Eckesachs, HeroCrest] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh22 FireManakete Zephiel Level(10,Enemy,1) [13,12] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh22 FireManakete Zephiel Level(10,Enemy,1) [17,12] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(12,Enemy,1) [11,13] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(12,Enemy,1) [19,13] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(9,Enemy,1) [13,16] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(9,Enemy,1) [17,16] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Bishop Zephiel Level(12,Enemy,1) [19,10] 0x0 0x0 0x0 0x0 [Divine, Recover] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(11,Enemy,1) [11,10] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+HardExtraEnemies:
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [22,17] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [22,16] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(16,Enemy,1) [22,19] 0x0 0x0 0x0 0x0 [BraveBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [7,6] 0x0 0x0 0x0 0x0 [Nosferatu, Recover] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [8,6] 0x0 0x0 0x0 0x0 [Nosferatu, Physic] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [22,1] 0x0 0x0 0x0 0x0 [Nosferatu, Recover] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [23,1] 0x0 0x0 0x0 0x0 [Nosferatu, Physic] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [12,30] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(15,Enemy,1) [12,31] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(16,Enemy,1) [14,30] 0x0 0x0 0x0 0x0 [BraveBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+JustCath:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [30,6] 0x0 0x0 0x1 REDA_30_7 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_Retreat]
+UNIT
+
+ThiefReinforcements:
+UNIT GenericThiefCh22 Thief 0x0 Level(20,Enemy,1) [1,6] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_50_100|TAI_Def, AI4_Retreat]
+UNIT
+
+BishopReinforcements:
+UNIT GenericBernCh22 Bishop Zephiel Level(9,Enemy,1) [10,0] 0x0 0x0 0x0 0x0 [Silence, Divine, Physic] [AI1_HealAllies, AI2_Charge, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh22 Bishop Zephiel Level(10,Enemy,1) [20,0] 0x0 0x0 0x0 0x0 [Sleep, Divine, Physic] [AI1_HealAllies, AI2_Charge, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT
+
+SouthEastReinforcements:
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [26,31] 0x0 0x0 0x1 REDA_26_29 [SilverSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(14,Enemy,1) [27,31] 0x0 0x0 0x1 REDA_26_30 [SilverBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [28,31] 0x0 0x0 0x1 REDA_28_29 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(13,Enemy,1) [29,31] 0x0 0x0 0x1 REDA_28_30 [Fenrir, Mend] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestReinforcements:
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [0,31] 0x0 0x0 0x1 REDA_0_29 [SilverSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(14,Enemy,1) [1,31] 0x0 0x0 0x1 REDA_0_30 [SilverBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [2,31] 0x0 0x0 0x1 REDA_2_29 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(13,Enemy,1) [4,31] 0x0 0x0 0x1 REDA_2_30 [Fenrir, Mend] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ThroneRoomReinforcements:
+UNIT GenericBernCh22 Hero Zephiel Level(12,Enemy,1) [12,16] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Berserker Zephiel Level(11,Enemy,1) [18,16] 0x0 0x0 0x0 0x0 [Hammer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh22 Druid Zephiel Level(15,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh22 Sniper Zephiel Level(12,Enemy,1) [19,8] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+MUSC MUS_TheKingOfBern
+LOAD1 0x1 Enemies
+
+//Extra Hard enemies.
+BranchIfNotHard(1)
+LOAD1 0x1 HardExtraEnemies
+
+LABEL 1
+ENUN
+ChStartFadeFromBlack
+
+//If Cath is recruited (or dead), disable her talk with Roy.
+BranchIfFlagOFF(2,CathRecruitedOrDeadFlag)
+FlagON(Ch22_RoyCathTalkFlag)
+
+LABEL 2
+CAM1 [18,19]
+Text(BG_Castle2,Ch22_Start1)
+CAM1 [1,0]
+FlashCursor(1,0,60)
+Text(Ch22_Start2)
+CAM1 [30,0]
+FlashCursor(30,0,60)
+Text(Ch22_Start3)
+LOAD3 0x0 Units
+ENUN
+PlayMusic(MUS_ShockingTruth2)
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_Castle2,Ch22_Start4)
+GotoPrepScreen
+
+CathAndAThiefAppear:
+//Skip Cath's appearance if she's been recruited or is dead.
+BranchIfFlagON(3,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LoadReinforcements(JustCath)
+Text(Ch22_CathAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Cath by +14
+#endif
+
+LABEL 3
+LoadReinforcements(ThiefReinforcements)
+EndEvent
+
+LoadBishopReinforcements:
+ReinforcementEvent(BishopReinforcements)
+
+LoadThroneRoomReinforcementsIfOpen:
+BranchIfFlagOFF(9,Ch22_ThroneRoomOpenFlag)
+LoadReinforcements(ThroneRoomReinforcements)
+LABEL 9
+EndEvent
+
+WestSwitch:
+PlayerInRange
+QuieterMusic
+Text(Ch22_Switch1)
+UnquieterMusic
+EndEvent
+
+EastSwitch:
+PlayerInRange
+QuieterMusic
+Text(Ch22_Switch2)
+UnquieterMusic
+EndEvent
+
+ThroneRoomOpens:
+//Only open the throne room if the unit in range is Roy and both switches are on.
+UnitInRange(Roy)
+BranchIfFlagOFF(5,Ch22_EastSwitchFlag)
+BranchIfFlagOFF(5,Ch22_WestSwitchFlag)
+
+//Open.
+SwitchMusic(MUS_TheKingOfBern)
+TILECHANGE 0
+Text(BG_Castle2,Ch22_ThroneRoomOpen)
+LoadReinforcements(SouthWestReinforcements)
+LoadReinforcements(SouthEastReinforcements)
+RestoreMusic
+LABEL 5
+EndEvent
+
+EndingScene:
+FadeOutMusic
+//True ending determination. Do we have all the legendary weapons?
+BranchIfItemNotInPossession(3,Durandal)
+BranchIfItemNotInPossession(3,Armads)
+BranchIfItemNotInPossession(3,Forblaze)
+BranchIfItemNotInPossession(3,Aureola)
+BranchIfItemNotInPossession(3,Mulagir)
+BranchIfItemNotInPossession(3,Maltet)
+BranchIfItemNotInPossession(3,SaintsStaff)
+BranchIfItemNotInPossession(3,Apocalypse)
+BranchIfItemNotInPossession(3,BindingBlade)
+
+
+//True ending. Move to Ch23.
+SetBackground(BG_Castle2)
+TEXTSTART
+TEXTSHOW Ch22_EndTrue
+TEXTEND
+PlaySound(SND_MagicShine)
+FlashWhiteAdjustable(16)
+PlaySound(SND_MagicShine)
+FlashWhiteAdjustable(16)
+PlayMusic(MUS_ThePathToGreatness)
+TEXTCONT
+TEXTEND
+PlaySound(SND_MagicShineLonger)
+FlashWhiteAdjustable(12)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+//Used for Epilogue determination.
+FlagON(PostChapter22Flag)
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch23)
+GOTO 9
+
+//Bad ending.
+LABEL 3
+ReviveMerlinusIfConfig
+//Eirika Mode change for Epilogue.
+ChangeMode(0x2)
+//Epilogue Save
+MNC4 0
+
+LABEL 9
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

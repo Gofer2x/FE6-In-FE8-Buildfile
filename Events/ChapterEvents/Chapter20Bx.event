@@ -1,0 +1,334 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch20Bx_ThorilTriedFlag 0x7
+#define Ch20Bx_BrakulTriedFlag 0x8
+#define Ch20Bx_KudokaTriedFlag 0x9
+#define Ch20Bx_MarralTriedFlag 0xA
+#define Ch20Bx_KabulTriedFlag 0xB
+#define Ch20Bx_ChanTriedFlag 0xC
+
+#define Ch20Bx_ThorilCorrectFlag 0xD
+#define Ch20Bx_BrakulCorrectFlag 0xE
+#define Ch20Bx_KudokaCorrectFlag 0xF
+#define Ch20Bx_MarralCorrectFlag 0x10
+#define Ch20Bx_KabulCorrectFlag 0x11
+#define Ch20Bx_ChanCorrectFlag 0x12
+
+EventPointerTable(EVENTS_Ch20Bx,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch20Bx,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch20Bx,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(Ch20Bx_ThorilTriedFlag,TryThorilSeize,17,8)
+Seize(Ch20Bx_BrakulTriedFlag,TryBrakulSeize,21,15)
+Seize(Ch20Bx_KudokaTriedFlag,TryKudokaSeize,3,10)
+Seize(Ch20Bx_MarralTriedFlag,TryMarralSeize,8,14)
+Seize(Ch20Bx_KabulTriedFlag,TryKabulSeize,3,24)
+Seize(Ch20Bx_ChanTriedFlag,TryChanSeize,12,26)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(7,Ally,1) [25,2] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Marcus Paladin Roy Level(6,Ally,1) [0,1] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(8,Ally,1) [23,26] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Lance Cavalier Roy Level(5,Ally,1) [23,2] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(10,Ally,1) [0,3] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Rutger Myrmidon Roy Level(6,Ally,1) [25,4] 0x0 0x0 0x0 0x0 [KillingEdge] DummyAI
+UNIT Astolfo Thief Roy Level(10,Ally,1) [22,25] 0x0 0x0 0x0 0x0 [Lockpick, IronSword] DummyAI
+UNIT Barthe Knight Roy Level(15,Ally,1) [1,2] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
+UNIT Chad Thief Roy Level(10,Ally,1) [25,0] 0x0 0x0 0x0 0x0 [Lockpick, IronSword] DummyAI
+UNIT Gwendolyn KnightF Roy Level(6,Ally,1) [22,27] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
+UNIT Chad Thief Roy Level(10,Ally,1) [1,0] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Cecilia Valkyrie Roy Level(6,Ally,1) [24,27] 0x0 0x0 0x0 0x0 [Mend, Elfire] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [23,4] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT Sue NomadF Roy Level(6,Ally,1) [27,0] 0x0 0x0 0x0 0x0 [ShortBow] DummyAI
+UNIT
+
+Enemies:
+UNIT Thoril NomadTrooper 0x0 Level(8,Enemy,0) [17,8] 0x0 0x0 0x0 0x0 [ShortBow, SilverSword] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT Brakul Druid 0x0 Level(7,Enemy,0) [21,15] 0x0 0x0 0x0 0x0 [Fenrir, Berserk] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT Kudoka NomadTrooper 0x0 Level(8,Enemy,0) [3,10] 0x0 0x0 0x0 0x0 [ShortBow, Lancereaver] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT Marral Druid 0x0 Level(7,Enemy,0) [8,14] 0x0 0x0 0x0 0x0 [Fenrir, Sleep] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT Kabul NomadTrooper 0x0 Level(8,Enemy,0) [3,24] 0x0 0x0 0x0 0x0 [ShortBow, KillingEdge] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT Chan Druid 0x0 Level(7,Enemy,0) [12,26] 0x0 0x0 0x0 0x0 [Nosferatu, Silence] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_DontRetreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(20,Enemy,1) [14,1] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(7,Enemy,1) [11,1] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(20,Enemy,1) [9,1] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(19,Enemy,1) [7,1] 0x0 0x0 0x0 0x0 [Flux, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(20,Enemy,1) [7,9] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(18,Enemy,1) [9,9] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(6,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [8,11] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(20,Enemy,1) [1,13] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(18,Enemy,1) [3,13] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(6,Enemy,1) [2,14] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [2,15] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [7,25] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [9,25] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(6,Enemy,1) [8,26] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [2,19] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [4,19] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(6,Enemy,1) [3,20] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(18,Enemy,1) [16,10] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [17,12] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(6,Enemy,1) [18,11] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [19,10] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx NomadTrooper 0x0 Level(7,Enemy,1) [20,11] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh20Bx WyvernRider 0x0 Level(18,Enemy,1) [13,17] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh20Bx WyvernLord 0x0 Level(9,Enemy,1) [14,19] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh20Bx WyvernRider 0x0 Level(18,Enemy,1) [27,17] 0x0 0x0 0x0 0x0 [Axereaver, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh20Bx WyvernRider 0x0 Level(18,Enemy,1) [27,13] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh20Bx WyvernLord 0x0 Level(9,Enemy,1) [27,15] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrakulAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [20,15] 0x0 0x0 0x1 REDA_19_13 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [20,15] 0x0 0x0 0x1 REDA_19_15 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [20,15] 0x0 0x0 0x1 REDA_20_17 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrakulAmbush2:
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [24,15] 0x0 0x0 0x1 REDA_23_14 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [22,15] 0x0 0x0 0x1 REDA_22_17 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+ChanAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [11,26] 0x0 0x0 0x1 REDA_10_24 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [11,26] 0x0 0x0 0x1 REDA_10_26 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [11,26] 0x0 0x0 0x1 REDA_11_28 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ChanAmbush2:
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [13,26] 0x0 0x0 0x1 REDA_14_24 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [13,26] 0x0 0x0 0x1 REDA_14_26 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [13,26] 0x0 0x0 0x1 REDA_13_28 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+KabulAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [2,24] 0x0 0x0 0x1 REDA_1_22 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [2,24] 0x0 0x0 0x1 REDA_1_24 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [2,24] 0x0 0x0 0x1 REDA_2_26 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+KabulAmbush2:
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [4,24] 0x0 0x0 0x1 REDA_5_22 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [4,24] 0x0 0x0 0x1 REDA_5_24 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [4,24] 0x0 0x0 0x1 REDA_4_26 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+KudokaAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [2,10] 0x0 0x0 0x1 REDA_1_8 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [2,10] 0x0 0x0 0x1 REDA_1_10 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [2,10] 0x0 0x0 0x1 REDA_2_12 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+KudokaAmbush2:
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [4,10] 0x0 0x0 0x1 REDA_5_8 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [4,10] 0x0 0x0 0x1 REDA_5_10 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(18,Enemy,1) [4,10] 0x0 0x0 0x1 REDA_4_12 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+MarralAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [7,14] 0x0 0x0 0x1 REDA_6_12 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [7,14] 0x0 0x0 0x1 REDA_6_13 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [7,14] 0x0 0x0 0x1 REDA_7_15 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+MarralAmbush2:
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [9,12] 0x0 0x0 0x1 REDA_10_13 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(18,Enemy,1) [9,12] 0x0 0x0 0x1 REDA_10_11 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+ThorilAmbush1:
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [16,8] 0x0 0x0 0x1 REDA_15_6 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Myrmidon 0x0 Level(19,Enemy,1) [16,8] 0x0 0x0 0x1 REDA_15_8 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [16,8] 0x0 0x0 0x1 REDA_16_10 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ThorilAmbush2:
+UNIT GenericSacaeCh20Bx Shaman 0x0 Level(18,Enemy,1) [20,8] 0x0 0x0 0x1 REDA_19_6 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [18,7] 0x0 0x0 0x1 REDA_19_8 [ShortBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh20Bx Nomad 0x0 Level(19,Enemy,1) [20,7] 0x0 0x0 0x1 REDA_18_10 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_LegendaryInheritance)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+Text(Ch20Bx_Start1)
+PlayMusic(MUS_ScarsOfTheScouring)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(Ch20Bx_Start2Elffin)
+
+//Set up which gate is the correct one.
+RANDOMNUMBER 5
+BEQ 0 s0 sC
+SVAL s1 1
+BEQ 1 s1 sC
+SVAL s1 2
+BEQ 2 s1 sC
+SVAL s1 3
+BEQ 3 s1 sC
+SVAL s1 4
+BEQ 4 s1 sC
+//If none of the previous branched, it's 5.
+  FlagON(Ch20Bx_ThorilCorrectFlag)
+  GOTO 9
+LABEL 4
+  FlagON(Ch20Bx_BrakulCorrectFlag)
+  GOTO 9
+LABEL 3
+  FlagON(Ch20Bx_KudokaCorrectFlag)
+  GOTO 9
+LABEL 2
+  FlagON(Ch20Bx_MarralCorrectFlag)
+  GOTO 9
+LABEL 1
+  FlagON(Ch20Bx_KabulCorrectFlag)
+  GOTO 9
+LABEL 0
+  FlagON(Ch20Bx_ChanCorrectFlag)
+  GOTO 9
+LABEL 9
+GotoPrepScreen
+
+//Ambush events below. Self explanatory.
+TryThorilSeize:
+BranchIfFlagOFF(5,Ch20Bx_ThorilCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(ThorilAmbush1)
+LoadReinforcements(ThorilAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+TryBrakulSeize:
+BranchIfFlagOFF(5,Ch20Bx_BrakulCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(BrakulAmbush1)
+LoadReinforcements(BrakulAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+TryKudokaSeize:
+BranchIfFlagOFF(5,Ch20Bx_KudokaCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(KudokaAmbush1)
+LoadReinforcements(KudokaAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+TryMarralSeize:
+BranchIfFlagOFF(5,Ch20Bx_MarralCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(MarralAmbush1)
+LoadReinforcements(MarralAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+TryKabulSeize:
+BranchIfFlagOFF(5,Ch20Bx_KabulCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(KabulAmbush1)
+LoadReinforcements(KabulAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+TryChanSeize:
+BranchIfFlagOFF(5,Ch20Bx_ChanCorrectFlag)
+FlagON(SeizeFlag)
+GOTO 9
+LABEL 5
+LoadReinforcements(ChanAmbush1)
+LoadReinforcements(ChanAmbush2)
+Text(Ch20Bx_TrapSprung)
+LABEL 9
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+Text(Ch20Bx_End)
+GiveItemToCharacter(Roy,Mulagir)
+SetBackground(BG_Outside)
+TEXTSTART
+TEXTSHOW Ch20B_Ch20Bx_EndRoyAndGuinivereTalk
+TEXTEND
+PlayMusic(MUS_PrincessOfDestiny)
+TEXTCONT
+TEXTEND
+PlayMusic(MUS_MainThemeArrangement)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch21)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

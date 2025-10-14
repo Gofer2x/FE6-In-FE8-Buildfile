@@ -1,0 +1,508 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch13_PercevalRecruitedFlag 0x7
+#define Ch13_NarcianOnThroneFlag 0x8
+#define Ch13_NarcianLeavesFlag 0x9
+
+//Ch13_Ch15_GenericSoldierPercevalDeathFlag 0x20
+
+EventPointerTable(EVENTS_Ch13,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch13,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch13,Ch13NPCEscapePoints)
+
+ALIGN 4
+
+Ch13NPCEscapePoints:
+EscapePoint(45,6,MoveRight)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,CeciliaDies,1)
+TurnEventNPC(0x0,PercevalComplains,1)
+TurnEventPlayer(0x0,CastleFallen,2)
+TurnEventEnemy(0x0,GuinivereFound,2)
+TurnEventNPC(0x0,MeladyJoins,2)
+TurnEventEnemy(0x0,ZephielLeaves,3)
+TurnEventNPC(0x0,SophiaAndCeciliaInDungeon,3)
+TurnEventNPC(0x0,PercevalLeaves,8)
+TurnEventEnemy(0x0,LoadNorthWestReinforcements,8)
+TurnEventEnemy(0x0,LoadSouthWestReinforcements,12)
+TurnEventEnemy(0x0,LoadHardNorthWestReinforcements,15)
+TurnEventEnemy(0x0,LoadHardSouthWestReinforcements,18)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch13_PercevalRecruitedFlag,LarumRecruitsPerceval,Larum,Perceval)
+CharacterEvent(Ch13_PercevalRecruitedFlag,ElffinRecruitsPerceval,Elffin,Perceval)
+END_MAIN
+
+LocationBasedEvents:
+Seize(43,9)
+Armory(ArmoryList,41,5)
+Vendor(VendorList,43,4)
+Village(0x0,BodyRingVillageVisit,7,6)
+Village(0x0,AlsSwordVillageVisit,38,18)
+House(0x0,ThreeGeneralsHouseVisit,10,6)
+House(0x0,CeciliaDefeatedHouseVisit,38,6)
+House(0x0,PercevalLoyalHouseVisit,41,19)
+END_MAIN
+
+MiscBasedEvents:
+//Event for the Narcian leaving cutscene. Only plays once Narcian is on the throne.
+AreaEvent(Ch13_NarcianLeavesFlag,NarcianLeaves,22,0,45,24)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+NormalBallista(19,20)
+NormalBallista(20,16)
+KillerBallista(35,4)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(14,Ally,1) [2,18] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Marcus Paladin Roy Level(8,Ally,1) [6,18] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(16,Ally,1) [2,16] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(12,Ally,1) [4,16] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(14,Ally,1) [1,17] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(3,Ally,0) [3,17] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(13,Ally,1) [5,17] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe, KillerAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(16,Ally,1) [4,18] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, SilverLance, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(17,Ally,1) [1,19] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Barrier] DummyAI
+UNIT Chad Thief Roy Level(11,Ally,1) [3,19] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(13,Ally,1) [5,19] 0x0 0x0 0x0 0x0 [Fire, Thunder, Elfire, Aircalibur] DummyAI
+UNIT Sue NomadF Roy Level(13,Ally,1) [2,20] 0x0 0x0 0x0 0x0 [IronBow, Longbow, SteelBow, BraveBow] DummyAI
+UNIT Rutger Myrmidon Roy Level(15,Ally,1) [4,20] 0x0 0x0 0x0 0x0 [KillingEdge, IronSword, Vulnerary, SteelSword] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [3,21] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustMelady:
+UNIT Melady WyvernRiderF 0x0 Level(10,Enemy,0) [43,10] 0x0 0x0 0x1 REDA_41_7 [SteelLance] DummyAI
+UNIT
+
+Enemies:
+UNIT Cecilia Valkyrie 0x0 Level(1,NPC,0) [43,9] 0x0 0x0 0x0 0x0 [Aircalibur, Mend] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT Flaer WyvernLord 0x0 Level(2,Enemy,0) [44,12] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Weird2, AI4_DontRetreat]
+UNIT GenericBernCh13 WyvernRider Flaer Level(12,Enemy,1) [43,11] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh13 WyvernRider Flaer Level(13,Enemy,1) [43,13] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh13 WyvernRider Flaer Level(14,Enemy,1) [41,11] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh13 WyvernRider Flaer Level(13,Enemy,1) [41,13] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh13 WyvernRider Flaer Level(12,Enemy,1) [42,14] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Paladin Flaer Level(3,Enemy,1) [36,7] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [34,7] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [32,7] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(16,Enemy,1) [33,8] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(16,Enemy,1) [34,9] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [32,9] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Troubadour Flaer Level(14,Enemy,1) [38,10] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] [AI1_HealAllies, AI2_TwoMoves, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh13 Sniper Flaer Level(1,Enemy,1) [20,16] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh13 Archer Flaer Level(14,Enemy,1) [19,21] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh13 Archer Flaer Level(15,Enemy,1) [21,17] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh13 Archer Flaer Level(14,Enemy,1) [20,22] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh13 Mage Flaer Level(15,Enemy,1) [20,19] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Mage Flaer Level(14,Enemy,1) [18,17] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Paladin Flaer Level(3,Enemy,1) [11,4] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [10,3] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [10,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [12,3] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [12,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Troubadour Flaer Level(14,Enemy,1) [13,4] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] [AI1_HealAllies, AI2_TwoMoves, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh13 Paladin Flaer Level(3,Enemy,1) [32,20] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [33,19] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [33,21] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [31,21] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [30,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Troubadour Flaer Level(15,Enemy,1) [31,18] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT Perceval Paladin 0x0 Level(5,Enemy,0) [34,3] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericSoldierPercevalCh13_Ch15_1 Cavalier Perceval Level(14,Enemy,1) [33,4] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat] //[AI1_GaleSquad, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSoldierPercevalCh13_Ch15_2 Sniper Perceval Level(1,Enemy,1) [35,4] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat] //ditto
+UNIT GenericSoldierPercevalCh13_Ch15_3 Cavalier Perceval Level(14,Enemy,1) [33,2] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat] //ditto
+UNIT GenericEtruriaCh13 Hero Flaer Level(2,Enemy,1) [42,22] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Mercenary Flaer Level(15,Enemy,1) [40,21] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh13 Mercenary Flaer Level(14,Enemy,1) [40,23] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+NorthWestReinforcements1:
+UNIT GenericEtruriaCh13 Paladin Flaer Level(5,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_0_1 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_1 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(16,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_2 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthWestReinforcements2:
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [1,2] 0x0 0x0 0x1 REDA_1_3 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,4] 0x0 0x0 0x1 REDA_1_4 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Troubadour Flaer Level(15,Enemy,1) [1,2] 0x0 0x0 0x1 REDA_0_2 [Heal, Vulnerary] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT
+
+SouthWestReinforcements1:
+UNIT GenericEtruriaCh13 Paladin Flaer Level(5,Enemy,1) [0,21] 0x0 0x0 0x1 REDA_0_22 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,20] 0x0 0x0 0x1 REDA_1_20 [Axereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,22] 0x0 0x0 0x1 REDA_1_21 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(16,Enemy,1) [0,19] 0x0 0x0 0x1 REDA_1_22 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestReinforcements2:
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(15,Enemy,1) [0,23] 0x0 0x0 0x1 REDA_1_23 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Cavalier Flaer Level(14,Enemy,1) [0,24] 0x0 0x0 0x1 REDA_1_24 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh13 Troubadour Flaer Level(15,Enemy,1) [1,21] 0x0 0x0 0x1 REDA_0_21 [Heal, Vulnerary] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT
+
+CutsceneGuinivere:
+UNIT GuinivereTrial SageF 0x0 Level(20,NPC,0) [44,10] 0x0 0x0 0x1 REDA_43_10 [Divine, Recover] DummyAI
+UNIT
+
+CutsceneIdunn2:
+UNIT IdunnHuman ShamanF 0x0 Level(20,Enemy,0) [43,9] 0x0 0x0 0x0 0x0 [Elixir] DummyAI
+UNIT
+
+CutsceneNarcian:
+UNIT Narcian WyvernLord 0x0 Level(8,Enemy,0) [45,23] 0x0 0x0 0x1 REDA_45_12 [Runesword, DelphiShield] DummyAI
+UNIT
+
+CutsceneNarcian2:
+UNIT Narcian WyvernLord 0x0 Level(8,Enemy,0) [43,9] 0x0 0x0 0x0 0x0 [Runesword, DelphiShield] DummyAI
+UNIT
+
+CutsceneZephiel2:
+UNIT Zephiel King 0x0 Level(20,Enemy,0) [43,9] 0x0 0x0 0x1 REDA_43_10 [Eckesachs] DummyAI
+UNIT
+
+CutsceneZephielIdunn:
+UNIT Zephiel King 0x0 Level(20,Enemy,0) [42,21] 0x0 0x0 0x0 0x0 [Eckesachs] DummyAI
+UNIT IdunnHuman ShamanF 0x0 Level(20,Enemy,0) [42,23] 0x0 0x0 0x0 0x0 [Elixir] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Suspicious)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+CAM1 Flaer
+STAL 16
+CMOF
+LOAD1 0x1 CutsceneNarcian
+ENUN
+Text(Ch13_Start1)
+PlayMusic(MUS_TheKingOfBern)
+LOAD1 0x1 CutsceneZephielIdunn
+ENUN
+MOVE 0x0 Zephiel [45,13]
+MOVE 0x0 IdunnHuman [45,14]
+ENUN
+Text(Ch13_Start2)
+MOVE_1STEP 0x0 IdunnHuman Up
+ENUN
+DISA IdunnHuman
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+Text(BG_Outside,Ch13_Start3)
+GotoPrepScreen
+
+CeciliaDies:
+CAM1 [43,9]
+MOVE 0x0 Zephiel [43,10]
+ENUN
+Text(Ch13_ZephielAttacksCecilia)
+StartBattle
+MissedAttack(0,0)
+//Cecilia's HP hits zero here in FE6, but we have to keep her at 1 here. TODO?
+CriticalHit(1,29)
+EndAttack
+FIG1 Cecilia Zephiel 0x0
+Text(Ch13_CeciliaFunkingDies)
+KILL Cecilia
+DISA Cecilia
+ENUN
+Text(Ch13_CeciliaThrownIntoDungeon)
+MOVE 0x0 Zephiel [43,9]
+ENUN
+EndEvent
+
+PercevalComplains:
+QuieterMusic
+CAM1 Perceval
+FlashCursor(Perceval, 60)
+Text(Ch13_PercevalComplains)
+UnquieterMusic
+EndEvent
+
+CastleFallen:
+SwitchMusic(MUS_AnUnexpectedCaller)
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_Outside,Ch13_CastleHasFallen)
+RestoreMusic
+EndEvent
+
+GuinivereFound:
+//NOTE: this section uses some ASM to, i think, do a two-layer music switch + return.
+//First switch from map theme to Zephiel music, then switch to Guinivere, then back to Zephiel, then finally back to map music.
+//I will do a normal "play music" at the start and do a restore for the Zephiel music, then just keep the music at end.
+//Enemy phase starts right as the event ends so you don't get to hear the player phase track anyway.
+PlayMusic(MUS_TheKingOfBern)
+CAM1 [43,9]
+MOVE 0x0 Narcian [43,10]
+ENUN
+Text(Ch13_GuinivereFound)
+MOVE 0x0 Narcian [44,10]
+ENUN
+STAL 16
+LOAD1 0x1 CutsceneGuinivere
+ENUN
+
+TEXTSTART
+TEXTSHOW Ch13_ZephielScoldsGuinivere
+TEXTEND
+//Guinivere. So good to see you.
+SwitchMusic(MUS_PrincessOfDestiny)
+//Zephiel, why?
+TEXTCONT
+TEXTEND
+//......
+RestoreMusic
+//Narcian! Is the head of Guinivere's guard present?
+TEXTCONT
+TEXTEND
+REMA
+
+STAL 60
+DISA Zephiel
+ENUN
+
+MOVE_1STEP 0x0 Narcian Left
+DISA GuinivereTrial
+ENUN
+MOVE 0x0 Narcian [43,9]
+ENUN
+DISA Narcian
+ENUN
+EndEvent
+
+MeladyJoins:
+SwitchMusic(MUS_PrincessOfDestiny)
+CAM1 [43,9]
+Text(BG_Castle1,Ch13_GuinivereTalksToMelady)
+LOAD1 0x1 JustMelady
+ENUN
+CMON
+MoveNextTo(0x0,Melady,Roy)
+ENUN
+CMOF
+Text(Ch13_MeladyRecruitsHerself)
+TurnAlly(Melady)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Melady by +10
+#endif
+EndEvent
+
+LarumRecruitsPerceval:
+SwitchMusic(MUS_JoinUs)
+Text(Ch13_Ch15_LarumRecruitsPerceval)
+BecomeAlly(Perceval)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_1)
+SetAI(GenericSoldierPercevalCh13_Ch15_1,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_2)
+SetAI(GenericSoldierPercevalCh13_Ch15_2,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_3)
+SetAI(GenericSoldierPercevalCh13_Ch15_3,AI1_None,AI2_Escape)
+FlagON(PercevalRecruitedOrDeadFlag)
+RestoreMusic
+EndEvent
+
+ElffinRecruitsPerceval:
+SwitchMusic(MUS_JoinUs)
+Text(Ch13_Ch15_ElffinRecruitsPerceval)
+BecomeAlly(Perceval)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_1)
+SetAI(GenericSoldierPercevalCh13_Ch15_1,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_2)
+SetAI(GenericSoldierPercevalCh13_Ch15_2,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_3)
+SetAI(GenericSoldierPercevalCh13_Ch15_3,AI1_None,AI2_Escape)
+FlagON(PercevalRecruitedOrDeadFlag)
+RestoreMusic
+EndEvent
+
+ZephielLeaves:
+SwitchMusic(MUS_TheKingOfBern)
+CAM1 [43,9]
+FlashCursor(43,9,60)
+Text(BG_Castle1,Ch13_ZephielLeaves)
+LOAD1 0x1 CutsceneZephiel2
+ENUN
+LOAD1 0x1 CutsceneIdunn2
+ENUN
+MOVE 0x0 Zephiel [46,10]
+MOVE 0x0 IdunnHuman [46,11]
+ENUN
+DISA Zephiel
+DISA IdunnHuman
+LOAD1 0x1 CutsceneNarcian2
+FlagON(Ch13_NarcianOnThroneFlag)
+RestoreMusic
+EndEvent
+
+SophiaAndCeciliaInDungeon:
+CAM1 [43,9]
+FlashCursor(43,9,60)
+PlayMusic(MUS_DistantUtopia)
+Text(BG_Dungeon,Ch13_SophiaTendsToCecilia)
+EndEvent
+
+PercevalLeaves:
+BranchIfFlagON(9,Ch13_PercevalRecruitedFlag)
+BranchIfUnitDead(9,Perceval)
+SwitchMusic(MUS_BindingTies)
+CAM1 Perceval
+FlashCursor(Perceval,60)
+Text(Ch13_PercevalLeaves)
+MOVE 0x0 Perceval [45,6]
+ENUN
+DISA Perceval
+RestoreMusic
+MOVE 0x0 GenericSoldierPercevalCh13_Ch15_1 [45,6]
+ENUN
+DISA GenericSoldierPercevalCh13_Ch15_1
+MOVE 0x0 GenericSoldierPercevalCh13_Ch15_2 [45,6]
+ENUN
+DISA GenericSoldierPercevalCh13_Ch15_2
+MOVE 0x0 GenericSoldierPercevalCh13_Ch15_3 [45,6]
+ENUN
+DISA GenericSoldierPercevalCh13_Ch15_3
+LABEL 9
+EndEvent
+
+NarcianLeaves:
+PlayerInRange
+BranchIfFlagON(1,Ch13_NarcianOnThroneFlag)
+FlagOFF(Ch13_NarcianLeavesFlag)
+GOTO 9
+
+LABEL 1
+CAM1 Narcian
+SwitchMusic(MUS_Suspicious)
+MOVE 0x0 Flaer [43,10]
+ENUN
+Text(Ch13_NarcianLeaves)
+MOVE 0x0 Flaer [42,10]
+ENUN
+MOVE 0x0 Narcian [46,9]
+ENUN
+DISA Narcian
+MOVE 0x0 Flaer [43,9]
+ENUN
+ChangeAIAllEnemy(AI1_InRange,AI2_Charge,GenericBernCh13,0)
+RestoreMusic
+LABEL 9
+EndEvent
+
+LoadNorthWestReinforcements:
+LoadReinforcements(NorthWestReinforcements1)
+LoadReinforcements(NorthWestReinforcements2)
+EndEvent
+
+LoadSouthWestReinforcements:
+LoadReinforcements(SouthWestReinforcements1)
+LoadReinforcements(SouthWestReinforcements2)
+EndEvent
+
+LoadHardNorthWestReinforcements:
+BranchIfBossDead(9)
+LoadHardReinforcements(NorthWestReinforcements1)
+LoadHardReinforcements(NorthWestReinforcements2)
+LABEL 9
+EndEvent
+
+LoadHardSouthWestReinforcements:
+BranchIfBossDead(9)
+LoadHardReinforcements(SouthWestReinforcements1)
+LoadHardReinforcements(SouthWestReinforcements2)
+LABEL 9
+EndEvent
+
+BodyRingVillageVisit:
+VillageEventItem(Ch13_BodyRingVillage,BG_Village,BodyRing)
+
+AlsSwordVillageVisit:
+VillageEventItem(Ch13_AlsSwordVillage,BG_Village,AlsSword)
+
+ThreeGeneralsHouseVisit:
+HouseEvent(Ch13_ThreeGeneralsHouse,BG_House)
+
+CeciliaDefeatedHouseVisit:
+HouseEvent(Ch13_CeciliaDefeatedHouse,BG_House)
+
+PercevalLoyalHouseVisit:
+HouseEvent(Ch13_PercevalLoyalHouse,BG_House)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch13_End
+TEXTEND
+PlayMusic(MUS_DistantUtopia)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+
+//Skip Knight Crest reward if Perceval is unrecruited/dead, or if any of his soldiers died.
+BranchIfUnitNotAlly(1,Perceval)
+BranchIfUnitDead(1,Perceval)
+BranchIfFlagON(1,Ch13_Ch15_GenericSoldierPercevalDeathFlag)
+
+//All alive, Knight Crest got.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch13_Ch15_EndKnightCrest)
+GiveItemToCharacter(Perceval,KnightCrest)
+
+LABEL 1
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch14)
+ENDA
+
+ArmoryList:
+SHLI IronSword SteelSword KillingEdge IronLance SteelLance KillerLance Javelin IronBow SteelBow KillerBow
+
+VendorList:
+SHLI Fire Thunder Elfire Lightning Flux Heal Mend Restore Vulnerary Antitoxin Torch
+
+//MESSAGE Events end at offset CURRENTOFFSET

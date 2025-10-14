@@ -1,0 +1,10 @@
+//Ch17A Previous, Ch18A Current
+
+WorldMapPointerTable(CHAPTER_Ch18A,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch18A,CurrentNodeSelect)
+
+AfterPrevious:
+WMEVENT_UnlockNextNodeAfterChapter(NODE_Ch17A,ROAD_Ch17AToCh18A)
+
+CurrentNodeSelect:
+WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch17A,NODE_Ch18A)

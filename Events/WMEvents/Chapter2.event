@@ -1,0 +1,22 @@
+WorldMapPointerTable(CHAPTER_Ch2,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch2,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+WM_UnlockNode(NODE_Ch1)
+WM_SpawnLord(Roy,NODE_Ch1)
+WM_CamOnLord
+WM_Fadeout
+WM_TextDecorate
+WM_EnableSkip
+STAL 20
+WM_UnlockNextNode
+WM_WaitForFX
+STAL 40
+WM_DrawRoad(ROAD_Ch1ToCh2)
+STAL 70
+WM_MakeLordVisible
+ENDA
+
+CurrentNodeSelect:
+WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch1,NODE_Ch2)

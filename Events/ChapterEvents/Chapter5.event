@@ -1,0 +1,225 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch5_GateFlag 0x7
+
+EventPointerTable(EVENTS_Ch5,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch5,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch5,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,DorothyAndSaulCutscene,1)
+TurnEventEnemy(0x0,LoadWestFortsReinforcements,12,3)
+TurnEventEnemy(0x0,LoadHardEastFortsReinforcements,15,5)
+TurnEventEnemy(0x0,LoadHardWestFortsReinforcements,16,2)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(2,14)
+Vendor(VendorList,7,2)
+Village(0x0,GantsLanceVillageVisit,10,2)
+House(0x0,FortsHouseVisit,11,20)
+House(0x0,AraphenDragonHouseVisit,12,20)
+House(0x0,BrigandsMountainsHouseVisit,8,19)
+END_MAIN
+
+MiscBasedEvents:
+AreaEvent(Ch5_GateFlag,OpenGateEvent,7,16,7,17)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(4,Ally,1) [14,14] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Marcus Paladin Roy Level(2,Ally,1) [14,16] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(4,Ally,1) [13,13] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Lance Cavalier Roy Level(4,Ally,1) [13,15] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(3,Ally,1) [12,14] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(3,Ally,1) [15,16] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary, Vulnerary] DummyAI
+UNIT Dieck Mercenary Roy Level(6,Ally,1) [16,11] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(4,Ally,1) [15,12] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe] DummyAI
+UNIT Lot Fighter Roy Level(4,Ally,1) [17,12] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe, IronAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(3,Ally,1) [16,15] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(5,Ally,1) [14,15] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(2,Ally,1) [15,14] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(2,Ally,1) [17,14] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(2,Ally,1) [14,13] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT Rutger Myrmidon Roy Level(4,Ally,1) [16,13] 0x0 0x0 0x0 0x0 [KillingEdge, IronSword, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [18,15] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+CutsceneSaulDorothy:
+UNIT Saul Priest Dory Level(5,NPC,1) [10,3] 0x0 0x0 0x1 REDA_10_4 [Mend] DummyAI
+UNIT Dorothy ArcherF Dory Level(6,NPC,1) [10,2] 0x0 0x0 0x1 REDA_10_3 [SteelBow, Vulnerary] DummyAI
+UNIT
+
+Enemies:
+UNIT Dory Brigand 0x0 Level(11,Enemy,0) [2,14] 0x0 0x0 0x0 0x0 [KillerAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh5 Fighter Dory Level(4,Enemy,1) [14,7] 0x0 0x0 0x0 0x0 [IronAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(4,Enemy,1) [14,5] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [11,5] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [9,3] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [7,4] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [5,6] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [4,4] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Fighter Dory Level(5,Enemy,1) [3,5] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(3,Enemy,1) [1,8] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(3,Enemy,1) [3,9] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [1,15] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [2,17] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [2,16] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [3,15] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(2,Enemy,1) [12,2] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(4,Enemy,1) [9,6] 0x0 0x0 0x1 REDA_7_6 [SteelSword] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(4,Enemy,1) [2,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(5,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [SteelBlade] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh5 Nomad Dory Level(3,Enemy,1) [4,11] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh5 Nomad Dory Level(4,Enemy,1) [4,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh5 Nomad Dory Level(3,Enemy,1) [1,11] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh5 Mage Dory Level(5,Enemy,1) [1,18] 0x0 0x0 0x0 0x0 [Fire] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+EastFortBrigandReinforcements:
+UNIT GenericBanditCh5 Brigand Dory Level(5,Enemy,1) [18,7] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [17,8] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+WestFortBrigandReinforcements:
+UNIT GenericBanditCh5 Brigand Dory Level(5,Enemy,1) [0,4] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditCh5 Brigand Dory Level(6,Enemy,1) [0,17] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+GateOpenEnemies:
+UNIT GenericBanditCh5 Mercenary Dory Level(4,Enemy,1) [2,15] 0x0 0x0 0x1 REDA_5_16 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Mercenary Dory Level(4,Enemy,1) [2,15] 0x0 0x0 0x1 REDA_5_17 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh5 Nomad Dory Level(3,Enemy,1) [2,15] 0x0 0x0 0x1 REDA_4_17 [IronBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh5 Nomad Dory Level(4,Enemy,1) [2,15] 0x0 0x0 0x1 REDA_4_16 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DeerOfThePlains)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+CAM1 [2,14]
+STAL 16
+Text(Ch5_Start1)
+LOAD3 0x0 Units
+ENUN
+MUSC MUS_WhenTheRushComes
+CAM1 Roy
+Text(Ch5_Start2)
+STAL 64
+ENUN
+#ifdef CONFIG_BuggedEarlyHMBonuses
+//Patch here on Dory and GenericBanditCh5 by +6
+#endif
+EndEvent
+
+DorothyAndSaulCutscene:
+SwitchMusic(MUS_GoingMyWay)
+CAM1 [10,2]
+FlashCursor(10,2,60)
+Text(BG_Village, Ch5_DorothySaulYoderCutscene)
+LOAD1 0x1 CutsceneSaulDorothy
+ENUN
+MOVE 0x0 Saul [20,5]
+MOVE 0x0 Dorothy [20,6]
+ENUN
+DISA Saul
+DISA Dorothy
+RestoreMusic
+EndEvent
+
+OpenGateEvent:
+PlayerInRange
+QuieterMusic
+Text(Ch5_GateOpens)
+TILECHANGE 0x1
+BranchIfBossDead(1)
+STAL 32
+CAM1 [2,14]
+Text(Ch5_BossAngryAtGate)
+LoadHardReinforcements(GateOpenEnemies)
+LABEL 1
+UnquieterMusic
+EndEvent
+
+GantsLanceVillageVisit:
+VillageEventItem(Ch5_GantsLanceVillage,BG_Village,GantsLance)
+
+FortsHouseVisit:
+HouseEvent(Ch5_FortsHouse,BG_House)
+
+AraphenDragonHouseVisit:
+HouseEvent(Ch5_AraphenDragonHouse,BG_House)
+
+BrigandsMountainsHouseVisit:
+HouseEvent(Ch5_BrigandsMountainsHouse,BG_House)
+
+LoadWestFortsReinforcements:
+ReinforcementEvent(WestFortBrigandReinforcements)
+
+LoadHardWestFortsReinforcements:
+HardReinforcementEvent(WestFortBrigandReinforcements)
+
+LoadHardEastFortsReinforcements:
+HardReinforcementEvent(EastFortBrigandReinforcements)
+
+EndingScene:
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch5_End
+TEXTEND
+PlayMusic(MUS_CogsOfFate)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch6)
+ENDA
+
+VendorList:
+SHLI Fire Heal Vulnerary DoorKey
+
+//MESSAGE Events end at offset CURRENTOFFSET

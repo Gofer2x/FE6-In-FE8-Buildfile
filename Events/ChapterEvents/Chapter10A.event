@@ -1,0 +1,220 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch10A_LilinaGonzalesTalkFlag 0x7
+#define Ch10A_RoyGeeseTalkFlag 0x8
+
+EventPointerTable(EVENTS_Ch10A,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch10A,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch10A,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,GeeseAppears,4)
+TurnEventEnemy(0x0,GonzalezAppears,6)
+TurnEventEnemy(0x0,LoadPirateReinforcements1,4)
+TurnEventEnemy(0x0,LoadHardPirateReinforcements2,5)
+TurnEventEnemy(0x0,LoadPirateReinforcements3,6)
+TurnEventEnemy(0x0,LoadPirateReinforcements1,7)
+TurnEventEnemy(0x0,LoadHardPirateReinforcements2,8)
+TurnEventEnemy(0x0,LoadPirateReinforcements1,9)
+TurnEventEnemy(0x0,LoadPirateReinforcements1,10)
+TurnEventEnemy(0x0,LoadHardPirateReinforcements2,11)
+TurnEventEnemy(0x0,LoadPirateReinforcements1,12)
+TurnEventEnemy(0x0,LoadFortReinforcements,13,6)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+//Both Gonzalez's and Geese's events are in the WestIslesEvents.event file.
+CharacterEvent(Ch10A_LilinaGonzalesTalkFlag,EVENT_LilinaRecruitsGonzalez,Lilina,Gonzalez)
+CharacterEvent(Ch10A_RoyGeeseTalkFlag,EVENT_RoyRecruitsGeese,Roy,Geese)
+END_MAIN
+
+LocationBasedEvents:
+Seize(18,29)
+Village(0x0,VisitSwordreaverVillage,18,17)
+House(0x0,VisitRecruitBaddiesHouse,17,19)
+
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+NormalBallista(6,19)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(9,Ally,1) [12,4] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Lance Cavalier Roy Level(10,Ally,1) [9,3] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(6,Ally,1) [11,3] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(8,Ally,1) [9,4] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, Vulnerary, SteelBow] DummyAI
+UNIT Dieck Mercenary Roy Level(12,Ally,1) [10,4] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(8,Ally,1) [8,5] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe, SteelAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(9,Ally,1) [10,5] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(11,Ally,1) [11,5] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Vulnerary] DummyAI
+UNIT Lilina MageF Roy Level(7,Ally,1) [5,7] 0x0 0x0 0x0 0x0 [Fire, Thunder, Vulnerary] DummyAI
+UNIT Sue NomadF Roy Level(8,Ally,1) [6,5] 0x0 0x0 0x0 0x0 [IronBow, Longbow, Antitoxin, PureWater] DummyAI
+UNIT Fir MyrmidonF Roy Level(2,Ally,1) [6,6] 0x0 0x0 0x0 0x0 [WoDao, IronSword, SteelSword] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [7,7] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustGeese:
+UNIT Geese Pirate Nord Level(10,NPC,0) [18,15] 0x0 0x0 0x1 REDA_18_12 [BraveAxe] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Nord Druid 0x0 Level(5,Enemy,0) [18,29] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(10,Enemy,1) [11,10] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(10,Enemy,1) [13,10] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(11,Enemy,1) [11,11] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(11,Enemy,1) [13,11] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(11,Enemy,1) [11,12] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(12,Enemy,1) [13,12] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(11,Enemy,1) [10,13] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(14,Enemy,1) [12,13] 0x0 0x0 0x0 0x0 [Halberd, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Archer Nord Level(10,Enemy,1) [14,13] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(10,Enemy,1) [12,18] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(12,Enemy,1) [11,19] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(11,Enemy,1) [13,19] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(11,Enemy,1) [11,20] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(11,Enemy,1) [13,20] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(12,Enemy,1) [10,19] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(11,Enemy,1) [14,19] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Mercenary Nord Level(11,Enemy,1) [14,22] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Berserker Nord Level(1,Enemy,1) [12,21] 0x0 0x0 0x0 0x0 [SteelAxe, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Archer Nord Level(13,Enemy,1) [10,22] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericArmaghCh10A Shaman Nord Level(12,Enemy,1) [14,30] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericArmaghCh10A Shaman Nord Level(12,Enemy,1) [19,30] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Archer Nord Level(10,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+JustGonzalez:
+UNIT Gonzalez Brigand Nord Level(5,Enemy,0) [18,30] 0x0 0x0 0x1 REDA_18_31 [DevilAxe, Vulnerary] [AI1_InRange, AI2_PillageAttack, RAI_80_100|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+FortFighterReinforcements:
+UNIT GenericArmaghCh10A Fighter Nord Level(12,Enemy,1) [9,31] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericArmaghCh10A Fighter Nord Level(13,Enemy,1) [11,31] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+PirateReinforcements1:
+UNIT GenericPirateWestIslesCh10A Pirate 0x0 Level(11,Enemy,1) [0,16] 0x0 0x0 0x0 0x0 [PoisonAxe, Antitoxin] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+PirateReinforcements2:
+UNIT GenericPirateWestIslesCh10A Pirate 0x0 Level(13,Enemy,1) [0,16] 0x0 0x0 0x0 0x0 [Hammer] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+PirateReinforcements3:
+UNIT GenericPirateWestIslesCh10A Pirate 0x0 Level(12,Enemy,1) [0,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_WildFrontier)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+CAM1 [18,29]
+FlashCursor(18,29,60)
+CMOF
+Text(BG_Castle1,Ch10A_Start1)
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+STAL 32
+Text(BG_Outside,Ch10A_Start2)
+GotoPrepScreen
+
+GonzalezAppears:
+CAM1 [18,29]
+FlashCursor(18,29,60)
+CMOF
+BranchIfBossDead(1)
+PlayMusic(MUS_WildFrontier)
+Text(BG_Castle1,Ch10A_GonzalezAppears)
+LoadReinforcements(JustGonzalez)
+LABEL 1
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Gonzalez by +8
+#endif
+EndEvent
+
+GeeseAppears:
+CAM1 [18,17]
+FlashCursor(18,17,60)
+SwitchMusic(MUS_BindingTies)
+Text(BG_Village,Ch10A_Ch11B_GeeseAppears)
+LoadReinforcements(JustGeese)
+EndEvent
+
+LilinaRecruitsGonzalez:
+SwitchMusic(MUS_JoinUs)
+Text(Ch10A_Ch10B_LilinaRecruitsGonzalez)
+BecomeAlly(Gonzalez)
+RestoreMusic
+EndEvent
+
+LoadPirateReinforcements1:
+ReinforcementEvent(PirateReinforcements1)
+
+LoadHardPirateReinforcements2:
+HardReinforcementEvent(PirateReinforcements2)
+
+LoadPirateReinforcements3:
+ReinforcementEvent(PirateReinforcements3)
+
+LoadFortReinforcements:
+ReinforcementEvent(FortFighterReinforcements)
+
+VisitSwordreaverVillage:
+VillageEventItem(Ch10A_SwordreaverVillage,BG_Village,Swordreaver)
+
+VisitRecruitBaddiesHouse:
+HouseEvent(Ch10A_RecruitBaddiesHouse,BG_House)
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+Text(BG_Castle1,Ch10A_End)
+GiveItemToCharacter(Roy,Wyrmslayer)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch11A)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

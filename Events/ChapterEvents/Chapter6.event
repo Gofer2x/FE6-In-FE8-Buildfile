@@ -1,0 +1,366 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch6_RoySueTalkFlag 0x7
+#define Ch6_RoyCathTalkFlag 0x8
+#define Ch6_SouthReinforcementsFlag 0x9
+#define Ch6_SouthmostWestRoomOpenFlag 0xA
+#define Ch6_SouthmostEastRoomOpenFlag 0xB
+#define Ch6_SouthmostWestRoomDoneFlag 0xC
+#define Ch6_SouthmostEastRoomDoneFlag 0xD
+
+#define Ch6_SouthmostWestRoomCounter 0x0
+#define Ch6_SouthmostEastRoomCounter 0x1
+
+
+
+EventPointerTable(EVENTS_Ch6,ThisChapter)
+
+EscapePointPointerTable(CHAPTER_Ch6,Ch6EscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch6,0x0)
+
+ALIGN 4
+
+Ch6EscapePoints:
+EscapePoint(14,0,MoveUp)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,SueComplains,1)
+TurnEventEnemy(0x0,CathAppears,5)
+TurnEventEnemy(0x0,LoadHardThroneRoomReinforcements1,8)
+TurnEventEnemy(0x0,LoadHardThroneRoomReinforcements2,12)
+TurnEventEnemy(0x0,LoadHardThroneRoomReinforcements3,16)
+TurnEventEnemy(Ch6_SouthReinforcementsFlag,BottomHalfReinforcementsEvent,1,255)
+TurnEventEnemy(Ch6_SouthmostWestRoomDoneFlag,SouthWestRoomReinforcementsEvent,1,255)
+TurnEventEnemy(Ch6_SouthmostEastRoomDoneFlag,SouthEastRoomReinforcementsEvent,1,255)
+
+//turn 1-255, enemies from southmost east room 3 turns after open (not ambush)
+//turn 1-255, enemies from southmost west room 3 turns after open (not ambush)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch6_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+CharacterEvent(Ch6_RoySueTalkFlag,RoyRecruitsSue,Roy,Sue)
+END_MAIN
+
+LocationBasedEvents:
+Seize(12,1)
+Chest(ShortBow,22,8)
+Chest(GoddessIcon,23,9)
+Chest(KillerAxe,22,10)
+ChestMoney(2000,23,13)
+Chest(SilverLance,22,15)
+Chest(Unlock,3,3)
+ChestMoney(5000,2,13)
+ChestMoney(3000,2,15)
+Door(5,14)
+Door(5,9)
+Door(20,9)
+Door(20,14)
+Door(Ch6_SouthmostWestRoomOpenFlag, 7,17)
+Door(Ch6_SouthmostEastRoomOpenFlag, 19,17)
+//Special events for the northmost rooms' doors.
+DoorWithEvent(NorthmostWestRoomEvent,8,4)
+DoorWithEvent(NorthmostWestRoomEvent,6,6)
+DoorWithEvent(NorthmostEastRoomEvent,19,6)
+DoorWithEvent(NorthmostEastRoomEvent,16,4)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(8,Ally,1) [12,20] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Armorslayer] DummyAI
+UNIT Chad Thief Roy Level(2,Ally,1) [11,19] 0x0 0x0 0x1 REDA_12_19 [IronSword, SlimSword, Lockpick] DummyAI
+UNIT Lance Cavalier Roy Level(7,Ally,1) [13,19] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(7,Ally,1) [14,20] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(8,Ally,1) [13,20] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary, Vulnerary] DummyAI
+UNIT Dieck Mercenary Roy Level(7,Ally,1) [11,20] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Vulnerary] DummyAI
+UNIT Rutger Myrmidon Roy Level(6,Ally,1) [14,21] 0x0 0x0 0x0 0x0 [IronSword, KillingEdge] DummyAI
+UNIT Alen Cavalier Roy Level(6,Ally,1) [11,21] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(2,Ally,1) [12,22] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [13,22] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Fire] DummyAI
+UNIT
+
+SaulDorothy:
+UNIT Saul Priest Roy Level(5,Ally,0) [11,23] 0x0 0x0 0x0 0x0 [Mend] DummyAI
+UNIT Dorothy ArcherF Roy Level(3,Ally,0) [14,23] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] DummyAI
+UNIT
+
+Enemies:
+UNIT Wagner Shaman 0x0 Level(9,Enemy,0) [5,1] 0x0 0x0 0x1 REDA_12_1 [Flux] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(8,Enemy,1) [11,1] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(7,Enemy,1) [13,1] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(7,Enemy,1) [12,5] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(7,Enemy,1) [12,7] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(10,Enemy,1) [13,7] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(10,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [12,8] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(10,Enemy,1) [13,8] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [14,8] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(10,Enemy,1) [6,9] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [19,9] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [12,9] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(3,Enemy,1) [13,9] 0x0 0x0 0x0 0x0 [Thunder, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(8,Enemy,1) [7,8] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mercenary 0x0 Level(5,Enemy,1) [7,14] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(7,Enemy,1) [18,8] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mercenary 0x0 Level(5,Enemy,1) [18,14] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [10,2] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [Thunder, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(5,Enemy,1) [6,3] 0x0 0x0 0x0 0x0 [IronLance, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [4,3] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [6,5] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [4,5] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(5,Enemy,1) [18,3] 0x0 0x0 0x0 0x0 [IronLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [Fire] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [18,5] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [20,5] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT Sue NomadF 0x0 Level(1,NPC,0) [2,9] 0x0 0x0 0x0 0x0 [] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+JustCath:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [17,23] 0x0 0x0 0x0 0x0 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT
+
+SouthReinforcements1:
+UNIT GenericThriaCh6 Knight 0x0 Level(5,Enemy,1) [13,23] 0x0 0x0 0x1 REDA_13_22 [SteelLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Archer 0x0 Level(4,Enemy,1) [12,23] 0x0 0x0 0x1 REDA_12_22 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(8,Enemy,1) [14,23] 0x0 0x0 0x1 REDA_14_22 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+SouthReinforcements2:
+UNIT GenericThriaCh6 Soldier 0x0 Level(8,Enemy,1) [11,23] 0x0 0x0 0x1 REDA_12_22 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(8,Enemy,1) [15,23] 0x0 0x0 0x1 REDA_14_22 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(3,Enemy,1) [10,23] 0x0 0x0 0x1 REDA_13_22 [Fire] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Def, AI4_Retreat]
+UNIT
+
+ThroneRoomReinforcements1:
+UNIT GenericThriaCh6 Archer 0x0 Level(5,Enemy,1) [9,0] 0x0 0x0 0x1 REDA_9_1 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Archer 0x0 Level(4,Enemy,1) [10,0] 0x0 0x0 0x1 REDA_10_1 [IronBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Def, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [14,0] 0x0 0x0 0x1 REDA_14_1 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [15,0] 0x0 0x0 0x1 REDA_15_1 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+ThroneRoomReinforcements2:
+UNIT GenericThriaCh6 Mage 0x0 Level(5,Enemy,1) [9,0] 0x0 0x0 0x1 REDA_9_1 [Fire] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Mage 0x0 Level(4,Enemy,1) [10,0] 0x0 0x0 0x1 REDA_10_1 [Thunder] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Def, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [14,0] 0x0 0x0 0x1 REDA_14_1 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [15,0] 0x0 0x0 0x1 REDA_15_1 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+ThroneRoomReinforcements3:
+UNIT GenericThriaCh6 Knight 0x0 Level(5,Enemy,1) [9,0] 0x0 0x0 0x1 REDA_9_1 [SteelLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Knight 0x0 Level(4,Enemy,1) [10,0] 0x0 0x0 0x1 REDA_10_1 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Def, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [14,0] 0x0 0x0 0x1 REDA_14_1 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [15,0] 0x0 0x0 0x1 REDA_15_1 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+SouthmostWestRoomReinforcements:
+UNIT GenericThriaCh6 Knight 0x0 Level(6,Enemy,1) [4,21] 0x0 0x0 0x1 REDA_6_18 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Archer 0x0 Level(5,Enemy,1) [4,21] 0x0 0x0 0x1 REDA_5_18 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [4,21] 0x0 0x0 0x1 REDA_6_20 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [4,21] 0x0 0x0 0x1 REDA_5_20 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+SouthmostEastRoomReinforcements:
+UNIT GenericThriaCh6 Knight 0x0 Level(6,Enemy,1) [21,21] 0x0 0x0 0x1 REDA_19_18 [SteelLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Archer 0x0 Level(5,Enemy,1) [21,21] 0x0 0x0 0x1 REDA_20_18 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [21,21] 0x0 0x0 0x1 REDA_19_20 [Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericThriaCh6 Soldier 0x0 Level(9,Enemy,1) [21,21] 0x0 0x0 0x1 REDA_20_20 [IronLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+STAL 60
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch6_Start1
+TEXTEND
+PlayMusic(MUS_DeerOfThePlains)
+TEXTCONT
+TEXTEND
+REMA
+PlayMusic(MUS_AnUnexpectedCaller)
+Text(BG_Castle3,Ch6_Start2)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 SaulDorothy
+ENUN
+CAM1 Roy
+CMOF
+MOVE 0x0 Wagner [13,10]
+MOVE 0x0 Roy [13,18]
+ENUN
+MOVE 0x0 Wagner [13,17]
+MoveByCoords(60, 12, 9, 12, 16)
+MoveByCoords(60, 13, 9, 13, 16)
+ENUN
+Text(Ch6_Start3)
+MOVE 0x0 Wagner [12,1]
+MoveByCoords(60, 12, 16, 12, 9)
+MoveByCoords(60, 13, 16, 13, 9)
+ENUN
+MOVE 0x0 Roy [12,20]
+ENUN
+CAM1 Roy
+GotoPrepScreen
+
+NorthmostWestRoomEvent:
+TILECHANGE 0x3
+TILECHANGE 0x4
+EndEvent
+
+NorthmostEastRoomEvent:
+TILECHANGE 0x5
+TILECHANGE 0x6
+EndEvent
+
+SueComplains:
+CAM1 [2,8]
+QuieterMusic
+Text(BG_Dungeon,Ch6_SueNoise)
+UnquieterMusic
+EndEvent
+
+CathAppears:
+CAM1 [17,23]
+SwitchMusic(MUS_GoingMyWay)
+LOAD1 0x1 JustCath
+ENUN
+Text(Ch6_CathAppears)
+RestoreMusic
+EndEvent
+
+RoyRecruitsSue:
+SwitchMusic(MUS_JoinUs)
+Text(Ch6_RoyRecruitsSue)
+BecomeAlly(Sue)
+RestoreMusic
+EndEvent
+
+LoadHardThroneRoomReinforcements1:
+HardReinforcementEvent(ThroneRoomReinforcements1)
+
+LoadHardThroneRoomReinforcements2:
+HardReinforcementEvent(ThroneRoomReinforcements2)
+
+LoadHardThroneRoomReinforcements3:
+HardReinforcementEvent(ThroneRoomReinforcements3)
+
+
+
+
+//Event for the enemies that spawn when all your units have moved to the upper half of the map.
+BottomHalfReinforcementsEvent:
+CountUnitsInRange(0,0,0,0,$F0000,$170019,0) //Not sure how to convert coords into one short, so just took this from FEBuilder.
+BranchIfResultIsZero(1)
+FlagOFF(Ch6_SouthReinforcementsFlag)
+GOTO 9
+
+LABEL 1
+LoadReinforcements(SouthReinforcements1)
+LoadReinforcements(SouthReinforcements2)
+
+LABEL 9
+EndEvent
+
+
+
+
+//The two rooms at south of the map spawn enemies 3 turns after they have been opened. This is the west one.
+SouthWestRoomReinforcementsEvent:
+BranchIfFlagOFF(1,Ch6_SouthmostWestRoomOpenFlag)
+IncrementCounter(Ch6_SouthmostWestRoomCounter)
+BranchIfCounterEqualTo(2,Ch6_SouthmostWestRoomCounter,3)
+
+LABEL 1
+FlagOFF(Ch6_SouthmostWestRoomDoneFlag)
+GOTO 9
+
+LABEL 2
+LoadReinforcements(SouthmostWestRoomReinforcements)
+
+LABEL 9
+EndEvent
+
+
+
+
+//Ditto but east.
+SouthEastRoomReinforcementsEvent:
+BranchIfFlagOFF(1,Ch6_SouthmostEastRoomOpenFlag)
+IncrementCounter(Ch6_SouthmostEastRoomCounter)
+BranchIfCounterEqualTo(2,Ch6_SouthmostEastRoomCounter,3)
+
+LABEL 1
+FlagOFF(Ch6_SouthmostEastRoomDoneFlag)
+GOTO 9
+
+LABEL 2
+LoadReinforcements(SouthmostEastRoomReinforcements)
+
+LABEL 9
+EndEvent
+
+
+
+
+
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+
+//Skip Roy and Sue's convo if Sue hasn't been recruited or is dead.
+BranchIfUnitNotAlly(1,Sue)
+BranchIfUnitDead(1,Sue)
+Text(BG_Castle3, Ch6_EndSue)
+
+LABEL 1
+Text(BG_Castle3, Ch6_End)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch7)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

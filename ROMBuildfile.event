@@ -22,13 +22,18 @@
     #include "EngineHacks/_MasterHackInstaller.event"
     MESSAGE Used hax space ends at currentOffset
 
-    //Events
-
     //Maps
 	MapsStart:
 	MESSAGE Inserting Maps at CurrentOffset
 	#include "Maps/MasterMapInstaller.event"
 	MESSAGE "Maps Size is {CurrentOffset-MapsStart:N1} Bytes"
+	
+	//Events
+	EventsStart:
+	MESSAGE Inserting Events at CurrentOffset
+	#include "Events/_MasterChapterEventsInstaller.event"
+	#include "Events/_MasterWMEventsInstaller.event"
+	MESSAGE "Events Size is {CurrentOffset-EventsStart:N1} Bytes"
 	
 	ASSERT (FreeSpaceEnd - currentOffset) // So that you don't overwrite vanilla tables if using default freespace
 	

@@ -1,0 +1,221 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch16x,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch16x,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch16x,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadLeftBishop,8)
+TurnEventEnemy(0x0,LoadRightBishop,10)
+TurnEventEnemy(0x0,LoadLeftBishop,18)
+TurnEventEnemy(0x0,LoadRightBishop,20)
+TurnEventEnemy(0x0,EnableAggro,25)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(15,2)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+
+//https://fireemblemwiki.org/wiki/The_Glorious_Ascension
+//Arrow A (column 15): triggers turn 3 and again every 5 turns.
+//Arrow B (column 7): triggers turn 1 and again every 9 turns.
+//Arrow C (column 9): triggers turn 4 and again every 9 turns.
+//Arrow D (column 5): triggers turn 7 and again every 9 turns.
+//Arrow E (column 14): triggers turn 8 and again every 9 turns.
+//Arrow F (column 17): triggers turn 3 and again every 5 turns.
+//Arrow G (column 25): triggers turn 2 and again every 9 turns.
+//Arrow H (column 27): triggers turn 5 and again every 9 turns.
+//Arrow I (column 23): triggers turn 9 and again every 9 turns.
+//Arrow J (column 18): triggers turn 6 and again every 9 turns.
+TrapData:
+//ArrowTrap(XX,YY,startTurn,repeatTimer)
+ArrowTrap(15,0,3,5)
+ArrowTrap(7,0,1,0)
+ArrowTrap(9,0,4,0)
+ArrowTrap(5,0,7,0)
+ArrowTrap(14,0,8,9)
+ArrowTrap(17,0,3,9)
+ArrowTrap(25,0,2,9)
+ArrowTrap(27,0,5,9)
+ArrowTrap(23,0,9,9)
+ArrowTrap(18,0,6,9)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(15,Ally,1) [15,29] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(9,Ally,1) [14,28] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(17,Ally,1) [16,28] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(13,Ally,1) [16,30] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Klein Sniper Roy Level(5,Ally,1) [14,30] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(4,Ally,0) [15,27] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Shanna PegasusKnight Roy Level(17,Ally,1) [15,31] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, SilverLance, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(18,Ally,1) [13,27] 0x0 0x0 0x0 0x0 [Heal, Berserk, Restore, TorchStaff] DummyAI
+UNIT Melady WyvernRiderF Roy Level(10,Ally,0) [17,27] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, IronLance, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [15,26] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustDouglas:
+UNIT Douglas General 0x0 Level(8,Ally,0) [15,29] 0x0 0x0 0x1 REDA_15_28 [SilverAxe, SilverLance] DummyAI
+UNIT
+
+Enemies:
+UNIT Windham Bishop 0x0 Level(12,Enemy,0) [15,2] 0x0 0x0 0x0 0x0 [Divine, Berserk] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericEtruriaCh16x Bishop 0x0 Level(6,Enemy,1) [5,0] 0x0 0x0 0x0 0x0 [Purge, Lightning, Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh16x Bishop 0x0 Level(6,Enemy,1) [25,0] 0x0 0x0 0x0 0x0 [Purge, Divine, Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh16x Knight Oates Level(15,Enemy,1) [11,7] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Knight Oates Level(15,Enemy,1) [19,7] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Sage Oates Level(4,Enemy,1) [15,5] 0x0 0x0 0x0 0x0 [Silence, Aircalibur] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Sage Oates Level(5,Enemy,1) [15,13] 0x0 0x0 0x0 0x0 [Bolting] [AI1_InPlace, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(12,Enemy,1) [5,11] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(13,Enemy,1) [25,11] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(14,Enemy,1) [12,5] 0x0 0x0 0x0 0x0 [Bolting, Fire] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(13,Enemy,1) [18,5] 0x0 0x0 0x0 0x0 [Bolting, Thunder] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(13,Enemy,1) [9,17] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mage Oates Level(14,Enemy,1) [21,17] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16x Paladin Oates Level(6,Enemy,1) [25,17] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(15,Enemy,1) [27,16] 0x0 0x0 0x0 0x0 [Axereaver, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(13,Enemy,1) [25,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(13,Enemy,1) [27,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Archer Oates Level(13,Enemy,1) [3,22] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Archer Oates Level(12,Enemy,1) [27,22] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Paladin Oates Level(6,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(15,Enemy,1) [5,17] 0x0 0x0 0x0 0x0 [Axereaver, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(14,Enemy,1) [5,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Cavalier Oates Level(15,Enemy,1) [3,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Sniper Oates Level(14,Enemy,1) [9,10] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh16x Sniper Oates Level(14,Enemy,1) [21,10] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mercenary Oates Level(12,Enemy,1) [9,23] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mercenary Oates Level(15,Enemy,1) [21,23] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mercenary Oates Level(14,Enemy,1) [12,17] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Mercenary Oates Level(15,Enemy,1) [18,17] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Knight Oates Level(14,Enemy,1) [11,15] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16x Knight Oates Level(14,Enemy,1) [19,15] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+NorthEastBishopReinforcements:
+UNIT GenericEtruriaCh16x Bishop 0x0 Level(8,Enemy,1) [25,0] 0x0 0x0 0x0 0x0 [Divine, Silence, Physic] [AI1_HealAllies, AI2_DontMove, RAI_10_50|TAI_Reckless, AI4_Retreat]
+UNIT
+
+NorthWestBishopReinforcements:
+UNIT GenericEtruriaCh16x Bishop 0x0 Level(8,Enemy,1) [5,0] 0x0 0x0 0x0 0x0 [Lightning, Silence, Physic] [AI1_HealAllies, AI2_DontMove, RAI_10_50|TAI_Reckless, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_LegendaryInheritance)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+
+CAM1 Windham
+Text(BG_Temple2Yellow,Ch16x_Start1)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustDouglas
+ENUN
+PlayMusic(MUS_ScarsOfTheScouring)
+CAM1 Roy
+Text(BG_Temple2Yellow,Ch16x_Start2)
+GotoPrepScreen
+
+LoadLeftBishop:
+ReinforcementEvent(NorthWestBishopReinforcements)
+
+LoadRightBishop:
+ReinforcementEvent(NorthEastBishopReinforcements)
+
+EnableAggro:
+BranchIfBossDead(9)
+ChangeAIAllEnemy(AI1_InRange,AI2_Charge,GenericEtruriaCh16x,0)
+LABEL 9
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+
+//Skip to special text if Douglas is dead.
+BranchIfUnitDead(1,Douglas)
+Text(BG_Temple2Yellow,Ch16x_EndDouglasAlive)
+GOTO 2
+
+//Douglas dead case.
+LABEL 1
+Text(BG_Temple2Yellow,Ch16x_EndDouglasDead1)
+
+//This happens either way.
+LABEL 2
+PlayMusic(MUS_PrincessOfDestiny)
+Text(BG_Castle2,Ch16_Ch16x_EndRoyAndGuinivereTalk)
+
+//More dead Douglas text.
+BranchIfUnitDead(3,Douglas)
+PlayMusic(MUS_Triumph)
+Text(BG_Temple1,Ch16x_EndDouglasDead2)
+
+//Either way, continue here.
+LABEL 3
+GiveItemToCharacter(Roy,Aureola)
+STAL 64
+
+//Route determination.
+CALL EVENT_IlliaSacaeRouteDetermination
+BranchIfFlagON(8,SacaeRouteFlag)
+
+//Illia route.
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch17A)
+GOTO 9
+
+//Sacae route.
+LABEL 8
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch17B)
+
+LABEL 9
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

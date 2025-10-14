@@ -1,0 +1,324 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch15_PercevalRecruitmentFlag 0x7
+#define Ch15_PercevalRecruitedInCh15Flag 0x8 //Used to avoid triggering Knight Crest reward here if Perceval recruited in Ch13.
+#define Ch15_RoyPercevalTalkFlag 0x9
+#define Ch15_LilinaGarrettTalkFlag 0xA
+//Ch13_Ch15_GenericSoldierPercevalDeathFlag 0x20
+
+EventPointerTable(EVENTS_Ch15,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch15,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch15,Ch15NPCEscapePoints)
+
+ALIGN 4
+
+Ch15NPCEscapePoints:
+EscapePoint(27,23,MoveRight)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,GarrettAppears,3)
+TurnEventEnemy(0x0,ReinforcementsComing,10)
+TurnEventEnemy(0x0,IfBossAliveCavsFromForts,12,4)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch15_PercevalRecruitmentFlag,LarumRecruitsPerceval,Larum,Perceval)
+CharacterEvent(Ch15_PercevalRecruitmentFlag,ElffinRecruitsPerceval,Elffin,Perceval)
+CharacterEvent(Ch15_RoyPercevalTalkFlag,RoyPercevalTalk,Roy,Perceval)
+CharacterEvent(Ch15_LilinaGarrettTalkFlag,LilinaRecruitsGarrett,Lilina,Garrett)
+END_MAIN
+
+LocationBasedEvents:
+Seize(16,9)
+Village(0x0,DivineVillageVisit,8,22)
+Village(0x0,HammerneVillageVisit,25,15)
+House(0x0,SavageBanditsHouseVist,19,23)
+House(0x0,GeneralsDividedHouseVist,23,19)
+Vendor(VendorList,26,17)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(16,Ally,1) [2,19] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Barthe Knight Roy Level(18,Ally,1) [2,17] 0x0 0x0 0x0 0x0 [KillerLance, IronLance, Javelin, Vulnerary] DummyAI
+UNIT Bors Knight Roy Level(15,Ally,1) [6,18] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, Javelin, Horseslayer] DummyAI
+UNIT Klein Sniper Roy Level(10,Ally,1) [1,18] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Fir SwordmasterF Roy Level(5,Ally,1) [3,18] 0x0 0x0 0x0 0x0 [WoDao, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Gwendolyn KnightF Roy Level(16,Ally,1) [4,18] 0x0 0x0 0x0 0x0 [BraveLance, IronLance, Javelin, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(19,Ally,1) [5,19] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Barrier] DummyAI
+UNIT Shanna Falcoknight Roy Level(15,Ally,1) [1,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, IronLance, SilverLance] DummyAI
+UNIT Lugh Sage Roy Level(14,Ally,1) [3,20] 0x0 0x0 0x0 0x0 [Fire, Thunder, Elfire, Aircalibur] DummyAI
+UNIT Sue NomadTrooperF Roy Level(12,Ally,1) [4,20] 0x0 0x0 0x0 0x0 [IronBow, Longbow, SteelBow, BraveBow] DummyAI
+UNIT Elffin Bard Roy Level(14,Ally,1) [2,21] 0x0 0x0 0x0 0x0 [Vulnerary, ChestKey5Uses] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [5,21] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustIgrene:
+UNIT Igrene SniperF Roy Level(1,Ally,0) [3,19] 0x0 0x0 0x1 REDA_4_19 [KillerBow] DummyAI
+UNIT
+
+CavReinforcements:
+UNIT GenericEtruriaCh15 Cavalier 0x0 Level(17,Enemy,1) [16,1] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier 0x0 Level(16,Enemy,1) [16,3] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier 0x0 Level(16,Enemy,1) [16,8] 0x0 0x0 0x1 REDA_15_10 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier 0x0 Level(16,Enemy,1) [15,9] 0x0 0x0 0x1 REDA_14_9 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Raith Paladin 0x0 Level(8,Enemy,0) [16,9] 0x0 0x0 0x0 0x0 [Spear] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh15 WyvernRider Raith Level(18,Enemy,1) [9,8] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh15 WyvernRider Raith Level(17,Enemy,1) [24,0] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh15 WyvernRider Raith Level(15,Enemy,1) [26,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Valkyrie Raith Level(1,Enemy,1) [18,1] 0x0 0x0 0x0 0x0 [Elfire, Physic] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(18,Enemy,1) [17,2] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(18,Enemy,1) [17,3] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(17,Enemy,1) [19,2] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(15,Enemy,1) [19,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Valkyrie Raith Level(1,Enemy,1) [26,19] 0x0 0x0 0x0 0x0 [Aircalibur, Mend] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(18,Enemy,1) [25,18] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(18,Enemy,1) [25,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(17,Enemy,1) [24,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Raith Level(15,Enemy,1) [24,21] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Sniper Raith Level(5,Enemy,1) [25,6] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(18,Enemy,1) [24,5] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(17,Enemy,1) [24,7] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(18,Enemy,1) [26,5] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(18,Enemy,1) [26,7] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Archer Raith Level(17,Enemy,1) [25,4] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Archer Raith Level(18,Enemy,1) [25,8] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(18,Enemy,1) [12,20] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(17,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh15 Archer Raith Level(15,Enemy,1) [17,24] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(17,Enemy,1) [14,8] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Mercenary Raith Level(18,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Weird1, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Perceval Level(14,Enemy,1) [14,10] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Cavalier Perceval Level(14,Enemy,1) [11,10] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh15 Sniper Raith Level(5,Enemy,1) [13,9] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh15 Archer Raith Level(17,Enemy,1) [12,9] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+PercevalSquad:
+UNIT Perceval Paladin 0x0 Level(5,Enemy,0) [2,0] 0x0 0x0 0x0 0x0 [SilverLance, SilverSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT Douglas General 0x0 Level(8,Enemy,1) [0,0] 0x0 0x0 0x0 0x0 [SilverLance, SilverAxe] DummyAI
+UNIT GenericSoldierPercevalCh13_Ch15_1 Cavalier Perceval Level(14,Enemy,1) [1,4] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSoldierPercevalCh13_Ch15_2 Cavalier Perceval Level(15,Enemy,1) [3,4] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSoldierPercevalCh13_Ch15_3 Cavalier Perceval Level(14,Enemy,1) [1,2] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSoldierPercevalCh13_Ch15_4 Cavalier Perceval Level(14,Enemy,1) [3,2] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+GarrettSquad:
+UNIT Garrett Berserker 0x0 Level(1,Enemy,0) [20,0] 0x0 0x0 0x1 REDA_22_2 [SteelAxe, HandAxe] [AI1_InRange80, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh15 Brigand 0x0 Level(18,Enemy,1) [20,0] 0x0 0x0 0x1 REDA_21_3 [PoisonAxe, HandAxe] [AI1_InRange80, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh15 Brigand 0x0 Level(18,Enemy,1) [20,0] 0x0 0x0 0x1 REDA_21_2 [PoisonAxe, HandAxe] [AI1_InRange80, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+JustFae:
+UNIT Fae FaeManakete Roy Level(1,Ally,0) [0,0] 0x0 0x0 0x0 0x0 [Divinestone] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DeerOfThePlains)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+//Set Perceval's recruitment flag on to prevent his recruitment and Roy talks from happening if he's already recruited.
+FlagON(Ch15_PercevalRecruitmentFlag)
+FlagON(Ch15_RoyPercevalTalkFlag)
+CAM1 Raith
+FlashCursor(Raith,60)
+Text(BG_Castle1,Ch15_Start1)
+
+//Skip Perceval's appearance is he's been recruited or is dead.
+BranchIfFlagON(1,PercevalRecruitedOrDeadFlag)
+
+//Perceval alive and unrecruited, he appears. Turn his recruitment talk flag off so he can be recruited.
+LOAD1 0x1 PercevalSquad
+ENUN
+FlagOFF(Ch15_PercevalRecruitmentFlag)
+CAM1 Perceval
+STAL 16
+MOVE 0x0 Douglas [1,0]
+ENUN
+Text(Ch15_Start2Perceval)
+MOVE 0x0 Douglas [0,0]
+ENUN
+DISA Douglas
+MOVE 0x0 Perceval [2,3]
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Perceval by +11
+#endif
+ENUN
+
+LABEL 1
+PlayMusic(MUS_CogsOfFate)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+Text(BG_Outside,Ch15_Start3)
+LOAD1 0x1 JustIgrene
+ENUN
+GotoPrepScreen
+
+LarumRecruitsPerceval:
+SwitchMusic(MUS_JoinUs)
+Text(Ch13_Ch15_LarumRecruitsPerceval)
+BecomeAlly(Perceval)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_1)
+SetAI(GenericSoldierPercevalCh13_Ch15_1,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_2)
+SetAI(GenericSoldierPercevalCh13_Ch15_2,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_3)
+SetAI(GenericSoldierPercevalCh13_Ch15_3,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_4)
+SetAI(GenericSoldierPercevalCh13_Ch15_4,AI1_None,AI2_Escape)
+FlagON(PercevalRecruitedOrDeadFlag)
+FlagON(Ch15_PercevalRecruitedInCh15Flag)
+RestoreMusic
+FlagOFF(Ch15_RoyPercevalTalkFlag)
+EndEvent
+
+ElffinRecruitsPerceval:
+SwitchMusic(MUS_JoinUs)
+Text(Ch13_Ch15_ElffinRecruitsPerceval)
+BecomeAlly(Perceval)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_1)
+SetAI(GenericSoldierPercevalCh13_Ch15_1,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_2)
+SetAI(GenericSoldierPercevalCh13_Ch15_2,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_3)
+SetAI(GenericSoldierPercevalCh13_Ch15_3,AI1_None,AI2_Escape)
+BecomeNPC(GenericSoldierPercevalCh13_Ch15_4)
+SetAI(GenericSoldierPercevalCh13_Ch15_4,AI1_None,AI2_Escape)
+FlagON(PercevalRecruitedOrDeadFlag)
+FlagON(Ch15_PercevalRecruitedInCh15Flag)
+RestoreMusic
+FlagOFF(Ch15_RoyPercevalTalkFlag)
+EndEvent
+
+DivineVillageVisit:
+VillageEventItem(Ch15_DivineVillage,BG_Village,Divine)
+
+HammerneVillageVisit:
+VillageEventItem(Ch15_HammerneVillage,BG_Village,Hammerne)
+
+SavageBanditsHouseVist:
+HouseEvent(Ch15_SavageBanditsHouse,BG_House)
+
+GeneralsDividedHouseVist:
+HouseEvent(Ch15_GeneralsDividedHouse,BG_House)
+
+GarrettAppears:
+LoadReinforcements(GarrettSquad)
+CAM1 Garrett
+PlayMusic(MUS_DeerOfThePlains)
+Text(Ch15_GarrettAppears)
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Garrett by +11
+#endif
+EndEvent
+
+LilinaRecruitsGarrett:
+SwitchMusic(MUS_JoinUs)
+Text(Ch15_LilinaRecruitsGarrett)
+BecomeAlly(Garrett)
+RestoreMusic
+EndEvent
+
+RoyPercevalTalk:
+QuieterMusic
+Text(Ch15_PercevalRoyTalk)
+UnquieterMusic
+EndEvent
+
+ReinforcementsComing:
+BranchIfBossDead(9)
+CAM1 Raith
+FlashCursor(Raith,60)
+PlayMusic(MUS_DeerOfThePlains)
+Text(BG_Castle1,Ch15_ReinforcementsComing)
+LABEL 9
+EndEvent
+
+IfBossAliveCavsFromForts:
+BranchIfBossDead(9)
+LoadReinforcements(CavReinforcements)
+LABEL 9
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch15_End
+TEXTEND
+PlayMusic(MUS_DistantUtopia)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+
+//Skip Knight Crest reward if Perceval is unrecruited/dead, if he has not been recruited in this chapter (so was in Ch13), of if any of his soldiers died.
+BranchIfUnitDead(1,Perceval)
+BranchIfUnitNotAlly(1,Perceval)
+BranchIfFlagOFF(1,Ch15_PercevalRecruitedInCh15Flag)
+BranchIfFlagON(1,Ch13_Ch15_GenericSoldierPercevalDeathFlag)
+
+//All alive and Perceval recruited this chapter, Knight Crest got.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch13_Ch15_EndKnightCrest)
+GiveItemToCharacter(Perceval,KnightCrest)
+
+LABEL 1
+
+LOAD1 0x1 JustFae
+ENUN
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch16)
+ENDA
+
+VendorList:
+SHLI Thunder Lightning Flux Mend Vulnerary DoorKey ChestKey5Uses Torch
+
+//MESSAGE Events end at offset CURRENTOFFSET

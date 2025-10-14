@@ -1,0 +1,67 @@
+//Ch21 Previous, Ch22 Current
+
+WorldMapPointerTable(CHAPTER_Ch22,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch22,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+WM_SpawnLord(Roy,NODE_Ch21)
+WM_CamOnLord
+WM_Fadeout
+WM_TextDecorate
+WM_EnableSkip
+STAL 20
+
+////Special handling for route split.
+//BranchIfFlagON(1,SacaeRouteFlag)
+////Flag OFF, Illia route. Unlock Sacae route nodes and roads.
+//WM_UnlockNode(NODE_Ch17B)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch18B)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch19B)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch20B)
+//WM_WaitForFX
+//WM_DrawRoad(ROAD_Ch16ToCh17B)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch17BToCh18B)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch18BToCh19B)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch19BToCh20B)
+//STAL 70
+//GOTO 2
+
+////Flag ON, Sacae route. Unlock Illia route nodes and roads.
+//LABEL 1
+//WM_UnlockNode(NODE_Ch17A)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch18A)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch19A)
+//WM_WaitForFX
+//WM_UnlockNode(NODE_Ch20A)
+//WM_WaitForFX
+//WM_DrawRoad(ROAD_Ch16ToCh17A)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch17AToCh18A)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch18AToCh19A)
+//STAL 70
+//WM_DrawRoad(ROAD_Ch19AToCh20A)
+//STAL 70
+//GOTO 2
+
+//Continue here.
+LABEL 2
+WM_UnlockNextNode
+WM_WaitForFX
+STAL 40
+WM_DrawRoad(ROAD_Ch21ToCh22)
+STAL 70
+WM_MakeLordVisible
+ENDA
+
+CurrentNodeSelect:
+WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch21,NODE_Ch22)

@@ -1,0 +1,398 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch18B_AmbushFlag 0x7
+#define Ch18B_AmbushStopCheckFlag 0x8
+//Ch18B_MonkeVsSueFlag 0x1E
+//Ch18B_MonkeVsSinFlag 0x1F
+
+// https://github.com/FireEmblemUniverse/fireemblem6j/blob/b158d46dfc4d6590d783b0072fed90cf0227edf7/src/eventfunctions.c#L1697
+// That should be it? 5
+// There is also a limit on the amount of enemies spawned? I was never able to get more than 4.
+#define Ch18B_AmbushChance 5
+#define Ch18B_AmbushEnemyLimit 4
+
+#define Ch18B_AmbushCounter 0x0
+#define Ch18B_AmbushSpawnedCounter 0x1
+
+EventPointerTable(EVENTS_Ch18B,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch18B,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch18B,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadSouthWestNomads,10)
+TurnEventEnemy(0x0,LoadSouthWestNomads,15)
+TurnEventEnemy(0x0,LoadSouthWestNomads,20)
+TurnEventEnemy(0x0,LoadSouthEastNomads,12)
+TurnEventEnemy(0x0,LoadSouthEastNomads,17)
+TurnEventEnemy(0x0,LoadSouthEastNomads,22)
+TurnEventEnemy(0x0,LoadWyverns,13)
+TurnEventEnemy(0x0,LoadWyverns,23)
+TurnEventEnemy(Ch18B_AmbushFlag,TheAmbush,1,255)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(17,19)
+House(0x0,UniteHouseVisit,8,17)
+House(0x0,PrayHouseVisit,8,21)
+House(0x0,DefendHouseVisit,12,7)
+House(0x0,UnitedClansHouseVisit,15,6)
+Armory(ArmoryList,4,3)
+Vendor(VendorList,2,3)
+END_MAIN
+
+//The ambush is enabled for one turn when a player unit ends their turn in yurt circle.
+//It turns off after 5 (Normal mode) or 10 (Hard mode) trap events have occured.
+
+MiscBasedEvents:
+AreaEvent(Ch18B_AmbushStopCheckFlag,TriggerAmbush,14,15,20,15)
+AreaEvent(Ch18B_AmbushStopCheckFlag,TriggerAmbush,13,16,21,22)
+AreaEvent(Ch18B_AmbushStopCheckFlag,TriggerAmbush,14,23,20,23)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(19,Ally,1) [3,7] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(14,Ally,1) [2,6] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [1,7] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [4,8] 0x0 0x0 0x0 0x0 [SteelSword, KillerLance, Javelin, Horseslayer] DummyAI
+UNIT Bors Knight Roy Level(16,Ally,1) [2,10] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Klein Sniper Roy Level(5,Ally,1) [3,5] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(6,Ally,1) [5,5] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Bartre Warrior Roy Level(3,Ally,1) [0,6] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, Halberd] DummyAI
+UNIT Fir MyrmidonF Roy Level(18,Ally,1) [1,9] 0x0 0x0 0x0 0x0 [KillingEdge, IronSword, Vulnerary, SteelSword] DummyAI
+UNIT Shanna PegasusKnight Roy Level(20,Ally,1) [3,11] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, Horseslayer, BraveLance] DummyAI
+UNIT Melady WyvernRiderF Roy Level(14,Ally,1) [4,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Zeiss WyvernRider Roy Level(12,Ally,1) [1,11] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Cecilia Valkyrie Roy Level(6,Ally,1) [5,7] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Bolting, Heal] DummyAI
+UNIT Elffin Bard Roy Level(3,Ally,1) [1,5] 0x0 0x0 0x0 0x0 [PureWater, ChestKey5Uses, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [3,9] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Monke NomadTrooper 0x0 Level(9,Enemy,0) [17,19] 0x0 0x0 0x0 0x0 [BraveBow, BraveSword, Elixir] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(15,Enemy,1) [13,8] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(15,Enemy,1) [11,10] 0x0 0x0 0x0 0x0 [SteelSword, Elixir] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericDjuteCh18B Shaman 0x0 Level(18,Enemy,1) [13,10] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericDjuteCh18B Shaman 0x0 Level(18,Enemy,1) [13,11] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(17,Enemy,1) [16,10] 0x0 0x0 0x0 0x0 [Armorslayer, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Weird1, AI4_Retreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(17,Enemy,1) [13,13] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [26,26] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [10,15] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [8,15] 0x0 0x0 0x0 0x0 [ShortBow, Elixir] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [24,28] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [3,15] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [13,19] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [25,12] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [27,14] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [8,23] 0x0 0x0 0x0 0x0 [ShortBow, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [10,23] 0x0 0x0 0x0 0x0 [ShortBow, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [10,25] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(18,Enemy,1) [8,25] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [9,24] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [2,22] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(19,Enemy,1) [2,24] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [2,26] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(15,Enemy,1) [17,16] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Myrmidon 0x0 Level(16,Enemy,1) [21,19] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericDjuteCh18B Druid 0x0 Level(6,Enemy,1) [17,22] 0x0 0x0 0x0 0x0 [Eclipse, Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh18B WyvernRider 0x0 Level(16,Enemy,1) [25,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18B WyvernRider 0x0 Level(16,Enemy,1) [25,8] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18B WyvernLord 0x0 Level(5,Enemy,1) [26,7] 0x0 0x0 0x0 0x0 [Axereaver, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthEastNomadReinforcements:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [27,26] 0x0 0x0 0x1 REDA_26_26 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [27,27] 0x0 0x0 0x1 REDA_26_27 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(5,Enemy,1) [27,28] 0x0 0x0 0x1 REDA_15_28 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+SouthWestNomadReinforcements:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [2,28] 0x0 0x0 0x1 REDA_2_27 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [1,28] 0x0 0x0 0x1 REDA_1_27 [ShortBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(4,Enemy,1) [0,28] 0x0 0x0 0x1 REDA_0_27 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+WyvernReinforcements:
+UNIT GenericBernCh18B WyvernRider 0x0 Level(14,Enemy,1) [27,0] 0x0 0x0 0x1 REDA_26_0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18B WyvernRider 0x0 Level(14,Enemy,1) [27,1] 0x0 0x0 0x1 REDA_26_1 [Axereaver] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh18B WyvernRider 0x0 Level(15,Enemy,1) [27,2] 0x0 0x0 0x1 REDA_26_2 [Horseslayer] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Weird2, AI4_Retreat]
+UNIT
+
+YurtsNomad1:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [15,14] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad10:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [12,21] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad11:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [22,21] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad12:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [13,23] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad13:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [21,23] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad14:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [15,24] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad15:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [19,24] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad2:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [17,14] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad3:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [19,14] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad4:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [13,15] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad5:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [21,15] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad6:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [12,17] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad7:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [22,17] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad8:
+UNIT GenericDjuteCh18B NomadTrooper 0x0 Level(6,Enemy,1) [12,19] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+YurtsNomad9:
+UNIT GenericDjuteCh18B Nomad 0x0 Level(17,Enemy,1) [22,19] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+FlagON(Ch18B_AmbushFlag)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlashCursor(17,19,60)
+Text(BG_Outside,Ch18B_Start1)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+PlayMusic(MUS_PrincessOfDestiny)
+Text(BG_Outside,Ch18B_Start2)
+GotoPrepScreen
+
+UniteHouseVisit:
+HouseEvent(Ch18B_UniteHouse,BG_House)
+
+PrayHouseVisit:
+HouseEvent(Ch18B_PrayHouse,BG_House)
+
+DefendHouseVisit:
+HouseEvent(Ch18B_DefendHouse,BG_House)
+
+UnitedClansHouseVisit:
+HouseEvent(Ch18B_UnitedClansHouse,BG_House)
+
+TriggerAmbush:
+PlayerInRange
+//Special handling for Hard mode.
+BranchIfHard(1)
+
+//The ambush can only happen 5 times on Normal. If counter above that, skip rest of the event. Not turning the flag off also prevents this event from running again.
+BranchIfCounterEqualTo(9,Ch18B_AmbushCounter,5)
+GOTO 8
+
+//Ditto but 10 times on Hard.
+LABEL 1
+BranchIfCounterEqualTo(9,Ch18B_AmbushCounter,10)
+
+//Turn off the event flags to let the ambush happen again next turn.
+LABEL 8
+FlagOFF(Ch18B_AmbushFlag)
+FlagOFF(Ch18B_AmbushStopCheckFlag)
+
+LABEL 9
+EndEvent
+
+// https://github.com/FireEmblemUniverse/fireemblem6j/blob/main/data/chapters/chapter18_s/eventscript.h#L43
+// https://github.com/FireEmblemUniverse/fireemblem6j/blob/main/src/eventfunctions.c#L1716
+TheAmbush:
+IncrementCounter(Ch18B_AmbushCounter)
+
+BranchIfRandomNotZero(1,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad1)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 1
+
+BranchIfRandomNotZero(2,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad2)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 2
+
+BranchIfRandomNotZero(3,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad3)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 3
+
+BranchIfRandomNotZero(4,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad4)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 4
+
+//Start checking if we've already spawned 4 enemies.
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(5,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad5)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 5
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(6,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad6)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 6
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(7,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad7)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 7
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(8,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad8)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 8
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(9,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad9)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 9
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(10,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad10)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 10
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(11,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad11)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 11
+
+BranchIfRandomNotZero(12,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad12)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 12
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(13,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad13)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 13
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(14,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad14)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 14
+
+BranchIfCounterLargerThan(15,Ch18B_AmbushSpawnedCounter,Ch18B_AmbushEnemyLimit)
+BranchIfRandomNotZero(15,Ch18B_AmbushChance)
+LoadReinforcements(YurtsNomad15)
+IncrementCounter(Ch18B_AmbushSpawnedCounter)
+LABEL 15
+
+EndEvent
+
+LoadSouthWestNomads:
+ReinforcementEvent(SouthWestNomadReinforcements)
+
+LoadSouthEastNomads:
+ReinforcementEvent(SouthEastNomadReinforcements)
+
+LoadWyverns:
+ReinforcementEvent(WyvernReinforcements)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+TEXTSTART
+TEXTSHOW Ch18B_End
+TEXTEND
+SwitchMusic(MUS_PrincessOfDestiny)
+TEXTCONT
+TEXTEND
+RestoreMusic
+TEXTCONT
+TEXTEND
+REMA
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch19B)
+ENDA
+
+ArmoryList:
+SHLI IronSword KillingEdge IronBlade IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow SteelBow
+
+VendorList:
+SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
+
+//MESSAGE Events end at offset CURRENTOFFSET

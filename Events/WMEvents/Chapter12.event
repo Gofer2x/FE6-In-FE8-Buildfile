@@ -1,0 +1,62 @@
+//ChX Previous, ChY Current
+
+WorldMapPointerTable(CHAPTER_Ch12,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch12,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+
+//Special handling for route split.
+BranchIfFlagON(1,WestIslesBartreRouteFlag)
+//Flag OFF, Echidna/A route.
+WM_SpawnLord(Roy,NODE_Ch11A)
+GOTO 2
+
+//Flag ON, Bartre/B route.
+LABEL 1
+WM_SpawnLord(Roy,NODE_Ch11B)
+
+//Continue here.
+LABEL 2
+WM_CamOnLord
+WM_Fadeout
+WM_TextDecorate
+WM_EnableSkip
+STAL 20
+WM_UnlockNextNode
+WM_WaitForFX
+STAL 40
+
+//Special handling again.
+BranchIfFlagON(2,WestIslesBartreRouteFlag)
+//Flag OFF, Echidna/A route.
+WM_DrawRoad(ROAD_Ch11AToCh12)
+GOTO 4
+
+//Flag ON, Bartre/B route.
+LABEL 3
+WM_DrawRoad(ROAD_Ch11BToCh12)
+
+//Continue here.
+LABEL 4
+STAL 70
+WM_MakeLordVisible
+ENDA
+
+CurrentNodeSelect:
+WM_DisableSkip
+
+//Special handling for route split.
+BranchIfFlagON(1,WestIslesBartreRouteFlag)
+//Flag OFF, Echidna/A route.
+WM_MoveLord(NODE_Ch11A,NODE_Ch12,60,10)
+GOTO 2
+
+//Flag ON, Bartre/B route.
+LABEL 1
+WM_MoveLord(NODE_Ch11B,NODE_Ch12,60,10)
+
+//Continue here.
+LABEL 2
+WM_ENUN
+ENDA

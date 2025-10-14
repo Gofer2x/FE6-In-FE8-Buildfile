@@ -1,0 +1,385 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Final,ThisChapter)
+EscapePointPointerTable(CHAPTER_Final,0x0)
+NPCEscapePointPointerTable(CHAPTER_Final,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,RandomManaketeSpawn,1,255)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+IdunnManaketes:
+UNIT IdunnHuman ShamanF 0x0 Level(20,Enemy,0) [8,2] 0x0 0x0 0x0 0x0 [DarkBreath] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(19,Enemy,1) [5,7] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(18,Enemy,1) [11,7] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+JustIdunn:
+UNIT IdunnDragon DemonDragon 0x0 Level(20,Enemy,0) [8,2] 0x0 0x0 0x0 0x0 [DarkBreath] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements1:
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(18,Enemy,1) [2,2] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements2:
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(17,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements3:
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(19,Enemy,1) [2,7] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements4:
+UNIT GenericManaketeFinal FireManakete IdunnDragon Level(18,Enemy,1) [14,7] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Units:
+UNIT Roy RoyGreatLord 0x0 Level(15,Ally,1) [8,16] 0x0 0x0 0x1 REDA_8_15 [BindingBlade, Rapier, SilverSword, LightBrand] DummyAI
+UNIT Fir SwordmasterF Roy Level(18,Ally,1) [7,15] 0x0 0x0 0x0 0x0 [WoDao] DummyAI
+UNIT Niime DruidF Roy Level(20,Ally,1) [7,17] 0x0 0x0 0x1 REDA_9_15 [Nosferatu, Eclipse, Nosferatu, Physic] DummyAI
+UNIT Yoder Bishop Roy Level(20,Ally,1) [9,17] 0x0 0x0 0x1 REDA_10_16 [Aureola, Purge, Fortify, Recover] DummyAI
+UNIT Fae FaeManakete Roy Level(20,Ally,1) [6,16] 0x0 0x0 0x0 0x0 [Divinestone] DummyAI
+UNIT Klein Sniper Roy Level(18,Ally,1) [10,16] 0x0 0x0 0x1 REDA_8_14 [Mulagir, SilverBow, KillerBow, BraveBow] DummyAI
+UNIT Douglas General Roy Level(18,Ally,1) [8,13] 0x0 0x0 0x0 0x0 [Armads, SilverAxe, SilverLance, KillerAxe] DummyAI
+UNIT Echidna HeroF Roy Level(20,Ally,1) [6,13] 0x0 0x0 0x0 0x0 [Durandal, BraveAxe, SilverSword, SilverAxe] DummyAI
+UNIT Karel Swordmaster Roy Level(20,Ally,1) [10,13] 0x0 0x0 0x0 0x0 [Wyrmslayer, KillingEdge, BraveSword, WoDao] DummyAI
+UNIT Lilina SageF Roy Level(20,Ally,1) [8,17] 0x0 0x0 0x0 0x0 [Forblaze, Bolting, Aircalibur, Physic] DummyAI
+UNIT
+
+
+
+ALIGN 4
+
+BeginningScene:
+LOAD3 0x0 Units
+LOAD1 0x1 IdunnManaketes
+ENUN
+ChStartFadeFromBlack
+//FE6 has some ASM here. Twice.
+STAL 16
+MOVE 0x0 Roy [8,9]
+ENUN
+STAL 16
+CAM1 IdunnHuman
+PlayMusic(MUS_TheDarkPriestess)
+Text(Final_Start1)
+PlaySound(SND_LightCircle)
+FadeIntoWhite(Fade5s)
+DISA IdunnHuman
+LOAD1 0x1 JustIdunn
+STAL 32
+FadeFromWhite(Fade5s)
+STAL 16
+CAM1 [8,15]
+CALL FinalBattleQuotes
+//More ASM.
+CAM1 Roy
+BranchIfUnitDead(1,Fae)
+Text(Final_Start2FaeAlive)
+GOTO 2
+LABEL 1
+Text(Final_Start2FaeDead)
+LABEL 2
+MOVE 0x0 Roy [8,16]
+EndEvent
+
+FinalBattleQuotes:
+BranchIfUnitNotDeployed(1,Marcus)
+FlashCursor(Marcus,60)
+Text(FinalQuoteMarcus)
+LABEL 1
+BranchIfUnitNotDeployed(2,Alen)
+FlashCursor(Alen,60)
+Text(FinalQuoteAlen)
+LABEL 2
+BranchIfUnitNotDeployed(3,Lance)
+FlashCursor(Lance,60)
+Text(FinalQuoteLance)
+LABEL 3
+BranchIfUnitNotDeployed(4,Wolt)
+FlashCursor(Wolt,60)
+Text(FinalQuoteWolt)
+LABEL 4
+BranchIfUnitNotDeployed(5,Bors)
+FlashCursor(Bors,60)
+Text(FinalQuoteBors)
+LABEL 5
+BranchIfUnitNotDeployed(6,Elen)
+FlashCursor(Elen,60)
+Text(FinalQuoteElen)
+LABEL 6
+BranchIfUnitNotDeployed(7,Dieck)
+FlashCursor(Dieck,60)
+Text(FinalQuoteDieck)
+LABEL 7
+BranchIfUnitNotDeployed(8,Ward)
+FlashCursor(Ward,60)
+Text(FinalQuoteWard)
+LABEL 8
+BranchIfUnitNotDeployed(9,Lot)
+FlashCursor(Lot,60)
+Text(FinalQuoteLot)
+LABEL 9
+BranchIfUnitNotDeployed(10,Shanna)
+FlashCursor(Shanna,60)
+Text(FinalQuoteShanna)
+LABEL 10
+BranchIfUnitNotDeployed(11,Chad)
+FlashCursor(Chad,60)
+Text(FinalQuoteChad)
+LABEL 11
+BranchIfUnitNotDeployed(12,Lugh)
+FlashCursor(Lugh,60)
+Text(FinalQuoteLugh)
+LABEL 12
+BranchIfUnitNotDeployed(13,Clarine)
+FlashCursor(Clarine,60)
+Text(FinalQuoteClarine)
+LABEL 13
+BranchIfUnitNotDeployed(14,Rutger)
+FlashCursor(Rutger,60)
+Text(FinalQuoteRutger)
+LABEL 14
+BranchIfUnitNotDeployed(15,Saul)
+FlashCursor(Saul,60)
+Text(FinalQuoteSaul)
+LABEL 15
+BranchIfUnitNotDeployed(16,Dorothy)
+FlashCursor(Dorothy,60)
+Text(FinalQuoteDorothy)
+LABEL 16
+BranchIfUnitNotDeployed(17,Sue)
+FlashCursor(Sue,60)
+Text(FinalQuoteSue)
+LABEL 17
+BranchIfUnitNotDeployed(18,Zelot)
+FlashCursor(Zelot,60)
+Text(FinalQuoteZelot)
+LABEL 18
+BranchIfUnitNotDeployed(19,Trec)
+FlashCursor(Trec,60)
+Text(FinalQuoteTrec)
+LABEL 19
+BranchIfUnitNotDeployed(20,Noah)
+FlashCursor(Noah,60)
+Text(FinalQuoteNoah)
+LABEL 20
+BranchIfUnitNotDeployed(21,Astolfo)
+FlashCursor(Astolfo,60)
+Text(FinalQuoteAstolfo)
+LABEL 21
+BranchIfUnitNotDeployed(22,Lilina)
+FlashCursor(Lilina,60)
+Text(FinalQuoteLilina)
+LABEL 22
+BranchIfUnitNotDeployed(23,Barthe)
+FlashCursor(Barthe,60)
+Text(FinalQuoteBarthe)
+LABEL 23
+BranchIfUnitNotDeployed(24,Ogier)
+FlashCursor(Ogier,60)
+Text(FinalQuoteOgier)
+LABEL 24
+BranchIfUnitNotDeployed(25,Gwendolyn)
+FlashCursor(Gwendolyn,60)
+Text(FinalQuoteGwendolyn)
+LABEL 25
+BranchIfUnitNotDeployed(26,Fir)
+FlashCursor(Fir,60)
+Text(FinalQuoteFir)
+LABEL 26
+BranchIfUnitNotDeployed(27,Sin)
+FlashCursor(Sin,60)
+Text(FinalQuoteSin)
+LABEL 27
+BranchIfUnitNotDeployed(28,Geese)
+FlashCursor(Geese,60)
+Text(FinalQuoteGeese)
+LABEL 28
+BranchIfUnitNotDeployed(29,Gonzalez)
+FlashCursor(Gonzalez,60)
+Text(FinalQuoteGonzalez)
+LABEL 29
+BranchIfUnitNotDeployed(30,Klein)
+FlashCursor(Klein,60)
+Text(FinalQuoteKlein)
+LABEL 30
+BranchIfUnitNotDeployed(31,Thea)
+FlashCursor(Thea,60)
+Text(FinalQuoteThea)
+LABEL 31
+BranchIfUnitNotDeployed(32,Larum)
+FlashCursor(Larum,60)
+Text(FinalQuoteLarum)
+LABEL 32
+BranchIfUnitNotDeployed(33,Elffin)
+FlashCursor(Elffin,60)
+Text(FinalQuoteElffin)
+LABEL 33
+BranchIfUnitNotDeployed(34,Echidna)
+FlashCursor(Echidna,60)
+Text(FinalQuoteEchidna)
+LABEL 34
+BranchIfUnitNotDeployed(35,Bartre)
+FlashCursor(Bartre,60)
+Text(FinalQuoteBartre)
+LABEL 35
+BranchIfUnitNotDeployed(36,Raigh)
+FlashCursor(Raigh,60)
+Text(FinalQuoteRaigh)
+LABEL 36
+BranchIfUnitNotDeployed(37,Cath)
+FlashCursor(Cath,60)
+Text(FinalQuoteCath)
+LABEL 37
+BranchIfUnitNotDeployed(38,Melady)
+FlashCursor(Melady,60)
+Text(FinalQuoteMelady)
+LABEL 38
+BranchIfUnitNotDeployed(39,Perceval)
+FlashCursor(Perceval,60)
+Text(FinalQuotePerceval)
+LABEL 39
+BranchIfUnitNotDeployed(40,Cecilia)
+FlashCursor(Cecilia,60)
+Text(FinalQuoteCecilia)
+LABEL 40
+BranchIfUnitNotDeployed(41,Sophia)
+FlashCursor(Sophia,60)
+Text(FinalQuoteSophia)
+LABEL 41
+BranchIfUnitNotDeployed(42,Igrene)
+FlashCursor(Igrene,60)
+Text(FinalQuoteIgrene)
+LABEL 42
+BranchIfUnitNotDeployed(43,Garrett)
+FlashCursor(Garrett,60)
+Text(FinalQuoteGarrett)
+LABEL 43
+BranchIfUnitNotDeployed(44,Fae)
+FlashCursor(Fae,60)
+Text(FinalQuoteFae)
+LABEL 44
+BranchIfUnitNotDeployed(45,Hugh)
+FlashCursor(Hugh,60)
+Text(FinalQuoteHugh)
+LABEL 45
+BranchIfUnitNotDeployed(46,Zeiss)
+FlashCursor(Zeiss,60)
+Text(FinalQuoteZeiss)
+LABEL 46
+BranchIfUnitNotDeployed(47,Douglas)
+FlashCursor(Douglas,60)
+Text(FinalQuoteDouglas)
+LABEL 47
+BranchIfUnitNotDeployed(48,Niime)
+FlashCursor(Niime,60)
+Text(FinalQuoteNiime)
+LABEL 48
+BranchIfUnitNotDeployed(49,Juno)
+FlashCursor(Juno,60)
+Text(FinalQuoteJuno)
+LABEL 49
+BranchIfUnitNotDeployed(50,Dayan)
+FlashCursor(Dayan,60)
+Text(FinalQuoteDayan)
+LABEL 50
+BranchIfUnitNotDeployed(51,Yoder)
+FlashCursor(Yoder,60)
+Text(FinalQuoteYoder)
+LABEL 51
+BranchIfUnitNotDeployed(52,Karel)
+FlashCursor(Karel,60)
+Text(FinalQuoteKarel)
+LABEL 52
+EndEvent
+
+
+// https://github.com/FireEmblemUniverse/fireemblem6j/blob/b158d46dfc4d6590d783b0072fed90cf0227edf7/data/chapters/final/eventscript.h#L53C15-L53C23
+// https://github.com/FireEmblemUniverse/fireemblem6j/blob/b158d46dfc4d6590d783b0072fed90cf0227edf7/src/eventfunctions.c#L1679
+//Only happens if there are less than 3 enemies on the map. The spawns are also random, with a 1/5 chance for the first 3 ones and the last one spawning if all others fail.
+RandomManaketeSpawn:
+CHECK_ENEMIES
+BranchIfResultSmallerThan(9,3)
+
+BranchIfRandomNotZero(1,5)
+LoadReinforcements(ManaketeReinforcements1)
+GOTO 9
+
+LABEL 1
+BranchIfRandomNotZero(2,5)
+LoadReinforcements(ManaketeReinforcements2)
+GOTO 9
+
+LABEL 2
+BranchIfRandomNotZero(3,5)
+LoadReinforcements(ManaketeReinforcements3)
+GOTO 3
+
+//If all others fail, load this one.
+LABEL 3
+LoadReinforcements(ManaketeReinforcements4)
+
+LABEL 9
+EndEvent
+
+
+
+EndingScene:
+ReviveMerlinusIfConfig
+//Eirika Mode change for Epilogue.
+ChangeMode(0x2)
+//Epilogue Save.
+MNC4 0
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

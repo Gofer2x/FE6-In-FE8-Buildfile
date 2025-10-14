@@ -1,0 +1,163 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch8x,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch8x,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch8x,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(3,2)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+//fire tiles lol
+FireTrap(10,22,1,1)
+FireTrap(14,21,1,1)
+FireTrap(14,23,1,1)
+FireTrap(17,22,1,1)
+FireTrap(19,21,1,1)
+FireTrap(23,18,1,1)
+FireTrap(25,18,1,1)
+FireTrap(23,16,1,1)
+FireTrap(24,9,1,1)
+FireTrap(23,8,1,1)
+FireTrap(25,8,1,1)
+FireTrap(20,1,1,1)
+FireTrap(19,3,1,1)
+FireTrap(14,8,1,1)
+FireTrap(13,9,1,1)
+FireTrap(15,9,1,1)
+FireTrap(14,10,1,1)
+FireTrap(12,12,1,1)
+FireTrap(11,11,1,1)
+FireTrap(11,13,1,1)
+FireTrap(9,11,1,1)
+FireTrap(9,13,1,1)
+FireTrap(8,12,1,1)
+FireTrap(7,11,1,1)
+FireTrap(7,13,1,1)
+FireTrap(3,10,1,1)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(5,Ally,1) [23,23] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Lance Cavalier Roy Level(10,Ally,1) [24,22] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(10,Ally,1) [24,24] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SteelLance] DummyAI
+UNIT Clarine Troubadour Roy Level(8,Ally,1) [22,22] 0x0 0x0 0x0 0x0 [Heal, Heal, Mend, Vulnerary] DummyAI
+UNIT Rutger Myrmidon Roy Level(12,Ally,1) [22,24] 0x0 0x0 0x0 0x0 [IronSword, KillingEdge, ChestKey5Uses] DummyAI
+UNIT Dieck Mercenary Roy Level(11,Ally,1) [25,23] 0x0 0x0 0x0 0x0 [IronSword, IronBlade] DummyAI
+UNIT Lugh Mage Roy Level(11,Ally,1) [23,21] 0x0 0x0 0x0 0x0 [Fire, Fire, Thunder] DummyAI
+UNIT Shanna PegasusKnight Roy Level(10,Ally,1) [23,25] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SteelLance, SlimLance] DummyAI
+UNIT Zelot Paladin Roy Level(11,Ally,1) [21,25] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SteelLance, SlimLance] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [21,23] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Fire] DummyAI
+UNIT
+
+Enemies:
+UNIT Henning Hero 0x0 Level(1,Enemy,0) [3,2] 0x0 0x0 0x0 0x0 [SteelBlade, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Fighter Henning Level(10,Enemy,1) [0,2] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(10,Enemy,1) [6,2] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mage Henning Level(12,Enemy,1) [3,4] 0x0 0x0 0x0 0x0 [Aircalibur, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Fighter Henning Level(7,Enemy,1) [25,13] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe, DoorKey] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh8x Archer Henning Level(8,Enemy,1) [3,12] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Myrmidon Henning Level(8,Enemy,1) [6,12] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird1, AI4_Retreat]
+UNIT GenericBanditCh8x Mage Henning Level(7,Enemy,1) [8,11] 0x0 0x0 0x0 0x0 [Elfire, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Archer Henning Level(6,Enemy,1) [8,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(10,Enemy,1) [10,12] 0x0 0x0 0x0 0x0 [KillingEdge, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [13,11] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [15,11] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(10,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [15,1] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [15,3] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mage Henning Level(8,Enemy,1) [14,9] 0x0 0x0 0x0 0x0 [Elfire, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(6,Enemy,1) [24,4] 0x0 0x0 0x0 0x0 [IronSword, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(5,Enemy,1) [19,1] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(5,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [25,3] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(7,Enemy,1) [23,3] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mage Henning Level(6,Enemy,1) [24,8] 0x0 0x0 0x0 0x0 [Thunder, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh8x Archer Henning Level(5,Enemy,1) [24,11] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh8x Myrmidon Henning Level(6,Enemy,1) [9,22] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(6,Enemy,1) [23,13] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(10,Enemy,1) [6,22] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(5,Enemy,1) [6,24] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Fighter Henning Level(5,Enemy,1) [3,23] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mage Henning Level(5,Enemy,1) [12,22] 0x0 0x0 0x0 0x0 [Fire] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(3,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh8x Mercenary Henning Level(3,Enemy,1) [16,23] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_LegendaryInheritance)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+Text(BG_LavaFort,Ch8x_Start1)
+PlayMusic(MUS_ScarsOfTheScouring)
+LOAD3 0x0 Units
+CAM1 Roy
+ENUN
+Text(BG_LavaFort,Ch8x_Start2)
+GotoPrepScreen
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+BranchIfUnitDead(1,Lilina)
+Text(BG_LavaFort, Ch8x_EndLilinaAlive)
+GOTO 2
+LABEL 1
+Text(BG_LavaFort, Ch8x_EndLilinaDead)
+LABEL 2
+GiveItemToCharacter(Roy,Durandal)
+STAL 64
+Text(BG_LavaFort,Ch8_Ch8x_WyvernsAtOstia)
+FadeIntoBlack
+ReviveMerlinusIfConfig
+CALL OstiaNarcianCutscene
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

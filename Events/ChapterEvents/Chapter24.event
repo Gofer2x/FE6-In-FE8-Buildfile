@@ -1,0 +1,298 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Tile Changes
+#define Ch24_Throne1SeizeTileChange 0x5
+#define Ch24_Throne2SeizeTileChange 0x4
+#define Ch24_Throne3SeizeTileChange 0x3
+#define Ch24_Throne4SeizeTileChange 0x2
+#define Ch24_Throne5SeizeTileChange 0x1
+#define Ch24_Throne6SeizeTileChange 0x0
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+#define Ch24_Throne1SeizeFlag 0x7
+#define Ch24_Throne2SeizeFlag 0x8
+#define Ch24_Throne3SeizeFlag 0x9
+#define Ch24_Throne4SeizeFlag 0xA
+#define Ch24_Throne5SeizeFlag 0xB
+#define Ch24_Throne6SeizeFlag 0xC
+#define Ch24_ReinforcementCounter 0x0
+
+EventPointerTable(EVENTS_Ch24,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch24,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch24,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,ThroneReinforcements,1,255)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+//The enemy phase of every other turn after the first throne is seized and before the second is
+//1 Manakete with an Elixir from the southeast room
+//The enemy phase of every other turn after the second throne is seized and before the third is
+//1 level 12 Manakete from the first throne
+//The enemy phase of every other turn after the third throne is seized and before the fourth is
+//1 level 12 Manakete from the second throne
+//The enemy phase of every other turn after the fourth throne is seized and before the fifth is
+//1 level 12 Manakete from the third throne
+//The enemy phase of every other turn after the fifth throne is seized and before the sixth is
+//1 level 14 Manakete from the fourth throne
+//The enemy phase of every other turn after the sixth throne is seized
+//1 level 14 Manakete from the fifth throne
+//Each Manakete can only appear up to five times.
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(Ch24_Throne1SeizeFlag,Throne1Seize,18,36)
+Seize(Ch24_Throne2SeizeFlag,Throne2Seize,7,35)
+Seize(Ch24_Throne3SeizeFlag,Throne3Seize,5,23)
+Seize(Ch24_Throne4SeizeFlag,Throne4Seize,16,21)
+Seize(Ch24_Throne5SeizeFlag,Throne5Seize,27,14)
+Seize(Ch24_Throne6SeizeFlag,Throne6Seize,18,6)
+Seize(6,3)
+
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [27,46] 0x0 0x0 0x0 0x0 [Rapier, IronSword, BindingBlade, Armorslayer] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [26,45] 0x0 0x0 0x0 0x0 [IronSword, Vulnerary, Lockpick] DummyAI
+UNIT Klein Sniper Roy Level(16,Ally,1) [28,45] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, KillerBow, SteelBow] DummyAI
+UNIT Bartre Warrior Roy Level(12,Ally,1) [26,47] 0x0 0x0 0x0 0x0 [SteelAxe, IronAxe, HandAxe, SilverAxe] DummyAI
+UNIT Raigh Druid Roy Level(20,Ally,1) [28,47] 0x0 0x0 0x0 0x0 [Nosferatu, Berserk, Hammerne, Physic] DummyAI
+UNIT Elen BishopF Roy Level(20,Ally,1) [25,44] 0x0 0x0 0x0 0x0 [Aureola, Purge, Silence, Recover] DummyAI
+UNIT Juno PegasusKnight Roy Level(20,Ally,1) [27,44] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, IronLance] DummyAI
+UNIT Perceval Paladin Roy Level(20,Ally,1) [26,43] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Javelin] DummyAI
+UNIT Karel Swordmaster Roy Level(20,Ally,1) [28,43] 0x0 0x0 0x0 0x0 [WoDao, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(20,Ally,1) [29,44] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Jahn FireManakete 0x0 Level(18,Enemy,0) [6,3] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(15,Enemy,1) [18,6] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(15,Enemy,1) [27,14] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(14,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(14,Enemy,1) [5,23] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(13,Enemy,1) [7,35] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(13,Enemy,1) [18,36] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [16,36] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [20,36] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [5,35] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [9,35] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [3,23] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [7,23] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [14,21] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [18,21] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [25,14] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [29,14] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [16,6] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [20,6] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [4,3] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [8,3] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [7,40] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [5,28] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [14,25] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [27,19] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [20,10] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(8,Enemy,1) [6,8] 0x0 0x0 0x0 0x0 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements1:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(12,Enemy,1) [27,47] 0x0 0x0 0x1 REDA_27_45 [Firestone, Elixir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements2:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(12,Enemy,1) [18,36] 0x0 0x0 0x1 REDA_18_38 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements3:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(12,Enemy,1) [7,35] 0x0 0x0 0x1 REDA_7_37 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements4:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(12,Enemy,1) [5,23] 0x0 0x0 0x1 REDA_5_25 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements5:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(14,Enemy,1) [16,21] 0x0 0x0 0x1 REDA_16_23 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ManaketeReinforcements6:
+UNIT GenericManaketeCh24 FireManakete 0x0 Level(14,Enemy,1) [27,14] 0x0 0x0 0x1 REDA_27_16 [Firestone] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+LOAD1 0x1 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+SetBackground(BG_Temple1)
+TEXTSTART
+TEXTSHOW Ch24_Start
+TEXTEND
+PlayMusic(MUS_ShockingTruth1)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+GotoPrepScreen
+
+Throne1Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump1)
+TILECHANGE Ch24_Throne1SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+Throne2Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump2)
+TILECHANGE Ch24_Throne2SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+Throne3Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump3)
+TILECHANGE Ch24_Throne3SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+Throne4Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump4)
+TILECHANGE Ch24_Throne4SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+Throne5Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump5)
+TILECHANGE Ch24_Throne5SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+Throne6Seize:
+SwitchMusic(MUS_ShockingTruth1)
+Text(BG_Temple1,Ch24_LoreDump6)
+TILECHANGE Ch24_Throne6SeizeTileChange
+RestoreMusic
+SetCounter(Ch24_ReinforcementCounter,5)
+EndEvent
+
+ThroneReinforcements:
+//Skip if counter exhausted or no thrones have been seized.
+BranchIfCounterZero(9,Ch24_ReinforcementCounter)
+BranchIfFlagOFF(9,Ch24_Throne1SeizeFlag)
+
+//Only run on even turns. Skip otherwise.
+CHECK_TURNS
+SVAL s7 1
+SAND 0xC7C
+BNE 9 sC s0
+
+BranchIfFlagON(1,Ch24_Throne6SeizeFlag)
+BranchIfFlagON(2,Ch24_Throne5SeizeFlag)
+BranchIfFlagON(3,Ch24_Throne4SeizeFlag)
+BranchIfFlagON(4,Ch24_Throne3SeizeFlag)
+BranchIfFlagON(5,Ch24_Throne2SeizeFlag)
+BranchIfFlagON(6,Ch24_Throne1SeizeFlag)
+
+LABEL 1
+LoadReinforcements(ManaketeReinforcements6)
+GOTO 8
+
+LABEL 2
+LoadReinforcements(ManaketeReinforcements5)
+GOTO 8
+
+LABEL 3
+LoadReinforcements(ManaketeReinforcements4)
+GOTO 8
+
+LABEL 4
+LoadReinforcements(ManaketeReinforcements3)
+GOTO 8
+
+LABEL 5
+LoadReinforcements(ManaketeReinforcements2)
+GOTO 8
+
+LABEL 6
+LoadReinforcements(ManaketeReinforcements1)
+
+LABEL 8
+DecrementCounter(Ch24_ReinforcementCounter)
+
+LABEL 9
+EndEvent
+
+EndingScene:
+//Skip dialogue with Fae if she's dead.
+BranchIfUnitDead(1,Fae)
+FadeOutMusic
+SetBackground(BG_Temple1)
+TEXTSTART
+TEXTSHOW Ch24_EndFaeAlive
+TEXTEND
+PlayMusic(MUS_DistantUtopia)
+TEXTCONT
+TEXTEND
+
+LABEL 1
+PlayMusic(MUS_Triumph)
+Text(BG_Temple1,Ch24_End2)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Final)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

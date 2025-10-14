@@ -1,0 +1,233 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+//Ch19A_SiguneVsShannaFlag 0x1E
+//Ch19A_SiguneVsTheaFlag 0x1F
+
+
+
+EventPointerTable(EVENTS_Ch19A,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch19A,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch19A,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,ReinforcementsComingIfBossAlive,13)
+TurnEventEnemy(0x0,LoadBrigands,11,6)
+TurnEventEnemy(0x0,LoadPegsIfBossAlive,16,5)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(28,3)
+Village(0x0,AircaliburVillageVisit,10,14)
+Village(0x0,EnergyRingVillageVisit,29,14)
+House(0x0,IvoryDevilHouseVisit,1,19)
+House(0x0,PegasiBallistaeSiguneHouseVisit,3,17)
+House(0x0,BallistaRangeHouseVisit,1,14)
+House(0x0,EdessaHouseVisit,3,11)
+Vendor(VendorList,4,18)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+NormalBallista(4,2)
+NormalBallista(13,19)
+IronBallista(23,4)
+IronBallista(29,17)
+IronBallista(22,13)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [2,19] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(15,Ally,1) [1,21] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [3,20] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(17,Ally,1) [1,18] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Shanna PegasusKnight Roy Level(18,Ally,1) [0,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Echidna HeroF Roy Level(7,Ally,1) [2,17] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Bartre Warrior Roy Level(4,Ally,1) [1,16] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, Halberd] DummyAI
+UNIT Fir MyrmidonF Roy Level(18,Ally,1) [0,17] 0x0 0x0 0x0 0x0 [WoDao, IronSword, HeroCrest, SteelSword] DummyAI
+UNIT Lugh Mage Roy Level(20,Ally,1) [3,19] 0x0 0x0 0x0 0x0 [Fire, Aircalibur, Elfire, Thunder] DummyAI
+UNIT Sin Nomad Roy Level(20,Ally,1) [2,21] 0x0 0x0 0x0 0x0 [IronBow, Longbow, BraveBow, SteelBow] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [3,18] 0x0 0x0 0x0 0x0 [KillingEdge, Lockpick] DummyAI
+UNIT Raigh Shaman Roy Level(18,Ally,1) [4,19] 0x0 0x0 0x0 0x0 [Nosferatu, Flux, Eclipse, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [0,19] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustNiime:
+UNIT Niime DruidF Roy Level(18,Ally,0) [1,20] 0x0 0x0 0x0 0x0 [Flux, Eclipse, Physic, Heal] DummyAI
+UNIT
+
+Enemies:
+UNIT Sigune Falcoknight 0x0 Level(9,Enemy,0) [28,3] 0x0 0x0 0x0 0x0 [Spear] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericIlliaMercenaryCh19A Falcoknight 0x0 Level(7,Enemy,1) [17,5] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [16,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [17,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [18,6] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [19,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A Falcoknight 0x0 Level(6,Enemy,1) [4,5] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [2,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [3,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [4,6] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [5,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A Falcoknight 0x0 Level(8,Enemy,1) [25,18] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [24,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [24,18] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(16,Enemy,1) [24,19] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(16,Enemy,1) [24,20] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericIlliaCh19A KnightF 0x0 Level(18,Enemy,1) [27,4] 0x0 0x0 0x0 0x0 [Axereaver, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A KnightF 0x0 Level(18,Enemy,1) [29,4] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Paladin 0x0 Level(8,Enemy,1) [19,16] 0x0 0x0 0x0 0x0 [SilverLance, KnightCrest] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(19,Enemy,1) [18,15] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [19,15] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [18,17] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [19,17] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_RandomMovement, RAI_50_100|TAI_Def, AI4_Retreat]
+UNIT GenericIlliaCh19A Troubadour 0x0 Level(19,Enemy,1) [20,16] 0x0 0x0 0x0 0x0 [Mend, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh19A Paladin 0x0 Level(7,Enemy,1) [26,9] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(19,Enemy,1) [25,8] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [25,10] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [27,8] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Cavalier 0x0 Level(18,Enemy,1) [27,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Troubadour 0x0 Level(19,Enemy,1) [26,7] 0x0 0x0 0x0 0x0 [Mend, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh19A Archer 0x0 Level(18,Enemy,1) [4,2] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh19A Archer 0x0 Level(18,Enemy,1) [13,19] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh19A Archer 0x0 Level(18,Enemy,1) [22,13] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh19A Archer 0x0 Level(18,Enemy,1) [23,4] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh19A Archer 0x0 Level(18,Enemy,1) [29,17] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh19A Druid 0x0 Level(6,Enemy,1) [22,15] 0x0 0x0 0x0 0x0 [Physic, Silence] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericIlliaCh19A Druid 0x0 Level(6,Enemy,1) [11,9] 0x0 0x0 0x0 0x0 [Physic, Sleep] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_DontRetreat]
+UNIT
+
+PegReinforcements:
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [1,0] 0x0 0x0 0x1 REDA_1_1 [SteelLance, Javelin] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [16,20] 0x0 0x0 0x1 REDA_16_21 [SteelLance, Vulnerary] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaMercenaryCh19A PegasusKnight 0x0 Level(18,Enemy,1) [18,0] 0x0 0x0 0x1 REDA_18_1 [SteelLance] [AI1_InRange, AI2_RandomMovement, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements:
+UNIT GenericBanditCh19A Brigand 0x0 Level(18,Enemy,1) [13,21] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh19A Brigand 0x0 Level(18,Enemy,1) [17,21] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlashCursor(Sigune,60)
+Text(BG_Castle1,Ch19A_Start1)
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustNiime
+ENUN
+CAM1 Roy
+STAL 16
+MOVE 0x0 Niime [2,20]
+ENUN
+TEXTSTART
+TEXTSHOW Ch19A_Start2
+TEXTEND
+PlayMusic(MUS_Talking)
+TEXTCONT
+TEXTEND
+REMA
+GotoPrepScreen
+
+AircaliburVillageVisit:
+VillageEventItem(Ch19A_AircaliburVillage,BG_SnowVillage,Aircalibur)
+
+EnergyRingVillageVisit:
+VillageEventItem(Ch19A_EnergyRingVillage,BG_SnowVillage,EnergyRing)
+
+IvoryDevilHouseVisit:
+HouseEvent(Ch19A_IvoryDevilHouse,BG_SnowVillage)
+
+PegasiBallistaeSiguneHouseVisit:
+HouseEvent(Ch19A_PegasiBallistaeSiguneHouse,BG_SnowVillage)
+
+BallistaRangeHouseVisit:
+HouseEvent(Ch19A_BallistaRangeHouse,BG_SnowVillage)
+
+EdessaHouseVisit:
+HouseEvent(Ch19A_EdessaHouse,BG_SnowVillage)
+
+ReinforcementsComingIfBossAlive:
+BranchIfBossDead(9)
+CAM1 Sigune
+FlashCursor(Sigune,60)
+Text(BG_Castle1,Ch19A_ReinforcementsComing)
+LABEL 9
+EndEvent
+
+LoadBrigands:
+ReinforcementEvent(BrigandReinforcements)
+
+LoadPegsIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(PegReinforcements)
+LABEL 9
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch19A_End
+TEXTEND
+SwitchMusic(MUS_PrincessOfDestiny)
+TEXTCONT
+TEXTEND
+RestoreMusic
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch20A)
+ENDA
+
+VendorList:
+SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
+
+//MESSAGE Events end at offset CURRENTOFFSET

@@ -1,0 +1,306 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch8_LilinaRoyTalkFlag 0x7
+#define Ch8_BorsGwendolynTalkFlag 0x8
+#define Ch8_LilinaBorsTalkFlag 0x9
+#define Ch8_LilinaBartheTalkFlag 0xA
+#define Ch8_RoyCathTalkFlag 0xB
+//Ch8_DebiasVsBorsFlag 0x1C
+//Ch8_LeganceVsLilinaFlag 0x1D
+//Ch8_LeganceVsBartheFlag 0x1E
+//Ch8_LeganceVsGwendolynFlag 0x1F
+
+EventPointerTable(EVENTS_Ch8,ThisChapter)
+
+EscapePointPointerTable(CHAPTER_Ch8,Ch8EscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch8,0x0)
+
+ALIGN 4
+
+Ch8EscapePoints:
+EscapePoint(0,4,MoveLeft)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LilinaComplains,1)
+TurnEventPlayer(0x0,OstiaSquadAppears,6)
+TurnEventEnemy(0x0,CathAppearsIfAlive,10)
+TurnEventEnemy(0x0,LoadHardNorthWestReinforcements1,15,2)
+TurnEventEnemy(0x0,LoadThroneRoomStairsEnemies1,16,2)
+TurnEventEnemy(0x0,LoadHardNorthWestReinforcements2,17,2)
+TurnEventEnemy(0x0,LoadThroneRoomStairsEnemies1,18,2)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(0x0,RoyLilinaTalk,Roy,Lilina)
+CharacterEventBothWays(0x0,BorsGwendolynTalk,Bors,Gwendolyn)
+CharacterEventBothWays(0x0,BorsLilinaTalk,Bors,Lilina)
+CharacterEventBothWays(0x0,BartheLilinaTalk,Barthe,Lilina)
+CharacterEvent(Ch8_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+END_MAIN
+
+LocationBasedEvents:
+Seize(6,17)
+Chest(ElysianWhip,0,9)
+Chest(SilverAxe,1,10)
+Chest(SecretBook,0,11)
+Chest(GuidingRing,1,12)
+Chest(LightBrand,8,9)
+Chest(KillerBow,9,10)
+Chest(Elfire,10,9)
+Chest(KnightCrest,11,10)
+Door(1,15)
+Door(6,9)
+Door(13,10)
+Door(18,12)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(7,Ally,1) [26,19] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Marcus Paladin Roy Level(4,Ally,1) [28,19] 0x0 0x0 0x1 REDA_26_17 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(8,Ally,1) [24,19] 0x0 0x0 0x1 REDA_26_18 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(5,Ally,1) [26,17] 0x0 0x0 0x1 REDA_27_18 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(6,Ally,1) [26,18] 0x0 0x0 0x1 REDA_24_19 [IronBow, SilverBow, Vulnerary, SteelBow] DummyAI
+UNIT Dieck Mercenary Roy Level(10,Ally,1) [27,18] 0x0 0x0 0x1 REDA_28_19 [IronBlade, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(6,Ally,1) [27,20] 0x0 0x0 0x1 REDA_24_20 [IronAxe, Hammer, HandAxe, SteelAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(7,Ally,1) [28,20] 0x0 0x0 0x1 REDA_25_20 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(9,Ally,1) [27,21] 0x0 0x0 0x1 REDA_27_20 [Heal, Unlock, Restore, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(4,Ally,1) [24,20] 0x0 0x0 0x1 REDA_28_20 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(4,Ally,1) [25,20] 0x0 0x0 0x1 REDA_25_21 [Fire, Thunder, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [27,21] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Fire] DummyAI
+UNIT
+
+JustLilina:
+UNIT Lilina MageF Roy Level(1,Ally,0) [18,10] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+JustAstolfo:
+UNIT Astolfo Thief Roy Level(10,Ally,0) [25,18] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT
+
+GwendolynBartheOgier:
+UNIT Gwendolyn KnightF Roy Level(1,Ally,0) [1,0] 0x0 0x0 0x1 REDA_4_0 [IronLance, Javelin, Vulnerary] DummyAI
+UNIT Barthe Knight Roy Level(9,Ally,0) [0,1] 0x0 0x0 0x1 REDA_4_1 [SteelLance] DummyAI
+UNIT Ogier Mercenary Roy Level(3,Ally,0) [2,2] 0x0 0x0 0x1 REDA_5_2 [SteelSword, Armorslayer, Vulnerary] DummyAI
+UNIT
+
+Enemies:
+UNIT Legance General 0x0 Level(1,Enemy,0) [6,17] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(12,Enemy,1) [26,9] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(12,Enemy,1) [28,9] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(8,Enemy,1) [27,7] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh8 Knight 0x0 Level(7,Enemy,1) [18,5] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [20,2] 0x0 0x0 0x0 0x0 [IronLance, Javelin, DoorKey] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(12,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(7,Enemy,1) [19,5] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Knight 0x0 Level(8,Enemy,1) [12,1] 0x0 0x0 0x0 0x0 [Horseslayer, ChestKey5Uses, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Weird2, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(12,Enemy,1) [10,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [10,5] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(10,Enemy,1) [10,0] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [3,11] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [5,12] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(10,Enemy,1) [13,14] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [11,14] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(10,Enemy,1) [3,12] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier 0x0 Level(11,Enemy,1) [4,8] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(10,Enemy,1) [4,5] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(8,Enemy,1) [1,7] 0x0 0x0 0x0 0x0 [Elfire, DoorKey] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(7,Enemy,1) [7,8] 0x0 0x0 0x0 0x0 [Fire] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Knight 0x0 Level(8,Enemy,1) [4,14] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(8,Enemy,1) [6,14] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Knight 0x0 Level(8,Enemy,1) [5,11] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Archer 0x0 Level(9,Enemy,1) [20,11] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat] //unique ai2 that seemingly targets lilina, just making aggressive for now
+UNIT GenericRebelCh8 Knight 0x0 Level(8,Enemy,1) [17,22] 0x0 0x0 0x0 0x0 [KillerLance, ChestKey5Uses] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Knight 0x0 Level(8,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(7,Enemy,1) [8,18] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Mage 0x0 Level(7,Enemy,1) [4,18] 0x0 0x0 0x0 0x0 [Elfire, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+CathThief:
+UNIT GenericThiefCh8 Thief 0x0 Level(6,Enemy,1) [15,17] 0x0 0x0 0x1 REDA_15_18 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [20,17] 0x0 0x0 0x1 REDA_20_18 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT
+
+NorthWestReinforcements1:
+UNIT GenericRebelCh8 Archer Legance Level(8,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_1 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericRebelCh8 Mercenary Legance Level(10,Enemy,1) [0,1] 0x0 0x0 0x1 REDA_1_2 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier Legance Level(11,Enemy,1) [0,1] 0x0 0x0 0x1 REDA_0_2 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthWestReinforcements2:
+UNIT GenericRebelCh8 Archer Legance Level(8,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_1 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericRebelCh8 Mercenary Legance Level(10,Enemy,1) [0,1] 0x0 0x0 0x1 REDA_1_2 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier Legance Level(11,Enemy,1) [0,1] 0x0 0x0 0x1 REDA_0_2 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+StairsAndThroneReinforcements1:
+UNIT GenericRebelCh8 Archer Legance Level(8,Enemy,1) [15,17] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericRebelCh8 Mercenary Legance Level(9,Enemy,1) [20,17] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier Legance Level(11,Enemy,1) [0,23] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier Legance Level(10,Enemy,1) [0,18] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+StairsAndThroneReinforcements2:
+UNIT GenericRebelCh8 Archer Legance Level(8,Enemy,1) [15,17] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericRebelCh8 Mercenary Legance Level(9,Enemy,1) [20,17] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Knight Legance Level(11,Enemy,1) [0,23] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh8 Soldier Legance Level(10,Enemy,1) [0,18] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DeerOfThePlains)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+//FE6 has some ASM here.
+MoveByCoords(0, 6, 19, 6, 18)
+ENUN
+Text(Ch8_Start1)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustAstolfo
+ENUN
+LOAD1 0x1 JustLilina
+ENUN
+MoveByCoords(0, 6, 18, 6, 19)
+CAM1 Lilina
+ENUN
+Stal 32
+PlayMusic(MUS_AnUnexpectedCaller)
+CAM1 Roy
+ENUN
+STAL 16
+Text(BG_Castle2,Ch8_Start2)
+//Trick for Lilina to not appear in preps.
+DISA Lilina
+GotoPrepScreenNoENDA
+LOAD 0x1 JustLilina
+ENDA
+
+LilinaComplains:
+QuieterMusic
+CAM1 Lilina
+Text(Ch8_LilinaNoise)
+UnquieterMusic
+EndEvent
+
+OstiaSquadAppears:
+SwitchMusic(MUS_JoinUs)
+LOAD1 0x1 GwendolynBartheOgier
+ENUN
+STAL 32
+Text(BG_Dungeon,Ch8_OstiaSquadAppears)
+RestoreMusic
+EndEvent
+
+CathAppearsIfAlive:
+//Skip Cath's appearance if she's been recruited (impossible this chapter) or is dead.
+BranchIfFlagON(9,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LOAD1 0x1 CathThief
+ENUN
+CAM1 Cath
+Text(Ch8_CathAppears)
+RestoreMusic
+LABEL 9
+EndEvent
+
+LoadThroneRoomStairsEnemies1:
+ReinforcementEvent(StairsAndThroneReinforcements1)
+
+LoadThroneRoomStairsEnemies2:
+ReinforcementEvent(StairsAndThroneReinforcements2)
+
+LoadHardNorthWestReinforcements1:
+HardReinforcementEvent(NorthWestReinforcements1)
+
+LoadHardNorthWestReinforcements2:
+HardReinforcementEvent(NorthWestReinforcements2)
+
+RoyLilinaTalk:
+SwitchMusic(MUS_JoinUs)
+Text(Ch8_RoyLilinaTalk)
+GiveItemToCharacter(Lilina,Thunder)
+RestoreMusic
+EndEvent
+
+BorsGwendolynTalk:
+ConvoEvent(Ch8_BorsGwendolynTalk)
+
+BorsLilinaTalk:
+ConvoEvent(Ch8_BorsLilinaTalk)
+
+BartheLilinaTalk:
+ConvoEvent(Ch8_BartheLilinaTalk)
+
+
+EndingScene:
+//Ending changes based on if Lilina is dead.
+BranchIfUnitDead(1,Lilina)
+
+//Lilina alive case. Go to Ch8x.
+SetBackground(BG_Castle2)
+TEXTSTART
+TEXTSHOW Ch8_EndLilinaAlive
+TEXTEND
+PlayMusic(MUS_FinalFarewell)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch8x)
+GOTO 9
+
+//Lilina dead case. Call Narcian cutscene and go to Ch9 (done from the Narcian event).
+LABEL 1
+Text(BG_Castle2, Ch8_Ch8x_WyvernsAtOstia)
+MOVE 0x0 Roy [16,23]
+FadeIntoBlack
+ReviveMerlinusIfConfig
+CALL OstiaNarcianCutscene
+
+LABEL 9
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

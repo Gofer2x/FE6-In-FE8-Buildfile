@@ -1,0 +1,286 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch19B,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch19B,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch19B,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,WellItBegins,1)
+TurnEventEnemy(0x0,ReinforcementsComing,7)
+TurnEventEnemy(0x0,OpenTheGate,12)
+TurnEventEnemy(0x0,HouseEnemiesComing,13)
+TurnEventEnemy(0x0,LoadWyvernsAndNomadsIfBossAlive,8)
+TurnEventEnemy(0x0,LoadWyverns,10)
+TurnEventEnemy(0x0,LoadWyverns,15)
+TurnEventEnemy(0x0,LoadWyverns,20)
+TurnEventEnemy(0x0,LoadNomads,8)
+TurnEventEnemy(0x0,LoadNomads,13)
+TurnEventEnemy(0x0,LoadNomads,18)
+TurnEventEnemy(0x0,LoadNomads,23)
+TurnEventEnemy(0x0,LoadHouseMyrms,15)
+TurnEventEnemy(0x0,LoadHardHouseMyrms,17,3)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(16,1)
+Village(0x0,WyrmslayerVillageVisit,6,5)
+Village(0x0,EnergyRingVillageVisit,10,10)
+Village(0x0,GoddessIconVillageVisit,15,12)
+Village(0x0,WoDaoVillageVisit,17,10)
+Village(0x0,LongbowVillageVisit,26,3)
+Armory(ArmoryList,8,1)
+Vendor(VendorList,27,0)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [20,31] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(15,Ally,1) [19,30] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [21,30] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Lugh Mage Roy Level(20,Ally,1) [18,29] 0x0 0x0 0x0 0x0 [Fire, Aircalibur, Elfire, Thunder] DummyAI
+UNIT Bors Knight Roy Level(17,Ally,1) [20,29] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Igrene SniperF Roy Level(6,Ally,1) [22,29] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Dieck Hero Roy Level(7,Ally,1) [11,30] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(18,Ally,1) [10,29] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe, SilverAxe, KillerAxe] DummyAI
+UNIT Cecilia Valkyrie Roy Level(7,Ally,1) [10,31] 0x0 0x0 0x0 0x0 [Elfire, TorchStaff, Bolting, Heal] DummyAI
+UNIT Fir MyrmidonF Roy Level(18,Ally,1) [12,29] 0x0 0x0 0x0 0x0 [WoDao, IronSword, HeroCrest, SteelSword] DummyAI
+UNIT Sue NomadF Roy Level(20,Ally,1) [12,31] 0x0 0x0 0x0 0x0 [ShortBow, IronBow, Longbow, BraveBow] DummyAI
+UNIT Zeiss WyvernRider Roy Level(15,Ally,1) [22,31] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Sin Nomad Roy Level(20,Ally,1) [9,30] 0x0 0x0 0x0 0x0 [ShortBow, IronBow, Longbow, BraveBow] DummyAI
+UNIT Melady WyvernRiderF Roy Level(15,Ally,1) [23,30] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [18,31] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Kel Swordmaster 0x0 Level(10,Enemy,0) [16,1] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericSacaeCh19B Swordmaster 0x0 Level(5,Enemy,1) [13,9] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh19B Swordmaster 0x0 Level(5,Enemy,1) [19,9] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh19B Sage 0x0 Level(7,Enemy,1) [14,4] 0x0 0x0 0x0 0x0 [Elfire, Physic, Silence] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh19B Sage 0x0 Level(6,Enemy,1) [18,4] 0x0 0x0 0x0 0x0 [Aircalibur, Mend, Sleep] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Archer 0x0 Level(18,Enemy,1) [20,5] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Archer 0x0 Level(18,Enemy,1) [19,6] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Archer 0x0 Level(18,Enemy,1) [12,6] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(17,Enemy,1) [8,6] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(17,Enemy,1) [24,6] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Mage 0x0 Level(18,Enemy,1) [6,2] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Mage 0x0 Level(18,Enemy,1) [28,2] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh19B Archer 0x0 Level(19,Enemy,1) [9,12] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Archer 0x0 Level(19,Enemy,1) [16,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [12,13] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [19,13] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Mage 0x0 Level(17,Enemy,1) [8,13] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Mage 0x0 Level(17,Enemy,1) [24,13] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B NomadTrooper 0x0 Level(8,Enemy,1) [12,3] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(19,Enemy,1) [12,4] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B NomadTrooper 0x0 Level(8,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(18,Enemy,1) [20,4] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B NomadTrooper 0x0 Level(8,Enemy,1) [16,6] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(19,Enemy,1) [15,7] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(18,Enemy,1) [16,7] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(18,Enemy,1) [17,7] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B NomadTrooper 0x0 Level(8,Enemy,1) [16,19] 0x0 0x0 0x0 0x0 [ShortBow, SteelSword, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(19,Enemy,1) [13,21] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(18,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(18,Enemy,1) [19,21] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [3,28] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(16,Enemy,1) [1,30] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(16,Enemy,1) [28,28] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [30,30] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh19B WyvernLord 0x0 Level(7,Enemy,1) [29,8] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [28,10] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(18,Enemy,1) [30,10] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(19,Enemy,1) [28,12] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(18,Enemy,1) [30,12] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernLord 0x0 Level(7,Enemy,1) [4,9] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [3,10] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(18,Enemy,1) [6,9] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(19,Enemy,1) [5,10] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(18,Enemy,1) [2,9] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NomadReinforcements1:
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [2,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [4,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [3,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [1,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+NomadReinforcements2:
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [2,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericSacaeCh19B Nomad 0x0 Level(17,Enemy,1) [4,31] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+WyvernReinforcements1:
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,20] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,23] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,22] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,21] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+WyvernReinforcements2:
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,20] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh19B WyvernRider 0x0 Level(17,Enemy,1) [31,23] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+MyrmsFromHouses:
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [6,4] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [27,3] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [12,11] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh19B Myrmidon 0x0 Level(18,Enemy,1) [17,11] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlashCursor(16,1,60)
+Text(BG_Castle3,Ch19B_Start1)
+PlayMusic(MUS_PrincessOfDestiny)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(Ch19B_Start2)
+GotoPrepScreen
+
+WellItBegins:
+CAM1 [16,11]
+FlashCursor(16,11,60)
+QuieterMusic
+Text(BG_House,Ch19B_NiimeItBegins)
+UnquieterMusic
+EndEvent
+
+ReinforcementsComing:
+BranchIfBossDead(9)
+CAM1 [16,1]
+FlashCursor(16,1,60)
+PlayMusic(MUS_DistantLands)
+STAL 16
+Text(BG_Castle1,Ch19B_ReinforcementsComing)
+LABEL 9
+EndEvent
+
+OpenTheGate:
+BranchIfBossDead(9)
+CAM1 [16,16]
+FlashCursor(16,16,60)
+PlayMusic(MUS_DistantLands)
+STAL 16
+Text(BG_Castle1,Ch19B_OpenTheGate)
+TILECHANGE 8
+LABEL 9
+EndEvent
+
+HouseEnemiesComing:
+BranchIfBossDead(9)
+CAM1 [16,1]
+FlashCursor(16,1,60)
+PlayMusic(MUS_DistantLands)
+STAL 16
+Text(BG_Castle1,Ch19B_HouseEnemiesComing)
+LABEL 9
+EndEvent
+
+WyrmslayerVillageVisit:
+VillageEventItem(Ch19B_WyrmslayerVillage,BG_Village,Wyrmslayer)
+
+EnergyRingVillageVisit:
+VillageEventItem(Ch19B_EnergyRingVillage,BG_Village,EnergyRing)
+
+GoddessIconVillageVisit:
+VillageEventItem(Ch19B_GoddessIconVillage,BG_Village,GoddessIcon)
+
+WoDaoVillageVisit:
+VillageEventItem(Ch19B_WoDaoVillage,BG_Village,WoDao)
+
+LongbowVillageVisit:
+VillageEventItem(Ch19B_LongbowVillage,BG_Village,Longbow)
+
+LoadWyvernsAndNomadsIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(NomadReinforcements1)
+LoadReinforcements(WyvernReinforcements1)
+LABEL 9
+EndEvent
+
+LoadWyverns:
+ReinforcementEvent(WyvernReinforcements2)
+
+LoadNomads:
+ReinforcementEvent(NomadReinforcements2)
+
+LoadHouseMyrms:
+ReinforcementEvent(MyrmsFromHouses)
+
+LoadHardHouseMyrms:
+HardReinforcementEvent(MyrmsFromHouses)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle3)
+TEXTSTART
+TEXTSHOW Ch19B_End
+TEXTEND
+PlayMusic(MUS_Talking)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch20B)
+ENDA
+
+ArmoryList:
+SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
+
+VendorList:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
+
+//MESSAGE Events end at offset CURRENTOFFSET

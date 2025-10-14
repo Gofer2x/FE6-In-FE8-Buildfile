@@ -1,0 +1,124 @@
+//World Map Events Installer
+
+{
+  ALIGN 4
+  #include "WMEvents/Intro.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter1.event"
+}
+/*
+{
+  ALIGN 4
+  #include "WMEvents/Chapter2.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter3.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter4.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter5.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter6.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter7.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter8.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter9.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter10A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter11A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter10B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter11B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter12.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter13.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter14.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter15.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter16.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter17A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter18A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter19A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter20A.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter17B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter18B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter19B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter20B.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter21.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter22.event"
+}
+{
+  ALIGN 4
+  #include "WMEvents/Chapter23.event"
+}
+*\

@@ -1,0 +1,248 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+//Ch17A_ArcardoVsKleinFlag 0x1E
+//Ch17A_ArcardoVsDouglasFlag 0x1F
+
+EventPointerTable(EVENTS_Ch17A,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch17A,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch17A,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,PathThroughTheOcean,6)
+TurnEventEnemy(0x0,LoadFortCavs,8,4)
+TurnEventEnemy(0x0,LoadPegKnights,10,6)
+TurnEventEnemy(0x0,LoadArcher,8,4)
+TurnEventEnemy(0x0,LoadHardFortCavs,12,4)
+TurnEventEnemy(0x0,LoadHardPegKnights,8,2)
+TurnEventEnemy(0x0,LoadHardArcher,12,4)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(29,3)
+Village(0x0,TinasStaffVillageVisit,2,12)
+House(0x0,SandbarHouseVisit,8,13)
+House(0x0,BoatHouseVisit,8,14)
+Armory(ArmoryList,6,8)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+NormalBallista(17,14)
+NormalBallista(21,17)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(18,Ally,1) [6,21] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(13,Ally,1) [4,19] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [7,19] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(15,Ally,1) [8,20] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Klein Sniper Roy Level(5,Ally,1) [5,20] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(5,Ally,1) [6,20] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Cecilia Valkyrie Roy Level(3,Ally,1) [4,21] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Bolting, Heal] DummyAI
+UNIT Bartre Warrior Roy Level(2,Ally,1) [7,21] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, Halberd] DummyAI
+UNIT Larum Dancer Roy Level(1,Ally,1) [9,21] 0x0 0x0 0x0 0x0 [PureWater, ChestKey5Uses, Vulnerary] DummyAI
+UNIT Raigh Shaman Roy Level(16,Ally,1) [5,22] 0x0 0x0 0x0 0x0 [Nosferatu, Flux, Eclipse, Vulnerary] DummyAI
+UNIT Shanna PegasusKnight Roy Level(20,Ally,1) [6,22] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Saul Priest Roy Level(18,Ally,1) [8,22] 0x0 0x0 0x0 0x0 [Mend, Restore, Warp, Recover] DummyAI
+UNIT Thea PegasusKnight Roy Level(20,Ally,1) [10,22] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, SilverLance, Horseslayer] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [9,23] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Arcardo Paladin 0x0 Level(10,Enemy,0) [29,3] 0x0 0x0 0x0 0x0 [SilverAxe, Javelin] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericEtruriaCh17A Knight 0x0 Level(16,Enemy,1) [28,4] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT GenericEtruriaCh17A Knight 0x0 Level(16,Enemy,1) [30,4] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Mage 0x0 Level(17,Enemy,1) [25,3] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Mage 0x0 Level(17,Enemy,1) [28,9] 0x0 0x0 0x0 0x0 [Fimbulvetr] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Mage 0x0 Level(16,Enemy,1) [28,20] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Mage 0x0 Level(15,Enemy,1) [6,10] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Paladin 0x0 Level(5,Enemy,1) [28,16] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(17,Enemy,1) [27,15] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(17,Enemy,1) [27,17] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(16,Enemy,1) [29,15] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(16,Enemy,1) [29,17] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Paladin 0x0 Level(5,Enemy,1) [6,12] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(17,Enemy,1) [5,13] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [7,13] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [20,22] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [23,23] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Paladin 0x0 Level(5,Enemy,1) [21,5] 0x0 0x0 0x0 0x0 [SilverLance, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(16,Enemy,1) [20,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [22,6] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [20,4] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [22,4] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh17A Bishop 0x0 Level(6,Enemy,1) [29,12] 0x0 0x0 0x0 0x0 [Physic, Purge] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericEtruriaCh17A Bishop 0x0 Level(5,Enemy,1) [29,5] 0x0 0x0 0x0 0x0 [Physic, Divine, Sleep] [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_DontRetreat]
+UNIT GenericEtruriaCh17A Archer 0x0 Level(17,Enemy,1) [17,14] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh17A Fighter 0x0 Level(17,Enemy,1) [18,14] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh17A Archer 0x0 Level(17,Enemy,1) [21,17] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh17A Archer 0x0 Level(17,Enemy,1) [27,12] 0x0 0x0 0x0 0x0 [SteelBow, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+PegReinforcements:
+UNIT GenericEtruriaCh17A PegasusKnight 0x0 Level(13,Enemy,1) [31,23] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A PegasusKnight 0x0 Level(13,Enemy,1) [30,23] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ArcherReinforcements:
+UNIT GenericEtruriaCh17A Archer 0x0 Level(17,Enemy,1) [29,7] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+CavReinforcements:
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(16,Enemy,1) [28,6] 0x0 0x0 0x0 0x0 [SteelSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh17A Cavalier 0x0 Level(15,Enemy,1) [24,3] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+JustArcardo:
+UNIT Arcardo Paladin 0x0 Level(10,Enemy,0) [29,3] 0x0 0x0 0x0 0x0 [SilverAxe, Javelin] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT
+
+CutsceneGalleMudrock:
+UNIT Galle WyvernLord 0x0 Level(18,Enemy,1) [29,3] 0x0 0x0 0x1 REDA_28_7 [Spear] DummyAI
+UNIT Murdock General 0x0 Level(20,Enemy,1) [29,3] 0x0 0x0 0x1 REDA_29_7 [Tomahawk] DummyAI
+UNIT
+
+CutsceneRoartz:
+UNIT Roartz General 0x0 Level(18,Enemy,1) [29,3] 0x0 0x0 0x0 0x0 [Spear] DummyAI
+UNIT
+
+CutsceneYoder:
+UNIT Yoder Bishop 0x0 Level(18,NPC,1) [3,20] 0x0 0x0 0x0 0x0 [Recover, Lightning] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Dignified)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+DISA Arcardo
+FlashCursor(29,3,60)
+Text(BG_Castle2,Ch17A_Start1)
+LOAD1 0x1 CutsceneRoartz
+ENUN
+MOVE 0x0 Roartz [32,5]
+ENUN
+DISA Roartz
+STAL 16
+LOAD1 0x1 CutsceneGalleMudrock
+ENUN
+STAL 16
+Text(Ch17A_Start2)
+MOVE 0x0 Murdock [28,12]
+MOVE 0x0 Galle [28,11]
+ENUN
+DISA Murdock
+DISA Galle
+ENUN
+LOAD1 0x1 JustArcardo
+ENUN
+LOAD3 0x0 Units
+ENUN
+PlayMusic(MUS_WhenTheRushComes)
+LOAD 0x1 CutsceneYoder
+ENUN
+CAM1 Roy
+Text(BG_Outside,Ch17A_Start3)
+MOVE 0x0 Yoder [0,19]
+ENUN
+DISA Yoder
+GotoPrepScreen
+
+PathThroughTheOcean:
+CAM1 [10,8]
+PlaySound(SND_WaterTileSurface)
+TILECHANGE 0x2
+STAL 64
+BranchIfBossDead(9)
+CAM1 [29,3]
+Text(Ch17A_OceanPathAppears1)
+SwitchMusic(MUS_BeyondDistantSkies)
+CAM1 Roy
+Text(Ch17A_OceanPathAppears2)
+RestoreMusic
+LABEL 9
+EndEvent
+
+LoadFortCavs:
+ReinforcementEvent(CavReinforcements)
+
+LoadPegKnights:
+ReinforcementEvent(PegReinforcements)
+
+LoadArcher:
+ReinforcementEvent(ArcherReinforcements)
+
+LoadHardFortCavs:
+HardReinforcementEvent(CavReinforcements)
+
+LoadHardPegKnights:
+HardReinforcementEvent(PegReinforcements)
+
+LoadHardArcher:
+HardReinforcementEvent(ArcherReinforcements)
+
+TinasStaffVillageVisit:
+VillageEventItem(Ch17A_TinasStaffVillage,BG_Village,TinasStaff)
+
+SandbarHouseVisit:
+HouseEvent(Ch17A_SandbarHouse,BG_House)
+
+BoatHouseVisit:
+HouseEvent(Ch17A_BoatHouse,BG_House)
+
+
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+Text(BG_Castle2,Ch17A_End)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch18A)
+ENDA
+
+ArmoryList:
+SHLI SlimSword IronSword KillingEdge IronBlade SlimLance IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow KillerBow
+
+//MESSAGE Events end at offset CURRENTOFFSET

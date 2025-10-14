@@ -1,0 +1,507 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+//Ch11A_Ch10B_RoyOrClarineKleinTalkFlag 0x7
+//Ch11A_Ch10B_ShannaTheaTalkFlag 0x8
+//Ch11A_Ch10B_NoKleinShannaTheaTalkFlag 0x9
+//Ch11A_Ch10B_ClarineKleinExtraTalkFlag 0xA
+//Ch11A_Ch10B_KleinTheaTalkFlag 0xB
+#define Ch11A_BanditsAppearCutscenePlayedFlag 0xC
+#define Ch11A_LarumEchidnaTalkFlag 0xD
+#define Ch11A_VillageFlag1 0xE
+#define Ch11A_VillageFlag2 0xF
+#define Ch11A_VillageFlag3 0x10
+#define Ch11A_VillageFlag4 0x11
+#define Ch11A_VillageFlag5 0x12
+#define Ch11A_VillageFlag6 0x13
+#define Ch11A_VillageFlag7 0x14
+#define Ch11A_VillageFlag8 0x15
+//Ch11A_OrloVsElenFlag 0x1E
+//Ch11A_SaulVsOrloFlag 0x1F
+
+//Ch11A_Ch10B_GenericArcherKleinDeathFlag 0x20
+//Ch11A_Ch10B_GenericPegKnightTheaDeathFlag 0x21
+
+EventPointerTable(EVENTS_Ch11A,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch11A,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch11A,Ch11ANPCEscapePoints)
+
+ALIGN 4
+
+Ch11ANPCEscapePoints:
+EscapePoint(23,0,MoveUp)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,MeladyAndGalleLeave,1)
+TurnEventEnemy(0x0,OrloCallsBandits,5)
+TurnEventEnemy(0x0,KleinAppears,5)
+TurnEventEnemy(0x0,BanditsAppear,6)
+TurnEventPlayer(0x0,BanditsAppearRoyComments,7)
+TurnEventEnemy(0x0,TheaAppears,7)
+TurnEventEnemy(0x0,EchidnaAppears,8)
+TurnEventEnemy(0x0,OrloComplainsAndTalksAboutReinforcements,9)
+TurnEventEnemy(0x0,NorthCavsAppearIfBossAlive,10)
+TurnEventEnemy(0x0,MoreBanditsAppear,12,4)
+TurnEventEnemy(0x0,HardOrloMoreReinforcementsComing,13)
+TurnEventEnemy(0x0,HardSouthCavsAppearIfBossAlive,14)
+
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch11A_LarumEchidnaTalkFlag,LarumRecruitsEchidna,Larum,Echidna)
+//For Klein-Clarine-Roy-Shanna-Thea events, check the WestIslesEvents.event file.
+CharacterEvent(Ch11A_Ch10B_RoyOrClarineKleinTalkFlag,EVENT_RoyRecruitsKlein,Roy,Klein)
+CharacterEvent(Ch11A_Ch10B_RoyOrClarineKleinTalkFlag,EVENT_ClarineRecruitsKlein,Clarine,Klein)
+CharacterEventBothWays(Ch11A_Ch10B_ClarineKleinExtraTalkFlag,EVENT_ClarineKleinExtraTalk,Clarine,Klein)
+CharacterEvent(Ch11A_Ch10B_ShannaTheaTalkFlag,EVENT_TheaRecruitment,Shanna,Thea)
+CharacterEvent(Ch11A_Ch10B_KleinTheaTalkFlag,EVENT_KleinRecruitsThea,Klein,Thea)
+
+
+END_MAIN
+
+LocationBasedEvents:
+Seize(27,2)
+//Special flags for visiting the villages. Used for checking Hero Crest reward in the ending event.
+Village(Ch11A_VillageFlag1,DragonshieldVillageVisit,11,18)
+Village(Ch11A_VillageFlag2,SleepVillageVisit,24,18)
+Village(Ch11A_VillageFlag3,MoneyVillageVisit,18,14)
+Village(Ch11A_VillageFlag4,RestoreVillageVisit,5,18)
+Village(Ch11A_VillageFlag5,SpeedwingsVillageVisit,18,6)
+Village(Ch11A_VillageFlag6,AngelicRobeVillageVisit,24,6)
+Village(Ch11A_VillageFlag7,OrionsBoltVillageVisit,5,24)
+Village(Ch11A_VillageFlag8,AxereaverVillageVisit,11,24)
+Armory(ArmoryList,11,12)
+Vendor(VendorList,11,6)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(12,Ally,1) [5,5] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Clarine Troubadour Roy Level(13,Ally,1) [2,3] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Vulnerary] DummyAI
+UNIT Alen Cavalier Roy Level(13,Ally,1) [4,3] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(9,Ally,1) [5,3] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(12,Ally,1) [7,3] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, Vulnerary, SteelBow] DummyAI
+UNIT Dieck Mercenary Roy Level(15,Ally,1) [3,4] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Lot Fighter Roy Level(11,Ally,1) [6,4] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe, SteelAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(13,Ally,1) [2,5] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(9,Ally,1) [4,5] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(11,Ally,1) [3,6] 0x0 0x0 0x0 0x0 [Fire, Thunder, Vulnerary] DummyAI
+UNIT Sue NomadF Roy Level(11,Ally,1) [6,6] 0x0 0x0 0x0 0x0 [IronBow, Longbow, Antitoxin, PureWater] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [5,7] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustLarum:
+UNIT Larum Dancer Roy Level(1,Ally,0) [2,6] 0x0 0x0 0x1 REDA_2_7 [Vulnerary] DummyAI
+UNIT
+
+JustEchidna:
+UNIT Echidna HeroF 0x0 Level(1,NPC,0) [18,10] 0x0 0x0 0x1 REDA_18_11 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Orlo Bishop 0x0 Level(8,Enemy,0) [27,2] 0x0 0x0 0x0 0x0 [Divine] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(13,Enemy,1) [3,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(14,Enemy,1) [8,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(13,Enemy,1) [8,19] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(13,Enemy,1) [13,16] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Shaman Orlo Level(14,Enemy,1) [15,19] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(15,Enemy,1) [20,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(15,Enemy,1) [22,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(14,Enemy,1) [21,17] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(15,Enemy,1) [21,10] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(15,Enemy,1) [20,7] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(14,Enemy,1) [22,7] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(14,Enemy,1) [22,9] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(14,Enemy,1) [20,9] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(15,Enemy,1) [21,8] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(14,Enemy,1) [21,6] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Shaman Orlo Level(16,Enemy,1) [26,3] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Shaman Orlo Level(16,Enemy,1) [28,3] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(14,Enemy,1) [14,6] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(14,Enemy,1) [14,11] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Archer Orlo Level(14,Enemy,1) [14,23] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter Orlo Level(16,Enemy,1) [8,23] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT
+
+JustOrlo:
+UNIT Orlo Bishop 0x0 Level(8,Enemy,0) [27,2] 0x0 0x0 0x0 0x0 [Divine] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT
+
+KleinSquad1:
+UNIT Klein Sniper 0x0 Level(1,Enemy,0) [22,25] 0x0 0x0 0x1 REDA_22_24 [SilverBow, WhiteGem] [AI1_InRange80, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericArcherKleinCh11A_Ch10B Archer Klein Level(14,Enemy,1) [21,24] 0x0 0x0 0x1 REDA_21_23 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericArcherKleinCh11A_Ch10B Archer Klein Level(14,Enemy,1) [23,24] 0x0 0x0 0x1 REDA_23_23 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+KleinSquad2:
+UNIT GenericArcherKleinCh11A_Ch10B Archer Klein Level(14,Enemy,1) [20,25] 0x0 0x0 0x1 REDA_21_25 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericArcherKleinCh11A_Ch10B Archer Klein Level(15,Enemy,1) [24,25] 0x0 0x0 0x1 REDA_23_25 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+TheaSquad1:
+UNIT Thea PegasusKnight 0x0 Level(8,Enemy,0) [2,0] 0x0 0x0 0x1 REDA_2_1 [SlimLance, Javelin] [AI1_InRange80, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT GenericPegKnightTheaCh11A_Ch10B PegasusKnight Thea Level(6,Enemy,1) [0,0] 0x0 0x0 0x1 REDA_1_0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT GenericPegKnightTheaCh11A_Ch10B PegasusKnight Thea Level(6,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_3_0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT
+
+TheaSquad2:
+UNIT GenericPegKnightTheaCh11A_Ch10B PegasusKnight Thea Level(6,Enemy,1) [1,1] 0x0 0x0 0x1 REDA_2_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT GenericPegKnightTheaCh11A_Ch10B PegasusKnight Thea Level(6,Enemy,1) [5,1] 0x0 0x0 0x1 REDA_3_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT
+
+EchidnaFighters:
+UNIT GenericEburacumCh11A Fighter 0x0 Level(17,Enemy,1) [16,10] 0x0 0x0 0x1 REDA_16_11 [HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter 0x0 Level(15,Enemy,1) [20,12] 0x0 0x0 0x1 REDA_18_12 [HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Fighter 0x0 Level(15,Enemy,1) [20,10] 0x0 0x0 0x1 REDA_20_11 [HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements1:
+UNIT GenericBanditWestIslesCh11A Brigand 0x0 Level(14,Enemy,1) [26,9] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh11A Brigand 0x0 Level(15,Enemy,1) [27,15] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements2:
+UNIT GenericBanditWestIslesCh11A Brigand 0x0 Level(14,Enemy,1) [26,9] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh11A Brigand 0x0 Level(15,Enemy,1) [27,15] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthWestCavReinforcements1:
+UNIT GenericEburacumCh11A Cavalier 0x0 Level(19,Enemy,1) [3,0] 0x0 0x0 0x1 REDA_3_1 [KillerLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [1,0] 0x0 0x0 0x1 REDA_1_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [2,0] 0x0 0x0 0x1 REDA_2_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_3_2 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthWestCavReinforcements2:
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_4_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [5,0] 0x0 0x0 0x1 REDA_5_2 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [3,0] 0x0 0x0 0x1 REDA_3_3 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthEastCavReinforcements1:
+UNIT Roberts Paladin 0x0 Level(1,Enemy,1) [20,25] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [18,24] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [19,24] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [20,24] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthEastCavReinforcements2:
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [21,24] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(15,Enemy,1) [22,24] 0x0 0x0 0x0 0x0 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericEburacumCh11A Cavalier Roberts Level(14,Enemy,1) [23,24] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+CutsceneMelady:
+UNIT Melady WyvernRiderF 0x0 Level(10,Enemy,1) [27,2] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
+UNIT
+
+CutsceneMelady2:
+UNIT Melady WyvernRiderF 0x0 Level(10,Enemy,1) [29,8] 0x0 0x0 0x1 REDA_27_12 [SteelLance] DummyAI
+UNIT
+
+CutsceneGalle:
+UNIT Galle WyvernRider 0x0 Level(18,Enemy,1) [29,14] 0x0 0x0 0x1 REDA_27_13 [Spear] DummyAI
+UNIT
+
+CutsceneThea:
+UNIT Thea PegasusKnight 0x0 Level(8,Enemy,1) [18,25] 0x0 0x0 0x1 REDA_21_24 [SlimLance, Javelin] DummyAI
+UNIT
+
+CutsceneElffin:
+UNIT Elffin Bard 0x0 Level(1,NPC,1) [29,3] 0x0 0x0 0x1 REDA_27_2 [Vulnerary, AngelicRobe, BlueGem] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_TheKingdomOfBern)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlagON(Ch11A_Ch10B_ClarineKleinExtraTalkFlag)
+DISA Orlo
+STAL 16
+FlashCursor(27,2,60)
+Text(BG_Castle1,Ch11A_Start1)
+LOAD1 0x1 CutsceneMelady
+ENUN
+MOVE 0x0 Melady [30,5]
+ENUN
+DISA Melady
+Text(BG_Castle1,Ch11A_Start2)
+LOAD1 0x1 JustOrlo
+ENUN
+LOAD3 0x0 Units
+ENUN
+PlayMusic(MUS_WhenTheRushComes)
+CAM1 Roy
+Text(BG_Outside,Ch11A_Start3)
+LOAD1 0x1 JustLarum
+ENUN
+GotoPrepScreen
+
+MeladyAndGalleLeave:
+SwitchMusic(MUS_TheKingdomOfBern)
+CAM1 [28,12]
+LOAD1 0x1 CutsceneMelady
+ENUN
+CMOF
+LOAD1 0x1 CutsceneGalle
+ENUN
+Text(Ch11A_MeladyGalleLeave)
+MOVE 0x0 Galle [30,18]
+MOVE 0x0 Melady [30,17]
+ENUN
+DISA Galle
+DISA Melady
+RestoreMusic
+EndEvent
+
+OrloCallsBandits:
+BranchIfBossDead(9)
+CAM1 [27,2]
+PlayMusic(MUS_WildFrontier)
+Text(BG_Castle1, Ch11A_OrloLaughsAndSendsBandits)
+LABEL 9
+EndEvent
+
+KleinAppears:
+PlayMusic(MUS_WildFrontier)
+LoadReinforcements(KleinSquad1)
+ENUN
+LoadReinforcements(KleinSquad2)
+ENUN
+STAL 16
+LOAD1 0x1 CutsceneThea
+ENUN
+Text(Ch10B_Ch11A_KleinAppears1)
+MOVE 0x0 Thea [18,26]
+ENUN
+DISA Thea
+Text(Ch10B_Ch11A_KleinAppears2)
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Klein by +9
+#endif
+EndEvent
+
+BanditsAppear:
+BranchIfBossDead(9)
+LoadReinforcements(BrigandReinforcements1)
+PlayMusic(MUS_WildFrontier)
+Text(Ch11A_BanditsAppear)
+FlagON(Ch11A_BanditsAppearCutscenePlayedFlag)
+LABEL 9
+EndEvent
+
+BanditsAppearRoyComments:
+BranchIfFlagOFF(9,Ch11A_BanditsAppearCutscenePlayedFlag)
+SwitchMusic(MUS_AnUnexpectedCaller)
+CAM1 Roy
+Text(Ch11A_BanditsAppearRoy)
+RestoreMusic
+LABEL 9
+EndEvent
+
+TheaAppears:
+SwitchMusic(MUS_DistantLands)
+LoadReinforcements(TheaSquad1)
+LoadReinforcements(TheaSquad2)
+Text(Ch10B_Ch11A_TheaAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Thea by +9
+#endif
+EndEvent
+
+EchidnaAppears:
+SwitchMusic(MUS_AnUnexpectedCaller)
+CAM1 [18,10]
+LOAD1 0x1 EchidnaFighters
+ENUN
+Text(Ch11A_EchidnaAppears1)
+LOAD1 0x1 JustEchidna
+ENUN
+Text(Ch11A_EchidnaAppears2)
+RestoreMusic
+EndEvent
+
+OrloComplainsAndTalksAboutReinforcements:
+BranchIfBossDead(9)
+CAM1 [27,2]
+FlashCursor(27,2,60)
+PlayMusic(MUS_WildFrontier)
+STAL 16
+Text(BG_Castle1,Ch11A_OrloComplainsAndTalksAboutReinforcements)
+LABEL 9
+EndEvent
+
+NorthCavsAppearIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(NorthWestCavReinforcements1)
+LoadReinforcements(NorthWestCavReinforcements2)
+LABEL 9
+EndEvent
+
+MoreBanditsAppear:
+ReinforcementEvent(BrigandReinforcements2)
+
+HardOrloMoreReinforcementsComing:
+BranchIfBossDead(9)
+BranchIfNotHard(9)
+SwitchMusic(MUS_WildFrontier)
+CAM1 [27,2]
+FlashCursor(27,2,60)
+STAL 16
+Text(BG_Castle1,Ch11A_MoreReinforcementsComing)
+LABEL 9
+EndEvent
+
+HardSouthCavsAppearIfBossAlive:
+BranchIfBossDead(9)
+LoadHardReinforcements(SouthEastCavReinforcements1)
+LoadHardReinforcements(SouthEastCavReinforcements2)
+LABEL 9
+EndEvent
+
+LarumRecruitsEchidna:
+SwitchMusic(MUS_JoinUs)
+Text(Ch11A_LarumRecruitsEchidna)
+BecomeAlly(Echidna)
+RestoreMusic
+EndEvent
+
+DragonshieldVillageVisit:
+VillageEventItem(Ch11A_DragonshieldVillage,BG_Village,Dragonshield)
+
+SleepVillageVisit:
+VillageEventItem(Ch11A_SleepVillage,BG_Village,Sleep)
+
+MoneyVillageVisit:
+VillageEventMoney(Ch11A_5000GoldVillage,BG_Village,5000)
+
+RestoreVillageVisit:
+VillageEventItem(Ch11A_RestoreVillage,BG_Village,Restore)
+
+SpeedwingsVillageVisit:
+VillageEventItem(Ch11A_SpeedwingsVillage,BG_Village,Speedwings)
+
+AngelicRobeVillageVisit:
+VillageEventItem(Ch11A_AngelicRobeVillage,BG_Village,AngelicRobe)
+
+OrionsBoltVillageVisit:
+VillageEventItem(Ch11A_OrionsBoltVillage,BG_Village,OrionsBolt)
+
+AxereaverVillageVisit:
+VillageEventItem(Ch11A_AxereaverVillage,BG_Village,Axereaver)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+FadeIntoBlack
+ClearAll
+LOAD1 0x1 CutsceneElffin
+MOVE 0x0 Elffin [27,2]
+FadeFromBlack
+ENUN
+DISA Elffin
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch11A_End1
+TEXTEND
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+
+//Skip the Hero Crest reward if any of the villages were not visited.
+BranchIfFlagOFF(1,Ch11A_VillageFlag1)
+BranchIfFlagOFF(1,Ch11A_VillageFlag2)
+BranchIfFlagOFF(1,Ch11A_VillageFlag3)
+BranchIfFlagOFF(1,Ch11A_VillageFlag4)
+BranchIfFlagOFF(1,Ch11A_VillageFlag5)
+BranchIfFlagOFF(1,Ch11A_VillageFlag6)
+BranchIfFlagOFF(1,Ch11A_VillageFlag7)
+BranchIfFlagOFF(1,Ch11A_VillageFlag8)
+
+//All visited, Hero Crest got.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch11A_EndHeroCrest)
+GiveItemToCharacter(Roy,HeroCrest)
+
+LABEL 1
+
+//Skip the Orion's Bolt reward if Klein is unrecruited/dead or if any of his archers died.
+BranchIfUnitNotAlly(2,Klein)
+BranchIfUnitDead(2,Klein)
+BranchIfFlagON(2,Ch11A_Ch10B_GenericArcherKleinDeathFlag)
+
+//If all alive, Orion's Bolt got.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch10B_Ch11A_EndOrionsBolt)
+GiveItemToCharacter(Klein,OrionsBolt)
+
+LABEL 2
+
+//Skip the Elysian Whip reward Thea is unrecruited/dead or if any of her pegasus knights died.
+BranchIfUnitNotAlly(3,Thea)
+BranchIfUnitDead(3,Thea)
+BranchIfFlagON(3,Ch11A_Ch10B_GenericPegKnightTheaDeathFlag)
+
+//If all alive, Elysian Whip got.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch10B_Ch11A_EndElysianWhip)
+GiveItemToCharacter(Thea,ElysianWhip)
+
+LABEL 3
+
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch12)
+ENDA
+
+
+
+ArmoryList:
+SHLI SlimLance IronLance SteelLance Javelin IronAxe SteelAxe KillerAxe HandAxe Hammer IronBow SteelBow
+
+VendorList:
+SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
+
+//MESSAGE Events end at offset CURRENTOFFSET

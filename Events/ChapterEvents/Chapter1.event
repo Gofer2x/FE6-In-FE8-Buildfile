@@ -1,0 +1,195 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch1,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch1,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch1,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,DamasComplains,1)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(5,4)
+Village(0x0,SouthVillageVisit,12,19)
+House(0x0,DoomHouseVisit,12,15)
+House(0x0,TerrainHouseVisit,9,16)
+House(0x0,MoneyHouseVisit,9,19)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT
+
+RoyMarcus:
+UNIT Roy RoyLord 0x0 Level(1,Ally,0) [1,20] 0x0 0x0 0x1 REDA_2_18 [Rapier, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(1,Ally,0) [2,20] 0x0 0x0 0x1 REDA_1_17 [IronSword, SilverLance] DummyAI
+UNIT
+
+JustLance:
+UNIT Lance Cavalier Roy Level(1,Ally,0) [10,9] 0x0 0x0 0x1 REDA_2_17 [IronSword, Javelin, Vulnerary] DummyAI
+UNIT
+
+AlenBorsWolt:
+UNIT Alen Cavalier Roy Level(1,Ally,0) [0,20] 0x0 0x0 0x1 REDA_3_17 [IronSword, IronLance] DummyAI
+UNIT Bors Knight Roy Level(1,Ally,0) [1,20] 0x0 0x0 0x1 REDA_3_19 [IronLance, Vulnerary] DummyAI
+UNIT Wolt Archer Roy Level(1,Ally,0) [2,20] 0x0 0x0 0x1 REDA_2_16 [IronBow, Vulnerary] DummyAI
+UNIT
+
+Enemies1:
+UNIT GenericBanditCh1 Archer Damas Level(1,Enemy,0) [1,0] 0x0 0x0 0x1 REDA_1_2 [IronBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT Damas Fighter 0x0 Level(5,Enemy,0) [5,0] 0x0 0x0 0x1 REDA_5_6 [SteelAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [2,6] 0x0 0x0 0x1 REDA_1_3 [IronAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [3,10] 0x0 0x0 0x1 REDA_4_5 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [12,10] 0x0 0x0 0x1 REDA_6_5 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Enemies2:
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [8,4] 0x0 0x0 0x1 REDA_8_9 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [9,4] 0x0 0x0 0x1 REDA_9_9 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [7,2] 0x0 0x0 0x1 REDA_11_7 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Archer Damas Level(1,Enemy,0) [7,3] 0x0 0x0 0x1 REDA_10_10 [IronBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+Enemies3:
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [12,7] 0x0 0x0 0x1 REDA_7_15 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [12,8] 0x0 0x0 0x1 REDA_8_14 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [3,8] 0x0 0x0 0x1 REDA_12_13 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh1 Fighter Damas Level(1,Enemy,0) [4,8] 0x0 0x0 0x1 REDA_8_18 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+JustBrigand:
+UNIT GenericBanditCh1 Brigand Damas Level(1,Enemy,0) [7,4] 0x0 0x0 0x1 REDA_7_7 [IronAxe] [AI1_InRange, AI2_PillageAttack, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+
+
+
+
+ALIGN 4
+
+BeginningScene:
+ChStartFadeFromBlack
+PlayMusic(MUS_AnUnexpectedCaller)
+LOAD1 0x1 Enemies1
+ENUN
+FlashCursor(Damas, 60)
+Text(BG_Outside, Ch1_Start1)
+CAM1 [7,8]
+LOAD1 0x1 JustBrigand
+ENUN
+FlashCursor(7,7,60)
+Text(BG_Outside, Ch1_StartBrigandVillage)
+MoveByCoords(0x0, 7, 7, 4, 9)
+ENUN
+PlaySound(SND_VillageDestruction)
+TILECHANGE 0x1
+FlashCursor(5,4,60)
+Text(BG_Castle1, Ch1_Start2)
+STAL 16
+CAM1 [8,12]
+STAL 16
+LOAD1 0x1 Enemies2
+ENUN
+CAM1 [8,17]
+LOAD1 0x1 Enemies3
+ENUN
+STAL 16
+LOAD1 0x1 RoyMarcus
+ENUN
+LOAD1 0x1 AlenBorsWolt
+ENUN
+LOAD1 0x1 JustLance
+ENUN
+Text(BG_Outside, Ch1_Start3)
+MOVE 0x0 Lance [4,18]
+#ifdef CONFIG_BuggedEarlyHMBonuses
+//Patch here on Damas and GenericBanditCh1 by +4
+#endif
+EndEvent
+
+DamasComplains:
+PlayMusic(MUS_DeerOfThePlains)
+CAM1[5,3]
+ENUN
+MOVE 0x0 Damas [5, 4]
+ENUN
+STAL 16
+Text(BG_Outside, Ch1_Start4)
+EndEvent
+
+SouthVillageVisit:
+VillageEventMoney(Ch1_SouthVillage,BG_Village,5000)
+
+DoomHouseVisit:
+HouseEvent(Ch1_DoomHouse,BG_House)
+
+TerrainHouseVisit:
+HouseEvent(Ch1_TerrainHouse,BG_House)
+
+MoneyHouseVisit:
+HouseEvent(Ch1_MoneyHouse,BG_House)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch1_End1
+TEXTEND
+
+//Skip Bors and Lilina's convo if Bors is dead.
+BranchIfUnitDead(1,Bors)
+TEXTSHOW2 Ch1_End2LilinaBors
+TEXTEND
+
+LABEL 1
+TEXTSHOW2 Ch1_End3
+TEXTEND
+RemaFadeClean
+STAL 64
+MoveToChapter(CHAPTER_Ch2)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

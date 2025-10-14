@@ -1,0 +1,331 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch11B_RoyGeeseTalkFlag 0x8
+#define Ch11B_BartreRecruitmentFlag 0x9
+#define Ch11B_FirBartreExtraTalkFlag 0xA
+#define Ch11B_MercsAggroFlag 0xB
+
+//Ch11B_GenericCitizenEidynaDeathFlag 0x20
+
+EventPointerTable(EVENTS_Ch11B,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch11B,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch11B,Ch11BNPCEscapePoints)
+
+ALIGN 4
+
+Ch11BNPCEscapePoints:
+EscapePoint(28,0,MoveUp)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadCivilianChasers,4)
+TurnEventNPC(0x0,GeeseAppears,5)
+TurnEventEnemy(0x0,LoadPirates,5,3)
+TurnEventNPC(0x0,BartreAppears,8)
+TurnEventEnemy(0x0,ReinforcementsComing,10)
+TurnEventEnemy(0x0,LoadTwoFightersIfBossAlive,11)
+TurnEventEnemy(0x0,LoadHardMercFighterIfBossAlive,12)
+TurnEventEnemy(0x0,LoadMercArcherIfBossAlive,13)
+TurnEventEnemy(0x0,LoadTwoFightersIfBossAlive,14)
+TurnEventEnemy(0x0,LoadHardMercFighterIfBossAlive,15)
+TurnEventEnemy(0x0,LoadMercArcherIfBossAlive,16)
+TurnEventEnemy(0x0,LoadTwoFightersIfBossAlive,17)
+TurnEventEnemy(0x0,LoadHardMercFighterIfBossAlive,18)
+TurnEventEnemy(0x0,LoadMercArcherIfBossAlive,19)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch11B_BartreRecruitmentFlag,RoyRecruitsBartre,Roy,Bartre)
+CharacterEvent(Ch11B_BartreRecruitmentFlag,FirRecruitsBartre,Fir,Bartre)
+CharacterEvent(Ch11B_RoyGeeseTalkFlag,EVENT_RoyRecruitsGeese,Roy,Geese)
+CharacterEventBothWays(Ch11B_FirBartreExtraTalkFlag,FirBartreExtraTalk,Fir,Bartre)
+END_MAIN
+
+LocationBasedEvents:
+Seize(2,25)
+Vendor(VendorList,23,17)
+Village(0x0,VisitRedGemVillage,18,21)
+END_MAIN
+
+MiscBasedEvents:
+//When you end your turn on the southern landmass, some enemies turn aggressive.
+AreaEvent(Ch11B_MercsAggroFlag,TurnMercsAggressive,0,24,16,27)
+AreaEvent(Ch11B_MercsAggroFlag,TurnMercsAggressive,0,21,2,23)
+AreaEvent(Ch11B_MercsAggroFlag,TurnMercsAggressive,3,20,5,22)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+IronBallista(10,12)
+NormalBallista(22,19)
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(6,Ally,1) [26,2] 0x0 0x0 0x0 0x0 [IronSword, LightBrand, Rapier, Rapier] DummyAI
+UNIT Lilina Mage Roy Level(8,Ally,1) [25,3] 0x0 0x0 0x0 0x0 [Thunder, Fire, Vulnerary] DummyAI
+UNIT Alen Cavalier Roy Level(13,Ally,1) [27,3] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SteelLance] DummyAI
+UNIT Lance Cavalier Roy Level(13,Ally,1) [25,1] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SteelLance] DummyAI
+UNIT Ward Fighter Roy Level(11,Ally,1) [27,1] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe, SteelAxe] DummyAI
+UNIT Dieck Mercenary Roy Level(15,Ally,1) [24,2] 0x0 0x0 0x0 0x0 [IronSword, SteelSword, IronBlade] DummyAI
+UNIT Lugh Mage Roy Level(12,Ally,1) [28,2] 0x0 0x0 0x0 0x0 [Fire, Thunder, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(9,Ally,1) [26,5] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Rutger Myrmidon Roy Level(16,Ally,1) [25,6] 0x0 0x0 0x0 0x0 [IronSword, KillingEdge, Armorslayer, SteelSword] DummyAI
+UNIT Elen Cleric Roy Level(10,Ally,1) [27,6] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Vulnerary] DummyAI
+UNIT Wolt Archer Roy Level(15,Ally,1) [24,4] 0x0 0x0 0x0 0x0 [IronBow, KillerBow, SteelBow, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(12,Ally,1) [26,7] 0x0 0x0 0x0 0x0 [Heal, Mend, Restore, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [26,4] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustElffin:
+UNIT Elffin Bard 0x0 Level(1,Ally,0) [28,4] 0x0 0x0 0x0 0x0 [Vulnerary, AngelicRobe, BlueGem] DummyAI
+UNIT
+
+JustGeese:
+UNIT Geese Pirate 0x0 Level(10,NPC,0) [18,21] 0x0 0x0 0x1 REDA_18_22 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+Civilians:
+UNIT GenericCitizenEidyna2Ch11B Civilian 0x0 Level(1,NPC,0) [2,26] 0x0 0x0 0x1 REDA_0_20 [Vulnerary] [AI1_None, AI2_Escape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenEidyna1Ch11B Civilian 0x0 Level(1,NPC,0) [2,26] 0x0 0x0 0x1 REDA_0_19 [Vulnerary] [AI1_None, AI2_Escape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenEidyna2Ch11B Civilian 0x0 Level(1,NPC,0) [2,26] 0x0 0x0 0x1 REDA_1_19 [Vulnerary] [AI1_None, AI2_Escape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenEidyna1Ch11B Civilian 0x0 Level(1,NPC,0) [2,26] 0x0 0x0 0x1 REDA_1_18 [Vulnerary] [AI1_None, AI2_Escape, RAI_80_100|TAI_Reckless, AI4_Retreat]
+UNIT
+
+BartreSquad:
+UNIT Bartre Warrior 0x0 Level(2,NPC,0) [0,11] 0x0 0x0 0x1 REDA_1_11 [BraveAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT GenericResistanceCh11B Fighter Bartre Level(12,NPC,1) [0,10] 0x0 0x0 0x1 REDA_0_11 [IronAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x68, AI4_Retreat] // AI1_GaleSquad
+UNIT GenericResistanceCh11B Fighter Bartre Level(12,NPC,1) [0,13] 0x0 0x0 0x1 REDA_0_12 [HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x68, AI4_Retreat] // AI1_GaleSquad
+UNIT
+
+Enemies:
+UNIT Morgan General 0x0 Level(8,Enemy,0) [2,25] 0x0 0x0 0x0 0x0 [SilverAxe, Horseslayer, Javelin] [AI1_InPlace, AI2_DontMove, RAI_50_100|0x60, AI4_DontRetreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(12,Enemy,1) [12,2] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(13,Enemy,1) [9,3] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_Ballista11B, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(13,Enemy,1) [12,4] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(12,Enemy,1) [21,10] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Mercenary 0x0 Level(12,Enemy,1) [23,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(11,Enemy,1) [22,11] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Shaman 0x0 Level(13,Enemy,1) [9,11] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(12,Enemy,1) [10,12] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_Ballista11B, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(13,Enemy,1) [16,3] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(13,Enemy,1) [16,5] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(13,Enemy,1) [16,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(13,Enemy,1) [18,16] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Mercenary 0x0 Level(12,Enemy,1) [17,18] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(12,Enemy,1) [15,20] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(13,Enemy,1) [22,19] 0x0 0x0 0x0 0x0 [IronBow] [AI1_Ballista11B, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Berserker 0x0 Level(3,Enemy,1) [11,4] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(15,Enemy,1) [12,25] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(15,Enemy,1) [14,25] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Mercenary 0x0 Level(14,Enemy,1) [13,26] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(14,Enemy,1) [13,27] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|0x60, AI4_Retreat]
+UNIT
+
+JustMorgan:
+UNIT Morgan General 0x0 Level(6,Enemy,0) [2,25] 0x0 0x0 0x0 0x0 [SilverAxe, Horseslayer, Javelin] [AI1_InPlace, AI2_DontMove, RAI_50_100|0x60, AI4_DontRetreat]
+UNIT
+
+CivilianChasers:
+UNIT GenericEidynaCh11B Druid 0x0 Level(1,Enemy,1) [2,26] 0x0 0x0 0x1 REDA_4_26 [Flux, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(14,Enemy,1) [2,25] 0x0 0x0 0x1 REDA_4_25 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT GenericEidynaCh11B Shaman 0x0 Level(12,Enemy,1) [2,24] 0x0 0x0 0x1 REDA_4_24 [Flux] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT
+
+CastleMercs:
+UNIT GenericEidynaAggroCh11B Mercenary 0x0 Level(11,Enemy,1) [2,26] 0x0 0x0 0x1 REDA_1_26 [Armorslayer] [AI1_InPlace, AI2_DontMove, RAI_10_50|0x60, AI4_Retreat]
+UNIT GenericEidynaAggroCh11B Mercenary 0x0 Level(14,Enemy,1) [2,26] 0x0 0x0 0x1 REDA_2_27 [SteelSword] [AI1_InPlace, AI2_DontMove, RAI_10_50|0x60, AI4_Retreat]
+UNIT GenericEidynaAggroCh11B Mercenary 0x0 Level(11,Enemy,1) [2,26] 0x0 0x0 0x1 REDA_3_26 [Lancereaver] [AI1_InPlace, AI2_DontMove, RAI_10_50|0x60, AI4_Retreat]
+UNIT
+
+CastleReinforcementsTwoFighters:
+UNIT GenericEidynaCh11B Fighter 0x0 Level(15,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_4_24 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(14,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_1_21 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT
+
+CastleReinforcementsMercArcher:
+UNIT GenericEidynaCh11B Mercenary 0x0 Level(15,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_4_24 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT GenericEidynaCh11B Archer 0x0 Level(14,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_1_21 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT
+
+CastleReinforcementsMercFighter:
+UNIT GenericEidynaCh11B Mercenary 0x0 Level(15,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_4_24 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT GenericEidynaCh11B Fighter 0x0 Level(14,Enemy,1) [2,23] 0x0 0x0 0x1 REDA_1_21 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|0x40, AI4_Retreat]
+UNIT
+
+PirateReinforcements:
+UNIT GenericBanditWestIslesCh11B Pirate 0x0 Level(7,Enemy,1) [28,19] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh11B Pirate 0x0 Level(7,Enemy,1) [26,24] 0x0 0x0 0x0 0x0 [IronAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+CutsceneArcardo:
+UNIT Arcardo Paladin 0x0 Level(10,Enemy,0) [2,25] 0x0 0x0 0x0 0x0 [SilverAxe, Javelin] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_AnUnexpectedCaller)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+DISA Morgan
+LOAD1 0x1 Civilians
+ENUN
+Text(Ch11B_Start1)
+CAM1 [2,25]
+FlashCursor(2,25,60)
+Text(BG_Castle1,Ch11B_Start2)
+LOAD1 0x1 CutsceneArcardo
+ENUN
+MOVE 0x0 Arcardo [0,26]
+ENUN
+DISA Arcardo
+LOAD1 0x1 CastleMercs
+ENUN
+LOAD1 0x1 JustMorgan
+ENUN
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustElffin
+ENUN
+CAM1 Roy
+STAL 16
+Text(BG_Outside,Ch11B_Start3)
+GotoPrepScreen
+
+RoyRecruitsBartre:
+SwitchMusic(MUS_JoinUs)
+Text(Ch11B_RoyRecruitsBartre)
+BecomeAlly(Bartre)
+RestoreMusic
+FlagOFF(Ch11B_FirBartreExtraTalkFlag)
+EndEvent
+
+FirRecruitsBartre:
+SwitchMusic(MUS_JoinUs)
+Text(Ch11B_FirRecruitsBartre)
+BecomeAlly(Fir)
+RestoreMusic
+EndEvent
+
+FirBartreExtraTalk:
+QuieterMusic
+Text(Ch11B_FirRecruitsBartre)
+UnquieterMusic
+EndEvent
+
+VisitRedGemVillage:
+VillageEventItem(Ch11B_RedGemVillage,BG_Village,RedGem)
+
+LoadCivilianChasers:
+ReinforcementEvent(CivilianChasers)
+
+GeeseAppears:
+CAM1 [18,17]
+FlashCursor(18,17,60)
+SwitchMusic(MUS_BindingTies)
+Text(BG_Village,Ch10A_Ch11B_GeeseAppears)
+LoadReinforcements(JustGeese)
+EndEvent
+
+BartreAppears:
+PlayMusic(MUS_WildFrontier)
+LoadReinforcements(BartreSquad)
+Text(Ch11B_BartreAppears)
+EndEvent
+
+ReinforcementsComing:
+BranchIfBossDead(9)
+SwitchMusic(MUS_WildFrontier)
+CAM1 [2,25]
+FlashCursor(2,25,60)
+Text(BG_Castle1,Ch11B_ReinforcementsComing)
+RestoreMusic
+LABEL 9
+EndEvent
+
+LoadPirates:
+ReinforcementEvent(PirateReinforcements)
+
+LoadTwoFightersIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(CastleReinforcementsTwoFighters)
+LABEL 9
+EndEvent
+
+LoadMercArcherIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(CastleReinforcementsMercArcher)
+LABEL 9
+EndEvent
+
+LoadHardMercFighterIfBossAlive:
+BranchIfBossDead(9)
+LoadHardReinforcements(CastleReinforcementsMercFighter)
+LABEL 9
+EndEvent
+
+TurnMercsAggressive:
+PlayerInRange
+ChangeAIAllEnemy(AI1_InRange,AI2_Charge,GenericEidynaAggroCh11B,0)
+EndEvent
+
+EndingScene:
+
+//Special text for if Elffin died during this chapter. Skip it if he's alive.
+BranchIfUnitAlive(1,Elffin)
+PlayMusic(MUS_PoemOfTheSoftWind)
+Text(BG_Castle1,Ch11B_EndElffinDead)
+
+LABEL 1
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch11B_End)
+
+//Skip the Energy Ring reward any of the citizens died.
+BranchIfFlagON(2,Ch11B_GenericCitizenEidynaDeathFlag)
+
+//If all alive, Energy Ring got.
+Text(BG_Castle1,Ch11B_EndEnergyRing)
+GiveItemToCharacter(Roy,EnergyRing)
+
+LABEL 2
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch12)
+ENDA
+
+VendorList:
+SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
+
+//MESSAGE Events end at offset CURRENTOFFSET

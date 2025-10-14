@@ -1,0 +1,300 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+#define Ch20B_RoyCathTalkFlag 0x7
+#define Ch20B_DayanRecruitmentFlag 0x8
+#define Ch20B_SueDayanExtraTalkFlag 0x9
+#define Ch20B_SinDayanExtraTalkFlag 0xA
+#define Ch20B_GaidenGoneFlag 0xB
+
+
+//Ch20B_RoartzVsDouglasFlag 0x1F
+
+EventPointerTable(EVENTS_Ch20B,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch20B,Ch20BEscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch20B,0x0)
+
+ALIGN 4
+
+Ch20BEscapePoints:
+EscapePoint(15,25,MoveDown)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,DayanAppears,2)
+TurnEventEnemy(0x0,CathAppears,10)
+TurnEventEnemy(0x0,LoadThief,12)
+TurnEventEnemy(Ch20B_GaidenGoneFlag,GaidenGone,26)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch20B_DayanRecruitmentFlag,RoyRecruitsDayan,Roy,Dayan)
+CharacterEvent(Ch20B_DayanRecruitmentFlag,SueRecruitsDayan,Sue,Dayan)
+CharacterEvent(Ch20B_DayanRecruitmentFlag,SinRecruitsDayan,Sin,Dayan)
+CharacterEventBothWays(Ch20B_SueDayanExtraTalkFlag,SueDayanExtraTalk,Sue,Dayan)
+CharacterEventBothWays(Ch20B_SinDayanExtraTalkFlag,SinDayanExtraTalk,Sin,Dayan)
+CharacterEvent(Ch20B_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+END_MAIN
+
+LocationBasedEvents:
+Seize(15,2)
+Chest(Sleep,24,5)
+Chest(Axereaver,24,8)
+Chest(GuidingRing,26,6)
+Chest(BlueGem,26,9)
+Chest(Nosferatu,22,6)
+Chest(Dragonshield,26,4)
+Door(10,4)
+Door(20,5)
+Door(25,11)
+Door(23,15)
+Door(19,15)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [15,24] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Marcus Paladin Roy Level(16,Ally,1) [15,23] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [14,24] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, KillerLance] DummyAI
+UNIT Cecilia Valkyrie Roy Level(8,Ally,1) [15,25] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Heal, Vulnerary] DummyAI
+UNIT Bors Knight Roy Level(18,Ally,1) [13,23] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [16,23] 0x0 0x0 0x0 0x0 [IronBow, SteelBow, SilverBow, Longbow] DummyAI
+UNIT Dieck Hero Roy Level(8,Ally,1) [13,22] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, IronBlade, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(19,Ally,1) [16,22] 0x0 0x0 0x0 0x0 [IronAxe, HandAxe, SilverAxe, KillerAxe] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [14,23] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Fir MyrmidonF Roy Level(20,Ally,1) [16,24] 0x0 0x0 0x0 0x0 [WoDao, IronSword, LightBrand] DummyAI
+UNIT Sue NomadF Roy Level(20,Ally,1) [13,25] 0x0 0x0 0x0 0x0 [ShortBow, IronBow, SilverBow, Vulnerary] DummyAI
+UNIT Zeiss WyvernRider Roy Level(20,Ally,1) [16,25] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, IronLance] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [14,25] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+JustNiime:
+UNIT Niime DruidF 0x0 Level(18,Ally,0) [13,24] 0x0 0x0 0x0 0x0 [Flux, Eclipse, Physic, Heal] DummyAI
+UNIT
+
+JustDayan:
+UNIT Dayan NomadTrooper 0x0 Level(12,NPC,0) [14,25] 0x0 0x0 0x1 REDA_14_22 [ShortBow, SteelSword] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Roartz General 0x0 Level(10,Enemy,0) [15,2] 0x0 0x0 0x0 0x0 [Spear, RedGem] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericEtruriaCh20B Knight 0x0 Level(20,Enemy,1) [12,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Knight 0x0 Level(20,Enemy,1) [15,5] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Knight 0x0 Level(20,Enemy,1) [18,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(8,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [Bolting] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(8,Enemy,1) [21,10] 0x0 0x0 0x0 0x0 [Bolting] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(7,Enemy,1) [4,19] 0x0 0x0 0x0 0x0 [Aircalibur, Physic, RedGem] [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(5,Enemy,1) [26,19] 0x0 0x0 0x0 0x0 [Elfire, Physic, Berserk] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(4,Enemy,1) [15,7] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sage 0x0 Level(2,Enemy,1) [15,9] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Mage 0x0 Level(18,Enemy,1) [6,9] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Mage 0x0 Level(18,Enemy,1) [6,13] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Swordmaster 0x0 Level(8,Enemy,1) [7,5] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Swordmaster 0x0 Level(8,Enemy,1) [21,5] 0x0 0x0 0x0 0x0 [WoDao] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh20B Swordmaster 0x0 Level(8,Enemy,1) [4,14] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Swordmaster 0x0 Level(8,Enemy,1) [22,15] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh20B Myrmidon 0x0 Level(17,Enemy,1) [20,15] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Myrmidon 0x0 Level(17,Enemy,1) [5,7] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Myrmidon 0x0 Level(17,Enemy,1) [25,7] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Warrior 0x0 Level(8,Enemy,1) [5,11] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Warrior 0x0 Level(8,Enemy,1) [26,14] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_RandomMovement, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericSacaeCh20B Myrmidon 0x0 Level(16,Enemy,1) [6,15] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericSacaeCh20B Myrmidon 0x0 Level(16,Enemy,1) [25,15] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Warrior 0x0 Level(3,Enemy,1) [14,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Warrior 0x0 Level(3,Enemy,1) [15,16] 0x0 0x0 0x0 0x0 [Swordreaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20B Fighter 0x0 Level(18,Enemy,1) [11,16] 0x0 0x0 0x0 0x0 [Swordreaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Fighter 0x0 Level(18,Enemy,1) [18,16] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Fighter 0x0 Level(18,Enemy,1) [13,18] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Fighter 0x0 Level(18,Enemy,1) [16,18] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sniper 0x0 Level(8,Enemy,1) [0,12] 0x0 0x0 0x0 0x0 [SteelBow, OrionsBolt] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sniper 0x0 Level(8,Enemy,1) [29,12] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sniper 0x0 Level(8,Enemy,1) [7,0] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh20B Sniper 0x0 Level(8,Enemy,1) [23,0] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+JustCath:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [15,8] 0x0 0x0 0x1 REDA_15_9 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_Retreat]
+UNIT
+
+ThiefReinforcements:
+UNIT GenericThiefCh20B Thief 0x0 Level(20,Enemy,1) [15,8] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_50_100|TAI_Def, AI4_Retreat]
+UNIT
+
+GaidenBossesYouGoofed:
+UNIT Thoril NomadTrooper 0x0 Level(8,Enemy,0) [14,25] 0x0 0x0 0x1 REDA_14_23 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT Brakul Druid 0x0 Level(7,Enemy,0) [15,25] 0x0 0x0 0x1 REDA_15_23 [Fenrir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT Kudoka NomadTrooper 0x0 Level(8,Enemy,0) [15,25] 0x0 0x0 0x1 REDA_15_24 [ShortBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT Marral Druid 0x0 Level(7,Enemy,0) [14,25] 0x0 0x0 0x1 REDA_14_24 [Fenrir] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlagON(Ch20B_SueDayanExtraTalkFlag)
+FlagON(Ch20B_SinDayanExtraTalkFlag)
+
+//If Cath is recruited (or dead), disable her talk with Roy.
+BranchIfFlagOFF(1,CathRecruitedOrDeadFlag)
+FlagON(Ch20B_RoyCathTalkFlag)
+
+LABEL 1
+FlashCursor(15,2,60)
+Text(BG_Castle1,Ch20B_Start1)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustNiime
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+PlayMusic(MUS_WhenTheRushComes)
+TEXTSTART
+TEXTSHOW Ch20B_Start2
+TEXTEND
+PlayMusic(MUS_Talking)
+TEXTCONT
+TEXTEND
+REMA
+GotoPrepScreen
+
+DayanAppears:
+PlayMusic(MUS_BindingTies)
+LoadReinforcements(JustDayan)
+Text(BG_Castle3,Ch20B_DayanAppears)
+EndEvent
+
+CathAppears:
+//Skip Cath's appearance if she's been recruited or is dead.
+BranchIfFlagON(9,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LoadReinforcements(JustCath)
+Text(Ch20B_CathAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Cath by +13
+#endif
+LABEL 9
+EndEvent
+
+LoadThief:
+ReinforcementEvent(ThiefReinforcements)
+
+GaidenGone:
+LoadReinforcements(GaidenBossesYouGoofed)
+Text(Ch20B_GaidenGone)
+EndEvent
+
+RoyRecruitsDayan:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20B_RoyRecruitsDayan)
+BecomeAlly(Dayan)
+RestoreMusic
+FlagOFF(Ch20B_SueDayanExtraTalkFlag)
+FlagOFF(Ch20B_SinDayanExtraTalkFlag)
+EndEvent
+
+SueRecruitsDayan:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20B_SueRecruitsDayan)
+BecomeAlly(Dayan)
+RestoreMusic
+FlagOFF(Ch20B_SinDayanExtraTalkFlag)
+EndEvent
+
+SinRecruitsDayan:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20B_SinRecruitsDayan)
+BecomeAlly(Dayan)
+RestoreMusic
+FlagOFF(Ch20B_SueDayanExtraTalkFlag)
+EndEvent
+
+SueDayanExtraTalk:
+QuieterMusic
+Text(Ch20B_SueDayanTalk)
+UnquieterMusic
+EndEvent
+
+SinDayanExtraTalk:
+QuieterMusic
+Text(Ch20B_SinDayanTalk)
+UnquieterMusic
+EndEvent
+
+
+EndingScene:
+//Branch to gaiden fail is Sue, Sin, or Dayan are unrecruited/dead or if the gaiden gone flag is on.
+BranchIfUnitDead(5,Sue)
+BranchIfUnitDead(5,Sin)
+BranchIfUnitDead(5,Dayan)
+BranchIfFlagON(5,Ch20B_GaidenGoneFlag)
+
+//All alive and flag off, gaiden success. Move to Ch20Bx.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle3,Ch20B_EndGaidenGot)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch20Bx)
+GOTO 9
+
+//Gaiden fail branch. Move to Ch21.
+LABEL 5
+PlayMusic(MUS_PrincessOfDestiny)
+SetBackground(BG_Castle3)
+TEXTSTART
+TEXTSHOW Ch20B_Ch20Bx_EndRoyAndGuinivereTalk
+TEXTEND
+PlayMusic(MUS_PrincessOfDestiny)
+TEXTCONT
+TEXTEND
+PlayMusic(MUS_MainThemeArrangement)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch21)
+LABEL 9
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

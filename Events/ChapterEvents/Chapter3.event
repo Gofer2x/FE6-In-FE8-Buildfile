@@ -1,0 +1,281 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch3_ChadLughTalkFlag 0x7
+
+EventPointerTable(EVENTS_Ch3,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch3,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch3,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,BishopKidsEvent,2)
+TurnEventEnemy(0x0,ThroneRoomEvent,3)
+TurnEventEnemy(0x0,LoadHardCavReinforcements,5)
+TurnEventPlayer(0x0,LoadNormalCavReinforcements,8)
+TurnEventEnemy(0x0,LoadHardCavReinforcements,10)
+TurnEventEnemy(0x0,LoadHardCavReinforcements,15)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(Ch3_ChadLughTalkFlag,ChadLughTalk,Chad,Lugh)
+END_MAIN
+
+LocationBasedEvents:
+Seize(19,4)
+Village(0x0,NorthVillageVisit,3,3)
+Village(0x0,SouthVillageVisit,19,19)
+Chest(Halberd,20,11)
+ChestMoney(3000,22,12)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(3,Ally,1) [3,19] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(1,Ally,1) [1,19] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(3,Ally,1) [4,18] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Lance Cavalier Roy Level(3,Ally,1) [2,18] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
+UNIT Bors Knight Roy Level(3,Ally,1) [5,19] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Wolt Archer Roy Level(4,Ally,1) [2,20] 0x0 0x0 0x0 0x0 [IronBow, IronBow] DummyAI
+UNIT Dieck Mercenary Roy Level(5,Ally,1) [6,20] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(2,Ally,1) [4,20] 0x0 0x0 0x0 0x0 [HandAxe, IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Lot Fighter Roy Level(3,Ally,1) [5,21] 0x0 0x0 0x0 0x0 [IronAxe, SteelAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(1,Ally,1) [3,21] 0x0 0x0 0x0 0x0 [Javelin, SlimLance, IronLance] DummyAI
+UNIT Elen Cleric Roy Level(2,Ally,1) [1,21] 0x0 0x0 0x0 0x0 [Heal, Vulnerary, Vulnerary, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [0,20] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+JustChad:
+UNIT Chad Thief Roy Level(1,Ally,0) [3,18] 0x0 0x0 0x1 REDA_3_17 [IronSword, Lockpick] DummyAI
+UNIT
+
+JustLugh:
+UNIT Lugh Mage Roy Level(1,Ally,0) [3,3] 0x0 0x0 0x1 REDA_3_4 [Fire, Vulnerary] DummyAI
+UNIT
+
+Enemies:
+UNIT GenericBernCh3 Knight Slater Level(2,Enemy,1) [10,7] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh3 Knight Slater Level(3,Enemy,1) [15,12] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh3 Knight Slater Level(3,Enemy,1) [18,12] 0x0 0x0 0x0 0x0 [IronLance, Javelin, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [9,17] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [11,17] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [14,11] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [13,4] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [7,9] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [5,11] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [14,8] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [6,13] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [16,19] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [17,21] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [1,5] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(5,Enemy,1) [0,6] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|0x50, AI4_Retreat]
+UNIT GenericBernCh3 Soldier Slater Level(3,Enemy,1) [17,13] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh3 Archer Slater Level(2,Enemy,1) [2,4] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh3 Archer Slater Level(2,Enemy,1) [9,13] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT
+
+CavReinforcements:
+UNIT GenericBernCh3 Cavalier Slater Level(1,Enemy,1) [24,8] 0x0 0x0 0x1 REDA_23_8 [IronSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh3 Cavalier Slater Level(1,Enemy,1) [24,9] 0x0 0x0 0x1 REDA_23_9 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+ThroneRoomUnits:
+UNIT Zephiel King 0x0 Level(8,Enemy,0) [19,4] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] DummyAI
+UNIT IdunnHuman ShamanF Slater Level(4,Enemy,1) [18,5] 0x0 0x0 0x0 0x0 [HandAxe] DummyAI
+UNIT Narcian WyvernLord Slater Level(4,Enemy,1) [20,5] 0x0 0x0 0x0 0x0 [IronAxe] DummyAI
+UNIT Slater Knight 0x0 Level(7,Enemy,0) [21,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Def, AI4_DontRetreat]
+UNIT GenericBernCh3 Fighter Slater Level(4,Enemy,1) [16,5] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Def, AI4_Retreat]
+UNIT GenericBernCh3 Fighter Slater Level(4,Enemy,1) [22,5] 0x0 0x0 0x0 0x0 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Def, AI4_Retreat]
+UNIT
+
+CutsceneBishop:
+UNIT Orlo Bishop 0x0 Level(1,NPC,0) [3,3] 0x0 0x0 0x1 REDA_5_4 [] DummyAI
+UNIT
+
+CutsceneKids:
+UNIT Cath Child Orlo Level(1,NPC,0) [3,3] 0x0 0x0 0x1 REDA_4_4 [] DummyAI
+UNIT Raigh ChildF Orlo Level(1,NPC,0) [3,3] 0x0 0x0 0x1 REDA_4_5 [] DummyAI
+UNIT Lilina ChildF Orlo Level(1,NPC,0) [3,3] 0x0 0x0 0x1 REDA_3_4 [] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_TheKingOfBern)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+CAM1 [19,2]
+STAL 16
+Text(BG_Castle1, Ch3_Start1)
+LOAD3 0x0 Units
+ENUN
+MUSC MUS_JoinUs
+CAM1 Roy
+STAL 16
+SetBackground(BG_Outside)
+TEXTSTART
+TEXTSHOW Ch3_Start2
+TEXTEND
+PlayMusic(MUS_WhenTheRushComes)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+LOAD1 0x0 JustChad
+ENUN
+CAM1 Roy
+#ifdef CONFIG_BuggedEarlyHMBonuses
+//Patch here on GenericBernCh3 by +5 (Slater is loaded later)
+#endif
+EndEvent
+
+BishopKidsEvent:
+PlayMusic(MUS_BeyondDistantSkies)
+CAM1 [0,0]
+CMOF
+FlashCursor(3,3)
+QuieterMusic
+Text(BG_Outside, Ch3_LughBishopCutscene)
+UnquieterMusic
+LOAD1 0x1 CutsceneBishop
+ENUN
+LOAD1 0x1 CutsceneKids
+ENUN
+MOVE 0x0 Orlo [5,0]
+MOVE 0x0 Cath [5,0]
+MOVE 0x0 Raigh [5,0]
+MOVE 0x0 Lilina [5,0]
+ENUN
+DISA Orlo
+DISA Cath
+DISA Raigh
+DISA Lilina
+STAL 64
+EndEvent
+
+NorthVillageVisit:
+SwitchMusic(MUS_JoinUs)
+
+//Special branch if Chad visits the village.
+BranchIfUnitActive(1,Chad)
+
+//Default case.
+Text(BG_Village, Ch3_LughVillage)
+GOTO 3
+
+//Chad case. Also disables the Lugh and Chad Talk.
+LABEL 1
+Text(BG_Village, Ch3_ChadLughVillage)
+FlagON(Ch3_ChadLughTalkFlag)
+
+//Either way, continue here.
+LABEL 3
+RestoreMusic
+LOAD1 0x1 JustLugh
+ENUN
+EndEvent
+
+ThroneRoomEvent:
+SwitchMusic(MUS_TheKingdomOfBern)
+STAL 16
+CAM1 [21,3]
+STAL 16
+TILECHANGE 0x6
+LOAD1 0x1 ThroneRoomUnits
+STAL 16
+MOVE 0x0 Narcian [19,5]
+ENUN
+Text(Ch3_ThroneRoom1)
+STAL 16
+MOVE 0x0 Narcian [20,5]
+ENUN
+MOVE 0x0 Zephiel [19,5]
+ENUN
+MOVE 0x0 Zephiel [25,8]
+MOVE 0x0 IdunnHuman [25,8]
+ENUN
+DISA Zephiel
+DISA IdunnHuman
+STAL 16
+MOVE 0x0 Narcian [19,4]
+ENUN
+STAL 16
+MOVE 0x0 Slater [19,5]
+ENUN
+STAL 16
+Text(Ch3_ThroneRoom2)
+STAL 16
+MOVE 0x0 Slater [18,5]
+ENUN
+MOVE 0x0 Narcian [25,9]
+ENUN
+DISA Narcian
+STAL 16
+MOVE 0x0 Slater [19,4]
+MoveByCoords(0x0,16,5,17,4)
+MoveByCoords(0x0,22,5,21,4)
+ENUN
+STAL 16
+LoadReinforcements(CavReinforcements)
+ENUN
+RestoreMusic
+EndEvent
+
+SouthVillageVisit:
+VillageEventItem(Ch3_MendHouse,BG_Village,Mend)
+
+LoadNormalCavReinforcements:
+ReinforcementEvent(CavReinforcements)
+
+LoadHardCavReinforcements:
+HardReinforcementEvent(CavReinforcements)
+
+ChadLughTalk:
+ConvoEvent(Ch3_ChadLughTalk)
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+Text(BG_Castle1, Ch3_End)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch4)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

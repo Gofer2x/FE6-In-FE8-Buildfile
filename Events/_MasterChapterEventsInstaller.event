@@ -1,0 +1,123 @@
+//Use braces here to avoid name conflicts. If you don't know what that means, surround all #includes in this files in braces like done below.
+
+#include "REDAs.event"
+
+{
+#include "ChapterEvents/Intro.event"
+}
+{
+#include "ChapterEvents/Chapter1.event"
+}
+/*
+{
+#include "ChapterEvents/Chapter2.event"
+}
+{
+#include "ChapterEvents/Chapter3.event"
+}
+{
+#include "ChapterEvents/Chapter4.event"
+}
+{
+#include "ChapterEvents/Chapter5.event"
+}
+{
+#include "ChapterEvents/Chapter6.event"
+}
+{
+#include "ChapterEvents/Chapter7.event"
+}
+{
+#include "ChapterEvents/Chapter8.event"
+}
+{
+#include "ChapterEvents/Chapter8x.event"
+}
+{
+#include "ChapterEvents/Chapter9.event"
+}
+{
+#include "ChapterEvents/Chapter10A.event"
+}
+{
+#include "ChapterEvents/Chapter11A.event"
+}
+{
+#include "ChapterEvents/Chapter10B.event"
+}
+{
+#include "ChapterEvents/Chapter11B.event"
+}
+{
+#include "ChapterEvents/Chapter12.event"
+}
+{
+#include "ChapterEvents/Chapter12x.event"
+}
+{
+#include "ChapterEvents/Chapter13.event"
+}
+{
+#include "ChapterEvents/Chapter14.event"
+}
+{
+#include "ChapterEvents/Chapter14x.event"
+}
+{
+#include "ChapterEvents/Chapter15.event"
+}
+{
+#include "ChapterEvents/Chapter16.event"
+}
+{
+#include "ChapterEvents/Chapter16x.event"
+}
+{
+#include "ChapterEvents/Chapter17A.event"
+}
+{
+#include "ChapterEvents/Chapter18A.event"
+}
+{
+#include "ChapterEvents/Chapter19A.event"
+}
+{
+#include "ChapterEvents/Chapter20A.event"
+}
+{
+#include "ChapterEvents/Chapter20Ax.event"
+}
+{
+#include "ChapterEvents/Chapter17B.event"
+}
+{
+#include "ChapterEvents/Chapter18B.event"
+}
+{
+#include "ChapterEvents/Chapter19B.event"
+}
+{
+#include "ChapterEvents/Chapter20B.event"
+}
+{
+#include "ChapterEvents/Chapter20Bx.event"
+}
+{
+#include "ChapterEvents/Chapter21.event"
+}
+{
+#include "ChapterEvents/Chapter21x.event"
+}
+{
+#include "ChapterEvents/Chapter22.event"
+}
+{
+#include "ChapterEvents/Chapter23.event"
+}
+{
+#include "ChapterEvents/Chapter24.event"
+}
+{
+#include "ChapterEvents/Final.event"
+}
+*\

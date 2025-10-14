@@ -1,0 +1,299 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch2_RoyDieckTalkFlag 0x7
+
+EventPointerTable(EVENTS_Ch2,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch2,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch2,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,MercsShowUp,2)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(Ch2_RoyDieckTalkFlag,RoyDieckTalk,Roy,Dieck)
+END_MAIN
+
+LocationBasedEvents:
+Seize(16,3)
+Village(0x0,VillageVisit,3,4)
+Vendor(VendorList,7,9)
+Armory(ArmoryList,6,1)
+House(0x0,FliersHouseVisit,6,7)
+House(0x0,WeaponTriangleHouseVisit,0,4)
+House(0x0,FortsHouseVisit,5,7)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(2,Ally,1) [2,10] 0x0 0x0 0x0 0x0 [IronSword, Rapier] DummyAI
+UNIT Marcus Paladin Roy Level(1,Ally,1) [2,8] 0x0 0x0 0x0 0x0 [SilverLance, Vulnerary, Vulnerary] DummyAI
+UNIT Alen Cavalier Roy Level(3,Ally,1) [3,9] 0x0 0x0 0x0 0x0 [IronSword, IronLance] DummyAI
+UNIT Lance Cavalier Roy Level(2,Ally,1) [3,11] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary] DummyAI
+UNIT Bors Knight Roy Level(2,Ally,1) [1,11] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Wolt Archer Roy Level(1,Ally,1) [0,10] 0x0 0x0 0x0 0x0 [IronBow] DummyAI
+UNIT
+
+JustElen:
+UNIT Elen Cleric Roy Level(2,Ally,0) [4,14] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT
+
+JustMerlinus:
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [2,9] 0x0 0x0 0x1 REDA_1_9 [] DummyAI
+UNIT
+
+DieckShanna:
+UNIT Dieck Mercenary 0x0 Level(5,Ally,0) [15,18] 0x0 0x0 0x1 REDA_13_17 [IronBlade, IronSword] DummyAI
+UNIT Shanna PegasusKnight Dieck Level(1,Ally,0) [16,18] 0x0 0x0 0x1 REDA_14_17 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT
+
+WardLot:
+UNIT Ward Fighter Dieck Level(2,Ally,0) [15,18] 0x0 0x0 0x1 REDA_12_16 [IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Lot Fighter Dieck Level(3,Ally,0) [15,18] 0x0 0x0 0x1 REDA_12_18 [IronAxe, SteelAxe, HandAxe] DummyAI
+UNIT
+
+ElenChasers1:
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [7,17] 0x0 0x0 0x1 REDA_3_14 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+ElenChasers2:
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [8,18] 0x0 0x0 0x1 REDA_5_16 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [8,18] 0x0 0x0 0x1 REDA_1_16 [IronLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+ElenChasers3:
+UNIT GenericBernCh2 Fighter Ruud Level(1,Enemy,1) [11,18] 0x0 0x0 0x1 REDA_8_17 [IronAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(1,Enemy,1) [11,18] 0x0 0x0 0x1 REDA_6_18 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(2,Enemy,1) [11,18] 0x0 0x0 0x1 REDA_4_18 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+CastleSoldier:
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [16,3] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+JustRuud:
+UNIT Ruud Knight 0x0 Level(5,Enemy,0) [16,3] 0x0 0x0 0x1 REDA_16_4 [Javelin] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT
+
+RightEnemies:
+UNIT GenericBernCh2 Fighter Ruud Level(2,Enemy,1) [17,13] 0x0 0x0 0x1 REDA_15_6 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]//[AI1_GhostOfBern, AI2_0x11, RAI_30_80|TAI_HP, AI4_Retreat] //ghost of bern, making them in range
+UNIT GenericBernCh2 Archer Ruud Level(3,Enemy,1) [18,14] 0x0 0x0 0x1 REDA_17_4 [IronBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat] //[AI1_GhostOfBern, AI2_0x12, RAI_30_80|TAI_Arch, AI4_Retreat] //ditto
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [16,15] 0x0 0x0 0x1 REDA_18_6 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(1,Enemy,1) [17,12] 0x0 0x0 0x1 REDA_17_11 [IronAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(2,Enemy,1) [18,12] 0x0 0x0 0x1 REDA_18_10 [IronAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Soldier Ruud Level(3,Enemy,1) [18,12] 0x0 0x0 0x1 REDA_17_9 [Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh2 Soldier Ruud Level(2,Enemy,1) [18,12] 0x0 0x0 0x1 REDA_18_11 [IronLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(1,Enemy,1) [18,13] 0x0 0x0 0x1 REDA_18_9 [IronAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Soldier Ruud Level(1,Enemy,1) [18,15] 0x0 0x0 0x1 REDA_18_8 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Archer Ruud Level(1,Enemy,1) [16,12] 0x0 0x0 0x1 REDA_16_7 [IronBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh2 Fighter Ruud Level(3,Enemy,1) [16,12] 0x0 0x0 0x1 REDA_16_10 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh2 Mercenary Ruud Level(3,Enemy,1) [17,9] 0x0 0x0 0x1 REDA_17_7 [IronBlade] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+CutsceneMelady:
+UNIT Melady WyvernRider 0x0 Level(10,Enemy,0) [16,3] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
+UNIT
+
+
+
+
+
+
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_TheKingdomOfBern)
+ChStartFadeFromBlack
+CAM1 [18,0]
+LOAD1 0x1 JustRuud
+ENUN
+LOAD1 0x1 CutsceneMelady
+ENUN
+Text(Ch2_Start1)
+MOVE 0x0 Ruud [17,4]
+ENUN
+MOVE 0x0 Melady [13,0]
+ENUN
+DISA Melady
+STAL 16
+MOVE 0x0 Ruud [16,4]
+ENUN
+STAL 16
+LOAD1 0x1 CastleSoldier
+PlayMusic(MUS_DeerOfThePlains)
+Text(Ch2_Start2)
+STAL 16
+MoveByCoords(0x0,16,3,17,11)
+ENUN
+MOVE 0x0 Ruud [16,3]
+ENUN
+LOAD1 0x1 RightEnemies
+ENUN
+FadeOutMusic
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 JustMerlinus
+ENUN
+STAL 16
+CAM1 Roy
+STAL 16
+MOVE 0x0 Merlinus [2,9]
+ENUN
+Text(Ch2_Start3)
+LOAD1 0x1 JustElen
+ENUN
+STAL 16
+//FE6 uses a manual move here, but this will do.
+MOVE 0x0 Elen [4,11]
+ENUN
+MOVE 0x0 Elen [3,10]
+ENUN
+TEXTSTART
+TEXTSHOW Ch2_Start4
+TEXTEND
+PlayMusic(MUS_AnUnexpectedCaller)
+TEXTCONT
+TEXTEND
+REMA
+LOAD1 0x1 ElenChasers1
+ENUN
+STAL 16
+CAM1 [0,14]
+Text(Ch2_Start5)
+LOAD1 0x1 ElenChasers2
+ENUN
+LOAD1 0x1 ElenChasers3
+ENUN
+CAM1 Roy
+Text(Ch2_Start6)
+MOVE 0x0 Merlinus [1,9]
+ENUN
+MOVE 0x0 Elen [4,10]
+ENUN
+#ifdef CONFIG_BuggedEarlyHMBonuses
+//Patch here on Ruud and GenericBernCh2 by +4
+#endif
+EndEvent
+
+MercsShowUp:
+CMON
+STAL 32
+SwitchMusic(MUS_JoinUs)
+STAL 32
+LOAD1 0x1 WardLot
+LOAD1 0x1 DieckShanna
+Text(Ch2_MercsAppear1)
+CMOF
+MOVE 0x0 Shanna [0,13]
+ENUN
+MOVE 0x0 Ward [13,16]
+ENUN
+MOVE 0x0 Lot [13,18]
+ENUN
+Text(Ch2_MercsAppear2)
+MOVE 0x0 Shanna [12,17]
+ENUN
+Text(Ch2_MercsAppear3)
+MOVE 0x0 Ward [12,16]
+MOVE 0x0 Lot [12,18]
+MOVE 0x0 Shanna [14,17]
+ENUN
+RestoreMusic
+EndEvent
+
+RoyDieckTalk:
+ConvoEvent(Ch2_RoyDieckTalk)
+
+VillageVisit:
+VillageEventItem(Ch2_ArmorslayerVillage,BG_Village,Armorslayer)
+
+FliersHouseVisit:
+HouseEvent(Ch2_FliersHouse,BG_House)
+
+FortsHouseVisit:
+HouseEvent(Ch2_FortsHouse,BG_House)
+
+WeaponTriangleHouseVisit:
+HouseEvent(Ch2_WeaponTriangleHouse,BG_House)
+
+
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch2_End1
+TEXTEND
+
+//Skip Elen's part if she is dead.
+BranchIfUnitDead(1,Elen)
+TEXTSHOW2 Ch2_End2IfElen
+TEXTEND
+
+LABEL 1
+TEXTSHOW2 Ch2_End3
+TEXTEND
+
+//Ditto.
+BranchIfUnitDead(2,Elen)
+TEXTSHOW2 Ch2_End4IfElen
+TEXTEND
+
+LABEL 2
+TEXTSHOW2 Ch2_End5
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch3)
+ENDA
+
+ArmoryList:
+SHLI IronSword IronLance Javelin IronBow
+
+VendorList:
+SHLI Vulnerary
+
+//MESSAGE Events end at offset CURRENTOFFSET
+

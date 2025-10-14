@@ -1,0 +1,386 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch7_ZelotRecruitmentFlag 0x7
+#define Ch7_NoahRecruitmentFlag 0x8
+#define Ch7_TreckRecruitmentFlag 0x9
+#define Ch7_RoyZelotExtraTalkFlag 0xA
+#define Ch7_ThroneEnemiesFlag 0xB
+#define Ch7_ThroneEnemiesZoneFlag 0xC
+//Ch7_BorsVsDebiasFlag 0x1F
+
+EventPointerTable(EVENTS_Ch7,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch7,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch7,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(0x0,ZelotAndTrecAppear,2)
+TurnEventPlayer(0x0,NoahAppears,3)
+TurnEventEnemy(0x0,DebiasWarnsAboutReinforcements,9)
+TurnEventNPC(0x0,LoadCavaliersIfBossAlive,10)
+TurnEventEnemy(0x0,LoadHardCavaliers,15)
+TurnEventEnemy(0x0,LoadHardCavaliers,20)
+TurnEventEnemy(Ch7_ThroneEnemiesFlag,LoadThroneReinforcementsIfBossAlive,1,255)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch7_ZelotRecruitmentFlag,RoyRecruitsZelot,Roy,Zelot)
+CharacterEvent(Ch7_ZelotRecruitmentFlag,NoahRecruitsZelot,Noah,Zelot)
+CharacterEvent(Ch7_ZelotRecruitmentFlag,TrecRecruitsZelot,Trec,Zelot)
+CharacterEvent(Ch7_NoahRecruitmentFlag,RoyRecruitsNoah,Roy,Noah)
+CharacterEvent(Ch7_NoahRecruitmentFlag,ZelotRecruitsNoah,Zelot,Noah)
+CharacterEvent(Ch7_TreckRecruitmentFlag,ZelotRecruitsTrec,Zelot,Trec)
+CharacterEvent(Ch7_TreckRecruitmentFlag,RoyRecruitsTrec,Roy,Trec)
+CharacterEventBothWays(Ch7_RoyZelotExtraTalkFlag,RoyAndZelotTalk,Roy,Zelot)
+END_MAIN
+
+LocationBasedEvents:
+Seize(5,1)
+Village(0x0,HeroCrestVillageVisit,19,21)
+Village(0x0,LongbowVillageVisit,1,18)
+Village(0x0,TorchStaffVillageVisit,1,24)
+Village(0x0,ElixirVillageVisit,15,15)
+Village(0x0,RedGemVillageVisit,13,18)
+Village(0x0,PhysicVillageVisit,15,21)
+Village(0x0,KillingEdgeVillageVisit,13,24)
+Village(0x0,HorseslayerVillageVisit,19,15)
+Chest(Rapier,18,1)
+Chest(Barrier,20,1)
+Vendor(VendorList,2,12)
+Armory(Armory1List,14,10)
+Armory(Armory2List,19,11)
+Armory(Armory2List,19,11)
+Door(4,8)
+Door(5,8)
+Door(17,3)
+END_MAIN
+
+MiscBasedEvents:
+AreaEvent(Ch7_ThroneEnemiesZoneFlag,EnableThroneReinforcements,0,0,22,6)
+AreaEvent(Ch7_ThroneEnemiesZoneFlag,EnableThroneReinforcements,5,7,8,7) //This range is wrong but it's also wrong in FE6.
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(6,Ally,1) [6,24] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Marcus Paladin Roy Level(3,Ally,1) [5,22] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(6,Ally,1) [6,22] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(4,Ally,1) [7,22] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(5,Ally,1) [4,23] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, Vulnerary] DummyAI
+UNIT Dieck Mercenary Roy Level(8,Ally,1) [6,23] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(5,Ally,1) [8,23] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(5,Ally,1) [5,24] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(7,Ally,1) [7,24] 0x0 0x0 0x0 0x0 [Heal, Unlock, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(3,Ally,1) [6,27] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(3,Ally,1) [5,25] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(4,Ally,1) [7,25] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [6,26] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Fire] DummyAI
+UNIT
+
+ZelotTrec:
+UNIT Zelot Paladin Roy Level(1,NPC,0) [13,15] 0x0 0x0 0x1 REDA_13_16 [SteelSword, SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|0x68, AI4_Retreat]
+UNIT Trec Cavalier Roy Level(4,NPC,0) [13,15] 0x0 0x0 0x1 REDA_14_16 [IronLance, Javelin, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|0x68, AI4_Retreat]
+UNIT
+
+JustNoah:
+UNIT Noah Cavalier Roy Level(7,NPC,0) [6,16] 0x0 0x0 0x1 REDA_6_19 [SteelSword, IronLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|0x68, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Debias Knight 0x0 Level(13,Enemy,0) [5,1] 0x0 0x0 0x0 0x0 [Spear] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh7 WyvernRider Debias Level(9,Enemy,1) [3,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh7 WyvernRider Debias Level(10,Enemy,1) [9,6] 0x0 0x0 0x0 0x0 [SteelLance, RedGem] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh7 Priest Debias Level(7,Enemy,1) [8,8] 0x0 0x0 0x0 0x0 [Physic, Vulnerary] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericRebelCh7 Priest Debias Level(7,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [Physic, Vulnerary] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericRebelCh7 Mercenary Debias Level(6,Enemy,1) [3,14] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Mercenary Debias Level(6,Enemy,1) [11,14] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(7,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(6,Enemy,1) [11,18] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(6,Enemy,1) [4,11] 0x0 0x0 0x0 0x0 [Javelin, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(6,Enemy,1) [10,11] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Mage Debias Level(6,Enemy,1) [6,5] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Def, AI4_Retreat]
+UNIT GenericRebelCh7 Mage Debias Level(6,Enemy,1) [15,8] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Def, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier Debias Level(9,Enemy,1) [5,10] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier Debias Level(9,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier Debias Level(7,Enemy,1) [0,9] 0x0 0x0 0x0 0x0 [IronSword, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [17,13] 0x0 0x0 0x0 0x0 [Javelin, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [17,19] 0x0 0x0 0x0 0x0 [Javelin, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(7,Enemy,1) [19,16] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(8,Enemy,1) [19,22] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(10,Enemy,1) [0,13] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(9,Enemy,1) [19,13] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT
+
+HardExtraEnemies:
+UNIT GenericBernCh7 WyvernRider Debias Level(8,Enemy,1) [13,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier Debias Level(7,Enemy,1) [6,12] 0x0 0x0 0x0 0x0 [IronSword, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier Debias Level(7,Enemy,1) [6,14] 0x0 0x0 0x0 0x0 [IronSword, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(7,Enemy,1) [17,16] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Knight Debias Level(7,Enemy,1) [17,22] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+SouthCavReinforcements:
+UNIT GenericRebelCommanderCh7 Cavalier 0x0 Level(15,Enemy,1) [7,27] 0x0 0x0 0x1 REDA_6_26 [SilverLance] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier GenericRebelCommanderCh7 Level(7,Enemy,1) [6,27] 0x0 0x0 0x1 REDA_5_26 [IronLance, Javelin] [AI1_InRangeOfCommander, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier GenericRebelCommanderCh7 Level(5,Enemy,1) [8,27] 0x0 0x0 0x1 REDA_7_26 [SteelLance] [AI1_InRangeOfCommander, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericRebelCh7 Cavalier GenericRebelCommanderCh7 Level(5,Enemy,1) [9,27] 0x0 0x0 0x1 REDA_8_26 [SteelLance] [AI1_InRangeOfCommander, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT
+
+ThroneReinforcements:
+UNIT GenericRebelCh7 Mage Debias Level(7,Enemy,1) [3,0] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(9,Enemy,1) [2,0] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [1,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [0,0] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Mage Debias Level(7,Enemy,1) [7,0] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Archer Debias Level(7,Enemy,1) [8,0] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [9,0] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericRebelCh7 Soldier Debias Level(11,Enemy,1) [10,0] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+CutsceneLegance:
+UNIT Legance General 0x0 Level(1,Enemy,0) [11,0] 0x0 0x0 0x1 REDA_5_1 [SteelLance, Javelin] DummyAI
+UNIT
+
+CutsceneFir:
+UNIT Fir MyrmidonF 0x0 Level(1,NPC,0) [6,16] 0x0 0x0 0x1 REDA_6_17 [WoDao, Vulnerary] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DeerOfThePlains)
+LOAD1 0x1 Enemies
+BranchIfNotHard(1)
+LOAD1 0x1 HardExtraEnemies
+LABEL 1
+ENUN
+ChStartFadeFromBlack
+FlagON(Ch7_RoyZelotExtraTalkFlag)
+FlagON(Ch7_ThroneEnemiesFlag)
+MOVE 0x0 Debias [4,2]
+ENUN
+STAL 16
+LOAD1 0x1 CutsceneLegance
+ENUN
+MOVE 0x0 Debias [5,2]
+ENUN
+Text(Ch7_Start1)
+MOVE 0x0 Debias [4,2]
+ENUN
+MOVE 0x0 Legance [8,0]
+ENUN
+DISA Legance
+MOVE 0x0 Debias [5,1]
+ENUN
+STAL 16
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+STAL 32
+Text(BG_Outside,Ch7_Start2)
+GotoPrepScreen
+
+ZelotAndTrecAppear:
+SwitchMusic(MUS_BindingTies)
+CAM1 [15,15]
+STAL 16
+LoadReinforcements(ZelotTrec)
+STAL 16
+Text(Ch7_ZelotAndTrecAppear)
+RestoreMusic
+EndEvent
+
+NoahAppears:
+SwitchMusic(MUS_BindingTies)
+CAM1 [8,16]
+CMOF
+STAL 16
+FlashCursor(6,16,60)
+Text(BG_Arena,Ch7_NoahAppears)
+LOAD1 0x1 CutsceneFir
+ENUN
+STAL 32
+MOVE 0x0 Fir [7,28]
+ENUN
+DISA Fir
+LOAD1 0x1 JustNoah
+ENUN
+RestoreMusic
+EndEvent
+
+DebiasWarnsAboutReinforcements:
+BranchIfBossDead(9)
+CAM1 [5,1]
+FlashCursor(5,1,60)
+STAL 16
+Text(Ch7_DebiasTalksAboutReinforcements)
+LABEL 9
+EndEvent
+
+LoadCavaliersIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(SouthCavReinforcements)
+LABEL 9
+EndEvent
+
+LoadHardCavaliers:
+HardReinforcementEvent(SouthCavReinforcements)
+
+EnableThroneReinforcements:
+PlayerInRange
+FlagOFF(Ch7_ThroneEnemiesFlag)
+EndEvent
+
+LoadThroneReinforcementsIfBossAlive:
+BranchIfBossDead(9)
+LoadReinforcements(ThroneReinforcements)
+ENUN
+LABEL 9
+EndEvent
+
+RoyRecruitsZelot:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_RoyRecruitsZelot)
+BecomeAlly(Zelot)
+RestoreMusic
+EndEvent
+
+NoahRecruitsZelot:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_NoahRecruitsZelot)
+BecomeAlly(Zelot)
+RestoreMusic
+FlagOFF(Ch7_RoyZelotExtraTalkFlag)
+EndEvent
+
+TrecRecruitsZelot:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_TrecRecruitsZelot)
+BecomeAlly(Zelot)
+RestoreMusic
+FlagOFF(Ch7_RoyZelotExtraTalkFlag)
+EndEvent
+
+RoyRecruitsNoah:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_RoyRecruitsNoah)
+BecomeAlly(Noah)
+RestoreMusic
+EndEvent
+
+ZelotRecruitsNoah:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_ZelotRecruitsNoah)
+BecomeAlly(Noah)
+RestoreMusic
+EndEvent
+
+ZelotRecruitsTrec:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_ZelotRecruitsTrec)
+BecomeAlly(Trec)
+RestoreMusic
+EndEvent
+
+RoyRecruitsTrec:
+SwitchMusic(MUS_JoinUs)
+Text(Ch7_RoyRecruitsTrec)
+BecomeAlly(Trec)
+RestoreMusic
+EndEvent
+
+RoyAndZelotTalk:
+QuieterMusic
+Text(Ch7_RoyRecruitsZelot)
+UnquieterMusic
+EndEvent
+
+HeroCrestVillageVisit:
+VillageEventItem(Ch7_HeroCrestVillage,BG_Village,HeroCrest)
+
+LongbowVillageVisit:
+VillageEventItem(Ch7_LongbowVillage,BG_Village,Longbow)
+
+TorchStaffVillageVisit:
+VillageEventItem(Ch7_TorchStaffVillage,BG_Village,TorchStaff)
+
+ElixirVillageVisit:
+VillageEventItem(Ch7_ElixirVillage,BG_Village,Elixir)
+
+RedGemVillageVisit:
+VillageEventItem(Ch7_RedGemVillage,BG_Village,RedGem)
+
+PhysicVillageVisit:
+VillageEventItem(Ch7_PhysicVillage,BG_Village,Physic)
+
+KillingEdgeVillageVisit:
+VillageEventItem(Ch7_KillingEdgeVillage,BG_Village,KillingEdge)
+
+HorseslayerVillageVisit:
+VillageEventItem(Ch7_HorseslayerVillage,BG_Village,Horseslayer)
+
+
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle2)
+TEXTSTART
+TEXTSHOW Ch7_End
+TEXTEND
+PlayMusic(MUS_CogsOfFate)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch8)
+ENDA
+
+VendorList:
+SHLI Fire Thunder Heal Mend Vulnerary DoorKey ChestKey5Uses
+
+Armory1List:
+SHLI SlimSword IronSword SteelSword IronBlade IronAxe SteelAxe HandAxe
+
+Armory2List:
+SHLI SlimLance IronLance SteelLance Javelin IronBow SteelBow
+
+
+
+//MESSAGE Events end at offset CURRENTOFFSET

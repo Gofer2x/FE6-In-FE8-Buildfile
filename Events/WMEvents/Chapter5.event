@@ -1,0 +1,8 @@
+WorldMapPointerTable(CHAPTER_Ch5,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch5,CurrentNodeSelect)
+
+AfterPrevious:
+WMEVENT_UnlockNextNodeAfterChapter(NODE_Ch4,ROAD_Ch4ToCh5)
+
+CurrentNodeSelect:
+WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch4,NODE_Ch5)

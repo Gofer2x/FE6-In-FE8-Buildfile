@@ -1,0 +1,316 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch14_TreasureSilenceFlag 0x7
+#define Ch14_TreasureTalismanFlag 0x8
+#define Ch14_TreasureBootsFlag 0x9
+#define Ch14_TreasureSilverBladeFlag 0xA
+#define Ch14_TreasureSilverCardFlag 0xB
+#define Ch14_TreasureWarpFlag 0xC
+#define Ch14_SophiaGuidingRingFlag 0xD
+#define Ch14_GaidenGoneFlag 0x20
+
+EventPointerTable(EVENTS_Ch14,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch14,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch14,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,BanditsAppear,7)
+TurnEventEnemy(0x0,LoadSouthWestBandits,8,3)
+TurnEventEnemy(0x0,LoadHardSouthEastBandits,13)
+TurnEventEnemy(0x0,LoadHardSouthEastBandits,15)
+TurnEventEnemy(0x0,LoadHardSouthEastBandits,17)
+TurnEventEnemy(0x0,LoadHardNorthBandits,14)
+TurnEventEnemy(0x0,LoadHardNorthBandits,16)
+TurnEventEnemy(0x0,LoadHardNorthBandits,18)
+TurnEventPlayer(Ch14_GaidenGoneFlag,GaidenGone,26)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(27,3)
+Armory(ArmoryList,26,4)
+Vendor(VendorList,29,4)
+House(0x0,DelphiHouseVisit,26,6)
+House(0x0,BonesTreasureHouseVisit,25,6)
+END_MAIN
+
+MiscBasedEvents:
+AreaEvent(Ch14_TreasureSilenceFlag,TreasureSilence,12,13,18,18)
+AreaEvent(Ch14_TreasureTalismanFlag,TreasureTalisman,0,10,4,15)
+AreaEvent(Ch14_TreasureBootsFlag,TreasureBoots,10,8,14,10)
+AreaEvent(Ch14_TreasureSilverBladeFlag,TreasureSilverBlade,25,13,31,16)
+AreaEvent(Ch14_TreasureSilverCardFlag,TreasureSilverCard,1,1,5,5)
+AreaEvent(Ch14_TreasureWarpFlag,TreasureWarp,23,19,31,21)
+AreaEvent(Ch14_SophiaGuidingRingFlag,SophiaGuidingRing,26,7,28,10)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(15,Ally,1) [8,14] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(9,Ally,1) [9,13] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(17,Ally,1) [9,15] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(13,Ally,1) [7,15] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [7,13] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(4,Ally,1) [8,12] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Shanna PegasusKnight Roy Level(17,Ally,1) [10,14] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, SilverLance, Vulnerary] DummyAI
+UNIT Clarine Troubadour Roy Level(18,Ally,1) [8,16] 0x0 0x0 0x0 0x0 [Heal, Berserk, Restore, TorchStaff] DummyAI
+UNIT Melady WyvernRiderF Roy Level(10,Ally,1) [6,14] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, IronLance, Vulnerary] DummyAI
+UNIT Dorothy ArcherF Roy Level(18,Ally,1) [6,12] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, TorchStaff] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [6,16] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+
+CeciliaSophia:
+UNIT Cecilia Valkyrie Roy Level(1,Ally,0) [10,13] 0x0 0x0 0x1 REDA_10_12 [Aircalibur, Mend] DummyAI
+UNIT Sophia ShamanF Roy Level(1,Ally,0) [9,16] 0x0 0x0 0x1 REDA_9_17 [Flux] DummyAI
+UNIT
+
+Enemies:
+UNIT Randy Hero 0x0 Level(10,Enemy,0) [27,3] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh14 Hero Randy Level(3,Enemy,1) [19,9] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(17,Enemy,1) [16,7] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(16,Enemy,1) [15,6] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(15,Enemy,1) [15,8] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(16,Enemy,1) [17,9] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Weird1, AI4_Retreat]
+UNIT GenericBernCh14 Hero Randy Level(5,Enemy,1) [27,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(15,Enemy,1) [25,9] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(16,Enemy,1) [23,9] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(16,Enemy,1) [25,11] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mercenary Randy Level(14,Enemy,1) [23,11] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Weird1, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(15,Enemy,1) [28,14] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh14 FireManakete Randy Level(2,Enemy,1) [29,14] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(14,Enemy,1) [29,15] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(14,Enemy,1) [15,1] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(15,Enemy,1) [11,3] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(15,Enemy,1) [23,20] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh14 FireManakete Randy Level(3,Enemy,1) [24,20] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh14 FireManakete Randy Level(1,Enemy,1) [5,7] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Mage Randy Level(15,Enemy,1) [18,16] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 Priest Randy Level(17,Enemy,1) [24,10] 0x0 0x0 0x0 0x0 [Mend, Silence] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 Priest Randy Level(17,Enemy,1) [16,8] 0x0 0x0 0x0 0x0 [Recover] [AI1_HealAllies, AI2_Charge, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 Bishop Randy Level(4,Enemy,1) [28,5] 0x0 0x0 0x0 0x0 [Lightning, Mend, Sleep] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernLord Randy Level(3,Enemy,1) [4,2] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [3,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [5,3] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [4,1] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernLord Randy Level(3,Enemy,1) [29,18] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [28,19] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [28,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Reckless, AI4_Retreat]
+UNIT GenericBernCh14 WyvernRider Randy Level(14,Enemy,1) [30,18] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Reckless, AI4_Retreat]
+UNIT
+
+BrigandReinforcements1:
+UNIT Rose Berserker 0x0 Level(6,Enemy,1) [1,16] 0x0 0x0 0x1 REDA_1_18 [DevilAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(16,Enemy,1) [2,14] 0x0 0x0 0x1 REDA_2_16 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(17,Enemy,1) [2,15] 0x0 0x0 0x1 REDA_2_17 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements2:
+UNIT GenericBanditCh14 Brigand Rose Level(16,Enemy,1) [2,16] 0x0 0x0 0x1 REDA_2_18 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(15,Enemy,1) [2,17] 0x0 0x0 0x1 REDA_2_19 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements3:
+UNIT Maggie Berserker 0x0 Level(5,Enemy,1) [7,17] 0x0 0x0 0x1 REDA_7_21 [Halberd] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(16,Enemy,1) [6,18] 0x0 0x0 0x1 REDA_6_20 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(16,Enemy,1) [7,18] 0x0 0x0 0x1 REDA_7_20 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcements4:
+UNIT GenericBanditCh14 Brigand Maggie Level(17,Enemy,1) [8,18] 0x0 0x0 0x1 REDA_8_20 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(14,Enemy,1) [9,18] 0x0 0x0 0x1 REDA_9_20 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcementsNorth:
+UNIT GenericBanditCh14 Brigand Rose Level(16,Enemy,1) [7,0] 0x0 0x0 0x1 REDA_7_1 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(17,Enemy,1) [8,0] 0x0 0x0 0x1 REDA_8_1 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(17,Enemy,1) [9,0] 0x0 0x0 0x1 REDA_9_1 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(18,Enemy,1) [10,0] 0x0 0x0 0x1 REDA_10_1 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcementsSouthEast:
+UNIT GenericBanditCh14 Brigand Rose Level(16,Enemy,1) [31,19] 0x0 0x0 0x1 REDA_30_19 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(17,Enemy,1) [31,20] 0x0 0x0 0x1 REDA_30_20 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(17,Enemy,1) [31,21] 0x0 0x0 0x1 REDA_30_21 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(18,Enemy,1) [31,17] 0x0 0x0 0x1 REDA_30_17 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+BrigandReinforcementsSouthWest:
+UNIT GenericBanditCh14 Brigand Rose Level(16,Enemy,1) [0,15] 0x0 0x0 0x1 REDA_0_16 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Rose Level(17,Enemy,1) [0,17] 0x0 0x0 0x1 REDA_0_18 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(17,Enemy,1) [9,20] 0x0 0x0 0x1 REDA_9_21 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh14 Brigand Maggie Level(18,Enemy,1) [11,19] 0x0 0x0 0x1 REDA_11_21 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_AnUnexpectedCaller)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlashCursor(27,1,60)
+Text(BG_Temple1,Ch14_Start1)
+PlayMusic(MUS_MessengerFromTheDarkness)
+CAM1 Randy
+FlashCursor(27,3,60)
+Text(BG_Castle3,Ch14_Start2)
+FadeOutMusic
+PlayMusic(BGS_Envsound_Windgusts)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+Text(Ch14_Start3)
+LOAD1 0x1 CeciliaSophia
+ENUN
+FadeOutMusic
+GotoPrepScreen
+
+BanditsAppear:
+SwitchMusic(MUS_HappinessAbounds)
+LoadReinforcements(BrigandReinforcements1)
+LoadReinforcements(BrigandReinforcements2)
+LoadReinforcements(BrigandReinforcements3)
+LoadReinforcements(BrigandReinforcements4)
+FlashCursor(Maggie,60)
+Text(Ch14_BanditsAppear)
+RestoreMusic
+EndEvent
+
+LoadSouthWestBandits:
+ReinforcementEvent(BrigandReinforcementsSouthWest)
+
+LoadHardNorthBandits:
+HardReinforcementEvent(BrigandReinforcementsNorth)
+
+LoadHardSouthEastBandits:
+HardReinforcementEvent(BrigandReinforcementsSouthEast)
+
+GaidenGone:
+VCWF 0x0
+WEA1 0x0
+STAL 128
+CAM1 Roy
+QuieterMusic
+Text(Ch14_GaidenGone1)
+UnquieterMusic
+BranchIfBossDead(9)
+CAM1 [27,3]
+FlashCursor(Randy,60)
+QuieterMusic
+Text(Ch14_GaidenGone2)
+UnquieterMusic
+LABEL 9
+EndEvent
+
+DelphiHouseVisit:
+HouseEvent(Ch14_DelphiHouse,BG_House)
+
+BonesTreasureHouseVisit:
+HouseEvent(Ch14_BonesTreasureHouse,BG_House)
+
+TreasureSilence:
+PlayerInRange
+DesertTreasure(Silence,32750)
+EndEvent
+
+TreasureTalisman:
+PlayerInRange
+DesertTreasure(Talisman,32751)
+EndEvent
+
+TreasureBoots:
+PlayerInRange
+DesertTreasure(Boots,32752)
+EndEvent
+
+TreasureSilverBlade:
+PlayerInRange
+DesertTreasure(SilverBlade,32753)
+EndEvent
+
+TreasureSilverCard:
+PlayerInRange
+DesertTreasure(SilverCard,32754)
+EndEvent
+
+TreasureWarp:
+PlayerInRange
+DesertTreasure(Warp,32755)
+EndEvent
+
+SophiaGuidingRing:
+UnitInRange(Sophia)
+Text(Ch14_SophiaFindsGuidingRing)
+GiveItemToCharacter(Sophia,GuidingRing)
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_DistantUtopia)
+
+//Branch to gaiden fail if Sophia is dead or Gaiden Fail flag is ON.
+BranchIfUnitDead(8,Sophia)
+BranchIfFlagON(8,Ch14_GaidenGoneFlag)
+
+//If Sophia alive and flag off, go to Ch14x.
+Text(BG_Castle3,Ch14_EndGaidenGot)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch14x)
+GOTO 9
+
+//Gaiden fail, go to Ch15.
+LABEL 8
+Text(BG_Castle3,Ch14_Ch14x_EndElder)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch15)
+
+LABEL 9
+ENDA
+
+ArmoryList:
+SHLI SteelSword SteelBlade SteelLance SteelAxe SteelBow
+
+VendorList:
+SHLI Elfire Aircalibur Lightning Flux Nosferatu Mend Restore Torch PureWater
+
+//MESSAGE Events end at offset CURRENTOFFSET

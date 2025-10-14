@@ -1,0 +1,245 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+//These are not set up yet. TODO
+#define Ch21x_WestLeftChestTrappedFlag 0x7
+#define Ch21x_WestRightChestTrappedFlag 0x8
+#define Ch21x_CenterLeftChestTrappedFlag 0x9
+#define Ch21x_CenterRightChestTrappedFlag 0xA
+#define Ch21x_EastLeftChestTrappedFlag 0xB
+#define Ch21x_EastRightChestTrappedFlag 0xC
+
+
+EventPointerTable(EVENTS_Ch21x,ThisChapter)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(15,1)
+//Just real chests for now. TODO
+Chest(Elixir,3,1)
+Chest(Elixir,6,1)
+Chest(Elixir,14,12)
+Chest(Elixir,16,12)
+Chest(Elixir,25,1)
+Chest(Elixir,29,1)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(7,Ally,1) [15,27] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Marcus Paladin Roy Level(6,Ally,1) [14,26] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(8,Ally,1) [16,26] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Lance Cavalier Roy Level(5,Ally,1) [14,27] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(10,Ally,1) [16,27] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Rutger Myrmidon Roy Level(6,Ally,1) [13,26] 0x0 0x0 0x0 0x0 [KillingEdge] DummyAI
+UNIT Astolfo Thief Roy Level(10,Ally,1) [17,26] 0x0 0x0 0x0 0x0 [Lockpick, IronSword] DummyAI
+UNIT Barthe Knight Roy Level(9,Ally,1) [13,25] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
+UNIT Chad Thief Roy Level(10,Ally,1) [17,25] 0x0 0x0 0x0 0x0 [Lockpick, IronSword] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [15,28] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Peres Druid 0x0 Level(17,Enemy,0) [15,1] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh21x Druid 0x0 Level(10,Enemy,1) [13,2] 0x0 0x0 0x0 0x0 [Fenrir, Physic] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Druid 0x0 Level(10,Enemy,1) [17,2] 0x0 0x0 0x0 0x0 [Fenrir, Physic] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(20,Enemy,1) [4,28] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(10,Enemy,1) [0,27] 0x0 0x0 0x0 0x0 [BraveSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(20,Enemy,1) [4,26] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(8,Enemy,1) [2,27] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Knight 0x0 Level(19,Enemy,1) [0,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Knight 0x0 Level(19,Enemy,1) [30,20] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(10,Enemy,1) [30,13] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(7,Enemy,1) [29,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(10,Enemy,1) [0,13] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(7,Enemy,1) [1,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(18,Enemy,1) [27,13] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(7,Enemy,1) [27,20] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x General 0x0 Level(12,Enemy,1) [26,19] 0x0 0x0 0x0 0x0 [SilverLance, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(7,Enemy,1) [4,19] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x General 0x0 Level(12,Enemy,1) [3,20] 0x0 0x0 0x0 0x0 [SilverLance, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(19,Enemy,1) [26,26] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(10,Enemy,1) [30,27] 0x0 0x0 0x0 0x0 [SilverSword, Vulnerary] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(20,Enemy,1) [26,28] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(8,Enemy,1) [28,27] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(18,Enemy,1) [3,14] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(7,Enemy,1) [3,17] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Knight 0x0 Level(19,Enemy,1) [24,9] 0x0 0x0 0x0 0x0 [Axereaver, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x General 0x0 Level(12,Enemy,1) [29,6] 0x0 0x0 0x0 0x0 [Horseslayer, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Knight 0x0 Level(19,Enemy,1) [23,9] 0x0 0x0 0x0 0x0 [Axereaver, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(19,Enemy,1) [6,9] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(12,Enemy,1) [2,6] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Shaman 0x0 Level(18,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Shaman 0x0 Level(19,Enemy,1) [23,19] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Shaman 0x0 Level(18,Enemy,1) [5,5] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Shaman 0x0 Level(19,Enemy,1) [29,5] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(20,Enemy,1) [27,2] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Mercenary 0x0 Level(20,Enemy,1) [7,9] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Druid 0x0 Level(6,Enemy,1) [11,11] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x General 0x0 Level(10,Enemy,1) [20,2] 0x0 0x0 0x0 0x0 [SilverLance, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Berserker 0x0 Level(10,Enemy,1) [10,2] 0x0 0x0 0x0 0x0 [DevilAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Druid 0x0 Level(10,Enemy,1) [20,9] 0x0 0x0 0x0 0x0 [Fenrir] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Shaman 0x0 Level(19,Enemy,1) [19,6] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(10,Enemy,1) [10,9] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Archer 0x0 Level(19,Enemy,1) [11,6] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21x Sniper 0x0 Level(6,Enemy,1) [19,11] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21x Hero 0x0 Level(10,Enemy,1) [15,6] 0x0 0x0 0x0 0x0 [BraveSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21x Druid 0x0 Level(8,Enemy,1) [15,10] 0x0 0x0 0x0 0x0 [Silence, Fenrir, Physic] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+WestLeftChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [3,1] 0x0 0x0 0x1 REDA_3_0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+WestRightChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [6,1] 0x0 0x0 0x1 REDA_6_0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+CenterLeftChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [14,12] 0x0 0x0 0x1 REDA_14_11 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+CenterRightChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [16,12] 0x0 0x0 0x1 REDA_16_11 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+EastLeftChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [25,1] 0x0 0x0 0x1 REDA_25_0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+EastRightChestManakete:
+UNIT GenericManaketeCh21x FireManakete 0x0 Level(12,Enemy,1) [29,1] 0x0 0x0 0x1 REDA_29_0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_LegendaryInheritance)
+LOAD1 0x1 Enemies
+ENUN
+//FlagON(Ch21x_WestLeftChestTrappedFlag)
+//FlagON(Ch21x_WestRightChestTrappedFlag)
+//FlagON(Ch21x_CenterLeftChestTrappedFlag)
+//FlagON(Ch21x_CenterLeftChestTrappedFlag)
+//FlagON(Ch21x_EastLeftChestTrappedFlag)
+//FlagON(Ch21x_EastRightChestTrappedFlag)
+ChStartFadeFromBlack
+CAM1 [15,1]
+FlashCursor(15,1,60)
+Text(BG_Temple2White,Ch21x_Start)
+PlayMusic(MUS_ScarsOfTheScouring)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_Temple2White,Ch21x_Start2Melady)
+GotoPrepScreen
+
+//This won't do. TODO
+WestLeftChest:
+BranchIfFlagON(3,Ch21x_WestLeftChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(WestLeftChestManakete)
+LABEL 9
+EndEvent
+
+WestRightChest:
+BranchIfFlagON(3,Ch21x_WestRightChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(WestRightChestManakete)
+LABEL 9
+EndEvent
+
+CenterLeftChest:
+BranchIfFlagON(3,Ch21x_CenterLeftChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(CenterLeftChestManakete)
+LABEL 9
+EndEvent
+
+CenterRightChest:
+BranchIfFlagON(3,Ch21x_CenterRightChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(CenterRightChestManakete)
+LABEL 9
+EndEvent
+
+EastLeftChest:
+BranchIfFlagON(3,Ch21x_EastLeftChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(EastLeftChestManakete)
+LABEL 9
+EndEvent
+
+EastRightChest:
+BranchIfFlagON(3,Ch21x_EastRightChestTrappedFlag)
+GiveItemToCurrent(Elixir)
+GOTO 9
+LABEL 3
+LoadReinforcements(EastRightChestManakete)
+LABEL 9
+EndEvent
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+Text(BG_Temple2White,Ch21x_End)
+GiveItemToCharacter(Roy,Apocalypse)
+STAL 64
+ReviveMerlinusIfConfig
+CALL EVENT_BindingBladeAndRoyPromo 
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

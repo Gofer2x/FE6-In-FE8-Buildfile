@@ -1,0 +1,441 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch16_RoyCathTalkFlag 0x7
+#define Ch16_MeladyZeissTalkFlag 0x8
+#define Ch16_CeciliaDouglasTalkFlag 0x9
+#define Ch16_KleinDouglasTalkFlag 0xA
+#define Ch16_LarumDouglasTalkFlag 0xB
+#define Ch16_ElffinDouglasTalkFlag 0xC
+#define Ch16_HughRecruitmentFlag 0xD
+
+//Ch16_NarcianVsMeladyFlag 0x1B
+//Ch16_NarcianVsClarineFlag 0x1C
+//Ch16_NarcianVsZeissFlag 0x1D
+//Ch16_NarcianVsCeciliaFlag 0x1E
+//Ch16_NarcianVsPercevalFlag 0x1F
+
+//Ch16_DouglasDeathFlag 0x20
+
+EventPointerTable(EVENTS_Ch16,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch16,Ch16EscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch16,0x0)
+
+ALIGN 4
+
+Ch16EscapePoints:
+EscapePoint(6,22,NoMove)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,GalleAndZeissTalk,1)
+TurnEventEnemy(0x0,HughComplains,2)
+TurnEventEnemy(0x0,CathAndAThiefAppear,10)
+TurnEventEnemy(0x0,LoadBoltingMage,12)
+TurnEventEnemy(0x0,LoadStairsReinforcements,11,5)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch16_MeladyZeissTalkFlag,MeladyRecruitsZeiss,Melady,Zeiss)
+CharacterEvent(Ch16_CeciliaDouglasTalkFlag,CeciliaDouglasTalk,Cecilia,Douglas)
+CharacterEvent(Ch16_KleinDouglasTalkFlag,KleinDouglasTalk,Klein,Douglas)
+CharacterEvent(Ch16_LarumDouglasTalkFlag,LarumDouglasTalk,Larum,Douglas)
+CharacterEvent(Ch16_ElffinDouglasTalkFlag,ElffinDouglasTalk,Elffin,Douglas)
+CharacterEvent(Ch16_HughRecruitmentFlag,HughRecruitment,Roy,Hugh)
+CharacterEvent(Ch16_RoyCathTalkFlag,EVENT_CathRecruitment,Roy,Cath)
+END_MAIN
+
+LocationBasedEvents:
+Seize(14,3)
+Chest(Recover,30,11)
+Chest(Restore,30,9)
+Chest(BraveLance,30,6)
+Chest(Bolting,30,3)
+ChestMoney(5000,28,2)
+Chest(Rescue,3,23)
+Chest(SilverBow,2,22)
+Chest(HeroCrest,1,20)
+Chest(KnightCrest,2,18)
+Chest(Berserk,1,16)
+SecretShop(SecretShopList,1,0)
+Door(5,15)
+Door(11,15)
+Door(12,15)
+Door(27,4)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(17,Ally,1) [10,30] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, SilverSword] DummyAI
+UNIT Marcus Paladin Roy Level(12,Ally,1) [8,29] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(19,Ally,1) [9,29] 0x0 0x0 0x0 0x0 [SteelSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(16,Ally,1) [11,29] 0x0 0x0 0x0 0x0 [IronLance, Javelin, SilverLance, ChestKey5Uses] DummyAI
+UNIT Klein Sniper Roy Level(5,Ally,1) [12,30] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, SteelBow, KillerBow] DummyAI
+UNIT Echidna HeroF Roy Level(6,Ally,1) [8,31] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Cecilia Valkyrie Roy Level(1,Ally,1) [9,31] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Heal, Restore] DummyAI
+UNIT Bartre Warrior Roy Level(2,Ally,0) [11,31] 0x0 0x0 0x0 0x0 [KillerAxe, IronAxe, HandAxe, Halberd] DummyAI
+UNIT Larum Dancer Roy Level(1,Ally,1) [22,29] 0x0 0x0 0x0 0x0 [PureWater, ChestKey5Uses, Vulnerary] DummyAI
+UNIT Melady WyvernRiderF Roy Level(12,Ally,1) [24,29] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, IronLance, SilverLance] DummyAI
+UNIT Lugh Mage Roy Level(17,Ally,1) [21,30] 0x0 0x0 0x0 0x0 [Fire, Thunder, Elfire, Aircalibur] DummyAI
+UNIT Sin Nomad Roy Level(17,Ally,1) [23,30] 0x0 0x0 0x0 0x0 [IronBow, Longbow, SteelBow, BraveBow] DummyAI
+UNIT Chad Thief Roy Level(16,Ally,1) [22,31] 0x0 0x0 0x0 0x0 [KillingEdge, Lockpick] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [24,31] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Narcian WyvernLord 0x0 Level(10,Enemy,0) [14,3] 0x0 0x0 0x0 0x0 [Runesword, DelphiShield, BlueGem] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh16 Mage 0x0 Level(16,Enemy,1) [15,3] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh16 Mage 0x0 Level(17,Enemy,1) [13,3] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericManaketeCh16 FireManakete 0x0 Level(9,Enemy,1) [27,3] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh16 FireManakete 0x0 Level(8,Enemy,1) [7,8] 0x0 0x0 0x0 0x0 [Firestone, RedGem] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh16 Knight 0x0 Level(17,Enemy,1) [14,10] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh16 Knight 0x0 Level(18,Enemy,1) [23,3] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh16 Knight 0x0 Level(17,Enemy,1) [12,5] 0x0 0x0 0x0 0x0 [Javelin, SteelLance] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh16 Knight 0x0 Level(18,Enemy,1) [11,14] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh16 Knight 0x0 Level(18,Enemy,1) [12,16] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh16 Bishop 0x0 Level(1,Enemy,1) [8,13] 0x0 0x0 0x0 0x0 [Purge, Mend] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh16 Bishop 0x0 Level(1,Enemy,1) [6,6] 0x0 0x0 0x0 0x0 [Lightning, Physic] [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Paladin 0x0 Level(1,Enemy,1) [8,18] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mage 0x0 Level(17,Enemy,1) [7,19] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mage 0x0 Level(17,Enemy,1) [9,19] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mage 0x0 Level(16,Enemy,1) [17,13] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mage 0x0 Level(16,Enemy,1) [20,16] 0x0 0x0 0x0 0x0 [Aircalibur, RedGem] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mage 0x0 Level(17,Enemy,1) [29,23] 0x0 0x0 0x0 0x0 [Bolting, Vulnerary] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(18,Enemy,1) [27,13] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(18,Enemy,1) [7,17] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Weird1, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(18,Enemy,1) [9,17] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(18,Enemy,1) [17,24] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh16 Fighter 0x0 Level(15,Enemy,1) [16,17] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Fighter 0x0 Level(16,Enemy,1) [25,9] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Fighter 0x0 Level(16,Enemy,1) [27,9] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Fighter 0x0 Level(16,Enemy,1) [27,18] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Bishop 0x0 Level(2,Enemy,1) [28,11] 0x0 0x0 0x0 0x0 [Lightning, Mend, Silence] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Bishop 0x0 Level(1,Enemy,1) [22,6] 0x0 0x0 0x0 0x0 [Lightning, Physic] [AI1_HealAllies, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Sniper 0x0 Level(6,Enemy,1) [5,13] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT GenericEtruriaCh16 Sniper 0x0 Level(5,Enemy,1) [5,14] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Arch, AI4_Retreat]
+UNIT Douglas General 0x0 Level(10,Enemy,0) [3,6] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_Douglas, AI2_Douglas, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT Roartz General 0x0 Level(10,Enemy,0) [4,7] 0x0 0x0 0x0 0x0 [Spear] DummyAI
+UNIT Arcardo Paladin 0x0 Level(10,Enemy,0) [3,8] 0x0 0x0 0x0 0x0 [SilverAxe, Javelin] DummyAI
+UNIT Hugh Mage 0x0 Level(15,Enemy,0) [22,11] 0x0 0x0 0x0 0x0 [Elfire, MemberCard, Elixir] [AI1_InRange, AI2_MoveTowardsRoy, RAI_80_100|TAI_HP, AI4_Retreat]
+UNIT
+
+StairsReinforcements:
+UNIT GenericEtruriaCh16 Mage 0x0 Level(16,Enemy,1) [3,11] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(16,Enemy,1) [21,1] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Mercenary 0x0 Level(14,Enemy,1) [6,22] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericEtruriaCh16 Fighter 0x0 Level(15,Enemy,1) [13,22] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+JustZeiss:
+UNIT Zeiss WyvernRider 0x0 Level(7,Enemy,0) [1,0] 0x0 0x0 0x1 REDA_1_1 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+CathAndThief:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [13,22] 0x0 0x0 0x1 REDA_12_22 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_Retreat]
+UNIT GenericThiefCh16 Thief 0x0 Level(13,Enemy,1) [21,1] 0x0 0x0 0x1 REDA_21_2 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_30_80|TAI_Def, AI4_Retreat]
+UNIT
+
+FunnyBoltingMage:
+UNIT GenericEtruriaCh16 Mage 0x0 Level(14,Enemy,1) [30,22] 0x0 0x0 0x0 0x0 [Bolting] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+CutsceneGalle:
+UNIT Galle WyvernLord 0x0 Level(18,Enemy,0) [1,0] 0x0 0x0 0x1 REDA_1_1 [Spear] DummyAI
+UNIT
+
+CutsceneMurdock:
+UNIT Murdock General 0x0 Level(20,Enemy,0) [14,4] 0x0 0x0 0x0 0x0 [Tomahawk] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Suspicious)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+
+//If Cath is recruited (or dead), disable her talk with Roy.
+BranchIfFlagOFF(1,CathRecruitedOrDeadFlag)
+FlagON(Ch16_RoyCathTalkFlag)
+
+LABEL 1
+FlashCursor(Narcian,60)
+Text(BG_Castle2,Ch16_Start1)
+LOAD1 0x1 CutsceneMurdock
+ENUN
+CMOF
+MOVE 0x0 Murdock [7,13]
+ENUN
+DISA Murdock
+Text(BG_Castle2,Ch16_Start2)
+FadeOutMusic
+PlayMusic(MUS_DeerOfThePlains)
+CAM1 Douglas
+Text(Ch16_Start3)
+CAM1 Roartz
+MOVE 0x0 Roartz [3,11]
+ENUN
+DISA Roartz
+CAM1 Arcardo
+MOVE 0x0 Arcardo [3,11]
+ENUN
+DISA Arcardo
+CAM1 Douglas
+Text(Ch16_Start4)
+
+LOAD3 0x0 Units
+ENUN
+PlayMusic(MUS_WhenTheRushComes)
+CAM1 Roy
+FlashCursor(Roy,60)
+Text(BG_Castle2,Ch16_Start5)
+GotoPrepScreen
+
+GalleAndZeissTalk:
+SwitchMusic(MUS_TheKingdomOfBern)
+CAM1 [1,1]
+LOAD1 0x1 JustZeiss
+ENUN
+MOVE 0x0 Zeiss [1,4]
+ENUN
+STAL 32
+LOAD1 0x1 CutsceneGalle
+ENUN
+Text(Ch16_GalleCallsZeiss)
+MOVE 0x0 Zeiss [1,2]
+ENUN
+Text(Ch16_GalleAndZeissTalk)
+MOVE 0x0 Galle [1,0]
+ENUN
+DISA Galle
+Text(Ch16_ZeissDotDotDotDotDotDot)
+MOVE 0x0 Zeiss [1,0]
+ENUN
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Zeiss by +11
+#endif
+EndEvent
+
+HughComplains:
+//FE6 has some ASM with a branch here.
+SwitchMusic(MUS_HappinessAbounds)
+CAM1 Hugh
+Text(Ch16_HughComplains)
+RestoreMusic
+EndEvent
+
+CathAndAThiefAppear:
+//Skip Cath's appearance if she's been recruited or is dead.
+BranchIfFlagON(9,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LoadReinforcements(CathAndThief)
+CAM1 Cath
+Text(Ch16_CathAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Cath by +11
+#endif
+LABEL 9
+EndEvent
+
+MeladyRecruitsZeiss:
+SwitchMusic(MUS_JoinUs)
+Text(Ch16_MeladyRecruitsZeiss)
+BecomeAlly(Zeiss)
+RestoreMusic
+EndEvent
+
+CeciliaDouglasTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch16_CeciliaDouglasTalk)
+RestoreMusic
+EndEvent
+
+KleinDouglasTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch16_KleinDouglasTalk)
+RestoreMusic
+EndEvent
+
+LarumDouglasTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch16_LarumDouglasTalk)
+RestoreMusic
+EndEvent
+
+ElffinDouglasTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch16_ElffinDouglasTalk)
+RestoreMusic
+EndEvent
+
+
+
+HughRecruitment:
+DisableSceneDialogueSkipping
+Text(Ch16_HughRecruitmentStart)
+BranchIfGoldAtLeast(1,10000) //Do we have 10000 Gold? If yes, branch to 1.
+BranchIfGoldAtLeast(2,8000)  //Do we have 8000 Gold? If yes, branch to 2.
+BranchIfGoldAtLeast(3,6000)  //Do we have 6000 Gold? If yes, branch to 3.
+BranchIfGoldAtLeast(4,5000)  //Do we have 5000 Gold? If yes, branch to 4.
+GOTO 7 //Else, fail.
+
+//10k recruitment
+LABEL 1 
+Text(Ch16_HughRecruitmentWellYesNo)
+BEQ 2 s0 sC //Branch to next threshold if No.
+//Else, recruit.
+LoseMoney(10000)
+//Branch to recruitment.
+GOTO 8
+
+//8k recruitment
+LABEL 2
+Text(Ch16_HughDownTo8k)
+Text(Ch16_HughRecruitmentWellYesNo)
+BEQ 3 s0 sC //Branch to next threshold if No.
+//Else, nerf and recruit.
+DecreaseUnitParam(Hugh,param_MaxHP,1)
+DecreaseUnitParam(Hugh,param_HP,1)
+DecreaseUnitParam(Hugh,param_Pow,1)
+DecreaseUnitParam(Hugh,param_Skl,1)
+DecreaseUnitParam(Hugh,param_Spd,1)
+DecreaseUnitParam(Hugh,param_Def,1)
+DecreaseUnitParam(Hugh,param_Res,1)
+DecreaseUnitParam(Hugh,param_Luck,1)
+LoseMoney(8000)
+GOTO 8 //Branch to recruitment.
+
+//6k recruitment
+LABEL 3
+Text(Ch16_HughDownTo6k)
+Text(Ch16_HughRecruitmentWellYesNo)
+BEQ 4 s0 sC //Branch to next threshold if No.
+//Else, nerf and recruit.
+DecreaseUnitParam(Hugh,param_MaxHP,2)
+DecreaseUnitParam(Hugh,param_HP,2)
+DecreaseUnitParam(Hugh,param_Pow,2)
+DecreaseUnitParam(Hugh,param_Skl,2)
+DecreaseUnitParam(Hugh,param_Spd,2)
+DecreaseUnitParam(Hugh,param_Def,2)
+DecreaseUnitParam(Hugh,param_Res,2)
+DecreaseUnitParam(Hugh,param_Luck,2)
+LoseMoney(6000)
+GOTO 8 //Branch to recruitment.
+
+//5k recruitment
+LABEL 4
+Text(Ch16_HughDownTo5k)
+Text(Ch16_HughRecruitmentWellYesNo)
+BEQ 7 s0 sC //Branch to failure if No.
+//Else, nerf and recruit.
+DecreaseUnitParam(Hugh,param_MaxHP,3)
+DecreaseUnitParam(Hugh,param_HP,3)
+DecreaseUnitParam(Hugh,param_Pow,3)
+DecreaseUnitParam(Hugh,param_Skl,3)
+DecreaseUnitParam(Hugh,param_Spd,3)
+DecreaseUnitParam(Hugh,param_Def,3)
+DecreaseUnitParam(Hugh,param_Res,3)
+DecreaseUnitParam(Hugh,param_Luck,3)
+LoseMoney(5000)
+GOTO 8 //Branch to recruitment.
+
+//Not recruited.
+LABEL 7
+Text(Ch16_HughFinalRejected)
+GOTO 9
+
+ //Hugh gets recruited.
+LABEL 8
+EnableSceneDialogueSkipping
+SwitchMusic(MUS_JoinUs)
+Text(Ch16_HughRecruited)
+TurnAlly(Hugh) 
+RestoreMusic
+
+LABEL 9
+EndEvent
+
+
+
+
+LoadBoltingMage:
+ReinforcementEvent(FunnyBoltingMage)
+
+LoadStairsReinforcements:
+ReinforcementEvent(StairsReinforcements)
+
+EndingScene:
+//Branch to gaiden fail is Douglas is dead.
+BranchIfFlagON(1,Ch16_DouglasDeathFlag)
+
+//Else, gaiden got. Go to Ch16x.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle2,Ch16_EndGaidenGot)
+STAL 64
+MoveToChapterWithoutWM(CHAPTER_Ch16x)
+GOTO 9
+
+//Gaiden fail. Determine route and go to Ch17.
+LABEL 1
+PlayMusic(MUS_PrincessOfDestiny)
+Text(BG_Castle2,Ch16_Ch16x_EndRoyAndGuinivereTalk)
+STAL 64
+CALL EVENT_IlliaSacaeRouteDetermination
+
+BranchIfFlagON(8,SacaeRouteFlag)
+//Illia route.
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch17A)
+GOTO 9
+
+//Sacae route.
+LABEL 8
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch17B)
+
+LABEL 9
+ENDA
+
+SecretShopList:
+SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe Lockpick
+
+//MESSAGE Events end at offset CURRENTOFFSET

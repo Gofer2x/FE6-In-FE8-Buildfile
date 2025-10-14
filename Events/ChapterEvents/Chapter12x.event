@@ -1,0 +1,171 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_Ch12x,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch12x,Ch12xEscapePoints)
+NPCEscapePointPointerTable(CHAPTER_Ch12x,0x0)
+
+ALIGN 4
+
+Ch12xEscapePoints:
+EscapePoint(2,26,MoveDown)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(25,1)
+Chest(Elixir,12,24)
+Chest(Antitoxin,3,17)
+Chest(Torch,7,8)
+Chest(Antitoxin,18,16)
+Chest(Elixir,19,9)
+Chest(Lockpick,11,4)
+Chest(RedGem,25,12)
+Chest(Antitoxin,25,20)
+Chest(Antitoxin,26,24)
+Chest(ChestKey5Uses,1,3)
+Chest(Elixir,13,15)
+Chest(WhiteGem,13,0)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+PoisonTrap(1,2,down,1,1)
+PoisonTrap(11,2,down,1,1)
+PoisonTrap(15,1,up,1,1)
+PoisonTrap(10,7,left,1,1)
+PoisonTrap(21,9,left,1,1)
+PoisonTrap(13,13,down,1,1)
+PoisonTrap(23,12,right,1,1)
+PoisonTrap(1,14,right,1,1)
+PoisonTrap(14,17,up,1,1)
+PoisonTrap(20,18,left,1,1)
+PoisonTrap(23,20,right,1,1)
+PoisonTrap(12,26,up,1,1)
+
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(6,Ally,1) [4,24] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Alen Cavalier Roy Level(13,Ally,1) [5,24] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Lance Cavalier Roy Level(13,Ally,1) [3,23] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, SilverLance] DummyAI
+UNIT Bors Knight Roy Level(12,Ally,1) [6,23] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses, SilverLance] DummyAI
+UNIT Wolt Archer Roy Level(16,Ally,1) [3,25] 0x0 0x0 0x0 0x0 [IronBow, SteelBow, KillerBow, Longbow] DummyAI
+UNIT Clarine Troubadour Roy Level(12,Ally,1) [6,25] 0x0 0x0 0x0 0x0 [Heal, Heal, Mend, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(10,Ally,1) [4,22] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(15,Ally,1) [4,26] 0x0 0x0 0x0 0x0 [Fire, Fire, Thunder, Elfire] DummyAI
+UNIT
+
+Enemies:
+UNIT Guerrero Berserker 0x0 Level(2,Enemy,0) [25,1] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditCh12x Thief 0x0 Level(14,Enemy,1) [4,15] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericBanditCh12x Thief 0x0 Level(14,Enemy,1) [18,26] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericBanditCh12x Thief 0x0 Level(15,Enemy,1) [11,14] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_10_50|TAI_Def, AI4_Retreat]
+UNIT GenericBanditCh12x Druid 0x0 Level(1,Enemy,1) [21,3] 0x0 0x0 0x0 0x0 [Eclipse, Physic, Nosferatu] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(13,Enemy,1) [6,19] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Archer 0x0 Level(13,Enemy,1) [5,17] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [3,13] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [4,8] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Myrmidon 0x0 Level(13,Enemy,1) [1,4] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [8,6] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [16,5] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Archer 0x0 Level(14,Enemy,1) [18,6] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh12x Archer 0x0 Level(14,Enemy,1) [10,13] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [12,16] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(15,Enemy,1) [25,14] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Shaman 0x0 Level(15,Enemy,1) [14,21] 0x0 0x0 0x0 0x0 [Flux] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(15,Enemy,1) [26,18] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(15,Enemy,1) [18,25] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Myrmidon 0x0 Level(15,Enemy,1) [24,23] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [26,26] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [24,25] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [13,22] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBanditCh12x Myrmidon 0x0 Level(15,Enemy,1) [17,0] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditCh12x Brigand 0x0 Level(14,Enemy,1) [24,2] 0x0 0x0 0x0 0x0 [DevilAxe] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditCh12x Myrmidon 0x0 Level(14,Enemy,1) [26,2] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_LegendaryInheritance)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+LOAD1 0x1 Units
+ENUN
+Text(BG_Cave,Ch12x_Start1)
+PlayMusic(MUS_ScarsOfTheScouring)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+Text(BG_Cave,Ch12x_Start2)
+GotoPrepScreen
+
+EndingScene:
+PlayMusic(MUS_IntoTheShadowOfTriumph)
+//There is special dialogue if we are on Bartre route and Elffin died.
+//Skip the check for that if we are not on Bartre route.
+BranchIfFlagOFF(1, WestIslesBartreRouteFlag)
+
+//We are on Bartre route. Branch if Elffin dead.
+BranchIfUnitDead(2,Elffin)
+
+//Echidna route or Bartre route Elffin alive case.
+LABEL 1
+Text(BG_Cave,Ch12x_EndElffinAlive)
+GOTO 3
+
+//Bartre route, Elffin dead case.
+LABEL 2
+Text(BG_Cave,Ch12x_EndElffinDead)
+
+//Either way, continue here.
+LABEL 3
+Text(BG_Cave,Ch12_Ch12x_EndEtruriaRevolution)
+GiveItemToCharacter(Roy,Armads)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch13)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

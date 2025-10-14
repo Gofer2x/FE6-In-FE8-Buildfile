@@ -1,3 +1,26 @@
+/*
+WorldMapPointerTable(CHAPTER_Intro,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Intro,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+_0xC220
+//WM_SpawnLord(Roy,NODE_Ch1)
+//WM_CENTERCAMONLORD
+//WM_SHOWDRAWNMAP 0x0 0x0 0x0 0x10 0x0
+//STAL 2
+//WM_FADEOUT 0x0 0x0 0x0
+////TODO Intro here?
+//STAL 60
+SKIPWN
+ENDA
+
+CurrentNodeSelect:
+WM_DisableSkip
+FlagON(WorldMapInitializedFlag)
+ENDA
+*\
+
 WorldMapPointerTable(1,WM_Events)
 
 WM_Events:
@@ -106,4 +129,11 @@ WM_DRAWPATH2 0x0 0x1e 0x0
 SKIPWN
 // WM_FXCLEAR1 0x0 0xFFFF 0xFFFF
 // WM_FXCLEAR2 0x0 0xFFFF 0xFFFF
+ENDA
+
+WorldMapIntroPointerTable(1,Intro)
+
+Intro:
+EVBIT_MODIFY 0x1
+ENUT 0x89
 ENDA

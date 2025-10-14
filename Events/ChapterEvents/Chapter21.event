@@ -1,0 +1,475 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+#define Ch21_DorothyYoderTalkFlag 0x7
+#define Ch21_SaulYoderTalkFlag 0x8
+#define Ch21_MeladyGalleTalkFlag 0x9
+#define Ch21_ZeissGalleTalkFlag 0xA
+
+#define Ch21_GaidenGoneFlag 0xB
+
+#define Ch21_RedZoneActivatedFlag 0xC
+#define Ch21_RedZoneDoneFlag 0xD
+#define Ch21_OrangeZoneActivatedFlag 0xE
+#define Ch21_OrangeZoneDoneFlag 0xF
+#define Ch21_BlueZoneActivatedFlag 0x10
+#define Ch21_BlueZoneDoneFlag 0x11
+#define Ch21_PinkZoneActivatedFlag 0x12
+#define Ch21_PinkZoneDoneFlag 0x13
+#define Ch21_YellowZoneActivatedFlag 0x14
+#define Ch21_YellowZoneDoneFlag 0x15
+
+//Ch21_MurdockVsRoyFlag 0x1D
+//Ch21_MurdockVsMeladyFlag 0x1E
+//Ch21_MurdockVsZeissFlag 0x1F
+
+#define Ch21_RedZoneCounter 0x0
+#define Ch21_OrangeZoneCounter 0x1
+#define Ch21_BlueZoneCounter 0x2
+#define Ch21_PinkZoneCounter 0x3
+
+EventPointerTable(EVENTS_Ch21,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch21,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch21,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventPlayer(Ch21_GaidenGoneFlag,GaidenGone,31) //yes, this is not an ambush
+TurnEventEnemy(Ch21_RedZoneDoneFlag,RedZoneEvent,1,255)
+TurnEventEnemy(Ch21_OrangeZoneDoneFlag,OrangeZoneEvent,1,255)
+TurnEventEnemy(Ch21_BlueZoneDoneFlag,BlueZoneEvent,1,255)
+TurnEventEnemy(Ch21_PinkZoneDoneFlag,PinkZoneEvent,1,255)
+TurnEventEnemy(Ch21_YellowZoneDoneFlag,YellowZoneEvent,1,255)
+
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEventBothWays(Ch21_DorothyYoderTalkFlag,DorothyYoderTalk,Dorothy,Yoder)
+CharacterEventBothWays(Ch21_SaulYoderTalkFlag,SaulYoderTalk,Saul,Yoder)
+CharacterEvent(Ch21_MeladyGalleTalkFlag,MeladyGalleTalk,Melady,Galle)
+CharacterEvent(Ch21_ZeissGalleTalkFlag,ZeissGalleTalk,Zeiss,Galle)
+END_MAIN
+
+LocationBasedEvents:
+Seize(24,27)
+Village(0x0,KnightCrestVillageVisit,11,11)
+Armory(ArmoryList,5,1)
+Vendor(VendorList,9,1)
+SecretShop(SecretShopList,30,13)
+END_MAIN
+
+MiscBasedEvents:
+//https://fe6.triangleattack.com/chapters/the_binding_blade
+
+//RED: (0,15,8,18)
+//PaladinReinforcements, SouthWestWyvernReinforcementsLeft
+AreaEvent(Ch21_RedZoneActivatedFlag,ActivateRedZone,0,15,8,18)
+
+//ORANGE: (0,24,12,27)
+//SouthWestWyvernReinforcementsMiddle
+AreaEvent(Ch21_OrangeZoneActivatedFlag,ActivateOrangeZone,0,24,12,27)
+
+//BLUE: (30,6,21,0)
+//EastWyvernReinforcementsLeft, EastWyvernReinforcementsDown, SouthCenterWyvernReinforcements
+AreaEvent(Ch21_BlueZoneActivatedFlag,ActivateBlueZone,30,6,21,0)
+
+//PINK: (17,21,31,35)
+//EastWyvernReinforcementsRight, SouthWestWyvernReinforcementsRight
+AreaEvent(Ch21_PinkZoneActivatedFlag,ActivatePinkZone,17,21,31,35)
+
+//YELLOW: (12,21,31,24)
+//JustGalle, GalleSquad
+AreaEvent(Ch21_YellowZoneActivatedFlag,ActivateYellowZone,12,21,31,24)
+
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [2,3] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Zeiss WyvernRider Roy Level(20,Ally,1) [3,2] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, Horseslayer] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [1,4] 0x0 0x0 0x0 0x0 [IronSword, SilverLance, Javelin, KnightCrest] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [3,4] 0x0 0x0 0x0 0x0 [Longbow, SteelBow, IronBow, OrionsBolt] DummyAI
+UNIT Bors Knight Roy Level(19,Ally,1) [4,1] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Hugh Mage Roy Level(20,Ally,1) [4,3] 0x0 0x0 0x0 0x0 [Fire, Aircalibur, Elfire, Thunder] DummyAI
+UNIT Fir MyrmidonF Roy Level(20,Ally,1) [2,5] 0x0 0x0 0x0 0x0 [WoDao, IronSword, IronBlade, SteelSword] DummyAI
+UNIT Sue NomadF Roy Level(20,Ally,1) [5,4] 0x0 0x0 0x0 0x0 [ShortBow, SteelBow, IronBow, OrionsBolt] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [3,6] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Thea PegasusKnight Roy Level(20,Ally,1) [4,5] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, ElysianWhip] DummyAI
+UNIT Klein Sniper Roy Level(10,Ally,1) [5,2] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, KillerBow, SteelBow] DummyAI
+UNIT Clarine Troubadour Roy Level(20,Ally,1) [1,6] 0x0 0x0 0x0 0x0 [Physic, Mend, Heal] DummyAI
+UNIT Lilina MageF Roy Level(20,Ally,1) [6,3] 0x0 0x0 0x0 0x0 [Elfire, Thunder, GuidingRing] DummyAI
+UNIT Dieck Mercenary Roy Level(15,Ally,1) [2,7] 0x0 0x0 0x0 0x0 [BraveSword, SteelAxe, HeroCrest] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [2,1] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT Ward Fighter Roy Level(20,Ally,1) [0,3] 0x0 0x0 0x0 0x0 [SteelAxe] DummyAI
+UNIT Juno Falcoknight Roy Level(15,Ally,1) [0,5] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance] DummyAI
+UNIT Shanna PegasusKnight Roy Level(20,Ally,1) [6,1] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, ElysianWhip] DummyAI
+UNIT
+
+YoderMulagir:
+UNIT Yoder Bishop 0x0 Level(20,Ally,0) [1,2] 0x0 0x0 0x0 0x0 [Recover, Lightning, Mulagir, SaintsStaff] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+YoderMaltet:
+UNIT Yoder Bishop 0x0 Level(20,Ally,0) [1,2] 0x0 0x0 0x0 0x0 [Recover, Lightning, Maltet, SaintsStaff] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Murdock General 0x0 Level(20,Enemy,0) [24,27] 0x0 0x0 0x0 0x0 [Tomahawk, KnightCrest] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBernCh21 WyvernLord 0x0 Level(10,Enemy,1) [29,5] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [28,5] 0x0 0x0 0x0 0x0 [KillerLance, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [28,6] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [27,3] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [27,7] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernLord 0x0 Level(10,Enemy,1) [15,20] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [15,19] 0x0 0x0 0x0 0x0 [KillerLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [16,19] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [14,18] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [17,18] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernLord 0x0 Level(10,Enemy,1) [3,27] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [3,26] 0x0 0x0 0x0 0x0 [KillerLance, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [4,26] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [2,25] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(10,Enemy,1) [5,25] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh21 FireManakete 0x0 Level(10,Enemy,1) [28,21] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericManaketeCh21 FireManakete 0x0 Level(10,Enemy,1) [17,25] 0x0 0x0 0x0 0x0 [Firestone] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Bishop 0x0 Level(10,Enemy,1) [12,23] 0x0 0x0 0x0 0x0 [Divine, Physic] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Bishop 0x0 Level(10,Enemy,1) [26,19] 0x0 0x0 0x0 0x0 [Divine, Physic] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 Bishop 0x0 Level(10,Enemy,1) [14,12] 0x0 0x0 0x0 0x0 [Divine, Physic] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Sage 0x0 Level(12,Enemy,1) [23,4] 0x0 0x0 0x0 0x0 [Elfire, Mend] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Sage 0x0 Level(12,Enemy,1) [4,16] 0x0 0x0 0x0 0x0 [Aircalibur, Mend] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Sage 0x0 Level(12,Enemy,1) [24,30] 0x0 0x0 0x0 0x0 [Bolting, Fire, Physic] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 Knight 0x0 Level(20,Enemy,1) [9,17] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Knight 0x0 Level(20,Enemy,1) [16,13] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Knight 0x0 Level(20,Enemy,1) [23,15] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 Knight 0x0 Level(20,Enemy,1) [22,27] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh21 Knight 0x0 Level(20,Enemy,1) [26,27] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(19,Enemy,1) [9,19] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(19,Enemy,1) [16,15] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(19,Enemy,1) [24,17] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(20,Enemy,1) [8,18] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(20,Enemy,1) [17,14] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBernCh21 Archer 0x0 Level(20,Enemy,1) [23,16] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT
+
+HardExtraEnemies:
+UNIT GenericBernCh21 WyvernLord 0x0 Level(10,Enemy,1) [18,6] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [17,5] 0x0 0x0 0x0 0x0 [KillerLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [17,7] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [19,7] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [19,5] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernLord 0x0 Level(10,Enemy,1) [7,34] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [6,33] 0x0 0x0 0x0 0x0 [KillerLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [8,33] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [8,35] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(10,Enemy,1) [6,35] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+EastWyvernReinforcementsRight:
+UNIT GenericBernCh21 WyvernRider GenericBernCommander1Ch21 Level(20,Enemy,1) [30,12] 0x0 0x0 0x1 REDA_30_11 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCommander1Ch21 WyvernLord 0x0 Level(13,Enemy,1) [31,11] 0x0 0x0 0x1 REDA_31_10 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander1Ch21 Level(20,Enemy,1) [30,10] 0x0 0x0 0x1 REDA_30_9 [SteelLance] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander1Ch21 Level(20,Enemy,1) [30,11] 0x0 0x0 0x1 REDA_30_10 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+EastWyvernReinforcementsLeft:
+UNIT GenericBernCh21 WyvernLord 0x0 Level(13,Enemy,1) [28,11] 0x0 0x0 0x1 REDA_27_10 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(5,Enemy,1) [28,11] 0x0 0x0 0x1 REDA_27_11 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(5,Enemy,1) [27,10] 0x0 0x0 0x1 REDA_26_11 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(5,Enemy,1) [27,10] 0x0 0x0 0x1 REDA_26_10 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+EastWyvernReinforcementsDown:
+UNIT GenericBernCh21 WyvernLord 0x0 Level(13,Enemy,1) [31,15] 0x0 0x0 0x1 REDA_30_15 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [31,16] 0x0 0x0 0x1 REDA_29_15 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [31,16] 0x0 0x0 0x1 REDA_29_16 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [31,17] 0x0 0x0 0x1 REDA_28_14 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthCenterWyvernReinforcements:
+UNIT GenericBernCh21 WyvernLord 0x0 Level(13,Enemy,1) [13,29] 0x0 0x0 0x1 REDA_14_28 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [13,29] 0x0 0x0 0x1 REDA_14_27 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [13,30] 0x0 0x0 0x1 REDA_13_26 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [13,30] 0x0 0x0 0x1 REDA_15_25 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestWyvernReinforcementsLeft:
+UNIT GenericBernCh21 WyvernLord 0x0 Level(13,Enemy,1) [0,35] 0x0 0x0 0x1 REDA_1_35 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [2,35] 0x0 0x0 0x1 REDA_0_33 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [2,35] 0x0 0x0 0x1 REDA_2_33 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider 0x0 Level(20,Enemy,1) [2,34] 0x0 0x0 0x1 REDA_1_34 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestWyvernReinforcementsMiddle:
+UNIT GenericBernCommander2Ch21 WyvernLord 0x0 Level(13,Enemy,1) [7,35] 0x0 0x0 0x1 REDA_7_34 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander2Ch21 Level(20,Enemy,1) [5,35] 0x0 0x0 0x1 REDA_6_35 [SteelLance] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander2Ch21 Level(20,Enemy,1) [9,35] 0x0 0x0 0x1 REDA_8_35 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander2Ch21 Level(20,Enemy,1) [9,35] 0x0 0x0 0x1 REDA_7_35 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestWyvernReinforcementsRight:
+UNIT GenericBernCommander3Ch21 WyvernLord 0x0 Level(13,Enemy,1) [11,34] 0x0 0x0 0x1 REDA_12_34 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander3Ch21 Level(20,Enemy,1) [13,34] 0x0 0x0 0x1 REDA_14_34 [Javelin] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander3Ch21 Level(20,Enemy,1) [12,35] 0x0 0x0 0x1 REDA_13_35 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 WyvernRider GenericBernCommander3Ch21 Level(20,Enemy,1) [12,34] 0x0 0x0 0x1 REDA_13_34 [SteelLance, Vulnerary] [AI1_InRangeOfCommander, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+PaladinReinforcements:
+UNIT GenericBernCh21 Paladin 0x0 Level(13,Enemy,1) [5,27] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Paladin 0x0 Level(5,Enemy,1) [6,27] 0x0 0x0 0x0 0x0 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Paladin 0x0 Level(5,Enemy,1) [7,27] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBernCh21 Paladin 0x0 Level(5,Enemy,1) [8,27] 0x0 0x0 0x0 0x0 [SteelLance, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT
+
+JustGalle:
+UNIT Galle WyvernLord Galle Level(18,Enemy,0) [10,5] 0x0 0x0 0x1 REDA_10_6 [Spear] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat] //AI1_Gale
+UNIT
+
+GalleSquad:
+UNIT GenericBernCh21 WyvernRider Galle Level(20,Enemy,1) [9,4] 0x0 0x0 0x1 REDA_9_5 [Horseslayer] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat] //AI1_GaleSquad
+UNIT GenericBernCh21 WyvernRider Galle Level(20,Enemy,1) [11,4] 0x0 0x0 0x1 REDA_11_5 [Axereaver] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat] //AI1_GaleSquad
+UNIT GenericBernCh21 WyvernRider Galle Level(20,Enemy,1) [9,6] 0x0 0x0 0x1 REDA_9_7 [Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat] //AI1_GaleSquad
+UNIT GenericBernCh21 WyvernRider Galle Level(20,Enemy,1) [11,6] 0x0 0x0 0x1 REDA_11_7 [SteelLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat] //AI1_GaleSquad
+UNIT
+
+PeresSquad:
+UNIT Peres Druid 0x0 Level(15,Enemy,0) [24,30] 0x0 0x0 0x1 REDA_24_34 [Nosferatu] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 Druid 0x0 Level(10,Enemy,1) [24,30] 0x0 0x0 0x1 REDA_23_35 [Fenrir, Physic] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBernCh21 Druid 0x0 Level(10,Enemy,1) [24,30] 0x0 0x0 0x1 REDA_25_35 [Fenrir, Physic] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Dignified)
+LOAD1 0x1 Enemies
+
+//Extra Hard enemies.
+BranchIfNotHard(1)
+LOAD1 0x1 HardExtraEnemies
+
+LABEL 1
+ENUN
+ChStartFadeFromBlack
+
+FlagON(Ch21_RedZoneDoneFlag)
+FlagON(Ch21_OrangeZoneDoneFlag)
+FlagON(Ch21_BlueZoneDoneFlag)
+FlagON(Ch21_PinkZoneDoneFlag)
+FlagON(Ch21_YellowZoneDoneFlag)
+
+CAM1 Murdock
+FlashCursor(Murdock,60)
+Text(BG_Temple1,Ch21_Start1)
+PlayMusic(MUS_WhenTheRushComes)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+
+SetBackground(BG_Outside)
+TEXTSTART
+TEXTSHOW Ch21_Start2
+TEXTEND
+PlayMusic(MUS_ShockingTruth2)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+
+//Branch to load Yoder with Maltet if we're on Sacae route.
+BranchIfFlagON(2,SacaeRouteFlag)
+
+//Illia Mulagir case.
+LOAD1 0x1 YoderMulagir
+ENUN
+GOTO 3
+
+//Sacae Maltet case.
+LABEL 2
+LOAD1 0x1 YoderMaltet
+LABEL 3
+GotoPrepScreen
+
+SaulYoderTalk:
+Text(Ch21_SaulYoderTalk)
+EndEvent
+
+DorothyYoderTalk:
+Text(Ch21_DorothyYoderTalk)
+EndEvent
+
+MeladyGalleTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch21_MeladyGalleTalk)
+RestoreMusic
+EndEvent
+
+ZeissGalleTalk:
+SwitchMusic(MUS_CogsOfFate)
+Text(Ch21_ZeissGalleTalk)
+RestoreMusic
+EndEvent
+
+GaidenGone:
+LoadReinforcements(PeresSquad)
+BranchIfBossDead(9)
+Text(Ch21_GaidenGone)
+LABEL 9
+EndEvent
+
+KnightCrestVillageVisit:
+VillageEventItem(Ch21_KnightCrestVillage,BG_Village,KnightCrest)
+
+ActivateRedZone:
+PlayerInRange
+SetCounter(Ch21_RedZoneCounter, 3)
+FlagOFF(Ch21_RedZoneDoneFlag)
+EndEvent
+
+ActivateOrangeZone:
+PlayerInRange
+FlagOFF(Ch21_OrangeZoneDoneFlag)
+SetCounter(Ch21_OrangeZoneCounter, 3)
+EndEvent
+
+ActivateBlueZone:
+PlayerInRange
+FlagOFF(Ch21_BlueZoneDoneFlag)
+SetCounter(Ch21_BlueZoneCounter, 3)
+EndEvent
+
+ActivatePinkZone:
+PlayerInRange
+FlagOFF(Ch21_PinkZoneDoneFlag)
+SetCounter(Ch21_PinkZoneCounter, 3)
+EndEvent
+
+ActivateYellowZone:
+PlayerInRange
+FlagOFF(Ch21_YellowZoneDoneFlag)
+EndEvent
+
+RedZoneEvent:
+FlagOFF(Ch21_RedZoneDoneFlag)
+BranchIfCounterZero(8,Ch21_RedZoneCounter)
+LoadReinforcements(PaladinReinforcements)
+LoadReinforcements(SouthWestWyvernReinforcementsLeft)
+DecrementCounter(Ch21_RedZoneCounter)
+GOTO 9
+LABEL 8
+FlagON(Ch21_RedZoneDoneFlag)
+LABEL 9
+EndEvent
+
+OrangeZoneEvent:
+FlagOFF(Ch21_OrangeZoneDoneFlag)
+BranchIfCounterZero(8,Ch21_OrangeZoneCounter)
+LoadReinforcements(SouthWestWyvernReinforcementsMiddle)
+DecrementCounter(Ch21_OrangeZoneCounter)
+GOTO 9
+LABEL 8
+FlagON(Ch21_OrangeZoneDoneFlag)
+LABEL 9
+EndEvent
+
+BlueZoneEvent:
+FlagOFF(Ch21_BlueZoneDoneFlag)
+BranchIfCounterZero(8,Ch21_BlueZoneCounter)
+LoadReinforcements(EastWyvernReinforcementsLeft)
+LoadReinforcements(EastWyvernReinforcementsDown)
+LoadReinforcements(SouthCenterWyvernReinforcements)
+DecrementCounter(Ch21_BlueZoneCounter)
+GOTO 9
+LABEL 8
+FlagON(Ch21_BlueZoneDoneFlag)
+LABEL 9
+EndEvent
+
+PinkZoneEvent:
+FlagOFF(Ch21_PinkZoneDoneFlag)
+BranchIfCounterZero(8,Ch21_PinkZoneCounter)
+LoadReinforcements(EastWyvernReinforcementsRight)
+LoadReinforcements(SouthWestWyvernReinforcementsRight)
+DecrementCounter(Ch21_PinkZoneCounter)
+GOTO 9
+LABEL 8
+FlagON(Ch21_PinkZoneDoneFlag)
+LABEL 9
+EndEvent
+
+YellowZoneEvent:
+LoadReinforcements(JustGalle)
+PlayMusic(MUS_TheKingdomOfBern)
+LoadReinforcements(GalleSquad)
+CAM1 Galle
+FlashCursor(Galle,60)
+Text(Ch21_GalleAppears)
+RestoreMusic
+EndEvent
+
+EndingScene:
+//Branch to gaiden fail is Melady or Zeiss are unrecruited/dead or if the gaiden gone flag is on.
+BranchIfUnitDead(5,Melady)
+BranchIfUnitDead(5,Zeiss)
+BranchIfFlagON(5,Ch21_GaidenGoneFlag)
+
+//All alive and flag off, gaiden success. Move to Ch21x.
+Text(BG_Temple2White,Ch21_EndGaidenGot)
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch21x)
+GOTO 9
+
+//Gaiden fail. Promote Roy and move to Ch22 (from within that event).
+LABEL 5
+ReviveMerlinusIfConfig
+CALL EVENT_BindingBladeAndRoyPromo
+
+LABEL 9
+ENDA
+
+ArmoryList:
+SHLI SilverSword SilverBlade Armorslayer SilverLance Horseslayer SilverAxe Halberd SilverBow
+
+VendorList:
+SHLI Thunder Elfire Lightning Divine Flux Heal Mend Physic PureWater DoorKey ChestKey5Uses
+
+SecretShopList:
+SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe EnergyRing SecretBook Speedwings GoddessIcon Dragonshield Talisman BodyRing Boots Bolting Purge Eclipse
+
+//MESSAGE Events end at offset CURRENTOFFSET

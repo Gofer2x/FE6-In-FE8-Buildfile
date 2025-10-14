@@ -1,0 +1,62 @@
+//ChX Previous, ChY Current
+
+WorldMapPointerTable(CHAPTER_Ch21,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch21,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+
+//Special handling for route split.
+BranchIfFlagON(1,SacaeRouteFlag)
+//Flag OFF, Illia route.
+WM_SpawnLord(Roy,NODE_Ch20A)
+GOTO 2
+
+//Flag ON, Sacae route.
+LABEL 1
+WM_SpawnLord(Roy,NODE_Ch20B)
+
+//Continue here.
+LABEL 2
+WM_CamOnLord
+WM_Fadeout
+WM_TextDecorate
+WM_EnableSkip
+STAL 20
+WM_UnlockNextNode
+WM_WaitForFX
+STAL 40
+
+//Special handling again.
+BranchIfFlagON(2,SacaeRouteFlag)
+//Flag OFF, Illia route.
+WM_DrawRoad(ROAD_Ch20AToCh21)
+GOTO 4
+
+//Flag ON, Sacae route.
+LABEL 3
+WM_DrawRoad(ROAD_Ch19BToCh21)
+
+//Continue here.
+LABEL 4
+STAL 70
+WM_MakeLordVisible
+ENDA
+
+CurrentNodeSelect:
+WM_DisableSkip
+
+//Special handling for route split.
+BranchIfFlagON(1,SacaeRouteFlag)
+//Flag OFF, Illia route.
+WM_MoveLord(NODE_Ch20A,NODE_Ch21,60,10)
+GOTO 2
+
+//Flag ON, Sacae route.
+LABEL 1
+WM_MoveLord(NODE_Ch20B,NODE_Ch21,60,10)
+
+//Continue here.
+LABEL 2
+WM_ENUN
+ENDA

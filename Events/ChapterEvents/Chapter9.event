@@ -1,0 +1,295 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch9_NoahFirTalkFlag 0x7
+#define Ch9_SueSinTalkFlag 0x8
+#define Ch9_LeftVillageVisitedFlag 0x9
+#define Ch9_RightVillageVisitedFlag 0xA
+
+EventPointerTable(EVENTS_Ch9,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch9,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch9,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadFortReinforcements,12,9)
+TurnEventEnemy(0x0,FirAndSinAppear,2)
+TurnEventEnemy(0x0,SinTurnsAggressive,5)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch9_NoahFirTalkFlag,NoahRecruitsFir,Noah,Fir)
+CharacterEvent(Ch9_SueSinTalkFlag,SueRecruitsSin,Sue,Sin)
+END_MAIN
+
+LocationBasedEvents:
+Seize(2,3)
+Village(Ch9_LeftVillageVisitedFlag,KillerBowEchidnaRouteVillage,18,2)
+Village(Ch9_RightVillageVisitedFlag,BarrierBartreRouteVillage,21,2)
+Village(0x0,SilverSwordVillageVisit,2,24)
+Armory(ArmoryList,23,4)
+Vendor(VendorList,21,6)
+House(0x0,MistHouseVisit,1,20)
+House(0x0,NorthOrWestHouseVisit,19,22)
+House(0x0,SinHouseVisit,18,13)
+House(0x0,MainlandHouseVisit,16,1)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(8,Ally,1) [19,13] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey] DummyAI
+UNIT Marcus Paladin Roy Level(4,Ally,1) [18,12] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(9,Ally,1) [20,12] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(5,Ally,1) [17,13] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Dorothy ArcherF Roy Level(7,Ally,1) [18,13] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, Vulnerary, SteelBow] DummyAI
+UNIT Dieck Mercenary Roy Level(11,Ally,1) [20,13] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer, SteelSword] DummyAI
+UNIT Ward Fighter Roy Level(7,Ally,1) [21,13] 0x0 0x0 0x0 0x0 [IronAxe, Hammer, HandAxe, SteelAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(8,Ally,1) [17,14] 0x0 0x0 0x0 0x0 [SlimLance, Javelin, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(10,Ally,1) [18,14] 0x0 0x0 0x0 0x0 [Heal, Unlock, Restore, Vulnerary] DummyAI
+UNIT Noah Cavalier Roy Level(9,Ally,1) [18,15] 0x0 0x0 0x0 0x0 [IronSword, SteelLance, Javelin] DummyAI
+UNIT Lugh Mage Roy Level(5,Ally,1) [20,14] 0x0 0x0 0x0 0x0 [Fire, Thunder, Vulnerary] DummyAI
+UNIT Sue NomadF Roy Level(6,Ally,1) [21,14] 0x0 0x0 0x0 0x0 [IronBow, Torch, Longbow, Antitoxin] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,0) [20,15] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Scott Berserker 0x0 Level(3,Enemy,0) [2,3] 0x0 0x0 0x0 0x0 [KillerAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_DontRetreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(8,Enemy,1) [17,20] 0x0 0x0 0x0 0x0 [SteelAxe, Vulnerary] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(8,Enemy,1) [15,18] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(9,Enemy,1) [10,7] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(9,Enemy,1) [9,12] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(9,Enemy,1) [10,10] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(11,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [SteelBow, Antitoxin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mercenary Scott Level(10,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mercenary Scott Level(8,Enemy,1) [11,7] 0x0 0x0 0x0 0x0 [IronSword, Antitoxin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_HP, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(11,Enemy,1) [9,15] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(9,Enemy,1) [8,16] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(10,Enemy,1) [10,20] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(10,Enemy,1) [8,20] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mage Scott Level(10,Enemy,1) [9,20] 0x0 0x0 0x0 0x0 [Thunder] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(11,Enemy,1) [4,21] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Pirate Scott Level(11,Enemy,1) [5,23] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(12,Enemy,1) [4,22] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mercenary Scott Level(12,Enemy,1) [0,2] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mage Scott Level(9,Enemy,1) [2,0] 0x0 0x0 0x0 0x0 [Elfire, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(12,Enemy,1) [0,13] 0x0 0x0 0x1 REDA_0_11 [SteelBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mercenary Scott Level(12,Enemy,1) [0,12] 0x0 0x0 0x1 REDA_0_10 [SteelSword] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Mage Scott Level(9,Enemy,1) [1,13] 0x0 0x0 0x1 REDA_1_11 [Elfire, Vulnerary] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(12,Enemy,1) [14,3] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(12,Enemy,1) [13,2] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(12,Enemy,1) [17,3] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(12,Enemy,1) [20,3] 0x0 0x0 0x0 0x0 [PoisonAxe, Antitoxin] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Weird2, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Fighter Scott Level(12,Enemy,1) [14,0] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_DontMove, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(11,Enemy,1) [17,5] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_TwoMoves, RAI_10_50|TAI_Arch, AI4_Retreat]
+UNIT GenericBanditWestIslesCh9 Archer Scott Level(11,Enemy,1) [20,5] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT
+
+FirSin:
+UNIT Fir MyrmidonF Scott Level(1,Enemy,0) [0,10] 0x0 0x0 0x1 REDA_1_10 [WoDao, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_DmgAcc, AI4_Retreat]
+UNIT Sin Nomad Scott Level(5,Enemy,0) [0,5] 0x0 0x0 0x1 REDA_0_7 [ShortBow] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+FortPiratesReinforcements:
+UNIT GenericPirateWestIslesCh9 Pirate 0x0 Level(10,Enemy,1) [5,15] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericPirateWestIslesCh9 Pirate 0x0 Level(10,Enemy,1) [5,13] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT GenericPirateWestIslesCh9 Pirate 0x0 Level(11,Enemy,1) [7,5] 0x0 0x0 0x0 0x0 [PoisonAxe, Antitoxin] [AI1_InRange, AI2_PillageAttack, RAI_10_50|TAI_DmgAcc, AI4_Retreat]
+UNIT
+
+CutsceneCeciliaGuinivere:
+UNIT Cecilia Valkyrie 0x0 Level(1,NPC,0) [19,16] 0x0 0x0 0x0 0x0 [Aircalibur, Mend] DummyAI
+UNIT GuinivereTrial SageF 0x0 Level(20,NPC,0) [18,16] 0x0 0x0 0x0 0x0 [Divine, Recover] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_MessengerFromTheDarkness)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+CAM1 [2,3]
+FlashCursor(2,3,60)
+CMOF
+Text(BG_Castle1,Ch9_Start1)
+LOAD3 0x0 Units
+ENUN
+LOAD1 0x1 CutsceneCeciliaGuinivere
+ENUN
+CMON
+MOVE 0x0 Roy [19,15]
+CMOF
+Text(Ch9_Start2)
+MOVE 0x0 Cecilia [18,22]
+MOVE 0x0 GuinivereTrial [18,21]
+ENUN
+DISA Cecilia
+DISA GuinivereTrial
+CMON
+MOVE 0x0 Roy [19,13]
+ENUN
+GotoPrepScreen
+
+FirAndSinAppear:
+CAM1 [2,3]
+FlashCursor(2,3,60)
+PlayMusic(MUS_MessengerFromTheDarkness)
+Text(BG_Castle1,Ch9_ScottSendsFir)
+LOAD1 0x1 FirSin
+ENUN
+FlashCursor(Sin,60)
+Text(BG_Outside,Ch9_FirAndSinHeadOut)
+CAM1 [2,3]
+FlashCursor(2,3,60)
+Text(BG_Castle1,Ch9_ScottFirWoDao)
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Fir and Sin by +8
+#endif
+EndEvent
+
+SinTurnsAggressive:
+SetAI(Sin,AI1_InRange,AI2_Charge)
+EndEvent
+
+NoahRecruitsFir:
+SwitchMusic(MUS_JoinUs)
+Text(Ch9_NoahRecruitsFir)
+BecomeAlly(Fir)
+RestoreMusic
+EndEvent
+
+SueRecruitsSin:
+SwitchMusic(MUS_JoinUs)
+Text(Ch9_SueRecruitsSin)
+BecomeAlly(Sin)
+RestoreMusic
+EndEvent
+
+LoadFortReinforcements:
+ReinforcementEvent(FortPiratesReinforcements)
+
+SilverSwordVillageVisit:
+VillageEventItem(Ch9_SilverSwordVillage,BG_Village,SilverSword)
+
+//Manual Village event. Triggers the other village's tile change so it can't be visited.
+KillerBowEchidnaRouteVillage:
+MUSI
+SMOV 0x2 BG_Village
+SMOV 0x3 Ch9_KillerBowVillage
+CALL $9EE310
+MUNO
+CALL $591F40
+SMOV 0x3 KillerBow
+GIVEITEMTO 0xFFFF
+TILECHANGE 5
+EndEvent
+
+//Ditto but for Bartre route. Also enables Bartre Route flag.
+BarrierBartreRouteVillage:
+MUSI
+SMOV 0x2 BG_Village
+SMOV 0x3 Ch9_BarrierVillage
+CALL $9EE310
+MUNO
+CALL $591F40
+SMOV 0x3 Barrier
+GIVEITEMTO 0xFFFF
+TILECHANGE 4
+FlagON(WestIslesBartreRouteFlag)
+EndEvent
+
+MistHouseVisit:
+HouseEvent(Ch9_MistHouse,BG_House)
+
+SinHouseVisit:
+HouseEvent(Ch9_SinWarningHouse,BG_House)
+
+NorthOrWestHouseVisit:
+HouseEvent(Ch9_NorthOrWestHouse,BG_House)
+
+MainlandHouseVisit:
+HouseEvent(Ch9_FleeingToMainlandHouse,BG_House)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch9_End1
+TEXTEND
+
+//Branch based on if either village was visited, and if so which.
+BranchIfFlagON(1,Ch9_LeftVillageVisitedFlag)
+BranchIfFlagON(2,Ch9_RightVillageVisitedFlag)
+
+//Neither village visited case. Echidna route, Ch10A.
+TEXTSHOW2 Ch9_EndNorthNoVillage
+TEXTEND
+RemaFadeClean
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch10A)
+GOTO 9
+
+LABEL 1
+//Left village visited case. Echidna route, Ch10A.
+TEXTSHOW2 Ch9_EndNorth
+TEXTEND
+RemaFadeClean
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch10A)
+GOTO 9
+
+LABEL 2
+//Right village visited case. Bartre route, Ch10B.
+TEXTSHOW2 Ch9_EndWest
+TEXTEND
+RemaFadeClean
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch10B)
+GOTO 9
+
+LABEL 9
+ENDA
+
+VendorList:
+SHLI Fire Heal Mend Vulnerary Antitoxin DoorKey
+
+ArmoryList:
+SHLI SlimSword IronSword SteelSword IronBlade SteelBlade IronAxe SteelAxe HandAxe Hammer
+
+//MESSAGE Events end at offset CURRENTOFFSET

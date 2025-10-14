@@ -1,0 +1,362 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch20A_RoyCathTalkFlag 0x7
+#define Ch20A_JunoRecruitmentFlag 0x8
+#define Ch20A_ShannaJunoExtraTalkFlag 0x9
+#define Ch20A_TheaJunoExtraTalkFlag 0xA
+#define Ch20A_ZelotJunoExtraTalkFlag 0xB
+#define Ch20A_InsideAggroFlag 0xC
+#define Ch20A_GaidenGoneFlag 0xD
+
+//Ch20A_RoartzVsDouglasFlag 0x1F
+//Ch20A_GenericCitizenIlliaDeathFlag 0x20
+
+EventPointerTable(EVENTS_Ch20A,ThisChapter)
+NPCEscapePointPointerTable(CHAPTER_Ch20A,Ch20AEscapePoints)
+EscapePointPointerTable(CHAPTER_Ch20A,Ch20AEscapePoints)
+
+ALIGN 4
+
+Ch20AEscapePoints:
+EscapePoint(13,0,MoveUp)
+EscapePointEnd
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,CathAndThievesAppear,10)
+TurnEventEnemy(0x0,GaidenGone,26)
+TurnEventEnemy(0x0,LoadMercs,15,4)
+TurnEventEnemy(0x0,LoadFighters,11,4)
+TurnEventEnemy(0x0,LoadHardMercs,11,4)
+TurnEventEnemy(0x0,LoadHardFighters,15,4)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch20A_JunoRecruitmentFlag,ShannaRecruitsJuno,Shanna,Juno)
+CharacterEvent(Ch20A_JunoRecruitmentFlag,TheaRecruitsJuno,Thea,Juno)
+CharacterEvent(Ch20A_JunoRecruitmentFlag,ZelotRecruitsJuno,Zelot,Juno)
+CharacterEventBothWays(Ch20A_ShannaJunoExtraTalkFlag,ShannaJunoExtraTalk,Shanna,Juno)
+CharacterEventBothWays(Ch20A_TheaJunoExtraTalkFlag,TheaJunoExtraTalk,Thea,Juno)
+CharacterEventBothWays(Ch20A_ZelotJunoExtraTalkFlag,ZelotJunoExtraTalk,Zelot,Juno)
+
+
+END_MAIN
+
+LocationBasedEvents:
+Seize(3,19)
+Armory(ArmoryList,8,0)
+Vendor(VendorList,5,1)
+Chest(Speedwings,2,10)
+Chest(Axereaver,3,11)
+Chest(Longbow,4,11)
+Chest(WoDao,5,10)
+Chest(Purge,16,18)
+Chest(Sleep,17,16)
+Chest(Nosferatu,15,16)
+Chest(Wyrmslayer,12,16)
+Door(7,11)
+Door(7,17)
+Door(9,8)
+Door(18,20)
+Door(22,18)
+END_MAIN
+
+MiscBasedEvents:
+AreaEvent(Ch20A_InsideAggroFlag,InsideAggroEvent,8,10,18,14)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+KillerBallista(3,15)
+NormalBallista(28,12)
+NormalBallista(17,25)
+ENDTRAP
+
+ALIGN 4
+
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [19,1] 0x0 0x0 0x0 0x0 [Rapier, IronSword, DoorKey, Armorslayer] DummyAI
+UNIT Marcus Paladin Roy Level(16,Ally,1) [16,0] 0x0 0x0 0x0 0x0 [SilverLance, IronSword, IronLance, Horseslayer] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [17,1] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(18,Ally,1) [19,3] 0x0 0x0 0x0 0x0 [IronLance, Javelin, ChestKey5Uses] DummyAI
+UNIT Melady WyvernRiderF Roy Level(15,Ally,1) [21,3] 0x0 0x0 0x0 0x0 [SteelLance, Javelin, IronLance, Vulnerary] DummyAI
+UNIT Echidna HeroF Roy Level(8,Ally,1) [16,4] 0x0 0x0 0x0 0x0 [BraveAxe, IronSword, IronBlade, SteelSword] DummyAI
+UNIT Bartre Warrior Roy Level(5,Ally,1) [22,4] 0x0 0x0 0x0 0x0 [SteelAxe, IronAxe, HandAxe] DummyAI
+UNIT Hugh Mage Roy Level(20,Ally,1) [22,0] 0x0 0x0 0x0 0x0 [Fire, Aircalibur, Elfire, Thunder] DummyAI
+UNIT Chad Thief Roy Level(20,Ally,1) [21,1] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Igrene SniperF Roy Level(7,Ally,1) [20,2] 0x0 0x0 0x0 0x0 [IronBow, SilverBow, Vulnerary, SteelBow] DummyAI
+UNIT Cecilia Valkyrie Roy Level(8,Ally,1) [18,2] 0x0 0x0 0x0 0x0 [Elfire, Thunder, Heal, Vulnerary] DummyAI
+UNIT Thea PegasusKnight Roy Level(20,Ally,1) [17,3] 0x0 0x0 0x0 0x0 [BraveLance, SteelLance, Javelin, IronLance] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [19,0] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin, Restore] DummyAI
+UNIT
+
+Enemies:
+UNIT Roartz General 0x0 Level(10,Enemy,0) [3,19] 0x0 0x0 0x0 0x0 [Spear, RedGem] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_DontRetreat]
+UNIT GenericIlliaCh20A Knight Roartz Level(20,Enemy,1) [7,18] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Weird2, AI4_Retreat]
+UNIT GenericIlliaCh20A Knight Roartz Level(20,Enemy,1) [15,10] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Weird2, AI4_Retreat]
+UNIT GenericIlliaCh20A Knight Roartz Level(19,Enemy,1) [12,21] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Knight Roartz Level(19,Enemy,1) [21,15] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [14,12] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Weird1, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [16,12] 0x0 0x0 0x0 0x0 [Armorslayer] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Weird1, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(19,Enemy,1) [9,14] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [22,12] 0x0 0x0 0x0 0x0 [Lancereaver] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(19,Enemy,1) [22,14] 0x0 0x0 0x0 0x0 [KillingEdge] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [9,2] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [7,3] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [28,7] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Hero Roartz Level(7,Enemy,1) [22,16] 0x0 0x0 0x0 0x0 [IronBlade] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Hero Roartz Level(7,Enemy,1) [15,13] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Sniper Roartz Level(8,Enemy,1) [18,11] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh20A Sniper Roartz Level(8,Enemy,1) [22,21] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Arch, AI4_Retreat]
+UNIT GenericIlliaCh20A Sniper Roartz Level(8,Enemy,1) [8,20] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Druid Roartz Level(6,Enemy,1) [14,14] 0x0 0x0 0x0 0x0 [Nosferatu] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Druid Roartz Level(6,Enemy,1) [16,14] 0x0 0x0 0x0 0x0 [Flux, Sleep, RedGem] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Druid Roartz Level(6,Enemy,1) [23,15] 0x0 0x0 0x0 0x0 [Flux, Sleep] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Druid Roartz Level(6,Enemy,1) [1,20] 0x0 0x0 0x0 0x0 [Nosferatu, Berserk] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(20,Enemy,1) [14,9] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(20,Enemy,1) [16,9] 0x0 0x0 0x0 0x0 [Swordreaver, Vulnerary] [AI1_InRange, AI2_Charge, RAI_50_100|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(18,Enemy,1) [20,11] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(19,Enemy,1) [23,11] 0x0 0x0 0x0 0x0 [Swordreaver, Vulnerary] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Bishop Roartz Level(7,Enemy,1) [15,16] 0x0 0x0 0x0 0x0 [Lightning, Purge, Physic] [AI1_HealAllies, AI2_DontMove, RAI_50_100|TAI_HP, AI4_DontRetreat]
+UNIT GenericIlliaCh20A Bishop Roartz Level(7,Enemy,1) [12,14] 0x0 0x0 0x0 0x0 [Lightning, Mend] [AI1_InRange, AI2_DontMove, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericIlliaCh20A Bishop Roartz Level(7,Enemy,1) [24,19] 0x0 0x0 0x0 0x0 [Lightning, Mend] [AI1_InRange, AI2_TwoMoves, RAI_50_100|TAI_Pos, AI4_Retreat]
+UNIT GenericEtruriaCh20A Archer 0x0 Level(18,Enemy,1) [3,15] 0x0 0x0 0x0 0x0 [KillerBow, ElysianWhip] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_DontRetreat]
+UNIT GenericEtruriaCh20A Archer 0x0 Level(18,Enemy,1) [17,25] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_DontRetreat]
+UNIT GenericEtruriaCh20A Archer 0x0 Level(18,Enemy,1) [28,12] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Arch, AI4_DontRetreat]
+UNIT Juno Falcoknight Roartz Level(9,NPC,0) [9,7] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_DontMove, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenIlliaCh20A CivilianF Roartz Level(10,NPC,0) [7,7] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_Escape, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenIlliaCh20A CivilianF Roartz Level(10,NPC,0) [6,6] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_Escape, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenIlliaCh20A CivilianF Roartz Level(10,NPC,0) [10,6] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_Escape, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenIlliaCh20A CivilianF Roartz Level(10,NPC,0) [8,6] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_Escape, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT GenericCitizenIlliaCh20A CivilianF Roartz Level(10,NPC,0) [9,6] 0x0 0x0 0x0 0x0 [] [AI1_InPlace, AI2_Escape, RAI_50_100|TAI_Reckless, AI4_Retreat]
+UNIT
+
+JustCath:
+UNIT Cath ThiefF 0x0 Level(5,Enemy,0) [31,20] 0x0 0x0 0x1 REDA_30_20 [IronSword, Lockpick, Vulnerary] [AI1_None, AI2_PillageEscape, RAI_80_100|TAI_Def, AI4_Retreat]
+UNIT
+
+FighterReinforcements:
+UNIT GenericIlliaCh20A Fighter Roartz Level(20,Enemy,1) [29,0] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(20,Enemy,1) [30,0] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Fighter Roartz Level(20,Enemy,1) [31,0] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+MercReinforcements:
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [31,19] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaCh20A Mercenary Roartz Level(18,Enemy,1) [31,20] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ThiefReinforcements:
+UNIT GenericThiefCh20A Thief 0x0 Level(20,Enemy,1) [13,0] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_50_100|TAI_Def, AI4_Retreat]
+UNIT GenericThiefCh20A Thief 0x0 Level(20,Enemy,1) [14,0] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] [AI1_None, AI2_PillageEscape, RAI_50_100|TAI_Def, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_DistantLands)
+LOAD1 0x1 Enemies
+ENUN
+ChStartFadeFromBlack
+FlagON(Ch20A_ShannaJunoExtraTalkFlag)
+FlagON(Ch20A_TheaJunoExtraTalkFlag)
+FlagON(Ch20A_ZelotJunoExtraTalkFlag)
+
+//If Cath is recruited (or dead), disable her talk with Roy.
+BranchIfFlagOFF(1,CathRecruitedOrDeadFlag)
+FlagON(Ch12_RoyCathTalkFlag)
+
+LABEL 1
+FlashCursor(Roartz,60)
+Text(BG_Castle1,Ch20A_Start1)
+CAM1 Juno
+FlashCursor(Juno, 60)
+PlayMusic(MUS_FinalFarewell)
+Text(BG_Dungeon,Ch20A_Start2)
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+FlashCursor(Roy,60)
+PlayMusic(MUS_PrincessOfDestiny)
+Text(BG_SnowOutside,Ch20A_Start3)
+PlayMusic(MUS_BeholdingNaturesBeauty)
+GotoPrepScreen
+
+InsideAggroEvent:
+PlayerInRange
+SetAI(21,15,AI1_InRange,AI2_Charge)
+SetAI(22,12,AI1_InRange,AI2_Charge)
+SetAI(22,14,AI1_InRange,AI2_Charge)
+SetAI(22,16,AI1_InRange,AI2_Charge)
+SetAI(20,11,AI1_InRange,AI2_Charge)
+SetAI(23,11,AI1_InRange,AI2_Charge)
+EndEvent
+
+ShannaRecruitsJuno:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20A_ShannaRecruitsJuno)
+BecomeAlly(Juno)
+RestoreMusic
+FlagOFF(Ch20A_TheaJunoExtraTalkFlag)
+FlagOFF(Ch20A_ZelotJunoExtraTalkFlag)
+EndEvent
+
+TheaRecruitsJuno:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20A_TheaRecruitsJuno)
+BecomeAlly(Juno)
+RestoreMusic
+FlagOFF(Ch20A_ShannaJunoExtraTalkFlag)
+FlagOFF(Ch20A_ZelotJunoExtraTalkFlag)
+EndEvent
+
+ZelotRecruitsJuno:
+SwitchMusic(MUS_JoinUs)
+Text(Ch20A_ZelotRecruitsJuno)
+BecomeAlly(Juno)
+RestoreMusic
+FlagOFF(Ch20A_ShannaJunoExtraTalkFlag)
+FlagOFF(Ch20A_TheaJunoExtraTalkFlag)
+EndEvent
+
+ShannaJunoExtraTalk:
+QuieterMusic
+Text(Ch20A_ShannaJunoTalk)
+UnquieterMusic
+EndEvent
+
+TheaJunoExtraTalk:
+QuieterMusic
+Text(Ch20A_TheaJunoTalk)
+UnquieterMusic
+EndEvent
+
+ZelotJunoExtraTalk:
+QuieterMusic
+Text(Ch20A_ZelotJunoTalk)
+UnquieterMusic
+EndEvent
+
+CathAndThievesAppear:
+//Skip Cath's appearance if she's been recruited or is dead.
+BranchIfFlagON(3,CathRecruitedOrDeadFlag)
+SwitchMusic(MUS_GoingMyWay)
+LoadReinforcements(JustCath)
+Text(Ch20A_CathAppears)
+RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Cath by +13
+#endif
+LABEL 3
+LoadReinforcements(ThiefReinforcements)
+EndEvent
+
+GaidenGone:
+FlagON(Ch20A_GaidenGoneFlag)
+WEA1 SnowStorm
+CAM1 Roy
+FlashCursor(Roy,60)
+QuieterMusic
+Text(Ch20A_GaidenGone)
+UnquieterMusic
+EndEvent
+
+LoadMercs:
+ReinforcementEvent(MercReinforcements)
+
+LoadFighters:
+ReinforcementEvent(FighterReinforcements)
+
+LoadHardMercs:
+HardReinforcementEvent(MercReinforcements)
+
+LoadHardFighters:
+HardReinforcementEvent(FighterReinforcements)
+
+EndingScene:
+//Branch to gaiden fail is Juno or Zelot are unrecruited/dead or if the gaiden gone flag is on.
+BranchIfUnitDead(5,Juno)
+BranchIfUnitDead(5,Zelot)
+BranchIfFlagON(5,Ch20A_GaidenGoneFlag)
+
+//All alive and flag off, gaiden success.
+PlayMusic(MUS_Triumph)
+Text(BG_Castle1,Ch20A_EndGaidenGot)
+
+//Skip Angelic Robe reward if any of the citizens died.
+BranchIfFlagON(3,Ch20A_GenericCitizenIlliaDeathFlag)
+
+//All alive, Angelic Robe got.
+Text(BG_Castle1,Ch20A_EndAngelicRobe)
+GiveItemToCharacter(Roy,AngelicRobe)
+
+//Move to Ch20Ax.
+LABEL 3
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapterWithoutWM(CHAPTER_Ch20Ax)
+GOTO 9
+
+//Gaiden fail branch. Go to Ch21.
+LABEL 5
+PlayMusic(MUS_PrincessOfDestiny)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch20A_Ch20Ax_EndRoyAndGuinivereTalk
+TEXTEND
+PlayMusic(MUS_MainThemeArrangement)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+
+//Angel Robe reward again.
+BranchIfFlagON(7,Ch20A_GenericCitizenIlliaDeathFlag)
+
+//Got.
+Text(BG_Castle1,Ch20A_EndAngelicRobe)
+GiveItemToCharacter(Roy,AngelicRobe)
+
+//Move to Ch21.
+LABEL 7
+STAL 64
+ReviveMerlinusIfConfig
+MoveToChapter(CHAPTER_Ch21)
+LABEL 9
+ENDA
+
+ArmoryList:
+SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
+
+VendorList:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
+
+//MESSAGE Events end at offset CURRENTOFFSET

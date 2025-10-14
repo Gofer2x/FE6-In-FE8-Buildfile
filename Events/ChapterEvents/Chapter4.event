@@ -1,0 +1,296 @@
+﻿//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define Ch4_ClarineRoyTalkFlag 0x7
+#define Ch4_ClarineRutgerTalkFlag 0x8
+
+EventPointerTable(EVENTS_Ch4,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch4,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch4,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData TrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventNPC(0x0,RutgerClarineEvent1,2)
+TurnEventNPC(0x0,RutgerClarineEvent2,3)
+TurnEventEnemy(0x0,PiratesAppear,4)
+TurnEventEnemy(0x0,RutgerWarning,5)
+//Turn 5 has some ASM in FE6.
+TurnEventEnemy(0x0,RutgerAppears,6)
+TurnEventEnemy(0x0,LoadPirateReinforcements,6)
+TurnEventEnemy(0x0,LoadPirateReinforcements,8,3)
+TurnEventEnemy(0x0,LoadCavsFromTheBackReinforcements,11)
+
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+CharacterEvent(Ch4_ClarineRoyTalkFlag,ClarineRecruitsHerself,Clarine,Roy)
+CharacterEvent(Ch4_ClarineRutgerTalkFlag,ClarineRecruitsRutger,Clarine,Rutger)
+END_MAIN
+
+LocationBasedEvents:
+Seize(3,8)
+Vendor(VendorList,13,15)
+Armory(ArmoryList,11,14)
+Village(0x0,DoorKeyVillageVisit,27,2)
+Village(0x0,SteelBladeVillageVisit,11,4)
+Village(0x0,AngelicRobeVillageVisit,8,15)
+House(0x0,BanditWarningHouseVisit,24,1)
+House(0x0,LausNomadsHouseVisit,13,3)
+House(0x0,ReaverHouseVisit,9,5)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(3,Ally,1) [23,3] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(2,Ally,1) [22,3] 0x0 0x0 0x0 0x0 [SilverLance, IronSword] DummyAI
+UNIT Alen Cavalier Roy Level(5,Ally,1) [21,2] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Lance Cavalier Roy Level(3,Ally,1) [21,4] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Javelin] DummyAI
+UNIT Bors Knight Roy Level(4,Ally,1) [20,3] 0x0 0x0 0x0 0x0 [IronLance, Javelin] DummyAI
+UNIT Wolt Archer Roy Level(3,Ally,1) [23,2] 0x0 0x0 0x0 0x0 [IronBow, Vulnerary] DummyAI
+UNIT Dieck Mercenary Roy Level(6,Ally,1) [23,7] 0x0 0x0 0x0 0x0 [IronBlade, IronSword, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(5,Ally,1) [24,6] 0x0 0x0 0x0 0x0 [IronAxe, Hammer] DummyAI
+UNIT Lot Fighter Roy Level(3,Ally,1) [24,8] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] DummyAI
+UNIT Shanna PegasusKnight Roy Level(2,Ally,1) [23,9] 0x0 0x0 0x0 0x0 [SlimLance, Vulnerary] DummyAI
+UNIT Elen Cleric Roy Level(3,Ally,1) [23,4] 0x0 0x0 0x0 0x0 [Heal, Vulnerary] DummyAI
+UNIT Chad Thief Roy Level(1,Ally,1) [24,7] 0x0 0x0 0x0 0x0 [IronSword, Lockpick] DummyAI
+UNIT Lugh Mage Roy Level(2,Ally,1) [25,7] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] DummyAI
+UNIT Merlinus Transporter Roy Level(1,Ally,1) [24,3] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+JustClarine:
+UNIT Clarine Troubadour 0x0 Level(1,NPC,0) [3,6] 0x0 0x0 0x1 REDA_5_5 [Heal, Vulnerary] [AI1_None, AI2_ClarineTalkToRoyAI, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+Enemies:
+UNIT Narcian WyvernLord 0x0 Level(1,Enemy,1) [3,8] 0x0 0x0 0x0 0x0 [SilverLance, Javelin] DummyAI
+UNIT Erik Cavalier 0x0 Level(10,Enemy,0) [2,9] 0x0 0x0 0x0 0x0 [SteelSword, Javelin] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_DontRetreat]
+UNIT GenericLausCh4 Cavalier Erik Level(4,Enemy,1) [1,5] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRangeLaus, AI2_TwoMovesLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Archer Erik Level(5,Enemy,1) [0,6] 0x0 0x0 0x0 0x0 [IronBow] [AI1_InRangeLaus, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(3,Enemy,1) [5,10] 0x0 0x0 0x1 REDA_3_10 [IronLance] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(3,Enemy,1) [5,11] 0x0 0x0 0x1 REDA_3_11 [IronLance] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(3,Enemy,1) [1,10] 0x0 0x0 0x1 REDA_0_10 [IronSword] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(5,Enemy,1) [1,11] 0x0 0x0 0x1 REDA_0_11 [IronLance] [AI1_InRangeLaus, AI2_TwoMovesLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(3,Enemy,1) [6,10] 0x0 0x0 0x0 0x0 [IronSword] [AI1_InRangeLaus, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(3,Enemy,1) [6,11] 0x0 0x0 0x0 0x0 [IronLance] [AI1_InRangeLaus, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(2,Enemy,1) [15,7] 0x0 0x0 0x1 REDA_12_8 [IronLance] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(2,Enemy,1) [17,6] 0x0 0x0 0x1 REDA_14_7 [IronLance] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier Erik Level(2,Enemy,1) [15,4] 0x0 0x0 0x1 REDA_13_2 [IronSword] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Archer Erik Level(5,Enemy,1) [8,12] 0x0 0x0 0x1 REDA_1_12 [IronBow] [AI1_InRangeLaus, AI2_TwoMovesLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Archer Erik Level(4,Enemy,1) [5,8] 0x0 0x0 0x1 REDA_4_9 [IronBow] [AI1_InRangeLaus, AI2_TwoMovesLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Nomad Erik Level(1,Enemy,1) [3,10] 0x0 0x0 0x1 REDA_1_9 [IronBow] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Nomad Erik Level(1,Enemy,1) [16,6] 0x0 0x0 0x1 REDA_13_7 [IronBow] [AI1_InRangeLaus, AI2_DontMove, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+PirateReinforcements:
+UNIT GenericPirateCh4 Pirate 0x0 Level(4,Enemy,1) [29,15] 0x0 0x0 0x0 0x0 [IronAxe] [AI1_InRangeLaus, AI2_PillageAttack, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericPirateCh4 Pirate 0x0 Level(3,Enemy,1) [23,16] 0x0 0x0 0x0 0x0 [HandAxe] [AI1_InRangeLaus, AI2_PillageAttack, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT
+
+RutgerSquad:
+UNIT GenericLausCh4 Fighter Erik Level(3,Enemy,1) [3,9] 0x0 0x0 0x1 REDA_5_7 [IronAxe, Vulnerary] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Fighter Erik Level(2,Enemy,1) [3,9] 0x0 0x0 0x1 REDA_7_7 [IronAxe, Vulnerary] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Archer Erik Level(2,Enemy,1) [3,9] 0x0 0x0 0x1 REDA_6_7 [IronBow, Vulnerary] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_NoRecovery|TAI_Pos, AI4_Retreat]
+UNIT Rutger Myrmidon 0x0 Level(4,Enemy,0) [3,9] 0x0 0x0 0x1 REDA_6_8 [KillingEdge] [AI1_InRangeLaus, AI2_ChargeLaus, RAI_30_80|TAI_Pos, AI4_Retreat]
+UNIT
+
+CavReinforcements:
+UNIT GenericLausCh4 Cavalier 0x0 Level(4,Enemy,1) [29,5] 0x0 0x0 0x1 REDA_28_5 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier 0x0 Level(4,Enemy,1) [29,6] 0x0 0x0 0x1 REDA_28_6 [IronLance, Javelin] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier 0x0 Level(4,Enemy,1) [29,7] 0x0 0x0 0x1 REDA_28_7 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT GenericLausCh4 Cavalier 0x0 Level(4,Enemy,1) [29,8] 0x0 0x0 0x1 REDA_28_8 [IronLance] [AI1_InRange, AI2_Charge, RAI_10_50|TAI_Pos, AI4_Retreat]
+UNIT
+
+CutsceneNarcian:
+UNIT Narcian WyvernLord 0x0 Level(10,Enemy,0) [18,10] 0x0 0x0 0x0 0x0 [Runesword, DelphiShield] DummyAI
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+PlayMusic(MUS_Suspicious)
+ChStartFadeFromBlack
+LOAD 0x1 CutsceneNarcian
+ENUN
+STAL 16
+CAM1 [3,8]
+STAL 16
+CMOF
+MOVE 0x0 Narcian [3,8] 
+ENUN
+STAL 16
+DISA Narcian
+STAL 16
+Text(BG_Castle1, Ch4_Start)
+LOAD 0x1 Enemies
+ENUN
+STAL 16
+CMON
+MOVE 0x0 Narcian [13,0]
+ENUN
+DISA Narcian
+STAL 16
+CAM1 [0,8]
+STAL 16
+CMOF
+MOVE 0x0 Erik [3,8]
+LOAD3 0x0 Units
+ENUN
+CAM1 Roy
+#ifdef CONFIG_BuggedEarlyHMBonuses
+//Patch here on Erik and GenericLausCh4 by +4
+#endif
+EndEvent
+
+RutgerClarineEvent1:
+CAM1 [4,8]
+QuieterMusic
+STAL 16
+Text(BG_Dungeon, Ch4_RutgerClarine1)
+UnquieterMusic
+EndEvent
+
+RutgerClarineEvent2:
+CAM1 [4,8]
+QuieterMusic
+STAL 16
+Text(BG_Dungeon, Ch4_RutgerClarine2)
+LOAD1 0x1 JustClarine
+Text(Ch4_RutgerClarine3)
+UnquieterMusic
+ENUN
+EndEvent
+
+PiratesAppear:
+PlayMusic(MUS_DeerOfThePlains)
+STAL 16
+QuieterMusic
+LoadReinforcements(PirateReinforcements)
+Text(Ch4_PiratesAppear)
+UnquieterMusic
+EndEvent
+
+LoadPirateReinforcements:
+ReinforcementEvent(PirateReinforcements)
+
+LoadHardPirateReinforcements:
+HardReinforcementEvent(PirateReinforcements)
+
+LoadCavsFromTheBackReinforcements:
+HardReinforcementEvent(CavReinforcements)
+
+RutgerWarning:
+BranchIfBossDead(1)
+CAM1 [3,8]
+FlashCursor(3,8,60)
+PlayMusic(MUS_DeerOfThePlains)
+STAL 16
+Text(BG_Castle1, Ch4_RutgerWarning)
+LABEL 1
+EndEvent
+
+RutgerAppears:
+BranchIfBossDead(1)
+CAM1 [4,9]
+STAL 16
+PlayMusic(MUS_DeerOfThePlains)
+CMOF
+LoadReinforcements(RutgerSquad)
+Text(Ch4_RutgerAppears)
+LABEL 1
+#ifdef CONFIG_RecruitableUnitsHMBonuses
+//Level Rutger by +4
+#endif
+EndEvent
+
+ClarineRecruitsHerself:
+SwitchMusic(MUS_JoinUs)
+Text(BG_Outside, Ch4_ClarineRecruitsHerself)
+REVEAL Clarine
+BecomeAlly(Clarine)
+RestoreMusic
+EndEvent
+
+ClarineRecruitsRutger:
+SwitchMusic(MUS_JoinUs)
+Text(BG_Outside, Ch4_ClarineRecruitsRutger)
+BecomeAlly(Rutger)
+RestoreMusic
+EndEvent
+
+DoorKeyVillageVisit:
+VillageEventItem(Ch4_DoorKeyVillage,BG_Village,DoorKey)
+
+SteelBladeVillageVisit:
+VillageEventItem(Ch4_SteelBladeVillage,BG_Village,SteelBlade)
+
+AngelicRobeVillageVisit:
+VillageEventItem(Ch4_AngelicRobeVillage,BG_Village,AngelicRobe)
+
+BanditWarningHouseVisit:
+HouseEvent(Ch4_BanditWarningHouse,BG_House)
+
+LausNomadsHouseVisit:
+HouseEvent(Ch4_LausNomadsHouse,BG_House)
+
+ReaverHouseVisit:
+HouseEvent(Ch4_ReaverHouse,BG_House)
+
+EndingScene:
+PlayMusic(MUS_Triumph)
+SetBackground(BG_Castle1)
+TEXTSTART
+TEXTSHOW Ch4_End
+TEXTEND
+PlayMusic(MUS_PrincessOfDestiny)
+TEXTCONT
+TEXTEND
+RemaFadeClean
+STAL 64
+MoveToChapter(CHAPTER_Ch5)
+ReviveMerlinusIfConfig
+ENDA
+
+VendorList:
+SHLI Fire Heal Vulnerary
+
+ArmoryList:
+SHLI SlimSword IronSword SlimLance IronLance Javelin IronAxe HandAxe IronBow
+
+//MESSAGE Events end at offset CURRENTOFFSET

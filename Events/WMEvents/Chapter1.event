@@ -1,0 +1,12 @@
+WorldMapPointerTable(CHAPTER_Ch1,AfterPrevious)
+WorldMapIntroPointerTable(CHAPTER_Ch1,CurrentNodeSelect)
+
+AfterPrevious:
+WM_DisableSkip
+SKIPWN
+ENDA
+
+CurrentNodeSelect:
+WM_DisableSkip
+FlagON(WorldMapInitializedFlag)
+ENDA
