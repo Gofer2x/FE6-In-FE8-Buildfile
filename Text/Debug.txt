@@ -1,0 +1,13 @@
+## ThisShouldNotHappen
+[LoadRoy]This should not happen![AN][X]
+
+## TempBadEndingScroll
+Bad Ending text[N]
+scroll here[AN][X]
+
+## TempTrueEndingScroll
+True Ending text[N]
+scroll here[AN][X]
+
+## TempLaterInArcadia
+Later in Arcadia...[AN][X]

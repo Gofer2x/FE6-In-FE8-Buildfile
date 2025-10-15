@@ -8,7 +8,6 @@
   ALIGN 4
   #include "WMEvents/Chapter1.event"
 }
-/*
 {
   ALIGN 4
   #include "WMEvents/Chapter2.event"
@@ -121,4 +120,3 @@
   ALIGN 4
   #include "WMEvents/Chapter23.event"
 }
-*\

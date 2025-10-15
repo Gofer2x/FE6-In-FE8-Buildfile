@@ -40,7 +40,7 @@ REMA
 GiveItemToCharacter(Roy,BindingBlade)
 STAL 64
 HIDEMAP
-PROM Roy RoyGreatLord HeavenSealDUMMY
+PROM Roy RoyGreatLord FE8_HeavenSealDUMMY
 SHOWMAP
 FadeFromBlack(Fade1s)
 STAL 1280

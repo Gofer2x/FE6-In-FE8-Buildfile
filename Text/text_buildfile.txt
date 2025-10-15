@@ -66,3 +66,5 @@
 //#include "Events/Chapter24.txt"
 //#include "Events/Final.txt"
 //#include "Events/Epilogue.txt"
+
+#include "Debug.txt"

@@ -159,6 +159,16 @@
 
 #define StopHereIfSkipping "BYTE $20 $02 $02 $00"
 
+//From eastdlib Backwards Compat (why are these there?)
+#define IfCharacterDead(char, condID) "SVAL 2 char; BEQ condID 0xC 2"
+#define IfCharacterActive(char, condID) "SVAL 7 char; BEQ condID 0xC 7"
+#define GiveMoney(vill, amount) "SVAL 3 amount; GIVEITEMTOMAIN vill"
+#define GiveItemToCharacter(char, item) "SVAL 3 item; GIVEITEMTO char"
+#define GiveItemToCurrent(item) "SVAL 3 item; GIVEITEMTO 0xFFFF"
+#define GiveItemToMain(item) "SVAL 3 item; GIVEITEMTOMAIN 0"
+#define BattleStart "SVAL 0xD 0"
+#define BattleCommand(command) "SVAL 1 command; SAVETOQUEUE"
+
 #ifdef CONFIG_EnableReviveMerlinus
 	#define ReviveMerlinusIfConfig "CALL EVENT_ReviveMerlinus"
 #endif

@@ -1,4 +1,15 @@
 #include "BattleTransforming/FE8-BattleTransformEA.txt"
 #include "MultiTransformManims/MultiTransformManims.event"
 
+#include "EventPatches/EVENTSCRIPT_AutoLevelUnits/Installer.event" //to simulate bugged hm bonuses
+#include "EventPatches/EVENTSCRIPT_change_allegiance_all/change_allegiance_all.event"
+#include "EventPatches/EVENTSCRIPT_change_ai_all/change_ai_all.event"
+#include "EventPatches/EVENTSCRIPT_COND_GetStatus/Installer.event"
+#include "EventPatches/EVENTSCRIPT_IsTileChangeTriggered/IsTileChangeTriggered.event"
+#include "EventPatches/EVENTSCRIPT_COND_COUNT_RANGE_20220305/CountRangeState.event"
+#include "EventPatches/EVENTSCRIPT_COND_ITEM/Installer.event"
+#include "EventPatches/EVENTSCRIPT_ChangeEdition/Installer.event"
+#include "EventPatches/EVENTSCRIPT_GetSupport_20220520/Installer.event"
+#include "EventPatches/AAA_GetUnitExpGain/Installer.event"
+
 #include "SMSPatch.event"
