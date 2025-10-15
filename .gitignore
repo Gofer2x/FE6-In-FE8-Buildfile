@@ -17,6 +17,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# FEBuilder
+Tools/FEBuilderGBA/*
+!Tools/FEBuilderGBA/PutFEBuilderHere.txt
+
 # rom stuff
 *.gba
 *.ups
