@@ -1,0 +1,21 @@
+//moved this to the respective chapters but let's keep this here just in case
+
+//EVENT_LarumRecruitsPerceval:
+//SwitchMusic(MUS_JoinUs)
+//Text(Ch13_Ch15_LarumRecruitsPerceval)
+//BecomeAlly(Perceval)
+//AllEnemiesToNPC(GenericSoldierPerceval,0)
+//ChangeAIAllNPC(AI1_None,AI2_Escape,GenericSoldierPerceval,0)
+//FlagON(PercevalRecruitedOrDeadFlag)
+//RestoreMusic
+//EndEvent
+//
+//EVENT_ElffinRecruitsPerceval:
+//SwitchMusic(MUS_JoinUs)
+//Text(Ch13_Ch15_ElffinRecruitsPerceval)
+//BecomeAlly(Perceval)
+//AllEnemiesToNPC(GenericSoldierPerceval,0)
+//ChangeAIAllNPC(AI1_None,AI2_Escape,GenericSoldierPerceval,0)
+//FlagON(PercevalRecruitedOrDeadFlag)
+//RestoreMusic
+//EndEvent

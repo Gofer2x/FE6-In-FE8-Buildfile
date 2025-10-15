@@ -1,0 +1,56 @@
+#define BossBGMEntry(UnitId,SongId) "BYTE UnitId 0 0 0; SHORT SongId 0"
+#define BossBGMTerminator "BYTE 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF 0xFF"
+
+PUSH
+ORG $072908
+POIN NewBossBGMTable
+POP
+
+ALIGN 4
+NewBossBGMTable:
+BossBGMEntry(Damas,MUS_BattleForTomorrow)
+BossBGMEntry(Ruud,MUS_BattleForTomorrow)
+BossBGMEntry(Slater,MUS_BattleForTomorrow)
+BossBGMEntry(Erik,MUS_BattleForTomorrow)
+BossBGMEntry(Dory,MUS_BattleForTomorrow)
+BossBGMEntry(Wagner,MUS_BattleForTomorrow)
+BossBGMEntry(Debias,MUS_BattleForTomorrow)
+BossBGMEntry(Legance,MUS_BattleForTomorrow)
+BossBGMEntry(Henning,MUS_BattleForTomorrow)
+BossBGMEntry(Scott,MUS_BattleForTomorrow)
+BossBGMEntry(Nord,MUS_BattleForTomorrow)
+BossBGMEntry(Orlo,MUS_BattleForTomorrow)
+BossBGMEntry(Roberts,MUS_BattleForTomorrow)
+BossBGMEntry(Zinque,MUS_BattleForTomorrow)
+BossBGMEntry(Scollan,MUS_BattleForTomorrow)
+BossBGMEntry(Morgan,MUS_BattleForTomorrow)
+BossBGMEntry(Ein,MUS_BattleForTomorrow)
+BossBGMEntry(Guerrero,MUS_BattleForTomorrow)
+BossBGMEntry(Flaer,MUS_BattleForTomorrow)
+BossBGMEntry(Randy,MUS_BattleForTomorrow)
+BossBGMEntry(Maggie,MUS_BattleForTomorrow)
+BossBGMEntry(Rose,MUS_BattleForTomorrow)
+BossBGMEntry(Oates,MUS_BattleForTomorrow)
+BossBGMEntry(Raith,MUS_BattleForTomorrow)
+BossBGMEntry(Narcian,MUS_InTheNameOfBern)
+BossBGMEntry(Windham,MUS_BattleForTomorrow)
+BossBGMEntry(Arcardo,MUS_BattleForTomorrow)
+BossBGMEntry(Martel,MUS_BattleForTomorrow)
+BossBGMEntry(Roartz,MUS_BattleForTomorrow)
+BossBGMEntry(Tick,MUS_BattleForTomorrow)
+BossBGMEntry(Monke,MUS_BattleForTomorrow)
+BossBGMEntry(Kel,MUS_BattleForTomorrow)
+BossBGMEntry(Thoril,MUS_BattleForTomorrow)
+BossBGMEntry(Brakul,MUS_BattleForTomorrow)
+BossBGMEntry(Kudoka,MUS_BattleForTomorrow)
+BossBGMEntry(Marral,MUS_BattleForTomorrow)
+BossBGMEntry(Kabul,MUS_BattleForTomorrow)
+BossBGMEntry(Chan,MUS_BattleForTomorrow)
+BossBGMEntry(Murdock,MUS_InTheNameOfBern)
+//no galle
+BossBGMEntry(Peres,MUS_BattleForTomorrow)
+BossBGMEntry(Zephiel,MUS_BattleForWhoseSake)
+BossBGMEntry(Brunnya,MUS_InTheNameOfBern)
+BossBGMEntry(Jahn,MUS_AtTheFinalDragon)
+BossBGMEntry(IdunnDragon,MUS_PriestessInTheDark)
+BossBGMTerminator

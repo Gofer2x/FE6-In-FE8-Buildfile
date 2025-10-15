@@ -31,6 +31,7 @@
 	//Events
 	EventsStart:
 	MESSAGE Inserting Events at CurrentOffset
+	#include "Events/_MasterSpecificEventsInstaller.event"
 	#include "Events/_MasterChapterEventsInstaller.event"
 	#include "Events/_MasterWMEventsInstaller.event"
 	MESSAGE "Events Size is {CurrentOffset-EventsStart:N1} Bytes"

@@ -1,0 +1,386 @@
+IdunnHumanTemple:
+UNIT IdunnHuman ShamanF 0x0 Level(20,NPC,0) [8,2] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+DummyPlayerUnitsTemple:
+UNIT Roy RoyGreatLord 0x0 Level(20,Ally,1) [8,7] 0x0 0x0 0x0 0x0 [SlimSword] DummyAI //this should work, right? roy is always deployed 1st in order
+UNIT Ward Warrior Roy Level(20,Ally,1) [4,9] 0x0 0x0 0x0 0x0 [Armads, Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [5,10] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [6,9] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [7,10] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [8,9] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [9,10] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [10,9] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [11,10] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [12,9] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT
+
+DummyPlayerUnitsOutside:
+UNIT Roy RoyGreatLord 0x0 Level(20,Ally,1) [5,6] 0x0 0x0 0x0 0x0 [SlimSword] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [3,6] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [2,7] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [3,8] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [4,7] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [5,8] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [6,7] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [7,6] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [7,8] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT Ward Warrior Roy Level(20,Ally,1) [8,7] 0x0 0x0 0x0 0x0 [Mulagir] DummyAI
+UNIT
+
+DummyMerlinusOutside:
+UNIT Merlinus Transporter Roy Level(20,Ally,0) [5,6] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+RoyOutside:
+UNIT Roy RoyGreatLord 0x0 Level(20,Ally,1) [5,1] 0x0 0x0 0x0 0x0 [SlimSword] DummyAI
+UNIT
+
+RoyGuinivereSoldier:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [16,9] 0x0 0x0 0x0 0x0 [SlimSword] DummyAI
+UNIT GuinivereTrial SageF 0x0 Level(20,NPC,1) [15,8] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT GenericBernCh22 Soldier 0x0 Level(5,NPC,1) [15,9] 0x0 0x0 0x1 REDA_15_17 [IronLance] DummyAI
+UNIT
+
+IdunnAndFae:
+UNIT Fae FaeManakete 0x0 Level(20,Ally,1) [29,8] 0x0 0x0 0x0 0x0 [Divinestone] DummyAI
+UNIT IdunnHuman ShamanF 0x0 Level(20,NPC,1) [30,8] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+//Change Eirika mode ending event.
+PUSH
+ORG 0x9EC0
+POIN Epilogue_Choicer
+POP
+
+
+Epilogue_Choicer:
+BranchIfFlagON(1,PostChapter22Flag)
+CALL Epilogue_BadEnding
+GOTO 9
+LABEL 1
+CALL Epilogue_TrueEnding
+LABEL 9
+ENDA
+
+
+
+
+
+Epilogue_BadEnding:
+DisableSceneDialogueSkipping
+ClearAll
+PlayMusic(0x0)
+STAL 30
+LOMA CHAPTER_Ch22
+TILECHANGE 0
+CAM1 [15,9]
+PlayMusic(MUS_MainThemeArrangement)
+FadeFromBlack(Fade5s)
+STAL 60
+Text(BG_Castle2,EpilogueBad_ThroneRoom)
+STAL 64
+PlayMusic(MUS_Epilogue)
+
+//TODO Text scroll.
+TextWindow(TempBadEndingScroll)
+STAL 128
+
+StopHereIfSkipping
+StopGameGraphicsLogic
+STAL 10
+RollEndgameCredits
+STAL 10
+StopHereIfSkipping
+DisplayCharacterEndings
+STAL 10
+StopHereIfSkipping
+DisplayTurnCounts
+STAL 10
+ReturnToTitleScreen
+STAL 10
+
+ENDA 
+
+
+
+
+
+Epilogue_TrueEnding:
+DisableSceneDialogueSkipping
+ClearAll
+PlayMusic(0x0)
+STAL 30
+LOMA CHAPTER_Final
+CAM1 [8,9]
+LOAD3 0x0 DummyPlayerUnitsTemple
+ENUN
+FadeFromBlack(Fade1s)
+
+//Skip if Idunn not defeated by Roy with Binding Blade.
+BranchIfFlagOFF(1,IdunnBindingBladeFlag)
+
+//Idunn saved
+PlaySound(SND_LightCircle)
+FadeIntoWhite(Fade5s)
+HIDEMAP
+LOAD1 0x1 IdunnHumanTemple
+ENUN
+SHOWMAP
+FadeFromWhite(Fade5s)
+
+LABEL 1
+STAL 60
+EARTHQUAKE_START 100
+PlayMusic(BGS_Earthquake)
+
+//Text changed depending on if Fae is dead or alive.
+BranchIfUnitDead(3,Fae)
+
+//Fae alive case.
+Text(EpilogueTrue_CollapsingFae)
+GOTO 3
+
+//Fae dead case.
+LABEL 2
+Text(EpilogueTrue_CollapsingNoFae)
+
+//Everyone "escapes" offscreen.
+LABEL 3
+MoveByCoords(0x0, 4, 9, 6, 16)
+MoveByCoords(0x0, 5, 10, 7, 16)
+MoveByCoords(0x0, 6, 9, 8, 16)
+MoveByCoords(0x0, 7, 10, 9, 16)
+MoveByCoords(0x0, 8, 9, 10, 16)
+MoveByCoords(0x0, 9, 10, 6, 17)
+MoveByCoords(0x0, 10, 9, 7, 17)
+MoveByCoords(0x0, 11, 10, 9, 17)
+MoveByCoords(0x0, 12, 9, 10, 17)
+ENUN
+
+//Skip roy walking up to Idunn if she hasn't been saved.
+BranchIfFlagOFF(4,IdunnBindingBladeFlag)
+
+//Idunn saved, walk up to her.
+CMON
+MoveNextTo(0x0,Roy,IdunnHuman)
+ENUN
+CMOF
+LABEL 4
+
+FadeIntoBlack(Fade5s)
+EARTHQUAKE_END
+FadeOutMusic
+
+ClearAll
+
+//Move outside.
+LOMA CHAPTER_Ch23
+CAM1 [0,0]
+LOAD3 0x0 DummyPlayerUnitsOutside
+ENUN
+//Roy is loaded by LOAD3, DISA him.
+REMU Roy
+LOAD2 0x0 DummyMerlinusOutside //Test if this works fine if merlinus was deployed in Final. TODO
+ENUN
+FadeFromBlack(Fade5s)
+
+STAL 150
+//Roy reappears at the gate.
+REVEAL Roy
+LOAD2 0x1 RoyOutside
+ENUN
+MOVE 0x0 Roy [5,5]
+ENUN
+STAL 60
+PlayMusic(MUS_MainThemeArrangement)
+
+//Text depends on if Idunn was saved or not.
+BranchIfFlagOFF(5,IdunnBindingBladeFlag)
+
+//Idunn saved case.
+SetBackground(BG_Outside)
+TEXTSTART
+TEXTSHOW EpilogueTrue_OutsideTempleIdunnSaved
+TEXTEND
+FadeIntoBlack(Fade5s)
+REMA
+GOTO 6
+
+//Idunn dead case.
+LABEL 5
+Text(BG_Outside,EpilogueTrue_OutsideTempleIdunnDead)
+FadeIntoBlack(Fade5s)
+
+LABEL 6
+HIDEMAP
+ClearAll
+SetBackground(BG_Black) //To hide the map for the text scroll. Or well, probably not scroll. But still text.
+FadeFromBlack(Fade1s)
+//TODO Text scroll here.
+TextWindow(TempTrueEndingScroll)
+FadeIntoBlack(Fade1s)
+CLEAN
+FadeOutMusic
+STAL 120
+
+PlayMusic(MUS_Epilogue)
+//If we get the Guinivere throneroom cutscene or just a convo depends on if Roy and Lilina have an A support.
+GetSupportLevel(Roy,Lilina)
+SVAL s1 3
+BEQ 7 s1 sC
+
+//No Roy and Lilina A support case.
+
+LOMA CHAPTER_Ch22
+TILECHANGE 0
+CAM1 [15,9]
+LOAD1 0x1 RoyGuinivereSoldier
+ENUN
+SHOWMAP
+FadeFromBlack(Fade5s)
+Text(EpilogueTrue_GuiniveresCrowning1)
+STAL 30
+MoveByCoords(0x0,15,17,15,9) //Soldier guy moves up to throne.
+ENUN
+Text(EpilogueTrue_GuiniveresCrowning2)
+MoveByCoords(0x0,15,9,15,17) //Soldier guy moves back offscreen.
+ENUN
+MOVE 0x0 GuinivereTrial [15,10]
+ENUN
+Text(EpilogueTrue_GuiniveresCrowning3)
+
+//Roy doesn't move in the Idunn saved + Fae alive ending apparently. Not implementing that here lol.
+//Roy and Guinivere run off together.
+MOVE 8 GuinivereTrial [15,22]
+STAL 10
+MOVE 8 Roy [16,22]
+ENUN
+FadeIntoBlack(Fade2s)
+ClearAll
+GOTO 8
+
+LABEL 7
+//Roy and Lilina A support case. This one has no map so let's try to keep the still-loaded Ch23 hidden by fancy means.
+SetBackground(BG_Castle3)
+FadeFromBlack(Fade1s)
+TEXTSTART
+TEXTSHOW EpilogueTrue_RoyLilinaASupport
+TEXTEND
+REMA //Does this work?
+FadeIntoBlack(Fade1s)
+
+//Idunn and Fae event check. Skip if Idunn wasn't saved or Fae is dead.
+LABEL 8
+BranchIfFlagOFF(9,IdunnBindingBladeFlag)
+BranchIfUnitDead(9,Fae)
+
+//Both alive and well. Proceed.
+LOMA CHAPTER_Ch14
+WEA1 Clear
+CAM1 [21,7]
+
+SetBackground(BG_Black)
+FadeFromBlack(Fade1s)
+TextWindow(TempLaterInArcadia)
+FadeIntoBlack(Fade1s)
+CLEAN
+
+PlayMusic(MUS_DistantUtopia)
+SetBackground(BG_Temple1)
+TEXTSTART
+TEXTSHOW EpilogueTrue_FaeIdunn1
+TEXTEND
+REMA //Does this keep the background?
+FadeIntoBlack(Fade2s)
+CLEAN
+
+LOAD2 0x1 IdunnAndFae
+ENUN
+FadeFromBlack(Fade2s)
+MOVE 4 Fae [22,8] //Fae runs left.
+STAL 30
+MOVE 1 IdunnHuman [22,8] //Idunn slowly follows her.
+STAL 220
+MOVE 4 Fae [22,7] //Once Idunn is close, Fae moves a bit up.
+ENUN
+PlayMusic(MUS_EternalWind)
+TEXTSTART
+TEXTSHOW EpilogueTrue_FaeIdunn2
+TEXTEND //[...]And if you shake the tree like this...
+
+EARTHQUAKE_START 0
+PlaySound(SND_MenuAPling)
+
+TEXTCONT //Empty move?
+TEXTEND
+
+EARTHQUAKE_END
+
+TEXTCONT //Oww!
+TEXTEND
+
+//Nothing here?
+
+TEXTCONT //It fell on my head...
+TEXTEND
+
+//Fae runs circle around Idunn.
+
+MOVE 4 Fae [21,7] //Top Left
+ENUN
+MOVE 4 Fae [21,9] //Bottom Left
+ENUN
+MOVE 4 Fae [23,9] //Bottom Right
+ENUN
+MOVE 4 Fae [23,7] //Top Right
+ENUN
+//First lap done.
+MOVE 4 Fae [21,7] //Top Left
+ENUN
+MOVE 4 Fae [21,9] //Bottom Left
+ENUN
+MOVE 4 Fae [23,9] //Bottom Right
+ENUN
+MOVE 4 Fae [23,7] //Top Right
+ENUN
+MOVE 4 Fae [22,7] //Top Right
+ENUN
+//Second lap done.
+//Fae runs to below the Armory, offscreen.
+REMA
+MOVE 4 Fae [29,5]
+ENUN
+
+//Idunn moves to the right, and a sandstorm briefly happens.
+STAL 30
+MOVE 1 IdunnHuman [27,8]
+STAL 100
+FadeOutMusic
+STAL 100
+WEA1 SandStorm
+PlayMusic(BGS_Envsound_Windgusts)
+STAL 15
+FadeOutMusic
+ENUN
+WEA1 Clear
+STAL 100
+Text(EpilogueTrue_AWarmBreeze)
+FadeIntoBlack(Fade5s)
+
+LABEL 9
+
+StopHereIfSkipping
+StopGameGraphicsLogic
+STAL 10
+RollEndgameCredits
+STAL 10
+StopHereIfSkipping
+DisplayCharacterEndings
+STAL 10
+StopHereIfSkipping
+DisplayTurnCounts
+STAL 10
+ReturnToTitleScreen
+STAL 10
+ENDA

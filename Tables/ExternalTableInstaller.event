@@ -1,5 +1,11 @@
 #include "ExternalTables/SkillSysTableStuff.event"
 #include "ExternalTables/NewTerrainMovementCostTables.event"
+#include "ExternalTables/NewBattleQuotesTable.event"
+#include "ExternalTables/NewBossBGMTable.event"
+#include "ExternalTables/NewCharacterEndingsTables.event"
+#include "ExternalTables/NewDeathQuotesTable.event"
+#include "ExternalTables/NewForcedDeploymentTable.event"
+
 
 #include "ExternalTables/Supports/NewSupportTables.event"
 

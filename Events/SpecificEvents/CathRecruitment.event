@@ -1,0 +1,32 @@
+EVENT_CathRecruitment:
+//Branch to second talk check if the first talk flag is on.
+BranchIfFlagON(1,RoyCathTalkFlag1)
+
+//Else, first talk.
+SwitchMusic(MUS_GoingMyWay)
+Text(RoyCathFirstTalkConvo)
+FlagON(RoyCathTalkFlag1)
+SetAI(Cath, AI1_None, AI2_Escape)
+GOTO 9
+
+//Branch to recruitment if the second talk flag is on.
+LABEL 1
+BranchIfFlagON(2,RoyCathTalkFlag2)
+
+//Else, second talk.
+SwitchMusic(MUS_GoingMyWay)
+Text(RoyCathSecondTalkConvo)
+FlagON(RoyCathTalkFlag2)
+SetAI(Cath, AI1_None, AI2_Escape)
+GOTO 9
+
+//Recruitment.
+LABEL 2
+SwitchMusic(MUS_JoinUs)
+Text(RoyCathThirdTalkConvo)
+FlagON(CathRecruitedOrDeadFlag)
+BecomeAlly(Cath)
+
+LABEL 9
+RestoreMusic
+EndEvent

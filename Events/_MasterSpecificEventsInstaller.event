@@ -1,0 +1,13 @@
+#include "SpecificEvents/IdunnDeathBindingBladeCheck.event" //temp
+
+/*
+//#include "SpecificEvents/CustomGameOver.event"
+#include "SpecificEvents/CathRecruitment.event"
+#include "SpecificEvents/OstiaNarcianCutscene.event"
+#include "SpecificEvents/WestIslesEvents.event"
+#include "SpecificEvents/SacaeIlliaDetermination.event"
+#include "SpecificEvents/BindingBladeAndRoyPromo.event"
+#include "SpecificEvents/ReviveMerlinus.event"
+#include "SpecificEvents/IdunnDeathBindingBladeCheck.event"
+#include "SpecificEvents/Epilogues.event"
+*\

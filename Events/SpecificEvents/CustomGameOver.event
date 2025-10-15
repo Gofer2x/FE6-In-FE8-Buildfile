@@ -1,0 +1,73 @@
+//TODO THIS IS VERY VERY DUMB
+PUSH
+ORG 0x592104 //overwriting og game over event
+CALL EVENT_CustomGameOver
+ENDA
+POP
+
+//i tried running an event to only show the quote from the "death calls event", but it wouldn't work properly. CHECK_DEPLOYED would exit early.
+EVENT_CustomGameOver:
+DisableSceneDialogueSkipping
+
+//Character quotes
+//Lilina
+BranchIfUnitNotDeployed(1,Lilina)
+Text(RoyDeathQuoteLilina)
+GOTO 9
+
+//Guinivere
+LABEL 1
+CALL EVENT_IsGuinivereAround
+BEQ 2 sC s0 //Branch if Guinivere not around
+Text(RoyDeathQuoteGuinivere)
+GOTO 9
+
+//Marcus
+LABEL 2
+BranchIfUnitNotDeployed(3,Marcus)
+Text(RoyDeathQuoteMarcus)
+GOTO 9
+
+//Merlinus
+LABEL 3
+BranchIfUnitNotDeployed(9,Merlinus)
+Text(RoyDeathQuoteMerlinus)
+
+LABEL 9
+
+ASMC $85375 //game over screen
+ENDA
+
+
+
+
+
+
+
+EVENT_IsGuinivereAround:
+//LABEL 1 = True
+//LABEL 2 = False
+
+//Guinivere is present after Ch13.
+BranchIfChapterIDLargerThan(1,CHAPTER_Ch13)
+
+//Not present in Ch1 and Ch2, aka before Ch3.
+BranchIfChapterIDSmallerThan(2,CHAPTER_Ch3)
+
+//Present during Ch3-Ch8x, aka before Ch9.
+BranchIfChapterIDSmallerThan(1,CHAPTER_Ch9)
+
+//Otherwise we're in Ch9-13, where she's not present.
+GOTO 2
+
+//True
+LABEL 1
+SVAL sC 1
+GOTO 9
+
+//False
+LABEL 2
+SVAL sC 0
+
+LABEL 9
+EndEvent

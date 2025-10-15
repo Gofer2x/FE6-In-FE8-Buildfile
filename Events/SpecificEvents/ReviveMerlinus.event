@@ -1,0 +1,6 @@
+EVENT_ReviveMerlinus:
+BranchIfUnitAlive(9,Merlinus)
+SVAL s1 0x00200004 //Dead and Not Deployed Last Chapter
+UNSET_CONDITION Merlinus
+LABEL 9
+EndEvent

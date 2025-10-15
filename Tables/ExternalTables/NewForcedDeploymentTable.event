@@ -1,0 +1,22 @@
+PUSH
+ORG 0x08483C
+POIN NewForcedDeploymentTable
+POP
+
+#define ForcedDeploy(unit,chapter) "SHORT unit ; BYTE 0xFF ; BYTE chapter"
+
+ALIGN 4
+NewForcedDeploymentTable:
+ForcedDeploy(Roy,0xFF)
+ForcedDeploy(Saul,CHAPTER_Ch6)
+ForcedDeploy(Dorothy,CHAPTER_Ch6)
+ForcedDeploy(Astolfo,CHAPTER_Ch8)
+ForcedDeploy(Larum,CHAPTER_Ch11A)
+ForcedDeploy(Elffin,CHAPTER_Ch11B)
+ForcedDeploy(Cecilia,CHAPTER_Ch14)
+ForcedDeploy(Sophia,CHAPTER_Ch14)
+ForcedDeploy(Douglas,CHAPTER_Ch16x)
+ForcedDeploy(Niime,CHAPTER_Ch19A)
+ForcedDeploy(Niime,CHAPTER_Ch20B)
+ForcedDeploy(Yoder,CHAPTER_Ch21)
+BYTE 0xFF 0xFF 0x0 0x0 

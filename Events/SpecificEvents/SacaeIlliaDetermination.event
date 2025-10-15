@@ -1,0 +1,20 @@
+EVENT_IlliaSacaeRouteDetermination:
+
+GetUnitEXPGain(Shanna)
+SADD s7 sC s0 //s7 is now Shanna Exp.
+GetUnitEXPGain(Thea)
+SADD s7 s7 sC //s7 is now Shanna+Thea Exp.
+
+GetUnitEXPGain(Sue)
+SADD s8 sC s0 //s8 is now Sue Exp.
+GetUnitEXPGain(Sin)
+SADD s8 s8 sC //s8 is now Sue+Sin Exp.
+
+//If s7 is equal to or larger than s8 we are on Illia route. Skip the Sacae flag enable.
+BGE 1 s7 s8
+
+//Else, turn it on.
+FlagON(SacaeRouteFlag)
+
+LABEL 1
+EndEvent

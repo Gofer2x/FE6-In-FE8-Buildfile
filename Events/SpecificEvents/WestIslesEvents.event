@@ -1,0 +1,95 @@
+//Ch11A_Ch10B_RoyOrClarineKleinTalkFlag 0x7
+//Ch11A_Ch10B_ShannaTheaTalkFlag 0x8
+//Ch11A_Ch10B_NoKleinShannaTheaTalkFlag 0x9
+//Ch11A_Ch10B_ClarineKleinExtraTalkFlag 0xA
+//Ch11A_Ch10B_KleinTheaTalkFlag 0xB
+
+EVENT_TheaRecruitment:
+//Check if Klein recruited.
+BranchIfFlagON(1,Ch11A_Ch10B_RoyOrClarineKleinTalkFlag)
+
+//Klein not recruited. Thea remains red, and this talk occuring is marked by Ch10B_Ch11A_NoKleinShannaTheaTalk.
+QuieterMusic
+Text(Ch10B_Ch11A_NoKleinShannaTheaTalk)
+FlagON(Ch11A_Ch10B_NoKleinShannaTheaTalkFlag)
+UnquieterMusic
+GOTO 9
+
+//Klein recruited case.
+LABEL 1
+//Check if Shanna and Thea talked while Klein was still an enemy.
+BranchIfFlagON(2,Ch11A_Ch10B_NoKleinShannaTheaTalkFlag)
+
+//They have not. Thea turns green, but she and her squad keep the aggressive AI.
+SwitchMusic(MUS_BindingTies)
+Text(Ch10B_Ch11A_YesKleinShannaTheaFirstTalk)
+BecomeNPC(Thea)
+AllEnemiesToNPC(GenericPegKnightTheaCh11A_Ch10B,PegasusKnight)
+RestoreMusic
+GOTO 9
+
+//They have. Thea turns blue and her squad gets escape AI.
+LABEL 2
+SwitchMusic(MUS_JoinUs)
+Text(Ch10B_Ch11A_YesKleinShannaTheaSecondTalk)
+BecomeAlly(Thea)
+AllEnemiesToNPC(GenericPegKnightTheaCh11A_Ch10B,PegasusKnight)
+ChangeAIAllNPC(AI1_None,AI2_Escape,GenericPegKnightTheaCh11A_Ch10B,PegasusKnight)
+RestoreMusic
+GOTO 9
+
+//End.
+LABEL 9
+FlagON(Ch11A_Ch10B_ShannaTheaTalkFlag)
+EndEvent
+
+//Below are self-explanatory.
+
+EVENT_KleinRecruitsThea:
+SwitchMusic(MUS_JoinUs) //Yes, it plays the music even if she's already recruited. FE6.
+Text(Ch10B_Ch11A_KleinTurnsTheaBlue)
+BecomeAlly(Thea)
+AllEnemiesToNPC(GenericPegKnightTheaCh11A_Ch10B,PegasusKnight)
+ChangeAIAllNPC(AI1_None,AI2_Escape,GenericPegKnightTheaCh11A_Ch10B,PegasusKnight)
+RestoreMusic
+FlagON(Ch11A_Ch10B_ShannaTheaTalkFlag)
+EndEvent
+
+EVENT_RoyRecruitsKlein:
+SwitchMusic(MUS_JoinUs)
+Text(Ch10B_Ch11A_RoyRecruitsKlein)
+BecomeAlly(Klein)
+AllEnemiesToNPC(GenericArcherKleinCh11A_Ch10B,Archer)
+ChangeAIAllNPC(AI1_None,AI2_Escape,GenericArcherKleinCh11A_Ch10B,Archer)
+RestoreMusic
+FlagOFF(Ch11A_Ch10B_ClarineKleinExtraTalkFlag)
+FlagOFF(Ch11A_Ch10B_ShannaTheaTalkFlag)
+EndEvent
+
+EVENT_ClarineRecruitsKlein:
+SwitchMusic(MUS_JoinUs)
+Text(Ch10B_Ch11A_ClarineRecruitsKlein)
+BecomeAlly(Klein)
+AllEnemiesToNPC(GenericArcherKleinCh11A_Ch10B,Archer)
+ChangeAIAllNPC(AI1_None,AI2_Escape,GenericArcherKleinCh11A_Ch10B,Archer)
+RestoreMusic
+FlagOFF(Ch11A_Ch10B_ShannaTheaTalkFlag)
+EndEvent
+
+EVENT_ClarineKleinExtraTalk:
+Text(Ch10B_Ch11A_ClarineKleinTalkIfRoyRecruit)
+EndEvent
+
+EVENT_LilinaRecruitsGonzalez:
+SwitchMusic(MUS_JoinUs)
+Text(Ch10A_Ch10B_LilinaRecruitsGonzalez)
+BecomeAlly(Gonzalez)
+RestoreMusic
+EndEvent
+
+EVENT_RoyRecruitsGeese:
+SwitchMusic(MUS_JoinUs)
+Text(Ch10A_Ch11B_RoyRecruitsGeese)
+BecomeAlly(Geese)
+RestoreMusic
+EndEvent
