@@ -56,3 +56,9 @@ MESSAGE "Mugs Size is {CurrentOffset-MugsStart:N1} Bytes"
 
 //All are inline so no size calc.
 #include "WorldMap/WorldMapInstaller.event"
+
+PalettesStart:
+MESSAGE Inserting Battle Palettes at CurrentOffset
+#include "BattlePalettes/BlankOutCharPalTable.event"
+#include "BattlePalettes/Palette Setup.event"
+MESSAGE "Battle Palettes is {CurrentOffset-PalettesStart:N1} Bytes"
