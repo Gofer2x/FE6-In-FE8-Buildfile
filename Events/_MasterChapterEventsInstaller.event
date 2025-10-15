@@ -8,7 +8,6 @@
 {
 #include "ChapterEvents/Chapter1.event"
 }
-/*
 {
 #include "ChapterEvents/Chapter2.event"
 }
@@ -36,6 +35,7 @@
 {
 #include "ChapterEvents/Chapter9.event"
 }
+/*
 {
 #include "ChapterEvents/Chapter10A.event"
 }

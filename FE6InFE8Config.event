@@ -1,0 +1,12 @@
+//Note, this is NOT the Skillsys config. That's still in EngineHacks/.
+
+//Enables events that simulate the bugged double Hard Mode bonuses for Chapter 1-5 enemies.
+//TODO The current patch only works for singular units, and only player ones.
+#define CONFIG_BuggedEarlyHMBonuses
+
+//Enables Hard Mode bonuses for recruitable enemies who usually don't get them (Raigh, Ch13!Percival, Hugh, Douglas).
+//TODO Look at previous todo.
+#define CONFIG_RecruitableUnitsHMBonusesExtra
+
+//Adds a call to a "revive Merlinus" event at end of each chapter.
+#define CONFIG_EnableReviveMerlinus

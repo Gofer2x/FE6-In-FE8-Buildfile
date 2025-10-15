@@ -1,6 +1,6 @@
-//Move unit at specified coordinate
-//Credit Pikmin1211
-#define MoveByCoords(speed, srcX, srcY, destX, destY) "SVAL sB srcX|(srcY<<16); MOVE speed UnitAtCoordsSlotB [destX, destY]"
+	//Branch logic
+
+#define CheckFlag(flag) "CHECK_EVENTID flag"
 
 #define BranchIfBossDead(label) "CheckFlag(BossDefeatFlag) ; BNE label s0 sC"
 #define BranchIfBossAlive(label) "CheckFlag(BossDefeatFlag) ; BEQ label s0 sC"
@@ -40,44 +40,91 @@
 #define BranchIfChapterIDLargerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BGT label sC s1"
 #define BranchIfChapterIDSmallerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BLT label sC s1"
 
-#define SetCounter(counter,value) "COUNTER_SET counter value"
-
-#define IncrementCounter(counter) "COUNTER_INC counter"
-#define DecrementCounter(counter) "COUNTER_DEC counter"
-
 #define BranchIfRandomNotZero(label,random) "RANDOMNUMBER random ; BNE label s0 sC"
 
 #define BranchIfResultEqualTo(label,number) "SVAL s1 number ; BEQ label s1 sC"
 #define BranchIfResultIsZero(label) "BEQ label s0 sC"
 #define BranchIfResultSmallerThan(label,number) "SVAL s1 number ; BGE label s1 sC"
 
-#define LoseMoney(amount) "SVAL s3 amount ; TAKEMONEY"
-
 #define BranchIfGoldAtLeast(label,amount) "SVAL s1 amount ; CHECK_MONEY ; BGE label sC s1"
 
 
+
+	//Counter logic
+
+#define SetCounter(counter,value) "COUNTER_SET counter value"
+
+#define IncrementCounter(counter) "COUNTER_INC counter"
+#define DecrementCounter(counter) "COUNTER_DEC counter"
+
+	//Event logic
+
+#define EndEvent "EVBIT_T 0x7 ; ENDA"
+#define FlagON(flag) "ENUT flag"
+#define FlagOFF(flag) "ENUF flag"
+
+//Use at start of Range events.
+#define PlayerInRange "SVAL s2 0 ; CALL 0x89EE1B8"
+#define UnitInRange(unit) "SVAL s2 unit ; CALL 0x89EE19C"
+
+#define AreaEvent(eventID,EventPointer,corner1x,corner1y,corner2x,corner2y)   "AREA eventID EventPointer [corner1x,corner1y] [corner2x,corner2y]" 
 
 #define LoadHardReinforcements(unitPtr) "SMOV 0x2 (unitPtr|0x8000000); CALL $9EE29C"
 
 //Yep, this is how these work in FE6 apparently. Hard mode exclusive = don't appear if boss dead. For events that use LoadHardReinforcements, make sure to add BranchIfBossDead.
 #define HardReinforcementEvent(unitPtr) "BranchIfBossDead(9) ; SMOV 0x2 (unitPtr|0x8000000); CALL $9EE29C; LABEL 9 ; EVBIT_T 0x7 ; ENDA"
 
-#define AreaEvent(eventID,EventPointer,corner1x,corner1y,corner2x,corner2y)   "AREA eventID EventPointer [corner1x,corner1y] [corner2x,corner2y]" 
-
 //Friendlier names for "Start following units with camera" and "Stop following units with camera".
 #define CMON "EVBIT_T 0x09"
 #define CMOF "EVBIT_F 0x09"
 
-//Use at start of Range events.
-#define PlayerInRange "SVAL s2 0 ; CALL 0x89EE1B8"
-#define UnitInRange(unit) "SVAL s2 unit ; CALL 0x89EE19C"
+#define MoveNextTo(speed,unit1,unit2) "BYTE $49 $2F ; SHORT speed ; SHORT unit1 ; SHORT unit2 "
+
+//Used in Ch8.
+#define GotoPrepScreenNoENDA "CALL $591FD8"
+
+#define MoveToChapterWithoutWM(chapter) "MNC2 chapter"
+
+//Vanilla function that I just copied the bytes of from FEBuilder, lol. Ugly.
+#define DesertTreasure(item,id) "BYTE $28 $33 $FF $FF $20 $06 $C2 $00 $40 $05 $03 $00 ; BYTE item ; BYTE $00 $00 $00 $40 $0A $00 $00 $1C $E6 $9E $08 $41 $0C ; SHORT id ; BYTE $0C $00 $00 $00 $40 $0A $00 $00 $D4 $E1 $9E $08 $20 $08 ; SHORT id ; BYTE $28 $02 $07 $00 $20 $01 $00 $00"
+
+#define DisableSceneSkipping "EVBIT_MODIFY 3"
+#define DisableSceneDialogueSkipping "EVBIT_MODIFY 4"
+#define DisableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 1"
+
+#define EnableSceneDialogueSkipping "EVBIT_MODIFY 2"
+
+#define EnableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 0"
+
+#define DisplayCharacterEndings "BYTE $40 $0D $00 $00 $95 $6C $0B $08"
+#define DisplayTurnCounts "BYTE $40 $0D $00 $00 $75 $81 $0B $08"
+#define ReturnToTitleScreen "MNTS 1"
+#define StopGameGraphicsLogic "BYTE $40 $0D $00 $00 $85 $01 $03 $08"
+#define RollEndgameCredits "BYTE $40 $0D $00 $00 $79 $48 $0C $08"
+
+#define StopHereIfSkipping "BYTE $20 $02 $02 $00"
+
+#define LoseMoney(amount) "SVAL s3 amount ; TAKEMONEY"
+
+
+
+	//Unit logic
+
+//Clears Player, Enemy, NPC units from map.
+#define ClearAll "CLEA 0x0; CLEE 0x0; CLEN 0x0"
 
 #define SetAI(unitid,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI unitid"
 #define SetAI(x,y,ai1,ai2,ai3,ai4) "SVAL 0x1 ai1|(ai2<<8)|(ai3<<16)|(ai4<<24); CHAI [x,y]"
 #define SetAI(unitid,ai1,ai2)"SVAL 0x1 ai1|(ai2<<8); CHAI unitid"
 #define SetAI(x,y,ai1,ai2) "SVAL 0x1 ai1|(ai2<<8); CHAI [x,y]"
 
-#define MoveNextTo(speed,unit1,unit2) "BYTE $49 $2F ; SHORT speed ; SHORT unit1 ; SHORT unit2 "
+//Move unit at specified coordinate
+//Credit Pikmin1211
+#define MoveByCoords(speed, srcX, srcY, destX, destY) "SVAL sB srcX|(srcY<<16); MOVE speed UnitAtCoordsSlotB [destX, destY]"
+
+
+
+	//Tile/map object logic
 
 //Door but with event flag.
 #define Door(EventFlag, DoorX, DoorY) "DOOR EventFlag [DoorX, DoorY] 0x12"
@@ -89,12 +136,10 @@
 #define TileChangeCoord(x,y) "SCOORD sB [x,y] ; TILECHANGE -1"
 #define ReverseTileChangeCoord(x,y) "SCOORD sB [x,y] ; TILEREVERSE -1"
 
-#define EndEvent "EVBIT_T 0x7 ; ENDA"
 
-#define FlagON(flag) "ENUT flag"
-#define FlagOFF(flag) "ENUF flag"
 
-#define CheckFlag(flag) "CHECK_EVENTID flag"
+
+//Audiovisual logic
 
 #define PlayMusic(music) "MUSC music"
 
@@ -127,37 +172,12 @@
 //16 fastest, 1 slowest.
 #define FlashWhiteAdjustable(speed) "FAWI speed ; FAWU speed"
 
-//Clears Player, Enemy, NPC units from map.
-#define ClearAll "CLEA 0x0; CLEE 0x0; CLEN 0x0"
-
-//Used in Ch8.
-#define GotoPrepScreenNoENDA "CALL $591FD8"
-
 #define TextWindow(text) "TUTORIALTEXTBOXSTART ; SVAL 0xB 0xFFFFFFF ; TEXTSHOW text ; TEXTEND ; REMA"
 
 //Used for clearing background and returning to map after a non-standard (TEXTSTART, TEXTCONT etc.) text display with a background.
 #define RemaFadeClean "REMA ; FadeIntoBlack(Fade1s) ; CLEAN ; FadeFromBlack(Fade1s)"
 
-#define MoveToChapterWithoutWM(chapter) "MNC2 chapter"
 
-//Vanilla function that I just copied the bytes of from FEBuilder, lol. Ugly.
-#define DesertTreasure(item,id) "BYTE $28 $33 $FF $FF $20 $06 $C2 $00 $40 $05 $03 $00 ; BYTE item ; BYTE $00 $00 $00 $40 $0A $00 $00 $1C $E6 $9E $08 $41 $0C ; SHORT id ; BYTE $0C $00 $00 $00 $40 $0A $00 $00 $D4 $E1 $9E $08 $20 $08 ; SHORT id ; BYTE $28 $02 $07 $00 $20 $01 $00 $00"
-
-#define DisableSceneSkipping "EVBIT_MODIFY 3"
-#define DisableSceneDialogueSkipping "EVBIT_MODIFY 4"
-#define DisableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 1"
-
-#define EnableSceneDialogueSkipping "EVBIT_MODIFY 2"
-
-#define EnableSceneDialogueFastForwardSkipping "EVBIT_MODIFY 0"
-
-#define DisplayCharacterEndings "BYTE $40 $0D $00 $00 $95 $6C $0B $08"
-#define DisplayTurnCounts "BYTE $40 $0D $00 $00 $75 $81 $0B $08"
-#define ReturnToTitleScreen "MNTS 1"
-#define StopGameGraphicsLogic "BYTE $40 $0D $00 $00 $85 $01 $03 $08"
-#define RollEndgameCredits "BYTE $40 $0D $00 $00 $79 $48 $0C $08"
-
-#define StopHereIfSkipping "BYTE $20 $02 $02 $00"
 
 //From eastdlib Backwards Compat (why are these there?)
 #define IfCharacterDead(char, condID) "SVAL 2 char; BEQ condID 0xC 2"
@@ -169,9 +189,4 @@
 #define BattleStart "SVAL 0xD 0"
 #define BattleCommand(command) "SVAL 1 command; SAVETOQUEUE"
 
-#ifdef CONFIG_EnableReviveMerlinus
-	#define ReviveMerlinusIfConfig "CALL EVENT_ReviveMerlinus"
-#endif
-#ifndef CONFIG_EnableReviveMerlinus
-	#define ReviveMerlinusIfConfig 
-#endif
+#define ReviveMerlinusIfConfig "CALL EVENT_ReviveMerlinus"
