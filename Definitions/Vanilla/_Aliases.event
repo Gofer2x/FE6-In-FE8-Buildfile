@@ -37,4 +37,5 @@
 #define Pupil3 FE8_Pupil3
 #define GreatKnight FE8_GreatKnight
 #define GreatKnightF FE8_GreatKnightF
+#define Ranger FE8_Ranger
 #define RangerF FE8_RangerF

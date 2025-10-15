@@ -1,145 +1,145 @@
 INLINE ClassLevelUpSkillTable,Skill Pointer
-0x00 Separator/Nothing,0x0
-0x01 Ephraim Lord,EphraimLordSkillList|IsPointer
-0x02 Eirika Lord,EirikaLordSkillList|IsPointer
-0x03 Ephraim Great Lord,EphraimGreatLordSkillList|IsPointer
-0x04 Eirika Great Lord,EirikaGreatLordSkillList|IsPointer
-0x05 Cavalier,CavalierSkillList|IsPointer
-0x06 Cavalier (F),CavalierSkillList|IsPointer
-0x07 Paladin,PaladinSkillList|IsPointer
-0x08 Paladin (F),PaladinSkillList|IsPointer
-0x09 Armour Knight,KnightSkillList|IsPointer
-0x0A Armour Knight (F),KnightSkillList|IsPointer
-0x0B General,GeneralSkillList|IsPointer
-0x0C General (F),GeneralSkillList|IsPointer
-0x0D Thief,ThiefSkillList|IsPointer
-0x0E Manakete,0x0
-0x0F Mercenary,MercenarySkillList|IsPointer
-0x10 Mercenary (F),MercenarySkillList|IsPointer
-0x11 Hero,HeroSkillList|IsPointer
-0x12 Hero (F),HeroSkillList|IsPointer
-0x13 Myrmidon,MyrmidonSkillList|IsPointer
-0x14 Myrmidon (F),MyrmidonSkillList|IsPointer
-0x15 Swordmaster,SwordmasterSkillList|IsPointer
-0x16 Swordmaster (F),SwordmasterSkillList|IsPointer
-0x17 Assassin,AssassinSkillList|IsPointer
-0x18 Assassin (F),AssassinSkillList|IsPointer
-0x19 Archer,ArcherSkillList|IsPointer
-0x1A Archer (F),ArcherSkillList|IsPointer
-0x1B Sniper,SniperSkillList|IsPointer
-0x1C Sniper (F),SniperSkillList|IsPointer
-0x1D Ranger,RangerSkillList|IsPointer
-0x1E Ranger (F),RangerSkillList|IsPointer
-0x1F Wyvern Rider,WyvernRiderSkillList|IsPointer
-0x20 Wyvern Rider (F),WyvernRiderSkillList|IsPointer
-0x21 Wyvern Lord,WyvernLordSkillList|IsPointer
-0x22 Wyvern Lord (F),WyvernLordSkillList|IsPointer
-0x23 Wyvern Knight,WyvernKnightSkillList|IsPointer
-0x24 Wyvern Knight (F),WyvernKnightSkillList|IsPointer
-0x25 Mage,MageSkillList|IsPointer
-0x26 Mage (F),MageSkillList|IsPointer
-0x27 Sage,SageSkillList|IsPointer
-0x28 Sage (F),SageSkillList|IsPointer
-0x29 Mage Knight,MageKnightSkillList|IsPointer
-0x2A Mage Knight (F),MageKnightSkillList|IsPointer
-0x2B Bishop,BishopSkillList|IsPointer
-0x2C Bishop (F),BishopSkillList|IsPointer
-0x2D Shaman,ShamanSkillList|IsPointer
-0x2E Shaman (F),ShamanSkillList|IsPointer
-0x2F Druid,DruidSkillList|IsPointer
-0x30 Druid (F),DruidSkillList|IsPointer
-0x31 Summoner,SummonerSkillList|IsPointer
-0x32 Summoner (F),SummonerSkillList|IsPointer
-0x33 Rogue,RogueSkillList|IsPointer
-0x34 Gorgon Egg,0x0
-0x35 Great Knight,GreatKnightSkillList|IsPointer
-0x36 Great Knight (F),GreatKnightSkillList|IsPointer
-0x37 Recruit (2),0x0
-0x38 Journeyman (3),0x0
-0x39 Pupil (3),0x0
-0x3A Recruit (3),0x0
-0x3B Manakete,0x0
-0x3C Manakete (F),ManaketeFSkillList|IsPointer
-0x3D Journeyman (1),0x0
-0x3E Pupil (1),0x0
-0x3F Fighter,FighterSkillList|IsPointer
-0x40 Warrior,WarriorSkillList|IsPointer
-0x41 Brigand,BrigandSkillList|IsPointer
-0x42 Pirate,PirateSkillList|IsPointer
-0x43 Berserker,BerserkerSkillList|IsPointer
-0x44 Monk,MonkSkillList|IsPointer
-0x45 Priest,PriestSkillList|IsPointer
-0x46 Bard,0x0
-0x47 Recruit (1),0x0
-0x48 Pegasus Knight,PegKnightSkillList|IsPointer
-0x49 Falcon Knight,FalcoknightSkillList|IsPointer
-0x4A Cleric,ClericSkillList|IsPointer
-0x4B Troubadour,TroubadourSkillList|IsPointer
-0x4C Valkyrie,ValkyrieSkillList|IsPointer
-0x4D Dancer,DancerSkillList|IsPointer
-0x4E Soldier,SoldierSkillList|IsPointer
-0x4F Necromancer,NecromancerSkillList|IsPointer
-0x50 Fleet,FleetSkillList|IsPointer
-0x51 Phantom,PhantomSkillList|IsPointer
-0x52 Revenant,0x0
-0x53 Entombed,0x0
-0x54 Bonewalker,0x0
-0x55 Bonewalker (Bow),0x0
-0x56 Wight,0x0
-0x57 Wight (Bow),0x0
-0x58 Bael,0x0
-0x59 Elder Bael,0x0
-0x5A Cyclops,0x0
-0x5B Mauthe Doog,0x0
-0x5C Gwyllgi,0x0
-0x5D Tarvos,0x0
-0x5E Maelduin,0x0
-0x5F Mogall,0x0
-0x60 Arch Mogall,0x0
-0x61 Gorgon,0x0
-0x62 Gorgon Egg,0x0
-0x63 Gargoyle,0x0
-0x64 Deathgoyle,0x0
-0x65 Dracozombie,0x0
-0x66 Demon King,0x0
-0x67 Archer on Ballista,0x0
-0x68 Archer on Iron Ballista,0x0
-0x69 Archer on Killer Ballista,0x0
-0x6A Ballista,0x0
-0x6B Iron Ballista,0x0
-0x6C Killer Ballista,0x0
-0x6D Civilian,0x0
-0x6E Civilian (F),0x0
-0x6F Civilian,0x0
-0x70 Civilian (F),0x0
-0x71 Civilian,0x0
-0x72 Civilian (F),0x0
-0x73 Peer,0x0
-0x74 Queen,0x0
-0x75 Prince,0x0
-0x76 Queen,0x0
-0x77 (empty),0x0
-0x78 Fallen Prince,0x0
-0x79 Tent,0x0
-0x7A Pontifex,0x0
-0x7B Fallen Peer,0x0
-0x7C Cyclops 2,0x0
-0x7D Elder Bael 2,0x0
-0x7E Journeyman (2),0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
--,0x0
+RoyLord,0x0
+RoyGreatLord,0x0
+FE8_EphraimGreatLord,0x0
+FE8_EirikaGreatLord,0x0
+Cavalier,0x0
+FE8_CavalierF,0x0
+Paladin,0x0
+FE8_PaladinF,0x0
+Knight,0x0
+KnightF,0x0
+General,0x0
+GeneralF,0x0
+Thief,0x0
+FE8_Manakete1,0x0
+Mercenary,0x0
+FE8_MercenaryF,0x0
+Hero,0x0
+HeroF,0x0
+Myrmidon,0x0
+MyrmidonF,0x0
+Swordmaster,0x0
+SwordmasterF,0x0
+FE8_Assassin,0x0
+FE8_AssassinF,0x0
+Archer,0x0
+ArcherF,0x0
+Sniper,0x0
+SniperF,0x0
+FE8_Ranger,0x0
+FE8_RangerF,0x0
+WyvernRider,0x0
+WyvernRiderF,0x0
+WyvernLord,0x0
+WyvernLordF,0x0
+FE8_WyvernKnight,0x0
+FE8_WyvernKnightF,0x0
+Mage,0x0
+MageF,0x0
+Sage,0x0
+SageF,0x0
+FE8_MageKnight,0x0
+FE8_MageKnightF,0x0
+Bishop,0x0
+BishopF,0x0
+Shaman,0x0
+ShamanF,0x0
+Druid,0x0
+DruidF,0x0
+FE8_Summoner,0x0
+FE8_SummonerF,0x0
+FE8_Rogue,0x0
+FE8_GorgonEgg1,0x0
+FE8_GreatKnight,0x0
+FE8_GreatKnightF,0x0
+FE8_Recruit2,0x0
+FE8_Journeyman3,0x0
+FE8_Pupil3,0x0
+FE8_Recruit3,0x0
+FE8_Manakete2,0x0
+FE8_ManaketeF,0x0
+FE8_Journeyman1,0x0
+FE8_Pupil1,0x0
+Fighter,0x0
+Warrior,0x0
+Brigand,0x0
+Pirate,0x0
+Berserker,0x0
+FE8_Monk,0x0
+Priest,0x0
+Bard,0x0
+FE8_Recruit1,0x0
+PegasusKnight,0x0
+Falcoknight,0x0
+Cleric,0x0
+Troubadour,0x0
+Valkyrie,0x0
+Dancer,0x0
+Soldier,0x0
+FE8_Necromancer,0x0
+FE8_Fleet,0x0
+FE8_Phantom,0x0
+FE8_Revenant,0x0
+FE8_Entombed,0x0
+FE8_Bonewalker,0x0
+FE8_BonewalkerBow,0x0
+FE8_Wight,0x0
+FE8_WightBow,0x0
+FE8_Bael,0x0
+FE8_ElderBael,0x0
+FE8_Cyclops1,0x0
+FE8_MautheDoog,0x0
+FE8_Gwyllgi,0x0
+FE8_Tarvos,0x0
+FE8_Maelduin,0x0
+FE8_Mogall,0x0
+FE8_ArchMogall,0x0
+FE8_Gorgon,0x0
+FE8_GorgonEgg2,0x0
+FE8_Gargoyle,0x0
+FE8_Deathgoyle,0x0
+FE8_DracoZombie,0x0
+FE8_DemonKing,0x0
+FE8_MannedBallista,0x0
+FE8_MannedIronBallista,0x0
+FE8_MannedKillerBallista,0x0
+FE8_UnmannedBallista,0x0
+FE8_UnmannedIronBallista,0x0
+FE8_UnmannedKillerBallista,0x0
+Child,0x0
+ChildF,0x0
+Civilian1,0x0
+Civilian1F,0x0
+FE8_Civilian2,0x0
+FE8_Civilian2F,0x0
+FE8_Peer,0x0
+FE8_Queen,0x0
+FE8_Prince,0x0
+FE8_QueenNoHat,0x0
+FE8_LightRune,0x0
+FE8_FallenNils,0x0
+FE8_Tent,0x0
+FE8_Pontifex,0x0
+FE8_DeadPeer,0x0
+FE8_Cyclops2,0x0
+FE8_ElderBael2,0x0
+FE8_Journeyman2,0x0
+FE8_Pupil2,0x0
+0,0x0
+ThiefF,0x0
+RogueF,0x0
+Nomad,0x0
+NomadF,0x0
+NomadTrooper,0x0
+NomadTrooperF,0x0
+Transporter,0x0
+FaeManakete,0x0
+DivineDragon,0x0
+FireManakete,0x0
+FireDragon,0x0
+King,0x0
+DemonDragon,0x0
 -,0x0
 -,0x0
 -,0x0

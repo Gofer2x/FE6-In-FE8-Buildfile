@@ -26,7 +26,7 @@
 #define ArcherF 0x1A
 #define Sniper 0x1B
 #define SniperF 0x1C
-#define Ranger 0x1D
+#define FE8_Ranger 0x1D
 #define FE8_RangerF 0x1E
 #define WyvernRider 0x1F
 #define WyvernRiderF 0x20

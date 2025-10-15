@@ -1,5 +1,3 @@
-actually do class stats moving lol
-
 once classes moved update effectiveness groups and items that use them for them (binding blade and divinestone)
 
 and skillsys tables and all that jazz
