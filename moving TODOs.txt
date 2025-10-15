@@ -1,3 +1,5 @@
+classes classes. for some reasno the classes table breaks and gives units weird amounts of avoid and breaks battle animations. look into that
+
 actually do class stats moving lol
 
 once classes moved update effectiveness groups and items that use them for them (binding blade and divinestone)
