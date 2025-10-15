@@ -1,0 +1,31 @@
+#define RoadMovementItem(time,x,y) "WORD time ; SHORT x ; SHORT y;"
+#define RoadMovementTerminator "WORD 0xFFFFFFFF"
+
+//Temp
+ALIGN 4
+TempDummyRoad:
+#incbin "RoadData/TempDummyRoad.road.bin"
+
+
+////Ch1ToCh2
+//ALIGN 4
+//Ch1ToCh2RoadData:
+//#incbin "RoadData/Ch1ToCh2.road.bin"
+//ALIGN 4
+//Ch1ToCh2RoadMovement:
+//RoadMovementItem(2048,328,199)
+//RoadMovementTerminator
+//
+////Ch2ToCh3
+//ALIGN 4
+//Ch2ToCh3RoadData:
+//#incbin "RoadData/Ch2ToCh3.road.bin"
+//ALIGN 4
+//Ch2ToCh3RoadMovement:
+//RoadMovementItem(2048,344,176)
+//RoadMovementTerminator
+//
+////Ch3ToCh4
+//ALIGN 4
+//Ch3ToCh4RoadData:
+//#incbin "RoadData/Ch3ToCh4.road.bin"

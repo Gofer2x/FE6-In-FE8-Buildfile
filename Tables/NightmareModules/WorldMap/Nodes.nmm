@@ -1,0 +1,121 @@
+1
+Node Table Editor by Gofer
+0x2060B0
+29
+32
+NULL
+NULL
+
+Placement Flag
+0
+1
+NEHU
+NULL
+
+Skirmish Behavior
+1
+1
+NEHU
+NULL
+
+Pre Clear Icon
+2
+1
+NEHU
+NULL
+
+Post Clear Icon
+3
+1
+NEHU
+NULL
+
+Chapter ID Eirika
+4
+1
+NEHU
+NULL
+
+Chapter ID Ephraim
+5
+1
+NEHU
+NULL
+
+Alternate Destination Flag
+6
+2
+NEHU
+NULL
+
+Next Node Eirika
+8
+1
+NEHU
+NULL
+
+Next Node Ephraim
+9
+1
+NEHU
+NULL
+
+Alternate Next Node Eirika
+10
+1
+NEHU
+NULL
+
+Alternate Next Node Ephraim
+11
+1
+NEHU
+NULL
+
+Armory
+12
+4
+NEHU
+NULL
+
+Vendor
+16
+4
+NEHU
+NULL
+
+Secret Shop
+20
+4
+NEHU
+NULL
+
+X Position
+24
+2
+NEDU
+NULL
+
+Y Position
+26
+2
+NEDU
+NULL
+
+Name
+28
+2
+NEHU
+NULL
+
+Ship Flag
+30
+1
+NEHU
+NULL
+
+Unknown
+31
+1
+NEHU
+NULL

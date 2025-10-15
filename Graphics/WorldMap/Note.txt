@@ -1,0 +1,2 @@
+All of graphics here are added via FEBuilder's UndoBuffer (well, except for the Palette Map which i had to get manually).
+FEB manages to insert them all in-line without needing to add extra data, but processing them via png2dmp gives bigger outputs. Maybe a wrong config? I dunno. Either way, it's all UndoBuffer in here.

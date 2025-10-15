@@ -2,3 +2,5 @@
 #include "ExternalTables/NewTerrainMovementCostTables.event"
 
 #include "ExternalTables/Supports/NewSupportTables.event"
+
+#include "ExternalTables/Roads/RoadInstaller.event"

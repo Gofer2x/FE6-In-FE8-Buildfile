@@ -1,0 +1,86 @@
+## Ch1_NodeName
+Castle Pharae[X]
+
+## Ch2_NodeName
+Bern Border[X]
+
+## Ch3_NodeName
+Araphen[X]
+
+## Ch4_NodeName
+Laus[X]
+
+## Ch5_NodeName
+Mountain Pass[X]
+
+## Ch6_NodeName
+Castle Thria[X]
+
+## Ch7_NodeName
+Ostia City[X]
+
+## Ch8_NodeName
+Castle Ostia[X]
+
+## Ch9_NodeName
+Fibernia[X]
+
+## Ch10A_NodeName
+Armagh[X]
+
+## Ch11A_NodeName
+Eburacum[X]
+
+## Ch10B_NodeName
+Small Village[X]
+
+## Ch11B_NodeName
+Eidyna[X]
+
+## Ch12_NodeName
+Juteaux[X]
+
+## Ch13_NodeName
+Missur[X]
+
+## Ch14_NodeName
+Arcadia[X]
+
+## Ch15_NodeName
+Etruria Border[X]
+
+## Ch16_NodeName
+Castle Aquileia[X]
+
+## Ch17A_NodeName
+Remi[X]
+
+## Ch18A_NodeName
+Illia Forest[X]
+
+## Ch19A_NodeName
+Carrhae[X]
+
+## Ch20A_NodeName
+Edessa[X]
+
+## Ch17B_NodeName
+Taras[X]
+
+## Ch18B_NodeName
+Djute Camp[X]
+
+## Ch19B_NodeName
+Bulgar[X]
+
+## Ch20B_NodeName
+Bulgar Mansion[X]
+
+## Ch21_NodeName
+Shrine of Seals[X]
+
+## Ch22_NodeName
+Bern Keep[X]
+
+## Ch23_NodeName
+Dragon Sanctuary[X]

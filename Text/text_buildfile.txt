@@ -16,6 +16,8 @@
 #include "NamesAndDescs/ItemNames.txt"
 #include "NamesAndDescs/ItemDescriptions.txt"
 
+#include "NamesAndDescs/WMNodeNames.txt"
+
 #include "CharacterStuff/BattleQuotes.txt"
 #include "CharacterStuff/CharacterEndings.txt"
 #include "CharacterStuff/DeathQuotes.txt"

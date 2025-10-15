@@ -1,0 +1,3 @@
+#include "BigMap/Installer.event"
+#include "EventMap/Installer.event"
+#include "MiniMap/Installer.event"

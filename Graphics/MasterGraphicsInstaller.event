@@ -53,3 +53,6 @@ MugsStart:
 MESSAGE Inserting Mugs at CurrentOffset
 #include "Mugs/_MugsInstaller.event"
 MESSAGE "Mugs Size is {CurrentOffset-MugsStart:N1} Bytes"
+
+//All are inline so no size calc.
+#include "WorldMap/WorldMapInstaller.event"

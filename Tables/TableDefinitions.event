@@ -198,6 +198,11 @@
 //status staves will give 
 #define ItemStatus(StatusID,Duration) "StatusID | (Duration << 4)"
 
+//WM Nodes
+#define EmptyShopTable 0xa3efb4
+#define NoAltDestFlag 0xFFFF
+#define NoSkirmishFlag 0x1
+
 //Chapter Numbers
 #define ChNumber0 0x0
 #define ChNumber0x 0x1

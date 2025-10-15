@@ -1,0 +1,38 @@
+1
+Roads Table Editor by Gofer
+0x206674
+32
+12
+NULL
+NULL
+
+Road Data Pointer
+0
+4
+NEHU
+NULL
+
+Node 1
+4
+1
+NEHU
+NULL
+
+Node 2
+5
+1
+NEHU
+NULL
+
+0000
+6
+2
+NEHU
+NULL
+
+Movement Path Pointer
+8
+4
+NEHU
+NULL
+

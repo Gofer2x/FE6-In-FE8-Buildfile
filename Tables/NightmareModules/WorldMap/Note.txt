@@ -1,0 +1,5 @@
+The placement of the vanilla nodes is very consistent, with their X and Y coords being multiples. Below is what multiples are for what node sprite size.
+
+8x8: 24+(16*n)
+16x16: 24+(32*n)
+32x32: 24+(64*n) probably?
