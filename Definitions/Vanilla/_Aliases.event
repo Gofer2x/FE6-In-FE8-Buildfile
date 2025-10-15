@@ -8,3 +8,33 @@
 
 #define Civilian Civilian1
 #define CivilianF Civilian1F
+
+#define PaladinF FE8_PaladinF
+#define CavalierF FE8_CavalierF
+#define Assassin FE8_Assassin
+#define MercenaryF FE8_MercenaryF
+#define Recruit3 FE8_Recruit3
+#define Journeyman2 FE8_Journeyman2
+#define Pupil2 FE8_Pupil2
+#define Recruit2 FE8_Recruit2
+#define Entombed FE8_Entombed
+#define Revenant FE8_Revenant
+#define Wight FE8_Wight
+#define WightBow FE8_WightBow
+#define Bonewalker FE8_Bonewalker
+#define BonewalkerBow FE8_BonewalkerBow
+#define ElderBael FE8_ElderBael
+#define Bael FE8_Bael
+#define Gwyllgi FE8_Gwyllgi
+#define MautheDoog FE8_MautheDoog
+#define Maelduin FE8_Maelduin
+#define Tarvos FE8_Tarvos
+#define ArchMogall FE8_ArchMogall
+#define Mogall FE8_Mogall
+#define Deathgoyle FE8_Deathgoyle
+#define Gargoyle FE8_Gargoyle
+#define Journeyman3 FE8_Journeyman3
+#define Pupil3 FE8_Pupil3
+#define GreatKnight FE8_GreatKnight
+#define GreatKnightF FE8_GreatKnightF
+#define RangerF FE8_RangerF
