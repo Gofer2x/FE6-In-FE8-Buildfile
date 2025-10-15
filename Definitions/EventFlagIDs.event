@@ -24,6 +24,10 @@
 #define HideBossIconsFlag 0x84
 #define WorldMapInitializedFlag 0x89
 
+//Flags from Skillsys:
+//CASUAL_MODE 0xB0
+//BATTLE_ANIMATION_NUMBERS_FLAG 0xEE
+//FIXED_GROWTHS_FLAG_ID 0xEF
 
 //Flags for the mess that is the Klein & Thea recruitment.
 #define Ch11A_Ch10B_RoyOrClarineKleinTalkFlag 0x7
