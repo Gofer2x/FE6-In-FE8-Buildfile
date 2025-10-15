@@ -40,6 +40,6 @@
 #include "Generated/ChapterIDs.event"
 #include "Generated/WMNodeIDs.event"
 #include "Generated/WMRoadIDs.event"
+#include "Generated/SoundIDs.event"
 
-#include "TEMP/SoundIDs.event"
 #include "TEMP/TempDummyDefs.event"

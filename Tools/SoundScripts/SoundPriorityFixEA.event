@@ -1,0 +1,21 @@
+#include "../Definitions/Generated/SoundIDs.event"
+
+#define SoundTable 0x224470
+#define ChangeSoundTableEntryPriority(index,priority) "PUSH ; ORG SoundTable+(8*index)+4 ; WORD priority ; POP"
+
+#define SoundPrio_Highest 0x0000000
+#define SoundPrio_High 0x00010001
+#define SoundPrio_MidHigh 0x00020002
+#define SoundPrio_Medium1 0x00030003
+#define SoundPrio_Medium2 0x00040004
+#define SoundPrio_MidLow 0x00050005
+#define SoundPrio_Low 0x00060006
+#define SoundPrio_Lowest1 0x00070007
+#define SoundPrio_Lowest2 0x00080008
+
+ChangeSoundTableEntryPriority(SND_Aureola1,SoundPrio_Lowest1)
+ChangeSoundTableEntryPriority(SND_Apocalypse2,SoundPrio_Lowest1)
+ChangeSoundTableEntryPriority(SND_Forblaze2,SoundPrio_Lowest1)
+ChangeSoundTableEntryPriority(SND_IdunnDodge,SoundPrio_Medium2)
+ChangeSoundTableEntryPriority(SND_IdunnTransformRoar,SoundPrio_Medium2)
+ChangeSoundTableEntryPriority(SND_IdunnTransformStomp,SoundPrio_Medium2)

@@ -4,5 +4,7 @@
 #define FireManakete_ClassCard Manakete1_ClassCard
 
 #define Hatchet FE8_Hatchet
+#define HeavenSealDUMMY FE8_HeavenSealDUMMY
+
 #define Civilian Civilian1
 #define CivilianF Civilian1F

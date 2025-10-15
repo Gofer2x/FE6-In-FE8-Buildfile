@@ -13,3 +13,4 @@
 #include "EventPatches/AAA_GetUnitExpGain/Installer.event"
 
 #include "SMSPatch.event"
+#include "FixSomeBattleSounds.event"
