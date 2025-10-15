@@ -135,213 +135,214 @@ EndEvent
 FinalBattleQuotes:
 BranchIfUnitNotDeployed(1,Marcus)
 FlashCursor(Marcus,60)
-Text(FinalQuoteMarcus)
+Text(Marcus_FinalQuote)
 LABEL 1
 BranchIfUnitNotDeployed(2,Alen)
 FlashCursor(Alen,60)
-Text(FinalQuoteAlen)
+Text(Alen_FinalQuote)
 LABEL 2
 BranchIfUnitNotDeployed(3,Lance)
 FlashCursor(Lance,60)
-Text(FinalQuoteLance)
+Text(Lance_FinalQuote)
 LABEL 3
 BranchIfUnitNotDeployed(4,Wolt)
 FlashCursor(Wolt,60)
-Text(FinalQuoteWolt)
+Text(Wolt_FinalQuote)
 LABEL 4
 BranchIfUnitNotDeployed(5,Bors)
 FlashCursor(Bors,60)
-Text(FinalQuoteBors)
+Text(Bors_FinalQuote)
 LABEL 5
 BranchIfUnitNotDeployed(6,Elen)
 FlashCursor(Elen,60)
-Text(FinalQuoteElen)
+Text(Elen_FinalQuote)
 LABEL 6
 BranchIfUnitNotDeployed(7,Dieck)
 FlashCursor(Dieck,60)
-Text(FinalQuoteDieck)
+Text(Dieck_FinalQuote)
 LABEL 7
 BranchIfUnitNotDeployed(8,Ward)
 FlashCursor(Ward,60)
-Text(FinalQuoteWard)
+Text(Ward_FinalQuote)
 LABEL 8
 BranchIfUnitNotDeployed(9,Lot)
 FlashCursor(Lot,60)
-Text(FinalQuoteLot)
+Text(Lot_FinalQuote)
 LABEL 9
 BranchIfUnitNotDeployed(10,Shanna)
 FlashCursor(Shanna,60)
-Text(FinalQuoteShanna)
+Text(Shanna_FinalQuote)
 LABEL 10
 BranchIfUnitNotDeployed(11,Chad)
 FlashCursor(Chad,60)
-Text(FinalQuoteChad)
+Text(Chad_FinalQuote)
 LABEL 11
 BranchIfUnitNotDeployed(12,Lugh)
 FlashCursor(Lugh,60)
-Text(FinalQuoteLugh)
+Text(Lugh_FinalQuote)
 LABEL 12
 BranchIfUnitNotDeployed(13,Clarine)
 FlashCursor(Clarine,60)
-Text(FinalQuoteClarine)
+Text(Clarine_FinalQuote)
 LABEL 13
 BranchIfUnitNotDeployed(14,Rutger)
 FlashCursor(Rutger,60)
-Text(FinalQuoteRutger)
+Text(Rutger_FinalQuote)
 LABEL 14
 BranchIfUnitNotDeployed(15,Saul)
 FlashCursor(Saul,60)
-Text(FinalQuoteSaul)
+Text(Saul_FinalQuote)
 LABEL 15
 BranchIfUnitNotDeployed(16,Dorothy)
 FlashCursor(Dorothy,60)
-Text(FinalQuoteDorothy)
+Text(Dorothy_FinalQuote)
 LABEL 16
 BranchIfUnitNotDeployed(17,Sue)
 FlashCursor(Sue,60)
-Text(FinalQuoteSue)
+Text(Sue_FinalQuote)
 LABEL 17
 BranchIfUnitNotDeployed(18,Zelot)
 FlashCursor(Zelot,60)
-Text(FinalQuoteZelot)
+Text(Zelot_FinalQuote)
 LABEL 18
 BranchIfUnitNotDeployed(19,Trec)
 FlashCursor(Trec,60)
-Text(FinalQuoteTrec)
+Text(Trec_FinalQuote)
 LABEL 19
 BranchIfUnitNotDeployed(20,Noah)
 FlashCursor(Noah,60)
-Text(FinalQuoteNoah)
+Text(Noah_FinalQuote)
 LABEL 20
 BranchIfUnitNotDeployed(21,Astolfo)
 FlashCursor(Astolfo,60)
-Text(FinalQuoteAstolfo)
+Text(Astolfo_FinalQuote)
 LABEL 21
 BranchIfUnitNotDeployed(22,Lilina)
 FlashCursor(Lilina,60)
-Text(FinalQuoteLilina)
+Text(Lilina_FinalQuote)
 LABEL 22
 BranchIfUnitNotDeployed(23,Barthe)
 FlashCursor(Barthe,60)
-Text(FinalQuoteBarthe)
+Text(Barthe_FinalQuote)
 LABEL 23
 BranchIfUnitNotDeployed(24,Ogier)
 FlashCursor(Ogier,60)
-Text(FinalQuoteOgier)
+Text(Ogier_FinalQuote)
 LABEL 24
 BranchIfUnitNotDeployed(25,Gwendolyn)
 FlashCursor(Gwendolyn,60)
-Text(FinalQuoteGwendolyn)
+Text(Gwendolyn_FinalQuote)
 LABEL 25
 BranchIfUnitNotDeployed(26,Fir)
 FlashCursor(Fir,60)
-Text(FinalQuoteFir)
+Text(Fir_FinalQuote)
 LABEL 26
 BranchIfUnitNotDeployed(27,Sin)
 FlashCursor(Sin,60)
-Text(FinalQuoteSin)
+Text(Sin_FinalQuote)
 LABEL 27
 BranchIfUnitNotDeployed(28,Geese)
 FlashCursor(Geese,60)
-Text(FinalQuoteGeese)
+Text(Geese_FinalQuote)
 LABEL 28
 BranchIfUnitNotDeployed(29,Gonzalez)
 FlashCursor(Gonzalez,60)
-Text(FinalQuoteGonzalez)
+Text(Gonzalez_FinalQuote)
 LABEL 29
 BranchIfUnitNotDeployed(30,Klein)
 FlashCursor(Klein,60)
-Text(FinalQuoteKlein)
+Text(Klein_FinalQuote)
 LABEL 30
 BranchIfUnitNotDeployed(31,Thea)
 FlashCursor(Thea,60)
-Text(FinalQuoteThea)
+Text(Thea_FinalQuote)
 LABEL 31
 BranchIfUnitNotDeployed(32,Larum)
 FlashCursor(Larum,60)
-Text(FinalQuoteLarum)
+Text(Larum_FinalQuote)
 LABEL 32
 BranchIfUnitNotDeployed(33,Elffin)
 FlashCursor(Elffin,60)
-Text(FinalQuoteElffin)
+Text(Elffin_FinalQuote)
 LABEL 33
 BranchIfUnitNotDeployed(34,Echidna)
 FlashCursor(Echidna,60)
-Text(FinalQuoteEchidna)
+Text(Echidna_FinalQuote)
 LABEL 34
 BranchIfUnitNotDeployed(35,Bartre)
 FlashCursor(Bartre,60)
-Text(FinalQuoteBartre)
+Text(Bartre_FinalQuote)
 LABEL 35
 BranchIfUnitNotDeployed(36,Raigh)
 FlashCursor(Raigh,60)
-Text(FinalQuoteRaigh)
+Text(Raigh_FinalQuote)
 LABEL 36
 BranchIfUnitNotDeployed(37,Cath)
 FlashCursor(Cath,60)
-Text(FinalQuoteCath)
+Text(Cath_FinalQuote)
 LABEL 37
 BranchIfUnitNotDeployed(38,Melady)
 FlashCursor(Melady,60)
-Text(FinalQuoteMelady)
+Text(Melady_FinalQuote)
 LABEL 38
 BranchIfUnitNotDeployed(39,Perceval)
 FlashCursor(Perceval,60)
-Text(FinalQuotePerceval)
+Text(Perceval_FinalQuote)
 LABEL 39
 BranchIfUnitNotDeployed(40,Cecilia)
 FlashCursor(Cecilia,60)
-Text(FinalQuoteCecilia)
+Text(Cecilia_FinalQuote)
 LABEL 40
 BranchIfUnitNotDeployed(41,Sophia)
 FlashCursor(Sophia,60)
-Text(FinalQuoteSophia)
+Text(Sophia_FinalQuote)
 LABEL 41
 BranchIfUnitNotDeployed(42,Igrene)
 FlashCursor(Igrene,60)
-Text(FinalQuoteIgrene)
+Text(Igrene_FinalQuote)
 LABEL 42
 BranchIfUnitNotDeployed(43,Garrett)
 FlashCursor(Garrett,60)
-Text(FinalQuoteGarrett)
+Text(Garrett_FinalQuote)
 LABEL 43
 BranchIfUnitNotDeployed(44,Fae)
 FlashCursor(Fae,60)
-Text(FinalQuoteFae)
+Text(Fae_FinalQuote)
 LABEL 44
 BranchIfUnitNotDeployed(45,Hugh)
 FlashCursor(Hugh,60)
-Text(FinalQuoteHugh)
+Text(Hugh_FinalQuote)
 LABEL 45
 BranchIfUnitNotDeployed(46,Zeiss)
 FlashCursor(Zeiss,60)
-Text(FinalQuoteZeiss)
+Text(Zeiss_FinalQuote)
 LABEL 46
 BranchIfUnitNotDeployed(47,Douglas)
 FlashCursor(Douglas,60)
-Text(FinalQuoteDouglas)
+Text(Douglas_FinalQuote)
 LABEL 47
 BranchIfUnitNotDeployed(48,Niime)
 FlashCursor(Niime,60)
-Text(FinalQuoteNiime)
+Text(Niime_FinalQuote)
 LABEL 48
 BranchIfUnitNotDeployed(49,Juno)
 FlashCursor(Juno,60)
-Text(FinalQuoteJuno)
+Text(Juno_FinalQuote)
 LABEL 49
 BranchIfUnitNotDeployed(50,Dayan)
 FlashCursor(Dayan,60)
-Text(FinalQuoteDayan)
+Text(Dayan_FinalQuote)
 LABEL 50
 BranchIfUnitNotDeployed(51,Yoder)
 FlashCursor(Yoder,60)
-Text(FinalQuoteYoder)
+Text(Yoder_FinalQuote)
 LABEL 51
 BranchIfUnitNotDeployed(52,Karel)
 FlashCursor(Karel,60)
-Text(FinalQuoteKarel)
+Text(Karel_FinalQuote)
 LABEL 52
 EndEvent
+
 
 
 // https://github.com/FireEmblemUniverse/fireemblem6j/blob/b158d46dfc4d6590d783b0072fed90cf0227edf7/data/chapters/final/eventscript.h#L53C15-L53C23
