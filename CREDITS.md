@@ -27,19 +27,19 @@ The following are various Vanilla FE6 animations. I have only kept the ones I in
 
 - "8. Dragonstone (FE8)" {Eldritch Abomination}
 	
-"NomadTrooperF" aka 
+"NomadTrooperF" aka "[Nomad Trooper Base] [F] Vanilla FE6 +Fix]"
 
 - I assume Bow fix by {ltranc, Valak}
 
-"MageF" aka 
+"MageF" aka "[Mage-Base] [F] Vanilla FE6 Lilina +Staff"
 
 - "Magic" by Shin19 and SHYUTERz.
 	
-"Sage" aka
+"Sage" aka "[Sage-Base] [M] Vanilla FE6 +Fixes"
 
 - "Fixed magic" by Shin19.
 
-"SageF" aka
+"SageF" aka "[Sage-Base] [F] Vanilla FE6 Lilina +Fixes"
 
 - "FE8 Fixes" by SHYUTERz.
 
