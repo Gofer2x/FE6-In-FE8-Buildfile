@@ -4,7 +4,7 @@
 #define CONFIG_BuggedEarlyHMBonuses
 
 //Enables Hard Mode bonuses for recruitable enemies who usually don't get them (Raigh, Ch13!Percival, Hugh, Douglas).
-//TODO Look at previous todo.
+//TODO The current patch only works for singular units, and only player ones.
 #define CONFIG_RecruitableUnitsHMBonusesExtra
 
 //Adds a call to a "revive Merlinus" event at end of each chapter.
