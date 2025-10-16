@@ -11,6 +11,7 @@
 #include "EventPatches/EVENTSCRIPT_ChangeEdition/Installer.event"
 #include "EventPatches/EVENTSCRIPT_GetSupport_20220520/Installer.event"
 #include "EventPatches/AAA_GetUnitExpGain/Installer.event"
+#include "EventPatches/AAA_BonusLevels/Installer.event"
 
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"

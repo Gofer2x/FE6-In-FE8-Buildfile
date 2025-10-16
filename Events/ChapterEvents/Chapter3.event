@@ -163,6 +163,7 @@ ENUN
 CAM1 Roy
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on GenericBernCh3 by +5 (Slater is loaded later)
+ApplyBonusLevelsToEnemyArmy(5)
 #endif
 EndEvent
 

@@ -213,6 +213,7 @@ MOVE 0x0 Elen [4,10]
 ENUN
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on Ruud and GenericBernCh2 by +4
+ApplyBonusLevelsToEnemyArmy(4)
 #endif
 EndEvent
 

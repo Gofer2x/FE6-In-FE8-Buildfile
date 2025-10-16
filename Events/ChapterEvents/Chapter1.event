@@ -147,6 +147,7 @@ Text(BG_Outside, Ch1_Start3)
 MOVE 0x0 Lance [4,18]
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on Damas and GenericBanditCh1 by +4
+ApplyBonusLevelsToEnemyArmy(4)
 #endif
 EndEvent
 

@@ -175,6 +175,7 @@ ENUN
 CAM1 Roy
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on Erik and GenericLausCh4 by +4
+ApplyBonusLevelsToEnemyArmy(4)
 #endif
 EndEvent
 

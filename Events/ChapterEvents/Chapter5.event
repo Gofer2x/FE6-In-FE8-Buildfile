@@ -152,6 +152,7 @@ STAL 64
 ENUN
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on Dory and GenericBanditCh5 by +6
+ApplyBonusLevelsToEnemyArmy(6)
 #endif
 EndEvent
 
