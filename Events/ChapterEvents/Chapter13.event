@@ -232,6 +232,10 @@ LOAD3 0x0 Units
 ENUN
 CAM1 Roy
 Text(BG_Outside,Ch13_Start3)
+#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
+//Level Perceval by +10
+ApplyBonusLevelsToUnit(Perceval, 10)
+#endif
 GotoPrepScreen
 
 CeciliaDies:
@@ -327,8 +331,9 @@ CMOF
 Text(Ch13_MeladyRecruitsHerself)
 TurnAlly(Melady)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Melady by +10
+ApplyBonusLevelsToUnit(Melady, 10)
 #endif
 EndEvent
 

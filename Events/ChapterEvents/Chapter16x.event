@@ -160,6 +160,10 @@ ENUN
 PlayMusic(MUS_ScarsOfTheScouring)
 CAM1 Roy
 Text(BG_Temple2Yellow,Ch16x_Start2)
+#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
+//Level Douglas by +11. His stats won't be the same as in Ch16 like this though. TODO test this and if we can keep them from there?
+ApplyBonusLevelsToUnit(Douglas, 11)
+#endif
 GotoPrepScreen
 
 LoadLeftBishop:

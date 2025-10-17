@@ -14,8 +14,6 @@
 //Ch19A_SiguneVsShannaFlag 0x1E
 //Ch19A_SiguneVsTheaFlag 0x1F
 
-
-
 EventPointerTable(EVENTS_Ch19A,ThisChapter)
 EscapePointPointerTable(CHAPTER_Ch19A,0x0)
 NPCEscapePointPointerTable(CHAPTER_Ch19A,0x0)

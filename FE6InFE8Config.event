@@ -3,8 +3,10 @@
 //Enables events that simulate the bugged double Hard Mode bonuses for Chapter 1-5 enemies.
 #define CONFIG_BuggedEarlyHMBonuses
 
+//Enables Hard Mode bonuses for recruitable enemies who get them in FE6 (Rutger, Fir, Sin, Gonzalzez, Klein, Thea, Cath, Melady, Ch15!Perceval, Zeiss).
+#define CONFIG_RecruitableUnitsHMBonusesNormal
+
 //Enables Hard Mode bonuses for recruitable enemies who usually don't get them (Raigh, Ch13!Percival, Hugh, Douglas).
-//TODO The current patch only works for player units.
 #define CONFIG_RecruitableUnitsHMBonusesExtra
 
 //Adds a call to a "revive Merlinus" event at end of each chapter.

@@ -219,6 +219,10 @@ Text(Ch12_Start3BartreRoute)
 
 //Either way, continue here.
 LABEL 9
+#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
+//Level Raigh by +9
+ApplyBonusLevelsToUnit(Raigh, 9)
+#endif
 GotoPrepScreen
 
 EinAppearsFlaerLeaves:
@@ -254,8 +258,9 @@ SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch12_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +9
+ApplyBonusLevelsToUnit(Cath, 9)
 #endif
 LABEL 9
 EndEvent

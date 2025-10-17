@@ -21,10 +21,7 @@
 #define Ch6_SouthmostWestRoomCounter 0x0
 #define Ch6_SouthmostEastRoomCounter 0x1
 
-
-
 EventPointerTable(EVENTS_Ch6,ThisChapter)
-
 EscapePointPointerTable(CHAPTER_Ch6,Ch6EscapePoints)
 NPCEscapePointPointerTable(CHAPTER_Ch6,0x0)
 
@@ -270,6 +267,10 @@ LOAD1 0x1 JustCath
 ENUN
 Text(Ch6_CathAppears)
 RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
+//Level Cath by +6
+ApplyBonusLevelsToUnit(Cath, 6)
+#endif
 EndEvent
 
 RoyRecruitsSue:

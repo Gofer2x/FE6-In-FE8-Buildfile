@@ -19,8 +19,9 @@
 #define Ch21x_EastLeftChestTrappedFlag 0xB
 #define Ch21x_EastRightChestTrappedFlag 0xC
 
-
 EventPointerTable(EVENTS_Ch21x,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch21x,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch21x,0x0)
 
 ALIGN 4
 

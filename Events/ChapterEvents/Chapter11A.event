@@ -318,8 +318,9 @@ MOVE 0x0 Thea [18,26]
 ENUN
 DISA Thea
 Text(Ch10B_Ch11A_KleinAppears2)
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Klein by +9
+ApplyBonusLevelsToUnit(Klein, 9)
 #endif
 EndEvent
 
@@ -347,8 +348,9 @@ LoadReinforcements(TheaSquad1)
 LoadReinforcements(TheaSquad2)
 Text(Ch10B_Ch11A_TheaAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Thea by +9
+ApplyBonusLevelsToUnit(Thea, 9)
 #endif
 EndEvent
 

@@ -16,8 +16,6 @@
 #define Ch22_EastSwitchFlag 0x9
 #define Ch22_ThroneRoomOpenFlag 0xA
 
-
-
 EventPointerTable(EVENTS_Ch22,ThisChapter)
 EscapePointPointerTable(CHAPTER_Ch22,Ch22EscapePoints)
 NPCEscapePointPointerTable(CHAPTER_Ch22,0x0)
@@ -247,8 +245,9 @@ SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch22_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +14
+ApplyBonusLevelsToUnit(Cath, 14)
 #endif
 
 LABEL 3

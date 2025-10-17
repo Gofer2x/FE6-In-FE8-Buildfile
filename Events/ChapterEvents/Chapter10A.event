@@ -170,8 +170,9 @@ PlayMusic(MUS_WildFrontier)
 Text(BG_Castle1,Ch10A_GonzalezAppears)
 LoadReinforcements(JustGonzalez)
 LABEL 1
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Gonzalez by +8
+ApplyBonusLevelsToUnit(Gonzalez, 8)
 #endif
 EndEvent
 

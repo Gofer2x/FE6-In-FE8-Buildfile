@@ -235,8 +235,9 @@ CMOF
 LoadReinforcements(RutgerSquad)
 Text(Ch4_RutgerAppears)
 LABEL 1
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Rutger by +4
+ApplyBonusLevelsToUnit(Rutger, 4)
 #endif
 EndEvent
 

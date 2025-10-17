@@ -21,7 +21,6 @@
 //Ch8_LeganceVsGwendolynFlag 0x1F
 
 EventPointerTable(EVENTS_Ch8,ThisChapter)
-
 EscapePointPointerTable(CHAPTER_Ch8,Ch8EscapePoints)
 NPCEscapePointPointerTable(CHAPTER_Ch8,0x0)
 
@@ -242,6 +241,10 @@ ENUN
 CAM1 Cath
 Text(Ch8_CathAppears)
 RestoreMusic
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
+//Level Cath by +7
+ApplyBonusLevelsToUnit(Cath, 7)
+#endif
 LABEL 9
 EndEvent
 

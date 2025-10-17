@@ -17,7 +17,6 @@
 #define Ch20B_SinDayanExtraTalkFlag 0xA
 #define Ch20B_GaidenGoneFlag 0xB
 
-
 //Ch20B_RoartzVsDouglasFlag 0x1F
 
 EventPointerTable(EVENTS_Ch20B,ThisChapter)
@@ -210,8 +209,9 @@ SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch20B_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +13
+ApplyBonusLevelsToUnit(Cath, 13)
 #endif
 LABEL 9
 EndEvent

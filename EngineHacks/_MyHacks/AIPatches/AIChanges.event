@@ -1,0 +1,56 @@
+//Not sure what the best way to do this is, so let's just be safe.
+
+LausNoAttackList:
+BYTE Clarine
+BYTE 0x0
+SHORT 0x0
+
+//Change AI1_7 to not attack Clarine
+PUSH
+ORG 0x5A8A0C
+POIN LausNoAttackList
+ORG 0xEFB2E0
+POP
+
+//Ditto with AI2_1
+PUSH
+ORG 0x5A84B8
+POIN LausNoAttackList
+POP
+
+//Ditto with AI2_7
+PUSH
+ORG 0x5A869C
+POIN LausNoAttackList
+POP
+
+//Change AI1_8 to not attack Citizens in Chapter 11B
+Ballista11BNoAttackList:
+	BYTE GenericCitizenEidyna1Ch11B
+	BYTE 0x0
+	BYTE GenericCitizenEidyna2Ch11B
+	BYTE 0x0
+	SHORT 0x0
+
+PUSH
+ORG 0x5A8B48
+POIN Ballista11BNoAttackList
+POP
+
+//Change AI1_9 to not attack Larum and Elffin (Douglas)
+DouglasNoAttackList:
+	BYTE Larum
+	BYTE 0x0
+	BYTE Elffin
+	BYTE 0x0
+	SHORT 0x0
+PUSH
+ORG 0x5A8B88
+POIN DouglasNoAttackList
+POP
+
+//Ditto for AI2_2
+PUSH
+ORG 0x5A84D8
+POIN DouglasNoAttackList
+POP

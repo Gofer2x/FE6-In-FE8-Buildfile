@@ -226,6 +226,11 @@ PlayMusic(MUS_WhenTheRushComes)
 CAM1 Roy
 FlashCursor(Roy,60)
 Text(BG_Castle2,Ch16_Start5)
+#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
+//Level Hugh and Douglas by +11
+ApplyBonusLevelsToUnit(Hugh, 11)
+ApplyBonusLevelsToUnit(Douglas, 11)
+#endif
 GotoPrepScreen
 
 GalleAndZeissTalk:
@@ -249,8 +254,9 @@ Text(Ch16_ZeissDotDotDotDotDotDot)
 MOVE 0x0 Zeiss [1,0]
 ENUN
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Zeiss by +11
+ApplyBonusLevelsToUnit(Zeiss, 11)
 #endif
 EndEvent
 
@@ -270,8 +276,9 @@ LoadReinforcements(CathAndThief)
 CAM1 Cath
 Text(Ch16_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +11
+ApplyBonusLevelsToUnit(Cath, 11)
 #endif
 LABEL 9
 EndEvent
@@ -383,7 +390,7 @@ LABEL 7
 Text(Ch16_HughFinalRejected)
 GOTO 9
 
- //Hugh gets recruited.
+//Hugh gets recruited.
 LABEL 8
 EnableSceneDialogueSkipping
 SwitchMusic(MUS_JoinUs)

@@ -29,8 +29,6 @@
 //Ch11A_Ch10B_GenericArcherKleinDeathFlag 0x20
 //Ch11A_Ch10B_GenericPegKnightTheaDeathFlag 0x21
 
-
-
 EventPointerTable(EVENTS_Ch10B,ThisChapter)
 EscapePointPointerTable(CHAPTER_Ch10B,0x0)
 NPCEscapePointPointerTable(CHAPTER_Ch10B,Ch10BNPCEscapePoints)
@@ -280,8 +278,9 @@ LoadReinforcements(BrigandReinforcements2)
 CAM1 Scollan
 PlayMusic(MUS_WildFrontier)
 Text(Ch10B_ScollanOrdersGonzalez)
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Gonzalez by +8
+ApplyBonusLevelsToUnit(Gonzalez, 8)
 #endif
 EndEvent
 
@@ -301,8 +300,9 @@ ENUN
 DISA Thea
 Text(Ch10B_Ch11A_KleinAppears2)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Klein by +8
+ApplyBonusLevelsToUnit(Klein, 8)
 #endif
 EndEvent
 
@@ -312,8 +312,9 @@ LoadReinforcements(TheaSquad1)
 LoadReinforcements(TheaSquad2)
 Text(Ch10B_Ch11A_TheaAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonuses
+#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Thea by +8
+ApplyBonusLevelsToUnit(Thea, 8)
 #endif
 EndEvent
 

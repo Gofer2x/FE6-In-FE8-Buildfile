@@ -13,5 +13,8 @@
 #include "EventPatches/AAA_GetUnitExpGain/Installer.event"
 #include "EventPatches/AAA_BonusLevels/Installer.event"
 
+#include "AIPatches/AIChanges.event"
+#include "AIPatches/AI_TalkAI/TalkAI.event"
+
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"

@@ -49,6 +49,8 @@
 #define Ch14x_BridgeGroup5Counter 0x4
 
 EventPointerTable(EVENTS_Ch14x,ThisChapter)
+EscapePointPointerTable(CHAPTER_Ch14x,0x0)
+NPCEscapePointPointerTable(CHAPTER_Ch14x,0x0)
 
 ALIGN 4
 
