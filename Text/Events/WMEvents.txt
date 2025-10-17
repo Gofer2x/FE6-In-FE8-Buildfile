@@ -1,0 +1,1009 @@
+
+## WM_IntroScroll
+Man and Dragon once coexisted in[N]
+harmony. However, Man shattered [N]
+that harmony with a sudden onslaught.[N]
+A great war now known as The Scouring[N]
+was fought for dominion of the land.[N]
+Losses were tremendous for both sides[N]
+and this war rattled the very[N]
+foundations of the continent on[N]
+which they battled...[N]
+Defeated and humbled, the Dragons[N]
+disappeared from the realm.[N]
+Mankind then began to rebuild and [N]
+repopulate their newly won land.[N]
+A millennium has passed since then...[N]
+
+## WM_IntroIdk1
+The Scouring...[N]
+The great war between dragons and men...[AN][X]
+
+## WM_IntroIdk2
+The dragons were defeated[N]
+and disappeared from Elibe...[AN][X]
+
+## WM_IntroIdk3
+Mankind celebrated victory and then[N]
+spread their forces throughout the continent...[AN][X]
+
+## WM_IntroIdk4
+1000 years have passed...[AN][X]
+
+
+
+## WM_Intro1
+After defeating the dragons,[N]
+the humans of Elibe quickly spread their[AN]
+culture and civilization to the farthest[N]
+reaches of the continent.[AN][X]
+
+## WM_Intro2
+In the west lies the Kingdom of[N]
+Etruria, which is widely considered to[AN]
+possess the most refined culture[N]
+in all of Elibe.[AN][X]
+
+## WM_Intro3
+The Kingdom of Bern, with its powerful[N]
+military and logical, pragmatic people,[AN]
+is located on the other side of[N]
+the continent in the east.[AN][X]
+
+## WM_Intro4
+These are the two most powerful nations[N]
+in Elibe with the weaker nations[AN]
+situated between them.[N]
+These smaller lands are...[AN][X]
+
+## WM_Intro5
+the Lycian League, whose numerous[N]
+territories are independently ruled[AN]
+by a number of marquesses that are [N]
+bound by a vow of allegianceア[AN][X]
+
+## WM_Intro6
+Ilia, where the people arduously[N]
+till the frozen soil and many[AN]
+become mercenaries to earn[N]
+money to surviveア[AN][X]
+
+## WM_Intro7
+and Sacae, where various clans ride[N]
+through the plains on horseback.[AN][X]
+
+## WM_Intro8
+Although there were occasional clashes[N]
+between these nations, the majority[AN]
+of the people of Elibe lived in peace.[N]
+That peace, however, was not to last...[AN][X]
+
+## WMChWM_Intro9
+King Zephiel of Bern has commanded his[N]
+forces to conquer the entirety of Elibe.[AN][X]
+
+## WM_Intro10
+Bern's armies first attacked Sacae and Ilia,[N]
+ruthlessly massacring all who opposed them.[AN]
+[LoadOverworldFaces]
+Now, Bern is mounting a merciless[N]
+invasion into Lycia.[AN][X]
+
+## WM_Intro11
+Pherae is a territory of Lycia known for[N]
+its beauty and honorable lords.[AN]
+[LoadOverworldFaces]
+Pherae's Lord Roy was studying in the great[N]
+territory of Ostia when the invasion began.[AN]
+[LoadOverworldFaces]
+However, the sitting marquess and Roy's[N]
+father, Eliwood, who has been ill,[AN]
+has sent for Roy to return to lead Pherae's[N]
+soldiers in defending against Bern.[AN][X]
+
+## WM_Intro12
+[LoadOverworldFaces]
+Marquess Hector of Ostia is Eliwood's[N]
+long-time friend and confidant, and leads[AN]
+the council of lords in Lycia.[N]
+At the time Eliwood sent for Roy,[AN]
+[LoadOverworldFaces]
+Marquess Ostia's daughter Lilina[N]
+was in Pherae visiting Eliwood.[AN][X]
+
+## WM_Intro13
+Upon receiving his father's message, Roy[N]
+hurries home, taking with him his vassals[AN]
+[LoadOverworldFaces]
+and Bors, a knight from Ostia who is[N]
+responsible for Lilina's safety.[AN][X]
+
+## WM_Intro14
+The story begins when Roy reaches[N]
+the outskirts of Pherae...[AN][X]
+
+
+
+## WM_Ch2_1
+There is a small village on the border[N]
+of Pherae and Bern.[AN]
+[LoadOverworldFaces]
+This is where Roy is to meet the[N]
+mercenary band that Eliwood hired.[AN][X]
+
+## WM_Ch2_2
+Just east of the village is a small castle[N]
+occupied by Bern's forces.[AN]
+At the time Roy reaches the village,[N]
+the castle is in an outright panic.[AN]
+Roy has yet to realize that this confusion[N]
+going on in the castle will spread,[AN]
+engulfing the entire continent of Elibe[N]
+in chaos...[AN][X]
+
+
+
+## WM_Ch3_1
+Just north of Pherae stands[N]
+Castle Araphen.[AN]
+The armies of Lycia had gathered here to[N]
+make preparations to strike back at Bern.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+However, when Roy and Guinivere are only a[N]
+short distance from Castle Araphen,[AN]
+a messenger brings them shocking[N]
+news they can scarcely believe.[AN]
+Leading Bern's army is a trio of elite[N]
+commanders known as the Wyvern Generals,[AN]
+named after the reptilian creatures native[N]
+to Bern for their ferocity and cunning.[AN][X]
+
+## WM_Ch3_2
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Two of these three, Brunnya and[N]
+Narcian, have attacked Castle Araphen,[AN]
+virtually decimating the Lycian Army[N]
+while it was little prepared.[AN][X]
+
+## WM_Ch3_3
+[LoadOverworldFaces]
+Morale of the group takes a blow, but[N]
+Roy continues to Castle Araphen,[AN]
+both to see it for himself and, hopefully,[N]
+find and aid any survivors...[N]
+
+
+
+## WM_Ch4_1
+Respecting Hector's dying request,[N]
+Roy makes his way west.[AN]
+[LoadOverworldFaces]
+Intent on reaching Lilina, Roy[N]
+keeps a steady pace toward Ostia.[AN]
+[LoadOverworldFaces]
+On his way there, Roy passes through[N]
+the territory of Laus,[AN]
+[LoadOverworldFaces]
+governed by Lord Erik.[AN]
+At a glance, Laus is a peaceful territory[N]
+with vast meadows and clear streams.[AN]
+Beneath this beauty, however, lies[N]
+treachery and great skullduggery...[AN][X]
+
+
+
+## WM_Ch5_1
+Marquess Laus had been working with[N]
+Bern against his allies in Lycia.[AN]
+[LoadOverworldFaces]
+Roy realizes that the leaders of Lycia, his[N]
+homeland, can no longer be trusted.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Still heading for Ostia, Roy moves through[N]
+a treacherous mountain pass...[AN][X]
+
+
+
+## WM_Ch6_1
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+After taking Saul, a priest of St. Elimine,[N]
+and Dorothy, his bodyguard, into their ranks,[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Roy and company enter Thria,[N]
+southeast of Ostia.[AN]
+Thria is governed by Lord Orun,[N]
+Hector's cousin.[AN][X]
+
+## WM_Ch6_2
+Orun's home castle seems a safe[N]
+place to stay.[AN][X]
+
+## WM_Ch6_3
+As such, Roy expects a night of[N]
+quiet rest for his troops.[AN]
+However, even Thria is within Bern's[N]
+influence...[AN][X]
+
+
+
+## WM_Ch7_1
+Hearing of rebellion, Roy[N]
+hurries his pace towards Ostia.[AN][X]
+
+## WM_Ch7_2
+[LoadOverworldFaces]
+According to his information,[N]
+General Legance, an advisor to Hector,[AN]
+[LoadOverworldFaces]
+organized a rebellion with his lieutenant,[N]
+Debias, to surrender to Bern.[AN][X]
+
+## WM_Ch7_3
+Legance keeps Lilina hostage in Castle[N]
+Ostia, thinking she may be of use later.[AN][X]
+
+## WM_Ch7_4
+Roy and company enter Ostia in an[N]
+effort to rescue Lilina.[AN][X]
+
+## WM_Ch7_5
+Ostia, the largest and most populous city[N]
+in Lycia, is to become a battlefield...[AN][X]
+
+
+
+## WM_Ch8_1
+Ostia's military primarily consists of[N]
+soldiers in heavy armor.[AN]
+With them, Castle Ostia has[N]
+always been famously secure.[AN]
+[LoadOverworldFaces]
+For countless years, the castle has[N]
+been said to be impregnable.[AN]
+[LoadOverworldFaces]
+However, the rumors are about to be proven[N]
+wrong by Roy, who, ironically,[AN]
+only does so for the castle's[N]
+own protection...[AN][X]
+
+
+
+## WM_Ch8x_1
+Roy vowed to protect Lilina.[AN]
+With Bern coming full force however,[N]
+Roy's army is no equal.[AN]
+Therefore, he decides to try and[N]
+obtain a legendary weapon.[AN]
+He thinks it best to obtain it before[N]
+Bern manages to get their hands on it.[AN]
+Lilina shows them to a cave[N]
+on the outskirts of Ostia,[AN]
+where a legendary weapon is hidden.[AN]
+The cave, located at the foot of a volcano,[N]
+will be no small obstacle for Roy...[AN][X]
+
+
+
+## WM_Ch9_1
+After driving Narcian away from Ostia,[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Roy and company brace themselves for[N]
+further attacks from Bern.[AN]
+However, Bern's belligerent movements[N]
+toward Lycia come to an abrupt halt,[AN]
+as if to mock Roy and his caution.[AN]
+Bern also remains unresponsive[N]
+to a treaty offer from Etruria.[AN]
+Bern's sudden silence and lack of[N]
+activity can only be described as eerie.[AN][X]
+
+## WM_Ch9_2
+With Hector gone, Pherae is now the[N]
+greatest power in Lycia.[AN]
+Eliwood summons the council of marquesses[N]
+to Pherae to discuss future actions.[AN]
+[LoadOverworldFaces]
+It is decided that Eliwood is to lead[N]
+the council of the Lycian League.[AN]
+A new Lycian Army is also to[N]
+be established.[AN]
+This new army's purpose is not to[N]
+take the offensive against Bern,[AN]
+but rather take a defensive[N]
+stance for Lycia.[AN]
+[LoadOverworldFaces]
+Owing to his victory against Bern in Ostia,[N]
+Roy is chosen leader of this new army.[AN]
+Gradually, the attitude and morale in[N]
+Lycia begins to improve.[AN]
+People once again conduct business without[N]
+fear, and they embrace a new optimism.[AN][X]
+
+## WM_Ch9_3
+At this time, Etruria calls for Lycia's[N]
+assistance.[AN]
+[LoadOverworldFaces]
+The kingdom needs help with restoring[N]
+law to the Western Isles.[AN]
+Many outlaws make their bases there,[N]
+and anarchy is said to rule.[AN][X]
+
+## WM_Ch9_4
+Many in Lycia are uneager to send their[N]
+troops to the Isles to deal with bandits,[AN]
+but having received Etruria's aid in Ostia,[N]
+they have no choice but to oblige.[AN]
+[LoadOverworldFaces]
+Thus, Roy and the Lycian Army pass[N]
+through Etruria toward the Isles.[AN][X]
+
+## WM_Ch9_5
+The Western Isles are the numerous[N]
+islands off the western coast of Elibe.[AN]
+Presently, they are colonies of Etruria.[AN]
+The Western Isles are rich in resources,[N]
+so mining is a major industry here.[AN]
+However, these resources are[N]
+worth a fortune.[AN]
+[LoadOverworldFaces]
+Inevitably, varied bands of rogues traveled[N]
+there hoping to loot the mines.[AN]
+As such, the people of the Western Isles[N]
+live in constant fear of bandit attacks.[AN]
+Roy is sent to vanquish these bandits...[AN][X]
+
+
+
+## WM_Ch10A_1
+Three separate islands:[AN]
+[LoadOverworldFaces]
+Fibernia,[AN][X]
+
+## WM_Ch10A_2
+[LoadOverworldFaces]
+Caldonia,[AN][X]
+
+## WM_Ch10A_3
+[LoadOverworldFaces]
+and Dia.[AN]
+All of these islands are rich in minerals,[N]
+and mining is the economic backbone.[AN]
+[LoadOverworldFaces]
+The largest mine is located in[N]
+Eburacum, in north Fibernia.[AN]
+[LoadOverworldFaces]
+Roy leads his forces toward Eburacum[N]
+hoping to learn more about the bandits.[AN][X]
+
+## WM_Ch10A_4
+To get to Eburacum, one must pass a[N]
+castle located nearby.[AN]
+[LoadOverworldFaces]
+Roy sends a messenger to Sir Nord,[N]
+lord of the castle,[AN]
+to request permission to[N]
+pass through his lands.[AN]
+Because Roy and company are in[N]
+the Isles on Etruria's request,[AN]
+they don't anticipate trouble in[N]
+gaining Nord's support.[AN]
+But not everything is as[N]
+simple as it appears...[AN][X]
+
+
+
+## WM_Ch11A_1
+Roy can hardly believe Larum's account.[AN]
+[LoadOverworldFaces]
+He quickly pens a letter to Cecilia to let[N]
+her know of the horrors on the Isles.[AN]
+He also tells her of the actions he[N]
+plans to take from this point.[AN]
+[LoadOverworldFaces]
+After sending the letter, Roy moves[N]
+towards the Eburacum mine.[AN][X]
+
+## WM_Ch11A_2
+His goal is to rescue the people[N]
+suffering from forced labor.[AN]
+[LoadOverworldFaces]
+Etruria has assigned Bishop Orlo of the[N]
+St. Elimine Church to supervise the mine.[AN]
+It was already a fruitful endeavor, but[N]
+the nobles' greed is unsatiable.[AN][X]
+
+## WM_Ch11A_3
+Eburacum... Known now as the Mine of Death.[AN]
+The wails of the people forced into[N]
+labor echo through the mines,[AN]
+like the howling of ghosts,[N]
+never sleeping...[AN][X]
+
+
+
+## WM_Ch10B_1
+[LoadOverworldFaces]
+In order to speak to the resistance[N]
+force about the bandits on the Isles,[AN]
+Roy and company move west along[N]
+the coastline.[AN][X]
+
+## WM_Ch10B_2
+Along the way, they come across[N]
+a small village caught in conflict.[AN]
+The local lord oppresses the resistance and[N]
+does anything he can to get rid of them...[AN][X]
+
+
+
+## WM_Ch11B_1
+The Lycian Army takes Elffin in[N]
+as an advisor.[AN]
+[LoadOverworldFaces]
+Following his advice, they move south[N]
+toward the isle of Caldonia.[AN]
+Caldonia is one of the main islands[N]
+that make up the Western Isles,[AN]
+the other two being Fibernia and Dia.[AN][LoadOverworldFaces][X]
+
+## WM_Ch11B_2
+Castle Eidyna is located on Caldonia. Here,[N]
+men from all over the Isles are imprisoned,[AN]
+awaiting transport to Eburacum,[N]
+the Mine of Death.[AN][X]
+
+## WM_Ch11B_3
+When Roy arrives at Castle Eidyna,[N]
+the situation appears dire...[AN][X]
+
+
+
+## WM_Ch12_1
+To liberate the people of the Western Isles,[N]
+Roy heads for Juteaux,[AN]
+the Isles' largest city and its capital.[AN][X]
+
+## WM_Ch12_2
+According to Elffin, Lord Arcardo, who is[N]
+in charge of overseeing the Western Isles,[AN]
+is an Etrurian of high nobility but of little[N]
+prominence in the Etrurian court.[AN][X]
+
+## WM_Ch12_3
+Roy, still wary of how Etruria may[N]
+respond to his attack,[AN]
+[LoadOverworldFaces]
+prepares his soldiers to rid the Isles[N]
+of Arcardo to rescue the people...[AN][X]
+
+
+
+## WM_Ch12x_1
+Following Elffin's guidance,[AN]
+Roy heads for a cave near Juteaux[N]
+to obtain a legendary weapon.[AN][X]
+
+## WM_Ch12x_2
+But Roy and company aren't the[N]
+only ones who know of the cave.[AN]
+Yet another battle awaits them...[AN][X]
+
+
+
+## WM_Ch13_1
+The chaos caused by the coup in Aquileia[N]
+quickly spreads to the rest of Etruria.[AN][X]
+
+## WM_Ch13_2
+Cecilia escapes with Guinivere[N]
+from Aquileia.[AN]
+She also forms a loyalist group to[N]
+combat the revolutionaries.[AN]
+[LoadOverworldFaces]
+The revolutionaries, however,[N]
+have Bern on their side.[AN]
+[LoadOverworldFaces]
+King Mordred has also been taken hostage,[N]
+giving the revolutionaries another edge:[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Great General Douglas and Knight General [N]
+Perceval are forced into their service.[AN]
+With so much power, the revolutionaries[N]
+easily push the loyalists out of Etruria.[AN][X]
+
+## WM_Ch13_3
+[LoadOverworldFaces]
+The loyalists are driven into an old[N]
+castle on the Missur Peninsula.[AN][X]
+
+## WM_Ch13_4
+Roy learns that Cecilia has been[N]
+forced back by the revolutionaries.[AN][X]
+
+## WM_Ch13_5
+In response, Roy heads for Missur.[AN][X]
+
+## WM_Ch13_6
+The loyalists are under attack by both[N]
+revolutionaries and Bern's military.[AN]
+With such adversity, the loyalists'[N]
+forces have little time...[AN][X]
+
+
+
+## WM_Ch14_1
+After Roy rescues Cecilia,[AN]
+[LoadOverworldFaces]
+he obliges Sophia's request and[N]
+heads into the Nabata desert.[AN][X]
+
+## WM_Ch14_2
+According to Sophia, her village,[N]
+Arcadia, is located in a hidden oasis.[AN]
+The village is under attack by Bern,[AN]
+and Roy believes their aim to be the[N]
+dragons said to inhabit the village.[AN][X]
+
+## WM_Ch14_3
+The Lycian Army moves quickly to Arcadia,[N]
+but a sandstorm impedes their progress...[AN][X]
+
+
+
+## WM_Ch14x_1
+In the hidden village of Arcadia[N]
+stands an ancient temple.[AN]
+One of the legendary weapons[N]
+is said to be hidden within.[AN]
+Roy and company are hot on the[N]
+trail of Bern's troops,[AN]
+who have already made their[N]
+way into the temple...[AN][X]
+
+
+
+## WM_Ch15_1
+After saving the village of Arcadia,[AN]
+Roy's army leaves the desert by[N]
+following Igrene's lead.[AN]
+[LoadOverworldFaces]
+Now, they turn toward Etruria to confront[N]
+the revolutionary forces.[AN][X]
+
+## WM_Ch15_2
+However, they receive a troubling[N]
+letter from the elder of Arcadia.[AN][X]
+
+## WM_Ch15_3
+Apparently, Fae the dragon has[N]
+left Arcadia in pursuit of Roy.[AN]
+If she falls into the hands of the[N]
+revolutionaries or Bern,[AN]
+there is no telling what might[N]
+happen to her, or to Roy's army.[AN][X]
+
+## WM_Ch15_4
+Determined to find Fae, Roy moves to[N]
+a small fort on the Etrurian border...[AN][X]
+
+
+
+## WM_Ch16_1
+[LoadOverworldFaces]
+After rescuing Fae,[N]
+Roy heads for Aquileia.[AN][X]
+
+## WM_Ch16_2
+The capital of Etruria,[AN]
+Aquileia is also the largest and[N]
+wealthiest city on the continent.[AN]
+[LoadOverworldFaces]
+Prepared for the Lycian Army's attack,[AN]
+the revolutionary forces are[N]
+fortified in Aquileia.[AN]
+[LoadOverworldFaces]
+The St. Elimine Church supports the Lycian[N]
+Army, turning popular opinion against[AN]
+the revolutionaries, forcing them[N]
+inside the castle.[AN][X]
+
+## WM_Ch16_3
+The St. Elimine Church was founded by Saint[N]
+Elimine, one of the Eight Legends.[AN]
+[LoadOverworldFaces]
+The church has legions of followers,[N]
+particularly in Bern and Etruria.[AN]
+[LoadOverworldFaces]
+Roy's attack on Aquileia is[N]
+supported by the church.[AN]
+[LoadOverworldFaces]
+However, Narcian and his elite troops[N]
+await Roy inside the castle...[AN][X]
+
+
+
+## WM_Ch16x_1
+At the request of King Mordred, Roy heads[N]
+for the Saint's Tower outside Aquileia.[AN]
+[LoadOverworldFaces]
+The Saint's Tower was once a place of[N]
+worship for Saint Elimine.[AN]
+In the tower lay numerous sacred relics[N]
+relating to her.[AN]
+[LoadOverworldFaces]
+However, this sacred tower is now[N]
+under the control of the revolutionaries.[AN]
+[LoadOverworldFaces]
+Bishop Windham now occupies the tower after[N]
+betraying the St. Elimine Church...[AN][X]
+
+
+
+## WM_Ch17A_1
+After Roy captures Aquileia, other[N]
+Etrurian forces flock to the loyalists,[AN]
+forcing out the revolutionaries.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Roartz and Arcardo are driven out of[N]
+Etruria.[AN]
+[LoadOverworldFaces]
+They flee north to Ilia,[N]
+which is under Bern's control.[AN]
+Ilia, the frozen highlands, is a[N]
+land with short summers and long winters.[AN][X]
+
+## WM_Ch17A_2
+With so little arable land,[AN]
+the nation's main source of[N]
+income is mercenary contracts.[AN][X]
+
+## WM_Ch17A_3
+The now free Kingdom of Etruria[N]
+joins forces with the Lycian Army.[AN]
+Now a joint force under the name of the[N]
+Etrurian Army,[AN]
+[LoadOverworldFaces]
+their first mission is to enter Ilia[N]
+and finish off the revolutionaries.[AN]
+[LoadOverworldFaces]
+After that, they plan to launch a[N]
+direct attack on Bern.[AN]
+[LoadOverworldFaces]
+Roy, nominated as leader of[N]
+the Etrurian Army,[AN]
+has the powerful support of[N]
+the St. Elimine Church.[AN]
+With the church's support comes[N]
+also the support of the people.[AN][X]
+
+## WM_Ch17A_4
+However, Roy has to face not only[N]
+the freezing cold of Ilia,[AN]
+[LoadOverworldFaces]
+but also the elite troops under[N]
+Murdock, head of Bern's Wyvern Generals.[AN]
+Even worse, many skilled mercenary[N]
+knights of Ilia have sided with Bern.[AN]
+[LoadOverworldFaces]
+To begin, Roy heads for Castle Remi,[N]
+located on the Ilian border...[AN][X]
+
+
+
+## WM_Ch18A_1
+After defeating Arcardo, Roy moves[N]
+east, deep into the frozen lands of Ilia.[AN]
+[LoadOverworldFaces]
+He soon enters the thick forests[N]
+that characterize central Ilia.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+However, a commander of Bern,[N]
+Bishop Martel, lies in wait.[AN]
+In his possession is an ancient spell[N]
+said to have been lost centuries ago...[AN][X]
+
+
+
+## WM_Ch19A_1
+After defeating Martel and making it[N]
+through the woodlands,[AN]
+[LoadOverworldFaces]
+Roy and company face the blizzards[N]
+common of Ilia's winters.[AN]
+[LoadOverworldFaces]
+Ilia's harsh weather has in the past served[N]
+as a natural defense against invaders.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+In this blizzard, Sigune, captain of a[N]
+pegasus knight squad working for Bern,[AN]
+makes preparations to attack[N]
+Roy and his troops...[AN][X]
+
+
+
+## WM_Ch20A_1
+After defeating Sigune,[AN]
+[LoadOverworldFaces]
+Roy heads for Edessa,[N]
+located in the northeast of Ilia.[AN][X]
+
+## WM_Ch20A_2
+[LoadOverworldFaces]
+Castle Edessa, home of Zelot, leader of[N]
+the Ilian mercenary knights,[AN]
+once served as headquarters of the[N]
+pegasus knight mercenaries as well.[AN]
+[LoadOverworldFaces]
+However, with Zelot's absence, Bern saw[N]
+its chance and attacked the castle,[AN]
+forcing the mercenaries and pegasus[N]
+knights into submission.[AN]
+[LoadOverworldFaces]
+Murdock had made the castle his base,[N]
+but after he returned to Bern,[AN]
+[LoadOverworldFaces]
+High Chancellor Roartz was put in charge.[AN]
+Alarmed by the Etrurian Army's[N]
+speedy advance to Edessa,[AN]
+Roartz hurriedly contacts the various[N]
+Ilian mercenary groups for aid.[AN]
+Unfortunately for him, however,[N]
+their replies are not promising...[AN][X]
+
+
+
+## WM_Ch20Ax_1
+After taking back Castle Edessa,[AN]
+Roy turns his troops toward the ancient[N]
+ruins on the outskirts of the town.[AN]
+A legendary weapon is said to be[N]
+hidden within...[AN][X]
+
+
+
+## WM_Ch17B_1
+After Roy captures Aquileia, powers[N]
+in Etruria turn against the revolution.[AN]
+Driven away from the palace,[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+Roartz and Arcardo flee to Sacae,[N]
+which remains under Bern's control.[AN][X]
+
+## WM_Ch17B_2
+Sacae lies in the center of the[N]
+continent and is covered in plains.[AN]
+Before Bern's invasion, it was[N]
+home to numerous nomadic clans.[AN][X]
+
+## WM_Ch17B_3
+The Etrurian Army joins the Lycian[N]
+Army to form a unified force.[AN]
+[LoadOverworldFaces]
+The decision is made for this army[N]
+to head for Sacae with dual purpose.[AN]
+The first is to eliminate the remnants[N]
+of the revolution,[AN]
+[LoadOverworldFaces]
+and the second is to begin an[N]
+offensive against Bern.[AN]
+[LoadOverworldFaces]
+Realizing that Etrurian soldiers may[N]
+not fight under the Lycian banner,[AN]
+Roy formally decides to call his[N]
+force the Etrurian Army.[AN]
+Roy is to lead the division that[N]
+will begin the offensive in Sacae.[AN][X]
+
+## WM_Ch17B_4
+The people of Sacae are wary of[N]
+outsiders, which is challenge enough,[AN]
+[LoadOverworldFaces]
+but Brunnya, one of Bern's[N]
+three Wyvern Generals,[AN]
+has the Djute, the largest clan in[N]
+Sacae, under her control.[AN]
+[LoadOverworldFaces]
+With the warriors of the Djute and[N]
+Brunnya's elite troops in his way,[AN]
+Roy knows it is unlikely he will find[N]
+any respite in this foreign land...[AN][X]
+
+
+
+## WM_Ch18B_1
+After defeating Arcardo,[AN]
+[LoadOverworldFaces]
+Roy crosses the border and[N]
+enters the land of Sacae.[AN]
+The Djute, the most powerful clan in[N]
+Sacae, serve Bern unbendingly.[AN]
+All clans who have stood against these[N]
+two joint forces have faced decimation.[AN]
+[LoadOverworldFaces]
+The chieftain of the Kutolah clan,[N]
+the famed Silver Wolf Dayan,[AN]
+does lead a guerrilla resistance,[N]
+but to disappointingly little effect.[AN]
+[LoadOverworldFaces]
+With none to oppose them, Bern essentially[N]
+has full control over Sacae.[AN]
+[LoadOverworldFaces]
+As Roy sets foot on the plains,[N]
+the Djute wait to strike...[AN][X]
+
+
+
+## WM_Ch19B_1
+After defeating the Djute,[AN]
+[LoadOverworldFaces]
+Roy moves toward Bulgar,[N]
+the largest city in Sacae.[AN][X]
+
+## WM_Ch19B_2
+As a center of commerce between[N]
+Etruria, Bern and Ilia,[AN]
+Bulgar has a history of being a[N]
+free city without rule.[AN]
+[LoadOverworldFaces]
+However, High Chancellor Roartz now holds[N]
+control of Bulgar with Bern's support.[AN][X]
+
+## WM_Ch19B_3
+[LoadOverworldFaces]
+Roy enters Bulgar with the hopes of[N]
+liberating it and learning more...[AN][X]
+
+
+
+## WM_Ch20B_1
+After Roy meets Niime the Hermit,[N]
+some light is shed on Bern's dragons.[AN]
+With many questions still left[N]
+unanswered,[AN]
+[LoadOverworldFaces]
+Roy directs his troops towards a large[N]
+manor on the edge of Bulgar.[AN][X]
+
+## WM_Ch20B_2
+Here, High Chancellor Roartz prepares[N]
+his defenses for his last stand...[AN][X]
+
+
+
+## WM_Ch20Bx_1
+Roy heads toward the ruins in Sacae[N]
+hoping to secure a legendary weapon.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+However, the remnants of the[N]
+Djute wait for Roy within...[AN][X]
+
+
+
+## WM_Ch21_1
+After surviving many hardships,[N]
+Roy finally sets foot on Bern's soil.[AN][X]
+
+## WM_Ch21_2
+[LoadOverworldFaces]
+Guinivere guides Roy to the[N]
+Shrine of Seals.[AN]
+[LoadOverworldFaces]
+In their way stands Murdock, the brilliant[N]
+and stalwart head of the Wyvern Generals.[AN][X]
+
+## WM_Ch21_3
+Etruria and Bern, the two greatest forces[N]
+on the continent, begin direct warfare.[AN]
+The sun rises as the bloodiest day in[N]
+the history of Elibe dawns...[AN][X]
+
+
+
+
+## WM_Ch21x_1
+Roy ventures into the depths of[N]
+the Shrine of Seals.[AN]
+Apparently, the shrine contains[N]
+more than just the Binding Blade.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+However, Peres, one of Murdock's best[N]
+commanders, waits for Roy within...[AN][X]
+
+
+
+## WM_Ch22_1
+[LoadOverworldFaces]
+After obtaining the Binding Blade,[N]
+Roy directs his troops to Bern's capital.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+King Zephiel awaits within, along with[N]
+his personal guard.[AN][X]
+
+## WM_Ch22_2
+Roy prepares to charge the castle[N]
+to end the war,[AN]
+and to bring a long-awaited peace[N]
+back to Elibe...[AN][X]
+
+
+
+
+## WM_Ch23_1
+Bern surrenders with King Zephiel's death.[AN]
+The great war that rattled the foundations[N]
+of Elibe is over.[AN]
+[LoadOverworldFaces]
+Roy's battle, however, is not.[AN][X]
+
+## WM_Ch23_2
+Roy continues his search for the Dark[N]
+Priestess, believed to be the demon dragon.[AN]
+[LoadOverworldFaces]
+Following the legendary weapons' light,[N]
+Roy heads for the Dragon Sanctuary.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+However, waiting for Roy at the entrance[N]
+to the sanctuary is Brunnya,[AN]
+the last surviving Wyvern General[N]
+of Bern.[AN]
+With the remaining troops of Bern at her[N]
+command, she awaits Roy's approach.[AN][X]
+
+## WM_Ch23_3
+With a heavy heart, Roy prepares to[N]
+fight the ghost of the now dead Bern...[AN][X]
+
+
+
+## WM_Ch24_1
+After defeating Bern's remaining[N]
+troops, Roy enters the Dragon Sanctuary.[AN]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+[LoadOverworldFaces]
+He searches for the Dark Priestess[N]
+to prevent a repeat of the Scouring.[AN][X]
+
+## WM_Ch24_2
+Here in the sanctuary, Roy will learn[N]
+the truth of the legendary dragons.[AN]
+All he knows is about to be proven[N]
+wrong...[AN][X]
+
+
+
+## WM_Tutorial_1
+The Lycian League. Land of numerous[N]
+territories and ruling lords.[AN][X]
+
+## WM_Tutorial_2
+Roy, son of the marquess of the[N]
+Pherae territory,[AN][X]
+
+## WM_Tutorial_3
+is studying in the great city of Ostia[N]
+to become a worthy heir.[AN]
+[LoadOverworldFaces]
+Today, his instructor, General Cecilia[N]
+of the Kingdom of Etruria,[AN]
+is teaching him about basic tactics[N]
+and battle strategy...[AN][X]

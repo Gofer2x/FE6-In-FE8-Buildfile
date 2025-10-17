@@ -1,5 +1,6 @@
 import csv
 
+firstIndex = 2 #0x0 is blank, 0x1 is used up by the Capture skill.
 TextParseDefsPath = "../../Text/ParseDefinitions.txt"
 TextParseMarker = "[Marker_LoadMugsBelow] = [.]\n"
 defsOutputPath="../../Definitions/Generated/MugIDs.event"
@@ -20,7 +21,7 @@ with open("Mugs.csv", mode ='r', encoding="utf-8")as file:
 
 mugsOutput = []
 mugsDefsOutput = []
-i = 2 # Because 0x1 is used up by the Capture skill
+i = firstIndex
 
 for mug in mugsData:
     name,mouthX,mouthY,eyeX,eyeY,palSwapOf,noMini = mug["Name"],mug["MouthX"],mug["MouthY"],mug["EyeX"],mug["EyeY"],mug["PalSwapOf"],mug["NoMini"]
@@ -92,7 +93,7 @@ parseDefsLoadMugs = []
 names = []
 for mug in mugsData:
     names.append(mug["Name"])
-j = 1
+j = firstIndex
 #Generate the actual LoadMugs definitions
 for name in names:
     parseDefsLoadMugs.append(f"[Load"+name+"] = [LoadPortrait]["+intToHex(j)+"][0x1]\n")

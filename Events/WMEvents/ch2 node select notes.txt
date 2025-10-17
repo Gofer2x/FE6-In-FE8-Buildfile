@@ -1,0 +1,34 @@
+FE6:
+Display continent map
+Start flashing Bern + Lycia
+Display text (There is a... Pharae and Bern.)
+Place blue dot on Border (Ch2 location)
+Continue text (This is where Roy...)
+Stop flashing Bern + Lycia and remove dot
+Zoom into area
+Place blue dot on Castle Pharae
+Show arrow going from Castle Pharae towards the Border
+Show text with Roy in bottom left (Just east of...)
+Place blue flag on Border
+End (Audiovisual fade)
+
+FE8:
+STAL 6
+Scroll from current location to target node, Speed 60
+WM_WAITFORCAM
+Scroll map to new node
+Saturate colors?
+//Some command to highlight the node?
+WM_TEXTSTART
+STAL 6
+STAL 46
+WM_TEXT (There is a... Pharae and Bern.) + (This is where Roy...)
+TEXTEND
+//Not sure what to do here? just more text?
+WM_TEXTSTART
+Display Roy portrait
+WM_TEXT (Just east of the village is a small castle occupied by Bern's forces.)
+TEXTEND
+Move Roy character to Border node
+TEXTCONT (At the time Roy reaches the village...)
+End (Audiovisual fade)
