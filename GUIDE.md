@@ -1,6 +1,6 @@
 EA Configs
 ===============
-The file [FE6InFE8Config.event](FE6InFE8Config.event) contains a few definitions that you can uncomment/comment out to enable and disable various behaviors (not like most of them do anything at the moment though...).
+The file [FE6InFE8Config.event](FE6InFE8Config.event) contains a few definitions that you can uncomment/comment out to enable and disable various behaviors.
 
 Table Readers
 ===============
