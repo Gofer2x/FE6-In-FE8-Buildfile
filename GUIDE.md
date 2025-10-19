@@ -15,16 +15,24 @@ It also supports adding new supports if you add them in the support data dict in
 Mugs
 ===============
 
-To insert new Mugs/Portraits, go into [Graphics/Mugs](Graphics/Mugs).
+To insert new Mugs/Class Cards, go into [Graphics/MugsAndCards](Graphics/MugsAndCards).
 
-Drop your mug's png file (Have it named like "Character.png") into the "Png" folder, and run "_BatchPortraitFormatter.cmd". 
+Drop your mug's png file (Have it named like "Character.png") into the "Png" folder, and run "_BatchPortraitFormatter.cmd". ~~If inserting a card uhh just do that manually I got lazy and am reusing vanilla card data lol~~
  
-Afterwards, open "Mugs.csv". This is where you'll set up how your mug should be installed.
+Afterwards, open "MugsAndCards.csv". This is where you'll set up how your mug/card should be installed.
+
+If you're adding a mug, set the Type field to "Mug". If it's a card, set it to "Card".
+
+The "MouthX", "MouthY", "EyeX", and "EyeY" fields are used for mugs and should be self-explanatory.
+
+The "NoMini" field when set to any non-blank value will not #include minimug data for a mug, instead using 0x0.
  
-Add your mug's entry to the csv (the Name and Eye/Mouth X/Y fields should be obvious), but only put it after the "SecretShop" entry. Otherwise it will mess up vendor menus.
-     
-If your mug doesn't have a mini version, set the "NoMini" field to any non-blank value. Preferably stick to the "TRUE".
+The "PalSwapOf" field if non-blank will install a mug as a palette swap of another mug. Only new palette data will be #included, and the others (like the graphics and frames data) will be that of the original mug.
+
+The "ReservedID" field forces a mug/card to have a specific ID in the portrait table. This is useful for mugs with hardcoded values (e.g. vendors).
+
+The "CardUseVanillaData" field changes a card to not #include any new data and only set the portrait table entry. Since all the class cards I need for this project are in the vanilla ROM already I implemented this to save a few kilobytes.
  
-If it's a palette swap, set the "PalSwapOf" value to what this mug is a palette swap of.
- 
-When done, run "MasterMugInstallerGenerator.py". Press enter when it finishes. It will have generated all the relevant data imports, definitions, and also put the various LoadMugs into ParseDefinitions in the main Text folder (e.g. [LoadRoy], [LoadSoldier2]...).
+When done, run "MasterMugAndCardInstallerGenerator.py". Press enter when it finishes. It will have generated all the relevant data imports, definitions, and also put the various LoadMugs into ParseDefinitions in the main Text folder (e.g. [LoadRoy], [LoadSoldier2]...).
+
+To change the paths of the generated definitions/parseDefs, just edit the generator script. The values are near the top.
