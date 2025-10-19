@@ -43,6 +43,7 @@
 #define BranchIfRandomNotZero(label,random) "RANDOMNUMBER random ; BNE label s0 sC"
 
 #define BranchIfResultEqualTo(label,number) "SVAL s1 number ; BEQ label s1 sC"
+#define BranchIfResultNotEqualTo(label,number) "SVAL s1 number ; BNE label s1 sC"
 #define BranchIfResultIsZero(label) "BEQ label s0 sC"
 #define BranchIfResultSmallerThan(label,number) "SVAL s1 number ; BGE label s1 sC"
 

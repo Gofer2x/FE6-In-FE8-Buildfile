@@ -81,11 +81,13 @@
 //Alias for Fadeout.
 #define WM_Fadeout "WM_FADEOUT 0x0 0x0 0x0"
 
+#define WM_ShowPortraitLeft(id) "WM_SHOWPORTRAIT id 1332"
+#define WM_ShowPortraitRight(id) "WM_SHOWPORTRAIT id 700"
 
 ////Camera Logic
 
-//Scrolls camera to X and Y.
-#define WM_ScrollCam(x,y,speed,delay) "WM_MOVECAM 0x0 x y 0x0 speed delay 0x0"
+//Scrolls camera from current location to X and Y.
+#define WM_ScrollCam(x,y,speed,delay) "WM_MOVECAM 0x0 0xffff 0xffff x y speed delay"
 
 //Sets camera location to X and Y.
 #define WM_SetCam(x,y) "WM_SETCAM x y"

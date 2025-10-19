@@ -18,3 +18,4 @@
 
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"
+#include "OtherPatches.event"
