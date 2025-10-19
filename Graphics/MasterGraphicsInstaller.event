@@ -50,9 +50,9 @@ MESSAGE Inserting Generic Mini Mugs at CurrentOffset
 MESSAGE "Generic Mini Mugs Size is {CurrentOffset-GenericMiniMugsStart:N1} Bytes"
 
 MugsStart:
-MESSAGE Inserting Mugs at CurrentOffset
-#include "Mugs/_MugsInstaller.event"
-MESSAGE "Mugs Size is {CurrentOffset-MugsStart:N1} Bytes"
+MESSAGE Inserting Mugs and Cards at CurrentOffset
+#include "MugsAndCards/_MugsAndCardsInstaller.event"
+MESSAGE "Mugs and Cards Size is {CurrentOffset-MugsStart:N1} Bytes"
 
 //All are inline so no size calc.
 #include "WorldMap/WorldMapInstaller.event"

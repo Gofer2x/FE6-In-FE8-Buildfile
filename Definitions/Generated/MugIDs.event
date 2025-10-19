@@ -97,11 +97,11 @@
 #define Jahn_Mug 0x62
 #define IdunnHuman_Mug 0x63
 #define IdunnDragon_Mug 0x64
-#define Anna_Mug 0x65
-#define Armory_Mug 0x66
-#define Vendor_Mug 0x67
-#define Arena_Mug 0x68
-#define SecretShop_Mug 0x69
+#define Anna_Mug 0x69
+#define Armory_Mug 0x65
+#define Vendor_Mug 0x66
+#define Arena_Mug 0x67
+#define SecretShop_Mug 0x68
 #define BanditKid_Mug 0x6A
 #define IdunnHood_Mug 0x6B
 #define HectorBlood_Mug 0x6C

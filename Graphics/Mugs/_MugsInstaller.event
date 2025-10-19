@@ -1,3 +1,0 @@
-#include "NewPortraitTableInstaller.event"
-#include "GeneratedMugsInstaller.event"
-#include "GeneratedCardsInstaller.event"
