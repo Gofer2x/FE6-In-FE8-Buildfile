@@ -1,0 +1,5 @@
+ALIGN 4
+MemorySlotToString_ASMC:
+#incbin "ASMC_MemorySlotToString.dmp"
+
+#define MemorySlotToString(slot) "BYTE $40 $0D ; BYTE slot ; BYTE $00 ; POIN MemorySlotToString_ASMC+1"

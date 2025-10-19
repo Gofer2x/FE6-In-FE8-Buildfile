@@ -10,6 +10,8 @@
 #include "EventPatches/EVENTSCRIPT_COND_ITEM/Installer.event"
 #include "EventPatches/EVENTSCRIPT_ChangeEdition/Installer.event"
 #include "EventPatches/EVENTSCRIPT_GetSupport_20220520/Installer.event"
+#include "EventPatches/EVENTSCRIPT_MemorySlotToString/memory_slot_to_string.event"
+#include "EventPatches/AAA_GetUnitEquippedWeapon/Installer.event"
 #include "EventPatches/AAA_GetUnitExpGain/Installer.event"
 #include "EventPatches/AAA_BonusLevels/Installer.event"
 
