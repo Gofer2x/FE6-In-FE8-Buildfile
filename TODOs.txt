@@ -1,0 +1,45 @@
+The Gay agenda:
+
+TOP PRIORITY:
+Look through patches and hacks still not imported from the old project. Hardcoding etc.
+Ballistas are broken.
+
+
+
+HIGH PRIORITY
+Find proper locations for the WM Nodes. Current are most accurate to FE6 but are also janky with the cursor, so take some artistic liberties.
+Then finally draw their roads.
+Oh, and also WM Cutscenes. But ugh those are a pain. I'll be real I probably won't be doing those lol.
+Idunn's dragon mug is glitched? It causes some visual glitches (even with other portraits?) and crashes the game. Or is it somethign else in the final chapter?
+Re-add some items like the Metis' tome and Earth Seal.
+Ch21 promotion still buggy visually.
+Set up Triangle Attacks.
+
+
+
+MEDIUM PRIORITY
+Import FE6 Palettes for
+	Shaman, Druid, ShamanF and DruidF have different palettes.
+
+
+
+LOW PRIORITY
+The big world map implementation is VERY BAD. UndoBuffer cheese. I have no idea how the Palette Map works.
+Ch16x background.
+Bard and Dancer map sounds are weird.
+	Are they still here though?
+Recruitable characters only go up so high. Double check the limit against current amount and Trial characters (possibly culling then).
+Importing music via FEB can use the wrong priority due to how prio is(n't) implemented in the process. I made an EA file that's ran post-insertion but that's not an ideal solution. Potentially make a ticket.
+
+
+
+NEED PATCHES
+Ch21x traps...? Some might be possible to recreate with eventing, but not all for sure.
+Is there some way to bypass the palette limitations for Fae's animations?
+
+
+
+MISC
+Brigand and Berserker promos have been merged. In FE6 they're slightly different.
+Torch staff currently has FE8 behavior. Though is this really worth changing...?
+All enemies with FE6 specific AI (Galle, the Ch2/23 gate enemies..) have more standard AI.
