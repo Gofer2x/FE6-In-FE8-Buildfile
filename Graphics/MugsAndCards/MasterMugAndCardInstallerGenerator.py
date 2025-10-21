@@ -119,33 +119,40 @@ def CreateCardDefinition(card):
     print(definition.strip())
     return definition
 
+# Read csv
 mugsAndCardsData = []
 with open("MugsAndCards.csv", mode ='r', encoding="utf-8")as file:
     csvFile = csv.DictReader(file)
     for lines in csvFile:
         mugsAndCardsData.append(lines)
 
+# Create list of Reserved IDs
 reservedIDs = []
 for data in mugsAndCardsData:
     if data["ReservedID"]:
         reservedIDs.append(int(data["ReservedID"]))
 
+# Process entries from csv
 for data in mugsAndCardsData:
+    # If there is install data 
     dataInstaller = PickAndCreateDataInstaller(data)
-    if dataInstaller:
-        for line in dataInstaller:
-            dataInstallerOutput.append(line)
+    for line in dataInstaller:
+        dataInstallerOutput.append(line)
+    # Get definitions and parse def for Mug
     if data["Type"] == "Mug":
         definition,parseDef = CreateMugDefinitionAndParseDef(data)
         mugDefinitions.append(definition)
         textParseLoadMugs.append(parseDef)
+    # Only definition, no parseDef for Card
     if data["Type"] == "Card":
         definition = CreateCardDefinition(data)
         mugDefinitions.append(definition)
-    
+
+# Write installer
 with open("GeneratedDataInstaller.event", "w") as w:
     w.writelines(dataInstallerOutput)
 
+# Write defs
 with open(defsOutputPath, "w") as w:
     w.writelines(mugDefinitions)
 
