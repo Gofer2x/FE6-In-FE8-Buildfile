@@ -13,7 +13,6 @@ Idunn's dragon mug is glitched? It causes some visual glitches (even with other 
 Re-add some items like the Metis' tome and Earth Seal.
 Ch21 promotion still buggy visually.
 Set up Triangle Attacks.
-Ballistas are doubled? Seems like two are placed on one tile.
 
 
 
