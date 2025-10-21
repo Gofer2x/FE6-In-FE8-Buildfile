@@ -20,6 +20,11 @@
 #include "AIPatches/AIChanges.event"
 #include "AIPatches/AI_TalkAI/TalkAI.event"
 
+#include "WeaponPatches/FE6Eclipse.event"
+#include "WeaponPatches/WeaponRanks.event"
+#include "WeaponPatches/WeaponTriangle.event"
+#include "WeaponPatches/DevilAxe.event"
+
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"
 #include "OtherPatches.event"

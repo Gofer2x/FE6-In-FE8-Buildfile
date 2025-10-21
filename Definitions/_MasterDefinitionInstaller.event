@@ -3,6 +3,7 @@
 #include "AIDefinitions.event"
 #include "WMDefinitions.event"
 #include "EventFlagIDs.event"
+#include "NewWeaponRanks.event"
 
 #include "Vanilla/VanillaMugIDs.event"
 #include "Vanilla/VanillaSoundIDs.event"

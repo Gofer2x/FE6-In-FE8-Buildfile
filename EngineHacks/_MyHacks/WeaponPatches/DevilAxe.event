@@ -1,0 +1,9 @@
+//Change to use LV instead of LUCK
+PUSH
+ORG 0x02B6A0
+BYTE 0x8
+
+//Fix Glitch that self-destructs whenever an underflow bug occurs
+ORG 0x02B6A6
+BYTE 0x88 0x42 0x22 0xdd 0x40 0x1a
+POP

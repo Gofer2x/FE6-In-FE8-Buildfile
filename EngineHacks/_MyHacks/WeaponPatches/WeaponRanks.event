@@ -1,0 +1,115 @@
+#define WeaponRankDifference 50
+
+//"Weapon Exp Required for D Rank"
+PUSH
+ORG 0x16d66
+BYTE DRank -1
+ORG 0x16e90
+BYTE DRank -1
+POP
+
+//"Weapon Exp Required for D Rank(Plus 1)"
+PUSH
+ORG 0x16e96
+BYTE DRank
+POP
+
+//"Weapon Exp Required for C Rank"
+PUSH
+ORG 0x16d6e
+BYTE CRank-1
+POP
+
+//"Weapon Exp Required for C Rank(Plus 1)"
+PUSH
+ORG 0x16ea0
+BYTE CRank
+POP
+
+//"Weapon Exp Required for C Rank(Difference Value)"
+PUSH
+ORG 0x16e9a
+BYTE WeaponRankDifference
+POP
+
+//"Weapon Exp Required for B Rank"
+PUSH
+ORG 0x16d76
+BYTE BRank-1
+POP
+
+//"Weapon Exp Required for B Rank(Plus 1)"
+PUSH
+ORG 0x16eaa
+BYTE BRank
+POP
+
+//"Weapon Exp Required for B Rank(Difference Value)"
+PUSH
+ORG 0x16ea4
+BYTE WeaponRankDifference
+POP
+
+//"Weapon Exp Required for A Rank"
+PUSH
+ORG 0x16d7e
+BYTE ARank-1
+POP
+
+//"Weapon Exp Required for A Rank(Plus 1)"
+PUSH
+ORG 0x16eb4
+BYTE ARank
+POP
+
+//"Weapon Exp Required for A Rank(Difference Value)"
+PUSH
+ORG 0x16eae
+BYTE WeaponRankDifference
+POP
+
+//"Weapon Exp Required for S Rank" there are two of these for some reason? do the one with more values, it includes the other one
+//this needs -1 apparently
+PUSH
+ORG 0x16d86
+BYTE SRank-1
+ORG 0x02AD74
+BYTE SRank-1
+ORG 0x2C164
+BYTE SRank-1
+ORG 0x2C168
+BYTE SRank-1
+POP
+
+//"Weapon Exp Required for S Rank(Difference Value)"
+PUSH
+ORG 0x16eb8
+BYTE WeaponRankDifference
+POP
+
+//"Max Weapon Level for Unpromoted Classes" set to A
+PUSH
+ORG 0x2c1a2
+BYTE ARank
+ORG 0x2c1a6
+BYTE ARank
+POP
+
+//"Modify S-Rank limits" remove limits
+PUSH
+ORG 0x2C150
+BYTE 0x11
+BYTE 0xE0
+POP
+
+//"Weapon S Value of Bonus Item 1 Value" aka remove S rank bonuses
+PUSH
+ORG 0x02AD7E
+BYTE 0x0
+POP
+
+//"Weapon S Value of Bonus Item 2 Value"
+PUSH
+ORG 0x02AD86
+BYTE 0x0
+POP

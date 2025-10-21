@@ -1,0 +1,42 @@
+PUSH
+
+//Sword vs Lance
+ORG 0x59BA92
+BYTE 0xF6
+//Sword vs Axe
+ORG 0x59BA96
+BYTE 0xA
+//Lance vs Axe
+ORG 0x59BA9A
+BYTE 0xF6
+//Lance vs Sword
+ORG 0x59BA9E
+BYTE 0xA
+//Axe vs Sword
+ORG 0x59BAA2
+BYTE 0xF6
+//Axe vs Lance
+ORG 0x59BAA6
+BYTE 0xA
+//Anima vs Dark
+ORG 0x59BAAA
+BYTE 0xF6
+//Anima vs Light
+ORG 0x59BAAE
+BYTE 0xA
+//Light vs Anima
+ORG 0x59BAB2
+BYTE 0xF6
+//Light vs Dark
+ORG 0x59BAB6
+BYTE 0xA
+//Dark vs Light
+ORG 0x59BABA
+BYTE 0xF6
+//Dark vs Anima
+ORG 0x59BABE
+BYTE 0xA
+
+POP
+
+
