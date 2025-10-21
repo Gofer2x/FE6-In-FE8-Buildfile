@@ -2,6 +2,7 @@ The Gay agenda:
 
 TOP PRIORITY:
 Look through patches and hacks still not imported from the old project. Hardcoding etc.
+	Still any?
 
 
 
@@ -11,7 +12,6 @@ Then finally draw their roads.
 Oh, and also WM Cutscenes. But ugh those are a pain. I'll be real I probably won't be doing those lol.
 Idunn's dragon mug is glitched? It causes some visual glitches (even with other portraits?) and crashes the game. Or is it something else in the final chapter?
 Ch21 promotion still buggy visually.
-Set up Triangle Attacks.
 
 
 

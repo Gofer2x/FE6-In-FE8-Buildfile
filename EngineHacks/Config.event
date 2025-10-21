@@ -277,7 +277,7 @@ MESSAGE Please see the README.md there or ask @Vesly for help.
 // #define DISABLE_CHARGE
 
 //If commented, Triangle Attack will use a skill check instead of a bitflag.
-//#define VANILLA_TRIANGLE_ATTACK
+#define VANILLA_TRIANGLE_ATTACK
 
 //If uncommented, RNG will remain consistent, but enemies will be unable to use Galeforce.
 //The current implementation of Galeforce causes RNG to change when reloading a suspend save.

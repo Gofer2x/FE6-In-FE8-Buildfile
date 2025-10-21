@@ -19,6 +19,7 @@
 #include "EventPatches/AAA_BonusLevels/Installer.event"
 
 #include "EnginePatches/Chapternamesastext2.1/fe8_chnames.event"
+#include "EnginePatches/PortraitHeightFix.event"
 
 #include "AIPatches/AIChanges.event"
 #include "AIPatches/AI_TalkAI/TalkAI.event"
@@ -27,6 +28,11 @@
 #include "WeaponPatches/WeaponRanks.event"
 #include "WeaponPatches/WeaponTriangle.event"
 #include "WeaponPatches/DevilAxe.event"
+
+#include "HardcodingPatches/CharacterHardcoding.event"
+#include "HardcodingPatches/ClassHardcoding.event"
+#include "HardcodingPatches/SoundHardcoding.event"
+#include "HardcodingPatches/SupplyPortrait.event"
 
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"

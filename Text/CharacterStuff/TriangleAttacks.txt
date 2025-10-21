@@ -1,14 +1,29 @@
-## Juno_TriangleAttackText
-[LoadJuno]Thea, Shanna,[.....]
-are you ready?[AN][Clear]
-[ToggleSmile]Triangle Attack!![AN][X]
+## Bors_TriangleAttackText
+[LoadBors][ToggleSmile]Ready?[N]
+Charge![AN]
+Triangle Attack!![AN][X]
+
+## Barthe_TriangleAttackText
+[LoadBarthe][ToggleSmile]Show the enemy the[N]
+power of the Ostian knights![AN]
+Triangle Attack!![AN][X]
+
+## Gwendolyn_TriangleAttackText
+[LoadGwendolyn][ToggleSmile]Uh...[N]
+Let's go![AN]
+Triangle Attack!![AN][X]
+
+## Shanna_TriangleAttackText
+[LoadShanna]Juno, Thea![.....][N]
+Let's go![AN][Clear]
+[ToggleSmile]Triangle Attack![AN][X]
 
 ## Thea_TriangleAttackText
-[LoadThea]Juno, Shanna,[.....]
+[LoadThea]Juno, Shanna,[.....][N]
 get ready![AN][Clear]
 [ToggleSmile]Triangle Attack!![AN][X]
 
-## Shanna_TriangleAttackText
-[LoadShanna]Juno, Thea![.....]
-Let's go![AN][Clear]
-[ToggleSmile]Triangle Attack![AN][X]
+## Juno_TriangleAttackText
+[LoadJuno]Thea, Shanna,[.....][N]
+are you ready?[AN][Clear]
+[ToggleSmile]Triangle Attack!![AN][X]

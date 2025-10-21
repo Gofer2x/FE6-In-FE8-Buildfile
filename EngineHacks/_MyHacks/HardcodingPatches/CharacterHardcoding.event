@@ -1,0 +1,116 @@
+#define DummyCharacter 0x0
+
+//0x1, OG Eirika "Main Character for Eirika's Tale"
+PUSH
+ORG 0x037B86
+BYTE Roy
+ORG 0x33270
+BYTE Roy
+POP
+
+//0x1, OG Eirika "Eirika Campaign Supply"
+PUSH
+ORG 0x23F88
+BYTE Merlinus
+POP
+
+//0xF, OG Ephraim "Main Character - Ephraim's Tale"
+PUSH
+ORG 0x037B8A
+BYTE Roy
+ORG 0x037B96
+BYTE Roy
+ORG 0x33274
+BYTE Roy
+ORG 0x3327C
+BYTE Roy
+POP
+
+//0xF, OG Ephraim "Ephraim Campaign Supply"
+PUSH
+ORG 0x23F94
+BYTE Merlinus
+POP
+
+//0x12, OG Amelia "Amelia_Trainee_Auto_Promotion_UnitID"
+PUSH
+ORG 0xCD80C
+BYTE DummyCharacter
+ORG 0xCD810
+BYTE DummyCharacter
+ORG 0xCD8A6
+BYTE DummyCharacter
+ORG 0xCD8AA
+BYTE DummyCharacter
+ORG 0xCD906
+BYTE DummyCharacter
+ORG 0xCD90A
+BYTE DummyCharacter
+ORG 0xCD966
+BYTE DummyCharacter
+ORG 0xCD96A
+BYTE DummyCharacter
+ORG 0xCD9C8
+BYTE DummyCharacter
+ORG 0xCD9CC
+BYTE DummyCharacter
+POP
+
+//0x18, OG Ewan "Ewan_Trainee_Auto_Promotion_UnitID"
+PUSH
+ORG 0xCD814
+BYTE DummyCharacter
+ORG 0xCD8AE
+BYTE DummyCharacter
+ORG 0xCD90E
+BYTE DummyCharacter
+ORG 0xCD96E
+BYTE DummyCharacter
+ORG 0xCD9D0
+BYTE DummyCharacter
+POP
+
+//0x3F, Phantom "Units after this Unit ID will Class Grow"
+//Units with this unit ID+1 or higher will be class-grown when Auto Level is selected for Unit Placer. However, if boss flag is set, the unit growth will be executed. The default value is 0x3F. (UnitID 0x40 and later will cause the class to grow.)
+//
+PUSH
+ORG 0x17C4C
+BYTE Damas-1
+POP
+
+//0x40, OG Lyon "These unit force the staff to hit 0% and deactivate 1"
+PUSH
+ORG 0x002CD44
+BYTE Zephiel
+POP
+
+//0x6C, OG Lyon "These unit force the staff to hit 0% and deactivate 2"
+PUSH
+ORG 0x002CD48
+BYTE IdunnDragon
+POP
+
+//0xBA, OG Monster "Unit ID of an enemy unit born from an egg"
+PUSH
+ORG 0x07CF5E
+BYTE DummyCharacter
+POP
+
+////0xFD, OG Enemy "ArenaOpponentUnitID"
+//PUSH
+//ORG 0x0031A8E
+//BYTE 0xFD //Just keep this the same.
+//POP
+//
+////0xFE, OG Wall "BreakableWallUnitID"
+//PUSH
+//ORG 0x02C92C
+//BYTE 0xFE //Ditto.
+//POP
+//
+////0xFF, OG Snag "SnagUnitID"
+//PUSH
+//ORG 0x002C936
+//BYTE 0xFF //Ditto ditto.
+//POP
+

@@ -1,0 +1,143 @@
+PUSH
+
+//Should these be BYTEs or SHORTs?
+
+//Arena Battle BGM
+ORG 0x072714
+BYTE MUS_ArenaBattle
+
+//Defeat in the Arena BGM, LINK Arena
+ORG 0x0458FC
+BYTE MUS_WithinSadness
+ORG 0x045922
+BYTE MUS_WithinSadness
+
+//Arena Entrance BGM
+ORG 0x047C42
+BYTE MUS_ArenaEntrance
+ORG 0x047ED0
+BYTE MUS_ArenaEntrance
+ORG 0x0B5D14
+BYTE MUS_ArenaEntrance
+ORG 0x0B5D2E
+BYTE MUS_ArenaEntrance
+
+//Arena Win BGM
+ORG 0x0B5CF8
+BYTE MUS_ArenaVictory
+ORG 0x0458F0
+BYTE MUS_ArenaVictory
+
+//Armory BGM
+ORG 0x0B4C02
+BYTE MUS_Shop
+
+//Record Reel BGM
+ORG 0x038232
+BYTE MUS_BattleResults
+
+//Promotion BGM
+ORG 0x07272A
+BYTE MUS_ToTheHeights
+
+////MUSIC_Creature Campaign
+//ORG 0x0B9FA8
+//BYTE MUS_
+
+////MUSIC_Creature Campaign2
+//ORG 0x0B9F62
+//BYTE MUS_
+
+//Dance BGM, how does this work with two dancers? TODO
+ORG 0x07282A
+BYTE MUS_CaptivatingDance
+
+//Epilogue BGM
+ORG 0x0B8122
+BYTE MUS_BattleResults
+
+//ExtraMenu Support Room BGM
+ORG 0x0A9C92
+BYTE MUS_BeyondDistantSkies
+ORG 0x0A2BE2
+BYTE MUS_BeyondDistantSkies
+
+//ExtraMenu Support Room BGM When selected
+ORG 0x0A2BAC
+BYTE MUS_BeyondDistantSkies
+
+//MUSIC_FIN
+ORG 0x0B74C6
+BYTE MUS_GoingMyWay
+
+//Game Over BGM
+ORG 0x0835FA 
+BYTE MUS_GameOver
+ORG 0x0212CA
+BYTE MUS_GameOver
+ORG 0x0837B8
+BYTE MUS_GameOver
+
+//Unit Death BGM
+ORG 0x083628
+BYTE MUS_WithinSadness
+
+//Eirika's BGM, Does this even matter?
+ORG 0x0A2BF6
+BYTE MUS_BeyondDistantSkies
+
+//MUSIC_Main theme(OP title screen) 0x43
+ORG 0x009ABE
+BYTE MUS_FireEmblemTheme
+ORG 0x0C640A
+BYTE MUS_FireEmblemTheme
+ORG 0x0C6434
+BYTE MUS_FireEmblemTheme
+ORG 0x0A1946
+BYTE MUS_FireEmblemTheme
+ORG 0x0AFA78
+BYTE MUS_FireEmblemTheme
+
+//Title Screen BGM
+ORG 0x0C5C9C
+BYTE MUS_FireEmblemTheme
+
+//Preparation Screen BGM
+ORG 0x04D3E0
+BYTE MUS_PrepareToCharge
+ORG 0x0B1CEE
+BYTE MUS_PrepareToCharge
+ORG 0x0341BE
+BYTE MUS_PrepareToCharge
+ORG 0x0965D6
+BYTE MUS_PrepareToCharge
+ORG 0x0A195A
+BYTE MUS_PrepareToCharge
+
+//Prologue Text Reel BGM, this is 0?
+ORG 0x0C4A0C
+BYTE 0x0
+
+//Healing Staff BGM
+ORG 0x072876
+BYTE MUS_Healing
+
+//Curing Staff BGM
+ORG 0x072872
+BYTE MUS_Curing
+
+//Support Room BGM
+ORG 0x0951F6
+BYTE MUS_GoingMyWay
+ORG 0x0960C0
+BYTE MUS_GoingMyWay
+
+//Shop BGM
+ORG 0x0B4C0C
+BYTE MUS_Shop
+
+//idc about these lol
+//Lagdou/Valni Floor Victory BGM
+//Lagdou/Valni Full Clear BGM
+
+POP

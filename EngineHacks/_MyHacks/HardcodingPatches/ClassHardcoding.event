@@ -1,0 +1,187 @@
+#define SacrificialClass 0xFE
+//Gonna use that as the dump for all the others.
+
+PUSH
+
+//0x9, OG Knight "Armor Triangle Attack Class Range From"
+ORG 0x074FB4
+BYTE Knight
+
+//0x9, OG Knight "Armor Triangle Attack Class UnPromoted1"
+ORG 0x0074FC8
+BYTE Knight
+ORG 0x75034
+BYTE Knight
+
+//0xA, OG KnightF "Armor Triangle Attack Class UnPromoted2"
+ORG 0x0074FD0
+BYTE KnightF
+ORG 0x7503C
+BYTE KnightF
+
+//0xB, OG General "Armor Triangle Attack Class Promoted1"
+ORG 0x0074FD8
+BYTE General
+ORG 0x75044
+BYTE General
+
+//0xC, OG GeneralF "Armor Triangle Attack Class Promoted2"
+ORG 0x0074FE0
+BYTE GeneralF
+ORG 0x7504C
+BYTE GeneralF
+
+//0xC, OG GeneralF "Armor Triangle Attack Class Range To"
+ORG 0x0074FBA
+BYTE GeneralF
+
+//OG 0x48, PegasusKnight "Triangle Attack Class UnPromoted"
+ORG 0x00750C4
+BYTE PegasusKnight
+ORG 0x7510C
+BYTE PegasusKnight
+ORG 0x75156
+BYTE PegasusKnight
+
+//OG 0x49, Falcoknight "Triangle Attack Class Promoted"
+ORG 0x00750CC
+BYTE Falcoknight
+ORG 0x75114
+BYTE Falcoknight
+
+//OG 0x2D, Shaman "Ewan Promotes To Class For Weapon Rank Removal"
+ORG 0x2bd10
+BYTE SacrificialClass
+ORG 0x2BE60
+BYTE SacrificialClass
+
+//OG 0x3C, MyrrhManakete "Special class ID to turn the battle background into a Manakete"
+//This will be handled by patches I think.
+ORG 0x070B7E
+BYTE SacrificialClass
+
+//OG 0x3E, Pupil1 "Ewan Base Class For Weapon Rank Removal"
+ORG 0x2bd0a
+BYTE SacrificialClass
+ORG 0x2BE5A
+BYTE SacrificialClass
+
+//OG 0x50, Fleet "Worldmap fleet icon"
+ORG 0xBD4CE
+BYTE Fleet
+
+//OG 0x61, Gorgon "Class ID of an enemy unit born from an egg"
+ORG 0x07CF62
+BYTE SacrificialClass
+
+//OG 0x53, Entombed "Enemy Class Grants Bonus EXP"
+ORG 0x02C3FE
+BYTE SacrificialClass
+
+//Is there a point in changing all of these? Probably no. Will I do it anyways? Yes.
+
+//OG 0x51, Phantom hardcoding
+//Summon Skill: Edit Summoned Class
+ORG 0x07ADD0
+BYTE SacrificialClass
+ORG 0x22BEC
+BYTE SacrificialClass
+ORG 0x18EDE
+BYTE SacrificialClass
+ORG 0x2304C
+BYTE SacrificialClass
+ORG 0x23F78
+BYTE SacrificialClass
+ORG 0x23FE2
+BYTE SacrificialClass
+ORG 0x2403E
+BYTE SacrificialClass
+ORG 0x2409A
+BYTE SacrificialClass
+ORG 0x2523E
+BYTE SacrificialClass
+ORG 0x25246
+BYTE SacrificialClass
+ORG 0x3122E
+BYTE SacrificialClass
+ORG 0x232CC
+BYTE SacrificialClass
+ORG 0x25366
+BYTE SacrificialClass
+ORG 0x2536E
+BYTE SacrificialClass
+//Class that disappears when the chapter is cleared
+ORG 0x18EDE
+BYTE SacrificialClass
+ORG 0x3122E
+BYTE SacrificialClass
+//Forcibly defeats 0 defeat EXP.Class 2
+ORG 0x002C528
+BYTE SacrificialClass
+//Prohibits the use of Arena by Class
+ORG 0x0240F6
+BYTE SacrificialClass
+
+//OG 0x66, DemonKing hardcoding
+//These class force the staff to hit 0% and deactivate it
+ORG 0x002CD3C
+BYTE DemonDragon
+//Class that weakens the staff's hit rate without using the base value
+ORG 0x02CD22
+BYTE DemonDragon
+//Forcibly defeats 0 defeat EXP.Class 1
+ORG 0x002C514
+BYTE DemonDragon
+//Set Class that prohibits additional effects such as poisons from bad status
+ORG 0x002B62C
+BYTE DemonDragon
+//Silencer-Immune Class INCOMPATIBLE WITH SKILLSYSTEMS!
+ORG 0x0024506 
+BYTE DemonDragon
+//Demon King Multi-Summon Class
+ORG 0x024506
+BYTE SacrificialClass
+
+//OG 0x62, GorgonEgg2 hardcoding
+//Disabled Status Screen On Map (2)
+ORG 0x01C92E
+BYTE SacrificialClass
+ORG 0x0879C6
+BYTE SacrificialClass
+ORG 0x0874AE
+BYTE SacrificialClass
+//Special class 1 to that BadStatus A when load
+ORG 0x17C00
+BYTE SacrificialClass
+//Special class 2 to reduce number of possessed items to zero when loading
+ORG 0x17D96
+BYTE SacrificialClass
+//Forcibly overwrites defeat EXP. Class1
+ORG 0x002C4F8
+BYTE SacrificialClass
+///Special Class 1 to that fixes HP to 5 when load
+ORG 0x17CF8
+BYTE SacrificialClass
+
+//OG 0x34, GorgonEgg hardcoding
+//Disabled Status Screen On Map
+ORG 0x01C932
+BYTE SacrificialClass
+ORG 0x0879CA
+BYTE SacrificialClass
+ORG 0x0874B2
+BYTE SacrificialClass
+//Special class 2 to that BadStatus A when load
+ORG 0x17C04
+BYTE SacrificialClass
+//Special class 1 to reduce number of possessed items to zero when loading
+ORG 0x17D9A
+BYTE SacrificialClass
+//Forcibly overwrites defeat EXP. Class2
+ORG 0x002C4FC
+BYTE SacrificialClass
+///Special Class 2 to that fixes HP to 5 when load
+ORG 0x17CFC
+BYTE SacrificialClass
+
+POP
