@@ -9,8 +9,7 @@ HIGH PRIORITY
 Find proper locations for the WM Nodes. Current are most accurate to FE6 but are also janky with the cursor, so take some artistic liberties.
 Then finally draw their roads.
 Oh, and also WM Cutscenes. But ugh those are a pain. I'll be real I probably won't be doing those lol.
-Idunn's dragon mug is glitched? It causes some visual glitches (even with other portraits?) and crashes the game. Or is it somethign else in the final chapter?
-Re-add some items like the Metis' tome and Earth Seal.
+Idunn's dragon mug is glitched? It causes some visual glitches (even with other portraits?) and crashes the game. Or is it something else in the final chapter?
 Ch21 promotion still buggy visually.
 Set up Triangle Attacks.
 
