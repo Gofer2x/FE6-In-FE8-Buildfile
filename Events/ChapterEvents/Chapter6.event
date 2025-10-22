@@ -295,7 +295,7 @@ HardReinforcementEvent(ThroneRoomReinforcements3)
 //Event for the enemies that spawn when all your units have moved to the upper half of the map.
 BottomHalfReinforcementsEvent:
 CountUnitsInRange(0,0,0,0,$F0000,$170019,0) //Not sure how to convert coords into one short, so just took this from FEBuilder.
-BranchIfResultIsZero(1)
+BranchIfResultZero(1)
 FlagOFF(Ch6_SouthReinforcementsFlag)
 GOTO 9
 

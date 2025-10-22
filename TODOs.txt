@@ -7,6 +7,7 @@ Do promotion tables.
 
 
 HIGH PRIORITY
+Fix the Ch0x display when moving to Ch1. This is WM event nonsense 100%.
 Find proper locations for the WM Nodes. Current are most accurate to FE6 but are also janky with the cursor, so take some artistic liberties.
 Then finally draw their roads.
 Oh, and also WM Cutscenes. But ugh those are a pain. I'll be real I probably won't be doing those lol.

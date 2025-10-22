@@ -1,0 +1,41 @@
+## DevIntro1
+Welcome to FE6 in FE8 Buildfile. This hack[N]
+is still a work in progress, so if you run[AN]
+into any issues, please report them on[N]
+the github repository or the forum thread.[A][X]
+
+## DevIntro2
+Currently all of the game's chapters are[N]
+implemented, with the world map being[AN]
+partially implemented (no cutscenes).[A][X]
+
+## DevIntroCasualChoice
+Would you like to enable Casual Mode?[N]
+Dead units will come back next chapter.[AN][Yes][X]
+
+## DevIntroCasualON
+Casual Mode enabled.[A][X]
+
+## DevIntroFixedGrowthsChoice
+Would you like to enable Fixed Growths?[N]
+Units will level perfectly to their averages.[AN][Yes][X]
+
+## DevIntroFixedGrowthsON
+Fixed Growths Enabled.[A][X]
+
+## DevIntroEnd
+Set-up complete. Game start.[A][X]
+
+## ThisShouldNotHappen
+[LoadRoy]This should not happen![AN][X]
+
+## ShowStringSomething
+[LoadRoy][G] !!![AN][X]
+
+## TempBadEndingScroll
+Bad Ending text[N]
+scroll here[AN][X]
+
+## TempTrueEndingScroll
+True Ending text[N]
+scroll here[AN][X]

@@ -44,7 +44,8 @@
 
 #define BranchIfResultEqualTo(label,number) "SVAL s1 number ; BEQ label s1 sC"
 #define BranchIfResultNotEqualTo(label,number) "SVAL s1 number ; BNE label s1 sC"
-#define BranchIfResultIsZero(label) "BEQ label s0 sC"
+#define BranchIfResultZero(label) "BEQ label s0 sC"
+#define BranchIfResultNotZero(label) "BNE label s0 sC"
 #define BranchIfResultSmallerThan(label,number) "SVAL s1 number ; BGE label s1 sC"
 
 #define BranchIfGoldAtLeast(label,amount) "SVAL s1 amount ; CHECK_MONEY ; BGE label sC s1"

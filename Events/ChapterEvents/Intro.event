@@ -59,11 +59,27 @@ UNIT
 ALIGN 4
 
 BeginningScene:
-MNC3 CHAPTER_Ch1
+DisableSceneDialogueSkipping
+FadeFromBlack
+PlayMusic(BGS_Envsound_Nighttime)
+TextWindow(DevIntro1)
+TextWindow(DevIntro2)
+TextWindow(DevIntroCasualChoice)
+IfNoSelectedGoto(1)
+FlagON(CASUAL_MODE_FLAG)
+TextWindow(DevIntroCasualON)
+LABEL 1
+TextWindow(DevIntroFixedGrowthsChoice)
+IfNoSelectedGoto(2)
+FlagON(FIXED_GROWTHS_FLAG_ID)
+TextWindow(DevIntroFixedGrowthsON)
+LABEL 2
+EnableSceneDialogueSkipping
+TextWindow(DevIntroEnd)
+MoveToChapterWithoutWM(CHAPTER_Ch1)
 ENDA
 
 EndingScene:
-MNC3 CHAPTER_Ch1
 ENDA
 
 //MESSAGE Events end at offset CURRENTOFFSET

@@ -199,3 +199,4 @@
 #define TILEANIM2_Stronghold 0xC7
 #define TILEANIM2_Final 0xC8
 #define EVENTS_Intro 0xC9
+#define MAP_Intro 0xCA

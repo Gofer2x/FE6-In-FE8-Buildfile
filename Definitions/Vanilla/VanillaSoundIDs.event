@@ -8,6 +8,7 @@
 #define SND_ManaketeYowl 0xDE
 #define SND_ManaketeUntransform  0xDD
 
+#define BGS_Envsound_Nighttime 0x4A
 #define BGS_Envsound_Windgusts 0x4E
 
 #define SND_MagicShine 0x2E9

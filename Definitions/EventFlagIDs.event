@@ -25,7 +25,7 @@
 #define WorldMapInitializedFlag 0x89
 
 //Flags from Skillsys:
-//CASUAL_MODE 0xB0
+#define CASUAL_MODE_FLAG 0xB0
 //BATTLE_ANIMATION_NUMBERS_FLAG 0xEE
 //FIXED_GROWTHS_FLAG_ID 0xEF
 

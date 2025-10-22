@@ -282,7 +282,7 @@ CAM1 [21,7]
 
 SetBackground(BG_Black)
 FadeFromBlack(Fade1s)
-TextWindow(TempLaterInArcadia)
+TextWindow(EpilogueTrue_LaterInArcadia)
 FadeIntoBlack(Fade1s)
 CLEAN
 
