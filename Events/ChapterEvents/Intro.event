@@ -56,10 +56,17 @@ ALIGN 4
 Units:
 UNIT
 
+CuteRoyAndLilina:
+UNIT Roy RoyLord 0x0 Level(1,Ally,0) [2,11] 0x0 0x0 0x0 0x0 [Rapier, Vulnerary] DummyAI
+UNIT Lilina MageF 0x0 Level(1,Ally,0) [3,11] 0x0 0x0 0x0 0x0 [Fire, Vulnerary] DummyAI
+UNIT
+
 ALIGN 4
 
 BeginningScene:
 DisableSceneDialogueSkipping
+LOAD2 0x1 CuteRoyAndLilina
+ENUN
 FadeFromBlack
 PlayMusic(BGS_Envsound_Nighttime)
 TextWindow(DevIntro1)

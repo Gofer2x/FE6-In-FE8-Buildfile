@@ -391,4 +391,8 @@
 #define Yellow 0x5
 #define Black2 0x6
 
+MESSAGE "Ugly fixes for Ch1 showing up as 0x"
+#define Intro_Name Ch1_Name
+#define ChNumber0x ChNumber1
+
 #endif

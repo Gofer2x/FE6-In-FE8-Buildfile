@@ -1,7 +1,7 @@
 ## DevIntro1
-Welcome to FE6 in FE8 Buildfile. This hack[N]
-is still a work in progress, so if you run[AN]
-into any issues, please report them on[N]
+Welcome to FE6 in FE8 Buildfile.[AN]
+This hack is still a WIP, so if you run[N]
+into any issues, please report them in[AN]
 the github repository or the forum thread.[A][X]
 
 ## DevIntro2
