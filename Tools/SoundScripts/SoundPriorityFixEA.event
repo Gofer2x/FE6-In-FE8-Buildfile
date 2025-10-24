@@ -1,21 +1,110 @@
-#include "../Definitions/Generated/SoundIDs.event"
+//Generated from CSV, Donut Touch
+#include "../Definitions/Generated/NewFE6SoundIDs.event" //This is being ran from inside EA's folder
 
 #define SoundTable 0x224470
 #define ChangeSoundTableEntryPriority(index,priority) "PUSH ; ORG SoundTable+(8*index)+4 ; WORD priority ; POP"
 
-#define SoundPrio_Highest 0x0000000
-#define SoundPrio_High 0x00010001
-#define SoundPrio_MidHigh 0x00020002
-#define SoundPrio_Medium1 0x00030003
-#define SoundPrio_Medium2 0x00040004
-#define SoundPrio_MidLow 0x00050005
-#define SoundPrio_Low 0x00060006
-#define SoundPrio_Lowest1 0x00070007
-#define SoundPrio_Lowest2 0x00080008
+#define Highest 0x0000000
+#define High 0x00010001
+#define MidHigh 0x00020002
+#define Medium1 0x00030003
+#define Medium2 0x00040004
+#define MidLow 0x00050005
+#define Low 0x00060006
+#define Lowest1 0x00070007
+#define Lowest2 0x00080008
 
-ChangeSoundTableEntryPriority(SND_Aureola1,SoundPrio_Lowest1)
-ChangeSoundTableEntryPriority(SND_Apocalypse2,SoundPrio_Lowest1)
-ChangeSoundTableEntryPriority(SND_Forblaze2,SoundPrio_Lowest1)
-ChangeSoundTableEntryPriority(SND_IdunnDodge,SoundPrio_Medium2)
-ChangeSoundTableEntryPriority(SND_IdunnTransformRoar,SoundPrio_Medium2)
-ChangeSoundTableEntryPriority(SND_IdunnTransformStomp,SoundPrio_Medium2)
+ChangeSoundTableEntryPriority(MUS_FireEmblemTheme,Highest)
+ChangeSoundTableEntryPriority(MUS_DeerOfThePlains,High)
+ChangeSoundTableEntryPriority(MUS_WildFrontier,High)
+ChangeSoundTableEntryPriority(MUS_DistantLands,High)
+ChangeSoundTableEntryPriority(MUS_TheKingdomOfBern,High)
+ChangeSoundTableEntryPriority(MUS_DragonSanctuary,High)
+ChangeSoundTableEntryPriority(MUS_LegendaryInheritance,High)
+ChangeSoundTableEntryPriority(MUS_MessengerFromTheDarkness,High)
+ChangeSoundTableEntryPriority(MUS_DisquietingSteps,High)
+ChangeSoundTableEntryPriority(MUS_BeyondDistantSkies,High)
+ChangeSoundTableEntryPriority(MUS_OneWill,High)
+ChangeSoundTableEntryPriority(MUS_BeholdingNaturesBeauty,High)
+ChangeSoundTableEntryPriority(MUS_BeneathANewLight,High)
+ChangeSoundTableEntryPriority(MUS_ThePathToGreatness,High)
+ChangeSoundTableEntryPriority(MUS_ScarsOfTheScouring,High)
+ChangeSoundTableEntryPriority(MUS_ShadowApproaches,High)
+ChangeSoundTableEntryPriority(MUS_MarchToDeliverance,High)
+ChangeSoundTableEntryPriority(MUS_BindingTies,High)
+ChangeSoundTableEntryPriority(MUS_WinningRoad,High)
+ChangeSoundTableEntryPriority(MUS_PoemOfTheSoftWind,Highest)
+ChangeSoundTableEntryPriority(MUS_AtTheFinalDragon,Highest)
+ChangeSoundTableEntryPriority(MUS_BattleForTomorrow,Highest)
+ChangeSoundTableEntryPriority(MUS_InTheNameOfBern,Highest)
+ChangeSoundTableEntryPriority(MUS_BattleForWhoseSake,Highest)
+ChangeSoundTableEntryPriority(MUS_PriestessInTheDark,Highest)
+ChangeSoundTableEntryPriority(MUS_Curing,Highest)
+ChangeSoundTableEntryPriority(MUS_Healing,Highest)
+ChangeSoundTableEntryPriority(MUS_ToTheHeights,Highest)
+ChangeSoundTableEntryPriority(MUS_Blank1,Highest)
+ChangeSoundTableEntryPriority(MUS_ICampaign,Highest)
+ChangeSoundTableEntryPriority(MUS_IIRecapturingTheRoyalCapital,Highest)
+ChangeSoundTableEntryPriority(MUS_IIIInvisibleEnemy,Highest)
+ChangeSoundTableEntryPriority(MUS_IVFinalChapter,Highest)
+ChangeSoundTableEntryPriority(MUS_PrepareToCharge,Highest)
+ChangeSoundTableEntryPriority(MUS_AnUnexpectedCaller,Highest)
+ChangeSoundTableEntryPriority(MUS_WhenTheRushComes,Highest)
+ChangeSoundTableEntryPriority(MUS_CogsOfFate,Highest)
+ChangeSoundTableEntryPriority(MUS_DistantUtopia,Highest)
+ChangeSoundTableEntryPriority(MUS_Triumph,Highest)
+ChangeSoundTableEntryPriority(MUS_IntoTheShadowOfTriumph,Highest)
+ChangeSoundTableEntryPriority(MUS_TheDarkPriestess,Highest)
+ChangeSoundTableEntryPriority(MUS_TheKingOfBern,Highest)
+ChangeSoundTableEntryPriority(MUS_PrincessOfDestiny,Highest)
+ChangeSoundTableEntryPriority(MUS_Suspicious,Highest)
+ChangeSoundTableEntryPriority(MUS_Dignified,Highest)
+ChangeSoundTableEntryPriority(MUS_Melancholic,Highest)
+ChangeSoundTableEntryPriority(MUS_Blank2,Highest)
+ChangeSoundTableEntryPriority(MUS_Blank3,Highest)
+ChangeSoundTableEntryPriority(MUS_FinalFarewell,Highest)
+ChangeSoundTableEntryPriority(MUS_GoingMyWay,Highest)
+ChangeSoundTableEntryPriority(MUS_JoinUs,Highest)
+ChangeSoundTableEntryPriority(MUS_Epilogue,Highest)
+ChangeSoundTableEntryPriority(MUS_BattleResults,Highest)
+ChangeSoundTableEntryPriority(MUS_AfterTheWar,Highest)
+ChangeSoundTableEntryPriority(MUS_GameOver,Highest)
+ChangeSoundTableEntryPriority(MUS_Shop,Highest)
+ChangeSoundTableEntryPriority(MUS_ArenaEntrance,Highest)
+ChangeSoundTableEntryPriority(MUS_ArenaBattle,Highest)
+ChangeSoundTableEntryPriority(MUS_HappinessAbounds,Highest)
+ChangeSoundTableEntryPriority(MUS_MainThemeArrangement,Highest)
+ChangeSoundTableEntryPriority(MUS_ShockingTruth1,Highest)
+ChangeSoundTableEntryPriority(MUS_ShockingTruth2,Highest)
+ChangeSoundTableEntryPriority(MUS_Talking,Highest)
+ChangeSoundTableEntryPriority(MUS_PerilousDance,Highest)
+ChangeSoundTableEntryPriority(MUS_CaptivatingDance,Highest)
+ChangeSoundTableEntryPriority(MUS_PreludeTellingALegend,Highest)
+ChangeSoundTableEntryPriority(MUS_EternalWind,Highest)
+ChangeSoundTableEntryPriority(MUS_Unknown1,Highest)
+ChangeSoundTableEntryPriority(MUS_WithinSadness,Highest)
+ChangeSoundTableEntryPriority(MUS_ArenaVictory,Highest)
+ChangeSoundTableEntryPriority(MUS_WhatCameBefore,Highest)
+ChangeSoundTableEntryPriority(MUS_Attack,Highest)
+ChangeSoundTableEntryPriority(MUS_Revenge,Highest)
+ChangeSoundTableEntryPriority(MUS_Unknown2,Highest)
+ChangeSoundTableEntryPriority(SND_LarumSound,Low)
+ChangeSoundTableEntryPriority(SND_LarumHeart,Low)
+ChangeSoundTableEntryPriority(SND_ElffinBirdTweet,Low)
+ChangeSoundTableEntryPriority(SND_ElffinHarp,Low)
+ChangeSoundTableEntryPriority(SND_Apocalypse1,Low)
+ChangeSoundTableEntryPriority(SND_Apocalypse2,Lowest1)
+ChangeSoundTableEntryPriority(SND_Apocalypse3,Low)
+ChangeSoundTableEntryPriority(SND_Aureola1,Lowest1)
+ChangeSoundTableEntryPriority(SND_Aureola2,Low)
+ChangeSoundTableEntryPriority(SND_Aureola3,Low)
+ChangeSoundTableEntryPriority(SND_Forblaze1,Low)
+ChangeSoundTableEntryPriority(SND_Forblaze2,Lowest1)
+ChangeSoundTableEntryPriority(SND_Forblaze3,Low)
+ChangeSoundTableEntryPriority(SND_RiverFreezing,Low)
+ChangeSoundTableEntryPriority(SND_IdunnThunder,Low)
+ChangeSoundTableEntryPriority(SND_IdunnSwoosh,Low)
+ChangeSoundTableEntryPriority(SND_IdunnShortNoise,Low)
+ChangeSoundTableEntryPriority(SND_IdunnDodge,Medium2)
+ChangeSoundTableEntryPriority(SND_IdunnTransformRoar,Medium2)
+ChangeSoundTableEntryPriority(SND_IdunnTransformStomp,Medium2)

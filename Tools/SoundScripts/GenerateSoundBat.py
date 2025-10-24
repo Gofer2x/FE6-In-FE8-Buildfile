@@ -38,12 +38,36 @@ fe6ID = None
 fe8ID = None
 cmdOutputExchange = []
 
+eaFixOutput = [ "//Generated from CSV, Donut Touch\n",
+                "#include \"../Definitions/Generated/NewFE6SoundIDs.event\" //This is being ran from inside EA's folder\n",
+                "\n",
+                "#define SoundTable 0x224470\n",
+                "#define ChangeSoundTableEntryPriority(index,priority) \"PUSH ; ORG SoundTable+(8*index)+4 ; WORD priority ; POP\"\n",
+                "\n",
+                "#define Highest 0x0000000\n",
+                "#define High 0x00010001\n",
+                "#define MidHigh 0x00020002\n",
+                "#define Medium1 0x00030003\n",
+                "#define Medium2 0x00040004\n",
+                "#define MidLow 0x00050005\n",
+                "#define Low 0x00060006\n",
+                "#define Lowest1 0x00070007\n",
+                "#define Lowest2 0x00080008\n",
+                "\n"]
+
+for item in csvData:
+    if item["Priority"]:
+        name = item["Name"]
+        priority = item["Priority"]
+        eaFixOutput.append(f"ChangeSoundTableEntryPriority({name},{priority})\n")
+with open(soundPrioFixEAPath,"w") as w:
+    w.writelines(eaFixOutput)
+
+
 cmdOutputExchange.append(f"set febPath={febPath}\n")
 cmdOutputExchange.append(f"set fromROMPath={fromROMPath}\n")
 cmdOutputExchange.append(f"set targetROMPath={targetROMPath}\n")
 for item in csvData:
-    name = item["Name"]
-
     #If the ID is "i", means iterative. Else, actual number.
     if item["FE6 ID"] == "i":
         fe6ID = int(fe6ID,16)
@@ -64,14 +88,12 @@ for item in csvData:
 with open(generatedSoundExchangeBatPath,"w") as w:
     w.writelines(cmdOutputExchange)
 
-
-cmdOutputFix = [] #ea fix
-cmdOutputFix.append(f"set soundPrioFixEAPath={soundPrioFixEAPath}\n")
-cmdOutputFix.append(f"set targetROMPath={targetROMPath}\n")
 # Move to EA folder and run the priority fix EA.
-cmdOutputFix.append("cd %~dp0EventAssembler\n")
-cmdOutputFix.append(f"ColorzCore A FE8 -output:%~dp0%targetROMPath% -input:%~dp0%soundPrioFixEAPath% --build-times\n")
-cmdOutputFix.append("cd %~dp0")
+cmdOutputFix = f"""set soundPrioFixEAPath={soundPrioFixEAPath}
+set targetROMPath={targetROMPath}
+cd %~dp0EventAssembler
+ColorzCore A FE8 -output:%~dp0%targetROMPath% -input:%~dp0%soundPrioFixEAPath% --build-times
+cd %~dp0"""
 
 with open(generatedEAFixBatPath,"w") as w:
-    w.writelines(cmdOutputFix)
+    w.write(cmdOutputFix)
