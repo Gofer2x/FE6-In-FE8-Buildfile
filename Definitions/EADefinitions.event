@@ -16,13 +16,13 @@
 #define BranchIfCounterZero(label,counter) "COUNTER_CHECK counter ; BEQ label s0 sC"
 #define BranchIfCounterNotZero(label,counter,value) "COUNTER_CHECK counter ; BNE label s0 sC"
 
-#define BranchIfCounterEqualTo(label,counter,value) "SVAL 1 value; COUNTER_CHECK counter ; BEQ label s1 sC"
-#define BranchIfCounterNotEqualTo(label,counter,value) "SVAL 1 value; COUNTER_CHECK counter ; BNE label s1 sC"
+#define BranchIfCounterEqualTo(label,counter,value) "SVAL s7 value; COUNTER_CHECK counter ; BEQ label s7 sC"
+#define BranchIfCounterNotEqualTo(label,counter,value) "SVAL s7 value; COUNTER_CHECK counter ; BNE label s7 sC"
 
-#define BranchIfCounterLargerThan(label,counter,value) "SVAL 1 value ; COUNTER_CHECK counter ; BGT label s1 sC"
+#define BranchIfCounterLargerThan(label,counter,value) "SVAL s7 value ; COUNTER_CHECK counter ; BGT label s7 sC"
 
-#define BranchIfUnitActive(label,unit) "SVAL s1 unit ; CHECK_ACTIVE ; BEQ label s1 sC"
-#define BranchIfUnitNotActive(label,unit) "SVAL s1 unit ; CHECK_ACTIVE ; BNE label s1 sC"
+#define BranchIfUnitActive(label,unit) "SVAL s7 unit ; CHECK_ACTIVE ; BEQ label s7 sC"
+#define BranchIfUnitNotActive(label,unit) "SVAL s7 unit ; CHECK_ACTIVE ; BNE label s7 sC"
 
 #define BranchIfTileChangeActive(label, tilechange) "CheckTileChange(tilechange) ; BNE label s0 sC"
 #define BranchIfTileChangeNotActive(label, tilechange) "CheckTileChange(tilechange) ; BEQ label s0 sC"
@@ -34,21 +34,21 @@
 
 #define BranchIfUnitNotDeployed(label,unit) "CHECK_DEPLOYED unit ; BEQ label s0 sC"
 
-#define BranchIfChapterIDIs(label,id) "CHECK_CHAPTER_NUMBER ; SVAL 1 id ; BEQ label s1 sC"
-#define BranchIfChapterIDIsNot(label,id) "CHECK_CHAPTER_NUMBER ; SVAL 1 id ; BNE label s1 sC"
+#define BranchIfChapterIDIs(label,id) "CHECK_CHAPTER_NUMBER ; SVAL s7 id ; BEQ label s7 sC"
+#define BranchIfChapterIDIsNot(label,id) "CHECK_CHAPTER_NUMBER ; SVAL s7 id ; BNE label s7 sC"
 
-#define BranchIfChapterIDLargerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BGT label sC s1"
-#define BranchIfChapterIDSmallerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL 1 number ; BLT label sC s1"
+#define BranchIfChapterIDLargerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL s7 number ; BGT label sC s7"
+#define BranchIfChapterIDSmallerThan(label,number) "CHECK_CHAPTER_NUMBER ; SVAL s7 number ; BLT label sC s7"
 
 #define BranchIfRandomNotZero(label,random) "RANDOMNUMBER random ; BNE label s0 sC"
 
-#define BranchIfResultEqualTo(label,number) "SVAL s1 number ; BEQ label s1 sC"
-#define BranchIfResultNotEqualTo(label,number) "SVAL s1 number ; BNE label s1 sC"
+#define BranchIfResultEqualTo(label,number) "SVAL s7 number ; BEQ label s7 sC"
+#define BranchIfResultNotEqualTo(label,number) "SVAL s7 number ; BNE label s7 sC"
 #define BranchIfResultZero(label) "BEQ label s0 sC"
 #define BranchIfResultNotZero(label) "BNE label s0 sC"
-#define BranchIfResultSmallerThan(label,number) "SVAL s1 number ; BGE label s1 sC"
+#define BranchIfResultSmallerThan(label,number) "SVAL s7 number ; BGE label s7 sC"
 
-#define BranchIfGoldAtLeast(label,amount) "SVAL s1 amount ; CHECK_MONEY ; BGE label sC s1"
+#define BranchIfGoldAtLeast(label,amount) "SVAL s7 amount ; CHECK_MONEY ; BGE label sC s7"
 
 
 

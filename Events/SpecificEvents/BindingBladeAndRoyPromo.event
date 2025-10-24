@@ -40,7 +40,16 @@ REMA
 GiveItemToCharacter(Roy,BindingBlade)
 STAL 64
 HIDEMAP
-PROM Roy RoyGreatLord HeavenSealDUMMY
+PROM Roy RoyGreatLord BindingBlade
+//Ugly hack but it works. Otherwise the map stays black with only units visible.
+BranchIfChapterIDIs(1,CHAPTER_Ch21x)
+LOMA CHAPTER_Ch21
+CAM1 [24,27]
+GOTO 2
+LABEL 1
+LOMA CHAPTER_Ch21x
+CAM1 [15,1]
+LABEL 2
 SHOWMAP
 FadeFromBlack(Fade1s)
 STAL 1280
