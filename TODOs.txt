@@ -39,5 +39,10 @@ Is there some way to bypass the palette limitations for Fae's animations?
 
 MISC
 Brigand and Berserker promos have been merged. In FE6 they're slightly different.
+	FE6:
+		Brigand -> Berserker: +4 HP, +2 STR, +5 SKL, +3 RES, +1 CON, +1 MOV, +50 Axe
+		Pirate -> Berserker: +5 HP, +3 STR, +4 SKL, +1 SPD, +3 RES, +3 CON, +1 MOV, +50 Axe
+	Merged:
+		Brigand/Pirate -> Berserker: +4 HP, +3 STR, +5 SKL, +1 SPD, +3 DEF, Variable CON
 Torch staff currently has FE8 behavior. Though is this really worth changing...?
 All enemies with FE6 specific AI (Galle, the Ch2/23 gate enemies..) have more standard AI.
