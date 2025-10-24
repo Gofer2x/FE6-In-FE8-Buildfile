@@ -18,6 +18,11 @@
 #undef BishopF_Anims
 #undef Dancer_Anims
 
+//Vanilla promotion tables
+#undef HeroCrestPromotionTable
+#undef OrionsBoltPromotionTable
+#undef MasterSealPromotionTable
+
 //Class descs
 #undef Mercenary_Description
 #undef Hero_Description

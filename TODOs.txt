@@ -3,7 +3,7 @@ The Gay agenda:
 TOP PRIORITY:
 Look through patches and hacks still not imported from the old project. Hardcoding etc.
 	Still any?
-Do promotion tables.
+
 
 
 HIGH PRIORITY

@@ -1,0 +1,74 @@
+
+ALIGN 4
+HeroCrestPromotionTable:
+BYTE Mercenary
+BYTE MercenaryF
+BYTE Myrmidon
+BYTE MyrmidonF
+BYTE Fighter
+BYTE Pirate
+BYTE Brigand
+BYTE 0x0
+
+//ALIGN 4
+//KnightCrestPromotionTable:
+//BYTE Knight
+//BYTE KnightF
+//BYTE Cavalier
+//BYTE CavalierF
+//BYTE 0x0
+
+ALIGN 4
+OrionsBoltPromotionTable:
+BYTE Archer
+BYTE ArcherF
+BYTE Nomad
+BYTE NomadF
+BYTE 0x0
+
+//ALIGN 4
+//ElysianWhipPromotionTable:
+//BYTE PegasusKnight
+//BYTE WyvernRider
+//BYTE WyvernRiderF
+//BYTE 0x0
+
+//ALIGN 4
+//GuidingRingPromotionTable:
+//BYTE Mage
+//BYTE MageF
+//BYTE Shaman
+//BYTE ShamanF
+//BYTE Priest
+//BYTE Cleric
+//BYTE Troubadour
+//BYTE 0x0
+
+ALIGN 4
+MasterSealPromotionTable:
+BYTE Mercenary
+BYTE MercenaryF
+BYTE Myrmidon
+BYTE MyrmidonF
+BYTE Fighter
+BYTE Pirate
+BYTE Brigand
+BYTE Knight
+BYTE KnightF
+BYTE Cavalier
+BYTE CavalierF
+BYTE Archer
+BYTE ArcherF
+BYTE Nomad
+BYTE NomadF
+BYTE PegasusKnight
+BYTE WyvernRider
+BYTE WyvernRiderF
+BYTE Mage
+BYTE MageF
+BYTE Shaman
+BYTE ShamanF
+BYTE Priest
+BYTE Cleric
+BYTE Troubadour
+BYTE 0x0

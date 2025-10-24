@@ -15,6 +15,7 @@
 //#include "Vanilla/Items/VanillaEffectivenessTablePointers.event"
 #include "Vanilla/Items/VanillaStatBoostPointers.event"
 #include "Vanilla/Items/VanillaItemUseEffectIDs.event"
+#include "Vanilla/Items/VanillaPromotionTablePointers.event"
 
 #include "Vanilla/Classes/VanillaClassNameIDs.event"
 #include "Vanilla/Classes/VanillaClassDescriptionIDs.event"

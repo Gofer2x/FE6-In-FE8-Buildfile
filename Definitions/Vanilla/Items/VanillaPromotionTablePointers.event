@@ -1,0 +1,10 @@
+#define HeroCrestPromotionTable 0x8ADF57
+#define KnightCrestPromotionTable 0x8ADF5E
+#define OrionsBoltPromotionTable 0x8ADF64
+#define ElysianWhipPromotionTable 0x8ADF67
+#define GuidingRingPromotionTable 0x8ADF6B
+#define MasterSealPromotionTable 0x8ADF76
+#define HeavenSealPromotionTable 0x8ADF96
+#define OceanSealPromotionTable 0x8ADF9E
+#define LunarBracePromotionTable 0x8ADFA4
+#define SolarBracePromotionTable 0x8ADFA60

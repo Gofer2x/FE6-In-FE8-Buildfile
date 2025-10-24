@@ -21,8 +21,8 @@
   #define ChapterDataTableEntSize 148
 #endif
 
-#define LunarBrace MoonBracelet
-#define SolarBrace SunBracelet
+//#define LunarBrace MoonBracelet
+//#define SolarBrace SunBracelet
 
 #define Latona_UseEffect 0x37
 #define SkillScroll_UseEffect 0x38

@@ -3,6 +3,11 @@
 #define Boots_UseScreen Swiftsoles_UseScreen
 #define FireManakete_ClassCard Manakete1_ClassCard
 
+#define MasterSeal FE8_MasterSeal
+#define OceanSeal FE8_OceanSeal
+#define SolarBrace FE8_SolarBrace
+#define LunarBrace FE8_LunarBrace
+
 #define Hatchet FE8_Hatchet
 #define HeavenSealDUMMY FE8_HeavenSealDUMMY
 
