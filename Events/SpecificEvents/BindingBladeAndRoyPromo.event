@@ -1,9 +1,4 @@
 EVENT_BindingBladeAndRoyPromo:
-
-//TODO Make this less janky. Both visually and the dummy promo item. fFor the latter, just make it a fake Binding Blade maybe?
-//Most notably the backgrounds that appear between white flashes show up for as they're set before the fade from white finishes.
-//Also the ending. How to show the map, Then promo, then map back again?
-
 FadeOutMusic
 STAL 64
 SetBackground(BG_Castle2)
