@@ -15,7 +15,7 @@
 #define WM_MoveLord(fromNode,toNode,time,delay) "WM_MOVESPRITETO 0x0 0x0 0x2 fromNode toNode time delay"
 
 //Move any registered unit from node to node.
-#define WM_MoveLord(id,fromNode,toNode,time,delay) "WM_MOVESPRITETO 0x0 id 0x2 fromNode toNode time delay"
+#define WM_MoveUnit(id,fromNode,toNode,time,delay) "WM_MOVESPRITETO 0x0 id 0x2 fromNode toNode time delay"
 
 //Register sprite to be shown.
 #define WM_RegisterSprite(id,class,affiliation,node) "PUTSPRITE id class affiliation node"
