@@ -16,8 +16,7 @@ Idunn's dragon mug is glitched? It causes some visual glitches (even with other 
 
 
 MEDIUM PRIORITY
-Import FE6 Palettes for
-	Shaman, Druid, ShamanF and DruidF have different palettes.
+-
 
 
 

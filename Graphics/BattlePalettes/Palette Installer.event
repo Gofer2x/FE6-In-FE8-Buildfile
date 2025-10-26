@@ -3,294 +3,306 @@
 
 ALIGN 4
 
-Roy_RoyLord:
-	#incbin "./_palettes/Roy_RoyLord.lzpal" 
+Roy_RoyLordPalette:
+	#incbin "./_palettes/Roy_RoyLordPalette.lzpal" 
 
-Roy_RoyGreatLord:
-	#incbin "./_palettes/Roy_RoyGreatLord.lzpal" 
+Roy_RoyGreatLordPalette:
+	#incbin "./_palettes/Roy_RoyGreatLordPalette.lzpal" 
 
-Marcus_Paladin:
-	#incbin "./_palettes/Marcus_Paladin.lzpal" 
+Marcus_PaladinPalette:
+	#incbin "./_palettes/Marcus_PaladinPalette.lzpal" 
 
-Alen_Cavalier:
-	#incbin "./_palettes/Alen_Cavalier.lzpal" 
+Alen_CavalierPalette:
+	#incbin "./_palettes/Alen_CavalierPalette.lzpal" 
 
-Alen_Paladin:
-	#incbin "./_palettes/Alen_Paladin.lzpal" 
+Alen_PaladinPalette:
+	#incbin "./_palettes/Alen_PaladinPalette.lzpal" 
 
-Lance_Cavalier:
-	#incbin "./_palettes/Lance_Cavalier.lzpal" 
+Lance_CavalierPalette:
+	#incbin "./_palettes/Lance_CavalierPalette.lzpal" 
 
-Lance_Paladin:
-	#incbin "./_palettes/Lance_Paladin.lzpal" 
+Lance_PaladinPalette:
+	#incbin "./_palettes/Lance_PaladinPalette.lzpal" 
 
-Wolt_Archer:
-	#incbin "./_palettes/Wolt_Archer.lzpal" 
+Wolt_ArcherPalette:
+	#incbin "./_palettes/Wolt_ArcherPalette.lzpal" 
 
-Wolt_Sniper:
-	#incbin "./_palettes/Wolt_Sniper.lzpal" 
+Wolt_SniperPalette:
+	#incbin "./_palettes/Wolt_SniperPalette.lzpal" 
 
-Bors_Knight:
-	#incbin "./_palettes/Bors_Knight.lzpal" 
+Bors_KnightPalette:
+	#incbin "./_palettes/Bors_KnightPalette.lzpal" 
 
-Bors_General:
-	#incbin "./_palettes/Bors_General.lzpal" 
+Bors_GeneralPalette:
+	#incbin "./_palettes/Bors_GeneralPalette.lzpal" 
 
-Elen_Cleric:
-	#incbin "./_palettes/Elen_Cleric.lzpal" 
+Elen_ClericPalette:
+	#incbin "./_palettes/Elen_ClericPalette.lzpal" 
 
-Elen_BishopF:
-	#incbin "./_palettes/Elen_BishopF.lzpal" 
+Elen_BishopFPalette:
+	#incbin "./_palettes/Elen_BishopFPalette.lzpal" 
 
-Dieck_Mercenary:
-	#incbin "./_palettes/Dieck_Mercenary.lzpal" 
+Dieck_MercenaryPalette:
+	#incbin "./_palettes/Dieck_MercenaryPalette.lzpal" 
 
-Dieck_Hero:
-	#incbin "./_palettes/Dieck_Hero.lzpal" 
+Dieck_HeroPalette:
+	#incbin "./_palettes/Dieck_HeroPalette.lzpal" 
 
-Ward_Fighter:
-	#incbin "./_palettes/Ward_Fighter.lzpal" 
+Ward_FighterPalette:
+	#incbin "./_palettes/Ward_FighterPalette.lzpal" 
 
-Ward_Warrior:
-	#incbin "./_palettes/Ward_Warrior.lzpal" 
+Ward_WarriorPalette:
+	#incbin "./_palettes/Ward_WarriorPalette.lzpal" 
 
-Lot_Fighter:
-	#incbin "./_palettes/Lot_Fighter.lzpal" 
+Lot_FighterPalette:
+	#incbin "./_palettes/Lot_FighterPalette.lzpal" 
 
-Lot_Warrior:
-	#incbin "./_palettes/Lot_Warrior.lzpal" 
+Lot_WarriorPalette:
+	#incbin "./_palettes/Lot_WarriorPalette.lzpal" 
 
-Shanna_PegasusKnight:
-	#incbin "./_palettes/Shanna_PegasusKnight.lzpal" 
+Shanna_PegasusKnightPalette:
+	#incbin "./_palettes/Shanna_PegasusKnightPalette.lzpal" 
 
-Shanna_Falcoknight:
-	#incbin "./_palettes/Shanna_Falcoknight.lzpal" 
+Shanna_FalcoknightPalette:
+	#incbin "./_palettes/Shanna_FalcoknightPalette.lzpal" 
 
-Chad_Thief:
-	#incbin "./_palettes/Chad_Thief.lzpal" 
+Chad_ThiefPalette:
+	#incbin "./_palettes/Chad_ThiefPalette.lzpal" 
 
-Lugh_Mage:
-	#incbin "./_palettes/Lugh_Mage.lzpal" 
+Lugh_MagePalette:
+	#incbin "./_palettes/Lugh_MagePalette.lzpal" 
 
-Lugh_Sage:
-	#incbin "./_palettes/Lugh_Sage.lzpal" 
+Lugh_SagePalette:
+	#incbin "./_palettes/Lugh_SagePalette.lzpal" 
 
-Clarine_Troubadour:
-	#incbin "./_palettes/Clarine_Troubadour.lzpal" 
+Clarine_TroubadourPalette:
+	#incbin "./_palettes/Clarine_TroubadourPalette.lzpal" 
 
-Clarine_Valkyrie:
-	#incbin "./_palettes/Clarine_Valkyrie.lzpal" 
+Clarine_ValkyriePalette:
+	#incbin "./_palettes/Clarine_ValkyriePalette.lzpal" 
 
-Rutger_Myrmidon:
-	#incbin "./_palettes/Rutger_Myrmidon.lzpal" 
+Rutger_MyrmidonPalette:
+	#incbin "./_palettes/Rutger_MyrmidonPalette.lzpal" 
 
-Rutger_Swordmaster:
-	#incbin "./_palettes/Rutger_Swordmaster.lzpal" 
+Rutger_SwordmasterPalette:
+	#incbin "./_palettes/Rutger_SwordmasterPalette.lzpal" 
 
-Saul_Priest:
-	#incbin "./_palettes/Saul_Priest.lzpal" 
+Saul_PriestPalette:
+	#incbin "./_palettes/Saul_PriestPalette.lzpal" 
 
-Saul_Bishop:
-	#incbin "./_palettes/Saul_Bishop.lzpal" 
+Saul_BishopPalette:
+	#incbin "./_palettes/Saul_BishopPalette.lzpal" 
 
-Dorothy_ArcherF:
-	#incbin "./_palettes/Dorothy_ArcherF.lzpal" 
+Dorothy_ArcherFPalette:
+	#incbin "./_palettes/Dorothy_ArcherFPalette.lzpal" 
 
-Dorothy_SniperF:
-	#incbin "./_palettes/Dorothy_SniperF.lzpal" 
+Dorothy_SniperFPalette:
+	#incbin "./_palettes/Dorothy_SniperFPalette.lzpal" 
 
-Sue_NomadF:
-	#incbin "./_palettes/Sue_NomadF.lzpal" 
+Sue_NomadFPalette:
+	#incbin "./_palettes/Sue_NomadFPalette.lzpal" 
 
-Sue_NomadTrooperF:
-	#incbin "./_palettes/Sue_NomadTrooperF.lzpal" 
+Sue_NomadTrooperFPalette:
+	#incbin "./_palettes/Sue_NomadTrooperFPalette.lzpal" 
 
-Zelot_Paladin:
-	#incbin "./_palettes/Zelot_Paladin.lzpal" 
+Zelot_PaladinPalette:
+	#incbin "./_palettes/Zelot_PaladinPalette.lzpal" 
 
-Trec_Cavalier:
-	#incbin "./_palettes/Trec_Cavalier.lzpal" 
+Trec_CavalierPalette:
+	#incbin "./_palettes/Trec_CavalierPalette.lzpal" 
 
-Trec_Paladin:
-	#incbin "./_palettes/Trec_Paladin.lzpal" 
+Trec_PaladinPalette:
+	#incbin "./_palettes/Trec_PaladinPalette.lzpal" 
 
-Noah_Cavalier:
-	#incbin "./_palettes/Noah_Cavalier.lzpal" 
+Noah_CavalierPalette:
+	#incbin "./_palettes/Noah_CavalierPalette.lzpal" 
 
-Noah_Paladin:
-	#incbin "./_palettes/Noah_Paladin.lzpal" 
+Noah_PaladinPalette:
+	#incbin "./_palettes/Noah_PaladinPalette.lzpal" 
 
-Astolfo_Thief:
-	#incbin "./_palettes/Astolfo_Thief.lzpal" 
+Astolfo_ThiefPalette:
+	#incbin "./_palettes/Astolfo_ThiefPalette.lzpal" 
 
-Lilina_MageF:
-	#incbin "./_palettes/Lilina_MageF.lzpal" 
+Lilina_MageFPalette:
+	#incbin "./_palettes/Lilina_MageFPalette.lzpal" 
 
-Lilina_SageF:
-	#incbin "./_palettes/Lilina_SageF.lzpal" 
+Lilina_SageFPalette:
+	#incbin "./_palettes/Lilina_SageFPalette.lzpal" 
 
-Barthe_Knight:
-	#incbin "./_palettes/Barthe_Knight.lzpal" 
+Barthe_KnightPalette:
+	#incbin "./_palettes/Barthe_KnightPalette.lzpal" 
 
-Barthe_General:
-	#incbin "./_palettes/Barthe_General.lzpal" 
+Barthe_GeneralPalette:
+	#incbin "./_palettes/Barthe_GeneralPalette.lzpal" 
 
-Ogier_Mercenary:
-	#incbin "./_palettes/Ogier_Mercenary.lzpal" 
+Ogier_MercenaryPalette:
+	#incbin "./_palettes/Ogier_MercenaryPalette.lzpal" 
 
-Ogier_Hero:
-	#incbin "./_palettes/Ogier_Hero.lzpal" 
+Ogier_HeroPalette:
+	#incbin "./_palettes/Ogier_HeroPalette.lzpal" 
 
-Gwendolyn_KnightF:
-	#incbin "./_palettes/Gwendolyn_KnightF.lzpal" 
+Gwendolyn_KnightFPalette:
+	#incbin "./_palettes/Gwendolyn_KnightFPalette.lzpal" 
 
-Gwendolyn_GeneralF:
-	#incbin "./_palettes/Gwendolyn_GeneralF.lzpal" 
+Gwendolyn_GeneralFPalette:
+	#incbin "./_palettes/Gwendolyn_GeneralFPalette.lzpal" 
 
-Fir_MyrmidonF:
-	#incbin "./_palettes/Fir_MyrmidonF.lzpal" 
+Fir_MyrmidonFPalette:
+	#incbin "./_palettes/Fir_MyrmidonFPalette.lzpal" 
 
-Fir_SwordmasterF:
-	#incbin "./_palettes/Fir_SwordmasterF.lzpal" 
+Fir_SwordmasterFPalette:
+	#incbin "./_palettes/Fir_SwordmasterFPalette.lzpal" 
 
-Sin_Nomad:
-	#incbin "./_palettes/Sin_Nomad.lzpal" 
+Sin_NomadPalette:
+	#incbin "./_palettes/Sin_NomadPalette.lzpal" 
 
-Sin_NomadTrooper:
-	#incbin "./_palettes/Sin_NomadTrooper.lzpal" 
+Sin_NomadTrooperPalette:
+	#incbin "./_palettes/Sin_NomadTrooperPalette.lzpal" 
 
-Geese_Pirate:
-	#incbin "./_palettes/Geese_Pirate.lzpal" 
+Geese_PiratePalette:
+	#incbin "./_palettes/Geese_PiratePalette.lzpal" 
 
-Geese_Berserker:
-	#incbin "./_palettes/Geese_Berserker.lzpal" 
+Geese_BerserkerPalette:
+	#incbin "./_palettes/Geese_BerserkerPalette.lzpal" 
 
-Gonzalez_Brigand:
-	#incbin "./_palettes/Gonzalez_Brigand.lzpal" 
+Gonzalez_BrigandPalette:
+	#incbin "./_palettes/Gonzalez_BrigandPalette.lzpal" 
 
-Gonzalez_Berserker:
-	#incbin "./_palettes/Gonzalez_Berserker.lzpal" 
+Gonzalez_BerserkerPalette:
+	#incbin "./_palettes/Gonzalez_BerserkerPalette.lzpal" 
 
-Klein_Sniper:
-	#incbin "./_palettes/Klein_Sniper.lzpal" 
+Klein_SniperPalette:
+	#incbin "./_palettes/Klein_SniperPalette.lzpal" 
 
-Thea_PegasusKnight:
-	#incbin "./_palettes/Thea_PegasusKnight.lzpal" 
+Thea_PegasusKnightPalette:
+	#incbin "./_palettes/Thea_PegasusKnightPalette.lzpal" 
 
-Thea_Falcoknight:
-	#incbin "./_palettes/Thea_Falcoknight.lzpal" 
+Thea_FalcoknightPalette:
+	#incbin "./_palettes/Thea_FalcoknightPalette.lzpal" 
 
-Larum_Dancer:
-	#incbin "./_palettes/Larum_Dancer.lzpal" 
+Larum_DancerPalette:
+	#incbin "./_palettes/Larum_DancerPalette.lzpal" 
 
-Elffin_Bard:
-	#incbin "./_palettes/Elffin_Bard.lzpal" 
+Elffin_BardPalette:
+	#incbin "./_palettes/Elffin_BardPalette.lzpal" 
 
-Echidna_HeroF:
-	#incbin "./_palettes/Echidna_HeroF.lzpal" 
+Echidna_HeroFPalette:
+	#incbin "./_palettes/Echidna_HeroFPalette.lzpal" 
 
-Bartre_Warrior:
-	#incbin "./_palettes/Bartre_Warrior.lzpal" 
+Bartre_WarriorPalette:
+	#incbin "./_palettes/Bartre_WarriorPalette.lzpal" 
 
-Raigh_Shaman:
-	#incbin "./_palettes/Raigh_Shaman.lzpal" 
+Raigh_ShamanPalette:
+	#incbin "./_palettes/Raigh_ShamanPalette.lzpal" 
 
-Raigh_Druid:
-	#incbin "./_palettes/Raigh_Druid.lzpal" 
+Raigh_DruidPalette:
+	#incbin "./_palettes/Raigh_DruidPalette.lzpal" 
 
-Cath_ThiefF:
-	#incbin "./_palettes/Cath_ThiefF.lzpal" 
+Cath_ThiefFPalette:
+	#incbin "./_palettes/Cath_ThiefFPalette.lzpal" 
 
-Melady_WyvernRiderF:
-	#incbin "./_palettes/Melady_WyvernRiderF.lzpal" 
+Melady_WyvernRiderFPalette:
+	#incbin "./_palettes/Melady_WyvernRiderFPalette.lzpal" 
 
-Melady_WyvernLordF:
-	#incbin "./_palettes/Melady_WyvernLordF.lzpal" 
+Melady_WyvernLordFPalette:
+	#incbin "./_palettes/Melady_WyvernLordFPalette.lzpal" 
 
-Perceval_Paladin:
-	#incbin "./_palettes/Perceval_Paladin.lzpal" 
+Perceval_PaladinPalette:
+	#incbin "./_palettes/Perceval_PaladinPalette.lzpal" 
 
-Cecilia_Valkyrie:
-	#incbin "./_palettes/Cecilia_Valkyrie.lzpal" 
+Cecilia_ValkyriePalette:
+	#incbin "./_palettes/Cecilia_ValkyriePalette.lzpal" 
 
-Sophia_ShamanF:
-	#incbin "./_palettes/Sophia_ShamanF.lzpal" 
+Sophia_ShamanFPalette:
+	#incbin "./_palettes/Sophia_ShamanFPalette.lzpal" 
 
-Sophia_DruidF:
-	#incbin "./_palettes/Sophia_DruidF.lzpal" 
+Sophia_DruidFPalette:
+	#incbin "./_palettes/Sophia_DruidFPalette.lzpal" 
 
-Igrene_SniperF:
-	#incbin "./_palettes/Igrene_SniperF.lzpal" 
+Igrene_SniperFPalette:
+	#incbin "./_palettes/Igrene_SniperFPalette.lzpal" 
 
-Garrett_Berserker:
-	#incbin "./_palettes/Garrett_Berserker.lzpal" 
+Garrett_BerserkerPalette:
+	#incbin "./_palettes/Garrett_BerserkerPalette.lzpal" 
 
-Hugh_Mage:
-	#incbin "./_palettes/Hugh_Mage.lzpal" 
+Hugh_MagePalette:
+	#incbin "./_palettes/Hugh_MagePalette.lzpal" 
 
-Hugh_Sage:
-	#incbin "./_palettes/Hugh_Sage.lzpal" 
+Hugh_SagePalette:
+	#incbin "./_palettes/Hugh_SagePalette.lzpal" 
 
-Zeiss_WyvernLord:
-	#incbin "./_palettes/Zeiss_WyvernLord.lzpal" 
+Zeiss_WyvernLordPalette:
+	#incbin "./_palettes/Zeiss_WyvernLordPalette.lzpal" 
 
-Douglas_General:
-	#incbin "./_palettes/Douglas_General.lzpal" 
+Douglas_GeneralPalette:
+	#incbin "./_palettes/Douglas_GeneralPalette.lzpal" 
 
-Niime_DruidF:
-	#incbin "./_palettes/Niime_DruidF.lzpal" 
+Niime_DruidFPalette:
+	#incbin "./_palettes/Niime_DruidFPalette.lzpal" 
 
-Juno_Falcoknight:
-	#incbin "./_palettes/Juno_Falcoknight.lzpal" 
+Juno_FalcoknightPalette:
+	#incbin "./_palettes/Juno_FalcoknightPalette.lzpal" 
 
-Dayan_NomadTrooper:
-	#incbin "./_palettes/Dayan_NomadTrooper.lzpal" 
+Dayan_NomadTrooperPalette:
+	#incbin "./_palettes/Dayan_NomadTrooperPalette.lzpal" 
 
-Yoder_Bishop:
-	#incbin "./_palettes/Yoder_Bishop.lzpal" 
+Yoder_BishopPalette:
+	#incbin "./_palettes/Yoder_BishopPalette.lzpal" 
 
-Karel_Swordmaster:
-	#incbin "./_palettes/Karel_Swordmaster.lzpal" 
+Karel_SwordmasterPalette:
+	#incbin "./_palettes/Karel_SwordmasterPalette.lzpal" 
 
-Damas_Fighter:
-	#incbin "./_palettes/Damas_Fighter.lzpal" 
+Damas_FighterPalette:
+	#incbin "./_palettes/Damas_FighterPalette.lzpal" 
 
-Ruud_Knight:
-	#incbin "./_palettes/Ruud_Knight.lzpal" 
+Ruud_KnightPalette:
+	#incbin "./_palettes/Ruud_KnightPalette.lzpal" 
 
-Slater_Knight:
-	#incbin "./_palettes/Slater_Knight.lzpal" 
+Slater_KnightPalette:
+	#incbin "./_palettes/Slater_KnightPalette.lzpal" 
 
-Erik_Cavalier:
-	#incbin "./_palettes/Erik_Cavalier.lzpal" 
+Erik_CavalierPalette:
+	#incbin "./_palettes/Erik_CavalierPalette.lzpal" 
 
-Dory_Brigand:
-	#incbin "./_palettes/Dory_Brigand.lzpal" 
+Dory_BrigandPalette:
+	#incbin "./_palettes/Dory_BrigandPalette.lzpal" 
 
-Debias_Knight:
-	#incbin "./_palettes/Debias_Knight.lzpal" 
+Debias_KnightPalette:
+	#incbin "./_palettes/Debias_KnightPalette.lzpal" 
 
-Legance_General:
-	#incbin "./_palettes/Legance_General.lzpal" 
+Legance_GeneralPalette:
+	#incbin "./_palettes/Legance_GeneralPalette.lzpal" 
 
-Zinque_General:
-	#incbin "./_palettes/Zinque_General.lzpal" 
+Zinque_GeneralPalette:
+	#incbin "./_palettes/Zinque_GeneralPalette.lzpal" 
 
-Roartz_General:
-	#incbin "./_palettes/Roartz_General.lzpal" 
+Roartz_GeneralPalette:
+	#incbin "./_palettes/Roartz_GeneralPalette.lzpal" 
 
-Narcian_WyvernLord:
-	#incbin "./_palettes/Narcian_WyvernLord.lzpal" 
+Narcian_WyvernLordPalette:
+	#incbin "./_palettes/Narcian_WyvernLordPalette.lzpal" 
 
-Galle_WyvernLord:
-	#incbin "./_palettes/Galle_WyvernLord.lzpal" 
+Galle_WyvernLordPalette:
+	#incbin "./_palettes/Galle_WyvernLordPalette.lzpal" 
 
-Murdock_General:
-	#incbin "./_palettes/Murdock_General.lzpal" 
+Murdock_GeneralPalette:
+	#incbin "./_palettes/Murdock_GeneralPalette.lzpal" 
 
-Zephiel_King:
-	#incbin "./_palettes/Zephiel_King.lzpal" 
+Zephiel_KingPalette:
+	#incbin "./_palettes/Zephiel_KingPalette.lzpal" 
 
-Brunnya_SageF:
-	#incbin "./_palettes/Brunnya_SageF.lzpal" 
+Brunnya_SageFPalette:
+	#incbin "./_palettes/Brunnya_SageFPalette.lzpal" 
+
+Shaman_NewGenericPalette:
+	#incbin "./_palettes/Shaman_NewGenericPalette.lzpal" 
+
+ShamanF_NewGenericPalette:
+	#incbin "./_palettes/ShamanF_NewGenericPalette.lzpal" 
+
+Druid_NewGenericPalette:
+	#incbin "./_palettes/Druid_NewGenericPalette.lzpal" 
+
+DruidF_NewGenericPalette:
+	#incbin "./_palettes/DruidF_NewGenericPalette.lzpal" 
 
