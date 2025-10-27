@@ -1,6 +1,7 @@
 The Gay agenda:
 
 TOP PRIORITY:
+Manakete battle animations broken.
 Merge the Ch7+8 (Ostia) and Ch19B+20B (Bulgar) nodes. The two freed up ones can be used for the intro chapter and a spot for post-game.
 Then move them to more sane locations, taking artistic liberties with their FE6 placements. If I want to be cheeky I could find a way to decrease the WM cursor speed to "increase" accuracy?
 Look through patches and hacks still not imported from the old project. Hardcoding etc.

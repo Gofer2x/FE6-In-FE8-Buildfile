@@ -29,9 +29,9 @@
 #include "Vanilla/Classes/VanillaClassAnimationTablePointers.event"
 #include "Vanilla/Classes/VanillaClassCardPointers.event"
 
-#include "Vanilla/_Aliases.event"
-
 #include "_VanillaUndefs.event"
+
+#include "Vanilla/_Aliases.event"
 
 #include "PListIDs.event"
 #include "WMNodeData.event"

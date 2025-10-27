@@ -252,3 +252,4 @@
 #define BlankClass112 0xFC
 #define BlankClass113 0xFD
 #define BlankClass114 0xFE
+#define BlankClass115 0xFF
