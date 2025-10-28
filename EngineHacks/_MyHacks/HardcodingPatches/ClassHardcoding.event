@@ -55,11 +55,6 @@ BYTE SacrificialClass
 ORG 0x2BE60
 BYTE SacrificialClass
 
-//OG 0x3C, MyrrhManakete "Special class ID to turn the battle background into a Manakete"
-//This will be handled by patches I think.
-ORG 0x070B7E
-BYTE SacrificialClass
-
 //OG 0x3E, Pupil1 "Ewan Base Class For Weapon Rank Removal"
 ORG 0x2bd0a
 BYTE SacrificialClass
