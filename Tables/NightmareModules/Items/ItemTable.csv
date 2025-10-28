@@ -104,8 +104,8 @@ KnightCrest,KnightCrest_Name,KnightCrest_Description,KnightCrest_UseScreen,0x65,
 OrionsBolt,OrionsBolt_Name,OrionsBolt_Description,OrionsBolt_UseScreen,0x66,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,10000,NoRank,OrionsBolt_ItemIcon,OrionsBolt_UseEffect,NoEffect,0,0x0,0x0,0x0
 ElysianWhip,ElysianWhip_Name,ElysianWhip_Description,ElysianWhip_UseScreen,0x67,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,10000,NoRank,ElysianWhip_ItemIcon,ElysianWhip_UseEffect,NoEffect,0,0x0,0x0,0x0
 GuidingRing,GuidingRing_Name,GuidingRing_Description,GuidingRing_UseScreen,0x68,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,10000,NoRank,GuidingRing_ItemIcon,GuidingRing_UseEffect,NoEffect,0,0x0,0x0,0x0
-ChestKey1Use,ChestKey_Name,ChestKey_Description,ChestKey_UseScreen,0x69,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,300,NoRank,ChestKey_ItemIcon,DoorKey_UseEffect,NoEffect,0,0x0,0x0,0x0
-DoorKey,DoorKey_Name,DoorKey_Description,DoorKey_UseScreen,0x6a,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,50,NoRank,DoorKey_ItemIcon,ChestKey1Use_UseEffect,NoEffect,0,0x0,0x0,0x0
+ChestKey1Use,ChestKey_Name,ChestKey_Description,ChestKey_UseScreen,0x69,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,300,NoRank,ChestKey_ItemIcon,ChestKey1Use_UseEffect,NoEffect,0,0x0,0x0,0x0
+DoorKey,DoorKey_Name,DoorKey_Description,DoorKey_UseScreen,0x6a,ItemItem,0x0,0x0,0x0,1,0,0,0,0,0x11,50,NoRank,DoorKey_ItemIcon,DoorKey_UseEffect,NoEffect,0,0x0,0x0,0x0
 Lockpick,Lockpick_Name,Lockpick_Description,Lockpick_UseScreen,0x6b,ItemItem,0x0,0x0,0x0,30,0,0,0,0,0x11,80,NoRank,Lockpick_ItemIcon,Lockpick_UseEffect,NoEffect,0,0x0,0x0,0x0
 Vulnerary,Vulnerary_Name,Vulnerary_Description,Vulnerary_UseScreen,0x6c,ItemItem,0x0,0x0,0x0,3,0,0,0,0,0x11,100,NoRank,Vulnerary_ItemIcon,Vulnerary_UseEffect,NoEffect,0,0x0,0x0,0x0
 Elixir,Elixir_Name,Elixir_Description,Elixir_UseScreen,0x6d,ItemItem,0x0,0x0,0x0,3,0,0,0,0,0x11,1000,NoRank,Elixir_ItemIcon,Elixir_UseEffect,NoEffect,0,0x0,0x0,0x0

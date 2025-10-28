@@ -27,8 +27,8 @@
 #define OrionsBolt_UseEffect 0x1b
 #define ElysianWhip_UseEffect 0x1c
 #define GuidingRing_UseEffect 0x1d
-#define DoorKey_UseEffect 0x1e
-#define ChestKey1Use_UseEffect 0x1f
+#define ChestKey1Use_UseEffect 0x1e
+#define DoorKey_UseEffect 0x1f
 #define Lockpick_UseEffect 0x20
 #define Vulnerary_UseEffect 0x21
 #define Elixir_UseEffect 0x22
