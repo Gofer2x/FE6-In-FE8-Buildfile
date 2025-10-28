@@ -131,3 +131,6 @@
 #undef Deathgoyle_ClassCard
 #undef Manakete2_ClassCard
 #undef DemonKing_ClassCard
+
+//IER, is now MasterKey
+#undef ChestKey5Uses_UseEffect
