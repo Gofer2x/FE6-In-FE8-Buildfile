@@ -24,7 +24,7 @@ LOW PRIORITY
 The big world map implementation is VERY BAD. UndoBuffer cheese. I have no idea how the Palette Map works.
 Ch16x background.
 Bard and Dancer map sounds are weird.
-	Are they still here though?
+	Dancer seems to use the vanilla FE8 one, replace it? Bard's is just wrong.
 Recruitable characters only go up so high. Double check the limit against current amount and Trial characters (possibly culling then).
 Importing music via FEB can use the wrong priority due to how prio is(n't) implemented in the process. I made an EA file that's ran post-insertion but that's not an ideal solution. Potentially make a ticket.
 
