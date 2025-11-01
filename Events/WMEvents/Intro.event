@@ -3,15 +3,6 @@ WorldMapIntroPointerTable(CHAPTER_Intro,CurrentNodeSelect)
 
 //Normally Magvel intro
 AfterPrevious:
-WM_DisableSkip
-_0xC220
-//WM_SpawnLord(Roy,NODE_Ch1)
-//WM_CENTERCAMONLORD
-//WM_SHOWDRAWNMAP 0x0 0x0 0x0 0x10 0x0
-//STAL 2
-//WM_FADEOUT 0x0 0x0 0x0
-////TODO Intro here?
-//STAL 60
 SKIPWN
 ENDA
 

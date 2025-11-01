@@ -3,6 +3,9 @@ WorldMapIntroPointerTable(CHAPTER_Ch1,CurrentNodeSelect)
 
 AfterPrevious:
 WM_DisableSkip
+WM_UnlockNode(NODE_Ch1)
+WM_SpawnLord(Roy,NODE_Ch1)
+MoveToChapter(CHAPTER_Ch1)
 SKIPWN
 ENDA
 

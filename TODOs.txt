@@ -2,11 +2,26 @@ The Gay agenda:
 
 TOP PRIORITY:
 Merge the Ch7+8 (Ostia), Ch19B+20B (Bulgar) nodes. The two freed up ones can be used for the intro chapter and a spot for post-game. Along with that fix the set-up chapter causing Ch1 to display as 0x. WM events are just a mess.
+	ORDER OF WM EVENTS BEING RUN:
+	1. Intro (0x1 in WM events table) NodeSelected
+	2. Intro (0x1) AfterPrevious
+	3. Ch1 (0x2 in WM events table) AfterPrevious
+	Ch0x starts
+	...
+		What does the WM Initialized flag do anyway?
+	End Goal:
+		Start the game in 0x
+		After concluding the set-up, move to Ch1 with the save screen
+		Show world map intro (or well a temporaryTM version of it)
+		Automatically move into Ch1
+		After Ch1 show Roy on Pharae Castle and draw road to Bern Border
+	Since 0x seems to loop, make use of that? Do a BranchIf in one of its opening events?
+	
 Look through patches and hacks still not imported from the old project. Hardcoding etc.
 	Still any?
 
 
-
+	
 HIGH PRIORITY
 Find proper locations for the WM Nodes. Current are most accurate to FE6 but are also janky with the cursor, so take some artistic liberties.
 Then finally draw their roads.

@@ -14,7 +14,7 @@ GOTO 2
 
 //Flag ON, Sacae route.
 LABEL 1
-WM_SpawnLord(Roy,NODE_Ch20B)
+WM_SpawnLord(Roy,NODE_Ch19B_20B)
 
 //Continue here.
 LABEL 2
@@ -35,7 +35,7 @@ GOTO 4
 
 //Flag ON, Sacae route.
 LABEL 3
-WM_DrawRoad(ROAD_Ch19BToCh21)
+WM_DrawRoad(ROAD_Ch19B_20BToCh21)
 
 //Continue here.
 LABEL 4
@@ -54,7 +54,7 @@ GOTO 2
 
 //Flag ON, Sacae route.
 LABEL 1
-WM_MoveLord(NODE_Ch20B,NODE_Ch21,60,10)
+WM_MoveLord(NODE_Ch19B_20B,NODE_Ch21,60,10)
 
 //Continue here.
 LABEL 2
