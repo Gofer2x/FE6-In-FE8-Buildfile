@@ -280,7 +280,9 @@ PlayMusic(MUS_WildFrontier)
 Text(Ch10B_ScollanOrdersGonzalez)
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Gonzalez by +8
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Gonzalez, 8)
+LABEL 10
 #endif
 EndEvent
 
@@ -302,7 +304,9 @@ Text(Ch10B_Ch11A_KleinAppears2)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Klein by +8
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Klein, 8)
+LABEL 10
 #endif
 EndEvent
 
@@ -314,7 +318,9 @@ Text(Ch10B_Ch11A_TheaAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Thea by +8
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Thea, 8)
+LABEL 10
 #endif
 EndEvent
 

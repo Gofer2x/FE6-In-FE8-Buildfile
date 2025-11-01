@@ -240,17 +240,19 @@ GotoPrepScreen
 
 CathAndAThiefAppear:
 //Skip Cath's appearance if she's been recruited or is dead.
-BranchIfFlagON(3,CathRecruitedOrDeadFlag)
+BranchIfFlagON(7,CathRecruitedOrDeadFlag)
 SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch22_CathAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +14
+BranchIfNotHard(5)
 ApplyBonusLevelsToUnit(Cath, 14)
+LABEL 5
 #endif
 
-LABEL 3
+LABEL 7
 LoadReinforcements(ThiefReinforcements)
 EndEvent
 

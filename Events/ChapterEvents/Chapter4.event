@@ -175,7 +175,9 @@ ENUN
 CAM1 Roy
 #ifdef CONFIG_BuggedEarlyHMBonuses
 //Patch here on Erik and GenericLausCh4 by +4
+BranchIfNotHard(10)
 ApplyBonusLevelsToEnemyArmy(4)
+LABEL 10
 #endif
 EndEvent
 
@@ -237,7 +239,9 @@ Text(Ch4_RutgerAppears)
 LABEL 1
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Rutger by +4
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Rutger, 4)
+LABEL 10
 #endif
 EndEvent
 

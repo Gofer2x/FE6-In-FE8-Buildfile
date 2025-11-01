@@ -269,7 +269,9 @@ Text(Ch6_CathAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +6
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Cath, 6)
+LABEL 10
 #endif
 EndEvent
 

@@ -221,7 +221,9 @@ Text(Ch12_Start3BartreRoute)
 LABEL 9
 #ifdef CONFIG_RecruitableUnitsHMBonusesExtra
 //Level Raigh by +9
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Raigh, 9)
+LABEL 10
 #endif
 GotoPrepScreen
 
@@ -260,7 +262,9 @@ Text(Ch12_CathAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +9
+BranchIfNotHard(5)
 ApplyBonusLevelsToUnit(Cath, 9)
+LABEL 5
 #endif
 LABEL 9
 EndEvent

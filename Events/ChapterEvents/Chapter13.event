@@ -234,7 +234,9 @@ CAM1 Roy
 Text(BG_Outside,Ch13_Start3)
 #ifdef CONFIG_RecruitableUnitsHMBonusesExtra
 //Level Perceval by +10
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Perceval, 10)
+LABEL 10
 #endif
 GotoPrepScreen
 
@@ -333,7 +335,9 @@ TurnAlly(Melady)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Melady by +10
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Melady, 10)
+LABEL 10
 #endif
 EndEvent
 

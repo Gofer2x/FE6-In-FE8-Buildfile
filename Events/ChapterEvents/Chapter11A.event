@@ -320,7 +320,9 @@ DISA Thea
 Text(Ch10B_Ch11A_KleinAppears2)
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Klein by +9
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Klein, 9)
+LABEL 10
 #endif
 EndEvent
 
@@ -350,7 +352,9 @@ Text(Ch10B_Ch11A_TheaAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Thea by +9
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Thea, 9)
+LABEL 10
 #endif
 EndEvent
 

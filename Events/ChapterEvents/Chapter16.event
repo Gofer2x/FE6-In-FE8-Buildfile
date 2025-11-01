@@ -228,8 +228,10 @@ FlashCursor(Roy,60)
 Text(BG_Castle2,Ch16_Start5)
 #ifdef CONFIG_RecruitableUnitsHMBonusesExtra
 //Level Hugh and Douglas by +11
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Hugh, 11)
 ApplyBonusLevelsToUnit(Douglas, 11)
+LABEL 10
 #endif
 GotoPrepScreen
 
@@ -256,7 +258,9 @@ ENUN
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Zeiss by +11
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Zeiss, 11)
+LABEL 10
 #endif
 EndEvent
 
@@ -278,7 +282,9 @@ Text(Ch16_CathAppears)
 RestoreMusic
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Cath by +11
+BranchIfNotHard(5)
 ApplyBonusLevelsToUnit(Cath, 11)
+LABEL 5
 #endif
 LABEL 9
 EndEvent

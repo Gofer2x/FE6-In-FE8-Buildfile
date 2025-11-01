@@ -172,7 +172,9 @@ LoadReinforcements(JustGonzalez)
 LABEL 1
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Gonzalez by +8
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Gonzalez, 8)
+LABEL 10
 #endif
 EndEvent
 

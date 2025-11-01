@@ -170,7 +170,7 @@ FlashCursor(Raith,60)
 Text(BG_Castle1,Ch15_Start1)
 
 //Skip Perceval's appearance is he's been recruited or is dead.
-BranchIfFlagON(1,PercevalRecruitedOrDeadFlag)
+BranchIfFlagON(7,PercevalRecruitedOrDeadFlag)
 
 //Perceval alive and unrecruited, he appears. Turn his recruitment talk flag off so he can be recruited.
 LOAD1 0x1 PercevalSquad
@@ -187,11 +187,13 @@ DISA Douglas
 MOVE 0x0 Perceval [2,3]
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Perceval by +11
+BranchIfNotHard(5)
 ApplyBonusLevelsToUnit(Perceval, 11)
+LABEL 5
 #endif
 ENUN
 
-LABEL 1
+LABEL 7
 PlayMusic(MUS_CogsOfFate)
 LOAD3 0x0 Units
 ENUN
@@ -256,7 +258,9 @@ PlayMusic(MUS_DeerOfThePlains)
 Text(Ch15_GarrettAppears)
 #ifdef CONFIG_RecruitableUnitsHMBonusesNormal
 //Level Garrett by +11
+BranchIfNotHard(10)
 ApplyBonusLevelsToUnit(Garrett, 11)
+LABEL 10
 #endif
 EndEvent
 
