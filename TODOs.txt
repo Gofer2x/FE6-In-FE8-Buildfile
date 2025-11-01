@@ -1,7 +1,6 @@
 The Gay agenda:
 
 TOP PRIORITY:
-Merge the Ch7+8 (Ostia), Ch19B+20B (Bulgar) nodes. The two freed up ones can be used for the intro chapter and a spot for post-game. Along with that fix the set-up chapter causing Ch1 to display as 0x. WM events are just a mess.
 Look through patches and hacks still not imported from the old project. Hardcoding etc.
 	Still any?
 

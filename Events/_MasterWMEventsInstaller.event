@@ -30,11 +30,7 @@
 }
 {
   ALIGN 4
-  #include "WMEvents/Chapter7.event"
-}
-{
-  ALIGN 4
-  #include "WMEvents/Chapter8.event"
+  #include "WMEvents/Chapter7_8.event"
 }
 {
   ALIGN 4
@@ -102,11 +98,7 @@
 }
 {
   ALIGN 4
-  #include "WMEvents/Chapter19B.event"
-}
-{
-  ALIGN 4
-  #include "WMEvents/Chapter20B.event"
+  #include "WMEvents/Chapter19B_20B.event"
 }
 {
   ALIGN 4
@@ -118,5 +110,5 @@
 }
 {
   ALIGN 4
-  #include "WMEvents/Chapter23.event"
+  #include "WMEvents/Chapter23_24_Final.event"
 }

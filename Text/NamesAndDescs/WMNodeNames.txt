@@ -1,3 +1,6 @@
+## Intro_NodeName
+Bepis[X]
+
 ## Ch1_NodeName
 Castle Pharae[X]
 
@@ -16,11 +19,8 @@ Mountain Pass[X]
 ## Ch6_NodeName
 Castle Thria[X]
 
-## Ch7_NodeName
-Ostia City[X]
-
-## Ch8_NodeName
-Castle Ostia[X]
+## Ch7_8_NodeName
+Ostia[X]
 
 ## Ch9_NodeName
 Fibernia[X]
@@ -70,11 +70,8 @@ Taras[X]
 ## Ch18B_NodeName
 Djute Camp[X]
 
-## Ch19B_NodeName
+## Ch19B_20B_NodeName
 Bulgar[X]
-
-## Ch20B_NodeName
-Bulgar Mansion[X]
 
 ## Ch21_NodeName
 Shrine of Seals[X]
@@ -82,5 +79,8 @@ Shrine of Seals[X]
 ## Ch22_NodeName
 Bern Keep[X]
 
-## Ch23_NodeName
+## Ch23_24_Final_NodeName
 Dragon Sanctuary[X]
+
+## PostGame_NodeName
+Temple Of Trials[X]

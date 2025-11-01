@@ -18,11 +18,8 @@
 #define NODE_Ch6_X 264
 #define NODE_Ch6_Y 180
 
-#define NODE_Ch7_X 245
-#define NODE_Ch7_Y 181
-
-#define NODE_Ch8_X 245
-#define NODE_Ch8_Y 158
+#define NODE_Ch7_8_X 245
+#define NODE_Ch7_8_Y 181
 
 #define NODE_Ch9_X 149
 #define NODE_Ch9_Y 122
@@ -72,11 +69,8 @@
 #define NODE_Ch18B_X 348
 #define NODE_Ch18B_Y 140
 
-#define NODE_Ch19B_X 422
-#define NODE_Ch19B_Y 149
-
-#define NODE_Ch20B_X 422
-#define NODE_Ch20B_Y 126
+#define NODE_Ch19B_20B_X 422
+#define NODE_Ch19B_20B_Y 149
 
 #define NODE_Ch21_X 432
 #define NODE_Ch21_Y 195
@@ -84,5 +78,8 @@
 #define NODE_Ch22_X 395
 #define NODE_Ch22_Y 196
 
-#define NODE_Ch23_X 391
-#define NODE_Ch23_Y 234
+#define NODE_Ch23_24_Final_X 391
+#define NODE_Ch23_24_Final_Y 234
+
+#define NODE_PostGame_X 1225
+#define NODE_PostGame_Y 1225
