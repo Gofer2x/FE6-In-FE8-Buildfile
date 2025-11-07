@@ -204,6 +204,8 @@
 #define EmptyShopTable 0xa3efb4
 #define NoAltDestFlag 0xFFFF
 #define NoSkirmishFlag 0x1
+#define YesSkirmishFlag 0x2
+#define TowerRuinsBehavior 0x3
 
 //Chapter Numbers
 #define ChNumber0 0x0

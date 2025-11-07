@@ -8,6 +8,8 @@
 #include "ExternalTables/NewPromotionTables.event"
 #include "ExternalTables/NewArenaTables.event"
 
+#include "ExternalTables/EditAIItemUseTable.event"
+
 #include "ExternalTables/Supports/NewSupportTables.event"
 
 #include "ExternalTables/Roads/RoadInstaller.event"

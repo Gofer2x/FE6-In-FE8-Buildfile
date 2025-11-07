@@ -82,4 +82,4 @@
 #define NODE_Ch23_24_Final_Y 248
 
 #define NODE_PostGame_X 264
-#define NODE_PostGame_Y 248
+#define NODE_PostGame_Y 232
