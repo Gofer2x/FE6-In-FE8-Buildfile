@@ -274,7 +274,7 @@ TEXTEND
 RemaFadeClean
 STAL 64
 ReviveMerlinusIfConfig
-MoveToChapter(CHAPTER_Ch20B)
+MoveToChapterWithoutWM(CHAPTER_Ch20B)
 ENDA
 
 ArmoryList:

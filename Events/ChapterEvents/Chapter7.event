@@ -369,7 +369,7 @@ TEXTEND
 RemaFadeClean
 STAL 64
 ReviveMerlinusIfConfig
-MoveToChapter(CHAPTER_Ch8)
+MoveToChapterWithoutWM(CHAPTER_Ch8)
 ENDA
 
 VendorList:
