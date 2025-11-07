@@ -3,29 +3,175 @@
 
 //Temp
 ALIGN 4
-TempDummyRoad:
+TempDummyRoadData:
 #incbin "RoadData/TempDummyRoad.road.bin"
 
+#define Ch6ToCh7_8RoadData TempDummyRoadData
+#define Ch7_8ToCh9RoadData TempDummyRoadData
+#define Ch9ToCh10ARoadData TempDummyRoadData
+#define Ch10AToCh11ARoadData TempDummyRoadData
+#define Ch11AToCh12RoadData TempDummyRoadData
+#define Ch9ToCh10BRoadData TempDummyRoadData
+#define Ch10BToCh11BRoadData TempDummyRoadData
+#define Ch11BToCh12RoadData TempDummyRoadData
+#define Ch12ToCh13RoadData TempDummyRoadData
+#define Ch13ToCh14RoadData TempDummyRoadData
+#define Ch14ToCh15RoadData TempDummyRoadData
+#define Ch15ToCh16RoadData TempDummyRoadData
+#define Ch16ToCh17ARoadData TempDummyRoadData
+#define Ch17AToCh18ARoadData TempDummyRoadData
+#define Ch18AToCh19ARoadData TempDummyRoadData
+#define Ch19AToCh20ARoadData TempDummyRoadData
+#define Ch20AToCh21RoadData TempDummyRoadData
+#define Ch16ToCh17BRoadData TempDummyRoadData
+#define Ch17BToCh18BRoadData TempDummyRoadData
+#define Ch18BToCh19B_20BRoadData TempDummyRoadData
+#define Ch19B_20BToCh21RoadData TempDummyRoadData
+#define Ch21ToCh22RoadData TempDummyRoadData
+#define Ch22ToCh23_24_FinalRoadData TempDummyRoadData
 
-////Ch1ToCh2
-//ALIGN 4
-//Ch1ToCh2RoadData:
-//#incbin "RoadData/Ch1ToCh2.road.bin"
-//ALIGN 4
-//Ch1ToCh2RoadMovement:
-//RoadMovementItem(2048,328,199)
-//RoadMovementTerminator
-//
-////Ch2ToCh3
-//ALIGN 4
-//Ch2ToCh3RoadData:
-//#incbin "RoadData/Ch2ToCh3.road.bin"
-//ALIGN 4
-//Ch2ToCh3RoadMovement:
-//RoadMovementItem(2048,344,176)
-//RoadMovementTerminator
-//
-////Ch3ToCh4
-//ALIGN 4
-//Ch3ToCh4RoadData:
-//#incbin "RoadData/Ch3ToCh4.road.bin"
+
+
+//Ch1ToCh2
+ALIGN 4
+Ch1ToCh2RoadData:
+#incbin "RoadData/Ch1ToCh2.road.bin"
+
+//Ch2ToCh3
+ALIGN 4
+Ch2ToCh3RoadData:
+#incbin "RoadData/Ch2ToCh3.road.bin"
+
+//Ch3ToCh4
+ALIGN 4
+Ch3ToCh4RoadData:
+#incbin "RoadData/Ch3ToCh4.road.bin"
+
+//Ch4ToCh5
+ALIGN 4
+Ch4ToCh5RoadData:
+#incbin "RoadData/Ch4ToCh5.road.bin"
+
+//Ch5ToCh6
+ALIGN 4
+Ch5ToCh6RoadData:
+#incbin "RoadData/Ch5ToCh6.road.bin"
+
+/*
+
+//Ch6ToCh7_8
+ALIGN 4
+Ch6ToCh7_8RoadData:
+#incbin "Ch6ToCh7_8.road.bin"
+
+//Ch7_8ToCh9
+ALIGN 4
+Ch7_8ToCh9RoadData:
+#incbin "Ch7_8ToCh9.road.bin"
+
+//Ch9ToCh10A
+ALIGN 4
+Ch9ToCh10ARoadData:
+#incbin "Ch9ToCh10A.road.bin"
+
+//Ch10AToCh11A
+ALIGN 4
+Ch10AToCh11ARoadData:
+#incbin "Ch10AToCh11A.road.bin"
+
+//Ch11AToCh12
+ALIGN 4
+Ch11AToCh12RoadData:
+#incbin "Ch11AToCh12.road.bin"
+
+//Ch9ToCh10B
+ALIGN 4
+Ch9ToCh10BRoadData:
+#incbin "Ch9ToCh10B.road.bin"
+
+//Ch10BToCh11B
+ALIGN 4
+Ch10BToCh11BRoadData:
+#incbin "Ch10BToCh11B.road.bin"
+
+//Ch11BToCh12
+ALIGN 4
+Ch11BToCh12RoadData:
+#incbin "Ch11BToCh12.road.bin"
+
+//Ch12ToCh13
+ALIGN 4
+Ch12ToCh13RoadData:
+#incbin "Ch12ToCh13.road.bin"
+
+//Ch13ToCh14
+ALIGN 4
+Ch13ToCh14RoadData:
+#incbin "Ch13ToCh14.road.bin"
+
+//Ch14ToCh15
+ALIGN 4
+Ch14ToCh15RoadData:
+#incbin "Ch14ToCh15.road.bin"
+
+//Ch15ToCh16
+ALIGN 4
+Ch15ToCh16RoadData:
+#incbin "Ch15ToCh16.road.bin"
+
+//Ch16ToCh17A
+ALIGN 4
+Ch16ToCh17ARoadData:
+#incbin "Ch16ToCh17A.road.bin"
+
+//Ch17AToCh18A
+ALIGN 4
+Ch17AToCh18ARoadData:
+#incbin "Ch17AToCh18A.road.bin"
+
+//Ch18AToCh19A
+ALIGN 4
+Ch18AToCh19ARoadData:
+#incbin "Ch18AToCh19A.road.bin"
+
+//Ch19AToCh20A
+ALIGN 4
+Ch19AToCh20ARoadData:
+#incbin "Ch19AToCh20A.road.bin"
+
+//Ch20AToCh21
+ALIGN 4
+Ch20AToCh21RoadData:
+#incbin "Ch20AToCh21.road.bin"
+
+//Ch16ToCh17B
+ALIGN 4
+Ch16ToCh17BRoadData:
+#incbin "Ch16ToCh17B.road.bin"
+
+//Ch17BToCh18B
+ALIGN 4
+Ch17BToCh18BRoadData:
+#incbin "Ch17BToCh18B.road.bin"
+
+//Ch18BToCh19B_20B
+ALIGN 4
+Ch18BToCh19B_20BRoadData:
+#incbin "Ch18BToCh19B_20B.road.bin"
+
+//Ch19B_20BToCh21
+ALIGN 4
+Ch19B_20BToCh21RoadData:
+#incbin "Ch19B_20BToCh21.road.bin"
+
+//Ch21ToCh22
+ALIGN 4
+Ch21ToCh22RoadData:
+#incbin "Ch21ToCh22.road.bin"
+
+//Ch22ToCh23_24_Final
+ALIGN 4
+Ch22ToCh23_24_FinalRoadData:
+#incbin "Ch22ToCh23_24_Final.road.bin"
+
+*\

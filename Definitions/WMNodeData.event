@@ -1,85 +1,85 @@
 //Might be useful to have these defined properly for WM events?
 
-#define NODE_Ch1_X 328
-#define NODE_Ch1_Y 218
+#define NODE_Ch1_X 312
+#define NODE_Ch1_Y 216
 
 #define NODE_Ch2_X 344
-#define NODE_Ch2_Y 199
+#define NODE_Ch2_Y 216
 
-#define NODE_Ch3_X 320
-#define NODE_Ch3_Y 175
+#define NODE_Ch3_X 312
+#define NODE_Ch3_Y 184
 
-#define NODE_Ch4_X 294
-#define NODE_Ch4_Y 190
+#define NODE_Ch4_X 296
+#define NODE_Ch4_Y 200
 
-#define NODE_Ch5_X 277
-#define NODE_Ch5_Y 188
+#define NODE_Ch5_X 280
+#define NODE_Ch5_Y 184
 
 #define NODE_Ch6_X 264
-#define NODE_Ch6_Y 180
+#define NODE_Ch6_Y 184
 
-#define NODE_Ch7_8_X 245
-#define NODE_Ch7_8_Y 181
+#define NODE_Ch7_8_X 248
+#define NODE_Ch7_8_Y 168
 
-#define NODE_Ch9_X 149
-#define NODE_Ch9_Y 122
+#define NODE_Ch9_X 136
+#define NODE_Ch9_Y 136
 
-#define NODE_Ch10A_X 135
-#define NODE_Ch10A_Y 96
+#define NODE_Ch10A_X 136
+#define NODE_Ch10A_Y 104
 
-#define NODE_Ch11A_X 121
-#define NODE_Ch11A_Y 81
+#define NODE_Ch11A_X 120
+#define NODE_Ch11A_Y 88
 
-#define NODE_Ch10B_X 112
-#define NODE_Ch10B_Y 134
+#define NODE_Ch10B_X 104
+#define NODE_Ch10B_Y 136
 
-#define NODE_Ch11B_X 62
-#define NODE_Ch11B_Y 193
+#define NODE_Ch11B_X 56
+#define NODE_Ch11B_Y 200
 
-#define NODE_Ch12_X 103
-#define NODE_Ch12_Y 94
+#define NODE_Ch12_X 104
+#define NODE_Ch12_Y 104
 
-#define NODE_Ch13_X 64
+#define NODE_Ch13_X 72
 #define NODE_Ch13_Y 264
 
-#define NODE_Ch14_X 167
-#define NODE_Ch14_Y 245
+#define NODE_Ch14_X 168
+#define NODE_Ch14_Y 248
 
-#define NODE_Ch15_X 188
-#define NODE_Ch15_Y 226
+#define NODE_Ch15_X 184
+#define NODE_Ch15_Y 232
 
-#define NODE_Ch16_X 205
-#define NODE_Ch16_Y 162
+#define NODE_Ch16_X 200
+#define NODE_Ch16_Y 184
 
-#define NODE_Ch17A_X 262
-#define NODE_Ch17A_Y 80
+#define NODE_Ch17A_X 264
+#define NODE_Ch17A_Y 88
 
-#define NODE_Ch18A_X 325
-#define NODE_Ch18A_Y 75
+#define NODE_Ch18A_X 328
+#define NODE_Ch18A_Y 72
 
-#define NODE_Ch19A_X 410
-#define NODE_Ch19A_Y 75
+#define NODE_Ch19A_X 408
+#define NODE_Ch19A_Y 72
 
-#define NODE_Ch20A_X 436
-#define NODE_Ch20A_Y 36
+#define NODE_Ch20A_X 440
+#define NODE_Ch20A_Y 56
 
-#define NODE_Ch17B_X 286
-#define NODE_Ch17B_Y 140
+#define NODE_Ch17B_X 280
+#define NODE_Ch17B_Y 152
 
-#define NODE_Ch18B_X 348
-#define NODE_Ch18B_Y 140
+#define NODE_Ch18B_X 376
+#define NODE_Ch18B_Y 136
 
-#define NODE_Ch19B_20B_X 422
-#define NODE_Ch19B_20B_Y 149
+#define NODE_Ch19B_20B_X 424
+#define NODE_Ch19B_20B_Y 152
 
-#define NODE_Ch21_X 432
-#define NODE_Ch21_Y 195
+#define NODE_Ch21_X 440
+#define NODE_Ch21_Y 220
 
-#define NODE_Ch22_X 395
-#define NODE_Ch22_Y 196
+#define NODE_Ch22_X 392
+#define NODE_Ch22_Y 216
 
-#define NODE_Ch23_24_Final_X 391
-#define NODE_Ch23_24_Final_Y 234
+#define NODE_Ch23_24_Final_X 392
+#define NODE_Ch23_24_Final_Y 248
 
-#define NODE_PostGame_X 1225
-#define NODE_PostGame_Y 1225
+#define NODE_PostGame_X 264
+#define NODE_PostGame_Y 248
