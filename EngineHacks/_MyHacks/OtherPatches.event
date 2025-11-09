@@ -48,4 +48,8 @@ BYTE 0x00 0x00 0x00 0x20
 ORG 0xA8B4E
 BYTE 0x02 //Chapter 2
 
+//Change Lv bonus value to be given to the enemy's promoted at normal difficulty
+ORG $037B52
+BYTE 19
+
 POP
