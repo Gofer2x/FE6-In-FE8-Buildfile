@@ -6,10 +6,6 @@ ALIGN 4
 TempDummyRoadData:
 #incbin "RoadData/TempDummyRoad.road.bin"
 
-#define Ch12ToCh13RoadData TempDummyRoadData
-#define Ch13ToCh14RoadData TempDummyRoadData
-#define Ch14ToCh15RoadData TempDummyRoadData
-#define Ch15ToCh16RoadData TempDummyRoadData
 #define Ch16ToCh17ARoadData TempDummyRoadData
 #define Ch17AToCh18ARoadData TempDummyRoadData
 #define Ch18AToCh19ARoadData TempDummyRoadData
@@ -93,17 +89,24 @@ ALIGN 4
 Ch11BToCh12RoadData:
 #incbin "RoadData/Ch11BToCh12.road.bin"
 
-/*
-
 //Ch12ToCh13
 ALIGN 4
 Ch12ToCh13RoadData:
 #incbin "RoadData/Ch12ToCh13.road.bin"
+Ch12ToCh13RoadMovementData:
+RoadMovementItem(512,16,102)
+RoadMovementItem(1024,16,248)
+RoadMovementItem(1280,40,248)
+RoadMovementItem(1536,40,264)
+RoadMovementTerminator
 
 //Ch13ToCh14
 ALIGN 4
 Ch13ToCh14RoadData:
 #incbin "RoadData/Ch13ToCh14.road.bin"
+Ch13ToCh14RoadMovementData:
+RoadMovementItem(512,88,248)
+RoadMovementTerminator
 
 //Ch14ToCh15
 ALIGN 4
@@ -114,6 +117,11 @@ Ch14ToCh15RoadData:
 ALIGN 4
 Ch15ToCh16RoadData:
 #incbin "RoadData/Ch15ToCh16.road.bin"
+Ch15ToCh16RoadMovementData:
+RoadMovementItem(1536,184,206)
+RoadMovementTerminator
+
+/*
 
 //Ch16ToCh17A
 ALIGN 4
