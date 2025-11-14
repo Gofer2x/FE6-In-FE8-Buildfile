@@ -4,7 +4,27 @@ WorldMapPointerTable(CHAPTER_Ch23,AfterPrevious)
 WorldMapIntroPointerTable(CHAPTER_Ch23,CurrentNodeSelect)
 
 AfterPrevious:
-WMEVENT_UnlockNextNodeAfterChapter(NODE_Ch22,ROAD_Ch22ToCh23_24_Final)
+WM_DisableSkip
+WM_SpawnLord(Roy,NODE_Ch22)
+WM_CamOnLord
+WM_Fadeout
+WM_TextDecorate
+WM_EnableSkip
+STAL 20
+
+CALL EVENT_UnlockOtherRouteWM
+STAL 20
+WM_UnlockNode(NODE_PostGame)
+WM_DrawRoadQuiet(ROAD_Ch1ToPostGame)
+
+STAL 20
+WM_UnlockNextNode
+WM_WaitForFX
+STAL 40
+WM_DrawRoad(ROAD_Ch22ToCh23_24_Final)
+STAL 70
+WM_MakeLordVisible
+ENDA
 
 CurrentNodeSelect:
 WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch22,NODE_Ch23_24_Final)

@@ -7,7 +7,7 @@ Look through patches and hacks still not imported from the old project. Hardcodi
 
 
 HIGH PRIORITY
-Finish making WM Roads, and also figure out how their timings actually work.
+Figure out how the WM road movement timings actually work.
 Implement the WM graphic without the dotted locations.
 Oh, and also WM Cutscenes. But ugh those are a pain. I'll be real I probably won't be doing those lol.
 Idunn's dragon mug is glitched? It causes some visual glitches (even with other portraits?) and crashes the game. Or is it something else in the final chapter?

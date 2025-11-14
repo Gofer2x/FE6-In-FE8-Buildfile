@@ -7,3 +7,4 @@
 #include "SpecificEvents/ReviveMerlinus.event"
 #include "SpecificEvents/IdunnDeathBindingBladeCheck.event"
 #include "SpecificEvents/Epilogues.event"
+#include "SpecificEvents/UnlockOtherRoutesWM.event"

@@ -73,7 +73,7 @@
 #define NODE_Ch19B_20B_Y 152
 
 #define NODE_Ch21_X 440
-#define NODE_Ch21_Y 220
+#define NODE_Ch21_Y 216
 
 #define NODE_Ch22_X 392
 #define NODE_Ch22_Y 216

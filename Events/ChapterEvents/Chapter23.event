@@ -233,7 +233,7 @@ PlayMusic(MUS_Triumph)
 Text(BG_Temple1,Ch23_End)
 STAL 64
 ReviveMerlinusIfConfig
-MoveToChapter(CHAPTER_Ch24)
+MoveToChapterWithoutWM(CHAPTER_Ch24)
 ENDA
 
 Armory1List:

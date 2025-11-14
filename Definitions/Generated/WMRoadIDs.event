@@ -29,4 +29,4 @@
 #define BlankRoad1 0x1C
 #define BlankRoad2 0x1D
 #define BlankRoad3 0x1E
-#define BlankRoad4 0x1F
+#define ROAD_Ch1ToPostGame 0x1F

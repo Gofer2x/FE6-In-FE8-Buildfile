@@ -6,15 +6,6 @@ ALIGN 4
 TempDummyRoadData:
 #incbin "RoadData/TempDummyRoad.road.bin"
 
-#define Ch16ToCh17BRoadData TempDummyRoadData
-#define Ch17BToCh18BRoadData TempDummyRoadData
-#define Ch18BToCh19B_20BRoadData TempDummyRoadData
-#define Ch19B_20BToCh21RoadData TempDummyRoadData
-#define Ch21ToCh22RoadData TempDummyRoadData
-#define Ch22ToCh23_24_FinalRoadData TempDummyRoadData
-
-
-
 //Ch1ToCh2
 ALIGN 4
 Ch1ToCh2RoadData:
@@ -151,27 +142,37 @@ ALIGN 4
 Ch20AToCh21RoadData:
 #incbin "RoadData/Ch20AToCh21.road.bin"
 
-/*
-
 //Ch16ToCh17B
 ALIGN 4
 Ch16ToCh17BRoadData:
 #incbin "RoadData/Ch16ToCh17B.road.bin"
+Ch16ToCh17BRoadMovementData:
+RoadMovementItem(1536,232,152)
+RoadMovementTerminator
 
 //Ch17BToCh18B
 ALIGN 4
 Ch17BToCh18BRoadData:
 #incbin "RoadData/Ch17BToCh18B.road.bin"
+Ch17BToCh18BRoadMovementData:
+RoadMovementItem(1536,296,136)
+RoadMovementTerminator
 
 //Ch18BToCh19B_20B
 ALIGN 4
 Ch18BToCh19B_20BRoadData:
 #incbin "RoadData/Ch18BToCh19B_20B.road.bin"
+Ch18BToCh19B_20BRoadMovementData:
+RoadMovementItem(1536,408,136)
+RoadMovementTerminator
 
 //Ch19B_20BToCh21
 ALIGN 4
 Ch19B_20BToCh21RoadData:
 #incbin "RoadData/Ch19B_20BToCh21.road.bin"
+Ch19B_20BToCh21RoadMovementData:
+RoadMovementItem(1536,440,168)
+RoadMovementTerminator
 
 //Ch21ToCh22
 ALIGN 4
@@ -183,4 +184,12 @@ ALIGN 4
 Ch22ToCh23_24_FinalRoadData:
 #incbin "RoadData/Ch22ToCh23_24_Final.road.bin"
 
-*\
+//Ch1ToPostGame
+ALIGN 4
+Ch1ToPostGameRoadData:
+#incbin "RoadData/Ch1ToPostGame.road.bin"
+ALIGN 4
+Ch1ToPostGameRoadMovementData:
+RoadMovementItem(1536,312,240)
+RoadMovementItem(3072,NODE_PostGame_X,240)
+RoadMovementTerminator

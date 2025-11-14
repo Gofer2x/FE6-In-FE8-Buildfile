@@ -292,7 +292,7 @@ PlayMusic(MUS_Triumph)
 Text(BG_Temple1,Ch24_End2)
 STAL 64
 ReviveMerlinusIfConfig
-MoveToChapter(CHAPTER_Final)
+MoveToChapterWithoutWM(CHAPTER_Final)
 ENDA
 
 //MESSAGE Events end at offset CURRENTOFFSET

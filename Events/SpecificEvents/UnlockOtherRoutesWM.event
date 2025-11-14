@@ -1,0 +1,63 @@
+EVENT_UnlockOtherRouteWM:
+
+BranchIfFlagON(1,WestIslesBartreRouteFlag)
+//Unlock Bartre Route
+STAL 20
+WM_UnlockNode(NODE_Ch10B)
+WM_DrawRoadQuiet(ROAD_Ch9ToCh10B)
+STAL 20
+WM_UnlockNode(NODE_Ch11B)
+WM_DrawRoadQuiet(ROAD_Ch10BToCh11B)
+STAL 20
+GOTO 2
+
+LABEL 1
+//Unlock Echidna Route
+STAL 20
+WM_UnlockNode(NODE_Ch10A)
+WM_DrawRoadQuiet(ROAD_Ch9ToCh10A)
+STAL 20
+WM_UnlockNode(NODE_Ch11A)
+WM_DrawRoadQuiet(ROAD_Ch10AToCh11A)
+STAL 20
+
+
+
+LABEL 2
+BranchIfFlagON(3,SacaeRouteFlag)
+//Unlock Sacae Route
+STAL 20
+WM_UnlockNode(NODE_Ch17B)
+WM_DrawRoadQuiet(ROAD_Ch16ToCh17B)
+STAL 20
+WM_UnlockNode(NODE_Ch18B)
+WM_DrawRoadQuiet(ROAD_Ch17BToCh18B)
+STAL 20
+WM_UnlockNode(NODE_Ch19B_20B)
+WM_DrawRoadQuiet(ROAD_Ch18BToCh19B_20B)
+STAL 20
+GOTO 9
+
+LABEL 3
+//Unlock Illia Route
+STAL 20
+WM_UnlockNode(NODE_Ch17A)
+WM_DrawRoadQuiet(ROAD_Ch16ToCh17A)
+STAL 20
+WM_UnlockNode(NODE_Ch18A)
+WM_DrawRoadQuiet(ROAD_Ch17AToCh18A)
+STAL 20
+WM_UnlockNode(NODE_Ch19A)
+WM_DrawRoadQuiet(ROAD_Ch18AToCh19A)
+STAL 20
+WM_UnlockNode(NODE_Ch20A)
+WM_DrawRoadQuiet(ROAD_Ch19AToCh20A)
+STAL 20
+
+
+
+LABEL 9
+ENDA
+
+
+
