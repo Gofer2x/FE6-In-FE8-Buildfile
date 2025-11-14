@@ -54,8 +54,11 @@ MESSAGE Inserting Mugs and Cards at CurrentOffset
 #include "MugsAndCards/_MugsAndCardsInstaller.event"
 MESSAGE "Mugs and Cards Size is {CurrentOffset-MugsStart:N1} Bytes"
 
-//All are inline so no size calc.
+//Only part of this that isn't inline is the Palette Map.
+WorldMapStart:
+MESSAGE Inserting World Map PalMap at CurrentOffset
 #include "WorldMap/WorldMapInstaller.event"
+MESSAGE "World Map PalMap Size is {CurrentOffset-WorldMapStart:N1} Bytes"
 
 PalettesStart:
 MESSAGE Inserting Battle Palettes at CurrentOffset
