@@ -1,0 +1,176 @@
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_TrialSnowyDefensive,ThisChapter)
+EscapePointPointerTable(CHAPTER_TrialSnowyDefensive,0x0)
+NPCEscapePointPointerTable(CHAPTER_TrialSnowyDefensive,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData EmptyTrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadSouthCavs,4)
+TurnEventEnemy(0x0,LoadNorthCavs,8)
+TurnEventEnemy(0x0,LoadSouthFighters,12)
+TurnEventEnemy(0x0,LoadNorthFighters,12)
+TurnEventEnemy(0x0,LoadNorthPegs,16)
+TurnEventEnemy(0x0,LoadSouthPegs,18)
+TurnEventPlayer(0x0,EndingScene,21)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [10,14] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(20,Ally,1) [9,15] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [11,15] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [7,13] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
+UNIT Bors Knight Roy Level(20,Ally,1) [13,13] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [12,12] 0x0 0x0 0x0 0x0 [IronBow, IronBow] DummyAI
+UNIT Dieck Mercenary Roy Level(20,Ally,1) [8,12] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Armorslayer] DummyAI
+UNIT Merlinus Transporter Roy Level(20,Ally,1) [10,11] 0x0 0x0 0x0 0x0 [HandAxe, IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [11,8] 0x0 0x0 0x0 0x0 [SteelBow] DummyAI
+UNIT Igrene SniperF Roy Level(20,Ally,1) [7,18] 0x0 0x0 0x0 0x0 [SilverBow] DummyAI
+UNIT
+
+Enemies:
+UNIT GenericIlliaTrialSnowyDefensive Sniper 0x0 Level(10,Enemy,1) [16,15] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Arch, AI4_DontRetreat]
+UNIT GenericIlliaTrialSnowyDefensive Sniper 0x0 Level(10,Enemy,1) [8,22] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Arch, AI4_DontRetreat]
+UNIT GenericIlliaTrialSnowyDefensive Sniper 0x0 Level(10,Enemy,1) [3,23] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_DontMove, RAI_NoRecovery|TAI_Arch, AI4_DontRetreat]
+UNIT GenericIlliaTrialSnowyDefensive Paladin 0x0 Level(12,Enemy,1) [2,4] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [1,6] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [3,6] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [1,5] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [3,5] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Troubadour 0x0 Level(17,Enemy,1) [2,3] 0x0 0x0 0x0 0x0 [Recover] [AI1_HealAllies, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Paladin 0x0 Level(12,Enemy,1) [25,13] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [23,12] 0x0 0x0 0x0 0x0 [Horseslayer] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [23,14] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [24,12] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(17,Enemy,1) [24,14] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Troubadour 0x0 Level(17,Enemy,1) [26,13] 0x0 0x0 0x0 0x0 [Recover] [AI1_HealAllies, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Falcoknight 0x0 Level(12,Enemy,1) [15,30] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [14,29] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InPlace, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [16,29] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [16,31] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [14,31] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Falcoknight 0x0 Level(12,Enemy,1) [24,2] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [23,1] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InPlace, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [23,3] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [25,1] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(17,Enemy,1) [25,3] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthCavs:
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [17,0] 0x0 0x0 0x1 REDA_15_2 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [17,0] 0x0 0x0 0x1 REDA_17_2 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [15,0] 0x0 0x0 0x1 REDA_16_1 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Paladin 0x0 Level(15,Enemy,1) [15,0] 0x0 0x0 0x1 REDA_16_0 [SilverLance] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthFighters:
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [2,3] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [4,1] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [26,4] 0x0 0x0 0x0 0x0 [Halberd] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [19,8] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthPegs:
+UNIT GenericIlliaTrialSnowyDefensive Falcoknight 0x0 Level(15,Enemy,1) [31,3] 0x0 0x0 0x1 REDA_27_4 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [31,3] 0x0 0x0 0x1 REDA_25_4 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [31,5] 0x0 0x0 0x1 REDA_24_3 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [31,5] 0x0 0x0 0x1 REDA_24_5 [SilverLance] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthCavs:
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [28,26] 0x0 0x0 0x1 REDA_26_26 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [28,26] 0x0 0x0 0x1 REDA_24_26 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Cavalier 0x0 Level(20,Enemy,1) [28,29] 0x0 0x0 0x1 REDA_25_27 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Paladin 0x0 Level(15,Enemy,1) [28,29] 0x0 0x0 0x1 REDA_25_28 [SilverLance] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthFighters:
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [4,27] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [2,28] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [24,30] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive Fighter 0x0 Level(20,Enemy,1) [21,30] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthPegs:
+UNIT GenericIlliaTrialSnowyDefensive Falcoknight 0x0 Level(15,Enemy,1) [4,31] 0x0 0x0 0x1 REDA_5_31 [Axereaver] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [4,31] 0x0 0x0 0x1 REDA_5_30 [SteelLance, Javelin] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [6,31] 0x0 0x0 0x1 REDA_4_29 [Spear] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericIlliaTrialSnowyDefensive PegasusKnight 0x0 Level(20,Enemy,1) [6,31] 0x0 0x0 0x1 REDA_6_29 [SilverLance] [AI1_InRange, AI2_SnowyDefensive, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+GotoPrepScreen
+
+LoadNorthCavs:
+ReinforcementEvent(NorthCavs)
+
+LoadNorthFighters:
+ReinforcementEvent(NorthFighters)
+
+LoadNorthPegs:
+ReinforcementEvent(NorthPegs)
+
+LoadSouthCavs:
+ReinforcementEvent(SouthCavs)
+
+LoadSouthFighters:
+ReinforcementEvent(SouthFighters)
+
+LoadSouthPegs:
+ReinforcementEvent(SouthPegs)
+
+EndingScene:
+MoveToChapterWithoutWM(CHAPTER_PostGame)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

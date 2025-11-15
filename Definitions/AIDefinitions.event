@@ -33,6 +33,8 @@
 #define AI2_DelayedPillageAttack 0x11
 #define AI2_DelayedCharge 0x12
 
+#define AI2_SnowyDefensive 0x0 //TODO make a proper one
+
 
 #define RAI_50_100 0x0
 #define RAI_30_80 0x1

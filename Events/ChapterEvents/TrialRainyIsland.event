@@ -1,0 +1,266 @@
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_TrialRainyIsland,ThisChapter)
+EscapePointPointerTable(CHAPTER_TrialRainyIsland,0x0)
+NPCEscapePointPointerTable(CHAPTER_TrialRainyIsland,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData EmptyTrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadFort2Merc,3)
+TurnEventEnemy(0x0,LoadFort17Nomad,3)
+TurnEventEnemy(0x0,LoadFort11Peg,3)
+TurnEventEnemy(0x0,LoadFort6Fighter,4)
+TurnEventEnemy(0x0,LoadFort1Archer,4)
+TurnEventEnemy(0x0,LoadFort13Merc,4)
+TurnEventEnemy(0x0,LoadFort9Mage,5)
+TurnEventEnemy(0x0,LoadFort10Mage,5)
+TurnEventEnemy(0x0,LoadFort7Fighter,5)
+TurnEventEnemy(0x0,LoadFort12Archer,7)
+TurnEventEnemy(0x0,LoadFort7Fighter,7)
+TurnEventEnemy(0x0,LoadFort10Mage,7)
+TurnEventEnemy(0x0,LoadFort14Peg,8)
+TurnEventEnemy(0x0,LoadFort13Merc,8)
+TurnEventEnemy(0x0,LoadFort1Archer,8)
+TurnEventEnemy(0x0,LoadFort8Merc,9)
+TurnEventEnemy(0x0,LoadFort5Peg,9)
+TurnEventEnemy(0x0,LoadFort11Peg,9)
+TurnEventEnemy(0x0,LoadFort15Fighter,11)
+TurnEventEnemy(0x0,LoadFort3Archer,11)
+TurnEventEnemy(0x0,LoadFort17Nomad,11)
+TurnEventEnemy(0x0,LoadFort19Mage,12)
+TurnEventEnemy(0x0,LoadFort15Fighter,12)
+TurnEventEnemy(0x0,LoadFort2Merc,12)
+TurnEventEnemy(0x0,LoadFort3Archer,13)
+TurnEventEnemy(0x0,LoadFort4Nomad,13)
+TurnEventEnemy(0x0,LoadFort6Fighter,13)
+TurnEventEnemy(0x0,LoadFort5Peg,15)
+TurnEventEnemy(0x0,LoadFort8Merc,15)
+TurnEventEnemy(0x0,LoadFort9Mage,15)
+TurnEventEnemy(0x0,LoadFort13Merc,16)
+TurnEventEnemy(0x0,LoadFort14Peg,16)
+TurnEventEnemy(0x0,LoadFort12Archer,16)
+TurnEventEnemy(0x0,LoadFort7Fighter,17)
+TurnEventEnemy(0x0,LoadFort12Archer,17)
+TurnEventEnemy(0x0,LoadFort14Peg,17)
+TurnEventEnemy(0x0,LoadFort10Mage,18)
+TurnEventEnemy(0x0,LoadFort9Mage,18)
+TurnEventEnemy(0x0,LoadFort4Nomad,18)
+TurnEventPlayer(0x0,EndingScene,21)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [12,14] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(20,Ally,1) [14,14] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [13,15] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [11,15] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
+UNIT Bors Knight Roy Level(20,Ally,1) [12,16] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [11,13] 0x0 0x0 0x0 0x0 [IronBow, IronBow] DummyAI
+UNIT Dieck Mercenary Roy Level(20,Ally,1) [14,16] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(20,Ally,1) [10,14] 0x0 0x0 0x0 0x0 [HandAxe, IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Lot Fighter Roy Level(20,Ally,1) [13,13] 0x0 0x0 0x0 0x0 [IronAxe, SteelAxe] DummyAI
+UNIT Merlinus Transporter Roy Level(20,Ally,1) [12,12] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+
+Enemies:
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [20,4] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [21,8] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [23,13] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [23,18] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [20,20] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [17,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [13,29] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [13,5] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [10,19] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [7,14] 0x0 0x0 0x0 0x0 [Bolting, Fire] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [6,3] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Nomad 0x0 Level(20,Enemy,1) [1,26] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Hero 0x0 Level(10,Enemy,1) [9,23] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Berserker 0x0 Level(10,Enemy,1) [26,16] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Sniper 0x0 Level(10,Enemy,1) [17,1] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Druid 0x0 Level(10,Enemy,1) [1,14] 0x0 0x0 0x0 0x0 [Flux, Sleep] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_Arch, AI4_Retreat]
+UNIT GenericWestIslesTrialRainyIsland Nomad 0x0 Level(20,Enemy,1) [27,5] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort1Archer:
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [6,3] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort2Merc:
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [20,4] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort3Archer:
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [13,5] 0x0 0x0 0x0 0x0 [SilverBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort4Nomad:
+UNIT GenericWestIslesTrialRainyIsland Nomad 0x0 Level(20,Enemy,1) [27,5] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort5Peg:
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [11,8] 0x0 0x0 0x0 0x0 [SteelLance, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort6Fighter:
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [21,8] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort7Fighter:
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [8,10] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort8Merc:
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [17,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort9Mage:
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [23,13] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort10Mage:
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [7,14] 0x0 0x0 0x0 0x0 [Bolting] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort11Peg:
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [3,18] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort12Archer:
+UNIT GenericWestIslesTrialRainyIsland Archer 0x0 Level(20,Enemy,1) [23,18] 0x0 0x0 0x0 0x0 [SteelBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort13Merc:
+UNIT GenericWestIslesTrialRainyIsland Mercenary 0x0 Level(20,Enemy,1) [10,19] 0x0 0x0 0x0 0x0 [LightBrand] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort14Peg:
+UNIT GenericWestIslesTrialRainyIsland PegasusKnight 0x0 Level(20,Enemy,1) [20,20] 0x0 0x0 0x0 0x0 [SilverLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort15Fighter:
+UNIT GenericWestIslesTrialRainyIsland Fighter 0x0 Level(20,Enemy,1) [16,21] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort17Nomad:
+UNIT GenericWestIslesTrialRainyIsland Nomad 0x0 Level(20,Enemy,1) [1,25] 0x0 0x0 0x0 0x0 [ShortBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Fort19Mage:
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,Enemy,1) [13,29] 0x0 0x0 0x0 0x0 [Aircalibur] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+GotoPrepScreen
+
+LoadFort1Archer:
+ReinforcementEvent(Fort1Archer)
+
+LoadFort2Merc:
+ReinforcementEvent(Fort2Merc)
+
+LoadFort3Archer:
+ReinforcementEvent(Fort3Archer)
+
+LoadFort4Nomad:
+ReinforcementEvent(Fort4Nomad)
+
+LoadFort5Peg:
+ReinforcementEvent(Fort5Peg)
+
+LoadFort6Fighter:
+ReinforcementEvent(Fort6Fighter)
+
+LoadFort7Fighter:
+ReinforcementEvent(Fort7Fighter)
+
+LoadFort8Merc:
+ReinforcementEvent(Fort8Merc)
+
+LoadFort9Mage:
+ReinforcementEvent(Fort9Mage)
+
+LoadFort10Mage:
+ReinforcementEvent(Fort10Mage)
+
+LoadFort11Peg:
+ReinforcementEvent(Fort11Peg)
+
+LoadFort12Archer:
+ReinforcementEvent(Fort12Archer)
+
+LoadFort13Merc:
+ReinforcementEvent(Fort13Merc)
+
+LoadFort14Peg:
+ReinforcementEvent(Fort14Peg)
+
+LoadFort15Fighter:
+ReinforcementEvent(Fort15Fighter)
+
+LoadFort17Nomad:
+ReinforcementEvent(Fort17Nomad)
+
+LoadFort19Mage:
+ReinforcementEvent(Fort19Mage)
+
+EndingScene:
+MoveToChapterWithoutWM(CHAPTER_PostGame)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

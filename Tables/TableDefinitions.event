@@ -306,10 +306,20 @@
 #define ChNumber47x 0x5F
 
 //Chapter Goals
+#define StatusGoalCastleGate 0x1A3
+#define StatusGoalThrone 0x1A5
+#define StatusGoalRout 0x1AC
+
 #define WindowGoalGate 0x19F
 #define WindowGoalThrone 0x1A1
-#define StatusGoalGate 0x19F
-#define StatusGoalThrone 0x1A1
+#define WindowGoalRout 0x19E
+#define WindowGoalSurvive 0x19C
+
+#define MiniObjectiveSeize 0x0
+#define MiniObjectiveRout 0x1
+#define MiniObjectiveDefend 0x2
+#define MiniObjectiveDefeatBoss 0x3
+#define MiniObjectiveSpecial 0x4
 
 //MagicBattleAnim
 #define SpellAnim_HandAxe 0x1

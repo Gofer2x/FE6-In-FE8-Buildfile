@@ -1,0 +1,22 @@
+## StatusGoalTempleGate
+Seize the temple[N]
+gate[X]
+
+## StatusGoalIdunn
+Defeat the Demon[N]
+Dragon Idunn[X]
+
+## StatusGoalSurvive20Turns
+Survive 20 turns[X]
+
+## StatusGoalDefend20Turns
+Defend 20 turns[X]
+
+## StatusGoalDefeatLeader
+Defeat the leader[X]
+
+## WindowGoalIdunn
+Defeat Idunn[X]
+
+## WindowGoalDefeatLeader
+Defeat Leader[X]

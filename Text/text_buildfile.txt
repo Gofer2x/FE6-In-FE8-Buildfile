@@ -1,6 +1,6 @@
 #include "SkillSys/loose.txt"
 
-#include "Misc/GoalIdunn.txt"
+#include "Misc/ChapterGoals.txt"
 
 #include "NamesAndDescs/ChapterNames.txt"
 

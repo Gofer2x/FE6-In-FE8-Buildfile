@@ -1,0 +1,153 @@
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_TrialValleyOfDeath,ThisChapter)
+EscapePointPointerTable(CHAPTER_TrialValleyOfDeath,0x0)
+NPCEscapePointPointerTable(CHAPTER_TrialValleyOfDeath,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData EmptyTrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadSouthWestReinforcements,5)
+TurnEventEnemy(0x0,LoadNorthWestReinforcements,10)
+TurnEventEnemy(0x0,LoadSouthEastReinforcements,15)
+TurnEventEnemy(0x0,LoadNorthEastReinforcements,20)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+Seize(2,3)
+END_MAIN
+
+MiscBasedEvents:
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [25,4] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(20,Ally,1) [24,5] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [26,5] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [24,3] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
+UNIT Bors Knight Roy Level(20,Ally,1) [26,3] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [27,4] 0x0 0x0 0x0 0x0 [IronBow, IronBow] DummyAI
+UNIT Dieck Mercenary Roy Level(20,Ally,1) [23,4] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(20,Ally,1) [23,6] 0x0 0x0 0x0 0x0 [HandAxe, IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Lot Fighter Roy Level(20,Ally,1) [22,5] 0x0 0x0 0x0 0x0 [IronAxe, SteelAxe] DummyAI
+UNIT Merlinus Transporter Roy Level(20,Ally,1) [25,6] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+Enemies:
+UNIT BossBanditTrialValleyOfDeath Berserker 0x0 Level(15,Enemy,1) [2,3] 0x0 0x0 0x0 0x0 [KillerAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [21,14] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [23,14] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [22,13] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(10,Enemy,1) [12,8] 0x0 0x0 0x0 0x0 [WoDao] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [13,6] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [11,6] 0x0 0x0 0x0 0x0 [SilverAxe, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [6,7] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [6,9] 0x0 0x0 0x0 0x0 [SilverAxe, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(10,Enemy,1) [7,8] 0x0 0x0 0x0 0x0 [WoDao] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [2,12] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [4,12] 0x0 0x0 0x0 0x0 [SilverAxe, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(10,Enemy,1) [3,13] 0x0 0x0 0x0 0x0 [WoDao] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [4,14] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [2,14] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [1,5] 0x0 0x0 0x0 0x0 [SilverAxe, Elixir] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(12,Enemy,1) [3,5] 0x0 0x0 0x0 0x0 [SilverAxe] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(12,Enemy,1) [2,6] 0x0 0x0 0x0 0x0 [WoDao] [AI1_InRange, AI2_TwoMoves, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(10,Enemy,1) [0,0] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Swordmaster 0x0 Level(10,Enemy,1) [4,0] 0x0 0x0 0x0 0x0 [SilverSword] [AI1_InRange, AI2_DontMove, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [15,4] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [13,9] 0x0 0x0 0x0 0x0 [SteelAxe, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [8,8] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [8,12] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [0,14] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [1,15] 0x0 0x0 0x0 0x0 [SteelAxe, Elixir] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthWestReinforcements:
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(15,Enemy,1) [0,13] 0x0 0x0 0x1 REDA_1_13 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [0,12] 0x0 0x0 0x1 REDA_1_12 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [0,11] 0x0 0x0 0x1 REDA_1_11 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthWestReinforcements:
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(15,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_5_2 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_4_2 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [4,0] 0x0 0x0 0x1 REDA_4_1 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+SouthEastReinforcements:
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(15,Enemy,1) [27,15] 0x0 0x0 0x1 REDA_26_15 [KillerAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [27,14] 0x0 0x0 0x1 REDA_26_14 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [27,13] 0x0 0x0 0x1 REDA_26_13 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+NorthEastReinforcements:
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(15,Enemy,1) [27,0] 0x0 0x0 0x1 REDA_26_0 [KillerAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [27,1] 0x0 0x0 0x1 REDA_26_1 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,Enemy,1) [27,2] 0x0 0x0 0x1 REDA_26_2 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+//The boss having the Boss flag set seems to prevent them from getting autolevels, so let's do this jank to simulate it.
+ApplyBonusLevelsToUnit(BossBanditTrialValleyOfDeath, 33) //A +19 from being promoted, a +14 from being level 5, so +33 total.
+GotoPrepScreen
+
+LoadSouthWestReinforcements:
+ReinforcementEvent(SouthWestReinforcements)
+
+LoadNorthWestReinforcements:
+ReinforcementEvent(NorthWestReinforcements)
+
+LoadSouthEastReinforcements:
+ReinforcementEvent(SouthEastReinforcements)
+
+LoadNorthEastReinforcements:
+ReinforcementEvent(NorthEastReinforcements)
+
+EndingScene:
+MoveToChapterWithoutWM(CHAPTER_PostGame)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

@@ -118,17 +118,20 @@ Beyond Darkness[X]
 ## TutorialChapter_Name
 Tutorial[X]
 
-## Trial_ValleyOfDeath_Name
+## PostGame_Name
+Temple of Trials[X]
+
+## TrialValleyOfDeath_Name
 Valley of Death[X]
 
-## Trial_RainyIsland_Name
+## TrialRainyIsland_Name
 Rainy Island[X]
 
-## Trial_SnowyDefensive_Name
+## TrialSnowyDefensive_Name
 Snowy Defensive[X]
 
-## Trial_PiratesChallenge_Name
+## TrialPiratesChallenge_Name
 Pirate's Challenge[X]
 
-## Trial_RoysTrial
+## TrialRoysTrial_Name
 Roy's Trial[X]

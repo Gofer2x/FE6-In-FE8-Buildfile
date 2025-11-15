@@ -1,0 +1,173 @@
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+#define TrialPiratesChallenge_BossSpawnedFlag 0x7
+
+EventPointerTable(EVENTS_TrialPiratesChallenge,ThisChapter)
+EscapePointPointerTable(CHAPTER_TrialPiratesChallenge,0x0)
+NPCEscapePointPointerTable(CHAPTER_TrialPiratesChallenge,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData EmptyTrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadReinforcements1,3)
+TurnEventEnemy(0x0,LoadReinforcements1,6)
+TurnEventEnemy(0x0,LoadReinforcements1,9)
+TurnEventEnemy(0x0,LoadReinforcements1,12)
+TurnEventEnemy(0x0,LoadReinforcements2,4)
+TurnEventEnemy(0x0,LoadReinforcements2,7)
+TurnEventEnemy(0x0,LoadReinforcements2,10)
+TurnEventEnemy(0x0,LoadReinforcements2,13)
+TurnEventEnemy(0x0,LoadReinforcements3,5)
+TurnEventEnemy(0x0,LoadReinforcements3,8)
+TurnEventEnemy(0x0,LoadReinforcements3,11)
+TurnEventEnemy(0x0,LoadReinforcements3,14)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+DefeatAll(SpawnBoss)
+DefeatBoss(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [17,15] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
+UNIT Marcus Paladin Roy Level(20,Ally,1) [16,16] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
+UNIT Alen Cavalier Roy Level(20,Ally,1) [18,16] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
+UNIT Lance Cavalier Roy Level(20,Ally,1) [18,14] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
+UNIT Bors Knight Roy Level(20,Ally,1) [14,15] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Wolt Archer Roy Level(20,Ally,1) [14,13] 0x0 0x0 0x0 0x0 [IronBow, IronBow] DummyAI
+UNIT Dieck Mercenary Roy Level(20,Ally,1) [17,13] 0x0 0x0 0x0 0x0 [IronSword, IronBlade, Armorslayer] DummyAI
+UNIT Ward Fighter Roy Level(20,Ally,1) [19,13] 0x0 0x0 0x0 0x0 [HandAxe, IronAxe, Hammer, Vulnerary] DummyAI
+UNIT Lot Fighter Roy Level(20,Ally,1) [19,15] 0x0 0x0 0x0 0x0 [IronAxe, SteelAxe] DummyAI
+UNIT Merlinus Transporter Roy Level(20,Ally,1) [17,17] 0x0 0x0 0x0 0x0 [] DummyAI
+UNIT
+
+Enemies:
+UNIT GenericPirateTrialPiratesChallenge Berserker 0x0 Level(10,Enemy,1) [7,2] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [10,6] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [28,2] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(16,Enemy,1) [27,21] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [26,23] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Sage 0x0 Level(15,Enemy,1) [22,17] 0x0 0x0 0x0 0x0 [Elfire, Mend] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Berserker 0x0 Level(10,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [17,2] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [28,12] 0x0 0x0 0x0 0x0 [Horseslayer, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [4,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(16,Enemy,1) [15,26] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [17,26] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Druid 0x0 Level(15,Enemy,1) [10,18] 0x0 0x0 0x0 0x0 [Nosferatu, Physic] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [23,5] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [23,7] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [22,28] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(15,Enemy,1) [6,25] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernLord 0x0 Level(7,Enemy,1) [9,28] 0x0 0x0 0x0 0x0 [SilverLance, Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Sniper 0x0 Level(15,Enemy,1) [19,20] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Mercenary 0x0 Level(10,Enemy,1) [14,19] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Mercenary 0x0 Level(11,Enemy,1) [19,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Mercenary 0x0 Level(10,Enemy,1) [20,12] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Mercenary 0x0 Level(11,Enemy,1) [12,17] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Mercenary 0x0 Level(10,Enemy,1) [14,10] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Archer 0x0 Level(15,Enemy,1) [15,18] 0x0 0x0 0x0 0x0 [KillerBow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Archer 0x0 Level(14,Enemy,1) [21,15] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Reinforcements1:
+UNIT GenericPirateTrialPiratesChallenge Berserker 0x0 Level(10,Enemy,1) [7,2] 0x0 0x0 0x0 0x0 [KillerAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [10,6] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [28,2] 0x0 0x0 0x0 0x0 [Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(16,Enemy,1) [27,21] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [26,23] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Sage 0x0 Level(15,Enemy,1) [22,17] 0x0 0x0 0x0 0x0 [Elfire, Mend] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [4,6] 0x0 0x0 0x0 0x0 [SteelLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Reinforcements2:
+UNIT GenericPirateTrialPiratesChallenge Berserker 0x0 Level(10,Enemy,1) [14,2] 0x0 0x0 0x0 0x0 [SilverAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [17,2] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(18,Enemy,1) [28,12] 0x0 0x0 0x0 0x0 [Horseslayer, Javelin] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(16,Enemy,1) [15,26] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [17,26] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Druid 0x0 Level(15,Enemy,1) [10,18] 0x0 0x0 0x0 0x0 [Nosferatu, Physic] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+Reinforcements3:
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [23,5] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(17,Enemy,1) [23,7] 0x0 0x0 0x0 0x0 [SteelAxe, HandAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,Enemy,1) [22,28] 0x0 0x0 0x0 0x0 [PoisonAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernRider 0x0 Level(15,Enemy,1) [6,25] 0x0 0x0 0x0 0x0 [KillerLance] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge WyvernLord 0x0 Level(7,Enemy,1) [9,28] 0x0 0x0 0x0 0x0 [SilverLance, Spear] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT GenericPirateTrialPiratesChallenge Sniper 0x0 Level(15,Enemy,1) [19,20] 0x0 0x0 0x0 0x0 [Longbow] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+BigBoss:
+UNIT BossTrialPiratesChallenge Berserker 0x0 Level(20,Enemy,1) [1,14] 0x0 0x0 0x1 REDA_3_16 [SilverAxe] [AI1_InRange, AI2_Charge, RAI_NoRecovery|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+CALL SpawnBoss
+GotoPrepScreen
+
+LoadReinforcements1:
+ReinforcementEvent(Reinforcements1)
+
+LoadReinforcements2:
+ReinforcementEvent(Reinforcements2)
+
+LoadReinforcements3:
+ReinforcementEvent(Reinforcements3)
+
+SpawnBoss:
+LoadReinforcements(BigBoss)
+//The boss having the Boss flag set seems to prevent them from getting autolevels, so let's do this jank to simulate it.
+ApplyBonusLevelsToUnit(BossTrialPiratesChallenge, 38) //A +19 from being promoted, a +19 from being level 20, so +38 total.
+EndEvent
+
+EndingScene:
+MoveToChapterWithoutWM(CHAPTER_PostGame)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET

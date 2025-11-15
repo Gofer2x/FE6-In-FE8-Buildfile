@@ -121,5 +121,6 @@ DeathQuote(GenericSoldierPercevalCh13_Ch15_3,AnyChapter,Ch13_Ch15_GenericSoldier
 DeathQuote(GenericSoldierPercevalCh13_Ch15_4,AnyChapter,Ch13_Ch15_GenericSoldierPercevalDeathFlag,0x0)
 DeathQuote(GenericCitizenIlliaCh20A,AnyChapter,Ch20A_GenericCitizenIlliaDeathFlag,0x0)
 
+DeathQuote(BossTrialPiratesChallenge,AnyChapter,BossDefeatFlag,0x0)
 
 DeathQuote(0xFFFF,2,0,0) // terminator

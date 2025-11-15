@@ -120,3 +120,18 @@
 {
 #include "ChapterEvents/Final.event"
 }
+{
+#include "ChapterEvents/TrialValleyOfDeath.event"
+}
+{
+#include "ChapterEvents/TrialRainyIsland.event"
+}
+{
+#include "ChapterEvents/TrialSnowyDefensive.event"
+}
+{
+#include "ChapterEvents/TrialPiratesChallenge.event"
+}
+{
+#include "ChapterEvents/TrialRoysTrial.event"
+}

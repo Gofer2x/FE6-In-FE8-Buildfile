@@ -102,3 +102,6 @@ who support Bern.[X]
 ## GenericDesc_OstianHelpers
 Ostian soldiers helping[N]
 with Roy's training.[X]
+
+## GenericDesc_BossTrialMap
+Boss of this trial map.[X]

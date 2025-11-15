@@ -1,0 +1,149 @@
+//Made by Camtech075 of SerenesForest
+//Modified by Nintenlord
+
+#include EAstdlib.event
+
+//Flags/EventIDs
+//BossQuoteFlag 0x1
+//BossDefeatFlag 0x2
+//SeizeFlag 0x3
+//SecondBGMFlag 0x4
+// 0x5
+//RoutFlag 0x6
+
+EventPointerTable(EVENTS_TrialRoysTrial,ThisChapter)
+EscapePointPointerTable(CHAPTER_TrialRoysTrial,0x0)
+NPCEscapePointPointerTable(CHAPTER_TrialRoysTrial,0x0)
+
+ALIGN 4
+
+ThisChapter:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN Dunno Dunno Dunno
+POIN Tutorial
+POIN TrapData EmptyTrapData
+POIN Units Units
+POIN $0 $0 $0 $0 $0 $0
+POIN BeginningScene EndingScene
+
+TurnBasedEvents:
+TurnEventEnemy(0x0,LoadFighter1,10,12)
+TurnEventEnemy(0x0,LoadFighter2,12,12)
+TurnEventEnemy(0x0,LoadFighter3,14,12)
+TurnEventEnemy(0x0,LoadFighter4,16,12)
+TurnEventEnemy(0x0,LoadFighter5,18,12)
+TurnEventEnemy(0x0,LoadFighter6,20,12)
+END_MAIN
+ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+DefeatAll(EndingScene)
+CauseGameOverIfLordDies
+END_MAIN
+
+Dunno:
+END_MAIN
+
+Tutorial:
+END_MAIN
+
+TrapData:
+ENDTRAP
+
+ALIGN 4
+
+Units:
+UNIT Roy RoyLord 0x0 Level(1,Ally,0) [16,14] 0x0 0x0 0x0 0x0 [Rapier, Vulnerary] DummyAI
+UNIT
+
+Enemies:
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [13,10] 0x0 0x0 0x0 0x0 [SilverAxe, SteelBow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [20,10] 0x0 0x0 0x0 0x0 [KillerAxe, SteelBow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [21,16] 0x0 0x0 0x0 0x0 [Halberd, SteelBow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [17,20] 0x0 0x0 0x0 0x0 [SilverBow, SteelAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [12,18] 0x0 0x0 0x0 0x0 [KillerBow, SteelAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,Enemy,1) [10,14] 0x0 0x0 0x0 0x0 [Longbow, SteelAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [4,1] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [0,5] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [2,21] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Mercenary 0x0 Level(18,Enemy,1) [4,26] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [1,30] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [10,30] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Mercenary 0x0 Level(18,Enemy,1) [18,25] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [29,26] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [31,13] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [30,5] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Mercenary 0x0 Level(18,Enemy,1) [27,1] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [21,1] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [8,0] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Mercenary 0x0 Level(18,Enemy,1) [2,16] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(18,Enemy,1) [3,10] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(12,Enemy,1) [13,13] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(12,Enemy,1) [21,13] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Mercenary 0x0 Level(12,Enemy,1) [18,11] 0x0 0x0 0x0 0x0 [SteelSword] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(12,Enemy,1) [15,18] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter1:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [13,10] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter2:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [20,10] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter3:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [21,16] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter4:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [17,20] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter5:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [12,18] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+Fighter6:
+UNIT GenericBanditTrialRoysTrial Fighter 0x0 Level(15,Enemy,1) [10,14] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InRange, AI2_Charge, RAI_30_80|TAI_HP, AI4_Retreat]
+UNIT
+
+ALIGN 4
+
+BeginningScene:
+LOAD1 0x1 Enemies
+ENUN
+GotoPrepScreen
+
+LoadFighter1:
+ReinforcementEvent(Fighter1)
+
+LoadFighter2:
+ReinforcementEvent(Fighter2)
+
+LoadFighter3:
+ReinforcementEvent(Fighter3)
+
+LoadFighter4:
+ReinforcementEvent(Fighter4)
+
+LoadFighter5:
+ReinforcementEvent(Fighter5)
+
+LoadFighter6:
+ReinforcementEvent(Fighter6)
+
+EndingScene:
+MoveToChapterWithoutWM(CHAPTER_PostGame)
+ENDA
+
+//MESSAGE Events end at offset CURRENTOFFSET
