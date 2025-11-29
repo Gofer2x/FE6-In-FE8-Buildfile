@@ -12,6 +12,7 @@
 //RoutFlag 0x6
 #define Ch4_ClarineRoyTalkFlag 0x7
 #define Ch4_ClarineRutgerTalkFlag 0x8
+#define Ch4_ClarineRecruitedRefreshFlag 0x9
 
 EventPointerTable(EVENTS_Ch4,ThisChapter)
 EscapePointPointerTable(CHAPTER_Ch4,0x0)
@@ -32,6 +33,7 @@ POIN $0 $0 $0 $0 $0 $0
 POIN BeginningScene EndingScene
 
 TurnBasedEvents:
+TurnEventPlayer(Ch4_ClarineRecruitedRefreshFlag,ClarineRefreshEvent,1,255)
 TurnEventNPC(0x0,RutgerClarineEvent1,2)
 TurnEventNPC(0x0,RutgerClarineEvent2,3)
 TurnEventEnemy(0x0,PiratesAppear,4)
@@ -258,6 +260,19 @@ SwitchMusic(MUS_JoinUs)
 Text(BG_Outside, Ch4_ClarineRecruitsRutger)
 BecomeAlly(Rutger)
 RestoreMusic
+EndEvent
+
+//Some part of Skillsys causes Clarine to not get her turn after recruiting herself, so this is a workaround.
+ClarineRefreshEvent:
+BranchIfFlagON(1,Ch4_ClarineRoyTalkFlag)
+FlagOFF(Ch4_ClarineRecruitedRefreshFlag)
+GOTO 9
+
+LABEL 1
+SVAL s1 0x2 //Already Moved
+UNSET_CONDITION Clarine
+
+LABEL 9
 EndEvent
 
 DoorKeyVillageVisit:
