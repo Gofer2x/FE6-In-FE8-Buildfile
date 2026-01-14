@@ -131,8 +131,8 @@ BYTE DemonDragon
 ORG 0x002B62C
 BYTE DemonDragon
 //Silencer-Immune Class INCOMPATIBLE WITH SKILLSYSTEMS!
-ORG 0x0024506 
-BYTE DemonDragon
+//ORG 0x0024506 
+//BYTE DemonDragon
 //Demon King Multi-Summon Class
 ORG 0x024506
 BYTE SacrificialClass
