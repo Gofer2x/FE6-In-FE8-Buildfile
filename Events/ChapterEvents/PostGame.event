@@ -34,6 +34,12 @@ END_MAIN
 ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
 
 CharacterBasedEvents:
+CharacterEvent(0x0,ReturnTalk,Roy,IdunnHuman)
+CharacterEvent(0x0,ValleyOfDeathTalk,Roy,GenericBanditTrialValleyOfDeath)
+CharacterEvent(0x0,RainyIslandTalk,Roy,GenericWestIslesTrialRainyIsland)
+CharacterEvent(0x0,SnowyDefensiveTalk,Roy,GenericIlliaTrialSnowyDefensive)
+CharacterEvent(0x0,PiratesChallengeTalk,Roy,GenericPirateTrialPiratesChallenge)
+CharacterEvent(0x0,RoysTrialTalk,Roy,GenericBanditTrialRoysTrial)
 END_MAIN
 
 LocationBasedEvents:
@@ -55,27 +61,70 @@ ENDTRAP
 ALIGN 4
 
 Units:
-UNIT Roy RoyLord 0x0 Level(20,Ally,1) [25,4] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
-UNIT Marcus Paladin Roy Level(20,Ally,1) [24,5] 0x0 0x0 0x0 0x0 [IronLance] DummyAI
-UNIT Alen Cavalier Roy Level(20,Ally,1) [26,5] 0x0 0x0 0x0 0x0 [IronSword, IronLance, Vulnerary] DummyAI
-UNIT Lance Cavalier Roy Level(20,Ally,1) [24,3] 0x0 0x0 0x0 0x0 [IronSword, Javelin, Vulnerary, IronLance] DummyAI
-UNIT Bors Knight Roy Level(20,Ally,1) [26,3] 0x0 0x0 0x0 0x0 [SilverLance, IronLance, IronLance] DummyAI
+UNIT Roy RoyLord 0x0 Level(20,Ally,1) [8,11] 0x0 0x0 0x0 0x0 [Rapier, IronSword, Vulnerary] DummyAI
 UNIT
 
 Enemies:
+UNIT IdunnHuman ShamanF 0x0 Level(20,NPC,1) [8,16] 0x0 0x0 0x0 0x0 [Elixir] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialValleyOfDeath Berserker 0x0 Level(10,NPC,1) [4,9] 0x0 0x0 0x0 0x0 [SteelAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericWestIslesTrialRainyIsland Mage 0x0 Level(20,NPC,1) [6,9] 0x0 0x0 0x0 0x0 [Elfire] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericIlliaTrialSnowyDefensive Falcoknight 0x0 Level(15,NPC,1) [8,9] 0x0 0x0 0x0 0x0 [Axereaver] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericPirateTrialPiratesChallenge Pirate 0x0 Level(15,NPC,1) [10,9] 0x0 0x0 0x0 0x0 [PoisonAxe, HandAxe] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
+UNIT GenericBanditTrialRoysTrial Warrior 0x0 Level(10,NPC,1) [12,9] 0x0 0x0 0x0 0x0 [SilverAxe, SteelBow] [AI1_InPlace, AI2_DontMove, RAI_30_80|TAI_HP, AI4_DontRetreat]
 UNIT
 
 ALIGN 4
 
+ReturnTalk:
+TextWindow(PostGame_ReturnToWorldMap)
+IfNoSelectedGoto(1)
+ReturnToWorldMap
+LABEL 1
+EndEvent
+
+ValleyOfDeathTalk:
+TextWindow(PostGame_StartValleyOfDeath)
+IfNoSelectedGoto(1)
+MoveToChapterWithoutWM(CHAPTER_TrialValleyOfDeath)
+LABEL 1
+EndEvent
+
+RainyIslandTalk:
+TextWindow(PostGame_StartRainyIsland)
+IfNoSelectedGoto(1)
+MoveToChapterWithoutWM(CHAPTER_TrialRainyIsland)
+LABEL 1
+EndEvent
+
+SnowyDefensiveTalk:
+TextWindow(PostGame_StartSnowyDefensive)
+IfNoSelectedGoto(1)
+MoveToChapterWithoutWM(CHAPTER_TrialSnowyDefensive)
+LABEL 1
+EndEvent
+
+PiratesChallengeTalk:
+TextWindow(PostGame_StartPiratesChallenge)
+IfNoSelectedGoto(1)
+MoveToChapterWithoutWM(CHAPTER_TrialPiratesChallenge)
+LABEL 1
+EndEvent
+
+RoysTrialTalk:
+TextWindow(PostGame_StartRoysTrial)
+IfNoSelectedGoto(1)
+MoveToChapterWithoutWM(CHAPTER_TrialRoysTrial)
+LABEL 1
+EndEvent
+
 BeginningScene:
+FlagON(DisableObjectiveWindowFlag)
+LOAD3 0x0 Units
 LOAD1 0x1 Enemies
 ENUN
-//The boss having the Boss flag set seems to prevent them from getting autolevels, so let's do this jank to simulate it.
-ApplyBonusLevelsToUnit(BossBanditTrialValleyOfDeath, 33) //A +19 from being promoted, a +14 from being level 5, so +33 total.
-GotoPrepScreen
+EndEvent
 
 EndingScene:
-MoveToChapterWithoutWM(CHAPTER_PostGame)
 ENDA
 
 //MESSAGE Events end at offset CURRENTOFFSET

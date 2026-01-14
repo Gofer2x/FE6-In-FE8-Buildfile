@@ -83,4 +83,4 @@ Bern Keep[X]
 Dragon Sanctuary[X]
 
 ## PostGame_NodeName
-Temple Of Trials[X]
+Trial Temple[X]

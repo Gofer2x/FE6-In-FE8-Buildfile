@@ -1,6 +1,7 @@
 #include "SkillSys/loose.txt"
 
 #include "Misc/ChapterGoals.txt"
+#include "Misc/ChapterPrefixes.txt"
 
 #include "NamesAndDescs/ChapterNames.txt"
 
@@ -66,6 +67,7 @@
 #include "Events/Chapter24.txt"
 #include "Events/Final.txt"
 #include "Events/Epilogue.txt"
+#include "Events/PostGame.txt"
 #include "Events/WMEvents.txt"
 
 #include "MetaDev.txt"

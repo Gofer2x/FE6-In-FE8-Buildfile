@@ -1,0 +1,17 @@
+## PostGame_ReturnToWorldMap
+Return to the World Map?[AN][Yes][X]
+
+## PostGame_StartValleyOfDeath
+Start Valley of Death?[AN][Yes][X]
+
+## PostGame_StartRainyIsland
+Start Rainy Island?[AN][Yes][X]
+
+## PostGame_StartSnowyDefensive
+Start Snowy Defensive?[AN][Yes][X]
+
+## PostGame_StartPiratesChallenge
+Start Pirate's Challenge?[AN][Yes][X]
+
+## PostGame_StartRoysTrial
+Start Roy's Trial?[AN][Yes][X]

@@ -28,6 +28,12 @@ SpecialChapter:
 //SHORT 0x16 0x159
 //SHORT 0x22 0x159
 SHORT CHAPTER_Final 0x159
+SHORT CHAPTER_PostGame PostGameChapterPrefix
+SHORT CHAPTER_TrialValleyOfDeath TrialMapChapterPrefix
+SHORT CHAPTER_TrialRainyIsland TrialMapChapterPrefix
+SHORT CHAPTER_TrialSnowyDefensive TrialMapChapterPrefix
+SHORT CHAPTER_TrialPiratesChallenge TrialMapChapterPrefix
+SHORT CHAPTER_TrialRoysTrial TrialMapChapterPrefix
 WORD 0x0
 
 ALIGN 4

@@ -121,6 +121,9 @@
 #include "ChapterEvents/Final.event"
 }
 {
+#include "ChapterEvents/PostGame.event"
+}
+{
 #include "ChapterEvents/TrialValleyOfDeath.event"
 }
 {
