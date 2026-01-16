@@ -18,6 +18,8 @@ For information about how to insert new data, various helper scripts used etc. p
   
     -  All gaidens, Ch8, Ch20B, Ch24.
 
+- At the start of the game you can enable Casual and/or Fixed Growths modes.
+
 -  The Trial Maps are implemented via a temple on Valor (the Dread Isle). It's unlocked after beating Ch21.
   
 -  The Torch staff has its FE7/FE8 behavior.
