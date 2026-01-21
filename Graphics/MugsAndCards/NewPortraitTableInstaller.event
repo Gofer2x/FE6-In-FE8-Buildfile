@@ -13,7 +13,8 @@ PUSH
 ORG $5524
 POIN NewPortraitTable
 POP
-  
+
+#undef PortraitTable
 #define PortraitTable NewPortraitTable
 
 //MESSAGE New Portrait Table at PortraitTable
