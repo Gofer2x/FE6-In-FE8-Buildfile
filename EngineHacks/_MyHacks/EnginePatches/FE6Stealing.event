@@ -1,0 +1,15 @@
+//Remove higher Speed requirement for stealing
+
+//AddAsTarget_IfCanStealFrom
+//Replace BLT with NOP
+PUSH
+ORG 0x25BBE
+BYTE 0x0 0x0
+POP
+
+//AiAttemptStealActionWithinMovement
+//Ditto
+PUSH
+ORG 0x3DC08
+BYTE 0x0 0x0
+POP

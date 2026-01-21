@@ -20,6 +20,7 @@
 
 #include "EnginePatches/Chapternamesastext2.1/fe8_chnames.event"
 #include "EnginePatches/PortraitHeightFix.event"
+#include "EnginePatches/FE6Stealing.event"
 
 #include "AIPatches/AIChanges.event"
 #include "AIPatches/AI_TalkAI/TalkAI.event"
