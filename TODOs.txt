@@ -19,7 +19,7 @@ MEDIUM PRIORITY
 
 
 LOW PRIORITY
-The big world map implementation is VERY BAD. UndoBuffer cheese. I have no idea how the Palette Map works.
+The big world map implementation is VERY BAD. UndoBuffer cheese. I also have no idea how the Palette Map works.
 Ch16x background.
 Bard and Dancer map sounds are weird.
 	Dancer seems to use the vanilla FE8 one, replace it? Bard's is just wrong.
@@ -31,7 +31,7 @@ Importing music via FEB can use the wrong priority due to how prio is(n't) imple
 NEED PATCHES
 Ch21x traps...? Some might be possible to recreate with eventing, but not all for sure.
 Is there some way to bypass the palette limitations for Fae's animations?
-
+The current way of implementing FE6 (no equal or higher speed required) stealing is pretty dumb, just a NOP in place of a BLT. It's also incompatible with Skillsys' ENABLE_STEAL_SKILL config. I can't read Assembly so in no rush to edit it myself though.
 
 
 MISC
