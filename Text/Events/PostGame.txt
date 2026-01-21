@@ -1,5 +1,39 @@
 ## PostGame_ReturnToWorldMap
-Return to the World Map?[AN][Yes][X]
+[LoadIdunnHuman]Return to the World Map?[AN][Yes][X]
+
+## PostGame_ValleyOfDeathDesc
+[OpenFarRight][LoadBanditKid]
+Roy receives a report of bandits in[N]
+the mountains of northern Lycia.[AN]
+Masters of death-dealing blows await[N]
+his army.[A][X]
+
+## PostGame_RainyIslandDesc
+[OpenFarRight][LoadScott]
+While marching through the Western[N]
+Isles, Roy's army gets stuck in[AN]
+rain. Enemies pounce from the mist.[A][X]
+
+## PostGame_SnowyDefensiveDesc
+[OpenFarRight][LoadSigune]
+Roy is awaiting the arrival of an allied[N]
+army in an old Ilian castle when a surprise[AN]
+attack commences. Can Roy's army defend[N]
+the castle until the allied army arrives?[A][X]
+
+## PostGame_PiratesChallengeDesc
+[OpenFarRight][LoadScollan]
+Roy receives a letter from the boss of a[N]
+group of bandits in the Western Isles.[AN]
+"It's time we settle this. Beat my men and[N]
+I'll give you the honor of fighting me!"[A][X]
+
+## PostGame_RoysTrialDesc
+[OpenFarRight][LoadMaggie]
+Roy falls into a trap in the Nabata desert[N]
+and is separated from his soldiers.[AN]
+Bandits move in to strike. Can Roy survive[N]
+this onslaught all by himself?[A][X]
 
 ## PostGame_StartValleyOfDeath
 Start Valley of Death?[AN][Yes][X]

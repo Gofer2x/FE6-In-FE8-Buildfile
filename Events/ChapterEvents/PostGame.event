@@ -76,13 +76,14 @@ UNIT
 ALIGN 4
 
 ReturnTalk:
-TextWindow(PostGame_ReturnToWorldMap)
+Text(PostGame_ReturnToWorldMap)
 IfNoSelectedGoto(1)
 ReturnToWorldMap
 LABEL 1
 EndEvent
 
 ValleyOfDeathTalk:
+Text(PostGame_ValleyOfDeathDesc)
 TextWindow(PostGame_StartValleyOfDeath)
 IfNoSelectedGoto(1)
 MoveToChapterWithoutWM(CHAPTER_TrialValleyOfDeath)
@@ -90,6 +91,7 @@ LABEL 1
 EndEvent
 
 RainyIslandTalk:
+Text(PostGame_RainyIslandDesc)
 TextWindow(PostGame_StartRainyIsland)
 IfNoSelectedGoto(1)
 MoveToChapterWithoutWM(CHAPTER_TrialRainyIsland)
@@ -97,6 +99,7 @@ LABEL 1
 EndEvent
 
 SnowyDefensiveTalk:
+Text(PostGame_SnowyDefensiveDesc)
 TextWindow(PostGame_StartSnowyDefensive)
 IfNoSelectedGoto(1)
 MoveToChapterWithoutWM(CHAPTER_TrialSnowyDefensive)
@@ -104,6 +107,7 @@ LABEL 1
 EndEvent
 
 PiratesChallengeTalk:
+Text(PostGame_PiratesChallengeDesc)
 TextWindow(PostGame_StartPiratesChallenge)
 IfNoSelectedGoto(1)
 MoveToChapterWithoutWM(CHAPTER_TrialPiratesChallenge)
@@ -111,6 +115,7 @@ LABEL 1
 EndEvent
 
 RoysTrialTalk:
+Text(PostGame_RoysTrialDesc)
 TextWindow(PostGame_StartRoysTrial)
 IfNoSelectedGoto(1)
 MoveToChapterWithoutWM(CHAPTER_TrialRoysTrial)

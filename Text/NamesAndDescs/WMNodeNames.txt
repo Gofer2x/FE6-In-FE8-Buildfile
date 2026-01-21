@@ -80,7 +80,7 @@ Shrine of Seals[X]
 Bern Keep[X]
 
 ## Ch23_24_Final_NodeName
-Dragon Sanctuary[X]
+Dragon Temple[X]
 
 ## PostGame_NodeName
 Trial Temple[X]
