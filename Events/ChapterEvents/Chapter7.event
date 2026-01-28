@@ -70,10 +70,9 @@ Village(0x0,KillingEdgeVillageVisit,13,24)
 Village(0x0,HorseslayerVillageVisit,19,15)
 Chest(Rapier,18,1)
 Chest(Barrier,20,1)
-Vendor(VendorList,2,12)
-Armory(Armory1List,14,10)
-Armory(Armory2List,19,11)
-Armory(Armory2List,19,11)
+Vendor(Ch7_VendorList,2,12)
+Armory(Ch7_Armory1List,14,10)
+Armory(Ch7_Armory2List,19,11)
 Door(4,8)
 Door(5,8)
 Door(17,3)
@@ -371,16 +370,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapterWithoutWM(CHAPTER_Ch8)
 ENDA
-
-VendorList:
-SHLI Fire Thunder Heal Mend Vulnerary DoorKey ChestKey5Uses
-
-Armory1List:
-SHLI SlimSword IronSword SteelSword IronBlade IronAxe SteelAxe HandAxe
-
-Armory2List:
-SHLI SlimLance IronLance SteelLance Javelin IronBow SteelBow
-
-
 
 //MESSAGE Events end at offset CURRENTOFFSET

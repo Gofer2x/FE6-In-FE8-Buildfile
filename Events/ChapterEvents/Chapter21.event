@@ -78,9 +78,9 @@ END_MAIN
 LocationBasedEvents:
 Seize(24,27)
 Village(0x0,KnightCrestVillageVisit,11,11)
-Armory(ArmoryList,5,1)
-Vendor(VendorList,9,1)
-SecretShop(SecretShopList,30,13)
+Armory(Ch21_ArmoryList,5,1)
+Vendor(Ch21_VendorList,9,1)
+SecretShop(Ch21_SecretShopList,30,13)
 END_MAIN
 
 MiscBasedEvents:
@@ -462,14 +462,5 @@ CALL EVENT_BindingBladeAndRoyPromo
 
 LABEL 9
 ENDA
-
-ArmoryList:
-SHLI SilverSword SilverBlade Armorslayer SilverLance Horseslayer SilverAxe Halberd SilverBow
-
-VendorList:
-SHLI Thunder Elfire Lightning Divine Flux Heal Mend Physic PureWater DoorKey ChestKey5Uses
-
-SecretShopList:
-SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe EnergyRing SecretBook Speedwings GoddessIcon Dragonshield Talisman BodyRing Boots Bolting Purge Eclipse
 
 //MESSAGE Events end at offset CURRENTOFFSET

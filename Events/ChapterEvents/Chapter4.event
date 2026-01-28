@@ -54,8 +54,8 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(3,8)
-Vendor(VendorList,13,15)
-Armory(ArmoryList,11,14)
+Vendor(Ch4_VendorList,13,15)
+Armory(Ch4_ArmoryList,11,14)
 Village(0x0,DoorKeyVillageVisit,27,2)
 Village(0x0,SteelBladeVillageVisit,11,4)
 Village(0x0,AngelicRobeVillageVisit,8,15)
@@ -307,11 +307,5 @@ STAL 64
 MoveToChapter(CHAPTER_Ch5)
 ReviveMerlinusIfConfig
 ENDA
-
-VendorList:
-SHLI Fire Heal Vulnerary
-
-ArmoryList:
-SHLI SlimSword IronSword SlimLance IronLance Javelin IronAxe HandAxe IronBow
 
 //MESSAGE Events end at offset CURRENTOFFSET

@@ -50,7 +50,7 @@ House(0x0,IvoryDevilHouseVisit,1,19)
 House(0x0,PegasiBallistaeSiguneHouseVisit,3,17)
 House(0x0,BallistaRangeHouseVisit,1,14)
 House(0x0,EdessaHouseVisit,3,11)
-Vendor(VendorList,4,18)
+Vendor(Ch19A_VendorList,4,18)
 END_MAIN
 
 MiscBasedEvents:
@@ -224,8 +224,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch20A)
 ENDA
-
-VendorList:
-SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
 
 //MESSAGE Events end at offset CURRENTOFFSET

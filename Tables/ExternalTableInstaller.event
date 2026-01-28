@@ -7,6 +7,7 @@
 #include "ExternalTables/NewForcedDeploymentTable.event"
 #include "ExternalTables/NewPromotionTables.event"
 #include "ExternalTables/NewArenaTables.event"
+#include "ExternalTables/Shops.event"
 
 #include "ExternalTables/EditAIItemUseTable.event"
 

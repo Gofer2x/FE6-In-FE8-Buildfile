@@ -42,8 +42,8 @@ END_MAIN
 LocationBasedEvents:
 Seize(16,3)
 Village(0x0,VillageVisit,3,4)
-Vendor(VendorList,7,9)
-Armory(ArmoryList,6,1)
+Vendor(Ch2_VendorList,7,9)
+Armory(Ch2_ArmoryList,6,1)
 House(0x0,FliersHouseVisit,6,7)
 House(0x0,WeaponTriangleHouseVisit,0,4)
 House(0x0,FortsHouseVisit,5,7)
@@ -132,12 +132,6 @@ UNIT
 CutsceneMelady:
 UNIT Melady WyvernRider 0x0 Level(10,Enemy,0) [16,3] 0x0 0x0 0x0 0x0 [SteelLance] DummyAI
 UNIT
-
-
-
-
-
-
 
 ALIGN 4
 
@@ -291,12 +285,6 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch3)
 ENDA
-
-ArmoryList:
-SHLI IronSword IronLance Javelin IronBow
-
-VendorList:
-SHLI Vulnerary
 
 //MESSAGE Events end at offset CURRENTOFFSET
 

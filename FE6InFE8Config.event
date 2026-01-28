@@ -9,5 +9,8 @@
 //Enables Hard Mode bonuses for recruitable enemies who usually don't get them (Raigh, Ch13!Perceval, Hugh, Douglas).
 //#define CONFIG_RecruitableUnitsHMBonusesExtra
 
+//Enables Shops (armories, vendors, secret shops) on the World Map.
+#define CONFIG_WMShops
+
 //Adds a call to a "revive Merlinus" event at end of each chapter.
 #define CONFIG_EnableReviveMerlinus

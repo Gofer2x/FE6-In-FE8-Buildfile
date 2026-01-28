@@ -79,7 +79,7 @@ Chest(SilverBow,2,22)
 Chest(HeroCrest,1,20)
 Chest(KnightCrest,2,18)
 Chest(Berserk,1,16)
-SecretShop(SecretShopList,1,0)
+SecretShop(Ch16_SecretShopList,1,0)
 Door(5,15)
 Door(11,15)
 Door(12,15)
@@ -447,8 +447,5 @@ MoveToChapter(CHAPTER_Ch17B)
 
 LABEL 9
 ENDA
-
-SecretShopList:
-SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe Lockpick
 
 //MESSAGE Events end at offset CURRENTOFFSET

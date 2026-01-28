@@ -51,7 +51,7 @@ Seize(29,3)
 Village(0x0,TinasStaffVillageVisit,2,12)
 House(0x0,SandbarHouseVisit,8,13)
 House(0x0,BoatHouseVisit,8,14)
-Armory(ArmoryList,6,8)
+Armory(Ch17A_ArmoryList,6,8)
 END_MAIN
 
 MiscBasedEvents:
@@ -232,8 +232,6 @@ HouseEvent(Ch17A_SandbarHouse,BG_House)
 BoatHouseVisit:
 HouseEvent(Ch17A_BoatHouse,BG_House)
 
-
-
 EndingScene:
 PlayMusic(MUS_IntoTheShadowOfTriumph)
 Text(BG_Castle2,Ch17A_End)
@@ -241,8 +239,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch18A)
 ENDA
-
-ArmoryList:
-SHLI SlimSword IronSword KillingEdge IronBlade SlimLance IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow KillerBow
 
 //MESSAGE Events end at offset CURRENTOFFSET

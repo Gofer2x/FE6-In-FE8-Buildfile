@@ -64,8 +64,8 @@ House(0x0,UniteHouseVisit,8,17)
 House(0x0,PrayHouseVisit,8,21)
 House(0x0,DefendHouseVisit,12,7)
 House(0x0,UnitedClansHouseVisit,15,6)
-Armory(ArmoryList,4,3)
-Vendor(VendorList,2,3)
+Armory(Ch18B_ArmoryList,4,3)
+Vendor(Ch18B_VendorList,2,3)
 END_MAIN
 
 //The ambush is enabled for one turn when a player unit ends their turn in yurt circle.
@@ -388,11 +388,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch19B)
 ENDA
-
-ArmoryList:
-SHLI IronSword KillingEdge IronBlade IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow SteelBow
-
-VendorList:
-SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
 
 //MESSAGE Events end at offset CURRENTOFFSET

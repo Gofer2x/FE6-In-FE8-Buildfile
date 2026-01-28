@@ -57,8 +57,8 @@ Village(0x0,EnergyRingVillageVisit,10,10)
 Village(0x0,GoddessIconVillageVisit,15,12)
 Village(0x0,WoDaoVillageVisit,17,10)
 Village(0x0,LongbowVillageVisit,26,3)
-Armory(ArmoryList,8,1)
-Vendor(VendorList,27,0)
+Armory(Ch19B_ArmoryList,8,1)
+Vendor(Ch19B_VendorList,27,0)
 END_MAIN
 
 MiscBasedEvents:
@@ -276,11 +276,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapterWithoutWM(CHAPTER_Ch20B)
 ENDA
-
-ArmoryList:
-SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
-
-VendorList:
-SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
 
 //MESSAGE Events end at offset CURRENTOFFSET

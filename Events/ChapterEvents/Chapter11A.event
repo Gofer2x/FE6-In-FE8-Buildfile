@@ -95,8 +95,8 @@ Village(Ch11A_VillageFlag5,SpeedwingsVillageVisit,18,6)
 Village(Ch11A_VillageFlag6,AngelicRobeVillageVisit,24,6)
 Village(Ch11A_VillageFlag7,OrionsBoltVillageVisit,5,24)
 Village(Ch11A_VillageFlag8,AxereaverVillageVisit,11,24)
-Armory(ArmoryList,11,12)
-Vendor(VendorList,11,6)
+Armory(Ch11A_ArmoryList,11,12)
+Vendor(Ch11A_VendorList,11,6)
 END_MAIN
 
 MiscBasedEvents:
@@ -501,13 +501,5 @@ LABEL 3
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch12)
 ENDA
-
-
-
-ArmoryList:
-SHLI SlimLance IronLance SteelLance Javelin IronAxe SteelAxe KillerAxe HandAxe Hammer IronBow SteelBow
-
-VendorList:
-SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
 
 //MESSAGE Events end at offset CURRENTOFFSET

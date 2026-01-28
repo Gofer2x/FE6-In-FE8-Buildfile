@@ -52,7 +52,7 @@ Village(0x0,TinasStaffVillageVisit,2,17)
 Village(0x0,EclipseVillageVisit,30,2)
 House(0x0,NorthEastHouseVisit,1,18)
 House(0x0,ThievesHouseVisit,6,15)
-Armory(ArmoryList,3,19)
+Armory(Ch17B_ArmoryList,3,19)
 
 END_MAIN
 
@@ -202,8 +202,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch18B)
 ENDA
-
-ArmoryList:
-SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe IronBow SteelBow SilverBow ShortBow
 
 //MESSAGE Events end at offset CURRENTOFFSET

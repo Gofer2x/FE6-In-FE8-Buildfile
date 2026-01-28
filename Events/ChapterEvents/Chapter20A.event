@@ -66,8 +66,8 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(3,19)
-Armory(ArmoryList,8,0)
-Vendor(VendorList,5,1)
+Armory(Ch20A_ArmoryList,8,0)
+Vendor(Ch20A_VendorList,5,1)
 Chest(Speedwings,2,10)
 Chest(Axereaver,3,11)
 Chest(Longbow,4,11)
@@ -355,11 +355,5 @@ ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch21)
 LABEL 9
 ENDA
-
-ArmoryList:
-SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
-
-VendorList:
-SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
 
 //MESSAGE Events end at offset CURRENTOFFSET

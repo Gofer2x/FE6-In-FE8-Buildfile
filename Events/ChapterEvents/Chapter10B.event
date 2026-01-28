@@ -88,7 +88,7 @@ Village(Ch10B_VillageFlag4,MaryVillageVisit,8,8)
 Village(Ch10B_VillageFlag5,MieuVillageVisit,4,8)
 Village(Ch10B_VillageFlag6,DragonshieldVillageVisit,5,13)
 Village(Ch10B_VillageFlag7,SwordreaverVillageVisit,17,23)
-Armory(ArmoryList,4,22)
+Armory(Ch10B_ArmoryList,4,22)
 END_MAIN
 
 MiscBasedEvents:
@@ -502,8 +502,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch11B)
 ENDA
-
-ArmoryList:
-SHLI SlimLance IronLance SteelLance Javelin IronAxe SteelAxe HandAxe Hammer IronBow SteelBow
 
 //MESSAGE Events end at offset CURRENTOFFSET

@@ -55,8 +55,8 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(27,3)
-Armory(ArmoryList,26,4)
-Vendor(VendorList,29,4)
+Armory(Ch14_ArmoryList,26,4)
+Vendor(Ch14_VendorList,29,4)
 House(0x0,DelphiHouseVisit,26,6)
 House(0x0,BonesTreasureHouseVisit,25,6)
 END_MAIN
@@ -306,11 +306,5 @@ MoveToChapter(CHAPTER_Ch15)
 
 LABEL 9
 ENDA
-
-ArmoryList:
-SHLI SteelSword SteelBlade SteelLance SteelAxe SteelBow
-
-VendorList:
-SHLI Elfire Aircalibur Lightning Flux Nosferatu Mend Restore Torch PureWater
 
 //MESSAGE Events end at offset CURRENTOFFSET

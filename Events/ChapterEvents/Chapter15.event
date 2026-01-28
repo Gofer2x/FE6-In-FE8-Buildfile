@@ -59,7 +59,7 @@ Village(0x0,DivineVillageVisit,8,22)
 Village(0x0,HammerneVillageVisit,25,15)
 House(0x0,SavageBanditsHouseVist,19,23)
 House(0x0,GeneralsDividedHouseVist,23,19)
-Vendor(VendorList,26,17)
+Vendor(Ch15_VendorList,26,17)
 END_MAIN
 
 MiscBasedEvents:
@@ -323,8 +323,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch16)
 ENDA
-
-VendorList:
-SHLI Thunder Lightning Flux Mend Vulnerary DoorKey ChestKey5Uses Torch
 
 //MESSAGE Events end at offset CURRENTOFFSET

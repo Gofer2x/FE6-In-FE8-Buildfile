@@ -13,7 +13,7 @@
 #define Ch23_FirKarelTalkFlag 0x7
 #define Ch23_BartreKarelTalkFlag 0x8
 #define Ch23_RoyKarelTalkFlag 0x9
-#define Ch23_KarelVillageDone 0xA
+#define Ch23_KarelVillageDoneFlag 0xA
 
 //Ch23_BrunnyaVsMeladyFlag 0x1E
 //Ch23_BrunnyaVsZeissFlag 0x1F
@@ -38,7 +38,7 @@ POIN BeginningScene EndingScene
 
 TurnBasedEvents:
 //Only run this event if Karel hasn't been recruited turn 1, checked by flag.
-TurnEventEnemy(Ch23_KarelVillageDone,VillageComplains,1)
+TurnEventEnemy(Ch23_KarelVillageDoneFlag,VillageComplains,1)
 END_MAIN
 ALIGN 32 //For some reason, CharacterBasedEvents have to be 32-Aligned?
 
@@ -51,10 +51,10 @@ END_MAIN
 LocationBasedEvents:
 Seize(5,1)
 House(0x0,KarelVillageVisit,22,23)
-Armory(Armory1List,16,26)
-Armory(Armory2List,17,25)
-Vendor(Vendor1List,0,6)
-Vendor(Vendor2List,15,26)
+Armory(Ch23_Armory1List,16,26)
+Armory(Ch23_Armory2List,17,25)
+Vendor(Ch23_Vendor1List,0,6)
+Vendor(Ch23_Vendor2List,15,26)
 END_MAIN
 
 MiscBasedEvents:
@@ -199,7 +199,7 @@ FlagOFF(Ch23_RoyKarelTalkFlag)
 
 //Load Karel, turn turn 1 event flag on, and manually trigger tile change.
 LABEL 7
-FlagON(Ch23_KarelVillageDone)
+FlagON(Ch23_KarelVillageDoneFlag)
 LOAD1 0x1 JustKarel
 ENUN
 TILECHANGE 1
@@ -235,17 +235,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapterWithoutWM(CHAPTER_Ch24)
 ENDA
-
-Armory1List:
-SHLI SlimSword IronSword SteelSword SilverSword IronBlade SteelBlade SilverBlade IronLance SteelLance SilverLance Javelin IronAxe SteelAxe SilverAxe HandAxe IronBow SteelBow SilverBow
-
-Armory2List:
-SHLI KillingEdge LightBrand Armorslayer KillerLance Horseslayer KillerAxe Hammer Halberd KillerBow ShortBow Longbow
-
-Vendor1List:
-SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Nosferatu
-
-Vendor2List:
-SHLI Heal Mend Recover Physic Restore Vulnerary PureWater Elixir
 
 //MESSAGE Events end at offset CURRENTOFFSET

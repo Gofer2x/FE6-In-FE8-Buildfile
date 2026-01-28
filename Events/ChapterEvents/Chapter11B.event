@@ -66,7 +66,7 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(2,25)
-Vendor(VendorList,23,17)
+Vendor(Ch11B_VendorList,23,17)
 Village(0x0,VisitRedGemVillage,18,21)
 END_MAIN
 
@@ -312,7 +312,7 @@ LABEL 1
 PlayMusic(MUS_Triumph)
 Text(BG_Castle1,Ch11B_End)
 
-//Skip the Energy Ring reward any of the citizens died.
+//Skip the Energy Ring reward if any of the citizens died.
 BranchIfFlagON(2,Ch11B_GenericCitizenEidynaDeathFlag)
 
 //If all alive, Energy Ring got.
@@ -324,8 +324,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch12)
 ENDA
-
-VendorList:
-SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
 
 //MESSAGE Events end at offset CURRENTOFFSET

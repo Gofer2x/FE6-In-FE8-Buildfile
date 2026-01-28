@@ -61,8 +61,8 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(43,9)
-Armory(ArmoryList,41,5)
-Vendor(VendorList,43,4)
+Armory(Ch13_ArmoryList,41,5)
+Vendor(Ch13_VendorList,43,4)
 Village(0x0,BodyRingVillageVisit,7,6)
 Village(0x0,AlsSwordVillageVisit,38,18)
 House(0x0,ThreeGeneralsHouseVisit,10,6)
@@ -507,11 +507,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch14)
 ENDA
-
-ArmoryList:
-SHLI IronSword SteelSword KillingEdge IronLance SteelLance KillerLance Javelin IronBow SteelBow KillerBow
-
-VendorList:
-SHLI Fire Thunder Elfire Lightning Flux Heal Mend Restore Vulnerary Antitoxin Torch
 
 //MESSAGE Events end at offset CURRENTOFFSET

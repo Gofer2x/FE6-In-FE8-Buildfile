@@ -1,0 +1,5 @@
+#include "_MasterSpecificEventsInstaller.event"
+#include "_MasterChapterEventsInstaller.event"
+#include "_MasterWMEventsInstaller.event"
+#include "EmptyTrapData.event"
+#include "REDAs.event"

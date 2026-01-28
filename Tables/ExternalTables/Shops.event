@@ -1,0 +1,180 @@
+Ch2_ArmoryList:
+SHLI IronSword IronLance Javelin IronBow
+
+Ch2_VendorList:
+SHLI Vulnerary
+
+Ch4_VendorList:
+SHLI Fire Heal Vulnerary
+
+Ch4_ArmoryList:
+SHLI SlimSword IronSword SlimLance IronLance Javelin IronAxe HandAxe IronBow
+
+Ch5_VendorList:
+SHLI Fire Heal Vulnerary DoorKey
+
+Ch7_VendorList:
+SHLI Fire Thunder Heal Mend Vulnerary DoorKey ChestKey5Uses
+
+Ch7_Armory1List:
+SHLI SlimSword IronSword SteelSword IronBlade IronAxe SteelAxe HandAxe
+
+Ch7_Armory2List:
+SHLI SlimLance IronLance SteelLance Javelin IronBow SteelBow
+
+Ch9_VendorList:
+SHLI Fire Heal Mend Vulnerary Antitoxin DoorKey
+
+Ch9_ArmoryList:
+SHLI SlimSword IronSword SteelSword IronBlade SteelBlade IronAxe SteelAxe HandAxe Hammer
+
+Ch11A_ArmoryList:
+SHLI SlimLance IronLance SteelLance Javelin IronAxe SteelAxe KillerAxe HandAxe Hammer IronBow SteelBow
+
+Ch11A_VendorList:
+SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
+
+Ch10B_ArmoryList:
+SHLI SlimLance IronLance SteelLance Javelin IronAxe SteelAxe HandAxe Hammer IronBow SteelBow
+
+Ch11B_VendorList:
+SHLI Fire Thunder Lightning Heal Vulnerary Antitoxin DoorKey ChestKey5Uses
+
+Ch13_ArmoryList:
+SHLI IronSword SteelSword KillingEdge IronLance SteelLance KillerLance Javelin IronBow SteelBow KillerBow
+
+Ch13_VendorList:
+SHLI Fire Thunder Elfire Lightning Flux Heal Mend Restore Vulnerary Antitoxin Torch
+
+Ch14_ArmoryList:
+SHLI SteelSword SteelBlade SteelLance SteelAxe SteelBow
+
+Ch14_VendorList:
+SHLI Elfire Aircalibur Lightning Flux Nosferatu Mend Restore Torch PureWater
+
+Ch15_VendorList:
+SHLI Thunder Lightning Flux Mend Vulnerary DoorKey ChestKey5Uses Torch
+
+Ch16_SecretShopList:
+SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe Lockpick
+
+Ch17A_ArmoryList:
+SHLI SlimSword IronSword KillingEdge IronBlade SlimLance IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow KillerBow
+
+Ch19A_VendorList:
+SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
+
+Ch20A_ArmoryList:
+SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
+
+Ch20A_VendorList:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
+
+Ch17B_ArmoryList:
+SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe IronBow SteelBow SilverBow ShortBow
+
+Ch18B_ArmoryList:
+SHLI IronSword KillingEdge IronBlade IronLance KillerLance Javelin IronAxe KillerAxe HandAxe IronBow SteelBow
+
+Ch18B_VendorList:
+SHLI Thunder Lightning Flux Heal Mend Physic Restore DoorKey ChestKey5Uses
+
+Ch19B_ArmoryList:
+SHLI IronSword SteelSword SilverSword IronBlade SteelBlade IronLance SteelLance SilverLance IronAxe SteelAxe SilverAxe Hammer IronBow SteelBow SilverBow
+
+Ch19B_VendorList:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Vulnerary PureWater
+
+Ch21_ArmoryList:
+SHLI SilverSword SilverBlade Armorslayer SilverLance Horseslayer SilverAxe Halberd SilverBow
+
+Ch21_VendorList:
+SHLI Thunder Elfire Lightning Divine Flux Heal Mend Physic PureWater DoorKey ChestKey5Uses
+
+Ch21_SecretShopList:
+SHLI KnightCrest HeroCrest OrionsBolt ElysianWhip GuidingRing AngelicRobe EnergyRing SecretBook Speedwings GoddessIcon Dragonshield Talisman BodyRing Boots Bolting Purge Eclipse
+
+Ch23_Armory1List:
+SHLI SlimSword IronSword SteelSword SilverSword IronBlade SteelBlade SilverBlade IronLance SteelLance SilverLance Javelin IronAxe SteelAxe SilverAxe HandAxe IronBow SteelBow SilverBow
+
+Ch23_Armory2List:
+SHLI KillingEdge LightBrand Armorslayer KillerLance Horseslayer KillerAxe Hammer Halberd KillerBow ShortBow Longbow
+
+Ch23_Vendor1List:
+SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Nosferatu
+
+Ch23_Vendor2List:
+SHLI Heal Mend Recover Physic Restore Vulnerary PureWater Elixir
+
+#ifdef CONFIG_WMShops
+	#define WM_Ch2_ArmoryList Ch2_ArmoryList
+	#define WM_Ch2_VendorList Ch2_VendorList
+	#define WM_Ch4_VendorList Ch4_VendorList
+	#define WM_Ch4_ArmoryList Ch4_ArmoryList
+	#define WM_Ch5_VendorList Ch5_VendorList
+	#define WM_Ch7_VendorList Ch7_VendorList
+	WM_Ch7_ArmoryList:
+		SHLI SlimSword IronSword SteelSword IronBlade IronAxe SteelAxe HandAxe SlimLance IronLance SteelLance Javelin IronBow SteelBow
+	#define WM_Ch9_VendorList Ch9_VendorList
+	#define WM_Ch9_ArmoryList Ch9_ArmoryList
+	#define WM_Ch11A_ArmoryList Ch11A_ArmoryList
+	#define WM_Ch11A_VendorList Ch11A_VendorList
+	#define WM_Ch10B_ArmoryList Ch10B_ArmoryList
+	#define WM_Ch11B_VendorList Ch11B_VendorList
+	#define WM_Ch13_ArmoryList Ch13_ArmoryList
+	#define WM_Ch13_VendorList Ch13_VendorList
+	#define WM_Ch14_ArmoryList Ch14_ArmoryList
+	#define WM_Ch14_VendorList Ch14_VendorList
+	#define WM_Ch15_VendorList Ch15_VendorList
+	#define WM_Ch16_SecretShopList Ch16_SecretShopList
+	#define WM_Ch17A_ArmoryList Ch17A_ArmoryList
+	#define WM_Ch19A_VendorList Ch19A_VendorList
+	#define WM_Ch20A_ArmoryList Ch20A_ArmoryList
+	#define WM_Ch20A_VendorList Ch20A_VendorList
+	#define WM_Ch17B_ArmoryList Ch17B_ArmoryList
+	#define WM_Ch18B_ArmoryList Ch18B_ArmoryList
+	#define WM_Ch18B_VendorList Ch18B_VendorList
+	#define WM_Ch19B_ArmoryList Ch19B_ArmoryList
+	#define WM_Ch19B_VendorList Ch19B_VendorList
+	#define WM_Ch21_ArmoryList Ch21_ArmoryList
+	#define WM_Ch21_VendorList Ch21_VendorList
+	#define WM_Ch21_SecretShopList Ch21_SecretShopList
+	WM_Ch23_ArmoryList:
+		SHLI SlimSword IronSword SteelSword SilverSword IronBlade SteelBlade SilverBlade IronLance SteelLance SilverLance Javelin IronAxe SteelAxe SilverAxe HandAxe IronBow SteelBow SilverBow KillingEdge LightBrand Armorslayer KillerLance Horseslayer KillerAxe Hammer Halberd KillerBow ShortBow Longbow
+	WM_Ch23_VendorList:
+		SHLI Fire Thunder Elfire Aircalibur Lightning Divine Flux Nosferatu Heal Mend Recover Physic Restore Vulnerary PureWater Elixir
+#else
+	#define WM_Ch2_ArmoryList EmptyShopTable
+	#define WM_Ch2_VendorList EmptyShopTable
+	#define WM_Ch4_VendorList EmptyShopTable
+	#define WM_Ch4_ArmoryList EmptyShopTable
+	#define WM_Ch5_VendorList EmptyShopTable
+	#define WM_Ch7_VendorList EmptyShopTable
+	#define WM_Ch7_ArmoryList EmptyShopTable
+	#define WM_Ch9_VendorList EmptyShopTable
+	#define WM_Ch9_ArmoryList EmptyShopTable
+	#define WM_Ch10B_ArmoryList EmptyShopTable
+	#define WM_Ch11A_ArmoryList EmptyShopTable
+	#define WM_Ch11A_VendorList EmptyShopTable
+	#define WM_Ch11B_VendorList EmptyShopTable
+	#define WM_Ch13_ArmoryList EmptyShopTable
+	#define WM_Ch13_VendorList EmptyShopTable
+	#define WM_Ch14_ArmoryList EmptyShopTable
+	#define WM_Ch14_VendorList EmptyShopTable
+	#define WM_Ch15_VendorList EmptyShopTable
+	#define WM_Ch16_SecretShopList EmptyShopTable
+	#define WM_Ch17A_ArmoryList EmptyShopTable
+	#define WM_Ch17B_ArmoryList EmptyShopTable
+	#define WM_Ch18B_ArmoryList EmptyShopTable
+	#define WM_Ch18B_VendorList EmptyShopTable
+	#define WM_Ch19A_VendorList EmptyShopTable
+	#define WM_Ch19B_ArmoryList EmptyShopTable
+	#define WM_Ch19B_VendorList EmptyShopTable
+	#define WM_Ch20A_ArmoryList EmptyShopTable
+	#define WM_Ch20A_VendorList EmptyShopTable
+	#define WM_Ch21_ArmoryList EmptyShopTable
+	#define WM_Ch21_VendorList EmptyShopTable
+	#define WM_Ch21_SecretShopList EmptyShopTable
+	#define WM_Ch23_ArmoryList EmptyShopTable
+	#define WM_Ch23_VendorList EmptyShopTable
+#endif

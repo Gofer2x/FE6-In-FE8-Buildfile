@@ -43,7 +43,7 @@ END_MAIN
 
 LocationBasedEvents:
 Seize(2,14)
-Vendor(VendorList,7,2)
+Vendor(Ch5_VendorList,7,2)
 Village(0x0,GantsLanceVillageVisit,10,2)
 House(0x0,FortsHouseVisit,11,20)
 House(0x0,AraphenDragonHouseVisit,12,20)
@@ -221,8 +221,5 @@ STAL 64
 ReviveMerlinusIfConfig
 MoveToChapter(CHAPTER_Ch6)
 ENDA
-
-VendorList:
-SHLI Fire Heal Vulnerary DoorKey
 
 //MESSAGE Events end at offset CURRENTOFFSET
