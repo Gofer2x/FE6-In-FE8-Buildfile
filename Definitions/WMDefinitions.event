@@ -55,7 +55,7 @@
 
 ////Road Logic
 
-//Draws a road.
+//Draws (unlocks) a road.
 #define WM_DrawRoad(id) "WM_DRAWPATH 0x0 id 0x0"
 
 //Draws a road quietly (without moving the camera?).
@@ -71,23 +71,43 @@
 //Decorates the text. The fancy layout or something.
 #define WM_TextDecorate WM_TEXTDECORATE
 
+//Shows the text window, I assume. The values are unk, speed, speed/fade. Just gonna leave them as these.
+#define WM_ShowTextWindow "WM_SHOWTEXTWINDOW 0x0 0x28 0x1"
+
+//What does this do, actually? TODO
+//WM_WAITFORTEXT
 
 
 ////Graphics/FX Logic
 
-//Waits for any currently playing graphics effects to end.
-#define WM_WaitForFx WM_WAITFORFX
+//Places a Dot on a select node.
+//Palette is 0x0 for blue, 0x1 for red.
+//Gfx has 0x0 for no animation, 0x1 for shine, 0x2 for a pulsating aura, 0x3 for shine and pulsating aura.
+//Intended to be used on the Event map? When used on normal map it just messes up the flag's palette.
+#define WM_PlaceDot(palette, node, gfx) "PLACEDOT palette node gfx"
+
+//Waits for any dot/highlight graphics effects to have "finished".
+#define WM_WaitForDotHighlight WM_WAITFORFX
+
+//Clear dots, highlights, etc.
+#define WM_FXClear12 "WM_FXCLEAR1 0x0 0xFFFF 0xFFFF WM_FXCLEAR2 0x0 0xFFFF 0xFFFF"
+#define WM_WaitForFXClear12 "WM_WAITFORFXCLEAR1 WM_WAITFORFXCLEAR2"
+#define WM_FullFXClear "WM_FXClear12 WM_WaitForFXClear12"
 
 //Alias for Fadeout.
 #define WM_Fadeout "WM_FADEOUT 0x0 0x0 0x0"
 
 #define WM_ShowPortraitLeft(id) "WM_SHOWPORTRAIT id 1332"
 #define WM_ShowPortraitRight(id) "WM_SHOWPORTRAIT id 700"
+#define WM_ClearPortraitToLeft(id,delay) "WM_CLEARPORTRAIT 0x0 0x100 delay"
+#define WM_ClearPortraitToRight(id,delay) "WM_CLEARPORTRAIT 0x0 0x200 delay"
+
+
 
 ////Camera Logic
 
-//Scrolls camera from current location to X and Y.
-#define WM_ScrollCam(x,y,speed,delay) "WM_MOVECAM 0x0 0xffff 0xffff x y speed delay"
+//Scrolls camera. Use 0xFFFF for current location.
+#define WM_ScrollCam(startX, startY, endX, endY, delay) "WM_MOVECAM 0x0 startX startY endX endY delay 0x0"
 
 //Sets camera location to X and Y.
 #define WM_SetCam(x,y) "WM_SETCAM x y"
@@ -97,6 +117,12 @@
 
 //Moves the camera to the Lord unit.
 #define WM_CamOnLord WM_CENTERCAMONLORD
+
+
+
+
+
+
 
 
 
@@ -110,6 +136,7 @@
 
 //Skips the current WM Event.
 #define WM_SkipEvent SKIPWN
+
 
 
 ////Temporary/simple events.
