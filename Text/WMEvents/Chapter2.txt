@@ -1,0 +1,16 @@
+## WM_Ch2_Start1
+There is a small village on the border[N]
+of Pherae and Bern.[AN]
+[LoadOverworldFaces]
+This is where Roy is to meet the[N]
+mercenary band that Eliwood hired.[A][X]
+
+## WM_Ch2_Start2
+Just east of the village is a small castle[N]
+occupied by Bern's forces.[AN]
+At the time Roy reaches the village,[N]
+the castle is in an outright panic.[AN]
+Roy has yet to realize that this confusion[N]
+going on in the castle will spread,[AN]
+engulfing the entire continent of Elibe[N]
+in chaos...[A][X]

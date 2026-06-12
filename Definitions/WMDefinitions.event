@@ -89,10 +89,12 @@
 //Waits for any dot/highlight graphics effects to have "finished".
 #define WM_WaitForDotHighlight WM_WAITFORFX
 
-//Clear dots, highlights, etc.
-#define WM_FXClear12 "WM_FXCLEAR1 0x0 0xFFFF 0xFFFF WM_FXCLEAR2 0x0 0xFFFF 0xFFFF"
-#define WM_WaitForFXClear12 "WM_WAITFORFXCLEAR1 WM_WAITFORFXCLEAR2"
-#define WM_FullFXClear "WM_FXClear12 WM_WaitForFXClear12"
+//Clear dots, highlights, and also returns from Big/Event map to normal.
+#define WM_FullFXClear "WM_FXCLEAR1 0x0 0xFFFF 0xFFFF ; WM_FXCLEAR2 0x0 0xFFFF 0xFFFF ; WM_WAITFORFXCLEAR1 ; WM_WAITFORFXCLEAR2"
+
+//Highlights a region on the Event map.
+#define WM_HighlightRegion "WM_HIGHLIGHT 0x0 region 0x0"
+#define WM_HighlightClear "WM_HIGHLIGHTCLEAR1 0x0 region 0x0 ; WM_HIGHLIGHTCLEAR2 0x0 region 0x0;
 
 //Alias for Fadeout.
 #define WM_Fadeout "WM_FADEOUT 0x0 0x0 0x0"
@@ -102,7 +104,8 @@
 #define WM_ClearPortraitToLeft(id,delay) "WM_CLEARPORTRAIT 0x0 0x100 delay"
 #define WM_ClearPortraitToRight(id,delay) "WM_CLEARPORTRAIT 0x0 0x200 delay"
 
-
+#define WM_ShowEventMap(x,y,mapID) "WM_SHOWDRAWNMAP 0x0 x y mapID 0x0" //check uses in vanilla for reference
+#define WM_MoveEventMapCam(startX, startY, endX, endY, speed, delay) "WM_MOVECAM2 startX startY endX endY speed delay"
 
 ////Camera Logic
 

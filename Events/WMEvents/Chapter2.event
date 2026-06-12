@@ -20,3 +20,53 @@ ENDA
 
 CurrentNodeSelect:
 WMEVENT_SimpleNextChapterNodeSelect(NODE_Ch1,NODE_Ch2)
+
+/*
+//Working on a more proper cutscene here...
+//Scroll to Ch2 node? TODO this is the wrong location and ugly, figure this out
+WM_ScrollCam(0xFFFF,0xFFFF,NODE_Ch2_X,NODE_Ch2_Y,60)
+WM_WaitForCam
+
+//Show Big World Map
+WM_ShowEventMap(0,0,0x10) //TODO Why the 0x10 here? Is that actually the XY coords?
+
+//TODO Scroll down to and highlight Bern and Lycia
+//BLBABBAB <- What?
+//Text window on top
+
+WM_ShowTextWindow
+WM_WAITFORTEXT
+WM_TEXTSTART
+//"There is a small ... and Bern"
+WM_TEXT WM_Ch2_1
+TEXTEND
+//Show shining blue dot there
+WM_PlaceDot(0x0, NODE_Ch2, 0x1)
+WM_WaitForDotHighlight
+TEXTCONT
+//"This is where Roy ... hired."
+TEXTEND
+//Remove text window
+WM_REMOVETEXT
+//Remove dot
+//Zoom into normal map
+WM_FullFXClear
+//Put dot on there again (well don't since the flag does its job)
+//Text window on bottom
+WM_ShowTextWindow
+WM_WAITFORTEXT
+WM_TEXTSTART
+//Arrow from Ch1 to Ch2 node appears, not sure how to represent this? Just don't?
+//Show Roy on Left
+WM_ShowPortraitLeft(Roy_Mug)
+//"Just east..."
+WM_TEXT WM_Ch2_2
+TEXTEND
+//Don't hide text, shows flag but that's been here the whole time here
+//Move Roy to the node here?
+WM_MoveLord(NODE_Ch1,NODE_Ch2,60,10)
+WM_ENUN
+//Fade into black into chapter
+FadeIntoBlack
+ENDA
+*\
