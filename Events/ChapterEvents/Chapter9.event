@@ -178,13 +178,11 @@ Text(BG_Outside,Ch9_FirAndSinHeadOut)
 CAM1 [2,3]
 FlashCursor(2,3,60)
 Text(BG_Castle1,Ch9_ScottFirWoDao)
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Fir and Sin by +8
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Fir, 8)
-ApplyBonusLevelsToUnit(Sin, 8)
+
+//Simulate +8 HM bonuses for Fir and Sin
+IfConfigDoubleApplyRecruitHMElseBranch(Fir,Sin,8,10)
 LABEL 10
-#endif
+
 EndEvent
 
 SinTurnsAggressive:

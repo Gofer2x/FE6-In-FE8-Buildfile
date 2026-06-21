@@ -150,12 +150,11 @@ CAM1 Roy
 Text(Ch5_Start2)
 STAL 64
 ENUN
-#ifdef CONFIG_BuggedEarlyHMBonuses
-//Patch here on Dory and GenericBanditCh5 by +6
-BranchIfNotHard(10)
-ApplyBonusLevelsToEnemyArmy(6)
+
+//Simulate bugged double HM bonuses
+IfConfigApplyBonusEarlyHMElseBranch(6,10)
 LABEL 10
-#endif
+
 EndEvent
 
 DorothyAndSaulCutscene:

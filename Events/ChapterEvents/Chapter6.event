@@ -267,12 +267,11 @@ LOAD1 0x1 JustCath
 ENUN
 Text(Ch6_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Cath by +6
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Cath, 6)
+
+//Simulate +6 HM bonuses for Cath
+IfConfigApplyRecruitHMElseBranch(Cath,6,10)
 LABEL 10
-#endif
+
 EndEvent
 
 RoyRecruitsSue:

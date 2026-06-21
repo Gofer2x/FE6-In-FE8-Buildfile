@@ -18,7 +18,12 @@ For information about how to insert new data, various helper scripts used etc. p
   
     -  All gaidens, Ch8, Ch20B, Ch24.
 
-- At the start of the game you can enable Casual and/or Fixed Growths modes.
+- At the start of the game you will get several config options.
+    - Casual Mode, units will come back after each chapter
+    - Fixed Growths Mode, units will level perfectly to their averages
+    - If enemies in Ch1-5 will have doubled HM bonuses (unintentional but vanilla FE6 behavior)
+    - If most enemy units you recruit get HM bonuses (Rutger, Fir, Sin, Gonzalez, Klein, Thea, Cath, Melady, Ch15!Perceval, Garrett, Zeiss)
+    - If enemy units you recruit who normally don't get HM bonuses also get them (Raigh, Ch13!Perceval, Hugh, Douglas)
 
 -  The Trial Maps are implemented via a temple on Valor (the Dread Isle). It's unlocked after beating Ch21.
   

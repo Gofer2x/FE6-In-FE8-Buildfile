@@ -226,13 +226,11 @@ PlayMusic(MUS_WhenTheRushComes)
 CAM1 Roy
 FlashCursor(Roy,60)
 Text(BG_Castle2,Ch16_Start5)
-#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
-//Level Hugh and Douglas by +11
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Hugh, 11)
-ApplyBonusLevelsToUnit(Douglas, 11)
+
+//Simulate +11 extra HM bonuses for Hugh and Douglas
+DoubleIfConfigApplyExtraRecruitHMElseBranch(Hugh,Douglas,11,10)
 LABEL 10
-#endif
+
 GotoPrepScreen
 
 GalleAndZeissTalk:
@@ -256,12 +254,11 @@ Text(Ch16_ZeissDotDotDotDotDotDot)
 MOVE 0x0 Zeiss [1,0]
 ENUN
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Zeiss by +11
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Zeiss, 11)
+
+//Simulate +11 HM bonuses for Zeiss
+IfConfigApplyRecruitHMElseBranch(Zeiss,11,10)
 LABEL 10
-#endif
+
 EndEvent
 
 HughComplains:
@@ -280,12 +277,11 @@ LoadReinforcements(CathAndThief)
 CAM1 Cath
 Text(Ch16_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Cath by +11
-BranchIfNotHard(5)
-ApplyBonusLevelsToUnit(Cath, 11)
+
+//Simulate +11 HM bonuses for Cath
+IfConfigApplyRecruitHMElseBranch(Cath,11,5)
 LABEL 5
-#endif
+
 LABEL 9
 EndEvent
 

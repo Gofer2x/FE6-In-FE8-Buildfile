@@ -142,7 +142,7 @@
 
 
 
-//Audiovisual logic
+	//Audiovisual logic
 
 #define PlayMusic(music) "MUSC music"
 
@@ -192,4 +192,21 @@
 #define BattleStart "SVAL 0xD 0"
 #define BattleCommand(command) "SVAL 1 command; SAVETOQUEUE"
 
+
+
 #define ReviveMerlinusIfConfig "CALL EVENT_ReviveMerlinus"
+
+//If BuggedEarlyHMBonusesFlag is ON and it's Hard Mode, applies levels to enemy army.
+#define IfConfigApplyBonusEarlyHMElseBranch(levels,label) "BranchIfFlagOFF(label,BuggedEarlyHMBonusesFlag) ; BranchIfNotHard(label) ; ApplyBonusLevelsToEnemyArmy(levels)"
+
+//If EnemyRecruitsHMBonusesNormalFlag is ON and it's Hard Mode, applies levels to specific unit.
+#define IfConfigApplyRecruitHMElseBranch(unit,levels,label) "BranchIfFlagOFF(label,EnemyRecruitsHMBonusesNormalFlag) ; BranchIfNotHard(label) ; ApplyBonusLevelsToUnit(unit, levels)"
+
+//Ditto as above but for two units. Used for Fir and Sin.
+#define IfConfigDoubleApplyRecruitHMElseBranch(unit1,unit2,levels,label) "BranchIfFlagOFF(label,EnemyRecruitsHMBonusesNormalFlag) ; BranchIfNotHard(label) ; ApplyBonusLevelsToUnit(unit1, levels) ; ApplyBonusLevelsToUnit(unit2, levels)"
+
+//If EnemyRecruitsHMBonusesExtraFlag is ON and it's Hard Mode, applies levels to specific unit.
+#define IfConfigApplyExtraRecruitHMElseBranch(unit,levels,label) "BranchIfFlagOFF(label,EnemyRecruitsHMBonusesExtraFlag) ; BranchIfNotHard(label) ; ApplyBonusLevelsToUnit(unit, levels)"
+
+//Ditto as above but for two units. Used for Hugh and Douglas.
+#define DoubleIfConfigApplyExtraRecruitHMElseBranch(unit1,unit2,levels,label) "BranchIfFlagOFF(label,EnemyRecruitsHMBonusesExtraFlag) ; BranchIfNotHard(label) ; ApplyBonusLevelsToUnit(unit1, levels) ; ApplyBonusLevelsToUnit(unit2, levels)"

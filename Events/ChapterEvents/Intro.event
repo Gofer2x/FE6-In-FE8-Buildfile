@@ -71,16 +71,40 @@ FadeFromBlack
 PlayMusic(BGS_Envsound_Nighttime)
 TextWindow(DevIntro1)
 TextWindow(DevIntro2)
+
 TextWindow(DevIntroCasualChoice)
 IfNoSelectedGoto(1)
 FlagON(CASUAL_MODE_FLAG)
 TextWindow(DevIntroCasualON)
+
 LABEL 1
 TextWindow(DevIntroFixedGrowthsChoice)
 IfNoSelectedGoto(2)
 FlagON(FIXED_GROWTHS_FLAG_ID)
 TextWindow(DevIntroFixedGrowthsON)
+
+//Don't need these choices if we're not on Hard Mode.
+BranchIfNotHard(5)
+
 LABEL 2
+TextWindow(DevIntroBuggedEarlyHMChoice)
+IfNoSelectedGoto(3)
+FlagON(BuggedEarlyHMBonusesFlag)
+TextWindow(DevIntroBuggedEarlyHMON)
+
+LABEL 3
+TextWindow(DevIntroEnemyRecruitsHMBonusesNormalChoice)
+IfNoSelectedGoto(4)
+FlagON(EnemyRecruitsHMBonusesNormalFlag)
+TextWindow(DevIntroEnemyRecruitsHMBonusesNormalON)
+
+LABEL 4
+TextWindow(DevIntroEnemyRecruitsHMBonusesExtraChoice)
+IfNoSelectedGoto(5)
+FlagON(EnemyRecruitsHMBonusesExtraFlag)
+TextWindow(DevIntroEnemyRecruitsHMBonusesExtraON)
+
+LABEL 5
 EnableSceneDialogueSkipping
 TextWindow(DevIntroEnd)
 MoveToChapterWithoutWM(CHAPTER_Ch1)

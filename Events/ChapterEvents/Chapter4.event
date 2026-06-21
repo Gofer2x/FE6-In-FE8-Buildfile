@@ -175,12 +175,11 @@ MOVE 0x0 Erik [3,8]
 LOAD3 0x0 Units
 ENUN
 CAM1 Roy
-#ifdef CONFIG_BuggedEarlyHMBonuses
-//Patch here on Erik and GenericLausCh4 by +4
-BranchIfNotHard(10)
-ApplyBonusLevelsToEnemyArmy(4)
+
+//Simulate bugged double HM bonuses
+IfConfigApplyBonusEarlyHMElseBranch(4,10)
 LABEL 10
-#endif
+
 EndEvent
 
 RutgerClarineEvent1:
@@ -239,12 +238,11 @@ CMOF
 LoadReinforcements(RutgerSquad)
 Text(Ch4_RutgerAppears)
 LABEL 1
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Rutger by +4
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Rutger, 4)
+
+//Simulate +4 HM bonuses for Rutger
+IfConfigApplyRecruitHMElseBranch(Rutger,4,10)
 LABEL 10
-#endif
+
 EndEvent
 
 ClarineRecruitsHerself:

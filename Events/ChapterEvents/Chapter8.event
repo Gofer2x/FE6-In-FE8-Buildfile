@@ -241,12 +241,11 @@ ENUN
 CAM1 Cath
 Text(Ch8_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Cath by +7
-BranchIfNotHard(5)
-ApplyBonusLevelsToUnit(Cath, 7)
+
+//Simulate +7 HM bonuses for Cath
+IfConfigApplyRecruitHMElseBranch(Cath,7,5)
 LABEL 5
-#endif
+
 LABEL 9
 EndEvent
 

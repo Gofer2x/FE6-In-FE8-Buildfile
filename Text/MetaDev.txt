@@ -23,6 +23,37 @@ Units will level perfectly to their averages.[AN][Yes][X]
 ## DevIntroFixedGrowthsON
 Fixed Growths Enabled.[A][X]
 
+## DevIntroBuggedEarlyHMChoice
+Would you like to enable[N]
+double early HM bonuses?[AN]
+Enemies in Chapters 1-5 will be[N]
+stronger (vanilla FE6 behavior).[AN][Yes][X]
+
+## DevIntroBuggedEarlyHMON
+Double early HM[N]
+bonuses enabled.[A][X]
+
+## DevIntroEnemyRecruitsHMBonusesNormalChoice
+Would you like to enable[N]
+HM bonuses for recruitable enemies?[AN]
+(Rutger, Fir, Sin, Gonzalez,[N]
+Klein, Thea, Cath, Melady, Ch15!Perceval,[N]
+Garrett, Zeiss)[AN][Yes][X]
+
+## DevIntroEnemyRecruitsHMBonusesNormalON
+Recruitable enemies HM[N]
+bonuses enabled.[A][X]
+
+## DevIntroEnemyRecruitsHMBonusesExtraChoice
+Would you like to enable[N]
+HM bonuses for recruitable[AN]
+enemies who normally don't get them?[N]
+(Raigh, Ch13!Perceval, Hugh, Douglas)[AN][Yes][X]
+
+## DevIntroEnemyRecruitsHMBonusesExtraON
+Extra recruitable enemies HM[N]
+bonuses enabled.[A][X]
+
 ## DevIntroEnd
 Set-up complete. Game start.[A][X]
 

@@ -219,12 +219,11 @@ Text(Ch12_Start3BartreRoute)
 
 //Either way, continue here.
 LABEL 9
-#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
-//Level Raigh by +9
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Raigh, 9)
+
+//Simulate +9 extra HM bonuses for Raigh
+IfConfigApplyExtraRecruitHMElseBranch(Raigh,9,10)
 LABEL 10
-#endif
+
 GotoPrepScreen
 
 EinAppearsFlaerLeaves:
@@ -260,12 +259,11 @@ SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch12_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Cath by +9
-BranchIfNotHard(5)
-ApplyBonusLevelsToUnit(Cath, 9)
+
+//Simulate +9 HM bonuses for Cath
+IfConfigApplyRecruitHMElseBranch(Cath,9,5)
 LABEL 5
-#endif
+
 LABEL 9
 EndEvent
 

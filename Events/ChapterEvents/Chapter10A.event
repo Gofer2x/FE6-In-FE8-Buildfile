@@ -170,12 +170,11 @@ PlayMusic(MUS_WildFrontier)
 Text(BG_Castle1,Ch10A_GonzalezAppears)
 LoadReinforcements(JustGonzalez)
 LABEL 1
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Gonzalez by +8
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Gonzalez, 8)
+
+//Simulate +8 HM bonuses for Gonzalez
+IfConfigApplyRecruitHMElseBranch(Gonzalez,8,10)
 LABEL 10
-#endif
+
 EndEvent
 
 GeeseAppears:

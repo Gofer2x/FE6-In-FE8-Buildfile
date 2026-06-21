@@ -205,12 +205,11 @@ MOVE 0x0 Merlinus [1,9]
 ENUN
 MOVE 0x0 Elen [4,10]
 ENUN
-#ifdef CONFIG_BuggedEarlyHMBonuses
-//Patch here on Ruud and GenericBernCh2 by +4
-BranchIfNotHard(10)
-ApplyBonusLevelsToEnemyArmy(4)
+
+//Simulate bugged double HM bonuses
+IfConfigApplyBonusEarlyHMElseBranch(4,10)
 LABEL 10
-#endif
+
 EndEvent
 
 MercsShowUp:

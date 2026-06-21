@@ -1,14 +1,5 @@
 //Note, this is NOT the Skillsys config. That's still in EngineHacks.
 
-//Enables events that simulate the bugged double Hard Mode bonuses for Chapter 1-5 enemies.
-#define CONFIG_BuggedEarlyHMBonuses
-
-//Enables Hard Mode bonuses for recruitable enemies who get them in FE6 (Rutger, Fir, Sin, Gonzalez, Klein, Thea, Cath, Melady, Ch15!Perceval, Garrett, Zeiss).
-//#define CONFIG_RecruitableUnitsHMBonusesNormal
-
-//Enables Hard Mode bonuses for recruitable enemies who usually don't get them (Raigh, Ch13!Perceval, Hugh, Douglas).
-//#define CONFIG_RecruitableUnitsHMBonusesExtra
-
 //Enables Shops (armories, vendors, secret shops) on the World Map.
 #define CONFIG_WMShops
 

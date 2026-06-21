@@ -232,12 +232,11 @@ LOAD3 0x0 Units
 ENUN
 CAM1 Roy
 Text(BG_Outside,Ch13_Start3)
-#ifdef CONFIG_RecruitableUnitsHMBonusesExtra
-//Level Perceval by +10
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Perceval, 10)
+
+//Simulate +10 extra HM bonuses for Perceval
+IfConfigApplyExtraRecruitHMElseBranch(Perceval,10,10)
 LABEL 10
-#endif
+
 GotoPrepScreen
 
 CeciliaDies:
@@ -333,12 +332,11 @@ CMOF
 Text(Ch13_MeladyRecruitsHerself)
 TurnAlly(Melady)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Melady by +10
-BranchIfNotHard(10)
-ApplyBonusLevelsToUnit(Melady, 10)
+
+//Simulate +10 HM bonuses for Melady
+IfConfigApplyRecruitHMElseBranch(Melady,10,10)
 LABEL 10
-#endif
+
 EndEvent
 
 LarumRecruitsPerceval:

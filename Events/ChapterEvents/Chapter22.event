@@ -245,12 +245,11 @@ SwitchMusic(MUS_GoingMyWay)
 LoadReinforcements(JustCath)
 Text(Ch22_CathAppears)
 RestoreMusic
-#ifdef CONFIG_RecruitableUnitsHMBonusesNormal
-//Level Cath by +14
-BranchIfNotHard(5)
-ApplyBonusLevelsToUnit(Cath, 14)
+
+//Simulate +14 HM bonuses for Cath
+IfConfigApplyRecruitHMElseBranch(Cath,14,5)
 LABEL 5
-#endif
+
 
 LABEL 7
 LoadReinforcements(ThiefReinforcements)

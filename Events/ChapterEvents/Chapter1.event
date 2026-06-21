@@ -145,12 +145,11 @@ LOAD1 0x1 JustLance
 ENUN
 Text(BG_Outside, Ch1_Start3)
 MOVE 0x0 Lance [4,18]
-#ifdef CONFIG_BuggedEarlyHMBonuses
-//Patch here on Damas and GenericBanditCh1 by +4
-BranchIfNotHard(10)
-ApplyBonusLevelsToEnemyArmy(4)
+
+//Simulate bugged double HM bonuses
+IfConfigApplyBonusEarlyHMElseBranch(4,10)
 LABEL 10
-#endif
+
 EndEvent
 
 DamasComplains:
