@@ -40,6 +40,7 @@ Tools/FEBuilderGBA/*
 /*.png
 !Tools/sym/*.sym
 *.elf
+!Graphics/SpellAnimations/CSA_System_FE8/*.elf
 
 # python cache
 __pycache__
