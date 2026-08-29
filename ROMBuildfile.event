@@ -27,6 +27,7 @@
 	MapsStart:
 	MESSAGE Inserting Maps at CurrentOffset
 	#include "Maps/MasterMapInstaller.event"
+	#include "Maps/LinkArenaMapData.event"
 	MESSAGE "Maps Size is {CurrentOffset-MapsStart:N1} Bytes"
 	
 	//Events

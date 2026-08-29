@@ -34,6 +34,7 @@
 #include "HardcodingPatches/ClassHardcoding.event"
 #include "HardcodingPatches/SoundHardcoding.event"
 #include "HardcodingPatches/SupplyPortrait.event"
+#include "HardcodingPatches/NeutralizeLinkArenaBlacklist.event"
 
 #include "SMSPatch.event"
 #include "FixSomeBattleSounds.event"

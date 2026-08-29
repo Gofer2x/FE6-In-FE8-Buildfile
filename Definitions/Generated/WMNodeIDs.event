@@ -26,4 +26,4 @@
 #define NODE_Ch22 0x19
 #define NODE_Ch23_24_Final 0x1A
 #define NODE_PostGame 0x1B
-#define NODE_Spare2 0x1C
+#define NODE_Spare 0x1C
