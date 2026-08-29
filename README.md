@@ -10,7 +10,7 @@ For information about how to insert new data, various helper scripts used etc. p
 
 <details>
 
-<summary>Differences compared to base FE6:</summary>
+<summary>Differences compared to base FE6 (most of them at least):</summary>
 
 *  There is a world map! No shops on it though (yet). World map cutscenes are also not implemented as of now (god they are a pain).
 
@@ -43,6 +43,7 @@ For information about how to insert new data, various helper scripts used etc. p
 
 - The traps in Ch21x are not implemented.
 - Ch16x does not have the fancy parallax background.
+- Some unchanged FE8 menus (map status, preparations, chapter intro...).
 
 </details>
 
