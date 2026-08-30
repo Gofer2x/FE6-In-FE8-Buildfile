@@ -4,7 +4,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('generatedSoundExchangeBatPath', type=str)
 parser.add_argument('generatedEAFixBatPath', type=str)
 parser.add_argument('csvPath', type=str)
-parser.add_argument('febPath', type=str)
+parser.add_argument('febCLIPath', type=str)
 parser.add_argument('fromROMPath', type=str)
 parser.add_argument('targetROMPath', type=str)
 parser.add_argument('soundPrioFixEAPath', type=str)
@@ -14,7 +14,7 @@ args = parser.parse_args()
 generatedSoundExchangeBatPath = args.generatedSoundExchangeBatPath
 generatedEAFixBatPath = args.generatedEAFixBatPath
 csvPath = args.csvPath
-febPath = args.febPath
+febCLIPath = args.febCLIPath
 fromROMPath = args.fromROMPath
 targetROMPath = args.targetROMPath
 soundPrioFixEAPath = args.soundPrioFixEAPath
@@ -26,7 +26,7 @@ def intToHex(i):
     return str(j)
 
 def formatCmd(fromSongID, toSongID):
-    return(f"%febPath% --rom=%targetROMPath% --songexchange --fromrom=%fromROMPath% --target=%targetROMPath% --fromsong={fromSongID} --tosong={toSongID}\n")
+    return(f"%febCLIPath% --songexchange --rom=%targetROMPath% --fromrom=%fromROMPath% --target=%targetROMPath% --fromsong={fromSongID} --tosong={toSongID}\n")
 
 csvData = []
 with open(csvPath, mode ='r', encoding="utf-8")as file:
@@ -64,7 +64,7 @@ with open(soundPrioFixEAPath,"w") as w:
     w.writelines(eaFixOutput)
 
 
-cmdOutputExchange.append(f"set febPath={febPath}\n")
+cmdOutputExchange.append(f"set febCLIPath={febCLIPath}\n")
 cmdOutputExchange.append(f"set fromROMPath={fromROMPath}\n")
 cmdOutputExchange.append(f"set targetROMPath={targetROMPath}\n")
 for item in csvData:

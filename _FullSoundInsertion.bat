@@ -2,7 +2,7 @@ set genSoundScriptPath=Tools\SoundScripts\GenerateSoundBat.py
 set generatedSoundExchangeBatPath=Tools\SoundScripts\_GeneratedSoundInsertion.bat
 set generatedEAFixBatPath="Tools\SoundScripts\_GeneratedSoundEAFix.bat"
 set csvPath=Tools\SoundScripts\FE6toFE8Sounds.csv
-set febPath=Tools\FEBuilderGBA\FEBuilderGBA.exe
+set febCLIPath=Tools\FEBuilderGBA\CLI\FEBuilderGBA.CLI.exe
 set fe6Path=FE6.gba
 set inputHackWithoutMusicPath=FE6InFE8.gba
 set outputHackWithMusicPath=FE6InFE8_Music.gba
@@ -16,7 +16,7 @@ copy %~dp0%inputHackWithoutMusicPath% %~dp0%outputHackWithMusicPath%
 
 echo Generating sound insertion and EA fix .bats.
 
-call %genSoundScriptPath% %generatedSoundExchangeBatPath% %generatedEAFixBatPath% %csvPath% %febPath% %fe6Path% %outputHackWithMusicPath% %soundPrioFixEAPath%
+call %genSoundScriptPath% %generatedSoundExchangeBatPath% %generatedEAFixBatPath% %csvPath% %febCLIPath% %fe6Path% %outputHackWithMusicPath% %soundPrioFixEAPath%
 
 echo Running sound insertion .bat.
 
