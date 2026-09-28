@@ -43,3 +43,4 @@ Brigand and Berserker promos have been merged. In FE6 they're slightly different
 		Brigand/Pirate -> Berserker: +4 HP, +3 STR, +5 SKL, +1 SPD, +3 DEF, Variable CON
 Torch staff currently has FE8 behavior. Though is this really worth changing...?
 All enemies with FE6 specific AI (Galle, the Ch2/23 gate enemies..) have more standard AI.
+The Light Brand behaves as it does in FE8 (no fixed 10 damage at range).
