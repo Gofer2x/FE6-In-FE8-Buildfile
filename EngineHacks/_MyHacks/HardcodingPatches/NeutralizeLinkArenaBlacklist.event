@@ -1,2 +1,6 @@
+PUSH
+
 ORG $205BFC
-BYTE  $00 $00;
+BYTE $00 $00;
+
+POP
