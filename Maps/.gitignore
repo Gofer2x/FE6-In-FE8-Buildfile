@@ -1,6 +1,7 @@
 
 # tmx2ea-generated files
 *.event
+!LinkArena/*
 
 # tmx2ea-generated data file
 *.dmp

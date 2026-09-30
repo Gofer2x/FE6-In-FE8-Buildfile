@@ -1,0 +1,18 @@
+{
+
+#define VanillaLinkArenaData 0x1B02C4
+
+SetChapterData(CHAPTER_LinkArena, OBJ_Fort, 0, PAL_Fort, CONFIG_Fort, MAP_LinkArena, VanillaLinkArenaData, 0, 0, MAPCHANGES_LinkArena)
+
+ALIGN 4
+DummyMapChange:
+  SHORT $0
+
+ALIGN 4
+MapChangesData:
+  TileMap(0, 0, 0, 1, 1, DummyMapChange)
+  TileMapEnd
+
+EventPointerTable(MAPCHANGES_LinkArena, MapChangesData)
+
+}
