@@ -348,3 +348,29 @@ int CanUnitUseSpell(Unit* unit, int item, int rank) {
 	if (SelectedSpell) return 1;
 	return 2;
 }
+
+void ApplySupportMagicHPCost() {
+	//if support magic & cast a spell
+	if ( gActionData.unitActionType == UNIT_ACTION_STAFF && SelectedSpell ) {
+		int cost = GetSpellCost(SelectedSpell);
+		//we had enough HP to cast, or would've been previously prevented
+		gActiveUnit->curHP -= cost;
+	}
+
+}
+
+u8* ESU_SaveGaidenMagicVariables(u8* buffer) {
+	*(buffer+0) = UsingSpellMenu;
+	*(buffer+1) = SelectedSpell;
+	*(buffer+2) = DidSelectSpell;
+	
+	return buffer;
+}
+
+u8* ESU_LoadGaidenMagicVariables(u8* buffer) {
+	UsingSpellMenu = *(buffer+0);
+	SelectedSpell = *(buffer+1);
+	DidSelectSpell = *(buffer+2);
+	return buffer;
+}
+
