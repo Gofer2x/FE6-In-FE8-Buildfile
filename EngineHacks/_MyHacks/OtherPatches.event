@@ -52,4 +52,8 @@ BYTE 0x02 //Chapter 2
 ORG $037B52
 BYTE 19
 
+//Disable Link Arena since that's broken ig
+ORG 0x0AB90E
+BYTE 0x00 0x00 0x00 0x20
+
 POP
